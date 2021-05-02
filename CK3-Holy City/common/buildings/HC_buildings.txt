@@ -1,0 +1,300 @@
+###
+#The wonder of god
+###
+du_lost_city_01 = {
+	next_building = du_lost_city_02
+	construction_time = very_slow_construction_time
+	#cost_gold = 4500
+	garrison = 300
+	cost = {
+		gold = 450
+	}
+	type_icon = "icon_building_hall_of_heroes.dds"
+	can_construct_potential = {
+		building_requirement_tribal = no
+		#barony = title:b_hradec
+		barony = title:b_praha
+	}
+	# can_construct = {
+	# 	scope:holder.culture = {
+	# 		has_innovation = innovation_battlements
+	# 	}
+	# }
+	character_modifier = {
+		men_at_arms_cap = 1
+		men_at_arms_limit = 1
+		monthly_county_control_change_factor = 0.1
+		dread_gain_mult = 0.1
+		powerful_vassal_opinion = 10
+		clergy_opinion = 10
+		same_faith_opinion = 5
+		monthly_piety = 1
+		monthly_prestige = 1
+		monthly_dynasty_prestige = 2
+		knight_limit = 1
+		knight_effectiveness_mult = 0.1
+		skirmishers_damage_add = 5
+		skirmishers_pursuit_add = 5
+		skirmishers_toughness_add = 5
+		army_maintenance_mult = -0.1
+	}
+	province_modifier = {
+		monthly_income = 1
+		fort_level = 2
+	}
+	county_modifier = {
+		supply_limit = 2000
+		hostile_raid_time = 0.5
+	}
+	ai_value = {
+		base = 0
+	}
+	type = regular
+}
+
+du_lost_city_02 = {
+	next_building = du_lost_city_03
+	construction_time = very_slow_construction_time
+	#cost_gold = 4500
+	garrison = 1000
+	cost = {
+		gold = 900
+	}
+	type_icon = "icon_building_hall_of_heroes.dds"
+	can_construct_potential = {
+		building_requirement_tribal = no
+		#barony = title:b_hradec
+		barony = title:b_praha
+	}
+	# can_construct = {
+	# 	scope:holder.culture = {
+	# 		has_innovation = innovation_battlements
+	# 	}
+	# }
+	character_modifier = {
+		men_at_arms_cap = 2
+		men_at_arms_limit = 2
+		monthly_county_control_change_factor = 0.2
+		dread_gain_mult = 0.2
+		powerful_vassal_opinion = 15
+		clergy_opinion = 15
+		same_faith_opinion = 10
+		monthly_piety = 2
+		monthly_prestige = 2
+		monthly_dynasty_prestige = 4
+		knight_limit = 2
+		knight_effectiveness_mult = 0.2
+		skirmishers_damage_add = 5
+		skirmishers_pursuit_add = 5
+		skirmishers_toughness_add = 5
+		pikemen_toughness_add = 6
+		pikemen_damage_add = 6
+		army_maintenance_mult = -0.2
+	}
+	province_modifier = {
+		monthly_income = 2
+		levy_size = 0.1
+		levy_reinforcement_rate = 0.2
+		defender_advantage = 5
+		fort_level = 4
+	}
+	county_modifier = {
+		supply_limit = 5000
+		development_growth = 0.2
+		development_growth_factor = 0.2
+		tax_mult = 0.2
+		hostile_raid_time = 0.2
+	}
+	ai_value = {
+		base = 0
+	}
+	type = regular
+}
+
+du_lost_city_03 = {
+	next_building = du_lost_city_04
+	construction_time = very_slow_construction_time
+	#cost_gold = 4500
+	garrison = 2000
+	cost = {
+		gold = 1500
+	}
+	type_icon = "icon_building_hall_of_heroes.dds"
+	can_construct_potential = {
+		building_requirement_tribal = no
+		#barony = title:b_hradec
+		barony = title:b_praha
+	}
+	# can_construct = {
+	# 	scope:holder.culture = {
+	# 		has_innovation = innovation_battlements
+	# 	}
+	# }
+	character_modifier = {
+		men_at_arms_cap = 3
+		men_at_arms_limit = 3
+		monthly_county_control_change_factor = 0.3
+		dread_gain_mult = 0.3
+		powerful_vassal_opinion = 25
+		clergy_opinion = 25
+		same_faith_opinion = 25
+		monthly_piety = 3
+		monthly_prestige = 3
+		monthly_dynasty_prestige = 6
+		knight_limit = 3
+		knight_effectiveness_mult = 0.3
+		skirmishers_damage_add = 10
+		skirmishers_pursuit_add = 10
+		skirmishers_toughness_add = 10
+		pikemen_toughness_add = 15
+		pikemen_damage_add = 15
+		heavy_infantry_toughness_add = 5
+		heavy_infantry_damage_add = 5
+		heavy_cavalry_toughness_add = 10
+		heavy_cavalry_damage_add = 10
+		army_maintenance_mult = -0.3
+	}
+	province_modifier = {
+		monthly_income = 3
+		levy_size = 0.1
+		levy_reinforcement_rate = 0.2
+		defender_advantage = 10
+		fort_level = 5
+	}
+	county_modifier = {
+		supply_limit = 10000
+		development_growth = 0.3
+		development_growth_factor = 0.3
+		tax_mult = 0.3
+		hostile_raid_time = 0.3
+	}
+	ai_value = {
+		base = 0
+	}
+	type = regular
+}
+
+du_lost_city_04 = {
+	next_building = du_lost_city_05
+	construction_time = very_slow_construction_time
+	#cost_gold = 4500
+	garrison = 3000
+	cost = {
+		gold = 3000
+	}
+	type_icon = "icon_building_hall_of_heroes.dds"
+	can_construct_potential = {
+		building_requirement_tribal = no
+		#barony = title:b_hradec
+		barony = title:b_praha
+	}
+	# can_construct = {
+	# 	scope:holder.culture = {
+	# 		has_innovation = innovation_battlements
+	# 	}
+	# }
+	character_modifier = {
+		men_at_arms_cap = 3
+		men_at_arms_limit = 3
+		monthly_county_control_change_factor = 0.3
+		dread_gain_mult = 0.3
+		powerful_vassal_opinion = 35
+		clergy_opinion = 35
+		same_faith_opinion = 25
+		monthly_piety = 3
+		monthly_prestige = 3
+		monthly_dynasty_prestige = 6
+		knight_limit = 5
+		knight_effectiveness_mult = 0.5
+		skirmishers_damage_add = 10
+		skirmishers_pursuit_add = 10
+		skirmishers_toughness_add = 10
+		pikemen_toughness_add = 20
+		pikemen_damage_add = 20
+		heavy_infantry_toughness_add = 10
+		heavy_infantry_damage_add = 10
+		heavy_cavalry_toughness_add = 15
+		heavy_cavalry_damage_add = 15
+		army_maintenance_mult = -0.5
+	}
+	province_modifier = {
+		monthly_income = 5
+		levy_size = 0.1
+		levy_reinforcement_rate = 0.2
+		defender_advantage = 15
+		fort_level = 8
+	}
+	county_modifier = {
+		supply_limit = 15000
+		development_growth = 0.5
+		development_growth_factor = 0.5
+		tax_mult = 0.5
+		hostile_raid_time = 0.5
+	}
+	ai_value = {
+		base = 0
+	}
+	type = regular
+}
+
+du_lost_city_05 = {
+	construction_time = very_slow_construction_time
+	#cost_gold = 4500
+	garrison = 5000
+	cost = {
+		gold = 5000
+	}
+	type_icon = "icon_building_hall_of_heroes.dds"
+	can_construct_potential = {
+		building_requirement_tribal = no
+		#barony = title:b_hradec
+		barony = title:b_praha
+	}
+	# can_construct = {
+	# 	scope:holder.culture = {
+	# 		has_innovation = innovation_battlements
+	# 	}
+	# }
+	character_modifier = {
+		men_at_arms_cap = 5
+		men_at_arms_limit = 5
+		monthly_county_control_change_factor = 0.5
+		dread_gain_mult = 0.5
+		powerful_vassal_opinion = 50
+		clergy_opinion = 50
+		same_faith_opinion = 30
+		monthly_piety = 5
+		monthly_prestige = 5
+		monthly_dynasty_prestige = 10
+		knight_limit = 5
+		knight_effectiveness_mult = 0.5
+		skirmishers_damage_add = 20
+		skirmishers_pursuit_add = 20
+		skirmishers_toughness_add = 20
+		pikemen_toughness_add = 30
+		pikemen_damage_add = 30
+		heavy_infantry_toughness_add = 20
+		heavy_infantry_damage_add = 20
+		heavy_cavalry_toughness_add = 50
+		heavy_cavalry_damage_add = 50
+		army_maintenance_mult = -0.5
+	}
+	province_modifier = {
+		monthly_income = 10
+		levy_size = 0.1
+		levy_reinforcement_rate = 0.2
+		defender_advantage = 20
+		fort_level = 10
+	}
+	county_modifier = {
+		supply_limit = 20000
+		development_growth = 0.5
+		development_growth_factor = 0.5
+		tax_mult = 0.5
+		hostile_raid_time = 0.5
+	}
+	ai_value = {
+		base = 0
+	}
+	type = regular
+}

@@ -1,0 +1,60 @@
+#外貌协会
+tyranny_gain_remove = {
+	index = 503
+	diplomacy = 3
+	fertility = 0.2
+	attraction_opinion = 50
+	monthly_piety_gain_mult = 1
+	monthly_prestige_gain_mult = 1
+	stress_loss_mult = 0.8
+	health = 1
+	genetic = no
+	good = yes
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = {
+						exists = this
+					}
+				}
+				desc = trait_tyranny_gain_remove_desc
+			}
+			desc = trait_tyranny_gain_remove_character_desc
+		}
+	}
+}
+
+#天神下凡
+boost_stats = {
+	index = 504
+	prowess = 50
+	diplomacy = 25
+	stewardship = 25
+	martial = 25
+	intrigue = 25
+	learning = 25
+	health = 5
+	monthly_dynasty_prestige_mult = 1
+	monthly_dynasty_prestige = 10
+	monthly_lifestyle_xp_gain_mult = 2
+	monthly_piety_gain_mult = 1
+	monthly_prestige_gain_mult = 1
+	knight_limit = 5
+	knight_effectiveness_mult = 0.5
+	genetic = no
+	good = yes
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = {
+						exists = this
+					}
+				}
+				desc = trait_boost_stats_desc
+			}
+			desc = trait_boost_stats_character_desc
+		}
+	}
+}
