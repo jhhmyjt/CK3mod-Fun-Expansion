@@ -25,6 +25,13 @@ castle_holding = {
 		hall_of_heroes_01
 		special_sicilian_parliament_01
 		special_greenhouse_01
-		du_lost_city_01
+		hc_pantheon_01
+		hc_katsura_palace_01
+		hc_kings_loading_01
+		hc_rock_castle_01
+		hc_abandoned_place_01
+		hc_colosseum_01
+		hc_the_wall_01
+		hc_old_town_01
 	}
 }
