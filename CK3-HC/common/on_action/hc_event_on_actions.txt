@@ -1,0 +1,29 @@
+# on_action_hc_event = {
+# 	on_actions = {
+# 		on_action_hc_event_01
+# 	}
+# }
+# on_action_hc_event_01 = {
+# 	events = {
+# 		hc_event.001
+# 		hc_event.002
+# 	}
+# 	on_actions = {
+# 		delay = {
+# 			days = 30
+# 		}
+# 		on_action_hc_event_01
+# 	}
+# }
+on_action_hc_event = {
+	events = {
+		hc_event.001
+		hc_event.002
+	}
+	on_actions = {
+		delay = {
+			days = 30
+		}
+		on_action_hc_event
+	}
+}

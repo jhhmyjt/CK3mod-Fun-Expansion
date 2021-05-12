@@ -1,0 +1,5 @@
+﻿l_simp_chinese:
+ hc_event.001.desc.desc:0 "event1"
+ hc_event.001.a:0 "option1"
+ hc_event.002.desc:0 "event2"
+ hc_event.002.a:0 "option1"

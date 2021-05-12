@@ -1,0 +1,61 @@
+namespace = hc_event
+hc_event.001 = {
+	desc = hc_event.001.desc
+	left_portrait = {
+		character = ROOT
+		animation = stress
+	}
+	theme = crown
+	override_background = {
+		reference = garden
+	}
+	trigger = {
+		NOT = {
+			has_character_modifier = hc_modifier_01
+		}
+		NOT = {
+			has_character_modifier = hc_modifier_02
+		}
+		NOT = {
+			has_trait = god_descent
+		}
+	}
+	option = {
+		name = hc_event.001.a
+		add_character_modifier = {
+			modifier = hc_modifier_01
+			days = 30
+		}
+		add_character_modifier = {
+			modifier = hc_modifier_02
+			years = 1
+		}
+		add_gold = 1000
+	}
+}
+
+hc_event.002 = {
+	desc = hc_event.002.desc
+	left_portrait = {
+		character = ROOT
+		animation = war_over_win
+	}
+	theme = crown
+	override_background = {
+		reference = garden
+	}
+	trigger = {
+		has_character_modifier = hc_modifier_02
+		NOT = {
+			has_character_modifier = hc_modifier_01
+		}
+		NOT = {
+			has_trait = god_descent
+		}
+	}
+	option = {
+		name = hc_event.002.a
+		remove_character_modifier = hc_modifier_02
+		add_trait = god_descent
+	}
+}

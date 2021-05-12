@@ -1,6 +1,6 @@
 #外貌协会
-tyranny_gain_remove = {
-	index = 503
+beauty_club = {
+	index = 5001
 	diplomacy = 3
 	fertility = 0.2
 	attraction_opinion = 50
@@ -18,16 +18,16 @@ tyranny_gain_remove = {
 						exists = this
 					}
 				}
-				desc = trait_tyranny_gain_remove_desc
+				desc = trait_beauty_club_desc
 			}
-			desc = trait_tyranny_gain_remove_character_desc
+			desc = trait_beauty_club_character_desc
 		}
 	}
 }
 
 #天神下凡
-boost_stats = {
-	index = 504
+god_descent = {
+	index = 5002
 	prowess = 50
 	diplomacy = 25
 	stewardship = 25
@@ -52,9 +52,9 @@ boost_stats = {
 						exists = this
 					}
 				}
-				desc = trait_boost_stats_desc
+				desc = trait_god_descent_desc
 			}
-			desc = trait_boost_stats_character_desc
+			desc = trait_god_descent_character_desc
 		}
 	}
 }

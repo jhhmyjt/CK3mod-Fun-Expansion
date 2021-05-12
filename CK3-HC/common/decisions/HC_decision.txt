@@ -1,0 +1,19 @@
+#开始
+hc_begin_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	cooldown = {
+		days = 3650
+	}
+	is_shown = {
+		is_ai = no
+		NOT = {
+			has_trait = god_descent
+		}
+	}
+	effect = {
+		trigger_event = {
+			on_action = on_action_hc_event
+		}
+	}
+	ai_check_interval = 0
+}

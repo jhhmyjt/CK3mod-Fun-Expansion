@@ -1,7 +1,0 @@
-﻿l_simp_chinese:
- trait_tyranny_gain_remove:0 "清水出芙蓉"
- trait_tyranny_gain_remove_desc:0 "清水出芙蓉"
- trait_tyranny_gain_remove_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip]有一张圆圆的鹅蛋脸，眼珠子盈盈秋水，两颊晕红，周身透着一股青春活泼却不逊威严的气息，约莫二十二三岁，肤光胜雪，眉目如画，竟是一个绝色丽人。"
- trait_boost_stats:0 "神族后裔"
- trait_boost_stats_desc:0 "中世纪大陆上众生厮杀，但还没有一个具有灵魂的、能够主宰周围世界的高级生物。这时一位无名者横空出世了，他是被宙斯放逐的古老的神衹族的后裔。他聪慧而睿智，知道天神的伟力蕴藏在泥土中，于是他捧起泥土，用河水把它沾湿调和起来，参悟世界的主宰，即天神的意志，从大地的灵魂中摄取了众生之力，将它们封进自己胸膛里。"
- trait_boost_stats_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip]是古老的神衹族后裔，他拥有令人难以想象的强大力量并将主宰这片大陆"
