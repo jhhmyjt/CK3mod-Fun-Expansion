@@ -12,8 +12,10 @@ hc_begin_decision = {
 	}
 	effect = {
 		trigger_event = {
-			on_action = on_action_hc_event
+			id = hc.001
+			days = 5
 		}
 	}
-	ai_check_interval = 0
+	ai_goal = no
+	ai_check_frequency = 0
 }

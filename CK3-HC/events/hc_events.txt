@@ -1,6 +1,6 @@
-namespace = hc_event
-hc_event.001 = {
-	desc = hc_event.001.desc
+namespace = hc
+hc.001 = {
+	desc = hc.001.desc
 	left_portrait = {
 		character = ROOT
 		animation = stress
@@ -21,7 +21,7 @@ hc_event.001 = {
 		}
 	}
 	option = {
-		name = hc_event.001.a
+		name = hc.001.a
 		add_character_modifier = {
 			modifier = hc_modifier_01
 			days = 30
@@ -31,11 +31,15 @@ hc_event.001 = {
 			years = 1
 		}
 		add_gold = 1000
+		trigger_event = {
+			id = hc.002
+			days = 30
+		}
 	}
 }
 
-hc_event.002 = {
-	desc = hc_event.002.desc
+hc.002 = {
+	desc = hc.002.desc
 	left_portrait = {
 		character = ROOT
 		animation = war_over_win
@@ -54,7 +58,7 @@ hc_event.002 = {
 		}
 	}
 	option = {
-		name = hc_event.002.a
+		name = hc.002.a
 		remove_character_modifier = hc_modifier_02
 		add_trait = god_descent
 	}
