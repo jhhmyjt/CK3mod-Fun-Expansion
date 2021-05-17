@@ -1,4 +1,5 @@
 namespace = hc
+#接受神考
 hc.001 = {
 	type = character_event
 	desc = hc.001.desc
@@ -9,28 +10,22 @@ hc.001 = {
 	}
 	theme = crown
 	override_background = {
-		reference = garden
+		reference = corridor_night
 	}
-	# trigger = {
-	# 	NOT = {
-	# 		has_character_modifier = hc_modifier_01
-	# 	}
-	# 	NOT = {
-	# 		has_character_modifier = hc_modifier_02
-	# 	}
-	# 	NOT = {
-	# 		has_trait = god_descent
-	# 	}
-	# }
+	trigger = {
+		# NOT = {
+		# 	has_character_modifier = hc_modifier_01
+		# }
+		# NOT = {
+		# 	has_trait = god_descent
+		# }
+		is_ai = no
+	}
 	option = {
 		name = hc.001.a
 		add_character_modifier = {
 			modifier = hc_01_modifier
-			days = 30
-		}
-		add_character_modifier = {
-			modifier = hc_02_modifier
-			years = 1
+			days = 365
 		}
 		add_gold = 1000
 		trigger_event = {
@@ -40,6 +35,7 @@ hc.001 = {
 	}
 }
 
+#神考结束
 hc.002 = {
 	type = character_event
 	title = hc.002.t
@@ -52,18 +48,153 @@ hc.002 = {
 	override_background = {
 		reference = garden
 	}
-	# trigger = {
-	# 	has_character_modifier = hc_modifier_02
-	# 	NOT = {
-	# 		has_character_modifier = hc_modifier_01
-	# 	}
-	# 	NOT = {
-	# 		has_trait = god_descent
-	# 	}
-	# }
+	trigger = {
+		# has_character_modifier = hc_modifier_02
+		# NOT = {
+		# 	has_trait = god_descent
+		# }
+		is_ai = no
+	}
 	option = {
 		name = hc.002.a
-		remove_character_modifier = hc_02_modifier
+		remove_character_modifier = hc_01_modifier
 		add_trait = god_descent
+		trigger_event = {
+			on_action = on_action_hc
+		}
+	}
+}
+
+#拔出圣剑
+hc.003 = {
+	type = character_event
+	desc = hc.003.desc
+	title = hc.003.t
+	left_portrait = {
+		character = ROOT
+		animation = personality_honorable
+	}
+	theme = battle
+	override_background = {
+		reference = army_camp
+	}
+	trigger = {
+		is_in_army = yes
+		#is_at_war=yes
+		is_ai = no
+		NOT = {
+			has_trait = saint_sword
+		}
+		NOT = {
+			has_character_modifier = hc_02_modifier
+		}
+	}
+	option = {
+		name = hc.003.a
+		add_trait = saint_sword
+	}
+}
+
+#圣剑归鞘
+hc.004 = {
+	type = character_event
+	desc = hc.004.desc
+	title = hc.004.t
+	left_portrait = {
+		character = ROOT
+		animation = personality_honorable
+	}
+	theme = battle
+	override_background = {
+		reference = army_camp
+	}
+	trigger = {
+		NOT = {
+			is_in_army = yes
+		}
+		NOT = {
+			has_character_modifier = hc_02_modifier
+		}
+		has_trait = saint_sword
+		is_ai = no
+	}
+	option = {
+		name = hc.004.a
+		remove_trait = saint_sword
+		add_character_modifier = {
+			modifier = hc_02_modifier
+			months = 3
+		}
+	}
+}
+
+#============事件隐藏=================#
+#拔出圣剑
+hc.005 = {
+	hidden = yes
+	type = character_event
+	desc = hc.005.desc
+	title = hc.005.t
+	left_portrait = {
+		character = ROOT
+		animation = personality_honorable
+	}
+	theme = battle
+	override_background = {
+		reference = army_camp
+	}
+	trigger = {
+		has_character_modifier = hc_02_modifier
+		is_in_army = yes
+		is_ai = no
+		NOT = {
+			has_trait = saint_sword
+		}
+	}
+	option = {
+		name = hc.005.a
+		add_trait = saint_sword
+	}
+}
+
+#圣剑归鞘
+hc.006 = {
+	hidden = yes
+	type = character_event
+	desc = hc.006.desc
+	title = hc.006.t
+	left_portrait = {
+		character = ROOT
+		animation = personality_honorable
+	}
+	theme = battle
+	override_background = {
+		reference = army_camp
+	}
+	trigger = {
+		NOT = {
+			is_in_army = yes
+		}
+		has_trait = saint_sword
+		is_ai = no
+		has_character_modifier = hc_02_modifier
+		#角色处于战争的天数
+		#days_of_continuous_war = 0
+		#角色处于和平的天数
+		#days_of_continuous_peace = 0
+		#比较战争的天数
+		# war_days=0
+		# recent_history = {
+		# 	type = conquest
+		# 	# conquest
+		# 	# conquest_holy_war
+		# 	# conquest_claim
+		# 	# conquest_populist
+		# 	months = 6
+		# }
+	}
+	option = {
+		name = hc.006.a
+		remove_trait = saint_sword
 	}
 }

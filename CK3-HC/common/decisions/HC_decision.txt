@@ -1,6 +1,10 @@
 #开始
 hc_begin_decision = {
 	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	title = "决定开始神考"
+	desc = "自你成年以来, 你内心一直受着强烈的召唤, 你感应到了诸位神圣的存在，神明们似乎在期待发生什么..."
+	selection_tooltip = "你将开始接受诸神的考验"
+	confirm_text = "接受考验"
 	cooldown = {
 		days = 3650
 	}

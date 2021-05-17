@@ -1,12 +1,14 @@
 #外貌协会
 beauty_club = {
 	index = 5001
+	ruler_designer_cost = 100
 	diplomacy = 3
 	fertility = 0.2
 	attraction_opinion = 50
 	monthly_piety_gain_mult = 1
 	monthly_prestige_gain_mult = 1
 	stress_loss_mult = 0.8
+	hostile_scheme_resistance_add = 1
 	health = 1
 	genetic = no
 	good = yes
@@ -27,6 +29,7 @@ beauty_club = {
 
 #天神下凡
 god_descent = {
+	ruler_designer_cost = 100
 	index = 5002
 	prowess = 50
 	diplomacy = 25
@@ -55,6 +58,32 @@ god_descent = {
 				desc = trait_god_descent_desc
 			}
 			desc = trait_god_descent_character_desc
+		}
+	}
+}
+
+#不朽，不灭的圣剑杜兰达尔
+saint_sword = {
+	index = 5003
+	commander = yes
+	ruler_designer_cost = 100
+	supply_duration = 1
+	siege_phase_time = -0.2
+	no_water_crossing_penalty = yes
+	enemy_terrain_advantage = -0.2
+	movement_speed = 0.15
+	retreat_losses = -0.1
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = {
+						exists = this
+					}
+				}
+				desc = trait_saint_sword_desc
+			}
+			desc = trait_saint_sword_character_desc
 		}
 	}
 }
