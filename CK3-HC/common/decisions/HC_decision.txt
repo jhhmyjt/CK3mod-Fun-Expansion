@@ -10,12 +10,14 @@ hc_begin_decision = {
 			has_trait = god_descent
 		}
 	}
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
 	effect = {
 		trigger_event = {
 			id = hc.001
 			days = 5
 		}
 	}
-	ai_goal = no
 	ai_check_frequency = 0
 }

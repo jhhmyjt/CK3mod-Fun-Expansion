@@ -1,5 +1,5 @@
 #神考
-hc_modifier_01 = {
+hc_01_modifier = {
 	icon = stress_negative
 	health = -0.02
 	diplomacy = -2
@@ -12,7 +12,7 @@ hc_modifier_01 = {
 	monthly_prestige = -5
 }
 
-hc_modifier_02 = {
+hc_02_modifier = {
 	icon = magic_positive
 	health = 0.5
 }

@@ -1,0 +1,10 @@
+﻿l_simp_chinese:
+ hc_begin_decision:0 "举办宴会"
+ hc_begin_decision_tooltip:0 "将会举办一场[feast|E]"
+ hc_begin_decision_opening_desc:0 "#F 打开酒桶并邀请尊贵的来宾不仅是一种责任，也是加强忠诚纽带的机会，而且更是一次极乐！#!"
+ hc_begin_decision_desc_vassals:1 "你的封臣对你的[opinion|E]可能会提高"
+ hc_begin_decision_desc_shy:1 "#N 你的[stress|E]不会降低，因为你有[GetTrait('shy').GetName( GetPlayer )]特质#!"
+ hc_begin_decision_desc_stress_medium:1 "你的[stress|E]将会降低"
+ hc_begin_decision_desc_stress:1 "你的[stress|E]可能会降低"
+ hc_begin_decision_desc_liege_opinion:1 "你的领主对你的[opinion|E]可能会提高"
+ hc_begin_decision_confirm:0 "发出邀请"

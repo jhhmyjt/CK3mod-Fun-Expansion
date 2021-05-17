@@ -1,6 +1,8 @@
 namespace = hc
 hc.001 = {
+	type = character_event
 	desc = hc.001.desc
+	title = hc.001.t
 	left_portrait = {
 		character = ROOT
 		animation = stress
@@ -9,25 +11,25 @@ hc.001 = {
 	override_background = {
 		reference = garden
 	}
-	trigger = {
-		NOT = {
-			has_character_modifier = hc_modifier_01
-		}
-		NOT = {
-			has_character_modifier = hc_modifier_02
-		}
-		NOT = {
-			has_trait = god_descent
-		}
-	}
+	# trigger = {
+	# 	NOT = {
+	# 		has_character_modifier = hc_modifier_01
+	# 	}
+	# 	NOT = {
+	# 		has_character_modifier = hc_modifier_02
+	# 	}
+	# 	NOT = {
+	# 		has_trait = god_descent
+	# 	}
+	# }
 	option = {
 		name = hc.001.a
 		add_character_modifier = {
-			modifier = hc_modifier_01
+			modifier = hc_01_modifier
 			days = 30
 		}
 		add_character_modifier = {
-			modifier = hc_modifier_02
+			modifier = hc_02_modifier
 			years = 1
 		}
 		add_gold = 1000
@@ -39,6 +41,8 @@ hc.001 = {
 }
 
 hc.002 = {
+	type = character_event
+	title = hc.002.t
 	desc = hc.002.desc
 	left_portrait = {
 		character = ROOT
@@ -48,18 +52,18 @@ hc.002 = {
 	override_background = {
 		reference = garden
 	}
-	trigger = {
-		has_character_modifier = hc_modifier_02
-		NOT = {
-			has_character_modifier = hc_modifier_01
-		}
-		NOT = {
-			has_trait = god_descent
-		}
-	}
+	# trigger = {
+	# 	has_character_modifier = hc_modifier_02
+	# 	NOT = {
+	# 		has_character_modifier = hc_modifier_01
+	# 	}
+	# 	NOT = {
+	# 		has_trait = god_descent
+	# 	}
+	# }
 	option = {
 		name = hc.002.a
-		remove_character_modifier = hc_modifier_02
+		remove_character_modifier = hc_02_modifier
 		add_trait = god_descent
 	}
 }

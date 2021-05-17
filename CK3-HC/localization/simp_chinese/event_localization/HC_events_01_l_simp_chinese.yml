@@ -1,5 +1,7 @@
 ﻿l_simp_chinese:
- hc.001.desc.desc:0 "神罚降临"
+ hc.001.t:0 "event1"
+ hc.001.desc:0 "神罚降临"
  hc.001.a:0 "option1"
- hc.002.desc:0 "神罚退去
+ hc.002.t:0 "event2"
+ hc.002.desc:0 "神罚退去"
  hc.002.a:0 "option1"
