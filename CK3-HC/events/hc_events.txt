@@ -30,7 +30,7 @@ hc.001 = {
 		add_gold = 1000
 		trigger_event = {
 			id = hc.002
-			days = 30
+			days = 365
 		}
 	}
 }
