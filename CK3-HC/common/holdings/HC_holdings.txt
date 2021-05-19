@@ -26,7 +26,7 @@ castle_holding = {
 		special_sicilian_parliament_01
 		special_greenhouse_01
 		hc_pantheon_01
-		hc_katsura_palace_01
+		hc_moon_palace_01
 		hc_kings_loading_01
 		hc_rock_castle_01
 		hc_abandoned_place_01

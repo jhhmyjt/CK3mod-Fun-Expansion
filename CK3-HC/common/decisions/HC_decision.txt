@@ -3,9 +3,13 @@ hc_begin_decision = {
 	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
 	# title = "开始神考"
 	# desc = "自你成年以来, 你内心一直受着强烈的召唤, 你感应到了诸位神圣的存在，神明们似乎在期待发生什么...\n
-	# 你将在一年之内"
+	# （警告：你将在一年之内持续受到严重的惩罚）"
 	# selection_tooltip = "你将开始接受诸神的考验"
 	# confirm_text = "接受考验"
+	title = hc_begin_decision_t
+	selection_tooltip = hc_begin_decision_tooltip
+	desc = hc_begin_decision_desc
+	confirm_text = hc_begin_decision_confirm
 	major = yes
 	cooldown = {
 		days = 3650
@@ -27,3 +31,38 @@ hc_begin_decision = {
 	}
 	ai_check_frequency = 0
 }
+
+#添加特殊建筑
+# creat_building_decision = {
+# 	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+# 	major = yes
+# 	cooldown = {
+# 		days = 3650
+# 	}
+# 	ai_check_interval = 0
+# 	desc = creat_building_decision_desc
+# 	selection_tooltip = creat_building_decision_tooltip
+# 	is_shown = {
+# 		#has_trait = god_descent
+# 		is_landed = yes
+# 		exists = capital_province
+# 	}
+# 	is_valid = {
+# 		prestige_level >= 1
+# 	}
+# 	is_valid_showing_failures_only = {
+# 		is_ruler = yes
+# 		is_available_adult = yes
+# 	}
+# 	effect = {
+# 		trigger_event = hc.007
+# 	}
+# 	cost = {
+# 	}
+# 	ai_potential = {
+# 		always = no
+# 	}
+# 	ai_will_do = {
+# 		base = 0
+# 	}
+# }

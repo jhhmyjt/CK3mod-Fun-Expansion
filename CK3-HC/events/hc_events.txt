@@ -67,6 +67,9 @@ hc.002 = {
 		# }
 		is_ai = no
 	}
+	immediate = {
+		play_music_cue = "mx_cue_epic_sacral_moment"
+	}
 	option = {
 		name = hc.002.a
 		remove_character_modifier = hc_01_modifier
@@ -74,6 +77,11 @@ hc.002 = {
 		trigger_event = {
 			on_action = on_action_hc
 		}
+		set_nickname_effect = {
+			NICKNAME = nick_the_god
+			# NICKNAME = "圣骑士"
+		}
+		# give_nickname = nick_the_god
 	}
 }
 
@@ -210,3 +218,26 @@ hc.006 = {
 		remove_trait = saint_sword
 	}
 }
+
+# hc.007 = {
+# 	type = character_event
+# 	title = major_decisions.3001.t
+# 	desc = major_decisions.3001.desc
+# 	theme = stewardship
+# 	left_portrait = {
+# 		character = ROOT
+# 		animation = personality_irrational
+# 	}
+# 	override_background = {
+# 		event_background = garden
+# 	}
+# 	immediate = {
+# 		play_music_cue = "mx_cue_low_key_positive"
+# 	}
+# 	option = {
+# 		name = major_decisions.3001.a
+# 		title:b_hradec = {
+# 			add_special_building_slot = hc_old_town_01
+# 		}
+# 	}
+# }

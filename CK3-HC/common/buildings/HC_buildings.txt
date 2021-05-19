@@ -58,9 +58,9 @@ hc_pantheon_02 = {
 	type = regular
 }
 
-#桂离宫
-hc_katsura_palace_01 = {
-	next_building = hc_katsura_palace_02
+#明月阁
+hc_moon_palace_01 = {
+	next_building = hc_moon_palace_02
 	construction_time = 365
 	cost = {
 		gold = 350
@@ -86,7 +86,7 @@ hc_katsura_palace_01 = {
 	type = regular
 }
 
-hc_katsura_palace_02 = {
+hc_moon_palace_02 = {
 	construction_time = very_slow_construction_time
 	cost = {
 		gold = 2000
@@ -130,7 +130,7 @@ hc_kings_loading_01 = {
 	type_icon = "icon_structure_theodosian_walls.dds"
 	can_construct_potential = {
 		building_requirement_tribal = no
-		barony = title:b_hradec
+		barony = title:b_aquileia
 	}
 	can_construct = {
 		culture = {
@@ -177,7 +177,7 @@ hc_rock_castle_01 = {
 	type_icon = "icon_structure_the_citadel_of_aleppo.dds"
 	can_construct_potential = {
 		building_requirement_tribal = no
-		barony = title:b_hradec
+		barony = title:b_bordeaux
 	}
 	can_construct = {
 		culture = {
@@ -215,7 +215,7 @@ hc_abandoned_place_01 = {
 	type_icon = "icon_structure_palace_of_achen.dds"
 	can_construct_potential = {
 		building_requirement_tribal = no
-		barony = title:b_hradec
+		barony = title:b_eichstadt
 	}
 	can_construct = {
 		culture = {
@@ -328,7 +328,7 @@ hc_the_wall_01 = {
 	type_icon = "icon_structure_walls_of_benin.dds"
 	can_construct_potential = {
 		building_requirement_tribal = no
-		barony = title:b_hradec
+		barony = title:b_lubeck
 	}
 	can_construct = {
 		culture = {
@@ -383,7 +383,7 @@ hc_old_town_01 = {
 	type_icon = "icon_structure_temple_in_jerusalem.dds"
 	can_construct_potential = {
 		building_requirement_tribal = no
-		barony = title:b_hradec
+		barony = title:b_cordoba
 	}
 	is_enabled = {
 	}
@@ -413,7 +413,7 @@ hc_old_town_02 = {
 	type_icon = "icon_structure_temple_in_jerusalem.dds"
 	can_construct_potential = {
 		building_requirement_tribal = no
-		barony = title:b_hradec
+		barony = title:b_cordoba
 	}
 	can_construct = {
 		culture = {
