@@ -1,0 +1,50 @@
+[h1]Overview[/h1]
+1 Decision, 4 Events, 2 Traits, 2 Modifiers, 1 Nickname and some Buildings
+
+[h1]Decisions[/h1]
+[b]Holy Examination[/b]:
+Trigger conditions: non-ai, adult character. (10 years cooling period)
+The character will continue to be severely punished for a year, and will receive a powerful buff after the end
+
+[h1]Events[/h1]
+[list]
+      [*]Draw the Holy Sword: The character gains military commander traits when commanding the army
+      [*]Holy Sword in the Sheath: When the character is no longer in command of the army, it loses the general trait and gains a minor health modifier
+[/list]
+[b]Reminder: These two events will not appear when the player frequently switches the main ruler and the character frequently leads the army. The event pop-up window has a 3-month cooldown, during which the event will still be triggered but will not be displayed.[/b]
+
+[h1]Traits[/h1]
+[list]
+      [*] Favor of the Gods: huge bonus, obtained after completing the God test
+      [*]Immortal, Indestructible Sword Durandal: Military bonus, obtained when commanding an army (provided that you have the Gods’ Blessing trait)
+[/list]
+
+[h1]Title[/h1]
+[b]Paladin[/b]: Obtained after completing the god test
+
+[h1]Buildings[/h1]
+Some buildings are based on [i] A Song of Ice and Fire[/i], the following buildings can only be built by players
+[list]
+      [*]Mingyue Pavilion: Friendship bonus, can be built in the Baron Hradec (Duchy of Bohemia)
+      [*] King’s Landing City: Taxation, development, direct jurisdiction bonuses, can be built in the Baron of Aquileia (Duchy of Friuli)
+      [*]Kay Rock City: Supply, soldier bonus, can be built in the Baron of Bordeaux (Duchy of Gascogne)
+      [*]The Abandoned Land of Herrenborg: Horror value, tyranny bonus, can be built in the Baron of Eichstatt (Duchy of Nordgau)
+      [*]The Great Wall of Impossibility: Omen, Legion Bonus, can be built in the Baron of Lübeck (Dukedom of Holstein)
+      [*]Old Town: Lifestyle, cultural reform bonus, can be built in the Baronial Cordoba (Duchy of Cordoba)
+      [*]Rome Pantheon: Prestige, clan prestige bonus, can be built in Rome baronial
+      [*] Ancient Roman Colosseum: Number of knights, bonus for knights' combat power, can be built in Rome baronial
+[/list]
+
+[h1]Support language[/h1]
+Simplified Chinese
+English (Google Translate)
+
+[h1]Compatibility[/h1]
+Compatible with most mods (not surprisingly)
+
+[h1]More information[/h1]
+[list]
+      [*][url=https://github.com/jhhmyjt/CK3mod-Fun-Expansion]GitHub[/url]
+      [*][url=https://gitee.com/jhhmyjt/ckmods]Gitee[/url]
+      [*][url=https://tieba.baidu.com/p/7358853396?pid=139371833733&cid=0&red_tag=2716365086#139371833733]Baidu Post Bar[/url]
+[/list] 

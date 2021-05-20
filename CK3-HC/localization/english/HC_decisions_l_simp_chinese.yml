@@ -1,0 +1,5 @@
+﻿l_english:
+ hc_begin_decision_t:0 "Start the god test "
+ hc_begin_decision_tooltip:0 "You will begin to be tested by the gods"
+ hc_begin_decision_desc:0 "Since you were an adult, you have been under a strong call in your heart. You have sensed the divine beings of all of you, and the gods seem to be expecting something to happen... \n（Warning:You will continue to be severely punished for a year ）"
+ hc_begin_decision_confirm:0 "Take the test "
