@@ -1,9 +1,10 @@
+[i]Translated by Google[/i]
 [h1]Overview[/h1]
 1 Decision, 4 Events, 2 Traits, 2 Modifiers, 1 Nickname and some Buildings
 
 [h1]Decisions[/h1]
 [b]Holy Examination[/b]:
-Trigger conditions: non-ai, adult character. (10 years cooling period)
+Trigger conditions: non-ai, adult character. 
 The character will continue to be severely punished for a year, and will receive a powerful buff after the end
 
 [h1]Events[/h1]
@@ -40,11 +41,25 @@ Simplified Chinese
 English (Google Translate)
 
 [h1]Compatibility[/h1]
-Compatible with most mods (not surprisingly)
+Compatible with all mods (not surprisingly)
+Compatible with existing save games
+Incompatible with Ironman
+
+[h1]Recent updates [h1]
+[list]
+       [*]2021.05.21:
+       [list]
+             [*][b]New decisions[/b]: Inheritance ceremony: Durandal, farewell to the world
+             [*][b]New events[/b]: Choice of fate, following the footsteps of the spirits, torture by the heavenly spirits
+             [*][b]New modifiers[/b]: The grace is long, the remaining prestige is still there, and the mission is not insulted
+             [*][b]New nickname[/b]: Trailblazer
+             [*][b]New traits[/b]: Fearlessness, Shelter
+       [/list]
+[/list]
 
 [h1]More information[/h1]
 [list]
       [*][url=https://github.com/jhhmyjt/CK3mod-Fun-Expansion]GitHub[/url]
       [*][url=https://gitee.com/jhhmyjt/ckmods]Gitee[/url]
       [*][url=https://tieba.baidu.com/p/7358853396?pid=139371833733&cid=0&red_tag=2716365086#139371833733]Baidu Post Bar[/url]
-[/list] 
+[/list]
