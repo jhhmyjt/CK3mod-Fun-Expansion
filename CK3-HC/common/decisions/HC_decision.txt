@@ -19,6 +19,15 @@ hc_begin_decision = {
 		NOT = {
 			has_trait = god_descent
 		}
+		NOT = {
+			has_trait = weak_god_descent
+		}
+		NOT = {
+			has_trait = pioneer
+		}
+		NOT = {
+			has_character_modifier = hc_03_modifier
+		}
 	}
 	is_valid_showing_failures_only = {
 		is_available_adult = yes
@@ -28,6 +37,63 @@ hc_begin_decision = {
 			id = hc.001
 			days = 5
 		}
+	}
+	ai_check_frequency = 0
+}
+
+#结束故事
+hc_end_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+	title = hc_end_decision_t
+	selection_tooltip = hc_end_decision_tooltip
+	desc = hc_end_decision_desc
+	confirm_text = hc_end_decision_confirm
+	major = no
+	is_shown = {
+		is_ai = no
+		OR = {
+			has_trait = god_descent
+			has_trait = weak_god_descent
+			has_trait = pioneer
+		}
+		exists = player_heir
+	}
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+	effect = {
+		trigger_event = {
+			id = hc.009
+		}
+		add_dynasty_prestige = 500
+	}
+	ai_check_frequency = 0
+}
+
+#新的开始
+hc_new_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+	title = hc_new_decision_t
+	selection_tooltip = hc_new_decision_tooltip
+	desc = hc_new_decision_desc
+	confirm_text = hc_new_decision_confirm
+	major = yes
+	is_shown = {
+		is_ai = no
+		has_character_modifier = hc_03_modifier
+	}
+	cooldown = {
+		days = 3650
+	}
+	is_valid_showing_failures_only = {
+		is_available_adult = yes
+	}
+	effect = {
+		trigger_event = {
+			id = hc.008
+			days = 2
+		}
+		add_dynasty_prestige = 500
 	}
 	ai_check_frequency = 0
 }

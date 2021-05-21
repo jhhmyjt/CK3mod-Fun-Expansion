@@ -37,7 +37,7 @@ god_descent = {
 	martial = 10
 	intrigue = 10
 	learning = 10
-	health = 5
+	health = 1
 	monthly_dynasty_prestige_mult = 1
 	monthly_dynasty_prestige = 10
 	monthly_lifestyle_xp_gain_mult = 1
@@ -62,6 +62,38 @@ god_descent = {
 	}
 }
 
+#弱化版天神
+weak_god_descent = {
+	ruler_designer_cost = 50
+	index = 5004
+	prowess = 10
+	diplomacy = 5
+	stewardship = 5
+	martial = 5
+	intrigue = 5
+	learning = 5
+	health = 0.5
+	monthly_dynasty_prestige = 1
+	monthly_lifestyle_xp_gain_mult = 0.3
+	monthly_piety_gain_mult = 0.5
+	monthly_prestige_gain_mult = 0.5
+	genetic = no
+	good = yes
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = {
+						exists = this
+					}
+				}
+				desc = trait_weak_god_descent_desc
+			}
+			desc = trait_weak_god_descent_character_desc
+		}
+	}
+}
+
 #不朽，不灭的圣剑杜兰达尔
 saint_sword = {
 	index = 5003
@@ -73,6 +105,7 @@ saint_sword = {
 	enemy_terrain_advantage = -0.2
 	movement_speed = 0.15
 	retreat_losses = -0.1
+	negate_health_penalty_add = 1
 	desc = {
 		first_valid = {
 			triggered_desc = {
@@ -84,6 +117,31 @@ saint_sword = {
 				desc = trait_saint_sword_desc
 			}
 			desc = trait_saint_sword_character_desc
+		}
+	}
+}
+
+#开拓者
+pioneer = {
+	ruler_designer_cost = 50
+	index = 5005
+	prowess = 5
+	learning = 5
+	health = 0.2
+	monthly_lifestyle_xp_gain_mult = 0.5
+	genetic = no
+	good = yes
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = {
+						exists = this
+					}
+				}
+				desc = trait_pioneer_desc
+			}
+			desc = trait_pioneer_character_desc
 		}
 	}
 }

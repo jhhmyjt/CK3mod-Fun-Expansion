@@ -12,7 +12,41 @@ hc_01_modifier = {
 	monthly_prestige = -5
 }
 
+#身披荣耀
 hc_02_modifier = {
 	icon = magic_positive
 	health = 0.5
+}
+
+#福泽绵长
+hc_03_modifier = {
+	icon = prestige_positive
+	health = 0.5
+	diplomacy = 2
+	martial = 2
+	stewardship = 2
+	intrigue = 2
+	learning = 2
+	prowess = 5
+}
+
+#余威犹在
+hc_04_modifier = {
+	icon = county_modifier_control_positive
+	monthly_county_control_change_add = 5
+	general_opinion = 10
+	dynasty_house_opinion = 10
+	councillor_opinion = 10
+	intimidated_vassal_tax_contribution_mult = 0.5
+}
+
+#不辱命
+hc_05_modifier = {
+	icon = social_positive
+	religious_head_opinion = 10
+	spouse_opinion = 10
+	dynasty_house_opinion = 5
+	guest_opinion = 5
+	health = 0.02
+	stress_gain_mul = 0.8
 }

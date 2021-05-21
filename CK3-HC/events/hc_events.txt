@@ -102,6 +102,10 @@ hc.003 = {
 		is_in_army = yes
 		#is_at_war=yes
 		is_ai = no
+		# OR={
+		# 	has_trait =god_descent
+		# 	has_trait =weak_god_descent
+		# }
 		NOT = {
 			has_trait = saint_sword
 		}
@@ -241,3 +245,164 @@ hc.006 = {
 # 		}
 # 	}
 # }
+#命运选择
+hc.008 = {
+	type = character_event
+	title = hc.008.t
+	desc = hc.008.desc
+	left_portrait = {
+		character = ROOT
+		animation = stress
+	}
+	theme = crown
+	override_background = {
+		reference = council_chamber
+	}
+	trigger = {
+		is_ai = no
+	}
+	immediate = {
+		play_music_cue = "mx_cue_epic_sacral_moment"
+	}
+	option = {
+		#不传特质
+		name = hc.008.a
+		add_trait = pioneer
+		set_nickname_effect = {
+			NICKNAME = nick_the_pioneer
+		}
+		add_character_modifier = {
+			modifier = hc_04_modifier
+			months = 3
+		}
+		trigger_event = {
+			on_action = on_action_hc
+		}
+		trigger_event = {
+			id = hc.010
+			years = 5
+		}
+	}
+	option = {
+		#传特质,弱化
+		name = hc.008.b
+		add_trait = weak_god_descent
+		add_character_modifier = {
+			modifier = hc_04_modifier
+			months = 3
+		}
+		trigger_event = {
+			on_action = on_action_hc
+		}
+		trigger_event = {
+			id = hc.010
+			years = 5
+		}
+	}
+}
+
+#去世
+hc.009 = {
+	type = character_event
+	title = hc.009.t
+	desc = hc.009.desc
+	left_portrait = {
+		character = ROOT
+		animation = personality_zealous
+	}
+	right_portrait = {
+		character = ROOT.player_heir
+		animation = grief
+	}
+	theme = death
+	override_background = {
+		reference = throne_room
+	}
+	trigger = {
+		is_ai = no
+	}
+	option = {
+		#家和而去
+		name = hc.009.a
+		every_player_heir = {
+			add_character_modifier = {
+				modifier = hc_03_modifier
+				years = 5
+			}
+			show_as_tooltip = {
+				add_piety_level = 1
+				add_prestige_level = 1
+			}
+		}
+		death = {
+			death_reason = death_suicide
+		}
+	}
+}
+
+#考验事件
+hc.010 = {
+	type = character_event
+	title = hc.010.t
+	desc = hc.010.desc
+	left_portrait = {
+		character = ROOT
+		triggered_animation = {
+			trigger = {
+				prestige_level >= 3
+				piety_level >= 3
+			}
+			animation = happiness
+		}
+		triggered_animation = {
+			trigger = {
+				NOT = {
+					prestige_level >= 3
+					piety_level >= 3
+				}
+			}
+			animation = sadness
+		}
+	}
+	theme = crown
+	override_background = {
+		reference = bedchamber
+	}
+	trigger = {
+		is_ai = no
+	}
+	option = {
+		name = {
+			#good job
+			trigger = {
+				prestige_level >= 3
+				piety_level >= 3
+			}
+			text = hc.010.a
+		}
+		name = {
+			#bad
+			trigger = {
+				NOT = {
+					prestige_level >= 3
+					piety_level >= 3
+				}
+			}
+			text = hc.010.b
+		}
+		if = {
+			limit = {
+				prestige_level >= 3
+				piety_level >= 3
+			}
+			add_dynasty_prestige = 1000
+			add_character_modifier = {
+				modifier = hc_05_modifier
+				days = 90
+			}
+		}
+		else = {
+			add_dynasty_prestige = -500
+		}
+	}
+}
