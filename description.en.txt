@@ -1,6 +1,8 @@
 [i]Translated by Google[/i]
 [h1]Overview[/h1]
-1 Decision, 4 Events, 2 Traits, 2 Modifiers, 1 Nickname and some Buildings
+Some fun decisions, events, traits, modifiers, nicknames and buildings
+
+[b]Attention[/b]: This is my first mod, and it is entertaining so the value does not match the vanilla version. If you have any suggestions, please leave a message.
 
 [h1]Decisions[/h1]
 [b]Holy Examination[/b]:
