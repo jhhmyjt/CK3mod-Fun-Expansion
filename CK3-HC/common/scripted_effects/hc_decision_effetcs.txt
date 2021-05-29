@@ -1,0 +1,93 @@
+embrace_roma_effect = {
+	# Scopes saves for localization
+	root = {
+		save_scope_as = embracer
+	}
+	# Prestige Bonus
+	add_prestige = 1000
+	#Convert your, and your whole family's, culture
+	set_culture = culture:roman
+	# set_character_faith_with_conversion = faith:hellenism
+	if = {
+		limit = {
+			any_spouse = {
+				is_landed = no
+			}
+		}
+		every_spouse = {
+			limit = {
+				is_landed = no
+			}
+			set_culture = culture:roman
+		}
+	}
+	if = {
+		limit = {
+			any_close_family_member = {
+				is_landed = no
+				NOT = {
+					is_spouse_of = root
+				}
+			}
+		}
+		every_close_family_member = {
+			limit = {
+				is_landed = no
+				NOT = {
+					is_spouse_of = root
+				}
+			}
+			custom = all_unlanded_family_members
+			set_culture = culture:roman
+		}
+	}
+	#Convert appropriate vassals, and their family
+	if = {
+		limit = {
+			any_vassal_or_below = {
+				is_ai = yes
+				OR = {
+					culture = culture:greek
+					culture = culture:Assyrian
+				}
+			}
+		}
+		every_vassal_or_below = {
+			custom = embrace_roma_vassals_custom
+			limit = {
+				is_ai = yes
+				OR = {
+					culture = culture:greek
+					culture = culture:Assyrian
+				}
+				# primary_title = {
+				# 	OR = {
+				# 		de_jure_liege = title:k_england
+				# 		de_jure_liege.de_jure_liege = title:k_england
+				# 		de_jure_liege.de_jure_liege.de_jure_liege = title:k_england
+				# 	}
+				# }
+			}
+			set_culture = culture:roman
+		}
+	}
+	#Flip Counties
+	every_county_in_region = {
+		region = custom_roman_full_borders
+		# custom = embrace_roma_counties_custom
+		limit = {
+			target_is_de_facto_liege_or_above = root.primary_title
+		}
+		random = {
+			chance = 50
+			set_county_culture = culture:roman
+			set_county_faith = faith:greco_roman
+		}
+	}
+	culture:roman = {
+		custom_tooltip = decision_embrace_roma_get_innovations
+		hidden_effect = {
+			get_all_innovations_from = culture:embracer_former_culture
+		}
+	}
+}

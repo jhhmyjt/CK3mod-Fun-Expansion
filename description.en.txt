@@ -8,6 +8,10 @@ Some fun decisions, events, traits, modifiers, nicknames and buildings
 [b]Holy Examination[/b]:
 Trigger conditions: non-ai, adult character. 
 The character will continue to be severely punished for a year, and will receive a powerful buff after the end
+[b]Farewell to the world[/b]:
+The character will die in a few days
+[b]Inheritance ceremony: Durandal[/b]:
+The character becomes the guardian of the holy sword Durandal 
 
 [h1]Events[/h1]
 [list]
@@ -15,15 +19,22 @@ The character will continue to be severely punished for a year, and will receive
       [*]Holy Sword in the Sheath: When the character is no longer in command of the army, it loses the general trait and gains a minor health modifier
 [/list]
 [b]Reminder: These two events will not appear when the player frequently switches the main ruler and the character frequently leads the army. The event pop-up window has a 3-month cooldown, during which the event will still be triggered but will not be displayed.[/b]
+[list]
+      [*]Fate Choice: You will make your own choice
+      [*]Tian Ling Torture: Characters will be rewarded or punished based on their piety and prestige level 
+[/list]
 
 [h1]Traits[/h1]
 [list]
       [*] Favor of the Gods: huge bonus, obtained after completing the God test
       [*]Immortal, Indestructible Sword Durandal: Military bonus, obtained when commanding an army (provided that you have the Gods’ Blessing trait)
+      [*]Sherring's Asylum: A weakened version of Favor of the Gods
+      [*]Fearless: Bravery, life experience gains bonus 
 [/list]
 
-[h1]Title[/h1]
+[h1]Nicknames[/h1]
 [b]Paladin[/b]: Obtained after completing the god test
+[b]Pioneer[/b]: Obtained in Fate Choice
 
 [h1]Buildings[/h1]
 Some buildings are based on [i] A Song of Ice and Fire[/i], the following buildings can only be built by players

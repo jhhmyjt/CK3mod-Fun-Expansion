@@ -1,0 +1,84 @@
+namespace = coronation
+#册封事件
+coronation.001 = {
+	type = character_event
+	desc = coronation.001.desc
+	title = coronation.001.t
+	left_portrait = {
+		character = ROOT
+		animation = personality_honorable
+	}
+	right_portrait = {
+		character = ROOT.primary_spouse
+		animation = love
+	}
+	theme = crown
+	override_background = {
+		reference = feast
+	}
+	trigger = {
+		is_ai = no
+	}
+	option = {
+		name = coronation.001.a
+		ROOT.primary_spouse = {
+			if = {
+				limit = {
+					is_female = yes
+				}
+				add_trait = beauty_club
+			}
+			set_nickname_effect = {
+				NICKNAME = nick_hc_the_crowner
+				# NICKNAME = "加冕者"
+			}
+			add_prestige = 750
+			add_piety = 600
+		}
+		add_character_modifier = {
+			modifier = hc_08_modifier
+			months = 6
+		}
+		trigger_event = {
+			on_action = on_action_coronation
+		}
+	}
+}
+
+#回收事件
+coronation.100 = {
+	hidden = yes
+	type = character_event
+	desc = coronation.100.desc
+	title = coronation.100.t
+	left_portrait = {
+		character = ROOT
+		animation = stress
+	}
+	theme = crown
+	override_background = {
+		reference = corridor_night
+	}
+	trigger = {
+		any_former_spouse = {
+			exists = this
+		}
+	}
+	option = {
+		every_former_spouse = {
+			limit = {
+				OR = {
+					has_trait = beauty_club
+					has_nickname = nick_hc_the_crowner
+				}
+			}
+			if = {
+				limit = {
+					is_female = yes
+				}
+				remove_trait = beauty_club
+			}
+			remove_nickname = nick_hc_the_crowner
+		}
+	}
+}

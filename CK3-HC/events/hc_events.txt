@@ -31,7 +31,7 @@ hc.001 = {
 		add_dynasty_prestige = -100
 		trigger_event = {
 			id = hc.002
-			days = 365
+			days = 30
 		}
 	}
 	option = {
@@ -279,8 +279,10 @@ hc.008 = {
 			on_action = on_action_hc
 		}
 		trigger_event = {
-			id = hc.010
+			# id = hc.010
+			# years = 5
 			years = 5
+			on_action = on_action_certified
 		}
 	}
 	option = {
@@ -295,8 +297,8 @@ hc.008 = {
 			on_action = on_action_hc
 		}
 		trigger_event = {
-			id = hc.010
 			years = 5
+			on_action = on_action_certified
 		}
 	}
 }
@@ -404,5 +406,27 @@ hc.010 = {
 		else = {
 			add_dynasty_prestige = -500
 		}
+	}
+}
+
+#恢复罗马事件
+hc.011 = {
+	type = character_event
+	title = hc.011.t
+	desc = hc.011.desc
+	theme = culture_change
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	immediate = {
+		save_scope_as = embracer
+		culture = {
+			save_scope_as = embracer_former_culture
+		}
+	}
+	option = {
+		name = hc.011.a
+		embrace_roma_effect = yes
 	}
 }

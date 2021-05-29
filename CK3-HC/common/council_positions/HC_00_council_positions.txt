@@ -1,6 +1,8 @@
+# #内阁侍卫
 # councillor_attendant = {
 # 	skill = martial
 # 	name = councillor_attendant
+# 	tooltip = game_concept_marshal_desc
 # 	special_council_position = yes
 # 	auto_fill = no
 # 	Inherit = no
@@ -15,13 +17,102 @@
 # 	council_owner_modifier = {
 # 		name = learn_on_the_job_modifier
 # 		martial = 5
-# 		scale = attendant_learn_on_the_job_scale
+# 		scale = marshal_learn_on_the_job_scale
 # 	}
 # 	on_get_position = {
 # 		got_council_position_effect = yes
 # 	}
 # 	on_fired_from_position = {
 # 		fired_from_council_position_effect = yes
+# 	}
+# 	valid_character = {
+# 		exists = root.liege_or_court_owner
+# 		can_be_attendant_trigger = {
+# 			COURT_OWNER = root.liege_or_court_owner
+# 		}
+# 	}
+# 	valid_position = {
+# 		is_ai = no
+# 	}
+# 	use_for_scheme_power = yes
+# 	use_for_scheme_resistance = yes
+# 	portrait_animation = marshal
+# }
+# #君主老师-lifestyle
+# councillor_teacher = {
+# 	skill = martial
+# 	name = councillor_teacher
+# 	tooltip = game_concept_marshal_desc
+# 	special_council_position = yes
+# 	auto_fill = no
+# 	Inherit = no
+# 	can_fire = yes
+# 	can_reassign = yes
+# 	tooltip = game_concept_attendant_desc
+# 	modifier = {
+# 		name = councillor_teacher_modifier
+# 		martial = 5
+# 		scale = council_scaled_by_liege_tier
+# 	}
+# 	council_owner_modifier = {
+# 		name = learn_on_the_job_modifier
+# 		martial = 5
+# 		scale = marshal_learn_on_the_job_scale
+# 	}
+# 	on_get_position = {
+# 		got_council_position_effect = yes
+# 	}
+# 	on_fired_from_position = {
+# 		fired_from_council_position_effect = yes
+# 	}
+# 	valid_character = {
+# 		exists = root.liege_or_court_owner
+# 		can_be_attendant_trigger = {
+# 			COURT_OWNER = root.liege_or_court_owner
+# 		}
+# 	}
+# 	valid_position = {
+# 		is_ai = no
+# 	}
+# 	use_for_scheme_power = yes
+# 	use_for_scheme_resistance = yes
+# 	portrait_animation = marshal
+# }
+# #宗族内务
+# councillor_interior = {
+# 	skill = martial
+# 	name = councillor_interior
+# 	tooltip = game_concept_marshal_desc
+# 	special_council_position = yes
+# 	auto_fill = no
+# 	Inherit = no
+# 	can_fire = yes
+# 	can_reassign = yes
+# 	tooltip = game_concept_attendant_desc
+# 	modifier = {
+# 		name = councillor_interior_modifier
+# 		martial = 5
+# 		scale = council_scaled_by_liege_tier
+# 	}
+# 	council_owner_modifier = {
+# 		name = learn_on_the_job_modifier
+# 		martial = 5
+# 		scale = marshal_learn_on_the_job_scale
+# 	}
+# 	on_get_position = {
+# 		got_council_position_effect = yes
+# 	}
+# 	on_fired_from_position = {
+# 		fired_from_council_position_effect = yes
+# 	}
+# 	valid_character = {
+# 		exists = root.liege_or_court_owner
+# 		can_be_attendant_trigger = {
+# 			COURT_OWNER = root.liege_or_court_owner
+# 		}
+# 	}
+# 	valid_position = {
+# 		is_ai = no
 # 	}
 # 	use_for_scheme_power = yes
 # 	use_for_scheme_resistance = yes

@@ -1,0 +1,41 @@
+activity_cruise = {
+	expiration_days = 60
+	days_until_auto_start = 5
+	solo = yes
+	frame = 1
+	color = {
+		0.253906
+		0.867188
+		0.105469
+		1
+	}
+	on_spawn = {
+		invite_character_to_activity = activity_owner
+		accept_invitation_for_character = activity_owner
+		scope:activity = {
+			activity_province = {
+				save_scope_as = cruise_province
+			}
+		}
+		activity_owner = {
+			trigger_event = {
+				on_action = cruise_start_events
+			}
+		}
+	}
+	on_activate = {
+		activity_owner = {
+			trigger_event = {
+				on_action = cruise_random_pulse
+				days = {
+					10
+					20
+				}
+			}
+		}
+	}
+	on_complete = {
+	}
+	on_expire = {
+	}
+}

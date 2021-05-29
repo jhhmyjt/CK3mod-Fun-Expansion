@@ -1,0 +1,42 @@
+namespace = certified
+#神秘人造访
+certified.001 = {
+	type = character_event
+	desc = hc.001.desc
+	title = hc.001.t
+	left_portrait = {
+		character = ROOT
+		animation = stress
+	}
+	theme = crown
+	override_background = {
+		reference = corridor_night
+	}
+	trigger = {
+		is_ai = no
+	}
+	option = {
+		name = hc.001.a
+		add_character_modifier = {
+			modifier = hc_01_modifier
+			days = 365
+		}
+		add_gold = 1000
+		add_dynasty_prestige = -100
+		trigger_event = {
+			id = hc.002
+			days = 30
+		}
+	}
+	option = {
+		name = hc.001.b
+		add_character_modifier = {
+			modifier = hc_01_modifier
+			days = 365
+		}
+		trigger_event = {
+			id = hc.002
+			days = 365
+		}
+	}
+}

@@ -1,0 +1,32 @@
+task_attendant = {
+	position = councillor_attendant
+	default_task = yes
+	task_type = task_type_general
+	task_progress = task_progress_infinite
+	effect_desc = task_attendant_default_effect_desc
+	council_owner_modifier = {
+		name = task_attendant_default_modifier
+	}
+}
+
+task_teacher = {
+	position = councillor_teacher
+	default_task = yes
+	task_type = task_type_general
+	task_progress = task_progress_infinite
+	effect_desc = task_teacher_default_effect_desc
+	council_owner_modifier = {
+		name = task_teacher_default_modifier
+	}
+}
+
+task_interior = {
+	position = councillor_interior
+	default_task = yes
+	task_type = task_type_general
+	task_progress = task_progress_infinite
+	effect_desc = task_interior_default_effect_desc
+	council_owner_modifier = {
+		name = task_interior_default_modifier
+	}
+}

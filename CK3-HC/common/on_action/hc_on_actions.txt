@@ -29,3 +29,32 @@ on_action_hc = {
 		on_action_hc
 	}
 }
+
+#考核事件组
+on_action_certified = {
+	# random_events = {
+	# 	10 = 0
+	# }
+	events = {
+		hc.010
+	}
+	on_actions = {
+		delay = {
+			years = 5
+		}
+		on_action_certified
+	}
+}
+
+#册封事件组
+on_action_coronation = {
+	events = {
+		coronation.100
+	}
+	on_actions = {
+		delay = {
+			years = 1
+		}
+		on_action_coronation
+	}
+}

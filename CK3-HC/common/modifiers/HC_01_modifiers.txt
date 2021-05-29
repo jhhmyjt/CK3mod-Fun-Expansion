@@ -50,3 +50,25 @@ hc_05_modifier = {
 	health = 0.02
 	stress_gain_mul = 0.8
 }
+
+#江山如画
+hc_06_modifier = {
+	icon = county_modifier_control_positive
+	development_growth = 1
+	build_speed = 0.2
+}
+
+#体恤民情
+hc_07_modifier = {
+	icon = social_positive
+	health = 0.02
+	county_opinion_add = 20
+}
+
+#举案齐眉
+hc_08_modifier = {
+	icon = social_positive
+	health = 0.01
+	monthly_prestige = 0.5
+	spouse_opinion = 50
+}

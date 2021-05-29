@@ -1,5 +1,9 @@
 nick_the_god = {
 }
-nick_the_pioneer={
-    
+
+nick_the_pioneer = {
+}
+
+#加冕者
+nick_hc_the_crowner = {
 }
