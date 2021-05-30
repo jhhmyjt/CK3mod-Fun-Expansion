@@ -68,6 +68,14 @@ Incompatible with Ironman
              [*][b]New nickname[/b]: Trailblazer
              [*][b]New traits[/b]: Fearlessness, Shelter
        [/list]
+       [*]2021.05.30: 
+       [list]
+             [*][b]New decisions[/b]: 巡游领土, 册封女皇, 恢复罗马正统
+             [*][b]New events[/b]: 巡游事件
+             [*][b]New modifiers[/b]: 体恤民情, 重铸罗马, 商业奇才等
+             [*][b]New nickname[/b]: 加冕者
+             [*][b]New traits[/b]: 奥古斯塔
+       [/list]
 [/list]
 
 [h1]More information[/h1]

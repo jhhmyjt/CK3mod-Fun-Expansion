@@ -55,7 +55,7 @@ hc_05_modifier = {
 hc_06_modifier = {
 	icon = county_modifier_control_positive
 	development_growth = 1
-	build_speed = 0.2
+	build_speed = -0.2
 }
 
 #体恤民情
@@ -71,4 +71,24 @@ hc_08_modifier = {
 	health = 0.01
 	monthly_prestige = 0.5
 	spouse_opinion = 50
+}
+
+#重建罗马
+hc_09_modifier = {
+	icon = county_modifier_opinion_positive
+	county_opinion_add = 10
+	development_growth_factor = 20
+	tax_mult = 0.2
+}
+
+#商业奇才
+hc_10_modifier = {
+	icon = economy_positive
+	domain_tax_mult = 0.1
+}
+
+#先见之明
+hc_11_modifier = {
+	icon = learning_positive
+	hostile_scheme_resistance_add = 20
 }

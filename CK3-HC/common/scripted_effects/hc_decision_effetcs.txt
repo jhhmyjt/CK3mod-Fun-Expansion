@@ -7,6 +7,7 @@ embrace_roma_effect = {
 	add_prestige = 1000
 	#Convert your, and your whole family's, culture
 	set_culture = culture:roman
+	set_character_faith_with_conversion = faith:hellenic_pagan
 	# set_character_faith_with_conversion = faith:hellenism
 	if = {
 		limit = {
@@ -78,10 +79,22 @@ embrace_roma_effect = {
 		limit = {
 			target_is_de_facto_liege_or_above = root.primary_title
 		}
+		add_county_modifier = {
+			modifier = hc_09_modifier
+			years = 100
+		}
 		random = {
 			chance = 50
 			set_county_culture = culture:roman
-			set_county_faith = faith:greco_roman
+			set_county_faith = faith:hellenic_pagan
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					development_level < 5
+				}
+				change_development_level = 1
+			}
 		}
 	}
 	culture:roman = {

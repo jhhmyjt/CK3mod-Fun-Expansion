@@ -424,6 +424,7 @@ hc.011 = {
 		culture = {
 			save_scope_as = embracer_former_culture
 		}
+		play_music_cue = "mx_cue_epic_sacral_moment"
 	}
 	option = {
 		name = hc.011.a

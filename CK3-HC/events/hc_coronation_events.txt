@@ -14,7 +14,7 @@ coronation.001 = {
 	}
 	theme = crown
 	override_background = {
-		reference = feast
+		reference = throne_room_mediterranean
 	}
 	trigger = {
 		is_ai = no
@@ -38,9 +38,6 @@ coronation.001 = {
 		add_character_modifier = {
 			modifier = hc_08_modifier
 			months = 6
-		}
-		trigger_event = {
-			on_action = on_action_coronation
 		}
 	}
 }

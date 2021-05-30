@@ -39,6 +39,41 @@ cruise.001 = {
 				change_development_progress = 100
 			}
 		}
+		random_list = {
+			50 = {
+				trigger = {
+					prestige > 500
+				}
+				modifier = {
+					add = stewardship
+				}
+				add_prestige = 150
+			}
+			30 = {
+				trigger = {
+					gold > 150
+				}
+				modifier = {
+					add = stewardship
+				}
+				add_gold = 100
+			}
+			10 = {
+				add_character_modifier = {
+					modifier = hc_10_modifier
+					months = 5
+				}
+			}
+			5 = {
+				trigger = {
+					stewardship_lifestyle_perk_points < 1
+				}
+				add_stewardship_lifestyle_xp = 30
+			}
+			5 = {
+				add_stewardship_skill = 1
+			}
+		}
 		trigger_event = {
 			id = cruise.101			#To complete the activity
 			days = {
@@ -83,6 +118,45 @@ cruise.002 = {
 			add_province_modifier = hc_06_modifier
 			this.county = {
 				change_county_control = 20
+			}
+		}
+		random_list = {
+			45 = {
+				trigger = {
+					prestige > 500
+				}
+				modifier = {
+					add = martial
+				}
+				add_prestige = 200
+			}
+			30 = {
+				trigger = {
+					root.dynasty = {
+						dynasty_prestige > 500
+					}
+				}
+				modifier = {
+					add = martial
+				}
+				root.dynasty = {
+					add_dynasty_prestige = 100
+				}
+			}
+			10 = {
+				add_character_modifier = {
+					modifier = hc_11_modifier
+					months = 6
+				}
+			}
+			10 = {
+				trigger = {
+					martial_lifestyle_perk_points < 1
+				}
+				add_martial_lifestyle_xp = 20
+			}
+			5 = {
+				add_martial_skill = 1
 			}
 		}
 		trigger_event = {
