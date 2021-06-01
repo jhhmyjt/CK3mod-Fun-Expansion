@@ -5,13 +5,18 @@ Some fun decisions, events, traits, modifiers, nicknames and buildings
 [b]Attention[/b]: This is my first mod, and it is entertaining so the value does not match the vanilla version. If you have any suggestions, please leave a message.
 
 [h1]Decisions[/h1]
-[b]Holy Examination[/b]:
+[list]
+[*][b]Holy Examination[/b]:
 Trigger conditions: non-ai, adult character. 
 The character will continue to be severely punished for a year, and will receive a powerful buff after the end
-[b]Farewell to the world[/b]:
+[*][b]Farewell to the world[/b]:
 The character will die in a few days
-[b]Inheritance ceremony: Durandal[/b]:
+[*][b]Inheritance ceremony: Durandal[/b]:
 The character becomes the guardian of the holy sword Durandal 
+[*][b]Cruising territory [/b]: For daily activities, the title of the principality or higher is required 
+[*][b]Canonization of Empress[/b]: The only decision, which can only be executed once, requires the character to have a female spouse, and the main title is the Roman Empire 
+[*][b]Restoring Roman Orthodoxy[/b]: The only resolution, can only be executed once, requiring the main title to be the Roman Empire 
+[/list]
 
 [h1]Events[/h1]
 [list]
@@ -21,7 +26,7 @@ The character becomes the guardian of the holy sword Durandal
 [b]Reminder: These two events will not appear when the player frequently switches the main ruler and the character frequently leads the army. The event pop-up window has a 3-month cooldown, during which the event will still be triggered but will not be displayed.[/b]
 [list]
       [*]Fate Choice: You will make your own choice
-      [*]Tian Ling Torture: Characters will be rewarded or punished based on their piety and prestige level 
+      [*]Tian Ling Torture: After passing the god test, the character will appear once every 3~5 years, and will be rewarded or punished according to his piety and prestige level 
 [/list]
 
 [h1]Traits[/h1]
