@@ -106,6 +106,7 @@ saint_sword = {
 	movement_speed = 0.15
 	retreat_losses = -0.1
 	negate_health_penalty_add = 1
+	#hard_casualty_modifier
 	desc = {
 		first_valid = {
 			triggered_desc = {
@@ -142,6 +143,32 @@ pioneer = {
 				desc = trait_pioneer_desc
 			}
 			desc = trait_pioneer_character_desc
+		}
+	}
+}
+
+#归隐江湖
+hc_recluse = {
+	ruler_designer_cost = 50
+	index = 5006
+	health = 0.1
+	stress_loss_mult = 0.5
+	hard_casualty_modifier = 0.5
+	vassal_tax_contribution_mult = -0.5
+	dynasty_opinion = 15
+	genetic = no
+	good = yes
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = {
+						exists = this
+					}
+				}
+				desc = trait_hc_recluse_desc
+			}
+			desc = trait_hc_recluse_character_desc
 		}
 	}
 }

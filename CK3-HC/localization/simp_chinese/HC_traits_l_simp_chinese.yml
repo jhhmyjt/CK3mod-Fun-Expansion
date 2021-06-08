@@ -14,3 +14,6 @@
  trait_pioneer:0 "无畏"
  trait_pioneer_desc:0 "无畏之人敢于面对新的挑战"
  trait_pioneer_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip]不惧挑战"
+ trait_hc_recluse:0 "避世"
+ trait_hc_recluse_desc:0 "隐居不出仕"
+ trait_hc_recluse_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip]隐居不出仕, 悠然自得"

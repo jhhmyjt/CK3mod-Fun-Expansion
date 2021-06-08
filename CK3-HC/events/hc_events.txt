@@ -340,6 +340,53 @@ hc.009 = {
 			death_reason = death_suicide
 		}
 	}
+	option = {
+		#退隐
+		name = hc.009.b
+		if = {
+			limit = {
+				has_trait = pioneer
+			}
+			remove_trait = pioneer
+		}
+		if = {
+			limit = {
+				has_trait = god_descent
+			}
+			remove_trait = god_descent
+		}
+		if = {
+			limit = {
+				has_trait = weak_god_descent
+			}
+			remove_trait = weak_god_descent
+		}
+		if = {
+			limit = {
+				has_nickname = nick_the_pioneer
+			}
+			remove_nickname = nick_the_pioneer
+		}
+		if = {
+			limit = {
+				has_nickname = nick_the_god
+			}
+			remove_nickname = nick_the_god
+		}
+		give_nickname = nick_hc_the_hermit
+		add_trait = hc_recluse
+		every_player_heir = {
+			add_character_modifier = {
+				modifier = hc_03_modifier
+				years = 3
+			}
+			show_as_tooltip = {
+				add_piety = 150
+				add_prestige = 200
+			}
+		}
+		depose = yes
+	}
 }
 
 #考验事件
@@ -426,8 +473,40 @@ hc.011 = {
 		}
 		play_music_cue = "mx_cue_epic_sacral_moment"
 	}
+	trigger = {
+		is_ai = no
+	}
 	option = {
 		name = hc.011.a
 		embrace_roma_effect = yes
+	}
+}
+
+#意外死亡
+hc.012 = {
+	type = character_event
+	title = hc.012.t
+	desc = hc.012.desc
+	theme = death
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	trigger = {
+		is_ai = no
+		any_player = {
+			OR = {
+				has_trait = god_descent
+				has_trait = weak_god_descent
+				has_trait = pioneer
+			}
+			this.player_heir = root
+		}
+	}
+	immediate = {
+		play_music_cue = "mx_cue_epic_sacral_moment"
+	}
+	option = {
+		name = hc.012.a
 	}
 }

@@ -1,0 +1,19 @@
+﻿nick_hc_the_hermit_customLoc = {
+	type = character
+	random_valid = yes
+	text = {
+		localization_key = nick_hc_the_hermit_customLoc_1
+	}
+	text = {
+		localization_key = nick_hc_the_hermit_customLoc_2
+	}
+	text = {
+		localization_key = nick_hc_the_hermit_customLoc_3
+	}
+	text = {
+		localization_key = nick_hc_the_hermit_customLoc_4
+	}
+	text = {
+		localization_key = nick_hc_the_hermit_customLoc_5
+	}
+}

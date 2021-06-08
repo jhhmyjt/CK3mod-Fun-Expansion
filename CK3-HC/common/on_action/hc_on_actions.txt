@@ -17,10 +17,12 @@
 # }
 on_action_hc = {
 	events = {
+		#拔剑事件组
 		hc.003
 		hc.004
 		hc.005
 		hc.006
+		#死亡
 	}
 	on_actions = {
 		delay = {

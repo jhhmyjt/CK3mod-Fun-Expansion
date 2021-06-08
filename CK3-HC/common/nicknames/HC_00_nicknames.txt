@@ -7,3 +7,7 @@ nick_the_pioneer = {
 #加冕者
 nick_hc_the_crowner = {
 }
+
+#隐居
+nick_hc_the_hermit = {
+}

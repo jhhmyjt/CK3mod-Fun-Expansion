@@ -14,7 +14,7 @@
  building_hc_moon_palace_02:1 "Moon Attic"
  building_hc_moon_palace_02_desc:1 "Moon Attic occupies a vast area, with mountains, lakes, and islands. The mountains are shaded with pine, cypress, maple and bamboo, and the lake is clear and the reflection is like a mirror. The pavilions and houses are scattered and scattered. "
  building_type_hc_kings_loading_01:0 "King's Landing"
- building_type_hc_kings_loading_01_desc:0 "Night gathers , and now my watch begins . It shall not end until my death.I shall take no wife , hold no lands ,father no children .I shall wear no crowns and win no glory . I shall live and die at my post. I am the sword in the darkness , I am the watchcer on the walls .I am the fire that bruns against the cold , the light that bring the dawn ,the horn that wakes the sleepers , the shield that guards the realm of men .I pledge my life and hornor to the Night's Watch .for this night and all nights to come ."
+ building_type_hc_kings_loading_01_desc:0 "The main city is surrounded by a wall, manned by the City Watch of King's Landing, also known as the gold cloaks. King's Landing is the most populous city in Westeros,[2] but unsightly and dirty compared to other cities. Poorer smallfolk build shanty settlements outside the city. The stench of the city's waste can be smelled far beyond its walls."
  building_hc_kings_loading_01:0 "$building_type_hc_kings_loading_01$"
  building_hc_kings_loading_01_desc:1 "$building_type_hc_kings_loading_01_desc$"
  building_type_hc_rock_castle_01:0 "Casterly Rock"
