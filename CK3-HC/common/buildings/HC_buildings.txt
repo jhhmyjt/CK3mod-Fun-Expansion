@@ -3,7 +3,7 @@
 ###
 #罗马万神殿
 hc_pantheon_01 = {
-	next_building = hc_panthon_02
+	next_building = hc_pantheon_02
 	construction_time = 365
 	cost = {
 		gold = 450

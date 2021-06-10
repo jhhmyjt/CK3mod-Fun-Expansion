@@ -34,9 +34,10 @@ cruise.001 = {
 	option = {
 		name = cruise.001.a
 		scope:cruise_province = {
-			add_province_modifier = hc_06_modifier
+			# add_province_modifier = hc_06_modifier
 			this.county = {
 				change_development_progress = 100
+				add_county_modifier = hc_06_modifier
 			}
 		}
 		random_list = {
@@ -115,9 +116,10 @@ cruise.002 = {
 	option = {
 		name = cruise.002.a
 		scope:cruise_province = {
-			add_province_modifier = hc_06_modifier
+			# add_province_modifier = hc_06_modifier
 			this.county = {
 				change_county_control = 20
+				add_county_modifier = hc_06_modifier
 			}
 		}
 		random_list = {
@@ -282,7 +284,7 @@ cruise.003 = {
 	option = {
 		#帮助村名
 		name = cruise.003.a
-		add_gold = -100
+		remove_short_term_gold = 100
 		add_prestige = 500
 		trigger_event = {
 			id = cruise.002
@@ -301,6 +303,42 @@ cruise.003 = {
 			days = {
 				5
 				10
+			}
+		}
+	}
+	option = {
+		#sha
+		name = cruise.003.c
+		random_list = {
+			30 = {
+				modifier = {
+					add = intrigue
+				}
+			}
+			20 = {
+				scope:cruise_province = {
+					this.county = {
+						change_county_control = -20
+					}
+				}
+			}
+			30 = {
+				add_piety = -100
+			}
+			20 = {
+				trigger = {
+					NOT = {
+						has_trait = sadistic
+					}
+				}
+				add_trait = sadistic
+			}
+		}
+		trigger_event = {
+			id = cruise.101			#To complete the activity
+			days = {
+				10
+				20
 			}
 		}
 	}
@@ -329,7 +367,7 @@ cruise.004 = {
 	option = {
 		#同意商人
 		name = cruise.004.a
-		add_gold = -270
+		remove_short_term_gold = 270
 		add_prestige = 100
 		trigger_event = {
 			id = cruise.001
@@ -348,6 +386,41 @@ cruise.004 = {
 			days = {
 				5
 				10
+			}
+		}
+	}
+	option = {
+		#视而不见,打法
+		name = cruise.004.c
+		random_list = {
+			20 = {
+				modifier = {
+					add = intrigue
+				}
+			}
+			20 = {
+				trigger = {
+					intrigue_lifestyle_perk_points < 1
+				}
+				add_intrigue_lifestyle_xp = 10
+			}
+			30 = {
+				add_prestige = -100
+			}
+			30 = {
+				trigger = {
+					NOT = {
+						has_trait = fickle
+					}
+				}
+				add_trait = fickle
+			}
+		}
+		trigger_event = {
+			id = cruise.101			#To complete the activity
+			days = {
+				10
+				20
 			}
 		}
 	}

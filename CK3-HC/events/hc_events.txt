@@ -28,7 +28,9 @@ hc.001 = {
 			days = 365
 		}
 		add_gold = 1000
-		add_dynasty_prestige = -100
+		root.dynasty = {
+			add_dynasty_prestige = -100
+		}
 		trigger_event = {
 			id = hc.002
 			days = 30
@@ -386,6 +388,7 @@ hc.009 = {
 			}
 		}
 		depose = yes
+		# banish = yes
 	}
 }
 
@@ -444,14 +447,18 @@ hc.010 = {
 				prestige_level >= 3
 				piety_level >= 3
 			}
-			add_dynasty_prestige = 1000
+			root.dynasty = {
+				add_dynasty_prestige = 1000
+			}
 			add_character_modifier = {
 				modifier = hc_05_modifier
 				days = 90
 			}
 		}
 		else = {
-			add_dynasty_prestige = -500
+			root.dynasty = {
+				add_dynasty_prestige = -500
+			}
 		}
 	}
 }

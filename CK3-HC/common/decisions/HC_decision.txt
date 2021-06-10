@@ -58,6 +58,9 @@ hc_end_decision = {
 	desc = hc_end_decision_desc
 	confirm_text = hc_end_decision_confirm
 	major = no
+	cooldown = {
+		days = 5
+	}
 	is_shown = {
 		is_ai = no
 		OR = {

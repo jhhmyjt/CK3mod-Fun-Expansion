@@ -54,8 +54,10 @@ hc_05_modifier = {
 #江山如画
 hc_06_modifier = {
 	icon = county_modifier_control_positive
-	development_growth = 1
-	build_speed = -0.2
+	# development_growth = 1
+	monthly_county_control_change_factor = 0.1
+	development_growth_factor = 0.2
+	county_opinion_add = 15
 }
 
 #体恤民情
