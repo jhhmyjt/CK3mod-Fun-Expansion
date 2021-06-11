@@ -47,6 +47,10 @@ hc.001 = {
 			days = 365
 		}
 	}
+	option = {
+		name = hc.001.c
+		remove_decision_cooldown = hc_begin_decision
+	}
 }
 
 #神考结束

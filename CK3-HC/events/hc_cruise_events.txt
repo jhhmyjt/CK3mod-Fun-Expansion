@@ -325,7 +325,7 @@ cruise.003 = {
 			30 = {
 				add_piety = -100
 			}
-			20 = {
+			10 = {
 				trigger = {
 					NOT = {
 						has_trait = sadistic
@@ -337,7 +337,7 @@ cruise.003 = {
 		trigger_event = {
 			id = cruise.101			#To complete the activity
 			days = {
-				10
+				15
 				20
 			}
 		}
@@ -407,7 +407,7 @@ cruise.004 = {
 			30 = {
 				add_prestige = -100
 			}
-			30 = {
+			10 = {
 				trigger = {
 					NOT = {
 						has_trait = fickle
@@ -419,7 +419,7 @@ cruise.004 = {
 		trigger_event = {
 			id = cruise.101			#To complete the activity
 			days = {
-				10
+				15
 				20
 			}
 		}
