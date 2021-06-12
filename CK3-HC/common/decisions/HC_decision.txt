@@ -28,6 +28,9 @@ hc_begin_decision = {
 		NOT = {
 			has_character_modifier = hc_03_modifier
 		}
+		NOT = {
+			has_character_flag = flag_god_child
+		}
 	}
 	is_valid_showing_failures_only = {
 		is_imprisoned = no
@@ -103,7 +106,7 @@ hc_new_decision = {
 	major = yes
 	is_shown = {
 		is_ai = no
-		has_character_modifier = hc_03_modifier
+		has_character_flag = flag_god_child
 	}
 	cooldown = {
 		days = 3650
@@ -118,9 +121,6 @@ hc_new_decision = {
 		trigger_event = {
 			id = hc.008
 			days = 2
-		}
-		root.dynasty = {
-			add_dynasty_prestige = 500
 		}
 	}
 	ai_check_frequency = 0
@@ -165,7 +165,7 @@ hc_cruise_decsion = {
 		}
 	}
 	cooldown = {
-		years = 1
+		years = 3.5
 	}
 	is_shown = {
 		is_landed = yes

@@ -1,4 +1,28 @@
 namespace = hc
+#test event
+hc.100 = {
+	type = character_event
+	desc = hc.100.desc
+	title = hc.100.t
+	left_portrait = {
+		character = ROOT
+		animation = stress
+	}
+	theme = crown
+	override_background = {
+		reference = corridor_night
+	}
+	trigger = {
+		is_ai = no
+	}
+	option = {
+		name = hc.100.a
+		hidden_effect = {
+			remove_decision_cooldown = hc_cruise_decsion
+		}
+	}
+}
+
 #接受神考
 hc.001 = {
 	type = character_event
@@ -49,7 +73,9 @@ hc.001 = {
 	}
 	option = {
 		name = hc.001.c
-		remove_decision_cooldown = hc_begin_decision
+		hidden_effect = {
+			remove_decision_cooldown = hc_begin_decision
+		}
 	}
 }
 
@@ -86,6 +112,9 @@ hc.002 = {
 		set_nickname_effect = {
 			NICKNAME = nick_the_god
 			# NICKNAME = "圣骑士"
+		}
+		every_player_heir = {
+			add_character_flag = flag_god_child
 		}
 		# give_nickname = nick_the_god
 	}
@@ -281,6 +310,7 @@ hc.008 = {
 			modifier = hc_04_modifier
 			months = 3
 		}
+		remove_character_flag = flag_god_child
 		trigger_event = {
 			on_action = on_action_hc
 		}
@@ -294,10 +324,23 @@ hc.008 = {
 	option = {
 		#传特质,弱化
 		name = hc.008.b
+		# If = {
+		# 	limit = {
+		# 		NOT = {
+		# 			has_trait = weak_god_descent
+		# 		}
+		# 		add_trait = weak_god_descent
+		# 	}
+		# }
 		add_trait = weak_god_descent
+		remove_character_flag = flag_god_child
 		add_character_modifier = {
 			modifier = hc_04_modifier
 			months = 3
+		}
+		add_character_modifier = {
+			modifier = hc_12_modifier
+			years = 5
 		}
 		trigger_event = {
 			on_action = on_action_hc
@@ -337,10 +380,14 @@ hc.009 = {
 				modifier = hc_03_modifier
 				years = 5
 			}
+			add_character_flag = flag_god_child
 			show_as_tooltip = {
 				add_piety_level = 1
 				add_prestige_level = 1
 			}
+		}
+		root.dynasty = {
+			add_dynasty_prestige = 500
 		}
 		death = {
 			death_reason = death_suicide
@@ -386,6 +433,7 @@ hc.009 = {
 				modifier = hc_03_modifier
 				years = 3
 			}
+			add_character_flag = flag_god_child
 			show_as_tooltip = {
 				add_piety = 150
 				add_prestige = 200
@@ -393,6 +441,12 @@ hc.009 = {
 		}
 		depose = yes
 		# banish = yes
+	}
+	option = {
+		name = hc.009.c
+		hidden_effect = {
+			remove_decision_cooldown = hc_end_decision
+		}
 	}
 }
 
@@ -519,5 +573,35 @@ hc.012 = {
 	}
 	option = {
 		name = hc.012.a
+	}
+}
+
+#隐藏添加特质事件
+hc.013 = {
+	type = character_event
+	theme = death
+	hidden = yes
+	left_portrait = {
+		character = root
+		animation = personality_bold
+	}
+	trigger = {
+		any_child = {
+			exists = this
+			age = 0
+		}
+	}
+	option = {
+		name = hc.013.a
+		every_child = {
+			limit = {
+				age = 0
+			}
+			random = {
+				chance = 75
+				add_trait = weak_god_descent
+			}
+			add_character_flag = flag_god_child
+		}
 	}
 }

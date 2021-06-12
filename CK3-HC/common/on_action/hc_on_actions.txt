@@ -22,7 +22,8 @@ on_action_hc = {
 		hc.004
 		hc.005
 		hc.006
-		#死亡
+		#添加特质
+		hc.013
 	}
 	on_actions = {
 		delay = {
