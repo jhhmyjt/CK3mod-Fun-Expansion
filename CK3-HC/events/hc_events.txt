@@ -591,17 +591,89 @@ hc.013 = {
 			age = 0
 		}
 	}
+	immediate = {
+		if = {
+			limit = {
+				has_trait = god_descent
+			}
+			every_child = {
+				limit = {
+					age = 0
+				}
+				random_list = {
+					50 = {
+						trigger = {
+							is_female = yes
+							diplomacy > 5
+						}
+						add_trait = weak_god_descent
+						#冰雪聪明
+						add_character_modifier = {
+							modifier = hc_13_modifier
+							years = 6
+						}
+					}
+					50 = {
+						trigger = {
+							is_male = yes
+							prowess > 5
+						}
+						add_trait = weak_god_descent
+						#生龙活虎
+						add_character_modifier = {
+							modifier = hc_14_modifier
+							years = 6
+						}
+					}
+					75 = {
+						add_trait = weak_god_descent
+					}
+				}
+				add_character_flag = flag_god_child
+			}
+		}
+		if = {
+			limit = {
+				has_trait = weak_god_descent
+			}
+			every_child = {
+				limit = {
+					age = 0
+				}
+				random_list = {
+					50 = {
+						trigger = {
+							is_female = yes
+							diplomacy > 7
+						}
+						add_trait = weak_god_descent
+						#冰雪聪明
+						add_character_modifier = {
+							modifier = hc_13_modifier
+							years = 5
+						}
+					}
+					50 = {
+						trigger = {
+							is_male = yes
+							prowess > 6
+						}
+						add_trait = weak_god_descent
+						#生龙活虎
+						add_character_modifier = {
+							modifier = hc_14_modifier
+							years = 5
+						}
+					}
+					50 = {
+						add_trait = weak_god_descent
+					}
+				}
+				add_character_flag = flag_god_child
+			}
+		}
+	}
 	option = {
 		name = hc.013.a
-		every_child = {
-			limit = {
-				age = 0
-			}
-			random = {
-				chance = 75
-				add_trait = weak_god_descent
-			}
-			add_character_flag = flag_god_child
-		}
 	}
 }
