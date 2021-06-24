@@ -57,7 +57,7 @@ hc.001 = {
 		}
 		trigger_event = {
 			id = hc.002
-			days = 30
+			years = 1
 		}
 	}
 	option = {
@@ -109,14 +109,38 @@ hc.002 = {
 		trigger_event = {
 			on_action = on_action_hc
 		}
-		set_nickname_effect = {
-			NICKNAME = nick_the_god
-			# NICKNAME = "圣骑士"
+		if = {
+			limit = {
+				is_male = yes
+			}
+			set_nickname_effect = {
+				NICKNAME = nick_the_god
+				# NICKNAME = "圣骑士"
+			}
+		}
+		if = {
+			limit = {
+				is_female = yes
+			}
+			set_nickname_effect = {
+				NICKNAME = nick_the_godness
+			}
 		}
 		every_player_heir = {
 			add_character_flag = flag_god_child
 		}
 		# give_nickname = nick_the_god
+	}
+	option = {
+		name = hc.002.b
+		remove_character_modifier = hc_01_modifier
+		add_trait = god_descent
+		trigger_event = {
+			on_action = on_action_hc
+		}
+		every_player_heir = {
+			add_character_flag = flag_god_child
+		}
 	}
 }
 
@@ -134,9 +158,9 @@ hc.003 = {
 		reference = army_camp
 	}
 	trigger = {
+		is_ai = no
 		is_in_army = yes
 		#is_at_war=yes
-		is_ai = no
 		# OR={
 		# 	has_trait =god_descent
 		# 	has_trait =weak_god_descent
@@ -175,7 +199,7 @@ hc.004 = {
 			has_character_modifier = hc_02_modifier
 		}
 		has_trait = saint_sword
-		is_ai = no
+		# is_ai = no
 	}
 	option = {
 		name = hc.004.a
@@ -203,9 +227,9 @@ hc.005 = {
 		reference = army_camp
 	}
 	trigger = {
+		is_ai = no
 		has_character_modifier = hc_02_modifier
 		is_in_army = yes
-		is_ai = no
 		NOT = {
 			has_trait = saint_sword
 		}
@@ -258,6 +282,26 @@ hc.006 = {
 	}
 }
 
+# hc.016 = {
+# 	hidden = yes
+# 	type = character_event
+# 	left_portrait = {
+# 		character = ROOT
+# 		animation = personality_honorable
+# 	}
+# 	theme = battle
+# 	override_background = {
+# 		reference = army_camp
+# 	}
+# 	trigger = {
+# 		is_ai = yes
+# 		has_trait = saint_sword
+# 	}
+# 	option = {
+# 		name = hc.006.a
+# 		remove_trait = saint_sword
+# 	}
+# }
 # hc.007 = {
 # 	type = character_event
 # 	title = major_decisions.3001.t
@@ -512,11 +556,140 @@ hc.010 = {
 				modifier = hc_05_modifier
 				days = 90
 			}
+			random_list = {
+				25 = {
+					trigger = {
+						learning>24
+					}
+					modifier = {
+						add = learning
+					}
+					set_nickname_effect = {
+						NICKNAME = nick_hc_the_wolong
+					}
+					add_learning_lifestyle_xp = 25
+				}
+				25 = {
+					trigger = {
+						diplomacy>24
+					}
+					modifier = {
+						add = diplomacy
+					}
+					set_nickname_effect = {
+						NICKNAME = nick_hc_the_strategist
+					}
+					add_diplomacy_lifestyle_xp = 25
+				}
+				25 = {
+					trigger = {
+						martial>24
+					}
+					modifier = {
+						add = martial
+					}
+					set_nickname_effect = {
+						NICKNAME = nick_hc_the_fulong
+					}
+					add_martial_lifestyle_xp = 25
+				}
+				25 = {
+					trigger = {
+						stewardship>24
+					}
+					modifier = {
+						add = stewardship
+					}
+					set_nickname_effect = {
+						NICKNAME = nick_hc_the_leader
+					}
+					add_stewardship_lifestyle_xp = 25
+				}
+				25 = {
+					trigger = {
+						intrigue>24
+					}
+					modifier = {
+						add = intrigue
+					}
+					set_nickname_effect = {
+						NICKNAME = nick_hc_the_operator
+					}
+					add_intrigue_lifestyle_xp = 25
+				}
+				25 = {
+					trigger = {
+						prowess>24
+					}
+					modifier = {
+						add = prowess
+					}
+					set_nickname_effect = {
+						NICKNAME = nick_hc_the_thousands_enemies
+					}
+					add_dread = 30
+				}
+				10 = 0
+			}
 		}
 		else = {
 			root.dynasty = {
 				add_dynasty_prestige = -500
 			}
+			random_list = {
+				20 = {
+					trigger = {
+						learning<10
+					}
+					set_nickname_effect = {
+						NICKNAME = nick_hc_the_big_clever
+					}
+					add_prestige = -350
+				}
+				50 = 0
+			}
+		}
+	}
+	option = {
+		name = test
+	}
+	option = {
+		name = {
+			#good job
+			trigger = {
+				prestige_level >= 3
+				piety_level >= 3
+			}
+			text = hc.010.c
+		}
+		name = {
+			#bad
+			trigger = {
+				NOT = {
+					prestige_level >= 3
+					piety_level >= 3
+				}
+			}
+			text = hc.010.d
+		}
+		if = {
+			limit = {
+				prestige_level >= 3
+				piety_level >= 3
+			}
+			root.dynasty = {
+				add_dynasty_prestige = 1000
+			}
+			add_character_modifier = {
+				modifier = hc_05_modifier
+				days = 90
+			}
+		}
+		else = {
+			root.dynasty = {
+				add_dynasty_prestige = -500
+			}
+			add_stress = 30
 		}
 	}
 }

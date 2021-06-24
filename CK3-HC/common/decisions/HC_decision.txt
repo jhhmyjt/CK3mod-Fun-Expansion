@@ -10,6 +10,7 @@ hc_begin_decision = {
 	selection_tooltip = hc_begin_decision_tooltip
 	desc = hc_begin_decision_desc
 	confirm_text = hc_begin_decision_confirm
+	ai_check_interval = 0
 	major = yes
 	cooldown = {
 		days = 3650
@@ -44,12 +45,12 @@ hc_begin_decision = {
 			days = 5
 		}
 	}
-	ai_check_frequency = 0
+	# ai_check_frequency = 0
 	ai_potential = {
 		always = no
 	}
 	ai_will_do = {
-		base = 0
+		base = 100
 	}
 }
 
@@ -61,6 +62,7 @@ hc_end_decision = {
 	desc = hc_end_decision_desc
 	confirm_text = hc_end_decision_confirm
 	major = no
+	ai_check_interval = 0
 	cooldown = {
 		days = 5
 	}
@@ -83,11 +85,8 @@ hc_end_decision = {
 		trigger_event = {
 			id = hc.009
 		}
-		root.dynasty = {
-			add_dynasty_prestige = 500
-		}
 	}
-	ai_check_frequency = 0
+	# ai_check_frequency = 0
 	ai_potential = {
 		always = no
 	}
@@ -104,6 +103,7 @@ hc_new_decision = {
 	desc = hc_new_decision_desc
 	confirm_text = hc_new_decision_confirm
 	major = yes
+	ai_check_interval = 0
 	is_shown = {
 		is_ai = no
 		has_character_flag = flag_god_child
@@ -123,7 +123,7 @@ hc_new_decision = {
 			days = 2
 		}
 	}
-	ai_check_frequency = 0
+	# ai_check_frequency = 0
 	ai_potential = {
 		always = no
 	}
@@ -165,7 +165,7 @@ hc_cruise_decsion = {
 		}
 	}
 	cooldown = {
-		years = 3.5
+		years = 3
 	}
 	is_shown = {
 		is_landed = yes
@@ -272,6 +272,7 @@ hc_coronation_decision = {
 	desc = hc_coronation_decision_desc
 	confirm_text = hc_coronation_decision_confirm
 	major = yes
+	ai_check_interval = 0
 	is_shown = {
 		is_ai = no
 		root.primary_title = title:e_roman_empire
@@ -309,7 +310,6 @@ hc_coronation_decision = {
 			target = flag:coronation_decision
 		}
 	}
-	ai_check_frequency = 0
 	ai_potential = {
 		always = no
 	}

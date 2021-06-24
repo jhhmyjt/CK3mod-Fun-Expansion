@@ -48,7 +48,7 @@ hc_05_modifier = {
 	dynasty_house_opinion = 5
 	guest_opinion = 5
 	health = 0.02
-	stress_gain_mul = 0.8
+	stress_loss_mult = 0.15
 }
 
 #江山如画

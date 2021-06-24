@@ -314,6 +314,13 @@ cruise.003 = {
 				modifier = {
 					add = intrigue
 				}
+				trigger_event = {
+					id = cruise.007
+					days = {
+						3
+						7
+					}
+				}
 			}
 			20 = {
 				scope:cruise_province = {
@@ -321,9 +328,23 @@ cruise.003 = {
 						change_county_control = -20
 					}
 				}
+				trigger_event = {
+					id = cruise.008
+					days = {
+						3
+						7
+					}
+				}
 			}
 			30 = {
 				add_piety = -100
+				trigger_event = {
+					id = cruise.008
+					days = {
+						3
+						7
+					}
+				}
 			}
 			10 = {
 				trigger = {
@@ -332,13 +353,13 @@ cruise.003 = {
 					}
 				}
 				add_trait = sadistic
-			}
-		}
-		trigger_event = {
-			id = cruise.101			#To complete the activity
-			days = {
-				15
-				20
+				trigger_event = {
+					id = cruise.008
+					days = {
+						3
+						7
+					}
+				}
 			}
 		}
 	}
@@ -397,15 +418,36 @@ cruise.004 = {
 				modifier = {
 					add = intrigue
 				}
+				trigger_event = {
+					id = cruise.007
+					days = {
+						3
+						7
+					}
+				}
 			}
 			20 = {
 				trigger = {
 					intrigue_lifestyle_perk_points < 1
 				}
 				add_intrigue_lifestyle_xp = 10
+				trigger_event = {
+					id = cruise.008
+					days = {
+						3
+						7
+					}
+				}
 			}
 			30 = {
 				add_prestige = -100
+				trigger_event = {
+					id = cruise.008
+					days = {
+						3
+						7
+					}
+				}
 			}
 			10 = {
 				trigger = {
@@ -414,8 +456,89 @@ cruise.004 = {
 					}
 				}
 				add_trait = fickle
+				trigger_event = {
+					id = cruise.008
+					days = {
+						3
+						7
+					}
+				}
 			}
 		}
+	}
+}
+
+#计划通
+cruise.007 = {
+	type = character_event
+	desc = cruise.007.desc
+	title = cruise.007.t
+	left_portrait = {
+		character = root
+		animation = happiness
+	}
+	right_portrait = {
+		character = root.spymaster
+		animation = admiration
+	}
+	theme = secret
+	override_background = {
+		reference = terrain_activity
+	}
+	trigger = {
+		is_ai = no
+	}
+	option = {
+		name = cruise.007.a
+		root.spymaster = {
+			add_intrigue = 1
+		}
+	}
+	option = {
+		name = cruise.007.b
+		add_piety = 200
+		add_stress = -15
+	}
+	after = {
+		trigger_event = {
+			id = cruise.101			#To complete the activity
+			days = {
+				15
+				20
+			}
+		}
+	}
+}
+
+#计划失败
+cruise.008 = {
+	type = character_event
+	desc = cruise.008.desc
+	title = cruise.008.t
+	left_portrait = {
+		character = root
+		animation = anger
+	}
+	# right_portrait = {
+	# 	character = root.spymaster
+	# 	animation = shame
+	# }
+	theme = secret
+	override_background = {
+		reference = terrain_activity
+	}
+	trigger = {
+		is_ai = no
+	}
+	option = {
+		name = cruise.008.a
+		add_dread = 25
+	}
+	option = {
+		name = cruise.008.b
+		add_stress = 30
+	}
+	after = {
 		trigger_event = {
 			id = cruise.101			#To complete the activity
 			days = {

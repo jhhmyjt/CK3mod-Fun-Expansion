@@ -1,7 +1,7 @@
 ﻿l_simp_chinese:
  hc_begin_decision_t:0 "开始神考"
  hc_begin_decision_tooltip:0 "你将开始接受诸神的考验"
- hc_begin_decision_desc:0 "自你成年以来, 你内心一直受着强烈的召唤, 你感应到了诸位神圣的存在，神明们似乎在期待发生什么...\n（警告：你将在一年之内持续受到严重的惩罚）"
+ hc_begin_decision_desc:0 "自你成年以来, 你内心一直受着强烈的召唤, 你感应到了诸位神圣的存在，神明们似乎在期待发生什么..."
  hc_begin_decision_confirm:0 "接受考验"
  hc_begin_decision_effect_tt:0 "你将获得持续的惩罚，为期1年"
 #  hc_end_decision_t:0 "告别尘世"

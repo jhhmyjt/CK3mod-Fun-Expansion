@@ -1,6 +1,11 @@
 nick_the_god = {
 }
 
+#圣女
+nick_the_godness = {
+}
+
+#无畏者
 nick_the_pioneer = {
 }
 
@@ -10,4 +15,32 @@ nick_hc_the_crowner = {
 
 #隐居
 nick_hc_the_hermit = {
+}
+
+#大聪明(学识低)
+nick_hc_the_big_clever = {
+}
+
+#卧龙(学识高)
+nick_hc_the_wolong = {
+}
+
+#纵横家(外交高)
+nick_hc_the_strategist = {
+}
+
+#万人敌(勇武高)
+nick_hc_the_thousands_enemies = {
+}
+
+#领军者(管理高)
+nick_hc_the_leader = {
+}
+
+#伏龙(军事高)
+nick_hc_the_fulong = {
+}
+
+#神算子
+nick_hc_the_operator = {
 }
