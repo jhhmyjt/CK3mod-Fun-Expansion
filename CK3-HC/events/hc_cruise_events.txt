@@ -477,10 +477,15 @@ cruise.007 = {
 		character = root
 		animation = happiness
 	}
-	right_portrait = {
-		character = root.spymaster
-		animation = admiration
-	}
+	# right_portrait = {
+	# 	trigger = {
+	# 		random_intrigue_councillor = {
+	# 			save_scope_as = hc_scope_councillor
+	# 		}
+	# 	}
+	# 	character = scope:hc_scope_councillor
+	# 	animation = admiration
+	# }
 	theme = secret
 	override_background = {
 		reference = terrain_activity
@@ -490,9 +495,10 @@ cruise.007 = {
 	}
 	option = {
 		name = cruise.007.a
-		root.spymaster = {
-			add_intrigue = 1
-		}
+		# scope:hc_scope_councillor = {
+		# 	add_intrigue = 1
+		# }
+		add_intrigue_lifestyle_xp = 20
 	}
 	option = {
 		name = cruise.007.b
@@ -520,7 +526,12 @@ cruise.008 = {
 		animation = anger
 	}
 	# right_portrait = {
-	# 	character = root.spymaster
+	# 	trigger = {
+	# 		random_intrigue_councillor = {
+	# 			save_scope_as = hc_scope_councillor
+	# 		}
+	# 	}
+	# 	character = scope:hc_scope_councillor
 	# 	animation = shame
 	# }
 	theme = secret

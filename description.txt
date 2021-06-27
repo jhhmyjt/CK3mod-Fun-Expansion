@@ -62,6 +62,13 @@
 
 [h1]近期更新[h1]
 [list]
+      [*]2021.6.24: 
+      [list]
+            [*]修复一些bug
+            [*]添加若干随机称号
+            [*]一些文本修改
+            [*]完善事件
+      [/list]
       [*]2021.6.18: 
       [list]
             [*]修复决议图标一直闪的bug
@@ -69,18 +76,9 @@
             [*]一些文本修改
             [*]新的儿童修正, 拥有眷顾特质的角色后代将根据潜力获得修正, 同时眷顾特质可遗传
       [/list]
-      [*]2021.06.09: 
-      [list]
-            [*][b]决议修改[/b]: 告别尘世换为退隐江湖
-            [*][b]新称号[/b]: 湖畔骑士(退隐江湖决议)
-            [*][b]新特质[/b]: 避世(退隐江湖决议)
-            [*][b]文本修改[/b]: 一些文本修改
-      [/list]
 [/list]
 
 [h1]更多信息[/h1]
 [list]
-      [*][url=https://github.com/jhhmyjt/CK3mod-Fun-Expansion]GitHub[/url]
-      [*][url=https://gitee.com/jhhmyjt/ckmods]Gitee[/url]
       [*][url=https://tieba.baidu.com/p/7358853396?pid=139371833733&cid=0&red_tag=2716365086#139371833733]百度贴吧[/url]
 [/list]

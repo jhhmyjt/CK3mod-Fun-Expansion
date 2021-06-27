@@ -1,11 +1,6 @@
 #开始
 hc_begin_decision = {
 	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
-	# title = "开始神考"
-	# desc = "自你成年以来, 你内心一直受着强烈的召唤, 你感应到了诸位神圣的存在，神明们似乎在期待发生什么...\n
-	# （警告：你将在一年之内持续受到严重的惩罚）"
-	# selection_tooltip = "你将开始接受诸神的考验"
-	# confirm_text = "接受考验"
 	title = hc_begin_decision_t
 	selection_tooltip = hc_begin_decision_tooltip
 	desc = hc_begin_decision_desc
@@ -18,20 +13,26 @@ hc_begin_decision = {
 	is_shown = {
 		is_ai = no
 		NOT = {
-			has_trait = god_descent
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:hc_begin_decision
+			}
 		}
-		NOT = {
-			has_trait = weak_god_descent
-		}
-		NOT = {
-			has_trait = pioneer
-		}
-		NOT = {
-			has_character_modifier = hc_03_modifier
-		}
-		NOT = {
-			has_character_flag = flag_god_child
-		}
+		# NOT = {
+		# 	has_trait = god_descent
+		# }
+		# NOT = {
+		# 	has_trait = weak_god_descent
+		# }
+		# NOT = {
+		# 	has_trait = pioneer
+		# }
+		# NOT = {
+		# 	has_character_modifier = hc_03_modifier
+		# }
+		# NOT = {
+		# 	has_character_flag = flag_hc_god_child
+		# }
 	}
 	is_valid_showing_failures_only = {
 		is_imprisoned = no
@@ -50,7 +51,7 @@ hc_begin_decision = {
 		always = no
 	}
 	ai_will_do = {
-		base = 100
+		base = 0
 	}
 }
 
@@ -106,7 +107,7 @@ hc_new_decision = {
 	ai_check_interval = 0
 	is_shown = {
 		is_ai = no
-		has_character_flag = flag_god_child
+		has_character_flag = flag_hc_god_child
 	}
 	cooldown = {
 		days = 3650
@@ -175,7 +176,11 @@ hc_cruise_decsion = {
 		is_available_adult = yes
 	}
 	effect = {
-		custom_tooltip = hc_cruise_decision_effect_tt
+		custom_tooltip = hc_cruise_decision_effect_tt.e
+		custom_tooltip = hc_cruise_decision_effect_tt.a
+		custom_tooltip = hc_cruise_decision_effect_tt.b
+		custom_tooltip = hc_cruise_decision_effect_tt.c
+		custom_tooltip = hc_cruise_decision_effect_tt.d
 		#Stress loss
 		stress_impact = {
 			base = -20

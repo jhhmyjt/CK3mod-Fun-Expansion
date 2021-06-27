@@ -1,3 +1,25 @@
+#test
+hc_test_trait = {
+	index = 5111
+	ruler_designer_cost = 100
+	health = 0.8
+	genetic = no
+	good = yes
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = {
+						exists = this
+					}
+				}
+				desc = test_desc
+			}
+			desc = test_character_desc
+		}
+	}
+}
+
 #外貌协会
 beauty_club = {
 	index = 5001

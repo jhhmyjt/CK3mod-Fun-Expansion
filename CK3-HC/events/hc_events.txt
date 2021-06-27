@@ -52,6 +52,10 @@ hc.001 = {
 			days = 365
 		}
 		add_gold = 1000
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:hc_begin_decision
+		}
 		root.dynasty = {
 			add_dynasty_prestige = -100
 		}
@@ -66,6 +70,10 @@ hc.001 = {
 			modifier = hc_01_modifier
 			days = 365
 		}
+		add_to_global_variable_list = {
+			name = unavailable_unique_decisions
+			target = flag:hc_begin_decision
+		}
 		trigger_event = {
 			id = hc.002
 			days = 365
@@ -75,6 +83,16 @@ hc.001 = {
 		name = hc.001.c
 		hidden_effect = {
 			remove_decision_cooldown = hc_begin_decision
+		}
+	}
+	option = {
+		name = hc.001.d
+		add_prowess_skill = 3
+		hidden_effect = {
+			add_to_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:hc_begin_decision
+			}
 		}
 	}
 }
@@ -127,7 +145,7 @@ hc.002 = {
 			}
 		}
 		every_player_heir = {
-			add_character_flag = flag_god_child
+			add_character_flag = flag_hc_god_child
 		}
 		# give_nickname = nick_the_god
 	}
@@ -139,7 +157,7 @@ hc.002 = {
 			on_action = on_action_hc
 		}
 		every_player_heir = {
-			add_character_flag = flag_god_child
+			add_character_flag = flag_hc_god_child
 		}
 	}
 }
@@ -354,7 +372,7 @@ hc.008 = {
 			modifier = hc_04_modifier
 			months = 3
 		}
-		remove_character_flag = flag_god_child
+		remove_character_flag = flag_hc_god_child
 		trigger_event = {
 			on_action = on_action_hc
 		}
@@ -377,7 +395,7 @@ hc.008 = {
 		# 	}
 		# }
 		add_trait = weak_god_descent
-		remove_character_flag = flag_god_child
+		remove_character_flag = flag_hc_god_child
 		add_character_modifier = {
 			modifier = hc_04_modifier
 			months = 3
@@ -424,7 +442,7 @@ hc.009 = {
 				modifier = hc_03_modifier
 				years = 5
 			}
-			add_character_flag = flag_god_child
+			add_character_flag = flag_hc_god_child
 			show_as_tooltip = {
 				add_piety_level = 1
 				add_prestige_level = 1
@@ -477,7 +495,7 @@ hc.009 = {
 				modifier = hc_03_modifier
 				years = 3
 			}
-			add_character_flag = flag_god_child
+			add_character_flag = flag_hc_god_child
 			show_as_tooltip = {
 				add_piety = 150
 				add_prestige = 200
@@ -503,16 +521,16 @@ hc.010 = {
 		character = ROOT
 		triggered_animation = {
 			trigger = {
-				prestige_level >= 3
-				piety_level >= 3
+				prestige_level > 2
+				piety_level > 2
 			}
 			animation = happiness
 		}
 		triggered_animation = {
 			trigger = {
 				NOT = {
-					prestige_level >= 3
-					piety_level >= 3
+					prestige_level > 2
+					piety_level > 2
 				}
 			}
 			animation = sadness
@@ -529,136 +547,8 @@ hc.010 = {
 		name = {
 			#good job
 			trigger = {
-				prestige_level >= 3
-				piety_level >= 3
-			}
-			text = hc.010.a
-		}
-		name = {
-			#bad
-			trigger = {
-				NOT = {
-					prestige_level >= 3
-					piety_level >= 3
-				}
-			}
-			text = hc.010.b
-		}
-		if = {
-			limit = {
-				prestige_level >= 3
-				piety_level >= 3
-			}
-			root.dynasty = {
-				add_dynasty_prestige = 1000
-			}
-			add_character_modifier = {
-				modifier = hc_05_modifier
-				days = 90
-			}
-			random_list = {
-				25 = {
-					trigger = {
-						learning>24
-					}
-					modifier = {
-						add = learning
-					}
-					set_nickname_effect = {
-						NICKNAME = nick_hc_the_wolong
-					}
-					add_learning_lifestyle_xp = 25
-				}
-				25 = {
-					trigger = {
-						diplomacy>24
-					}
-					modifier = {
-						add = diplomacy
-					}
-					set_nickname_effect = {
-						NICKNAME = nick_hc_the_strategist
-					}
-					add_diplomacy_lifestyle_xp = 25
-				}
-				25 = {
-					trigger = {
-						martial>24
-					}
-					modifier = {
-						add = martial
-					}
-					set_nickname_effect = {
-						NICKNAME = nick_hc_the_fulong
-					}
-					add_martial_lifestyle_xp = 25
-				}
-				25 = {
-					trigger = {
-						stewardship>24
-					}
-					modifier = {
-						add = stewardship
-					}
-					set_nickname_effect = {
-						NICKNAME = nick_hc_the_leader
-					}
-					add_stewardship_lifestyle_xp = 25
-				}
-				25 = {
-					trigger = {
-						intrigue>24
-					}
-					modifier = {
-						add = intrigue
-					}
-					set_nickname_effect = {
-						NICKNAME = nick_hc_the_operator
-					}
-					add_intrigue_lifestyle_xp = 25
-				}
-				25 = {
-					trigger = {
-						prowess>24
-					}
-					modifier = {
-						add = prowess
-					}
-					set_nickname_effect = {
-						NICKNAME = nick_hc_the_thousands_enemies
-					}
-					add_dread = 30
-				}
-				10 = 0
-			}
-		}
-		else = {
-			root.dynasty = {
-				add_dynasty_prestige = -500
-			}
-			random_list = {
-				20 = {
-					trigger = {
-						learning<10
-					}
-					set_nickname_effect = {
-						NICKNAME = nick_hc_the_big_clever
-					}
-					add_prestige = -350
-				}
-				50 = 0
-			}
-		}
-	}
-	option = {
-		name = test
-	}
-	option = {
-		name = {
-			#good job
-			trigger = {
-				prestige_level >= 3
-				piety_level >= 3
+				prestige_level > 2
+				piety_level > 2
 			}
 			text = hc.010.c
 		}
@@ -666,16 +556,16 @@ hc.010 = {
 			#bad
 			trigger = {
 				NOT = {
-					prestige_level >= 3
-					piety_level >= 3
+					prestige_level > 2
+					piety_level > 2
 				}
 			}
 			text = hc.010.d
 		}
 		if = {
 			limit = {
-				prestige_level >= 3
-				piety_level >= 3
+				prestige_level > 2
+				piety_level > 2
 			}
 			root.dynasty = {
 				add_dynasty_prestige = 1000
@@ -685,11 +575,149 @@ hc.010 = {
 				days = 90
 			}
 		}
-		else = {
+		if = {
+			limit = {
+				NOT = {
+					prestige_level > 2
+					piety_level > 2
+				}
+			}
 			root.dynasty = {
 				add_dynasty_prestige = -500
 			}
 			add_stress = 30
+		}
+	}
+	option = {
+		name = {
+			#good job
+			trigger = {
+				prestige_level > 2
+				piety_level > 2
+			}
+			text = hc.010.a
+		}
+		name = {
+			#bad
+			trigger = {
+				NOT = {
+					prestige_level > 2
+					piety_level > 2
+				}
+			}
+			text = hc.010.b
+		}
+		if = {
+			limit = {
+				NOT = {
+					prestige_level > 2
+					piety_level > 2
+				}
+			}
+			root.dynasty = {
+				add_dynasty_prestige = -500
+			}
+			add_prestige = -350
+			random_list = {
+				20 = {
+					trigger = {
+						learning < 10
+					}
+					set_nickname_effect = {
+						NICKNAME = nick_hc_the_big_clever
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				prestige_level > 2
+				piety_level > 2
+			}
+			root.dynasty = {
+				add_dynasty_prestige = 1000
+			}
+			add_character_modifier = {
+				modifier = hc_05_modifier
+				days = 90
+			}
+			custom_tooltip = hc.010_effect_tt
+			hidden_effect = {
+				random_list = {
+					25 = {
+						trigger = {
+							learning>24
+						}
+						modifier = {
+							add = learning
+						}
+						set_nickname_effect = {
+							NICKNAME = nick_hc_the_wolong
+						}
+						add_learning_lifestyle_xp = 25
+					}
+					25 = {
+						trigger = {
+							diplomacy>24
+						}
+						modifier = {
+							add = diplomacy
+						}
+						set_nickname_effect = {
+							NICKNAME = nick_hc_the_strategist
+						}
+						add_diplomacy_lifestyle_xp = 25
+					}
+					25 = {
+						trigger = {
+							martial>24
+						}
+						modifier = {
+							add = martial
+						}
+						set_nickname_effect = {
+							NICKNAME = nick_hc_the_fulong
+						}
+						add_martial_lifestyle_xp = 25
+					}
+					25 = {
+						trigger = {
+							stewardship>24
+						}
+						modifier = {
+							add = stewardship
+						}
+						set_nickname_effect = {
+							NICKNAME = nick_hc_the_leader
+						}
+						add_stewardship_lifestyle_xp = 25
+					}
+					25 = {
+						trigger = {
+							intrigue>24
+						}
+						modifier = {
+							add = intrigue
+						}
+						set_nickname_effect = {
+							NICKNAME = nick_hc_the_operator
+						}
+						add_intrigue_lifestyle_xp = 25
+					}
+					25 = {
+						trigger = {
+							prowess>24
+						}
+						modifier = {
+							add = prowess
+						}
+						set_nickname_effect = {
+							NICKNAME = nick_hc_the_thousands_enemies
+						}
+						add_dread = 30
+					}
+				}
+			}
 		}
 	}
 }
@@ -752,16 +780,11 @@ hc.012 = {
 #隐藏添加特质事件
 hc.013 = {
 	type = character_event
-	theme = death
 	hidden = yes
-	left_portrait = {
-		character = root
-		animation = personality_bold
-	}
 	trigger = {
 		any_child = {
-			exists = this
 			age = 0
+			is_child_of = root
 		}
 	}
 	immediate = {
@@ -772,12 +795,17 @@ hc.013 = {
 			every_child = {
 				limit = {
 					age = 0
+					is_child_of = root
 				}
+				add_character_flag = flag_hc_god_child
 				random_list = {
 					50 = {
 						trigger = {
 							is_female = yes
 							diplomacy > 5
+						}
+						modifier = {
+							add = 30
 						}
 						add_trait = weak_god_descent
 						#冰雪聪明
@@ -791,6 +819,9 @@ hc.013 = {
 							is_male = yes
 							prowess > 5
 						}
+						modifier = {
+							add = 30
+						}
 						add_trait = weak_god_descent
 						#生龙活虎
 						add_character_modifier = {
@@ -802,7 +833,6 @@ hc.013 = {
 						add_trait = weak_god_descent
 					}
 				}
-				add_character_flag = flag_god_child
 			}
 		}
 		if = {
@@ -812,12 +842,17 @@ hc.013 = {
 			every_child = {
 				limit = {
 					age = 0
+					is_child_of = root
 				}
+				add_character_flag = flag_hc_god_child
 				random_list = {
 					50 = {
 						trigger = {
 							is_female = yes
 							diplomacy > 7
+						}
+						modifier = {
+							add = 20
 						}
 						add_trait = weak_god_descent
 						#冰雪聪明
@@ -831,6 +866,9 @@ hc.013 = {
 							is_male = yes
 							prowess > 6
 						}
+						modifier = {
+							add = 20
+						}
 						add_trait = weak_god_descent
 						#生龙活虎
 						add_character_modifier = {
@@ -842,11 +880,7 @@ hc.013 = {
 						add_trait = weak_god_descent
 					}
 				}
-				add_character_flag = flag_god_child
 			}
 		}
-	}
-	option = {
-		name = hc.013.a
 	}
 }
