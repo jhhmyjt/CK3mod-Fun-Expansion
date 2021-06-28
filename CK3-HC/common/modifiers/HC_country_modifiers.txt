@@ -1,0 +1,10 @@
+#未曾设想的道路
+hc_country_modifier_01 = {
+	icon = stewardship_positive
+	monthly_county_control_change_factor = 0.1
+	development_growth_factor = 0.35
+	county_opinion_add = 20
+	build_speed = 0.8
+	build_gold_cost = 0.75
+	monthly_county_control_change_add = 1.5
+}

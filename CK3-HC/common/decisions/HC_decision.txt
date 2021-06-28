@@ -18,21 +18,11 @@ hc_begin_decision = {
 				target = flag:hc_begin_decision
 			}
 		}
-		# NOT = {
-		# 	has_trait = god_descent
-		# }
-		# NOT = {
-		# 	has_trait = weak_god_descent
-		# }
-		# NOT = {
-		# 	has_trait = pioneer
-		# }
-		# NOT = {
-		# 	has_character_modifier = hc_03_modifier
-		# }
-		# NOT = {
-		# 	has_character_flag = flag_hc_god_child
-		# }
+		NOT = {
+			root.house = {
+				has_house_modifier = hc_dynasty_god_modifier
+			}
+		}
 	}
 	is_valid_showing_failures_only = {
 		is_imprisoned = no
@@ -69,10 +59,8 @@ hc_end_decision = {
 	}
 	is_shown = {
 		is_ai = no
-		OR = {
-			has_trait = god_descent
-			has_trait = weak_god_descent
-			has_trait = pioneer
+		root.house = {
+			has_house_modifier = hc_dynasty_god_modifier
 		}
 		exists = player_heir
 	}
@@ -107,7 +95,12 @@ hc_new_decision = {
 	ai_check_interval = 0
 	is_shown = {
 		is_ai = no
-		has_character_flag = flag_hc_god_child
+		root.house = {
+			has_house_modifier = hc_dynasty_god_modifier
+		}
+		NOT = {
+			has_trait = god_descent
+		}
 	}
 	cooldown = {
 		days = 3650
@@ -119,9 +112,22 @@ hc_new_decision = {
 	}
 	effect = {
 		custom_tooltip = hc_new_decision_effect_tt
-		trigger_event = {
-			id = hc.008
-			days = 2
+		if = {
+			limit = {
+				root.house = {
+					has_house_modifier = hc_dynasty_pioneer_modifier
+				}
+			}
+			trigger_event = {
+				id = hc.0081
+				days = 2
+			}
+		}
+		else = {
+			trigger_event = {
+				id = hc.008
+				days = 2
+			}
 		}
 	}
 	# ai_check_frequency = 0

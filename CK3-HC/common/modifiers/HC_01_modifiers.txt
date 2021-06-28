@@ -1,3 +1,9 @@
+#神灵庇护
+hc_test_modifier = {
+	tax_mult = 0.15
+	icon = horse_positive
+}
+
 #神考
 hc_01_modifier = {
 	icon = stress_negative
@@ -12,6 +18,28 @@ hc_01_modifier = {
 	monthly_prestige = -5
 }
 
+#受神灵眷顾的家族
+hc_dynasty_god_modifier = {
+	icon = magic_positive
+	health = 0.05
+	stewardship = 2
+	learning = 2
+	monthly_lifestyle_xp_gain_mult = 0.1
+	positive_inactive_inheritance_chance = 0.2
+	direct_vassal_opinion = 5
+	monthly_prestige_gain_mult = 0.3
+}
+
+#探索前进的道路
+hc_dynasty_pioneer_modifier = {
+	icon = prowess_positive
+	health = 0.02
+	stewardship = 3
+	prowess = 2
+	knight_limit = 2
+	monthly_prestige_gain_mult = 0.1
+}
+
 #身披荣耀
 hc_02_modifier = {
 	icon = magic_positive
@@ -22,12 +50,7 @@ hc_02_modifier = {
 hc_03_modifier = {
 	icon = prestige_positive
 	health = 0.5
-	diplomacy = 2
-	martial = 2
-	stewardship = 2
-	intrigue = 2
 	learning = 2
-	prowess = 5
 }
 
 #余威犹在

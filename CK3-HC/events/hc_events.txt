@@ -144,9 +144,14 @@ hc.002 = {
 				NICKNAME = nick_the_godness
 			}
 		}
-		every_player_heir = {
-			add_character_flag = flag_hc_god_child
+		root.house = {
+			add_house_modifier = {
+				modifier = hc_dynasty_god_modifier
+			}
 		}
+		# every_player_heir = {
+		# 	add_character_flag = flag_hc_god_child
+		# }
 		# give_nickname = nick_the_god
 	}
 	option = {
@@ -156,8 +161,10 @@ hc.002 = {
 		trigger_event = {
 			on_action = on_action_hc
 		}
-		every_player_heir = {
-			add_character_flag = flag_hc_god_child
+		root.house = {
+			add_house_modifier = {
+				modifier = hc_dynasty_god_modifier
+			}
 		}
 	}
 }
@@ -342,7 +349,7 @@ hc.006 = {
 # 		}
 # 	}
 # }
-#命运选择
+#命运选择-传统
 hc.008 = {
 	type = character_event
 	title = hc.008.t
@@ -363,8 +370,18 @@ hc.008 = {
 	}
 	option = {
 		#不传特质
+		trigger = {
+			NOT = {
+				has_trait = pioneer
+			}
+		}
 		name = hc.008.a
 		add_trait = pioneer
+		root.house = {
+			add_house_modifier = {
+				modifier = hc_dynasty_pioneer_modifier
+			}
+		}
 		set_nickname_effect = {
 			NICKNAME = nick_the_pioneer
 		}
@@ -372,13 +389,37 @@ hc.008 = {
 			modifier = hc_04_modifier
 			months = 3
 		}
-		remove_character_flag = flag_hc_god_child
 		trigger_event = {
 			on_action = on_action_hc
 		}
 		trigger_event = {
-			# id = hc.010
-			# years = 5
+			years = 5
+			on_action = on_action_certified
+		}
+	}
+	option = {
+		#不传特质
+		trigger = {
+			NOT = {
+				has_trait = pioneer
+			}
+		}
+		add_prestige = 200
+		name = hc.008.c
+		add_trait = pioneer
+		root.house = {
+			add_house_modifier = {
+				modifier = hc_dynasty_pioneer_modifier
+			}
+		}
+		add_character_modifier = {
+			modifier = hc_04_modifier
+			months = 3
+		}
+		trigger_event = {
+			on_action = on_action_hc
+		}
+		trigger_event = {
 			years = 5
 			on_action = on_action_certified
 		}
@@ -386,16 +427,7 @@ hc.008 = {
 	option = {
 		#传特质,弱化
 		name = hc.008.b
-		# If = {
-		# 	limit = {
-		# 		NOT = {
-		# 			has_trait = weak_god_descent
-		# 		}
-		# 		add_trait = weak_god_descent
-		# 	}
-		# }
 		add_trait = weak_god_descent
-		remove_character_flag = flag_hc_god_child
 		add_character_modifier = {
 			modifier = hc_04_modifier
 			months = 3
@@ -403,6 +435,69 @@ hc.008 = {
 		add_character_modifier = {
 			modifier = hc_12_modifier
 			years = 5
+		}
+		trigger_event = {
+			on_action = on_action_hc
+		}
+		trigger_event = {
+			years = 5
+			on_action = on_action_certified
+		}
+	}
+}
+
+#命运选择-创新
+hc.0081 = {
+	type = character_event
+	title = hc.0081.t
+	desc = hc.0081.desc
+	left_portrait = {
+		character = ROOT
+		animation = personality_bold
+	}
+	theme = crown
+	override_background = {
+		reference = council_chamber
+	}
+	trigger = {
+		is_ai = no
+	}
+	immediate = {
+		play_music_cue = "mx_cue_epic_sacral_moment"
+	}
+	option = {
+		name = hc.0081.a
+		custom_tooltip = hc.0081_effect_tt
+		add_trait = pioneer
+		add_character_modifier = {
+			modifier = hc_04_modifier
+			months = 3
+		}
+		hidden_effect = {
+			every_sub_realm_county = {
+				add_county_modifier = {
+					modifier = hc_country_modifier_01
+					years = 3
+				}
+			}
+		}
+		trigger_event = {
+			on_action = on_action_hc
+		}
+		trigger_event = {
+			years = 5
+			on_action = on_action_certified
+		}
+	}
+	option = {
+		name = hc.0081.b
+		add_trait = pioneer
+		add_character_modifier = {
+			modifier = hc_04_modifier
+			months = 3
+		}
+		root.dynasty = {
+			add_dynasty_prestige = 1000
 		}
 		trigger_event = {
 			on_action = on_action_hc
@@ -442,7 +537,6 @@ hc.009 = {
 				modifier = hc_03_modifier
 				years = 5
 			}
-			add_character_flag = flag_hc_god_child
 			show_as_tooltip = {
 				add_piety_level = 1
 				add_prestige_level = 1
@@ -495,7 +589,6 @@ hc.009 = {
 				modifier = hc_03_modifier
 				years = 3
 			}
-			add_character_flag = flag_hc_god_child
 			show_as_tooltip = {
 				add_piety = 150
 				add_prestige = 200
@@ -618,6 +711,7 @@ hc.010 = {
 				add_dynasty_prestige = -500
 			}
 			add_prestige = -350
+			custom_tooltip = hc.010_effect_tt2
 			random_list = {
 				20 = {
 					trigger = {
@@ -797,7 +891,6 @@ hc.013 = {
 					age = 0
 					is_child_of = root
 				}
-				add_character_flag = flag_hc_god_child
 				random_list = {
 					50 = {
 						trigger = {
@@ -844,7 +937,6 @@ hc.013 = {
 					age = 0
 					is_child_of = root
 				}
-				add_character_flag = flag_hc_god_child
 				random_list = {
 					50 = {
 						trigger = {

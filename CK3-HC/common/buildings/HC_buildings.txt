@@ -259,16 +259,11 @@ hc_colosseum_01 = {
 	is_enabled = {
 	}
 	character_modifier = {
-		movement_speed = 0.1
 		knight_limit = 5
 		knight_effectiveness_mult = 0.2
-		pursue_efficiency = 0.1
 		counter_efficiency = 0.1
 		monthly_piety_gain_per_knight_add = 1
 		monthly_prestige_gain_per_knight_add = 1
-		enemy_hard_casualty_modifier = 0.1
-		hard_casualty_modifier = -0.1
-		advantage = 5
 	}
 	province_modifier = {
 	}
@@ -298,16 +293,11 @@ hc_colosseum_02 = {
 	is_enabled = {
 	}
 	character_modifier = {
-		movement_speed = 0.2
 		knight_limit = 10
 		knight_effectiveness_mult = 0.5
-		pursue_efficiency = 0.2
 		counter_efficiency = 0.2
 		monthly_piety_gain_per_knight_add = 2
 		monthly_prestige_gain_per_knight_add = 2
-		enemy_hard_casualty_modifier = 0.2
-		hard_casualty_modifier = -0.2
-		advantage = 10
 	}
 	province_modifier = {
 	}
