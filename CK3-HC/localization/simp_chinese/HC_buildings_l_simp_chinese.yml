@@ -38,6 +38,6 @@
  building_type_hc_old_town_01:0 "旧镇"
  building_type_hc_old_town_01_desc:0 "旧镇是全大陆的学术研究中心，学士们的总部“学城”就坐落于此。旧镇中心有一座巍峨的灯塔，塔顶有烈火熊熊燃烧，为迷雾中的航船指路。"
  building_hc_old_town_01:0 "旧镇残骸"
- building_hc_old_town_01_desc:0 "有的胜利靠宝剑和长矛赢取，有的胜利则要靠纸笔和乌鸦。"
+ building_hc_old_town_01_desc:0 "某个建筑的残骸\n\n\n-有的胜利靠宝剑和长矛赢取，有的胜利则要靠纸笔和乌鸦。"
  building_hc_old_town_02:0 "$building_type_hc_old_town_01$"
- building_hc_old_town_02_desc:0 "$building_type_hc_old_town_01$"
+ building_hc_old_town_02_desc:0 "$building_type_hc_old_town_01_desc$"

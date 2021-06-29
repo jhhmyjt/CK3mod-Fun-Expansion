@@ -367,6 +367,7 @@ hc.008 = {
 	}
 	immediate = {
 		play_music_cue = "mx_cue_epic_sacral_moment"
+		add_character_flag = flag_hc_has_saint_sword
 	}
 	option = {
 		#不传特质
@@ -464,6 +465,7 @@ hc.0081 = {
 	}
 	immediate = {
 		play_music_cue = "mx_cue_epic_sacral_moment"
+		add_character_flag = flag_hc_has_saint_sword
 	}
 	option = {
 		name = hc.0081.a

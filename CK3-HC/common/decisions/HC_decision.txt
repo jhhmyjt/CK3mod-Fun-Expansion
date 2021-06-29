@@ -101,6 +101,9 @@ hc_new_decision = {
 		NOT = {
 			has_trait = god_descent
 		}
+		NOT = {
+			has_character_flag = flag_hc_has_saint_sword
+		}
 	}
 	cooldown = {
 		days = 3650
