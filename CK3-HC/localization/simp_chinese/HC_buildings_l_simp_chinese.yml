@@ -41,3 +41,7 @@
  building_hc_old_town_01_desc:0 "某个建筑的残骸\n\n\n-有的胜利靠宝剑和长矛赢取，有的胜利则要靠纸笔和乌鸦。"
  building_hc_old_town_02:0 "$building_type_hc_old_town_01$"
  building_hc_old_town_02_desc:0 "$building_type_hc_old_town_01_desc$"
+ building_type_hc_scared_altar:0 "神圣祭坛"
+ building_type_hc_scared_altar_desc:0 "该祭坛中供奉着神灵"
+ building_hc_scared_altar:0 "$building_type_hc_scared_altar$"
+ building_hc_scared_altar_desc:0 "$building_type_hc_scared_altar_desc$"

@@ -1,0 +1,109 @@
+namespace = hc_sacrifice
+#祭祀选择
+hc_sacrifice.001 = {
+	type = character_event
+	title = hc_sacrifice.001.t
+	desc = hc_sacrifice.001.desc
+	theme = crown
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+	trigger = {
+		is_ai = no
+	}
+	option = {
+		#金钱
+		name = hc_sacrifice.001.a
+		remove_short_term_gold = 100000
+		trigger_event = {
+			id = hc_sacrifice.100
+			days = 1
+		}
+	}
+	option = {
+		#虔诚
+		name = hc_sacrifice.001.b
+		add_piety = -100000
+		trigger_event = {
+			id = hc_sacrifice.100
+			days = 1
+		}
+	}
+	option = {
+		#威望
+		name = hc_sacrifice.001.c
+		add_prestige = -100000
+		trigger_event = {
+			id = hc_sacrifice.100
+			days = 1
+		}
+	}
+	option = {
+		#威望
+		name = hc_sacrifice.001.d
+		root.dynasty = {
+			add_dynasty_prestige = -100000
+		}
+		trigger_event = {
+			id = hc_sacrifice.100
+			days = 1
+		}
+	}
+}
+
+#祭祀结果
+hc_sacrifice.100 = {
+	type = character_event
+	title = hc_sacrifice.100.t
+	desc = hc_sacrifice.100.desc
+	theme = crown
+	left_portrait = {
+		character = root
+		animation = personality_zealous
+	}
+	trigger = {
+		is_ai = no
+	}
+	option = {
+		name = hc_sacrifice.100.a
+		add_gold = 10000
+		add_character_modifier = {
+			modifier = hc_sacrifice_modifier
+			months = 3
+		}
+	}
+	option = {
+		name = hc_sacrifice.100.b
+		add_piety = 10000
+		add_character_modifier = {
+			modifier = hc_sacrifice_modifier
+			months = 3
+		}
+	}
+	option = {
+		name = hc_sacrifice.100.c
+		add_prestige = 10000
+		add_character_modifier = {
+			modifier = hc_sacrifice_modifier
+			months = 3
+		}
+	}
+	option = {
+		name = hc_sacrifice.100.d
+		root.dynasty = {
+			add_dynasty_prestige = 10000
+		}
+		add_character_modifier = {
+			modifier = hc_sacrifice_modifier
+			months = 3
+		}
+	}
+	# option = {
+	# 	name = hc_sacrifice.100.e
+	# 	add_character_modifier = {
+	# 		modifier = hc_sacrifice_modifier
+	# 		months = 3
+	# 	}
+	# }
+}

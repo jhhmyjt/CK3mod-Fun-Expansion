@@ -40,6 +40,25 @@ hc_dynasty_pioneer_modifier = {
 	monthly_prestige_gain_mult = 0.1
 }
 
+#祭坛之灵
+hc_dynasty_alert_modifier = {
+	icon = family_positive
+	monthly_piety_gain_mult = 0.1
+	dynasty_house_opinion = 5
+}
+
+#举行过祭祀
+hc_sacrifice_modifier = {
+	icon = magic_positive
+	health = 0.2
+	diplomacy = 2
+	martial = 2
+	stewardship = 2
+	intrigue = 2
+	learning = 2
+	prowess = 2
+}
+
 #身披荣耀
 hc_02_modifier = {
 	icon = magic_positive

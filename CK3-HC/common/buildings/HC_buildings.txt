@@ -427,3 +427,34 @@ hc_old_town_02 = {
 	ai_value = 0
 	type = regular
 }
+
+#神圣祭坛
+hc_scared_altar = {
+	construction_time = very_slow_construction_time
+	type_icon = "icon_structure_temple_of_uppsala.dds"
+	can_construct_potential = {
+		building_requirement_tribal = no
+	}
+	can_construct = {
+		scope:holder = {
+			culture = {
+				has_innovation = innovation_battlements
+			}
+		}
+	}
+	is_enabled = {
+	}
+	show_disabled = yes
+	cost_gold = 650
+	character_modifier = {
+		monthly_dynasty_prestige = 5
+		monthly_dynasty_prestige_mult = 0.3
+		monthly_county_control_change_factor = 0.1
+		religious_head_opinion = 20
+		dynasty_house_opinion = 10
+	}
+	ai_value = {
+		base = 100
+	}
+	type = special
+}
