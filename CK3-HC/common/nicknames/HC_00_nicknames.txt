@@ -44,3 +44,7 @@ nick_hc_the_fulong = {
 #神算子
 nick_hc_the_operator = {
 }
+
+#奇观狂魔
+nick_hc_the_wonder_king = {
+}

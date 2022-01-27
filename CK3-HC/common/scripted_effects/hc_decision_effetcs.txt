@@ -104,3 +104,106 @@ embrace_roma_effect = {
 		}
 	}
 }
+
+#学者称号
+# found_university_decision_event_effect = {
+# 	if = {
+# 		limit = {
+# 			NOT = {
+# 				has_nickname = nick_the_scholar
+# 			}
+# 		}
+# 		set_nickname_effect = {
+# 			NICKNAME = nick_the_scholar
+# 		}
+# 		# give_nickname = nick_the_scholar
+# 	}
+# 	hidden_effect = {
+# 		#Event that gives you highly skilled courtier
+# 		random = {
+# 			chance = 75
+# 			trigger_event = {
+# 				id = major_decisions.2011
+# 				days = {
+# 					50
+# 					365
+# 				}
+# 			}
+# 		}
+# 	}
+# }
+hc_special_build_effect = {
+	custom_tooltip = hc_show_special_build_effect_tt_00
+	if = {
+		limit = {
+			is_target_in_global_variable_list = {
+				name = hc_unavailable_special_building
+				target = flag:hc_unavailable_special_building_hc_wonder_011
+			}
+		}
+		custom_tooltip = hc_show_special_build_effect_tt_01
+	}
+	if = {
+		limit = {
+			is_target_in_global_variable_list = {
+				name = hc_unavailable_special_building
+				target = flag:hc_unavailable_special_building_hc_wonder_021
+			}
+		}
+		custom_tooltip = hc_show_special_build_effect_tt_02
+	}
+	if = {
+		limit = {
+			is_target_in_global_variable_list = {
+				name = hc_unavailable_special_building
+				target = flag:hc_unavailable_special_building_hc_wonder_030
+			}
+		}
+		custom_tooltip = hc_show_special_build_effect_tt_03
+	}
+	if = {
+		limit = {
+			is_target_in_global_variable_list = {
+				name = hc_unavailable_special_building
+				target = flag:hc_unavailable_special_building_hc_wonder_040
+			}
+		}
+		custom_tooltip = hc_show_special_build_effect_tt_04
+	}
+	if = {
+		limit = {
+			is_target_in_global_variable_list = {
+				name = hc_unavailable_special_building
+				target = flag:hc_unavailable_special_building_hc_wonder_050
+			}
+		}
+		custom_tooltip = hc_show_special_build_effect_tt_05
+	}
+	if = {
+		limit = {
+			is_target_in_global_variable_list = {
+				name = hc_unavailable_special_building
+				target = flag:hc_unavailable_special_building_hc_wonder_061
+			}
+		}
+		custom_tooltip = hc_show_special_build_effect_tt_06
+	}
+	if = {
+		limit = {
+			is_target_in_global_variable_list = {
+				name = hc_unavailable_special_building
+				target = flag:hc_unavailable_special_building_hc_wonder_070
+			}
+		}
+		custom_tooltip = hc_show_special_build_effect_tt_07
+	}
+	if = {
+		limit = {
+			is_target_in_global_variable_list = {
+				name = hc_unavailable_special_building
+				target = flag:hc_unavailable_special_building_hc_wonder_081
+			}
+		}
+		custom_tooltip = hc_show_special_build_effect_tt_08
+	}
+}

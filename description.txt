@@ -37,21 +37,13 @@
 不兼容铁人
 
 [h1]近期更新[h1]
+[*]2022.1.27: 
 [list]
-      [*]2021.6.29: 
-      [list]
-            [*]修复bug: 文本错误, 神考决议
-            [*]一些新的事件和修正
-            [*]建筑属性修改
-            [*]图标修改
-      [/list]
-      [*]2021.6.24: 
-      [list]
-            [*]修复一些bug
-            [*]添加若干随机称号
-            [*]一些文本修改
-            [*]完善事件
-      [/list]
+      [*]现在建筑不能直接建造，需要通过新的决议建造(因为这个需要新档)
+      [*]特殊建筑不再与其他mod冲突
+      [*]一个新的神秘特质
+      [url=https://gitee.com/jhhmyjt/tutu/raw/master/img/Snipaste_2022-01-27_13-34-13.png] 网站链接 [/url]
+      <img src="https://gitee.com/jhhmyjt/tutu/raw/master/img/Snipaste_2022-01-27_13-34-13.png">
 [/list]
 
 [h1]更多信息[/h1]

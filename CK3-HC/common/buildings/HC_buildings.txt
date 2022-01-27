@@ -1,14 +1,26 @@
 ###
 #The wonder of city
+#hc_wonder_011:罗马万神殿_01
+#hc_wonder_012:罗马万神殿_02
+#hc_wonder_021:明月阁_01
+#hc_wonder_022:明月阁_02
+#hc_wonder_030:君临城
+#hc_wonder_040:凯岩城
+#hc_wonder_050:赫伦堡废弃之地
+#hc_wonder_061:古罗马斗兽场_01,云府断壁
+#hc_wonder_062:古罗马斗兽场_02
+#hc_wonder_070:绝境长城
+#hc_wonder_081:旧镇_01
+#hc_wonder_082:旧镇_02
 ###
 #罗马万神殿
-hc_pantheon_01 = {
-	next_building = hc_pantheon_02
+hc_wonder_011 = {
+	next_building = hc_wonder_012
 	construction_time = 365
-	cost = {
-		gold = 450
-		prestige = 450
-	}
+	# cost = {
+	# 	gold = 450
+	# 	prestige = 450
+	# }
 	type_icon = "icon_structure_doges_palace.dds"
 	can_construct_potential = {
 		building_requirement_tribal = no
@@ -27,11 +39,11 @@ hc_pantheon_01 = {
 	type = regular
 }
 
-hc_pantheon_02 = {
+hc_wonder_012 = {
 	construction_time = 3650
 	cost = {
-		gold = 5000
-		prestige = 5000
+		gold = 1200
+		prestige = 800
 	}
 	type_icon = "icon_structure_doges_palace.dds"
 	can_construct_potential = {
@@ -59,13 +71,13 @@ hc_pantheon_02 = {
 }
 
 #明月阁
-hc_moon_palace_01 = {
-	next_building = hc_moon_palace_02
-	construction_time = 365
-	cost = {
-		gold = 350
-		prestige = 300
-	}
+hc_wonder_021 = {
+	next_building = hc_wonder_022
+	# construction_time = 365
+	# cost = {
+	# 	gold = 350
+	# 	prestige = 300
+	# }
 	type_icon = "icon_structure_grand_library_of_baghdad.dds"
 	can_construct_potential = {
 		building_requirement_tribal = no
@@ -86,7 +98,7 @@ hc_moon_palace_01 = {
 	type = regular
 }
 
-hc_moon_palace_02 = {
+hc_wonder_022 = {
 	construction_time = very_slow_construction_time
 	cost = {
 		gold = 2000
@@ -120,13 +132,13 @@ hc_moon_palace_02 = {
 }
 
 #君临城
-hc_kings_loading_01 = {
-	construction_time = 3650
-	cost = {
-		gold = 5000
-		prestige = 3000
-		piety = 2000
-	}
+hc_wonder_030 = {
+	# construction_time = 3650
+	# cost = {
+	# 	gold = 5000
+	# 	prestige = 3000
+	# 	piety = 2000
+	# }
 	type_icon = "icon_structure_theodosian_walls.dds"
 	can_construct_potential = {
 		building_requirement_tribal = no
@@ -167,13 +179,13 @@ hc_kings_loading_01 = {
 }
 
 #凯岩城
-hc_rock_castle_01 = {
-	construction_time = 3650
-	cost = {
-		gold = 3000
-		prestige = 1000
-		piety = 500
-	}
+hc_wonder_040 = {
+	# construction_time = 3650
+	# cost = {
+	# 	gold = 3000
+	# 	prestige = 1000
+	# 	piety = 500
+	# }
 	type_icon = "icon_structure_the_citadel_of_aleppo.dds"
 	can_construct_potential = {
 		building_requirement_tribal = no
@@ -205,17 +217,17 @@ hc_rock_castle_01 = {
 }
 
 #赫伦堡废弃之地
-hc_abandoned_place_01 = {
-	construction_time = 3650
-	cost = {
-		gold = 2000
-		prestige = 1000
-		piety = 500
-	}
+hc_wonder_050 = {
+	# construction_time = 3650
+	# cost = {
+	# 	gold = 2000
+	# 	prestige = 1000
+	# 	piety = 500
+	# }
 	type_icon = "icon_structure_palace_of_achen.dds"
 	can_construct_potential = {
 		building_requirement_tribal = no
-		barony = title:b_eichstadt
+		barony = title:b_eichtstad
 	}
 	can_construct = {
 		culture = {
@@ -243,14 +255,14 @@ hc_abandoned_place_01 = {
 }
 
 #古罗马斗兽场
-hc_colosseum_01 = {
-	construction_time = slow_construction_time
-	next_building = hc_colosseum_02
-	cost = {
-		gold = 500
-		prestige = 300
-		piety = 200
-	}
+hc_wonder_061 = {
+	# construction_time = slow_construction_time
+	next_building = hc_wonder_062
+	# cost = {
+	# 	gold = 500
+	# 	prestige = 300
+	# 	piety = 200
+	# }
 	type_icon = "icon_structure_great_mosque_of_mecca.dds"
 	can_construct_potential = {
 		building_requirement_tribal = no
@@ -273,7 +285,7 @@ hc_colosseum_01 = {
 	type = regular
 }
 
-hc_colosseum_02 = {
+hc_wonder_062 = {
 	construction_time = very_slow_construction_time
 	cost = {
 		gold = 1000
@@ -308,13 +320,13 @@ hc_colosseum_02 = {
 }
 
 #绝境长城
-hc_the_wall_01 = {
-	construction_time = 3650
-	cost = {
-		gold = 2500
-		prestige = 2500
-		piety = 100
-	}
+hc_wonder_070 = {
+	# construction_time = 3650
+	# cost = {
+	# 	gold = 2500
+	# 	prestige = 2500
+	# 	piety = 100
+	# }
 	type_icon = "icon_structure_walls_of_benin.dds"
 	can_construct_potential = {
 		building_requirement_tribal = no
@@ -362,14 +374,14 @@ hc_the_wall_01 = {
 }
 
 #旧镇
-hc_old_town_01 = {
-	construction_time = 365
-	next_building = hc_old_town_02
-	cost = {
-		gold = 300
-		prestige = 1000
-		piety = 200
-	}
+hc_wonder_081 = {
+	# construction_time = 365
+	next_building = hc_wonder_082
+	# cost = {
+	# 	gold = 300
+	# 	prestige = 1000
+	# 	piety = 200
+	# }
 	type_icon = "icon_structure_temple_in_jerusalem.dds"
 	can_construct_potential = {
 		building_requirement_tribal = no
@@ -393,7 +405,7 @@ hc_old_town_01 = {
 	type = regular
 }
 
-hc_old_town_02 = {
+hc_wonder_082 = {
 	construction_time = 3650
 	cost = {
 		gold = 3000
@@ -432,20 +444,7 @@ hc_old_town_02 = {
 hc_scared_altar = {
 	construction_time = very_slow_construction_time
 	type_icon = "icon_structure_temple_of_uppsala.dds"
-	can_construct_potential = {
-		building_requirement_tribal = no
-	}
-	can_construct = {
-		scope:holder = {
-			culture = {
-				has_innovation = innovation_battlements
-			}
-		}
-	}
-	is_enabled = {
-	}
 	show_disabled = yes
-	cost_gold = 650
 	character_modifier = {
 		monthly_dynasty_prestige = 5
 		monthly_dynasty_prestige_mult = 0.3
@@ -454,7 +453,7 @@ hc_scared_altar = {
 		dynasty_house_opinion = 10
 	}
 	ai_value = {
-		base = 100
+		base = 0
 	}
 	type = special
 }

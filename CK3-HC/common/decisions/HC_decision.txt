@@ -407,6 +407,14 @@ hc_establish_building_altar_decision = {
 				has_house_modifier = hc_dynasty_god_modifier
 			}
 		}
+		custom_description = {
+			text = hc_has_special_building
+			capital_province = {
+				NOT = {
+					has_special_building = yes
+				}
+			}
+		}
 		OR = {
 			root.dynasty = {
 				dynasty_prestige_level >= 8
@@ -491,6 +499,64 @@ hc_sacrificial_ceremony_decision = {
 	}
 	ai_potential = {
 		always = no
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
+#建造特殊建筑
+hc_establish_building_special_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	major = yes
+	ai_check_interval = 0
+	title = hc_establish_building_special_decision_t
+	selection_tooltip = hc_establish_building_special_decision_tooltip
+	confirm_text = hc_establish_building_special_decision_confirm
+	desc = hc_establish_building_special_decision_desc
+	# cooldown = {
+	# 	months = 3
+	# }
+	is_shown = {
+		is_landed = yes
+		OR = {
+			has_trait = weak_god_descent
+			has_trait = god_descent
+		}
+		hc_special_building_trigger = yes
+	}
+	is_valid = {
+		OR = {
+			has_title = title:b_roma
+			has_title = title:b_hradec
+			has_title = title:b_aquileia
+			has_title = title:b_bordeaux
+			has_title = title:b_eichtstad
+			has_title = title:b_roma
+			has_title = title:b_lubeck
+			has_title = title:b_cordoba
+		}
+		OR = {
+			prestige_level >= 3
+			piety_level >= 3
+		}
+		custom_description = {
+			text = hc_establish_building_special_decision_custom_tt_03
+			NOT = {
+				has_character_flag = hc_flag_build_cooldown
+			}
+		}
+	}
+	is_valid_showing_failures_only = {
+		is_at_war = no
+		is_capable_adult = yes
+		is_imprisoned = no
+	}
+	effect = {
+		custom_tooltip = hc_establish_building_special_decision_custom_tt_01
+		custom_tooltip = hc_establish_building_special_decision_custom_tt_02
+		# hc_special_build_effect = yes
+		trigger_event = hc_special_build.001
 	}
 	ai_will_do = {
 		base = 0

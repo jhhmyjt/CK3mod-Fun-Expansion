@@ -1,0 +1,7 @@
+# hc_build_values = {
+# 	value = 0
+# 	add = 1
+# 	max = 8
+# 	min = 0
+# 	round = yes
+# }

@@ -124,25 +124,17 @@ hc.002 = {
 		name = hc.002.a
 		remove_character_modifier = hc_01_modifier
 		add_trait = god_descent
-		trigger_event = {
-			on_action = on_action_hc
-		}
 		if = {
 			limit = {
 				is_male = yes
 			}
-			set_nickname_effect = {
-				NICKNAME = nick_the_god
-				# NICKNAME = "圣骑士"
-			}
+			give_nickname = nick_the_god
 		}
 		if = {
 			limit = {
 				is_female = yes
 			}
-			set_nickname_effect = {
-				NICKNAME = nick_the_godness
-			}
+			give_nickname = nick_the_godness
 		}
 		root.house = {
 			add_house_modifier = {
@@ -158,13 +150,18 @@ hc.002 = {
 		name = hc.002.b
 		remove_character_modifier = hc_01_modifier
 		add_trait = god_descent
-		trigger_event = {
-			on_action = on_action_hc
-		}
 		root.house = {
 			add_house_modifier = {
 				modifier = hc_dynasty_god_modifier
 			}
+		}
+	}
+	after = {
+		trigger_event = {
+			on_action = on_action_hc
+		}
+		trigger_event = {
+			on_action = on_action_hc_special_building
 		}
 	}
 }
@@ -345,7 +342,7 @@ hc.006 = {
 # 	option = {
 # 		name = major_decisions.3001.a
 # 		title:b_hradec = {
-# 			add_special_building_slot = hc_old_town_01
+# 			add_special_building_slot = hc_wonder_081
 # 		}
 # 	}
 # }

@@ -61,3 +61,16 @@ on_action_coronation = {
 		on_action_coronation
 	}
 }
+
+#奇观事件组
+on_action_hc_special_building = {
+	events = {
+		hc_special_build.004
+	}
+	on_actions = {
+		delay = {
+			years = 1
+		}
+		on_action_hc_special_building
+	}
+}

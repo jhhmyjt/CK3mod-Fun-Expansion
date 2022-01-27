@@ -1,0 +1,101 @@
+hc_show_special_building_trigger = {
+	NOT = {
+		AND = {
+			custom_description = {
+				text = has_hc_wonder_011
+				is_target_in_global_variable_list = {
+					name = hc_unavailable_special_building
+					target = flag:hc_unavailable_special_building_hc_wonder_011
+				}
+			}
+			custom_description = {
+				text = has_hc_wonder_021
+				is_target_in_global_variable_list = {
+					name = hc_unavailable_special_building
+					target = flag:hc_unavailable_special_building_hc_wonder_021
+				}
+			}
+			custom_description = {
+				text = has_hc_wonder_030
+				is_target_in_global_variable_list = {
+					name = hc_unavailable_special_building
+					target = flag:hc_unavailable_special_building_hc_wonder_030
+				}
+			}
+			custom_description = {
+				text = has_hc_wonder_040
+				is_target_in_global_variable_list = {
+					name = hc_unavailable_special_building
+					target = flag:hc_unavailable_special_building_hc_wonder_040
+				}
+			}
+			custom_description = {
+				text = has_hc_wonder_050
+				is_target_in_global_variable_list = {
+					name = hc_unavailable_special_building
+					target = flag:hc_unavailable_special_building_hc_wonder_050
+				}
+			}
+			custom_description = {
+				text = has_hc_wonder_061
+				is_target_in_global_variable_list = {
+					name = hc_unavailable_special_building
+					target = flag:hc_unavailable_special_building_hc_wonder_061
+				}
+			}
+			custom_description = {
+				text = has_hc_wonder_070
+				is_target_in_global_variable_list = {
+					name = hc_unavailable_special_building
+					target = flag:hc_unavailable_special_building_hc_wonder_070
+				}
+			}
+			custom_description = {
+				text = has_hc_wonder_081
+				is_target_in_global_variable_list = {
+					name = hc_unavailable_special_building
+					target = flag:hc_unavailable_special_building_hc_wonder_081
+				}
+			}
+		}
+	}
+}
+
+hc_special_building_trigger = {
+	NOT = {
+		AND = {
+			is_target_in_global_variable_list = {
+				name = hc_unavailable_special_building
+				target = flag:hc_unavailable_special_building_hc_wonder_011
+			}
+			is_target_in_global_variable_list = {
+				name = hc_unavailable_special_building
+				target = flag:hc_unavailable_special_building_hc_wonder_021
+			}
+			is_target_in_global_variable_list = {
+				name = hc_unavailable_special_building
+				target = flag:hc_unavailable_special_building_hc_wonder_030
+			}
+			is_target_in_global_variable_list = {
+				name = hc_unavailable_special_building
+				target = flag:hc_unavailable_special_building_hc_wonder_040
+			}
+			is_target_in_global_variable_list = {
+				name = hc_unavailable_special_building
+				target = flag:hc_unavailable_special_building_hc_wonder_050
+			}
+			is_target_in_global_variable_list = {
+				name = hc_unavailable_special_building
+				target = flag:hc_unavailable_special_building_hc_wonder_061
+			}
+			is_target_in_global_variable_list = {
+				name = hc_unavailable_special_building
+				target = flag:hc_unavailable_special_building_hc_wonder_070
+			}
+			is_target_in_global_variable_list = {
+				name = hc_unavailable_special_building
+				target = flag:hc_unavailable_special_building_hc_wonder_081
+			}
+		}
+	}
+}

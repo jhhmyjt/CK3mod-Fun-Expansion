@@ -60,6 +60,7 @@ god_descent = {
 	intrigue = 10
 	learning = 10
 	health = 1
+	domain_limit = 10
 	monthly_dynasty_prestige_mult = 1
 	monthly_dynasty_prestige = 10
 	monthly_lifestyle_xp_gain_mult = 1
@@ -96,6 +97,7 @@ weak_god_descent = {
 	intrigue = 5
 	learning = 5
 	health = 0.5
+	domain_limit = 3
 	monthly_dynasty_prestige = 1
 	monthly_lifestyle_xp_gain_mult = 0.3
 	monthly_piety_gain_mult = 0.5
@@ -200,6 +202,33 @@ hc_recluse = {
 				desc = trait_hc_recluse_desc
 			}
 			desc = trait_hc_recluse_character_desc
+		}
+	}
+}
+
+#奇观之王
+hc_wonder_king = {
+	ruler_designer_cost = 50
+	index = 5007
+	monthly_prestige = 5
+	domain_limit = 5
+	county_opinion_add = 10
+	health = 0.2
+	monthly_lifestyle_xp_gain_mult = 0.3
+	vassal_limit = 15
+	genetic = no
+	good = yes
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = {
+						exists = this
+					}
+				}
+				desc = trait_hc_wonder_king_desc
+			}
+			desc = trait_hc_wonder_king_character_desc
 		}
 	}
 }

@@ -17,3 +17,6 @@
  trait_hc_recluse:0 "避世"
  trait_hc_recluse_desc:0 "隐居不出仕"
  trait_hc_recluse_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip]隐居不出仕, 悠然自得"
+ trait_hc_wonder_king:0 "奇观之王"
+ trait_hc_wonder_king_desc:0 "奇观之王"
+ trait_hc_wonder_king_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip]建造了大量奇观"
