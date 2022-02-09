@@ -1,0 +1,12 @@
+hc_temple_legacy_track = {
+	is_shown = {
+		OR = {
+			root.house = {
+				has_house_modifier = hc_dynasty_god_modifier
+			}
+			dynasty = {
+				has_dynasty_perk = hc_temple_legacy_1
+			}
+		}
+	}
+}

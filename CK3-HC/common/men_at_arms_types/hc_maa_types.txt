@@ -1,0 +1,68 @@
+#圣殿裁决重装骑兵
+hc_judgment_heavy_cavalry = {
+	type = heavy_cavalry
+	damage = 180
+	toughness = 80
+	pursuit = 50
+	screen = 50
+	terrain_bonus = {
+		plains = {
+			damage = 60
+		}
+		drylands = {
+			damage = 50
+		}
+		hills = {
+			damage = -5
+		}
+		jungle = {
+			damage = -10
+		}
+		mountains = {
+			damage = -20
+		}
+		desert_mountains = {
+			damage = -20
+		}
+		wetlands = {
+			damage = -30
+		}
+	}
+	counters = {
+		archers = 1
+		skirmishers = 1
+		light_cavalry = 1
+		heavy_infantry = 1
+	}
+	winter_bonus = {
+		normal_winter = {
+			damage = -5
+			toughness = -5
+		}
+		harsh_winter = {
+			damage = -10
+			toughness = -10
+		}
+	}
+	buy_cost = {
+		gold = 800
+		prestige = 350
+	}
+	low_maintenance_cost = {
+		gold = 2
+	}
+	high_maintenance_cost = {
+		gold = 6
+	}
+	stack = 100
+	ai_quality = {
+		value = 0
+	}
+	can_recruit = {
+		exists = dynasty
+		dynasty = {
+			has_dynasty_perk = hc_temple_legacy_3
+		}
+	}
+	icon = hc_judgment_heavy_cavalry
+}

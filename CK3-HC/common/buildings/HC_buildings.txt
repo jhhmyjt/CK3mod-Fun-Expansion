@@ -2,16 +2,15 @@
 #The wonder of city
 #hc_wonder_011:罗马万神殿_01
 #hc_wonder_012:罗马万神殿_02
-#hc_wonder_021:明月阁_01
-#hc_wonder_022:明月阁_02
-#hc_wonder_030:君临城
-#hc_wonder_040:凯岩城
-#hc_wonder_050:赫伦堡废弃之地
+#hc_wonder_021:波西米亚城堡_01（备选卡尔施泰因城堡，瓦维尔主教座堂）
+#hc_wonder_022:波西米亚城堡_02
+#hc_wonder_030:古罗马商业区
+#hc_wonder_040:圣米歇尔山
+#hc_wonder_050:暴君之眼，巨大的陨石坑
 #hc_wonder_061:古罗马斗兽场_01,云府断壁
 #hc_wonder_062:古罗马斗兽场_02
-#hc_wonder_070:绝境长城
-#hc_wonder_081:旧镇_01
-#hc_wonder_082:旧镇_02
+#hc_wonder_070:荷尔斯泰因防线
+#hc_wonder_081:圣足山
 ###
 #罗马万神殿
 hc_wonder_011 = {
@@ -376,7 +375,6 @@ hc_wonder_070 = {
 #旧镇
 hc_wonder_081 = {
 	# construction_time = 365
-	next_building = hc_wonder_082
 	# cost = {
 	# 	gold = 300
 	# 	prestige = 1000
@@ -386,41 +384,6 @@ hc_wonder_081 = {
 	can_construct_potential = {
 		building_requirement_tribal = no
 		barony = title:b_cordoba
-	}
-	is_enabled = {
-	}
-	character_modifier = {
-		monthly_piety = 2
-		monthly_piety_gain_mult = 1.1
-		build_piety_cost = -0.1
-		monthly_piety_from_buildings_mult = 1.1
-		monthly_lifestyle_xp_gain_mult = 0.15
-		faith_creation_piety_cost_mult = -0.1
-	}
-	province_modifier = {
-	}
-	county_modifier = {
-	}
-	ai_value = 0
-	type = regular
-}
-
-hc_wonder_082 = {
-	construction_time = 3650
-	cost = {
-		gold = 3000
-		prestige = 5000
-		piety = 1000
-	}
-	type_icon = "icon_structure_temple_in_jerusalem.dds"
-	can_construct_potential = {
-		building_requirement_tribal = no
-		barony = title:b_cordoba
-	}
-	can_construct = {
-		culture = {
-			has_innovation = innovation_battlements
-		}
 	}
 	is_enabled = {
 	}

@@ -1,0 +1,15 @@
+hc_my_knight_opinion = {
+	opinion = 60
+	decaying = yes
+	years = 10
+}
+
+hc_harm_me_opinion_01 = {
+	monthly_change = 0.1
+	decaying = yes
+}
+
+hc_harm_me_opinion_02 = {
+	monthly_change = 0.1
+	decaying = yes
+}

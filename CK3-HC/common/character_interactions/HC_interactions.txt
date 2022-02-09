@@ -1,0 +1,259 @@
+hc_designate_knight_interaction = {
+	category = interaction_category_friendly
+	common_interaction = yes
+	send_name = SEND_PROPOSAL
+	interface_priority = 120
+	ai_frequency = 0
+	is_shown = {
+		scope:actor = {
+			is_physically_able_adult = yes
+			this.house = {
+				has_house_modifier = hc_dynasty_god_modifier
+			}
+			vassal_count>0
+		}
+		scope:recipient = {
+			NOT = {
+				has_trait = hc_knight
+				has_character_flag = hc_knight_flag
+			}
+			is_vassal_of = scope:actor
+			# is_close_family_of = scope:actor
+		}
+	}
+	is_valid_showing_failures_only = {
+		scope:recipient = {
+			is_adult = yes
+			is_imprisoned = no
+		}
+	}
+	desc = hc_designate_knight_interaction_desc
+	on_accept = {
+		scope:actor = {
+			stress_impact = {
+				arrogant = medium_stress_impact_gain
+				paranoid = minor_stress_impact_gain
+				god_descent = medium_stress_impact_loss
+				weak_god_descent = minor_stress_impact_loss
+				pioneer = minor_stress_impact_loss
+			}
+		}
+		scope:recipient = {
+			add_trait = hc_knight
+			add_opinion = {
+				target = scope:actor
+				modifier = hc_my_knight_opinion
+			}
+			add_character_flag = hc_knight_flag
+			trigger_event = {
+				on_action = on_action_trait_hc_knight
+				years = 10
+			}
+		}
+		hidden_effect = {
+			scope:actor = {
+				send_interface_toast = {
+					title = hc_designate_knight_interaction_notification
+					left_icon = scope:actor
+					right_icon = scope:recipient
+					show_as_tooltip = {
+						scope:recipient = {
+							add_trait_force_tooltip = hc_knight
+						}
+						stress_impact = {
+							arrogant = medium_stress_impact_gain
+							paranoid = minor_stress_impact_gain
+							god_descent = medium_stress_impact_loss
+							weak_god_descent = minor_stress_impact_loss
+							pioneer = minor_stress_impact_loss
+						}
+					}
+				}
+			}
+		}
+	}
+	auto_accept = {
+		custom_description = {
+			text = "spending_hook"
+			subject = scope:actor
+			object = scope:recipient
+			AND = {
+				always = scope:hook
+				scope:actor = {
+					has_strong_hook = scope:recipient
+				}
+			}
+		}
+	}
+	send_option = {
+		is_valid = {
+			scope:actor = {
+				has_usable_hook = scope:recipient
+			}
+		}
+		flag = hook
+		localization = SCHEME_HOOK
+	}
+	should_use_extra_icon = {
+		scope:actor = {
+			has_usable_hook = scope:recipient
+		}
+	}
+	extra_icon = "gfx/interface/icons/character_interactions/hook_icon.dds"
+	send_options_exclusive = no
+	cost = {
+		prestige = scope:actor.major_prestige_value
+	}
+	ai_potential = {
+	}
+	auto_accept = no
+	ai_accept = {
+		base = 0
+		modifier = {
+			trigger = {
+				always = scope:hook
+			}
+			add = 100
+			desc = SCHEME_WEAK_HOOK_USED
+		}
+		modifier = {
+			trigger = {
+				has_education_martial_trigger = yes
+			}
+			add = 20
+			desc = INTERACTION_MARTIAL_EDUCATION
+		}
+		modifier = {
+			trigger = {
+				is_close_family_of = root
+			}
+			add = 50
+			desc = interaction_common_desc
+		}
+		modifier = {
+			trigger = {
+				has_relation_friend = scope:actor
+			}
+			add = 50
+			desc = interaction_common_desc
+		}
+		modifier = {
+			trigger = {
+				has_relation_best_friend = scope:actor
+			}
+			add = 200
+			desc = interaction_common_desc
+		}
+		modifier = {
+			trigger = {
+				has_relation_guardian = scope:actor
+			}
+			add = 30
+			desc = interaction_common_desc
+		}
+		modifier = {
+			trigger = {
+				has_relation_mentor = scope:actor
+			}
+			add = 50
+			desc = interaction_common_desc
+		}
+		modifier = {
+			trigger = {
+				has_relation_ward = scope:actor
+			}
+			add = 100
+			desc = interaction_common_desc
+		}
+		modifier = {
+			trigger = {
+				has_relation_soulmate = scope:actor
+			}
+			add = 200
+			desc = interaction_common_desc
+		}
+		modifier = {
+			trigger = {
+				has_relation_lover = scope:actor
+			}
+			add = 50
+			desc = interaction_common_desc
+		}
+		# Weight up for personality values.
+		ai_value_modifier = {
+			who = scope:recipient
+			ai_boldness = {
+				if = {
+					limit = {
+						scope:recipient = {
+							NOT = {
+								ai_boldness = 0
+							}
+						}
+					}
+					value = 0.5
+				}
+			}
+			ai_compassion = {
+				if = {
+					limit = {
+						scope:recipient = {
+							NOT = {
+								ai_compassion = 0
+							}
+						}
+					}
+					value = -0.5
+				}
+			}
+		}
+		modifier = {
+			add = -1000
+			has_trait = craven
+			desc = INTERACTION_CRAVEN
+		}
+		modifier = {
+			add = -50
+			has_trait = content
+			desc = INTERACTION_CONTENT
+		}
+		modifier = {
+			add = -50
+			has_trait = humble
+			desc = INTERACTION_HUMBLE
+		}
+		modifier = {
+			add = -50
+			has_trait = lazy
+			desc = INTERACTION_LAZY
+		}
+		modifier = {
+			add = 100
+			has_trait = brave
+			desc = INTERACTION_BRAVE
+		}
+		modifier = {
+			add = 25
+			has_trait = ambitious
+			desc = INTERACTION_AMBITIOUS
+		}
+		modifier = {
+			add = -100
+			has_trait = pioneer
+			desc = interaction_pioneer
+		}
+		modifier = {
+			add = -100
+			has_trait = weak_god_descent
+			desc = interaction_weak_god_descent
+		}
+		modifier = {
+			add = -1000
+			has_trait = god_descent
+			desc = interaction_god_descent
+		}
+	}
+	ai_will_do = {
+		base = 0
+	}
+}

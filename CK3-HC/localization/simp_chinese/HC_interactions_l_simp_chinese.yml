@@ -1,0 +1,11 @@
+﻿l_simp_chinese:
+ designate_shieldmaiden_interaction_extra_icon:0 "$hook_extra_icon$"
+ hc_designate_knight_interaction:0 "册封圣殿骑士"
+ hc_designate_knight_interaction_desc:0 "向[recipient.GetFirstNameNoTooltip]提出作为你的[recipient.Custom('HC_knight')|U]为你而战。\n\n#weak [recipient.Custom('HC_knight')|U]是你从众多[direct_vassals|E]中挑选的精英。可以提议[close_family|E]、[friend|E]、[mentor|E]等和你关系匪浅的角色成为[recipient.Custom('HC_knight')|U]，他们可以在你需要的时候为你赴汤蹈火！\n(每位[recipient.Custom('HC_knight')|U]有十年任期，不可连任，一生只有一次！#"
+ hc_designate_knight_interaction_notification:0 "[recipient.GetShortUIName]成为一名[recipient.Custom('HC_knight')|U]！"
+ hc_designate_knight_interaction_custom_01:0 "已册封过！"
+ interaction_common_desc:0 "[recipient.GetSheHe|U]和你关系匪浅"
+ interaction_god_descent:0 "[GetTrait('god_descent').GetName( recipient )]：$VALUE|=+0$"
+ interaction_weak_god_descent:0 "[GetTrait('weak_god_descent').GetName( recipient )]：$VALUE|=+0$"
+ interaction_pioneer:0 "[GetTrait('pioneer').GetName( recipient )]：$VALUE|=+0$"
+ hc_switch.005_msg_t:0 "载誉而归"

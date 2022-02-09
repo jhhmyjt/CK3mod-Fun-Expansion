@@ -1,0 +1,3 @@
+﻿l_simp_chinese:
+ HC_JUDGMENT_HEAVY_CAVALRY_UNLOCK_DESCRIPTION:0 "可以招募[GetMaA('hc_judgment_heavy_cavalry').GetName][men_at_arms|E]"
+ HC_JUDGMENT_HEAVY_CAVALRY_DESCRIPTION:0 "#weak 圣殿裁决重骑能力强大但同时费用也高，小心国库#!"

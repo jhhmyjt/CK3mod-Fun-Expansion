@@ -1,3 +1,66 @@
+#test
+# hc_test_decision = {
+# 	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+# 	title = "hc mod test decision"
+# 	selection_tooltip = "test"
+# 	desc = "test decision"
+# 	confirm_text = "test"
+# 	ai_check_interval = 0
+# 	major = yes
+# 	is_shown = {
+# 		is_ai = no
+# 	}
+# 	is_valid = {
+# 	}
+# 	effect = {
+# 		spawn_army = {
+# 			levies = 7500
+# 			men_at_arms = {
+# 				type = hc_judgment_heavy_cavalry
+# 				men = 2500
+# 			}
+# 			location = root.capital_province
+# 			inheritable = no
+# 			name = "圣殿骑士团"
+# 		}
+# 	}
+# 	ai_potential = {
+# 		always = no
+# 	}
+# 	ai_will_do = {
+# 		base = 0
+# 	}
+# }
+#reset
+hc_reset_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	title = hc_reset_decision_t
+	selection_tooltip = hc_reset_decision_tt
+	desc = hc_reset_decision_desc
+	confirm_text = hc_reset_decision_confirm
+	ai_check_interval = 0
+	major = no
+	is_shown = {
+		is_ai = no
+	}
+	is_valid = {
+	}
+	effect = {
+		custom_tooltip = hc_reset_decision_effect_tt
+		# trigger_event = hc.101
+		trigger_event = {
+			on_action = on_action_hc_every_year
+			years = 1
+		}
+	}
+	ai_potential = {
+		always = no
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
 #开始
 hc_begin_decision = {
 	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
@@ -30,7 +93,11 @@ hc_begin_decision = {
 		is_at_war = no
 	}
 	effect = {
-		custom_tooltip = hc_begin_decision_effect_tt
+		custom_tooltip = hc_begin_decision_effect_tt_01
+		custom_tooltip = hc_begin_decision_effect_tt_02
+		custom_tooltip = hc_begin_decision_effect_tt_03
+		custom_tooltip = hc_begin_decision_effect_tt_04
+		custom_tooltip = hc_begin_decision_effect_tt_05
 		trigger_event = {
 			id = hc.001
 			days = 5
@@ -73,6 +140,49 @@ hc_end_decision = {
 		custom_tooltip = hc_end_decision_effect_tt
 		trigger_event = {
 			id = hc.009
+		}
+	}
+	# ai_check_frequency = 0
+	ai_potential = {
+		always = no
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
+#打造宝物
+hc_build_artifacts_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	title = hc_build_artifacts_decision_t
+	selection_tooltip = hc_build_artifacts_decision_tooltip
+	desc = hc_build_artifacts_decision_desc
+	confirm_text = hc_build_artifacts_decision_confirm
+	ai_check_interval = 0
+	major = yes
+	cooldown = {
+		days = 3650
+	}
+	is_shown = {
+		is_ai = no
+		root.house = {
+			has_house_modifier = hc_dynasty_god_modifier
+		}
+		NOT = {
+			any_artifact = {
+				has_variable = hc_saint_sword
+			}
+		}
+	}
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+	effect = {
+		# custom_tooltip = hc_build_artifacts_decision_effect_tt_01
+		hc_create_artifact_saint_sword_effect = {
+			OWNER = root
 		}
 	}
 	# ai_check_frequency = 0
@@ -555,8 +665,80 @@ hc_establish_building_special_decision = {
 	effect = {
 		custom_tooltip = hc_establish_building_special_decision_custom_tt_01
 		custom_tooltip = hc_establish_building_special_decision_custom_tt_02
+		hc_special_build_effect = yes
 		# hc_special_build_effect = yes
 		trigger_event = hc_special_build.001
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
+#摇人
+hc_call_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_invite_knights.dds"
+	major = no
+	ai_check_interval = 0
+	title = hc_call_decision_t
+	selection_tooltip = hc_call_decision_tooltip
+	confirm_text = hc_call_decision_confirm
+	desc = hc_call_decision_desc
+	cooldown = {
+		months = 1
+	}
+	cost = {
+		prestige = {
+			add = 300
+			divide = 2
+			if = {
+				limit = {
+					has_trait = god_descent
+				}
+				multiply = 0.3
+			}
+			if = {
+				limit = {
+					has_trait = weak_god_descent
+				}
+				multiply = 0.5
+			}
+			if = {
+				limit = {
+					has_trait = pioneer
+				}
+				multiply = 0.5
+			}
+		}
+	}
+	is_shown = {
+		is_landed = yes
+		root.house = {
+			has_house_modifier = hc_dynasty_god_modifier
+		}
+	}
+	is_valid = {
+		prestige_level >= 3
+		is_at_war = yes
+		custom_description = {
+			text = hc_call_decision_custom_tt_01
+			any_vassal = {
+				AND = {
+					has_trait = hc_knight
+					is_at_war = no
+				}
+			}
+		}
+	}
+	is_valid_showing_failures_only = {
+		is_capable_adult = yes
+		is_imprisoned = no
+	}
+	effect = {
+		custom_tooltip = hc_call_decision_custom_tt_02
+		trigger_event = {
+			id = hc_call_war.001
+			days = 3
+		}
 	}
 	ai_will_do = {
 		base = 0

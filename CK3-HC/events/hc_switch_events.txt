@@ -1,0 +1,151 @@
+namespace = hc_switch
+#开关事件组
+#战争结束移除为君王拔剑修正
+hc_switch.001 = {
+	type = character_event
+	desc = hc_switch_common.desc
+	title = hc_switch_common.t
+	left_portrait = {
+		character = ROOT
+		animation = happiness
+	}
+	theme = crown
+	override_background = {
+		reference = corridor_day
+	}
+	trigger = {
+		has_character_modifier = hc_char_modifier_01
+		is_at_war = no
+	}
+	option = {
+		name = hc_switch_common.a
+		remove_character_modifier = hc_char_modifier_01
+	}
+}
+
+#战争继续
+hc_switch.002 = {
+	type = character_event
+	desc = hc_switch_common.desc
+	title = hc_switch_common.t
+	left_portrait = {
+		character = ROOT
+		animation = happiness
+	}
+	theme = crown
+	override_background = {
+		reference = corridor_day
+	}
+	trigger = {
+		has_character_modifier = hc_char_modifier_01
+		is_at_war = yes
+	}
+	option = {
+		name = hc_switch_common.a
+		trigger_event = {
+			on_action = on_action_hc_knight
+			months = 1
+		}
+	}
+}
+
+#圣殿骑士不再是直属后移除特质
+hc_switch.003 = {
+	type = character_event
+	desc = hc_switch_common.desc
+	title = hc_switch_common.t
+	left_portrait = {
+		character = ROOT
+		animation = happiness
+	}
+	theme = crown
+	override_background = {
+		reference = corridor_day
+	}
+	trigger = {
+		has_character_flag = hc_knight_flag
+		has_trait = hc_knight
+	}
+	option = {
+		name = hc_switch_common.a
+		remove_trait = hc_knight
+	}
+}
+
+#依旧是直属
+hc_switch.004 = {
+	type = character_event
+	desc = hc_switch_common.desc
+	title = hc_switch_common.t
+	left_portrait = {
+		character = ROOT
+		animation = happiness
+	}
+	theme = crown
+	override_background = {
+		reference = corridor_day
+	}
+	trigger = {
+		has_trait = hc_knight
+		is_vassal_of = root
+	}
+	option = {
+		name = hc_switch_common.a
+		add_gold = 1000
+		trigger_event = {
+			on_action = on_action_trait_hc_knight
+			months = 1
+		}
+	}
+}
+
+#骑士退休
+hc_switch.005 = {
+	type = character_event
+	desc = hc_switch_common.desc
+	title = hc_switch_common.t
+	hidden = yes
+	left_portrait = {
+		character = ROOT
+		animation = happiness
+	}
+	theme = crown
+	override_background = {
+		reference = corridor_day
+	}
+	trigger = {
+		is_ai = no
+		any_vassal = {
+			NOT = {
+				has_trait = hc_knight
+				has_trait = hc_retired_knight
+			}
+			has_character_flag = hc_knight_flag
+		}
+	}
+	immediate = {
+		random_vassal = {
+			limit = {
+				NOT = {
+					has_trait = hc_knight
+					has_trait = hc_retired_knight
+				}
+				has_character_flag = hc_knight_flag
+			}
+			save_scope_as = hc_scope_retired_knight
+		}
+	}
+	option = {
+		name = hc_switch_common.a
+		send_interface_message = {
+			type = event_generic_good
+			title = hc_switch.005_msg_t
+			left_icon = scope:hc_scope_retired_knight
+			right_icon = root
+			scope:hc_scope_retired_knight = {
+				add_prestige = 500
+				add_trait = hc_retired_knight
+			}
+		}
+	}
+}

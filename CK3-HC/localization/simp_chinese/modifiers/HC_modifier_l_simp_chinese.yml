@@ -37,3 +37,7 @@
  hc_dynasty_alert_modifier_desc:0 "该家族成员祭祀神灵"
  hc_sacrifice_modifier:0 "举行过祭祀"
  hc_sacrifice_modifier_desc:0 "该角色最近举行过祭祀"
+ hc_char_modifier_01:0 "为君王拔剑"
+ hc_char_modifier_01_desc:0 "清君侧，攘除奸徐是该角色的使命"
+ hc_dynasty_holy_modifier:0 "沐浴神圣"
+ hc_dynasty_holy_modifier_desc:0 "该角色受过圣血洗礼，高贵神圣"

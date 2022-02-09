@@ -1,0 +1,4 @@
+hc_saint_sword = {
+	icon = "hc_saint_sword.dds"
+	asset = ep1_steppe_sword_01_a_entity
+}

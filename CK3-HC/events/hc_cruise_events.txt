@@ -560,6 +560,563 @@ cruise.008 = {
 	}
 }
 
+#刺杀计划-预谋
+cruise.009 = {
+	type = character_event
+	desc = cruise.009.desc
+	title = cruise.009.t
+	left_portrait = {
+		character = scope:cruise_knight_scope_01
+		animation = personality_honorable
+	}
+	right_portrait = {
+		character = scope:cruise_knight_scope_02
+		animation = personality_honorable
+	}
+	theme = secret
+	override_background = {
+		reference = terrain_activity
+	}
+	trigger = {
+		scope:activity = {
+			any_in_list = {
+				variable = potential_cruise_participants
+				is_alive = yes
+				OR = {
+					has_trait = ambitious
+					has_trait = sadistic
+				}
+				# OR = {
+				# 	opinion = {
+				# 		target = root
+				# 		value < 80
+				# 	}
+				# 	OR = {
+				# 		has_relation_rival = root
+				# 		has_relation_potential_rival = root
+				# 	}
+				# }
+			}
+			variable_list_size = {
+				name = potential_cruise_participants
+				value >= 2
+			}
+		}
+	}
+	immediate = {
+		scope:activity = {
+			random_in_list = {
+				variable = potential_cruise_participants
+				limit = {
+					is_alive = yes
+				}
+				save_scope_as = cruise_knight_scope_01
+			}
+			random_in_list = {
+				variable = potential_cruise_participants
+				limit = {
+					is_alive = yes
+					NOT = {
+						this = scope:cruise_knight_scope_01
+					}
+					OR = {
+						has_trait = ambitious
+						has_trait = sadistic
+					}
+					# OR = {
+					# 	opinion = {
+					# 		target = root
+					# 		value< = 80
+					# 	}
+					# 	or = {
+					# 		has_relation_rival = root
+					# 		has_relation_potential_rival = root
+					# 	}
+					# }
+				}
+				save_scope_as = cruise_knight_scope_02
+			}
+		}
+	}
+	option = {
+		name = cruise.009.a
+		highlight_portrait = scope:cruise_knight_scope_01
+		trigger_event = {
+			id = cruise.011
+			days = {
+				2,5
+			}
+		}
+	}
+	option = {
+		name = cruise.009.b
+		highlight_portrait = scope:cruise_knight_scope_02
+		trigger_event = {
+			id = cruise.010
+			days = {
+				2,5
+			}
+		}
+	}
+	option = {
+		name = cruise.009.c
+		trigger_event = {
+			id = cruise.010
+			days = {
+				2,5
+			}
+		}
+	}
+}
+
+#刺杀计划-执行(solo)
+cruise.010 = {
+	type = character_event
+	desc = cruise.010.desc
+	title = cruise.010.t
+	left_portrait = {
+		character = root
+		animation = anger
+	}
+	right_portrait = {
+		character = scope:cruise_knight_scope_02
+		animation = personality_vengeful
+	}
+	theme = secret
+	override_background = {
+		reference = alley_night
+	}
+	trigger = {
+	}
+	immediate = {
+		scope:cruise_knight_scope_02 = {
+			reverse_add_opinion = {
+				modifier = hc_harm_me_opinion_01
+				target = root
+				opinion = -50
+			}
+		}
+	}
+	option = {
+		name = cruise.010.a
+		duel = {
+			target = scope:cruise_knight_scope_02
+			skill = prowess
+			30 = {
+				compare_modifier = {
+					value = scope:duel_value
+				}
+				desc = cruise.010.a.success
+				send_interface_toast = {
+					left_icon = scope:cruise_knight_scope_02
+					title = cruise.010.a.success
+					scope:cruise_knight_scope_02 = {
+						if = {
+							limit = {
+								has_trait = wounded_3
+							}
+							death = {
+								killer = root
+								death_reason = death_duel
+							}
+						}
+						else_if = {
+							limit = {
+								has_trait = wounded_2
+							}
+							remove_trait = wounded_2							#We do it like this so you can see the trait you've lost
+							add_trait = wounded_3
+						}
+						else_if = {
+							limit = {
+								has_trait = wounded_1
+							}
+							remove_trait = wounded_1
+							add_trait = wounded_2
+						}
+						else = {
+							add_trait = wounded_1
+						}
+					}
+				}
+				add_dread = 30
+			}
+			20 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -1
+				}
+				desc = cruise.010.a.failure
+				send_interface_toast = {
+					left_icon = scope:cruise_knight_scope_02
+					title = cruise.010.a.failure
+					scope:cruise_knight_scope_02 = {
+						reverse_add_opinion = {
+							target = ROOT
+							modifier = hc_harm_me_opinion_01
+							opinion = -60
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_trait = wounded_3
+					}
+					death = {
+						killer = scope:cruise_knight_scope_02
+						death_reason = death_duel
+					}
+				}
+				else_if = {
+					limit = {
+						has_trait = wounded_2
+					}
+					remove_trait = wounded_2					#We do it like this so you can see the trait you've lost
+					add_trait = wounded_3
+				}
+				else_if = {
+					limit = {
+						has_trait = wounded_1
+					}
+					remove_trait = wounded_1
+					add_trait = wounded_2
+				}
+				else = {
+					add_trait = wounded_1
+				}
+				add_character_flag = {
+					flag = hc_flag_cruise_event_run
+				}
+				add_prestige = -500
+			}
+		}
+	}
+	option = {
+		name = cruise.010.b
+		add_character_flag = {
+			flag = hc_flag_cruise_event_run
+		}
+		add_prestige = -500
+		add_stress = 50
+	}
+	after = {
+		trigger_event = {
+			id = cruise.012
+			days = {
+				2,5
+			}
+		}
+	}
+}
+
+#刺杀计划-执行(double)
+cruise.011 = {
+	type = character_event
+	desc = cruise.011.desc
+	title = cruise.011.t
+	left_portrait = {
+		character = root
+		animation = anger
+	}
+	right_portrait = {
+		character = scope:cruise_knight_scope_02
+		animation = personality_vengeful
+	}
+	lower_left_portrait = {
+		character = scope:cruise_knight_scope_01
+		animation = anger
+	}
+	theme = secret
+	override_background = {
+		reference = alley_night
+	}
+	trigger = {
+	}
+	immediate = {
+		scope:cruise_knight_scope_02 = {
+			reverse_add_opinion = {
+				modifier = hc_harm_me_opinion_01
+				target = root
+				opinion = -50
+			}
+		}
+	}
+	option = {
+		name = cruise.011.a
+		duel = {
+			target = scope:cruise_knight_scope_02
+			skill = prowess
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+				}
+				desc = cruise.010.a.success
+				send_interface_toast = {
+					left_icon = scope:cruise_knight_scope_02
+					title = cruise.010.a.success
+					scope:cruise_knight_scope_02 = {
+						if = {
+							limit = {
+								has_trait = wounded_3
+							}
+							death = {
+								killer = root
+								death_reason = death_duel
+							}
+						}
+						else_if = {
+							limit = {
+								has_trait = wounded_2
+							}
+							remove_trait = wounded_2							#We do it like this so you can see the trait you've lost
+							add_trait = wounded_3
+						}
+						else_if = {
+							limit = {
+								has_trait = wounded_1
+							}
+							remove_trait = wounded_1
+							add_trait = wounded_2
+						}
+						else = {
+							add_trait = wounded_1
+						}
+					}
+				}
+				add_dread = 30
+			}
+			20 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -1
+				}
+				desc = cruise.010.a.failure
+				send_interface_toast = {
+					left_icon = scope:cruise_knight_scope_02
+					title = cruise.010.a.failure
+					scope:cruise_knight_scope_02 = {
+						reverse_add_opinion = {
+							target = ROOT
+							modifier = hc_harm_me_opinion_01
+							opinion = -60
+						}
+					}
+				}
+				if = {
+					limit = {
+						has_trait = wounded_3
+					}
+					death = {
+						killer = scope:cruise_knight_scope_02
+						death_reason = death_duel
+					}
+				}
+				else_if = {
+					limit = {
+						has_trait = wounded_2
+					}
+					remove_trait = wounded_2					#We do it like this so you can see the trait you've lost
+					add_trait = wounded_3
+				}
+				else_if = {
+					limit = {
+						has_trait = wounded_1
+					}
+					remove_trait = wounded_1
+					add_trait = wounded_2
+				}
+				else = {
+					add_trait = wounded_1
+				}
+				add_character_flag = {
+					flag = hc_flag_cruise_event_run
+				}
+				add_prestige = -500
+			}
+		}
+	}
+	option = {
+		name = cruise.011.b
+		scope:cruise_knight_scope_01 = {
+			duel = {
+				target = scope:cruise_knight_scope_02
+				skill = prowess
+				30 = {
+					compare_modifier = {
+						value = scope:duel_value
+					}
+					desc = cruise.010.a.success
+					send_interface_toast = {
+						left_icon = scope:cruise_knight_scope_02
+						title = cruise.010.a.success
+						scope:cruise_knight_scope_02 = {
+							send_interface_toast = {
+								left_icon = scope:cruise_knight_scope_02
+								title = cruise.010.a.failure
+								scope:cruise_knight_scope_02 = {
+									add_opinion = {
+										target = ROOT
+										modifier = hc_harm_me_opinion_02
+										opinion = -60
+									}
+								}
+							}
+							if = {
+								limit = {
+									has_trait = wounded_3
+								}
+								death = {
+									killer = root
+									death_reason = death_duel
+								}
+							}
+							else_if = {
+								limit = {
+									has_trait = wounded_2
+								}
+								remove_trait = wounded_2								#We do it like this so you can see the trait you've lost
+								add_trait = wounded_3
+							}
+							else_if = {
+								limit = {
+									has_trait = wounded_1
+								}
+								remove_trait = wounded_1
+								add_trait = wounded_2
+							}
+							else = {
+								add_trait = wounded_1
+							}
+						}
+					}
+				}
+				20 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = -1
+					}
+					desc = cruise.010.a.failure
+					# send_interface_toast = {
+					# 	left_icon = scope:cruise_knight_scope_02
+					# 	title = cruise.010.a.failure
+					# 	scope:cruise_knight_scope_02 = {
+					# 		add_opinion = {
+					# 			target = ROOT
+					# 			modifier = hc_harm_me_opinion_02
+					# 			opinion = -60
+					# 		}
+					# 	}
+					# }
+					if = {
+						limit = {
+							has_trait = wounded_3
+						}
+						death = {
+							killer = scope:cruise_knight_scope_02
+							death_reason = death_duel
+						}
+					}
+					else_if = {
+						limit = {
+							has_trait = wounded_2
+						}
+						remove_trait = wounded_2						#We do it like this so you can see the trait you've lost
+						add_trait = wounded_3
+					}
+					else_if = {
+						limit = {
+							has_trait = wounded_1
+						}
+						remove_trait = wounded_1
+						add_trait = wounded_2
+					}
+					else = {
+						add_trait = wounded_1
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = cruise.011.c
+		add_character_flag = {
+			flag = hc_flag_cruise_event_run
+		}
+		add_prestige = -500
+		add_stress = 50
+	}
+	after = {
+		trigger_event = {
+			id = cruise.012
+			days = {
+				2,5
+			}
+		}
+	}
+}
+
+#刺杀计划-结局
+cruise.012 = {
+	type = character_event
+	desc = cruise.012.desc
+	title = cruise.012.t
+	left_portrait = {
+		character = root
+		animation = rage
+	}
+	right_portrait = {
+		character = scope:cruise_knight_scope_02
+		animation = severelyinjured
+	}
+	theme = crown
+	override_background = {
+		reference = alley_night
+	}
+	trigger = {
+		is_ai = no
+	}
+	option = {
+		name = cruise.012.a
+		scope:cruise_knight_scope_02 = {
+			death = {
+				killer = root
+				death_reason = death_decapitated
+			}
+		}
+		add_prestige = 350
+		add_dread = 30
+		add_character_modifier = {
+			modifier = more_vigilant_recistance_modifier
+			months = 3
+		}
+	}
+	option = {
+		name = cruise.012.b
+		scope:cruise_knight_scope_02 = {
+			add_prestige = -300
+			add_opinion = {
+				modifier = hc_harm_me_opinion_02
+				target = root
+				opinion = -50
+			}
+		}
+		add_dread = -30
+		add_character_modifier = {
+			modifier = more_vigilant_recistance_modifier
+			months = 3
+		}
+	}
+	after = {
+		trigger_event = {
+			id = cruise.101			#To complete the activity
+			days = {
+				10
+				20
+			}
+		}
+	}
+}
+
 cruise.101 = {
 	type = character_event
 	desc = cruise.101.desc
@@ -583,7 +1140,14 @@ cruise.101 = {
 		}
 	}
 	after = {
-		add_prestige = 500
+		if = {
+			limit = {
+				NOT = {
+					has_character_flag = hc_flag_cruise_event_run
+				}
+			}
+			add_prestige = 500
+		}
 		#End the activity
 		if = {
 			limit = {

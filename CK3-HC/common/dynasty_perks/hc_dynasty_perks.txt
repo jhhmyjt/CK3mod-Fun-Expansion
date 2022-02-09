@@ -1,0 +1,86 @@
+hc_temple_legacy_1 = {
+	legacy = hc_temple_legacy_track
+	character_modifier = {
+		name = hc_temple_legacy_1_name
+		prowess = 5
+		martial = 5
+		diplomacy = 5
+		stewardship = 5
+		learning = 5
+		intrigue = 5
+	}
+	ai_chance = {
+		value = 0
+	}
+}
+
+hc_temple_legacy_2 = {
+	legacy = hc_temple_legacy_track
+	character_modifier = {
+		name = hc_temple_legacy_2_name
+		monthly_lifestyle_xp_gain_mult = 0.8
+	}
+	ai_chance = {
+		value = 0
+	}
+}
+
+hc_temple_legacy_3 = {
+	legacy = hc_temple_legacy_track
+	character_modifier = {
+		name = hc_temple_legacy_3_name
+		knight_limit = 5
+		men_at_arms_limit = 3
+		men_at_arms_cap = 5
+		knight_effectiveness_mult = 0.3
+		cultural_head_fascination_mult = 0.8
+	}
+	effect = {
+		custom_description_no_bullet = {
+			text = hc_temple_legacy_3_unlock_effect
+		}
+		custom_description_no_bullet = {
+			text = hc_temple_legacy_3_effect
+		}
+	}
+	ai_chance = {
+		value = 0
+	}
+}
+
+hc_temple_legacy_4 = {
+	legacy = hc_temple_legacy_track
+	character_modifier = {
+		name = hc_temple_legacy_4_name
+		vassal_limit = 12
+		domain_limit = 6
+		general_opinion = 15
+		development_growth_factor = 0.25
+	}
+	ai_chance = {
+		value = 0
+	}
+}
+
+hc_temple_legacy_5 = {
+	legacy = hc_temple_legacy_track
+	effect = {
+		custom_tooltip = hc_temple_legacy_5_effect_tt
+		root.house = {
+			add_house_modifier = {
+				modifier = hc_dynasty_holy_modifier
+			}
+		}
+		hidden_effect = {
+			root = {
+				add_trait = hc_holy_blood
+				every_close_family_member = {
+					add_trait = hc_holy_blood
+				}
+			}
+		}
+	}
+	ai_chance = {
+		value = 0
+	}
+}

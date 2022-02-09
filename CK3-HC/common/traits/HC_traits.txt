@@ -63,12 +63,10 @@ god_descent = {
 	domain_limit = 10
 	monthly_dynasty_prestige_mult = 1
 	monthly_dynasty_prestige = 10
-	monthly_lifestyle_xp_gain_mult = 1
+	monthly_lifestyle_xp_gain_mult = 2.8
 	monthly_piety_gain_mult = 0.5
 	monthly_prestige_gain_mult = 0.5
-	knight_limit = 5
-	knight_effectiveness_mult = 0.5
-	attraction_opinion = 10
+	general_opinion = 30
 	genetic = no
 	good = yes
 	desc = {
@@ -99,10 +97,10 @@ weak_god_descent = {
 	health = 0.5
 	domain_limit = 3
 	monthly_dynasty_prestige = 1
-	monthly_lifestyle_xp_gain_mult = 0.3
+	monthly_lifestyle_xp_gain_mult = 1.8
 	monthly_piety_gain_mult = 0.5
 	monthly_prestige_gain_mult = 0.5
-	attraction_opinion = 5
+	general_opinion = 15
 	genetic = no
 	good = yes
 	ai_rationality = high_positive_ai_value
@@ -128,14 +126,16 @@ saint_sword = {
 	ruler_designer_cost = 1
 	supply_duration = 0.5
 	# siege_phase_time = -0.2
-	# no_water_crossing_penalty = yes
 	enemy_terrain_advantage = -0.2
-	knight_effectiveness_mult = 0.25
+	knight_effectiveness_mult = 0.75
 	movement_speed = 0.15
 	retreat_losses = -0.1
 	enemy_hard_casualty_modifier = 0.15
-	negate_health_penalty_add = 1
-	tolerance_advantage_mod = 8
+	negate_health_penalty_add = 1.5
+	advantage = 15
+	no_water_crossing_penalty = yes
+	levy_size = 0.25
+	levy_reinforcement_rate = 0.2
 	#hard_casualty_modifier
 	desc = {
 		first_valid = {
@@ -229,6 +229,87 @@ hc_wonder_king = {
 				desc = trait_hc_wonder_king_desc
 			}
 			desc = trait_hc_wonder_king_character_desc
+		}
+	}
+}
+
+#圣殿骑士
+hc_knight = {
+	ruler_designer_cost = 50
+	index = 5008
+	martial = 5
+	prowess = 5
+	liege_opinion = 30
+	same_opinion = 20
+	monthly_prestige = 1.5
+	domain_limit = 3
+	health = 0.3
+	monthly_lifestyle_xp_gain_mult = 0.1
+	vassal_limit = 5
+	genetic = no
+	good = yes
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = {
+						exists = this
+					}
+				}
+				desc = trait_hc_knight_desc
+			}
+			desc = trait_hc_knight_character_desc
+		}
+	}
+}
+
+#骑士退休-供奉
+hc_retired_knight = {
+	ruler_designer_cost = 50
+	index = 5009
+	liege_opinion = 50
+	same_opinion = 30
+	monthly_prestige = 3
+	negate_health_penalty_add = 1
+	genetic = no
+	good = yes
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = {
+						exists = this
+					}
+				}
+				desc = trait_hc_retired_knight_desc
+			}
+			desc = trait_hc_retired_knight_character_desc
+		}
+	}
+}
+
+#受圣血洗礼
+hc_holy_blood = {
+	ruler_designer_cost = 50
+	index = 5010
+	religious_head_opinion = 15
+	realm_priest_opinion = 20
+	religious_vassal_opinion = 15
+	advantage_against_coreligionists = 5
+	church_holding_build_speed = -0.25
+	genetic = yes
+	good = yes
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = {
+						exists = this
+					}
+				}
+				desc = trait_hc_holy_blood_desc
+			}
+			desc = trait_hc_holy_blood_character_desc
 		}
 	}
 }

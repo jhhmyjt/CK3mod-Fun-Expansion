@@ -23,25 +23,45 @@ hc_special_build.001 = {
 	}
 	option = {
 		name = hc_special_build.001.a
-		if = {
-			limit = {
-				any_vassal = {
-					is_powerful_vassal_of = root
-					opinion = {
-						target = root
-						value <= 50
+		random_list = {
+			60 = {
+				trigger = {
+					NOT = {
+						OR = {
+							prestige_level> = 5
+							dynasty_prestige_level> = 7
+						}
+					}
+				}
+				modifier = {
+					add = 20
+					any_vassal = {
+						is_powerful_vassal_of = root
+						opinion = {
+							target = root
+							value <= 50
+						}
+					}
+				}
+				custom_tooltip = hc_special_build.001.a_custom_tt_01
+				trigger_event = {
+					id = hc_special_build.002
+					days = {
+						3,7
 					}
 				}
 			}
-			trigger_event = {
-				id = hc_special_build.002
-				days = 3
-			}
-		}
-		else = {
-			trigger_event = {
-				id = hc_special_build.003
-				days = 5
+			20 = {
+				# modifier = {
+				# 	add = diplomacy
+				# }
+				custom_tooltip = hc_special_build.001.a_custom_tt_02
+				trigger_event = {
+					id = hc_special_build.003
+					months = {
+						1,2,3
+					}
+				}
 			}
 		}
 	}
@@ -75,15 +95,34 @@ hc_special_build.002 = {
 		is_ai = no
 	}
 	immediate = {
-		random_vassal = {
+		if = {
 			limit = {
-				is_powerful_vassal_of = root
-				opinion = {
-					target = root
-					value <= 50
+				any_vassal = {
+					is_powerful_vassal_of = root
+					opinion = {
+						target = root
+						value <= 50
+					}
 				}
 			}
-			save_scope_as = hc_build_vassal
+			random_vassal = {
+				limit = {
+					is_powerful_vassal_of = root
+					opinion = {
+						target = root
+						value <= 50
+					}
+				}
+				save_scope_as = hc_build_vassal
+			}
+		}
+		else = {
+			random_vassal = {
+				limit = {
+					is_powerful_vassal_of = root
+				}
+				save_scope_as = hc_build_vassal
+			}
 		}
 	}
 	option = {
@@ -109,7 +148,9 @@ hc_special_build.002 = {
 				}
 				trigger_event = {
 					id = hc_special_build.003
-					days = 5
+					months = {
+						1,2,3
+					}
 				}
 			}
 			20 = {

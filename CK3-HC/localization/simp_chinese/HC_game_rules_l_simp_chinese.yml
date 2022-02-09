@@ -1,0 +1,8 @@
+﻿l_simp_chinese:
+ rule_gr_hc_xp:0 "FE生活经验获取"
+ setting_normal_gr_hc_xp:0 "普通获取速度"
+ setting_normal_gr_hc_xp_desc:0 "mod特质中生活经验获取速度为一般值"
+ setting_medium_gr_hc_xp:0 "增快获取速度"
+ setting_medium_gr_hc_xp_desc:0 "mod特质中生活经验获取速度为一般值三倍"
+ setting_vast_gr_hc_xp:0 "超快获取速度"
+ setting_vast_gr_hc_xp_desc:0 "mod特质中生活经验获取速度为一般值五倍"

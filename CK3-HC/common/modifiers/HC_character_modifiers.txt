@@ -1,0 +1,14 @@
+#角色修正
+#为君拔剑
+hc_char_modifier_01 = {
+	martial = 5
+	prowess_per_prestige_level = 1
+	army_maintenance_mult = -0.05
+	controlled_province_advantage = 7
+	negate_health_penalty_add = 1
+	hostile_scheme_resistance_add = 20
+	levy_size = 0.2
+	levy_reinforcement_rate = 0.1
+	movement_speed = 0.1
+	icon = prowess_positive
+}

@@ -1,0 +1,9 @@
+#圣殿骑士
+HC_knight = {
+	type = character
+	text = {
+		localization_key = trait_hc_knight
+		trigger = {
+		}
+	}
+}

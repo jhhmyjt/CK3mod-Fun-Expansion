@@ -1,4 +1,32 @@
 namespace = hc
+#desc event
+hc.101 = {
+	type = character_event
+	desc = hc.101.desc
+	title = hc.101.t
+	# left_portrait = {
+	# 	character = ROOT
+	# 	animation = stress
+	# }
+	theme = crown
+	trigger = {
+		is_ai = no
+	}
+	option = {
+		name = hc.101.a
+		flavor = "#F test#"
+	}
+	option = {
+		name = hc.101.b
+		hidden_effect = {
+			trigger_event = {
+				on_action = on_action_hc_every_year
+				years = 1
+			}
+		}
+	}
+}
+
 #test event
 hc.100 = {
 	type = character_event
@@ -119,11 +147,19 @@ hc.002 = {
 	}
 	immediate = {
 		play_music_cue = "mx_cue_epic_sacral_moment"
+		add_trait = god_descent
+		hc_create_artifact_saint_sword_effect = {
+			OWNER = root
+		}
+		root.house = {
+			add_house_modifier = {
+				modifier = hc_dynasty_god_modifier
+			}
+		}
 	}
 	option = {
 		name = hc.002.a
 		remove_character_modifier = hc_01_modifier
-		add_trait = god_descent
 		if = {
 			limit = {
 				is_male = yes
@@ -136,11 +172,6 @@ hc.002 = {
 			}
 			give_nickname = nick_the_godness
 		}
-		root.house = {
-			add_house_modifier = {
-				modifier = hc_dynasty_god_modifier
-			}
-		}
 		# every_player_heir = {
 		# 	add_character_flag = flag_hc_god_child
 		# }
@@ -149,12 +180,6 @@ hc.002 = {
 	option = {
 		name = hc.002.b
 		remove_character_modifier = hc_01_modifier
-		add_trait = god_descent
-		root.house = {
-			add_house_modifier = {
-				modifier = hc_dynasty_god_modifier
-			}
-		}
 	}
 	after = {
 		trigger_event = {
@@ -162,6 +187,11 @@ hc.002 = {
 		}
 		trigger_event = {
 			on_action = on_action_hc_special_building
+			years = 1
+		}
+		trigger_event = {
+			on_action = on_action_hc_every_year
+			years = 1
 		}
 	}
 }

@@ -1,0 +1,14 @@
+hc_saint_sword_template = {
+	can_equip = {
+		always = yes
+	}
+	can_benefit = {
+		root.house = {
+			has_house_modifier = hc_dynasty_god_modifier
+		}
+	}
+	fallback = {
+		court_grandeur_baseline_add = 10
+	}
+	unique = yes
+}

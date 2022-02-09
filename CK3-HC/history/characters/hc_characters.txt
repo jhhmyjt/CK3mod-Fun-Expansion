@@ -1,0 +1,75 @@
+# 1000001 = {
+# 	name = "Panos"
+# 	dynasty = 51
+# 	dna = hc_panos_dna
+# 	religion = "norse_pagan"
+# 	culture = "norse"
+# 	#六维
+# 	martial = 26
+# 	diplomacy = 20
+# 	intrigue = 23
+# 	stewardship = 24
+# 	learning = 23
+# 	prowess = 25
+# 	disallow_random_traits = yes
+# 	#性格特质
+# 	trait = calm
+# 	trait = patient
+# 	trait = diligent
+# 	trait = arbitrary
+# 	#教育特质
+# 	trait = education_martial_4
+# 	#军事特质
+# 	trait = military_engineer
+# 	trait = flexible_leader
+# 	trait = organizer
+# 	#天赋特质
+# 	trait = beauty_good_3
+# 	trait = intellect_good_3
+# 	trait = physique_good_3
+# 	trait = pure_blooded
+# 	trait = fecund
+# 	trait = strong
+# 	trait = shrewd
+# 	sexuality = heterosexual
+# 	health = 7
+# 	849.10.24 = {
+# 		birth = yes
+# 	}
+# 	940.5.25 = {
+# 		death = yes
+# 	}
+# }
+# 1000002 = {
+# 	name = "Ayana"
+# 	dynasty = 51
+# 	dna = hc_ayana_dna
+# 	religion = "norse_pagan"
+# 	culture = "norse"
+# 	female = yes
+# 	martial = 16
+# 	diplomacy = 26
+# 	intrigue = 20
+# 	stewardship = 24
+# 	learning = 22
+# 	prowess = 16
+# 	disallow_random_traits = yes
+# 	trait = calm
+# 	trait = patient
+# 	trait = chaste
+# 	trait = education_stewardship_4
+# 	#天赋特质
+# 	trait = intellect_good_3
+# 	trait = physique_good_3
+# 	trait = pure_blooded
+# 	trait = fecund
+# 	trait = strong
+# 	trait = shrewd
+# 	sexuality = heterosexual
+# 	850.10.23 = {
+# 		birth = yes
+# 	}
+# 	950.5.25 = {
+# 		death = yes
+# 	}
+# }

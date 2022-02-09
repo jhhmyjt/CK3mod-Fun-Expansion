@@ -1,20 +1,25 @@
-# on_action_hc = {
-# 	on_actions = {
-# 		on_action_hc_01
-# 	}
-# }
-# on_action_hc_01 = {
-# 	events = {
-# 		hc.001
-# 		hc.002
-# 	}
-# 	on_actions = {
-# 		delay = {
-# 			days = 30
-# 		}
-# 		on_action_hc_01
-# 	}
-# }
+on_action_hc_every_year = {
+	events = {
+		hc_switch.005
+	}
+	on_actions = {
+		delay = {
+			years = 1
+		}
+		on_action_hc_every_year
+	}
+}
+
+on_action_hc_every_three_months = {
+	events = {
+	}
+}
+
+on_action_hc_every_five_days = {
+	events = {
+	}
+}
+
 on_action_hc = {
 	events = {
 		#拔剑事件组
@@ -72,5 +77,19 @@ on_action_hc_special_building = {
 			years = 1
 		}
 		on_action_hc_special_building
+	}
+}
+
+on_action_hc_knight = {
+	events = {
+		hc_switch.001
+		hc_switch.002
+	}
+}
+
+on_action_trait_hc_knight = {
+	events = {
+		hc_switch.003
+		# hc_switch.004
 	}
 }

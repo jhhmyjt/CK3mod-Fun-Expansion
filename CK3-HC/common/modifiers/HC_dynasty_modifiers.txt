@@ -1,0 +1,34 @@
+#受神灵眷顾的家族
+hc_dynasty_god_modifier = {
+	icon = magic_positive
+	health = 0.05
+	stewardship = 2
+	learning = 2
+	monthly_lifestyle_xp_gain_mult = 0.1
+	positive_inactive_inheritance_chance = 0.2
+	direct_vassal_opinion = 5
+	monthly_prestige_gain_mult = 0.3
+}
+
+#探索前进的道路
+hc_dynasty_pioneer_modifier = {
+	icon = prowess_positive
+	health = 0.02
+	stewardship = 3
+	prowess = 2
+	knight_limit = 2
+	monthly_prestige_gain_mult = 0.1
+}
+
+#祭坛之灵
+hc_dynasty_alert_modifier = {
+	icon = family_positive
+	monthly_piety_gain_mult = 0.1
+	dynasty_house_opinion = 5
+}
+
+#沐浴神圣
+hc_dynasty_holy_modifier = {
+	icon = piety_positive
+	monthly_piety_gain_mult = 0.15
+}
