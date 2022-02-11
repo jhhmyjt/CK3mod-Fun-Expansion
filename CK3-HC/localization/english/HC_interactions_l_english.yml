@@ -1,0 +1,11 @@
+﻿l_english:
+ designate_shieldmaiden_interaction_extra_icon:0 "$hook_extra_icon$"
+ hc_designate_knight_interaction:0 "Designate Templar"
+ hc_designate_knight_interaction_desc:0 "Propose to [recipient.GetFirstNameNoTooltip] as your [recipient.Custom('HC_knight')|U] to fight for you.\n\n#weak [recipient.Custom('HC_knight')|U]Yes Elites you select from many [direct_vassals|E]. You can propose [close_family|E], [friend|E], [mentor|E] and other characters who are closely related to you to become [recipient.Custom('HC_knight') |U], they can go through fire and water for you when you need it!\n(Each [recipient.Custom('HC_knight')|U] has a ten-year term, non-renewable, only once in a lifetime!#"
+ hc_designate_knight_interaction_notification:0 "[recipient.GetShortUIName] becomes a [recipient.Custom('HC_knight')|U]!"
+ hc_designate_knight_interaction_custom_01:0 "Canonized!"
+ interaction_common_desc:0 "[recipient.GetSheHe|U] has a great relationship with you"
+ interaction_god_descent:0 "[GetTrait('god_descent').GetName( recipient )]:$VALUE|=+0$"
+ interaction_weak_god_descent:0 "[GetTrait('weak_god_descent').GetName( recipient )]:$VALUE|=+0$"
+ interaction_pioneer:0 "[GetTrait('pioneer').GetName( recipient )]:$VALUE|=+0$"
+ hc_switch.005_msg_t:0 "Return with Honor" 

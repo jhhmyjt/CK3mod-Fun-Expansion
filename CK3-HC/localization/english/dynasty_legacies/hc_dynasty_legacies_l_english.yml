@@ -1,0 +1,9 @@
+﻿l_english:
+ hc_temple_legacy_track_name:1 "Temple Legacy "
+ hc_temple_legacy_track_desc:0 "The strong live, the weak die"
+ hc_temple_legacy_1_name:0 "dragon among men "
+ hc_temple_legacy_2_name:1 "a thousand miles a day"
+ hc_temple_legacy_3_name:0 "advantage is in me"
+ hc_temple_legacy_4_name:0 "under my rule"
+ hc_temple_legacy_5_name:1 "Holy blood baptism"
+ hc_temple_legacy_5_effect_tt:0 "You and your [close_family|E] get [GetTrait('hc_holy_blood').GetName( GetNullCharacter )][trait|E]"

@@ -1,91 +1,45 @@
-[i]Translated by Google[/i]
+[b][i]Translated by Google[/i][/b]
 [h1]Overview[/h1]
-Some fun decisions, events, traits, modifiers, nicknames and buildings
+some decisions/events/traits/modifiers/nick/buildings
 
-[b]Attention[/b]: This is my first mod, and it is entertaining so the value does not match the vanilla version. If you have any suggestions, please leave a message.
+[b]Attention[/b]: This is my first mod making, this mod is more for entertainment, the values are not vanilla style. If you have any suggestions, please leave a message 
 
-[h1]Decisions[/h1]
+[h1]Feature[/h1]
 [list]
-[*][b]Holy Examination[/b]:
-Trigger conditions: non-ai, adult character. 
-The character will continue to be severely punished for a year, and will receive a powerful buff after the end
-[*][b]Farewell to the world[/b]:
-The character will die in a few days
-[*][b]Inheritance ceremony: Durandal[/b]:
-The character becomes the guardian of the holy sword Durandal 
-[*][b]Cruising territory [/b]: For daily activities, the title of the principality or higher is required 
-[*][b]Canonization of Empress[/b]: The only decision, which can only be executed once, requires the character to have a female spouse, and the main title is the Roman Empire 
-[*][b]Restoring Roman Orthodoxy[/b]: The only resolution, can only be executed once, requiring the main title to be the Roman Empire 
+[*]Powerful traits that can be unlocked through a series of events 
+[*]Eight wonders scattered around
+[*]Can summon knights to join your war
+[*]Cruise around your own territory (similar to vanilla hunting) 
+[*]Strong dynasty heritage 
+[*]Others
 [/list]
-
-[h1]Events[/h1]
-[list]
-      [*]Draw the Holy Sword: The character gains military commander traits when commanding the army
-      [*]Holy Sword in the Sheath: When the character is no longer in command of the army, it loses the general trait and gains a minor health modifier
-[/list]
-[b]Reminder: These two events will not appear when the player frequently switches the main ruler and the character frequently leads the army. The event pop-up window has a 3-month cooldown, during which the event will still be triggered but will not be displayed.[/b]
-[list]
-      [*]Fate Choice: You will make your own choice
-      [*]Tian Ling Torture: After passing the god test, the character will appear once every 3~5 years, and will be rewarded or punished according to his piety and prestige level 
-[/list]
-
-[h1]Traits[/h1]
-[list]
-      [*] Favor of the Gods: huge bonus, obtained after completing the God test
-      [*]Immortal, Indestructible Sword Durandal: Military bonus, obtained when commanding an army (provided that you have the Gods’ Blessing trait)
-      [*]Sherring's Asylum: A weakened version of Favor of the Gods
-      [*]Fearless: Bravery, life experience gains bonus 
-[/list]
-
-[h1]Nicknames[/h1]
-[b]Paladin[/b]: Obtained after completing the god test
-[b]Pioneer[/b]: Obtained in Fate Choice
-
-[h1]Buildings[/h1]
-Some buildings are based on [i] A Song of Ice and Fire[/i], the following buildings can only be built by players
-[list]
-      [*]Mingyue Pavilion: Friendship bonus, can be built in the Baron Hradec (Duchy of Bohemia)
-      [*] King’s Landing City: Taxation, development, direct jurisdiction bonuses, can be built in the Baron of Aquileia (Duchy of Friuli)
-      [*]Kay Rock City: Supply, soldier bonus, can be built in the Baron of Bordeaux (Duchy of Gascogne)
-      [*]The Abandoned Land of Herrenborg: Horror value, tyranny bonus, can be built in the Baron of Eichstatt (Duchy of Nordgau)
-      [*]The Great Wall of Impossibility: Omen, Legion Bonus, can be built in the Baron of Lübeck (Dukedom of Holstein)
-      [*]Old Town: Lifestyle, cultural reform bonus, can be built in the Baronial Cordoba (Duchy of Cordoba)
-      [*]Rome Pantheon: Prestige, clan prestige bonus, can be built in Rome baronial
-      [*] Ancient Roman Colosseum: Number of knights, bonus for knights' combat power, can be built in Rome baronial
-[/list]
-
-[h1]Support language[/h1]
-Simplified Chinese
-English (Google Translate)
+[h1]Supported languages[/h1]
+简体中文
+English(by Google)
 
 [h1]Compatibility[/h1]
-Compatible with all mods (not surprisingly)
-Compatible with existing save games
-Incompatible with Ironman
+Compatible with most mods (no surprises), trait id used: 5001~5011, 5111
+Compatible with existing save
+Not compatible with Iron Man 
 
-[h1]Recent updates [h1]
+[h1]Sources & Disclaimer[/h1]
+[b]Some materials come from the Internet. If there is any infringement, please contact me and I will delete it immediately. [/b]The list is as follows ：
 [list]
-       [*]2021.05.21:
-       [list]
-             [*][b]New decisions[/b]: Inheritance ceremony: Durandal, farewell to the world
-             [*][b]New events[/b]: Choice of fate, following the footsteps of the spirits, torture by the heavenly spirits
-             [*][b]New modifiers[/b]: The grace is long, the remaining prestige is still there, and the mission is not insulted
-             [*][b]New nickname[/b]: Trailblazer
-             [*][b]New traits[/b]: Fearlessness, Shelter
-       [/list]
-       [*]2021.05.30: 
-       [list]
-             [*][b]New decisions[/b]: 巡游领土, 册封女皇, 恢复罗马正统
-             [*][b]New events[/b]: 巡游事件
-             [*][b]New modifiers[/b]: 体恤民情, 重铸罗马, 商业奇才等
-             [*][b]New nickname[/b]: 加冕者
-             [*][b]New traits[/b]: 奥古斯塔
-       [/list]
+[*]hc_temple_legacy_track 中世纪插画,[url=https://www.zcool.com.cn/work/ZNDE4NzAzNjg=.html]画师：King1st[/url]
+[*]hc_judgment_heavy_cavalry 骑士插画,[url=https://www.zcool.com.cn/work/ZMTg5NDY2NA==.html]画师：dj9fun[/url]
 [/list]
 
-[h1]More information[/h1]
+[h1]Recent update [/h1]
 [list]
-      [*][url=https://github.com/jhhmyjt/CK3mod-Fun-Expansion]GitHub[/url]
-      [*][url=https://gitee.com/jhhmyjt/ckmods]Gitee[/url]
-      [*][url=https://tieba.baidu.com/p/7358853396?pid=139371833733&cid=0&red_tag=2716365086#139371833733]Baidu Post Bar[/url]
+      [*]Time：2022.1.27
+      [*]Added new decision: Summon the Templars, now you can gather your knights to join the war
+      [*]New random events have been added to the parade event, watch out for the bad guys in your court, they may be plotting against you on the way 
+      [*]The new clan inheritance needs to pass the test first
+      [*]New special army , unlocked through clan inheritance 
 [/list]
+
+[h1]Finally[/h1]
+
+If you think this mod is not bad, please don't be stingy with your likes 👍
+
+[b]✨✨✨Thanks for your support ✨✨✨[/b]

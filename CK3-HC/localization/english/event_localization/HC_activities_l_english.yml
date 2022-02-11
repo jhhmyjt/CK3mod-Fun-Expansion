@@ -1,0 +1,5 @@
+﻿l_english: 
+ activity_cruise:0 "cruise"
+ activity_cruise_name:0 "[ACTIVITY.GetOwner.GetNamePossessiveOrMy|U]'s cruise"
+ activity_cruise_desc:0 "#D Patrol the territory.#!"
+ activity_cruise_owner:0 "Lord"

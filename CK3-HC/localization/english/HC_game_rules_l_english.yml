@@ -1,0 +1,8 @@
+﻿l_english:
+ rule_gr_hc_xp:0 "FE life experience acquisition"
+ setting_normal_gr_hc_xp:0 "Normal Gain Speed"
+ setting_normal_gr_hc_xp_desc:0 "The life experience gain speed in the mod trait is normal"
+ setting_medium_gr_hc_xp:0 "Increase acquisition speed"
+ setting_medium_gr_hc_xp_desc:0 "In the mod trait, life experience is gained three times faster than normal"
+ setting_vast_gr_hc_xp:0 "Super Fast Acquiring Speed"
+ setting_vast_gr_hc_xp_desc:0 "In the mod trait, life experience is gained five times faster than normal" 
