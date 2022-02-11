@@ -8,7 +8,7 @@ hc_saint_sword_template = {
 		}
 	}
 	fallback = {
-		court_grandeur_baseline_add = 10
+		court_grandeur_baseline_add = 5
 	}
 	unique = yes
 }

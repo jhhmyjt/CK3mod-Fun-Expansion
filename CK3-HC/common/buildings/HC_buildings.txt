@@ -21,10 +21,10 @@ hc_wonder_011 = {
 	# 	prestige = 450
 	# }
 	type_icon = "icon_structure_doges_palace.dds"
-	can_construct_potential = {
-		building_requirement_tribal = no
-		barony = title:b_roma
-	}
+	# can_construct_potential = {
+	# 	building_requirement_tribal = no
+	# 	barony = title:b_roma
+	# }
 	is_enabled = {
 	}
 	character_modifier = {
@@ -34,7 +34,9 @@ hc_wonder_011 = {
 		prestige_level_impact_mult = 0.1
 		health = 0.01
 	}
-	ai_value = 0
+	ai_value = {
+		base = 0
+	}
 	type = regular
 }
 
@@ -45,10 +47,10 @@ hc_wonder_012 = {
 		prestige = 800
 	}
 	type_icon = "icon_structure_doges_palace.dds"
-	can_construct_potential = {
-		building_requirement_tribal = no
-		barony = title:b_roma
-	}
+	# can_construct_potential = {
+	# 	building_requirement_tribal = no
+	# 	barony = title:b_roma
+	# }
 	can_construct = {
 		culture = {
 			has_innovation = innovation_manorialism
@@ -65,7 +67,9 @@ hc_wonder_012 = {
 		prestige_level_impact_mult = 0.2
 		health = 0.01
 	}
-	ai_value = 0
+	ai_value = {
+		base = 0
+	}
 	type = regular
 }
 
@@ -78,10 +82,10 @@ hc_wonder_021 = {
 	# 	prestige = 300
 	# }
 	type_icon = "icon_structure_grand_library_of_baghdad.dds"
-	can_construct_potential = {
-		building_requirement_tribal = no
-		barony = title:b_hradec
-	}
+	# can_construct_potential = {
+	# 	building_requirement_tribal = no
+	# 	barony = title:b_hradec
+	# }
 	is_enabled = {
 	}
 	character_modifier = {
@@ -93,7 +97,9 @@ hc_wonder_021 = {
 		attraction_opinion = 5
 		county_opinion_add = 5
 	}
-	ai_value = 0
+	ai_value = {
+		base = 0
+	}
 	type = regular
 }
 
@@ -104,10 +110,10 @@ hc_wonder_022 = {
 		prestige = 500
 	}
 	type_icon = "icon_structure_grand_library_of_baghdad.dds"
-	can_construct_potential = {
-		building_requirement_tribal = no
-		barony = title:b_hradec
-	}
+	# can_construct_potential = {
+	# 	building_requirement_tribal = no
+	# 	barony = title:b_hradec
+	# }
 	can_construct = {
 		culture = {
 			has_innovation = innovation_chronicle_writing
@@ -126,7 +132,9 @@ hc_wonder_022 = {
 		dynasty_house_opinion = 5
 		child_opinion = 10
 	}
-	ai_value = 0
+	ai_value = {
+		base = 0
+	}
 	type = regular
 }
 
@@ -139,10 +147,10 @@ hc_wonder_030 = {
 	# 	piety = 2000
 	# }
 	type_icon = "icon_structure_theodosian_walls.dds"
-	can_construct_potential = {
-		building_requirement_tribal = no
-		barony = title:b_aquileia
-	}
+	# can_construct_potential = {
+	# 	building_requirement_tribal = no
+	# 	barony = title:b_aquileia
+	# }
 	can_construct = {
 		culture = {
 			has_innovation = innovation_castle_baileys
@@ -173,7 +181,9 @@ hc_wonder_030 = {
 		monthly_county_control_change_factor = 0.2
 		development_growth_factor = 0.2
 	}
-	ai_value = 0
+	ai_value = {
+		base = 0
+	}
 	type = regular
 }
 
@@ -186,10 +196,10 @@ hc_wonder_040 = {
 	# 	piety = 500
 	# }
 	type_icon = "icon_structure_the_citadel_of_aleppo.dds"
-	can_construct_potential = {
-		building_requirement_tribal = no
-		barony = title:b_bordeaux
-	}
+	# can_construct_potential = {
+	# 	building_requirement_tribal = no
+	# 	barony = title:b_bordeaux
+	# }
 	can_construct = {
 		culture = {
 			has_innovation = innovation_castle_baileys
@@ -211,7 +221,9 @@ hc_wonder_040 = {
 		build_speed = -0.2
 		hostile_raid_time = 0.5
 	}
-	ai_value = 0
+	ai_value = {
+		base = 0
+	}
 	type = regular
 }
 
@@ -224,10 +236,10 @@ hc_wonder_050 = {
 	# 	piety = 500
 	# }
 	type_icon = "icon_structure_palace_of_achen.dds"
-	can_construct_potential = {
-		building_requirement_tribal = no
-		barony = title:b_eichtstad
-	}
+	# can_construct_potential = {
+	# 	building_requirement_tribal = no
+	# 	barony = title:b_eichtstad
+	# }
 	can_construct = {
 		culture = {
 			has_innovation = innovation_burhs
@@ -249,7 +261,9 @@ hc_wonder_050 = {
 	}
 	county_modifier = {
 	}
-	ai_value = 0
+	ai_value = {
+		base = 0
+	}
 	type = regular
 }
 
@@ -263,10 +277,10 @@ hc_wonder_061 = {
 	# 	piety = 200
 	# }
 	type_icon = "icon_structure_great_mosque_of_mecca.dds"
-	can_construct_potential = {
-		building_requirement_tribal = no
-		barony = title:b_roma
-	}
+	# can_construct_potential = {
+	# 	building_requirement_tribal = no
+	# 	barony = title:b_roma
+	# }
 	is_enabled = {
 	}
 	character_modifier = {
@@ -280,7 +294,9 @@ hc_wonder_061 = {
 	}
 	county_modifier = {
 	}
-	ai_value = 0
+	ai_value = {
+		base = 0
+	}
 	type = regular
 }
 
@@ -292,10 +308,10 @@ hc_wonder_062 = {
 		piety = 500
 	}
 	type_icon = "icon_structure_great_mosque_of_mecca.dds"
-	can_construct_potential = {
-		building_requirement_tribal = no
-		barony = title:b_roma
-	}
+	# can_construct_potential = {
+	# 	building_requirement_tribal = no
+	# 	barony = title:b_roma
+	# }
 	can_construct = {
 		culture = {
 			has_innovation = innovation_battlements
@@ -314,7 +330,9 @@ hc_wonder_062 = {
 	}
 	county_modifier = {
 	}
-	ai_value = 0
+	ai_value = {
+		base = 0
+	}
 	type = regular
 }
 
@@ -327,10 +345,10 @@ hc_wonder_070 = {
 	# 	piety = 100
 	# }
 	type_icon = "icon_structure_walls_of_benin.dds"
-	can_construct_potential = {
-		building_requirement_tribal = no
-		barony = title:b_lubeck
-	}
+	# can_construct_potential = {
+	# 	building_requirement_tribal = no
+	# 	barony = title:b_lubeck
+	# }
 	can_construct = {
 		culture = {
 			has_innovation = innovation_house_soldiers
@@ -368,7 +386,9 @@ hc_wonder_070 = {
 	}
 	county_modifier = {
 	}
-	ai_value = 0
+	ai_value = {
+		base = 0
+	}
 	type = regular
 }
 
@@ -381,10 +401,10 @@ hc_wonder_081 = {
 	# 	piety = 200
 	# }
 	type_icon = "icon_structure_temple_in_jerusalem.dds"
-	can_construct_potential = {
-		building_requirement_tribal = no
-		barony = title:b_cordoba
-	}
+	# can_construct_potential = {
+	# 	building_requirement_tribal = no
+	# 	barony = title:b_cordoba
+	# }
 	is_enabled = {
 	}
 	character_modifier = {
@@ -399,7 +419,9 @@ hc_wonder_081 = {
 	}
 	county_modifier = {
 	}
-	ai_value = 0
+	ai_value = {
+		base = 0
+	}
 	type = regular
 }
 

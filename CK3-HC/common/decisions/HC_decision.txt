@@ -96,8 +96,11 @@ hc_begin_decision = {
 		custom_tooltip = hc_begin_decision_effect_tt_01
 		custom_tooltip = hc_begin_decision_effect_tt_02
 		custom_tooltip = hc_begin_decision_effect_tt_03
-		custom_tooltip = hc_begin_decision_effect_tt_04
 		custom_tooltip = hc_begin_decision_effect_tt_05
+		custom_description = {
+			text = hc_begin_decision_effect_tt_04
+			has_ep1_dlc_trigger = yes
+		}
 		trigger_event = {
 			id = hc.001
 			days = 5
@@ -163,15 +166,15 @@ hc_build_artifacts_decision = {
 	cooldown = {
 		days = 3650
 	}
+	cost = {
+		gold = 450
+		prestige = 300
+	}
 	is_shown = {
 		is_ai = no
+		has_ep1_dlc_trigger = yes
 		root.house = {
 			has_house_modifier = hc_dynasty_god_modifier
-		}
-		NOT = {
-			any_artifact = {
-				has_variable = hc_saint_sword
-			}
 		}
 	}
 	is_valid_showing_failures_only = {
@@ -180,9 +183,46 @@ hc_build_artifacts_decision = {
 		is_at_war = no
 	}
 	effect = {
-		# custom_tooltip = hc_build_artifacts_decision_effect_tt_01
-		hc_create_artifact_saint_sword_effect = {
-			OWNER = root
+		custom_tooltip = hc_build_artifacts_decision_effect_tt_01
+		if = {
+			limit = {
+				any_artifact = {
+					has_variable = hc_saint_sword
+				}
+			}
+			hidden_effect = {
+				random_artifact = {
+					limit = {
+						has_variable = hc_saint_sword
+					}
+					save_scope_as = hc_build_artifacts_decision_art
+				}
+				scope:hc_build_artifacts_decision_art = {
+					add_durability = -999
+				}
+				hc_create_artifact_saint_sword_effect = {
+					OWNER = root
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				Not = {
+					is_target_in_global_variable_list = {
+						name = hc_unavailable_unique_art
+						target = flag:hc_artifact_saint_sword
+					}
+				}
+			}
+			hidden_effect = {
+				hc_create_artifact_saint_sword_effect = {
+					OWNER = root
+				}
+				add_to_global_variable_list = {
+					name = hc_unavailable_unique_art
+					target = flag:hc_artifact_saint_sword
+				}
+			}
 		}
 	}
 	# ai_check_frequency = 0
@@ -465,6 +505,7 @@ hc_rebuild_god_decision = {
 		NOT = {
 			has_trait = god_descent
 		}
+		has_trait = pioneer
 	}
 	is_valid_showing_failures_only = {
 		is_imprisoned = no

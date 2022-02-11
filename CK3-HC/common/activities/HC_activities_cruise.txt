@@ -1,8 +1,7 @@
 activity_cruise = {
-	expiration_days = 60
+	expiration_days = 100
 	days_until_auto_start = 5
 	solo = yes
-	frame = 1
 	color = {
 		0.253906
 		0.867188
@@ -18,14 +17,6 @@ activity_cruise = {
 				limit = {
 					any_knight = {
 						is_available_healthy_ai_adult = yes
-						scope:activity = {
-							NOT = {
-								is_target_in_variable_list = {
-									name = potential_cruise_participants
-									target = prev
-								}
-							}
-						}
 					}
 				}
 				every_knight = {

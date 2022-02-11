@@ -1,11 +1,10 @@
 hc_saint_sword_modifier = {
 	court_grandeur_baseline_add = 10
-	monthly_dynasty_prestige = 3
-	monthly_piety = 2
-	martial_per_piety_level = 1
-	prowess = 8
-	knight_limit = 5
-	same_faith_opinion = 10
+	monthly_prestige = 3
+	martial_per_prestige_level = 2
+	prowess_no_portrait = 15
+	knight_limit = 10
 	long_reign_bonus_mult = 0.3
 	dread_baseline_add = 30
+	negate_health_penalty_add = 1.5
 }

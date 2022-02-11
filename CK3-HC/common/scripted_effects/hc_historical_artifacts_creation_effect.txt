@@ -30,3 +30,14 @@ hc_create_artifact_saint_sword_effect = {
 		save_scope_as = epic
 	}
 }
+
+# set_artifact_rarity_legendary = {
+# 	save_scope_value_as = {
+# 		name = quality
+# 		value = 150
+# 	}
+# 	save_scope_value_as = {
+# 		name = wealth
+# 		value = 150
+# 	}
+# }

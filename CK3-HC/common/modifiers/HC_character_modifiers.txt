@@ -12,3 +12,14 @@ hc_char_modifier_01 = {
 	movement_speed = 0.1
 	icon = prowess_positive
 }
+
+#圣剑在手
+hc_char_modifier_02 = {
+	enemy_terrain_advantage = -0.2
+	knight_effectiveness_mult = 0.75
+	movement_speed = 0.15
+	retreat_losses = -0.25
+	enemy_hard_casualty_modifier = 0.15
+	advantage = 15
+	icon = prowess_positive
+}

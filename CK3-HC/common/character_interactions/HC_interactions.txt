@@ -1,7 +1,9 @@
 hc_designate_knight_interaction = {
 	category = interaction_category_friendly
 	common_interaction = yes
+	# use_diplomatic_range = no
 	send_name = SEND_PROPOSAL
+	icon = knight_interaction_icon
 	interface_priority = 120
 	ai_frequency = 0
 	is_shown = {

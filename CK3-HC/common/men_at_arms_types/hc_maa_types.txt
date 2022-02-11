@@ -28,17 +28,29 @@ hc_judgment_heavy_cavalry = {
 			damage = -30
 		}
 	}
+	# era_bonus = {
+	# 	culture_era_early_medieval = {
+	# 		damage = 15
+	# 		toughness = 15
+	# 	}
+	# 	culture_era_high_medieval = {
+	# 		damage = 30
+	# 		toughness = 30
+	# 	}
+	# 	culture_era_late_medieval = {
+	# 		damage = 45
+	# 		toughness = 45
+	# 	}
+	# }
 	counters = {
 		archers = 1
 		skirmishers = 1
 		light_cavalry = 1
 		heavy_infantry = 1
+		archer_cavalry = 1
+		camel_cavalry = 1
 	}
 	winter_bonus = {
-		normal_winter = {
-			damage = -5
-			toughness = -5
-		}
 		harsh_winter = {
 			damage = -10
 			toughness = -10

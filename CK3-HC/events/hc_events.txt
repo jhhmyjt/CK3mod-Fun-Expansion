@@ -148,8 +148,17 @@ hc.002 = {
 	immediate = {
 		play_music_cue = "mx_cue_epic_sacral_moment"
 		add_trait = god_descent
-		hc_create_artifact_saint_sword_effect = {
-			OWNER = root
+		if = {
+			limit = {
+				has_ep1_dlc_trigger = yes
+			}
+			hc_create_artifact_saint_sword_effect = {
+				OWNER = root
+			}
+			add_to_global_variable_list = {
+				name = hc_unavailable_unique_art
+				target = flag:hc_artifact_saint_sword
+			}
 		}
 		root.house = {
 			add_house_modifier = {
@@ -196,11 +205,12 @@ hc.002 = {
 	}
 }
 
-#拔出圣剑
+#战争时指挥军队
 hc.003 = {
 	type = character_event
 	desc = hc.003.desc
 	title = hc.003.t
+	hidden = yes
 	left_portrait = {
 		character = ROOT
 		animation = personality_honorable
@@ -212,29 +222,23 @@ hc.003 = {
 	trigger = {
 		is_ai = no
 		is_in_army = yes
-		#is_at_war=yes
-		# OR={
-		# 	has_trait =god_descent
-		# 	has_trait =weak_god_descent
-		# }
+		is_at_war = yes
 		NOT = {
-			has_trait = saint_sword
-		}
-		NOT = {
-			has_character_modifier = hc_02_modifier
+			has_character_modifier = hc_char_modifier_02
 		}
 	}
 	option = {
 		name = hc.003.a
-		add_trait = saint_sword
+		add_character_modifier = hc_char_modifier_02
 	}
 }
 
-#圣剑归鞘
+#战争结束
 hc.004 = {
 	type = character_event
 	desc = hc.004.desc
 	title = hc.004.t
+	hidden = yes
 	left_portrait = {
 		character = ROOT
 		animation = personality_honorable
@@ -244,138 +248,30 @@ hc.004 = {
 		reference = army_camp
 	}
 	trigger = {
-		NOT = {
-			is_in_army = yes
+		has_character_modifier = hc_char_modifier_02
+		OR = {
+			is_in_army = no
+			is_at_war = no
 		}
-		NOT = {
-			has_character_modifier = hc_02_modifier
-		}
-		has_trait = saint_sword
 		# is_ai = no
 	}
 	option = {
 		name = hc.004.a
-		remove_trait = saint_sword
-		add_character_modifier = {
-			modifier = hc_02_modifier
-			months = 3
+		remove_character_modifier = hc_char_modifier_02
+		if = {
+			limit = {
+				Not = {
+					has_character_modifier = hc_02_modifier
+				}
+			}
+			add_character_modifier = {
+				modifier = hc_02_modifier
+				months = 3
+			}
 		}
 	}
 }
 
-#============事件隐藏=================#
-#拔出圣剑
-hc.005 = {
-	hidden = yes
-	type = character_event
-	desc = hc.005.desc
-	title = hc.005.t
-	left_portrait = {
-		character = ROOT
-		animation = personality_honorable
-	}
-	theme = battle
-	override_background = {
-		reference = army_camp
-	}
-	trigger = {
-		is_ai = no
-		has_character_modifier = hc_02_modifier
-		is_in_army = yes
-		NOT = {
-			has_trait = saint_sword
-		}
-	}
-	option = {
-		name = hc.005.a
-		add_trait = saint_sword
-	}
-}
-
-#圣剑归鞘
-hc.006 = {
-	hidden = yes
-	type = character_event
-	desc = hc.006.desc
-	title = hc.006.t
-	left_portrait = {
-		character = ROOT
-		animation = personality_honorable
-	}
-	theme = battle
-	override_background = {
-		reference = army_camp
-	}
-	trigger = {
-		NOT = {
-			is_in_army = yes
-		}
-		has_trait = saint_sword
-		is_ai = no
-		has_character_modifier = hc_02_modifier
-		#角色处于战争的天数
-		#days_of_continuous_war = 0
-		#角色处于和平的天数
-		#days_of_continuous_peace = 0
-		#比较战争的天数
-		# war_days=0
-		# recent_history = {
-		# 	type = conquest
-		# 	# conquest
-		# 	# conquest_holy_war
-		# 	# conquest_claim
-		# 	# conquest_populist
-		# 	months = 6
-		# }
-	}
-	option = {
-		name = hc.006.a
-		remove_trait = saint_sword
-	}
-}
-
-# hc.016 = {
-# 	hidden = yes
-# 	type = character_event
-# 	left_portrait = {
-# 		character = ROOT
-# 		animation = personality_honorable
-# 	}
-# 	theme = battle
-# 	override_background = {
-# 		reference = army_camp
-# 	}
-# 	trigger = {
-# 		is_ai = yes
-# 		has_trait = saint_sword
-# 	}
-# 	option = {
-# 		name = hc.006.a
-# 		remove_trait = saint_sword
-# 	}
-# }
-# hc.007 = {
-# 	type = character_event
-# 	title = major_decisions.3001.t
-# 	desc = major_decisions.3001.desc
-# 	theme = stewardship
-# 	left_portrait = {
-# 		character = ROOT
-# 		animation = personality_irrational
-# 	}
-# 	override_background = {
-# 		event_background = garden
-# 	}
-# 	immediate = {
-# 		play_music_cue = "mx_cue_low_key_positive"
-# 	}
-# 	option = {
-# 		name = major_decisions.3001.a
-# 		title:b_hradec = {
-# 			add_special_building_slot = hc_wonder_081
-# 		}
-# 	}
-# }
 #命运选择-传统
 hc.008 = {
 	type = character_event
@@ -410,9 +306,7 @@ hc.008 = {
 				modifier = hc_dynasty_pioneer_modifier
 			}
 		}
-		set_nickname_effect = {
-			NICKNAME = nick_the_pioneer
-		}
+		give_nickname = nick_the_pioneer
 		add_character_modifier = {
 			modifier = hc_04_modifier
 			months = 3
@@ -746,9 +640,7 @@ hc.010 = {
 					trigger = {
 						learning < 10
 					}
-					set_nickname_effect = {
-						NICKNAME = nick_hc_the_big_clever
-					}
+					give_nickname = nick_hc_the_big_clever
 				}
 			}
 		}
@@ -774,9 +666,7 @@ hc.010 = {
 						modifier = {
 							add = learning
 						}
-						set_nickname_effect = {
-							NICKNAME = nick_hc_the_wolong
-						}
+						give_nickname = nick_hc_the_wolong
 						add_learning_lifestyle_xp = 25
 					}
 					25 = {
@@ -786,9 +676,7 @@ hc.010 = {
 						modifier = {
 							add = diplomacy
 						}
-						set_nickname_effect = {
-							NICKNAME = nick_hc_the_strategist
-						}
+						give_nickname = nick_hc_the_strategist
 						add_diplomacy_lifestyle_xp = 25
 					}
 					25 = {
@@ -798,9 +686,7 @@ hc.010 = {
 						modifier = {
 							add = martial
 						}
-						set_nickname_effect = {
-							NICKNAME = nick_hc_the_fulong
-						}
+						give_nickname = nick_hc_the_fulong
 						add_martial_lifestyle_xp = 25
 					}
 					25 = {
@@ -810,9 +696,7 @@ hc.010 = {
 						modifier = {
 							add = stewardship
 						}
-						set_nickname_effect = {
-							NICKNAME = nick_hc_the_leader
-						}
+						give_nickname = nick_hc_the_leader
 						add_stewardship_lifestyle_xp = 25
 					}
 					25 = {
@@ -822,9 +706,7 @@ hc.010 = {
 						modifier = {
 							add = intrigue
 						}
-						set_nickname_effect = {
-							NICKNAME = nick_hc_the_operator
-						}
+						give_nickname = nick_hc_the_operator
 						add_intrigue_lifestyle_xp = 25
 					}
 					25 = {
@@ -834,9 +716,7 @@ hc.010 = {
 						modifier = {
 							add = prowess
 						}
-						set_nickname_effect = {
-							NICKNAME = nick_hc_the_thousands_enemies
-						}
+						give_nickname = nick_hc_the_thousands_enemies
 						add_dread = 30
 					}
 				}
