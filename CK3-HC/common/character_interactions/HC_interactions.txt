@@ -8,6 +8,8 @@ hc_designate_knight_interaction = {
 	ai_frequency = 0
 	is_shown = {
 		scope:actor = {
+			any_vassal = {
+			}
 			is_physically_able_adult = yes
 			this.house = {
 				has_house_modifier = hc_dynasty_god_modifier
@@ -28,6 +30,17 @@ hc_designate_knight_interaction = {
 			is_adult = yes
 			is_imprisoned = no
 		}
+		#number limit
+		# custom_description = {
+		# 	text = too_many_republics
+		# 	scope:actor = {
+		# 		any_vassal = {
+		# 			count < 4 #Use Script Value
+		# 			highest_held_title_tier >= tier_county
+		# 			has_government = republic_government
+		# 		}
+		# 	}
+		# }
 	}
 	desc = hc_designate_knight_interaction_desc
 	on_accept = {

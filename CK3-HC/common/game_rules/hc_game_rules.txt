@@ -1,9 +1,0 @@
-# gr_hc_xp = {
-# 	default = normal_gr_hc_xp
-# 	normal_gr_hc_xp = {
-# 	}
-# 	medium_gr_hc_xp = {
-# 	}
-# 	vast_gr_hc_xp = {
-# 	}
-# }

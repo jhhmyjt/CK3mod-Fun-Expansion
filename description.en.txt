@@ -31,11 +31,15 @@ Not compatible with Iron Man
 
 [h1]Recent update [/h1]
 [list]
-      [*]Time：2022.1.27
-      [*]Added new decision: Summon the Templars, now you can gather your knights to join the war
-      [*]New random events have been added to the parade event, watch out for the bad guys in your court, they may be plotting against you on the way 
-      [*]The new clan inheritance needs to pass the test first
-      [*]New special army , unlocked through clan inheritance 
+[*]Date: 2022.3.12
+       [*]Inheritance of Clan adds a growing ability modifier
+       [*]The first level of clan inheritance enhances the probability of innate traits
+       [*]New Resolution: Adopt advanced primogeniture system
+       [*]New decision: speed up cultural development (can shorten the cooldown of cultural tradition establishment)
+       [*]Each generation can get the God's Blessing trait
+       [*] Blocked the decision to forge the holy sword, the holy sword will be obtained when completing the divine examination, and you can hire a court craftsman to repair it
+       [*]Finally, the texture of the treasure is not crooked
+       [*]More treasures will not be updated temporarily 
 [/list]
 
 [h1]Finally[/h1]

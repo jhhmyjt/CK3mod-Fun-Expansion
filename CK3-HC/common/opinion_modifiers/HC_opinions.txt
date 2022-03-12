@@ -13,3 +13,9 @@ hc_harm_me_opinion_02 = {
 	monthly_change = 0.1
 	decaying = yes
 }
+
+hc_implemented_advanced_succession_law_opinion = {
+	opinion = 30
+	years = 30
+	decaying = yes
+}

@@ -2,12 +2,28 @@ hc_temple_legacy_1 = {
 	legacy = hc_temple_legacy_track
 	character_modifier = {
 		name = hc_temple_legacy_1_name
-		prowess = 5
-		martial = 5
-		diplomacy = 5
-		stewardship = 5
-		learning = 5
-		intrigue = 5
+		# prowess = 5
+		# martial = 5
+		# diplomacy = 5
+		# stewardship = 5
+		# learning = 5
+		# intrigue = 5
+		positive_random_genetic_chance = 0.5
+		positive_inactive_inheritance_chance = 0.5
+		negative_random_genetic_chance = -0.5
+		negative_inactive_inheritance_chance = -0.5
+		general_opinion = 10
+	}
+	effect = {
+		# custom_description_no_bullet = {
+		# 	text = hc_temple_legacy_1_effect
+		# }
+		custom_tooltip = hc_temple_legacy_dynasty_effect_tt_01
+		hidden_effect = {
+			root.house = {
+				add_house_modifier = hc_dynasty_bless_modifier_01
+			}
+		}
 	}
 	ai_chance = {
 		value = 0
@@ -19,6 +35,15 @@ hc_temple_legacy_2 = {
 	character_modifier = {
 		name = hc_temple_legacy_2_name
 		monthly_lifestyle_xp_gain_mult = 0.8
+	}
+	effect = {
+		custom_tooltip = hc_temple_legacy_dynasty_effect_tt_02
+		hidden_effect = {
+			root.house = {
+				add_house_modifier = hc_dynasty_bless_modifier_02
+				remove_house_modifier = hc_dynasty_bless_modifier_01
+			}
+		}
 	}
 	ai_chance = {
 		value = 0
@@ -36,6 +61,13 @@ hc_temple_legacy_3 = {
 		cultural_head_fascination_mult = 0.8
 	}
 	effect = {
+		custom_tooltip = hc_temple_legacy_dynasty_effect_tt_03
+		hidden_effect = {
+			root.house = {
+				add_house_modifier = hc_dynasty_bless_modifier_03
+				remove_house_modifier = hc_dynasty_bless_modifier_02
+			}
+		}
 		custom_description_no_bullet = {
 			text = hc_temple_legacy_3_unlock_effect
 		}
@@ -54,8 +86,17 @@ hc_temple_legacy_4 = {
 		name = hc_temple_legacy_4_name
 		vassal_limit = 12
 		domain_limit = 6
-		general_opinion = 15
+		county_opinion_add = 15
 		development_growth_factor = 0.25
+	}
+	effect = {
+		custom_tooltip = hc_temple_legacy_dynasty_effect_tt_04
+		hidden_effect = {
+			root.house = {
+				add_house_modifier = hc_dynasty_bless_modifier_04
+				remove_house_modifier = hc_dynasty_bless_modifier_03
+			}
+		}
 	}
 	ai_chance = {
 		value = 0
@@ -64,6 +105,11 @@ hc_temple_legacy_4 = {
 
 hc_temple_legacy_5 = {
 	legacy = hc_temple_legacy_track
+	character_modifier = {
+		name = hc_temple_legacy_5_name
+		life_expectancy = 10
+		negate_health_penalty_add = 0.8
+	}
 	effect = {
 		custom_tooltip = hc_temple_legacy_5_effect_tt
 		root.house = {
@@ -71,12 +117,17 @@ hc_temple_legacy_5 = {
 				modifier = hc_dynasty_holy_modifier
 			}
 		}
+		custom_tooltip = hc_temple_legacy_dynasty_effect_tt_05
 		hidden_effect = {
 			root = {
 				add_trait = hc_holy_blood
 				every_close_family_member = {
 					add_trait = hc_holy_blood
 				}
+			}
+			root.house = {
+				add_house_modifier = hc_dynasty_bless_modifier_05
+				remove_house_modifier = hc_dynasty_bless_modifier_04
 			}
 		}
 	}

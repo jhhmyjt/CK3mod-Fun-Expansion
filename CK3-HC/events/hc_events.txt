@@ -46,7 +46,7 @@ hc.100 = {
 	option = {
 		name = hc.100.a
 		hidden_effect = {
-			remove_decision_cooldown = hc_cruise_decsion
+			remove_decision_cooldown = hc_cruise_decision
 		}
 	}
 }
@@ -279,7 +279,14 @@ hc.008 = {
 	desc = hc.008.desc
 	left_portrait = {
 		character = ROOT
-		animation = stress
+		animation = personality_honorable
+	}
+	artifact = {
+		target = scope:hc_artifacts_sword
+		position = lower_left_portrait
+		trigger = {
+			exists = scope:hc_artifacts_sword
+		}
 	}
 	theme = crown
 	override_background = {
@@ -291,65 +298,69 @@ hc.008 = {
 	immediate = {
 		play_music_cue = "mx_cue_epic_sacral_moment"
 		add_character_flag = flag_hc_has_saint_sword
-	}
-	option = {
-		#不传特质
-		trigger = {
-			NOT = {
-				has_trait = pioneer
+		random_artifact = {
+			limit = {
+				has_variable = hc_saint_sword
 			}
+			save_scope_as = hc_artifacts_sword
 		}
+	}
+	# option = {
+	# 	#不传特质
+	# 	trigger = {
+	# 		NOT = {
+	# 			has_trait = pioneer
+	# 		}
+	# 	}
+	# 	name = hc.008.a
+	# 	add_trait = pioneer
+	# 	root.house = {
+	# 		add_house_modifier = {
+	# 			modifier = hc_dynasty_pioneer_modifier
+	# 		}
+	# 	}
+	# 	give_nickname = nick_the_pioneer
+	# 	add_character_modifier = {
+	# 		modifier = hc_04_modifier
+	# 		months = 3
+	# 	}
+	# }
+	# option = {
+	# 	#不传特质
+	# 	trigger = {
+	# 		NOT = {
+	# 			has_trait = pioneer
+	# 		}
+	# 	}
+	# 	add_prestige = 200
+	# 	name = hc.008.c
+	# 	add_trait = pioneer
+	# 	root.house = {
+	# 		add_house_modifier = {
+	# 			modifier = hc_dynasty_pioneer_modifier
+	# 		}
+	# 	}
+	# 	add_character_modifier = {
+	# 		modifier = hc_04_modifier
+	# 		months = 3
+	# 	}
+	# }
+	# option = {
+	# 	#传特质,弱化
+	# 	name = hc.008.b
+	# 	add_trait = weak_god_descent
+	# 	add_character_modifier = {
+	# 		modifier = hc_04_modifier
+	# 		months = 3
+	# 	}
+	# 	add_character_modifier = {
+	# 		modifier = hc_12_modifier
+	# 		years = 5
+	# 	}
+	# }
+	option = {
 		name = hc.008.a
-		add_trait = pioneer
-		root.house = {
-			add_house_modifier = {
-				modifier = hc_dynasty_pioneer_modifier
-			}
-		}
-		give_nickname = nick_the_pioneer
-		add_character_modifier = {
-			modifier = hc_04_modifier
-			months = 3
-		}
-		trigger_event = {
-			on_action = on_action_hc
-		}
-		trigger_event = {
-			years = 5
-			on_action = on_action_certified
-		}
-	}
-	option = {
-		#不传特质
-		trigger = {
-			NOT = {
-				has_trait = pioneer
-			}
-		}
-		add_prestige = 200
-		name = hc.008.c
-		add_trait = pioneer
-		root.house = {
-			add_house_modifier = {
-				modifier = hc_dynasty_pioneer_modifier
-			}
-		}
-		add_character_modifier = {
-			modifier = hc_04_modifier
-			months = 3
-		}
-		trigger_event = {
-			on_action = on_action_hc
-		}
-		trigger_event = {
-			years = 5
-			on_action = on_action_certified
-		}
-	}
-	option = {
-		#传特质,弱化
-		name = hc.008.b
-		add_trait = weak_god_descent
+		add_trait = god_descent
 		add_character_modifier = {
 			modifier = hc_04_modifier
 			months = 3
@@ -358,6 +369,22 @@ hc.008 = {
 			modifier = hc_12_modifier
 			years = 5
 		}
+		give_nickname = nick_hc_the_succession
+	}
+	option = {
+		name = hc.008.b
+		add_trait = god_descent
+		add_character_modifier = {
+			modifier = hc_04_modifier
+			months = 3
+		}
+		add_character_modifier = {
+			modifier = hc_12_modifier
+			years = 5
+		}
+		add_stress = -30
+	}
+	after = {
 		trigger_event = {
 			on_action = on_action_hc
 		}

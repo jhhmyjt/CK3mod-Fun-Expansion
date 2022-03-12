@@ -7,3 +7,8 @@
  hc_temple_legacy_4_name:0 "under my rule"
  hc_temple_legacy_5_name:1 "Holy blood baptism"
  hc_temple_legacy_5_effect_tt:0 "You and your [close_family|E] get [GetTrait('hc_holy_blood').GetName( GetNullCharacter )][trait|E]"
+hc_temple_legacy_dynasty_effect_tt_01:0 "Your family gains [GetModifier( 'hc_dynasty_bless_modifier_01' ).GetNameWithTooltip|L]"
+  hc_temple_legacy_dynasty_effect_tt_02:0 "Family modifier upgraded to [GetModifier( 'hc_dynasty_bless_modifier_02' ).GetNameWithTooltip|L]"
+  hc_temple_legacy_dynasty_effect_tt_03:0 "Family modifier upgraded to [GetModifier( 'hc_dynasty_bless_modifier_03' ).GetNameWithTooltip|L]"
+  hc_temple_legacy_dynasty_effect_tt_04:0 "Family modifier upgraded to [GetModifier( 'hc_dynasty_bless_modifier_04' ).GetNameWithTooltip|L]"
+  hc_temple_legacy_dynasty_effect_tt_05:0 "Family modifier upgraded to [GetModifier( 'hc_dynasty_bless_modifier_05' ).GetNameWithTooltip|L]" 

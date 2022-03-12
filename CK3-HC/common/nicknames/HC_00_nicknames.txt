@@ -48,3 +48,7 @@ nick_hc_the_operator = {
 #奇观狂魔
 nick_hc_the_wonder_king = {
 }
+
+#继承神圣事业之人
+nick_hc_the_succession = {
+}

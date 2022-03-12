@@ -1,47 +1,55 @@
 #圣殿裁决重装骑兵
 hc_judgment_heavy_cavalry = {
 	type = heavy_cavalry
-	damage = 180
-	toughness = 80
-	pursuit = 50
-	screen = 50
+	damage = 100
+	toughness = 30
+	pursuit = 20
+	screen = 10
 	terrain_bonus = {
 		plains = {
-			damage = 60
+			damage = 45
 		}
 		drylands = {
-			damage = 50
+			damage = 45
 		}
 		hills = {
-			damage = -5
+			damage = -15
 		}
 		jungle = {
 			damage = -10
 		}
 		mountains = {
-			damage = -20
-		}
-		desert_mountains = {
-			damage = -20
-		}
-		wetlands = {
 			damage = -30
 		}
+		desert_mountains = {
+			damage = -50
+		}
+		wetlands = {
+			damage = -60
+			toughness = -20
+			pursuit = -10
+		}
 	}
-	# era_bonus = {
-	# 	culture_era_early_medieval = {
-	# 		damage = 15
-	# 		toughness = 15
-	# 	}
-	# 	culture_era_high_medieval = {
-	# 		damage = 30
-	# 		toughness = 30
-	# 	}
-	# 	culture_era_late_medieval = {
-	# 		damage = 45
-	# 		toughness = 45
-	# 	}
-	# }
+	era_bonus = {
+		culture_era_early_medieval = {
+			damage = 15
+			toughness = 5
+			pursuit = 5
+			screen = 5
+		}
+		culture_era_high_medieval = {
+			damage = 30
+			toughness = 10
+			pursuit = 10
+			screen = 10
+		}
+		culture_era_late_medieval = {
+			damage = 50
+			toughness = 20
+			pursuit = 20
+			screen = 20
+		}
+	}
 	counters = {
 		archers = 1
 		skirmishers = 1
@@ -51,20 +59,24 @@ hc_judgment_heavy_cavalry = {
 		camel_cavalry = 1
 	}
 	winter_bonus = {
-		harsh_winter = {
-			damage = -10
+		normal_winter = {
+			damage = -20
 			toughness = -10
+		}
+		harsh_winter = {
+			damage = -50
+			toughness = -30
 		}
 	}
 	buy_cost = {
-		gold = 800
-		prestige = 350
+		gold = 300
+		prestige = 150
 	}
 	low_maintenance_cost = {
-		gold = 2
+		gold = 1.5
 	}
 	high_maintenance_cost = {
-		gold = 6
+		gold = 3
 	}
 	stack = 100
 	ai_quality = {

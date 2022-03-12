@@ -2,8 +2,6 @@
 hc_dynasty_god_modifier = {
 	icon = magic_positive
 	health = 0.05
-	stewardship = 2
-	learning = 2
 	monthly_lifestyle_xp_gain_mult = 0.1
 	positive_inactive_inheritance_chance = 0.2
 	direct_vassal_opinion = 5
@@ -31,4 +29,54 @@ hc_dynasty_alert_modifier = {
 hc_dynasty_holy_modifier = {
 	icon = piety_positive
 	monthly_piety_gain_mult = 0.15
+}
+
+hc_dynasty_bless_modifier_01 = {
+	prowess = 1
+	martial = 1
+	diplomacy = 1
+	stewardship = 1
+	learning = 1
+	intrigue = 1
+	icon = magic_positive
+}
+
+hc_dynasty_bless_modifier_02 = {
+	prowess = 3
+	martial = 3
+	diplomacy = 3
+	stewardship = 3
+	learning = 3
+	intrigue = 3
+	icon = magic_positive
+}
+
+hc_dynasty_bless_modifier_03 = {
+	prowess = 5
+	martial = 5
+	diplomacy = 5
+	stewardship = 5
+	learning = 5
+	intrigue = 5
+	icon = magic_positive
+}
+
+hc_dynasty_bless_modifier_04 = {
+	prowess = 7
+	martial = 7
+	diplomacy = 7
+	stewardship = 7
+	learning = 7
+	intrigue = 7
+	icon = magic_positive
+}
+
+hc_dynasty_bless_modifier_05 = {
+	prowess = 10
+	martial = 10
+	diplomacy = 10
+	stewardship = 10
+	learning = 10
+	intrigue = 10
+	icon = magic_positive
 }

@@ -9,3 +9,9 @@ hc_temple_legacy_3_effect = {
 	first = HC_JUDGMENT_HEAVY_CAVALRY_DESCRIPTION
 	third = HC_JUDGMENT_HEAVY_CAVALRY_DESCRIPTION
 }
+
+# hc_temple_legacy_1_effect = {
+# 	global = HC_DYNASTY_GET_BLESS_DESCRIPTION
+# 	first = HC_DYNASTY_GET_BLESS_DESCRIPTION
+# 	third = HC_DYNASTY_GET_BLESS_DESCRIPTION
+# }

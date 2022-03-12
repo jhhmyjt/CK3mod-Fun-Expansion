@@ -73,7 +73,7 @@ hc_rebuild_god.110 = {
 	}
 	option = {
 		name = hc_rebuild_god.110.a
-		add_trait = weak_god_descent
+		add_trait = god_descent
 	}
 }
 
