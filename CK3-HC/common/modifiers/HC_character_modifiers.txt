@@ -23,3 +23,11 @@ hc_char_modifier_02 = {
 	advantage = 15
 	icon = prowess_positive
 }
+
+#不敬重神灵
+hc_char_modifier_03 = {
+	monthly_prestige = -0.5
+	monthly_piety = -0.5
+	clergy_opinion = -15
+	icon = magic_negative
+}

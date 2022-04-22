@@ -1,31 +1,65 @@
-# hc_test_decision = {
-# 	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
-# 	title = "hc mod test decision"
-# 	selection_tooltip = "test"
-# 	desc = "test decision"
-# 	confirm_text = "test"
-# 	ai_check_interval = 0
-# 	major = yes
-# 	is_shown = {
-# 		is_ai = no
-# 	}
-# 	is_valid = {
-# 		# title:b_constantinople.title_province = {
-# 		# 	has_special_building_slot = yes
-# 		# }
-# 	}
-# 	effect = {
-# 		root.culture = {
-# 			remove_variable = tradition_cooldown
-# 		}
-# 	}
-# 	ai_potential = {
-# 		always = no
-# 	}
-# 	ai_will_do = {
-# 		base = 0
-# 	}
-# }
+hc_test_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	title = "hc mod test decision"
+	selection_tooltip = "test"
+	desc = "test decision"
+	confirm_text = "test"
+	ai_check_interval = 0
+	major = yes
+	is_shown = {
+		is_ai = no
+		always = no
+	}
+	is_valid = {
+	}
+	effect = {
+		if = {
+			limit = {
+				root.culture = {
+					NOT = {
+						has_innovation = innovation_primogeniture
+					}
+				}
+			}
+			root.culture = {
+				add_innovation = innovation_primogeniture
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_realm_law = single_heir_succession_law
+				}
+			}
+			add_realm_law_skip_effects = single_heir_succession_law
+		}
+		every_vassal = {
+			limit = {
+				is_powerful_vassal_of = root
+			}
+			add_opinion = {
+				modifier = hc_implemented_advanced_succession_law_opinion
+				years = 30
+				target = root
+			}
+		}
+		# if = {
+		# 	limit = {
+		# 		can_have_single_heir_succession_law_trigger = yes
+		# 		NOT = {
+		# 			has_realm_law = single_heir_succession_law
+		# 		}
+		# 	}
+		# }
+	}
+	ai_potential = {
+		always = no
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
 #reset
 hc_reset_decision = {
 	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
@@ -68,16 +102,10 @@ hc_begin_decision = {
 	ai_check_interval = 0
 	major = yes
 	cooldown = {
-		days = 3650
+		years = 20
 	}
 	is_shown = {
 		is_ai = no
-		NOT = {
-			is_target_in_global_variable_list = {
-				name = unavailable_unique_decisions
-				target = flag:hc_begin_decision
-			}
-		}
 		NOT = {
 			root.house = {
 				has_house_modifier = hc_dynasty_god_modifier
@@ -94,9 +122,11 @@ hc_begin_decision = {
 		custom_tooltip = hc_begin_decision_effect_tt_02
 		custom_tooltip = hc_begin_decision_effect_tt_03
 		custom_tooltip = hc_begin_decision_effect_tt_05
-		custom_description = {
-			text = hc_begin_decision_effect_tt_04
-			has_ep1_dlc_trigger = yes
+		if = {
+			limit = {
+				has_ep1_dlc_trigger = yes
+			}
+			custom_tooltip = hc_begin_decision_effect_tt_04
 		}
 		trigger_event = {
 			id = hc.001
@@ -811,13 +841,13 @@ hc_adopt_advanced_succession_decision = {
 		Not = {
 			has_realm_law_flag = advanced_succession_law
 		}
-		NOT = {
-			#Can only do it once.
-			is_target_in_global_variable_list = {
-				name = unavailable_unique_decisions
-				target = flag:flag_hc_adopt_advanced_succession_decision
-			}
-		}
+		# NOT = {
+		# 	#Can only do it once.
+		# 	is_target_in_global_variable_list = {
+		# 		name = unavailable_unique_decisions
+		# 		target = flag:flag_hc_adopt_advanced_succession_decision
+		# 	}
+		# }
 		is_independent_ruler = yes
 	}
 	is_valid = {
@@ -840,25 +870,40 @@ hc_adopt_advanced_succession_decision = {
 		# custom_tooltip = reform_carolingian_empire_decision_effect_tooltip
 		if = {
 			limit = {
+				root.culture = {
+					NOT = {
+						has_innovation = innovation_primogeniture
+					}
+				}
+			}
+			root.culture = {
+				add_innovation = innovation_primogeniture
+			}
+		}
+		if = {
+			limit = {
 				NOT = {
 					has_realm_law = single_heir_succession_law
 				}
 			}
 			add_realm_law_skip_effects = single_heir_succession_law
 		}
-		# every_vassal = {
-		# 	add_opinion = {
-		# 		modifier = hc_implemented_advanced_succession_law_opinion
-		# 		years = 30
-		# 		target = root
-		# 	}
-		# }
-		hidden_effect = {
-			add_to_global_variable_list = {
-				name = unavailable_unique_decisions
-				target = flag:flag_hc_adopt_advanced_succession_decision
+		every_vassal = {
+			limit = {
+				is_powerful_vassal_of = root
+			}
+			add_opinion = {
+				modifier = hc_implemented_advanced_succession_law_opinion
+				years = 30
+				target = root
 			}
 		}
+		# hidden_effect = {
+		# 	add_to_global_variable_list = {
+		# 		name = unavailable_unique_decisions
+		# 		target = flag:flag_hc_adopt_advanced_succession_decision
+		# 	}
+		# }
 	}
 	ai_potential = {
 		always = no
@@ -923,3 +968,111 @@ hc_improve_culture_development_decision = {
 		base = 0
 	}
 }
+
+# #强化圣剑
+# hc_strength_artifact_decision = {
+# 	picture = "gfx/interface/illustrations/decisions/decision_misc.dds"
+# 	title = hc_strength_artifact_decision_t
+# 	desc = hc_strength_artifact_decision_desc
+# 	selection_tooltip = hc_strength_artifact_decision_tooltip
+# 	confirm_text = hc_strength_artifact_decision_confirm
+# 	major = yes
+# 	ai_check_interval = 0
+# 	cooldown = {
+# 		years = 5
+# 	}
+# 	cost = {
+# 		gold = 300
+# 	}
+# 	is_shown = {
+# 		always = no
+# 		is_ai = no
+# 		is_landed = yes
+# 		exists = capital_province
+# 		root.house = {
+# 			has_house_modifier = hc_dynasty_god_modifier
+# 		}
+# 		has_ep1_dlc_trigger = yes
+# 		any_artifact = {
+# 			has_variable = hc_saint_sword
+# 		}
+# 	}
+# 	is_valid = {
+# 		prestige_level >= high_prestige_level
+# 		any_artifact = {
+# 			limit = {
+# 				has_variable = hc_saint_sword
+# 			}
+# 			artifact_durability >= 80
+# 		}
+# 		if = {
+# 			limit = {
+# 				employs_court_position = antiquarian_court_position
+# 				any_court_position_holder = {
+# 					type = antiquarian_court_position
+# 				}
+# 			}
+# 			random_court_position_holder = {
+# 				type = antiquarian_court_position
+# 				martial>10
+# 			}
+# 		}
+# 		any_character_artifact = {
+# 			limit = {
+# 				not = {
+# 					has_variable = hc_saint_sword
+# 				}
+# 			}
+# 			exists = this
+# 		}
+# 	}
+# 	is_valid_showing_failures_only = {
+# 		is_capable_adult = yes
+# 		is_imprisoned = no
+# 		is_at_war = no
+# 		employs_court_position = antiquarian_court_position
+# 	}
+# 	effect = {
+# 		random_artifact = {
+# 			limit = {
+# 				has_variable = hc_saint_sword
+# 			}
+# 			save_scope_as = this_artifact
+# 		}
+# 		random_character_artifact = {
+# 			limit = {
+# 				not = {
+# 					has_variable = hc_saint_sword
+# 				}
+# 			}
+# 			save_scope_as = that_artifact
+# 		}
+# 		scope:this_artifact = {
+# 			# set_artifact_description = artifact_weapon_relic_desc
+# 			set_artifact_description = "[this_artifact.GetDesc]\n\n[that_artifact.GetNameNoTooltip]被嵌入剑柄中。"
+# 			# set_variable = added_relic
+# 			hidden_effect = {
+# 				copy_artifact_modifiers = scope:that_artifact
+# 			}
+# 		}
+# 		scope:that_artifact = {
+# 			hidden_effect = {
+# 				destroy_artifact = this
+# 			}
+# 		}
+# 		hidden_effect = {
+# 			send_interface_toast = {
+# 				title = artifact.4090.a.tt
+# 				left_icon = root
+# 				right_icon = scope:this_artifact
+# 				custom_tooltip = embedded_not_destroyed_tooltip
+# 			}
+# 		}
+# 	}
+# 	ai_potential = {
+# 		always = no
+# 	}
+# 	ai_will_do = {
+# 		base = 0
+# 	}
+# }

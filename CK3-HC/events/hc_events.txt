@@ -80,10 +80,6 @@ hc.001 = {
 			days = 365
 		}
 		add_gold = 1000
-		add_to_global_variable_list = {
-			name = unavailable_unique_decisions
-			target = flag:hc_begin_decision
-		}
 		root.dynasty = {
 			add_dynasty_prestige = -100
 		}
@@ -97,10 +93,6 @@ hc.001 = {
 		add_character_modifier = {
 			modifier = hc_01_modifier
 			days = 365
-		}
-		add_to_global_variable_list = {
-			name = unavailable_unique_decisions
-			target = flag:hc_begin_decision
 		}
 		trigger_event = {
 			id = hc.002
@@ -117,9 +109,9 @@ hc.001 = {
 		name = hc.001.d
 		add_prowess_skill = 3
 		hidden_effect = {
-			add_to_global_variable_list = {
-				name = unavailable_unique_decisions
-				target = flag:hc_begin_decision
+			add_character_modifier = {
+				modifier = hc_char_modifier_03
+				years = 5
 			}
 		}
 	}
@@ -139,10 +131,6 @@ hc.002 = {
 		reference = garden
 	}
 	trigger = {
-		# has_character_modifier = hc_modifier_02
-		# NOT = {
-		# 	has_trait = god_descent
-		# }
 		is_ai = no
 	}
 	immediate = {

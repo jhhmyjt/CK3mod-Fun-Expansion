@@ -41,6 +41,8 @@
  hc_char_modifier_01_desc:0 "On the side of Qing Jun, it is the character's mission to get rid of traitors"
  hc_char_modifier_02:0 "Holy Sword in Hand"
  hc_char_modifier_02_desc:0 "This character is holding a holy sword, with this you will win!"
+hc_char_modifier_03:0 "Disrespect the gods"
+  hc_char_modifier_03_desc:0 "This character despises the gods" 
  hc_dynasty_holy_modifier:0 "Bathing Holy"
  hc_dynasty_holy_modifier_desc:0 "This character has been baptized with holy blood, noble and holy" 
  hc_dynasty_bless_modifier_01:0 "Dragon among men"
