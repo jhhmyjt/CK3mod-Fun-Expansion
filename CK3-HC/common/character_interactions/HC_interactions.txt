@@ -49,8 +49,6 @@ hc_designate_knight_interaction = {
 				arrogant = medium_stress_impact_gain
 				paranoid = minor_stress_impact_gain
 				god_descent = medium_stress_impact_loss
-				weak_god_descent = minor_stress_impact_loss
-				pioneer = minor_stress_impact_loss
 			}
 		}
 		scope:recipient = {
@@ -79,8 +77,6 @@ hc_designate_knight_interaction = {
 							arrogant = medium_stress_impact_gain
 							paranoid = minor_stress_impact_gain
 							god_descent = medium_stress_impact_loss
-							weak_god_descent = minor_stress_impact_loss
-							pioneer = minor_stress_impact_loss
 						}
 					}
 				}
@@ -251,16 +247,6 @@ hc_designate_knight_interaction = {
 			add = 25
 			has_trait = ambitious
 			desc = INTERACTION_AMBITIOUS
-		}
-		modifier = {
-			add = -100
-			has_trait = pioneer
-			desc = interaction_pioneer
-		}
-		modifier = {
-			add = -100
-			has_trait = weak_god_descent
-			desc = interaction_weak_god_descent
 		}
 		modifier = {
 			add = -1000

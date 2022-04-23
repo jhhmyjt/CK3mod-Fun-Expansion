@@ -73,7 +73,6 @@ hc_wonder_012 = {
 	type = regular
 }
 
-#明月阁
 hc_wonder_021 = {
 	next_building = hc_wonder_022
 	# construction_time = 365
@@ -187,14 +186,7 @@ hc_wonder_030 = {
 	type = regular
 }
 
-#凯岩城
 hc_wonder_040 = {
-	# construction_time = 3650
-	# cost = {
-	# 	gold = 3000
-	# 	prestige = 1000
-	# 	piety = 500
-	# }
 	type_icon = "icon_structure_the_citadel_of_aleppo.dds"
 	# can_construct_potential = {
 	# 	building_requirement_tribal = no

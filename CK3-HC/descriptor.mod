@@ -1,6 +1,7 @@
 version = "1.5.1"
 tags = {
-	"Balance"
+	"Events"
+	"Decisions"
 }
 
 name = "FUN EXPANSION"

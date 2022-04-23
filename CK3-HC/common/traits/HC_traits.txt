@@ -20,8 +20,7 @@ hc_test_trait = {
 	}
 }
 
-#外貌协会
-beauty_club = {
+hc_beauty = {
 	index = 5001
 	ruler_designer_cost = 100
 	diplomacy = 3
@@ -42,9 +41,9 @@ beauty_club = {
 						exists = this
 					}
 				}
-				desc = trait_beauty_club_desc
+				desc = trait_hc_beauty_desc
 			}
-			desc = trait_beauty_club_character_desc
+			desc = trait_hc_beauty_character_desc
 		}
 	}
 }
@@ -67,7 +66,7 @@ god_descent = {
 	monthly_lifestyle_xp_gain_mult = 2
 	monthly_piety_gain_mult = 0.5
 	monthly_prestige_gain_mult = 0.5
-	general_opinion = 30
+	general_opinion = 12
 	genetic = no
 	good = yes
 	desc = {
@@ -85,7 +84,7 @@ god_descent = {
 	}
 }
 
-#弱化版天神
+#弃 unused
 weak_god_descent = {
 	ruler_designer_cost = 50
 	index = 5004
@@ -120,7 +119,7 @@ weak_god_descent = {
 	}
 }
 
-#不朽，不灭的圣剑杜兰达尔
+#弃 unused
 saint_sword = {
 	index = 5003
 	# commander = yes
@@ -153,7 +152,7 @@ saint_sword = {
 	}
 }
 
-#开拓者
+#弃 unused
 pioneer = {
 	ruler_designer_cost = 50
 	index = 5005
@@ -249,6 +248,8 @@ hc_knight = {
 	vassal_limit = 5
 	genetic = no
 	good = yes
+	ai_energy = 30
+	ai_boldness = 10
 	desc = {
 		first_valid = {
 			triggered_desc = {

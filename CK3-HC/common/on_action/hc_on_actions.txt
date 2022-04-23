@@ -25,10 +25,6 @@ on_action_hc = {
 		#拔剑事件组
 		hc.003
 		hc.004
-		# hc.005
-		# hc.006
-		# #添加特质
-		# hc.013
 	}
 	on_actions = {
 		delay = {

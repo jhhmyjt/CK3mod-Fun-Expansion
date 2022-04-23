@@ -6,6 +6,4 @@
  hc_designate_knight_interaction_custom_01:0 "已册封过！"
  interaction_common_desc:0 "[recipient.GetSheHe|U]和你关系匪浅"
  interaction_god_descent:0 "[GetTrait('god_descent').GetName( recipient )]：$VALUE|=+0$"
- interaction_weak_god_descent:0 "[GetTrait('weak_god_descent').GetName( recipient )]：$VALUE|=+0$"
- interaction_pioneer:0 "[GetTrait('pioneer').GetName( recipient )]：$VALUE|=+0$"
  hc_switch.005_msg_t:0 "载誉而归"

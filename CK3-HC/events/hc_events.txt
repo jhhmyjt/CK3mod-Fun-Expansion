@@ -153,10 +153,23 @@ hc.002 = {
 				modifier = hc_dynasty_god_modifier
 			}
 		}
+		remove_character_modifier = hc_01_modifier
+		custom_tooltip = hc.002_effect_tt
+		hidden_effect = {
+			every_vassal_or_below = {
+				limit = {
+				}
+				add_opinion = {
+					modifier = hc_finish_test_opinion
+					years = 10
+					target = root
+				}
+			}
+		}
 	}
 	option = {
 		name = hc.002.a
-		remove_character_modifier = hc_01_modifier
+		add_prestige = 200
 		if = {
 			limit = {
 				is_male = yes
@@ -169,14 +182,14 @@ hc.002 = {
 			}
 			give_nickname = nick_the_godness
 		}
-		# every_player_heir = {
-		# 	add_character_flag = flag_hc_god_child
-		# }
-		# give_nickname = nick_the_god
 	}
 	option = {
 		name = hc.002.b
-		remove_character_modifier = hc_01_modifier
+		add_piety = 300
+	}
+	option = {
+		name = hc.002.c
+		add_stress = -30
 	}
 	after = {
 		trigger_event = {
@@ -293,59 +306,6 @@ hc.008 = {
 			save_scope_as = hc_artifacts_sword
 		}
 	}
-	# option = {
-	# 	#不传特质
-	# 	trigger = {
-	# 		NOT = {
-	# 			has_trait = pioneer
-	# 		}
-	# 	}
-	# 	name = hc.008.a
-	# 	add_trait = pioneer
-	# 	root.house = {
-	# 		add_house_modifier = {
-	# 			modifier = hc_dynasty_pioneer_modifier
-	# 		}
-	# 	}
-	# 	give_nickname = nick_the_pioneer
-	# 	add_character_modifier = {
-	# 		modifier = hc_04_modifier
-	# 		months = 3
-	# 	}
-	# }
-	# option = {
-	# 	#不传特质
-	# 	trigger = {
-	# 		NOT = {
-	# 			has_trait = pioneer
-	# 		}
-	# 	}
-	# 	add_prestige = 200
-	# 	name = hc.008.c
-	# 	add_trait = pioneer
-	# 	root.house = {
-	# 		add_house_modifier = {
-	# 			modifier = hc_dynasty_pioneer_modifier
-	# 		}
-	# 	}
-	# 	add_character_modifier = {
-	# 		modifier = hc_04_modifier
-	# 		months = 3
-	# 	}
-	# }
-	# option = {
-	# 	#传特质,弱化
-	# 	name = hc.008.b
-	# 	add_trait = weak_god_descent
-	# 	add_character_modifier = {
-	# 		modifier = hc_04_modifier
-	# 		months = 3
-	# 	}
-	# 	add_character_modifier = {
-	# 		modifier = hc_12_modifier
-	# 		years = 5
-	# 	}
-	# }
 	option = {
 		name = hc.008.a
 		add_trait = god_descent
@@ -373,70 +333,6 @@ hc.008 = {
 		add_stress = -30
 	}
 	after = {
-		trigger_event = {
-			on_action = on_action_hc
-		}
-		trigger_event = {
-			years = 5
-			on_action = on_action_certified
-		}
-	}
-}
-
-#命运选择-创新
-hc.0081 = {
-	type = character_event
-	title = hc.0081.t
-	desc = hc.0081.desc
-	left_portrait = {
-		character = ROOT
-		animation = personality_bold
-	}
-	theme = crown
-	override_background = {
-		reference = council_chamber
-	}
-	trigger = {
-		is_ai = no
-	}
-	immediate = {
-		play_music_cue = "mx_cue_epic_sacral_moment"
-		add_character_flag = flag_hc_has_saint_sword
-	}
-	option = {
-		name = hc.0081.a
-		custom_tooltip = hc.0081_effect_tt
-		add_trait = pioneer
-		add_character_modifier = {
-			modifier = hc_04_modifier
-			months = 3
-		}
-		hidden_effect = {
-			every_sub_realm_county = {
-				add_county_modifier = {
-					modifier = hc_country_modifier_01
-					years = 3
-				}
-			}
-		}
-		trigger_event = {
-			on_action = on_action_hc
-		}
-		trigger_event = {
-			years = 5
-			on_action = on_action_certified
-		}
-	}
-	option = {
-		name = hc.0081.b
-		add_trait = pioneer
-		add_character_modifier = {
-			modifier = hc_04_modifier
-			months = 3
-		}
-		root.dynasty = {
-			add_dynasty_prestige = 1000
-		}
 		trigger_event = {
 			on_action = on_action_hc
 		}
@@ -492,27 +388,9 @@ hc.009 = {
 		name = hc.009.b
 		if = {
 			limit = {
-				has_trait = pioneer
-			}
-			remove_trait = pioneer
-		}
-		if = {
-			limit = {
 				has_trait = god_descent
 			}
 			remove_trait = god_descent
-		}
-		if = {
-			limit = {
-				has_trait = weak_god_descent
-			}
-			remove_trait = weak_god_descent
-		}
-		if = {
-			limit = {
-				has_nickname = nick_the_pioneer
-			}
-			remove_nickname = nick_the_pioneer
 		}
 		if = {
 			limit = {
@@ -763,140 +641,5 @@ hc.011 = {
 	option = {
 		name = hc.011.a
 		embrace_roma_effect = yes
-	}
-}
-
-#意外死亡
-hc.012 = {
-	type = character_event
-	title = hc.012.t
-	desc = hc.012.desc
-	theme = death
-	left_portrait = {
-		character = root
-		animation = personality_bold
-	}
-	trigger = {
-		is_ai = no
-		any_player = {
-			OR = {
-				has_trait = god_descent
-				has_trait = weak_god_descent
-				has_trait = pioneer
-			}
-			this.player_heir = root
-		}
-	}
-	immediate = {
-		play_music_cue = "mx_cue_epic_sacral_moment"
-	}
-	option = {
-		name = hc.012.a
-	}
-}
-
-#隐藏添加特质事件
-hc.013 = {
-	type = character_event
-	hidden = yes
-	trigger = {
-		any_child = {
-			age = 0
-			is_child_of = root
-		}
-	}
-	immediate = {
-		if = {
-			limit = {
-				has_trait = god_descent
-			}
-			every_child = {
-				limit = {
-					age = 0
-					is_child_of = root
-				}
-				random_list = {
-					50 = {
-						trigger = {
-							is_female = yes
-							diplomacy > 5
-						}
-						modifier = {
-							add = 30
-						}
-						add_trait = weak_god_descent
-						#冰雪聪明
-						add_character_modifier = {
-							modifier = hc_13_modifier
-							years = 6
-						}
-					}
-					50 = {
-						trigger = {
-							is_male = yes
-							prowess > 5
-						}
-						modifier = {
-							add = 30
-						}
-						add_trait = weak_god_descent
-						#生龙活虎
-						add_character_modifier = {
-							modifier = hc_14_modifier
-							years = 6
-						}
-					}
-					75 = {
-						add_trait = weak_god_descent
-					}
-				}
-			}
-		}
-		if = {
-			limit = {
-				has_trait = weak_god_descent
-			}
-			every_child = {
-				limit = {
-					age = 0
-					is_child_of = root
-				}
-				random_list = {
-					50 = {
-						trigger = {
-							is_female = yes
-							diplomacy > 7
-						}
-						modifier = {
-							add = 20
-						}
-						add_trait = weak_god_descent
-						#冰雪聪明
-						add_character_modifier = {
-							modifier = hc_13_modifier
-							years = 5
-						}
-					}
-					50 = {
-						trigger = {
-							is_male = yes
-							prowess > 6
-						}
-						modifier = {
-							add = 20
-						}
-						add_trait = weak_god_descent
-						#生龙活虎
-						add_character_modifier = {
-							modifier = hc_14_modifier
-							years = 5
-						}
-					}
-					50 = {
-						add_trait = weak_god_descent
-					}
-				}
-			}
-		}
 	}
 }

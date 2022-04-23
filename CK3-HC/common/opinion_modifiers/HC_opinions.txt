@@ -19,3 +19,9 @@ hc_implemented_advanced_succession_law_opinion = {
 	years = 30
 	decaying = yes
 }
+
+hc_finish_test_opinion = {
+	opinion = 20
+	years = 10
+	decaying = yes
+}

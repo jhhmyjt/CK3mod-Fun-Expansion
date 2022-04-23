@@ -37,10 +37,119 @@ hc_special_building_trigger = {
 	}
 }
 
-# has_too_many_held_duchies_trigger = {
-# 	highest_held_title_tier >= tier_kingdom
-# 	any_held_title = {
-# 		count >= 4
-# 		title_counts_towards_too_many_duchies_trigger = yes
-# 	}
-# }
+hc_special_building_available_trigger = {
+	OR = {
+		AND = {
+			has_title = title:b_roma
+			Not = {
+				any_directly_owned_province = {
+					has_building_or_higher = hc_wonder_011
+				}
+			}
+			Not = {
+				is_target_in_global_variable_list = {
+					name = hc_unavailable_special_building
+					target = flag:hc_unavailable_special_building_hc_wonder_011
+				}
+			}
+		}
+		AND = {
+			has_title = title:b_hradec
+			Not = {
+				any_directly_owned_province = {
+					has_building_or_higher = hc_wonder_021
+				}
+			}
+			Not = {
+				is_target_in_global_variable_list = {
+					name = hc_unavailable_special_building
+					target = flag:hc_unavailable_special_building_hc_wonder_021
+				}
+			}
+		}
+		AND = {
+			has_title = title:b_aquileia
+			Not = {
+				any_directly_owned_province = {
+					has_building_or_higher = hc_wonder_030
+				}
+			}
+			Not = {
+				is_target_in_global_variable_list = {
+					name = hc_unavailable_special_building
+					target = flag:hc_unavailable_special_building_hc_wonder_030
+				}
+			}
+		}
+		AND = {
+			has_title = title:b_bordeaux
+			Not = {
+				any_directly_owned_province = {
+					has_building_or_higher = hc_wonder_040
+				}
+			}
+			Not = {
+				is_target_in_global_variable_list = {
+					name = hc_unavailable_special_building
+					target = flag:hc_unavailable_special_building_hc_wonder_040
+				}
+			}
+		}
+		AND = {
+			has_title = title:b_eichtstad
+			Not = {
+				any_directly_owned_province = {
+					has_building_or_higher = hc_wonder_050
+				}
+			}
+			Not = {
+				is_target_in_global_variable_list = {
+					name = hc_unavailable_special_building
+					target = flag:hc_unavailable_special_building_hc_wonder_050
+				}
+			}
+		}
+		AND = {
+			has_title = title:b_roma
+			Not = {
+				any_directly_owned_province = {
+					has_building_or_higher = hc_wonder_061
+				}
+			}
+			Not = {
+				is_target_in_global_variable_list = {
+					name = hc_unavailable_special_building
+					target = flag:hc_unavailable_special_building_hc_wonder_061
+				}
+			}
+		}
+		AND = {
+			has_title = title:b_lubeck
+			Not = {
+				any_directly_owned_province = {
+					has_building_or_higher = hc_wonder_070
+				}
+			}
+			Not = {
+				is_target_in_global_variable_list = {
+					name = hc_unavailable_special_building
+					target = flag:hc_unavailable_special_building_hc_wonder_070
+				}
+			}
+		}
+		AND = {
+			has_title = title:b_cordoba
+			Not = {
+				any_directly_owned_province = {
+					has_building_or_higher = hc_wonder_081
+				}
+			}
+			Not = {
+				is_target_in_global_variable_list = {
+					name = hc_unavailable_special_building
+					target = flag:hc_unavailable_special_building_hc_wonder_081
+				}
+			}
+		}
+	}
+}

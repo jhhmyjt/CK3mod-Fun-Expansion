@@ -26,7 +26,7 @@ coronation.001 = {
 				limit = {
 					is_female = yes
 				}
-				add_trait = beauty_club
+				add_trait = hc_beauty
 			}
 			set_nickname_effect = {
 				NICKNAME = nick_hc_the_crowner
@@ -65,7 +65,7 @@ coronation.100 = {
 		every_former_spouse = {
 			limit = {
 				OR = {
-					has_trait = beauty_club
+					has_trait = hc_beauty
 					has_nickname = nick_hc_the_crowner
 				}
 			}
@@ -73,7 +73,7 @@ coronation.100 = {
 				limit = {
 					is_female = yes
 				}
-				remove_trait = beauty_club
+				remove_trait = hc_beauty
 			}
 			remove_nickname = nick_hc_the_crowner
 		}

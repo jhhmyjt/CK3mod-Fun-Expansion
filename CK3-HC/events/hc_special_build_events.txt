@@ -23,43 +23,49 @@ hc_special_build.001 = {
 	}
 	option = {
 		name = hc_special_build.001.a
-		random_list = {
-			60 = {
-				trigger = {
-					NOT = {
-						OR = {
-							prestige_level> = 5
-							dynasty_prestige_level> = 7
+		custom_tooltip = hc_special_build.001.a_custom_tt_01
+		hidden_effect = {
+			random_list = {
+				30 = {
+					trigger = {
+						any_vassal = {
+							is_powerful_vassal_of = root
+							opinion = {
+								target = root
+								value <= 60
+							}
+						}
+					}
+					modifier = {
+						add = 30
+						any_vassal = {
+							is_powerful_vassal_of = root
+							opinion = {
+								target = root
+								value <= 60
+							}
+							OR = {
+								has_trait = brave
+								has_trait = just
+								has_trait = sadistic
+								has_trait = ambitious
+							}
+						}
+					}
+					trigger_event = {
+						id = hc_special_build.002
+						days = {
+							3,7
 						}
 					}
 				}
-				modifier = {
-					add = 20
-					any_vassal = {
-						is_powerful_vassal_of = root
-						opinion = {
-							target = root
-							value <= 50
+				50 = {
+					custom_tooltip = hc_special_build.001.a_custom_tt_02
+					trigger_event = {
+						id = hc_special_build.003
+						months = {
+							1,2,3
 						}
-					}
-				}
-				custom_tooltip = hc_special_build.001.a_custom_tt_01
-				trigger_event = {
-					id = hc_special_build.002
-					days = {
-						3,7
-					}
-				}
-			}
-			20 = {
-				# modifier = {
-				# 	add = diplomacy
-				# }
-				custom_tooltip = hc_special_build.001.a_custom_tt_02
-				trigger_event = {
-					id = hc_special_build.003
-					months = {
-						1,2,3
 					}
 				}
 			}
@@ -68,7 +74,6 @@ hc_special_build.001 = {
 	option = {
 		name = hc_special_build.001.b
 		hidden_effect = {
-			# remove_decision_cooldown = hc_establish_building_special_decision
 			remove_character_flag = hc_flag_build_cooldown
 		}
 	}
@@ -101,7 +106,7 @@ hc_special_build.002 = {
 					is_powerful_vassal_of = root
 					opinion = {
 						target = root
-						value <= 50
+						value <= 60
 					}
 				}
 			}
@@ -110,7 +115,7 @@ hc_special_build.002 = {
 					is_powerful_vassal_of = root
 					opinion = {
 						target = root
-						value <= 50
+						value <= 60
 					}
 				}
 				save_scope_as = hc_build_vassal
@@ -422,5 +427,6 @@ hc_special_build.004 = {
 	}
 	option = {
 		name = hc_special_build.004.b
+		add_stress = -20
 	}
 }
