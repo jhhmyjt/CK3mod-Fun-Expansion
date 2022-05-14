@@ -8,3 +8,36 @@ hc_saint_sword_modifier = {
 	dread_baseline_add = 30
 	negate_health_penalty_add = 1.5
 }
+
+#骑士
+hc_saint_sword_strengthen_01 = {
+	knight_limit = 1
+	knight_effectiveness_mult = 0.05
+}
+
+#勇武
+hc_saint_sword_strengthen_02 = {
+	prowess_no_portrait = 1
+}
+
+#劫掠
+hc_saint_sword_strengthen_03 = {
+	raid_speed = 0.05
+}
+
+#优势
+hc_saint_sword_strengthen_04 = {
+	controlled_province_advantage = 2
+}
+
+#兵种
+hc_saint_sword_strengthen_05 = {
+	heavy_cavalry_toughness_mult = 0.02
+	heavy_cavalry_damage_mult = 0.02
+}
+
+#威望
+hc_saint_sword_strengthen_06 = {
+	monthly_prestige = 0.25
+	monthly_dynasty_prestige = 0.1
+}

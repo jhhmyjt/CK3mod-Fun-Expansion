@@ -43,3 +43,7 @@
  building_type_hc_scared_altar_desc:0 "该祭坛中供奉着神灵"
  building_hc_scared_altar:0 "$building_type_hc_scared_altar$"
  building_hc_scared_altar_desc:0 "$building_type_hc_scared_altar_desc$"
+ building_type_hc_chrysotriclinium:0 "黄金议事宫"
+ building_type_hc_chrysotriclinium_desc:0 "黄金议事宫（Chrysotriclinium），皇帝上朝议政的宫殿，其金碧辉煌又称“金殿”，宝座设置在议事宫大厅半圆形顶点的圣坛上，这个长长的大殿看上去像教堂，实际也是按照教堂的样式设计的。宝座位于三级斑岩台阶之上，华贵典雅，用象牙、黄金、珍珠和宝石做成，上为华盖，宝座靠背上有象征耶稣的细密镶嵌画。宝座很宽，铺有垫子，是个双人座，皇帝并不坐在中间，而是坐在右边。在礼拜天或节日的时候，皇帝坐在左边，右边的座位上放着一本福音书，据说这里坐着基督本人。宝座前面挂有紫色帷帐，上面缀有珠宝。帷帐旁边有一座镀金铜树，各色鸟儿落在它的枝条上，也是镀金黄铜做的，它们争相争鸣，奏出一首首婉转的乐曲。宝座两旁有两只镀金的铜狮，这些机械野兽“可以张开大嘴咆哮，伸出舌头，还用尾巴击打地面”。"
+ building_hc_chrysotriclinium:0 "$building_type_hc_chrysotriclinium$"
+ building_hc_chrysotriclinium_desc:0 "$building_type_hc_chrysotriclinium_desc$"

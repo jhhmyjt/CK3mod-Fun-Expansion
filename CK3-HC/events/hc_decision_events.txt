@@ -1,0 +1,144 @@
+namespace = hc_decision
+#君宝
+hc_decision.001 = {
+	type = character_event
+	title = hc_decision.001.t
+	desc = hc_decision.001.desc
+	theme = stewardship
+	left_portrait = {
+		character = ROOT
+		animation = personality_greedy
+	}
+	immediate = {
+		play_music_cue = "mx_cue_positive_effect"
+		hc_build_chrysotriclinium_decision_effect = yes
+	}
+	option = {
+		name = hc_decision.001.a
+		trigger = {
+			is_ai = no
+		}
+		give_nickname = nick_hc_the_master_of_chrysotriclinium
+	}
+	option = {
+		name = hc_decision.001.b
+		trigger = {
+			is_ai = no
+		}
+		add_stress = -30
+	}
+	option = {
+		name = hc_decision.001.c
+		trigger = {
+			is_ai = no
+		}
+		custom_tooltip = hc_decision.001_tt
+		hidden_effect = {
+			every_vassal_or_below = {
+				limit = {
+				}
+				add_opinion = {
+					modifier = hc_build_chrysotriclinium_opinion
+					years = 15
+					target = root
+				}
+			}
+		}
+	}
+}
+
+#升级圣剑
+hc_decision.002 = {
+	type = character_event
+	title = hc_decision.002.t
+	desc = hc_decision.002.desc
+	theme = stewardship_wealth_focus
+	left_portrait = {
+		character = ROOT
+		animation = happiness
+	}
+	left_portrait = {
+		character = scope:hc_sword_helper
+		animation = personality_honorable
+	}
+	artifact = {
+		target = scope:hc_artifacts_sword
+		position = lower_left_portrait
+		trigger = {
+			exists = scope:hc_artifacts_sword
+		}
+	}
+	immediate = {
+		random_artifact = {
+			limit = {
+				has_variable = hc_saint_sword
+			}
+			save_scope_as = hc_artifacts_sword
+		}
+		random_court_position_holder = {
+			type = antiquarian_court_position
+			save_scope_as = hc_sword_helper
+		}
+	}
+	option = {
+		name = hc_decision.002.a
+		trigger = {
+			is_ai = no
+		}
+		scope:hc_artifacts_sword = {
+			add_artifact_modifier = hc_saint_sword_strengthen_06
+		}
+	}
+	option = {
+		name = hc_decision.002.b
+		trigger = {
+			is_ai = no
+		}
+		random_list = {
+			50 = {
+				scope:hc_artifacts_sword = {
+					add_artifact_modifier = hc_saint_sword_strengthen_02
+				}
+			}
+			20 = {
+				scope:hc_artifacts_sword = {
+					add_artifact_modifier = hc_saint_sword_strengthen_05
+				}
+			}
+		}
+	}
+	option = {
+		name = hc_decision.002.c
+		trigger = {
+			is_ai = no
+		}
+		random_list = {
+			30 = {
+				scope:hc_artifacts_sword = {
+					add_artifact_modifier = hc_saint_sword_strengthen_01
+				}
+			}
+			20 = {
+				scope:hc_artifacts_sword = {
+					add_artifact_modifier = hc_saint_sword_strengthen_03
+				}
+			}
+			20 = {
+				scope:hc_artifacts_sword = {
+					add_artifact_modifier = hc_saint_sword_strengthen_04
+				}
+			}
+		}
+	}
+	option = {
+		name = hc_decision.002.d
+		trigger = {
+			is_ai = no
+		}
+		hidden_effect = {
+			add_gold = 750
+			add_prestige_no_experience = 500
+			remove_decision_cooldown = hc_strength_artifact_decision
+		}
+	}
+}

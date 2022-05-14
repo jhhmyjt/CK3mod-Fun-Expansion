@@ -1,0 +1,13 @@
+﻿l_simp_english: 
+hc_decision.001.t:0 "Building the Golden Council Palace"
+  hc_decision.001.desc:0 "Through the great gates of the Inner Palace of Constantinople, I could already see the brocade rugs, mattresses, and cushions, the man holding the gold-encrusted shield and the golden long The devout follower of the spear, and the long grand hall. Climb the three porphyry steps, and my throne beckons to me."
+  hc_decision.001.a:0 "From now on, I am the master of this place"
+  hc_decision.001.b:0 "It's fascinating!"
+  hc_decision.001.c:0 "This is not just mine"
+  hc_decision.001_tt:0 "All vassals +20 opinion, decays over 15 years"
+  hc_decision.002.t:0 "Upgrade Holy Sword"
+  hc_decision.002.desc:0 ""Sir, I have some solutions here, which will definitely satisfy you! "My research officer said confidently."
+  hc_decision.002.a:0 "Looks more holy..."
+  hc_decision.002.b:0 "Looks sharper..."
+  hc_decision.002.c:0 "Looks more deadly..."
+  hc_decision.002.d:0 "It doesn't seem worth it..."

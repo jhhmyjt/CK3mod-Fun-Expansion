@@ -11,19 +11,14 @@ hc_test.01 = {
 		character = scope:hc_saint_knight
 		animation = happiness
 	}
+	left_portrait = {
+		character = root.cp:councillor_steward
+	}
 	theme = crown
 	override_background = {
 		reference = corridor_day
 	}
 	option = {
 		name = "test"
-		hidden_effect = {
-			random_vassal = {
-				limit = {
-					has_trait = hc_knight
-				}
-				save_scope_as = hc_saint_knight
-			}
-		}
 	}
 }

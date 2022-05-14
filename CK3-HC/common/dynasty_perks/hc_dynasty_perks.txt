@@ -117,6 +117,9 @@ hc_temple_legacy_5 = {
 			root = {
 				add_trait = hc_holy_blood
 				every_close_family_member = {
+					limit = {
+						house = root.house
+					}
 					add_trait = hc_holy_blood
 				}
 			}

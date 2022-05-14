@@ -13,14 +13,6 @@ hc_test_decision = {
 		always = no
 	}
 	is_valid = {
-		OR = {
-			any_directly_owned_province = {
-				has_building_or_higher = hc_wonder_011
-			}
-			any_directly_owned_province = {
-				has_building_or_higher = hc_wonder_021
-			}
-		}
 	}
 	effect = {
 		trigger_event = {
@@ -891,110 +883,151 @@ hc_improve_culture_development_decision = {
 	}
 }
 
-# #强化圣剑
-# hc_strength_artifact_decision = {
-# 	picture = "gfx/interface/illustrations/decisions/decision_misc.dds"
-# 	title = hc_strength_artifact_decision_t
-# 	desc = hc_strength_artifact_decision_desc
-# 	selection_tooltip = hc_strength_artifact_decision_tooltip
-# 	confirm_text = hc_strength_artifact_decision_confirm
-# 	major = yes
-# 	ai_check_interval = 0
-# 	cooldown = {
-# 		years = 5
-# 	}
-# 	cost = {
-# 		gold = 300
-# 	}
-# 	is_shown = {
-# 		always = no
-# 		is_ai = no
-# 		is_landed = yes
-# 		exists = capital_province
-# 		root.house = {
-# 			has_house_modifier = hc_dynasty_god_modifier
-# 		}
-# 		has_ep1_dlc_trigger = yes
-# 		any_artifact = {
-# 			has_variable = hc_saint_sword
-# 		}
-# 	}
-# 	is_valid = {
-# 		prestige_level >= high_prestige_level
-# 		any_artifact = {
-# 			limit = {
-# 				has_variable = hc_saint_sword
-# 			}
-# 			artifact_durability >= 80
-# 		}
-# 		if = {
-# 			limit = {
-# 				employs_court_position = antiquarian_court_position
-# 				any_court_position_holder = {
-# 					type = antiquarian_court_position
-# 				}
-# 			}
-# 			random_court_position_holder = {
-# 				type = antiquarian_court_position
-# 				martial>10
-# 			}
-# 		}
-# 		any_character_artifact = {
-# 			limit = {
-# 				not = {
-# 					has_variable = hc_saint_sword
-# 				}
-# 			}
-# 			exists = this
-# 		}
-# 	}
-# 	is_valid_showing_failures_only = {
-# 		is_capable_adult = yes
-# 		is_imprisoned = no
-# 		is_at_war = no
-# 		employs_court_position = antiquarian_court_position
-# 	}
-# 	effect = {
-# 		random_artifact = {
-# 			limit = {
-# 				has_variable = hc_saint_sword
-# 			}
-# 			save_scope_as = this_artifact
-# 		}
-# 		random_character_artifact = {
-# 			limit = {
-# 				not = {
-# 					has_variable = hc_saint_sword
-# 				}
-# 			}
-# 			save_scope_as = that_artifact
-# 		}
-# 		scope:this_artifact = {
-# 			# set_artifact_description = artifact_weapon_relic_desc
-# 			set_artifact_description = "[this_artifact.GetDesc]\n\n[that_artifact.GetNameNoTooltip]被嵌入剑柄中。"
-# 			# set_variable = added_relic
-# 			hidden_effect = {
-# 				copy_artifact_modifiers = scope:that_artifact
-# 			}
-# 		}
-# 		scope:that_artifact = {
-# 			hidden_effect = {
-# 				destroy_artifact = this
-# 			}
-# 		}
-# 		hidden_effect = {
-# 			send_interface_toast = {
-# 				title = artifact.4090.a.tt
-# 				left_icon = root
-# 				right_icon = scope:this_artifact
-# 				custom_tooltip = embedded_not_destroyed_tooltip
-# 			}
-# 		}
-# 	}
-# 	ai_potential = {
-# 		always = no
-# 	}
-# 	ai_will_do = {
-# 		base = 0
-# 	}
-# }
+#强化圣剑
+hc_strength_artifact_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_smith.dds"
+	title = hc_strength_artifact_decision_t
+	desc = hc_strength_artifact_decision_desc
+	selection_tooltip = hc_strength_artifact_decision_tooltip
+	confirm_text = hc_strength_artifact_decision_confirm
+	major = yes
+	ai_check_interval = 0
+	cooldown = {
+		years = 10
+	}
+	cost = {
+		gold = 750
+		prestige = 500
+	}
+	is_shown = {
+		is_ai = no
+		is_landed = yes
+		exists = capital_province
+		root.house = {
+			has_house_modifier = hc_dynasty_god_modifier
+		}
+		has_ep1_dlc_trigger = yes
+		any_artifact = {
+			has_variable = hc_saint_sword
+		}
+	}
+	is_valid = {
+		prestige_level >= high_prestige_level
+		custom_description = {
+			text = hc_strength_artifact_decision_cd_01
+			any_artifact = {
+				limit = {
+					has_variable = hc_saint_sword
+				}
+				artifact_durability >= 80
+			}
+		}
+		custom_description = {
+			text = hc_strength_artifact_decision_cd_02
+			any_court_position_holder = {
+				type = antiquarian_court_position
+			}
+		}
+	}
+	is_valid_showing_failures_only = {
+		is_capable_adult = yes
+		is_imprisoned = no
+		is_at_war = no
+		employs_court_position = antiquarian_court_position
+	}
+	effect = {
+		custom_tooltip = hc_strength_artifact_decision_tt
+		trigger_event = {
+			id = hc_decision.002
+		}
+	}
+	ai_potential = {
+		always = no
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
+# 在君士但丁堡修建黄金议事宫
+hc_build_chrysotriclinium_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_knight_kneeling.dds"
+	title = hc_build_chrysotriclinium_decision_t
+	desc = hc_build_chrysotriclinium_decision_desc
+	selection_tooltip = hc_build_chrysotriclinium_decision_tooltip
+	confirm_text = hc_build_chrysotriclinium_decision_confirm
+	major = yes
+	ai_check_interval = 0
+	cost = {
+		prestige = 3200
+		gold = 1800
+	}
+	is_shown = {
+		highest_held_title_tier >= 4
+		is_independent_ruler = yes
+		is_ai = no
+		is_ruler = yes
+		is_landed = yes
+		NOT = {
+			#Can only do it once.
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:hc_flag_build_chrysotriclinium_decision
+			}
+		}
+		NOT = {
+			has_government = tribal_government
+		}
+	}
+	is_valid = {
+		prestige_level >= 4
+		is_independent_ruler = yes
+		OR = {
+			learning >= 15
+			stewardship >= 15
+		}
+		has_title = title:c_byzantion
+		# custom_description = {
+		# 	text = hc_build_chrysotriclinium_decision_cd
+		# 	capital_province = {
+		# 		barony = title:c_byzantion.title_province
+		# 	}
+		# }
+		title:c_byzantion = {
+			development_level >= 30
+			title_held_years >= 10
+		}
+		custom_description = {
+			text = is_god_dynasty
+			root.house = {
+				has_house_modifier = hc_dynasty_god_modifier
+			}
+		}
+	}
+	is_valid_showing_failures_only = {
+		is_capable_adult = yes
+		is_imprisoned = no
+		is_at_war = no
+		is_independent_ruler = yes
+	}
+	effect = {
+		show_as_tooltip = {
+			hc_build_chrysotriclinium_decision_effect = yes
+		}
+		trigger_event = {
+			id = hc_decision.001
+		}
+		hidden_effect = {
+			add_to_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:hc_flag_build_chrysotriclinium_decision
+			}
+		}
+	}
+	ai_potential = {
+		always = no
+	}
+	ai_will_do = {
+		base = 0
+	}
+}

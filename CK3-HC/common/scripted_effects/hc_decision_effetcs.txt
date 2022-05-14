@@ -207,3 +207,31 @@ hc_special_build_effect = {
 		custom_tooltip = hc_show_special_build_effect_tt_08
 	}
 }
+
+hc_build_chrysotriclinium_decision_effect = {
+	title:c_byzantion = {
+		title_province = {
+			add_building_slot = 1
+			add_building = hc_chrysotriclinium
+		}
+	}
+	title:c_byzantion = {
+		add_county_modifier = {
+			modifier = hc_country_modifier_02
+			years = 200
+		}
+		change_development_level = medium_development_level_gain
+	}
+	spawn_army = {
+		men_at_arms = {
+			type = hc_judgment_heavy_cavalry
+			stacks = 5
+		}
+		men_at_arms = {
+			type = hc_judgment_heavy_cavalry
+			stacks = 5
+		}
+		location = title:c_byzantion.title_province
+		name = hc_chrysotriclinium_army
+	}
+}

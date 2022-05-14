@@ -8,3 +8,11 @@ hc_country_modifier_01 = {
 	build_gold_cost = -0.25
 	monthly_county_control_change_add = 1.5
 }
+
+#修建黄金议事宫
+hc_country_modifier_02 = {
+	icon = stewardship_positive
+	development_growth_factor = 0.5
+	build_speed = -0.2
+	build_gold_cost = -0.2
+}

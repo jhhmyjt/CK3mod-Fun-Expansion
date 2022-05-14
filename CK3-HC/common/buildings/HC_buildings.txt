@@ -12,19 +12,10 @@
 #hc_wonder_070:荷尔斯泰因防线
 #hc_wonder_081:圣足山
 ###
-#罗马万神殿
 hc_wonder_011 = {
 	next_building = hc_wonder_012
 	construction_time = 365
-	# cost = {
-	# 	gold = 450
-	# 	prestige = 450
-	# }
 	type_icon = "icon_structure_doges_palace.dds"
-	# can_construct_potential = {
-	# 	building_requirement_tribal = no
-	# 	barony = title:b_roma
-	# }
 	is_enabled = {
 	}
 	character_modifier = {
@@ -47,10 +38,6 @@ hc_wonder_012 = {
 		prestige = 800
 	}
 	type_icon = "icon_structure_doges_palace.dds"
-	# can_construct_potential = {
-	# 	building_requirement_tribal = no
-	# 	barony = title:b_roma
-	# }
 	can_construct = {
 		culture = {
 			has_innovation = innovation_manorialism
@@ -75,16 +62,7 @@ hc_wonder_012 = {
 
 hc_wonder_021 = {
 	next_building = hc_wonder_022
-	# construction_time = 365
-	# cost = {
-	# 	gold = 350
-	# 	prestige = 300
-	# }
 	type_icon = "icon_structure_grand_library_of_baghdad.dds"
-	# can_construct_potential = {
-	# 	building_requirement_tribal = no
-	# 	barony = title:b_hradec
-	# }
 	is_enabled = {
 	}
 	character_modifier = {
@@ -109,10 +87,6 @@ hc_wonder_022 = {
 		prestige = 500
 	}
 	type_icon = "icon_structure_grand_library_of_baghdad.dds"
-	# can_construct_potential = {
-	# 	building_requirement_tribal = no
-	# 	barony = title:b_hradec
-	# }
 	can_construct = {
 		culture = {
 			has_innovation = innovation_chronicle_writing
@@ -139,17 +113,7 @@ hc_wonder_022 = {
 
 #君临城
 hc_wonder_030 = {
-	# construction_time = 3650
-	# cost = {
-	# 	gold = 5000
-	# 	prestige = 3000
-	# 	piety = 2000
-	# }
 	type_icon = "icon_structure_theodosian_walls.dds"
-	# can_construct_potential = {
-	# 	building_requirement_tribal = no
-	# 	barony = title:b_aquileia
-	# }
 	can_construct = {
 		culture = {
 			has_innovation = innovation_castle_baileys
@@ -188,10 +152,6 @@ hc_wonder_030 = {
 
 hc_wonder_040 = {
 	type_icon = "icon_structure_the_citadel_of_aleppo.dds"
-	# can_construct_potential = {
-	# 	building_requirement_tribal = no
-	# 	barony = title:b_bordeaux
-	# }
 	can_construct = {
 		culture = {
 			has_innovation = innovation_castle_baileys
@@ -221,17 +181,7 @@ hc_wonder_040 = {
 
 #赫伦堡废弃之地
 hc_wonder_050 = {
-	# construction_time = 3650
-	# cost = {
-	# 	gold = 2000
-	# 	prestige = 1000
-	# 	piety = 500
-	# }
 	type_icon = "icon_structure_palace_of_achen.dds"
-	# can_construct_potential = {
-	# 	building_requirement_tribal = no
-	# 	barony = title:b_eichtstad
-	# }
 	can_construct = {
 		culture = {
 			has_innovation = innovation_burhs
@@ -259,20 +209,9 @@ hc_wonder_050 = {
 	type = regular
 }
 
-#古罗马斗兽场
 hc_wonder_061 = {
-	# construction_time = slow_construction_time
 	next_building = hc_wonder_062
-	# cost = {
-	# 	gold = 500
-	# 	prestige = 300
-	# 	piety = 200
-	# }
 	type_icon = "icon_structure_great_mosque_of_mecca.dds"
-	# can_construct_potential = {
-	# 	building_requirement_tribal = no
-	# 	barony = title:b_roma
-	# }
 	is_enabled = {
 	}
 	character_modifier = {
@@ -300,10 +239,6 @@ hc_wonder_062 = {
 		piety = 500
 	}
 	type_icon = "icon_structure_great_mosque_of_mecca.dds"
-	# can_construct_potential = {
-	# 	building_requirement_tribal = no
-	# 	barony = title:b_roma
-	# }
 	can_construct = {
 		culture = {
 			has_innovation = innovation_battlements
@@ -330,17 +265,7 @@ hc_wonder_062 = {
 
 #绝境长城
 hc_wonder_070 = {
-	# construction_time = 3650
-	# cost = {
-	# 	gold = 2500
-	# 	prestige = 2500
-	# 	piety = 100
-	# }
 	type_icon = "icon_structure_walls_of_benin.dds"
-	# can_construct_potential = {
-	# 	building_requirement_tribal = no
-	# 	barony = title:b_lubeck
-	# }
 	can_construct = {
 		culture = {
 			has_innovation = innovation_house_soldiers
@@ -375,17 +300,7 @@ hc_wonder_070 = {
 
 #旧镇
 hc_wonder_081 = {
-	# construction_time = 365
-	# cost = {
-	# 	gold = 300
-	# 	prestige = 1000
-	# 	piety = 200
-	# }
 	type_icon = "icon_structure_temple_in_jerusalem.dds"
-	# can_construct_potential = {
-	# 	building_requirement_tribal = no
-	# 	barony = title:b_cordoba
-	# }
 	is_enabled = {
 	}
 	character_modifier = {
@@ -422,4 +337,31 @@ hc_scared_altar = {
 		base = 0
 	}
 	type = special
+}
+
+#黄金议事宫
+hc_chrysotriclinium = {
+	type_icon = "icon_building_hall_of_heroes.dds"
+	show_disabled = yes
+	character_modifier = {
+		monthly_prestige_mult = 0.5
+		monthly_piety_mult = 0.5
+		court_grandeur_baseline_add = 18
+		councillor_opinion = 10
+		stress_gain_mult = -0.2
+		knight_limit = 2
+		knight_effectiveness_mult = 0.25
+		long_reign_bonus_mult = 0.25
+	}
+	duchy_capital_county_modifier = {
+		county_opinion_add = 30
+	}
+	county_modifier = {
+		development_growth = 0.25
+		monthly_county_control_change_add = 0.3
+	}
+	ai_value = {
+		base = 0
+	}
+	type = regular
 }

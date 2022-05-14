@@ -13,6 +13,7 @@ some decisions/events/traits/modifiers/nick/buildings
 [*]Strong dynasty heritage 
 [*]Others
 [/list]
+[img]https://i.imgur.com/PZKaOKU.png[/img]
 [h1]Supported languages[/h1]
 简体中文
 English(by Google)
@@ -29,17 +30,11 @@ Not compatible with Iron Man
 [*]hc_judgment_heavy_cavalry 骑士插画,[url=https://www.zcool.com.cn/work/ZMTg5NDY2NA==.html]画师：dj9fun[/url]
 [/list]
 
-[h1]Recent update [/h1]
+[h1]Recent update[/h1]
 [list]
-[*]Date: 2022.3.12
-       [*]Inheritance of Clan adds a growing ability modifier
-       [*]The first level of clan inheritance enhances the probability of innate traits
-       [*]New Resolution: Adopt advanced primogeniture system
-       [*]New decision: speed up cultural development (can shorten the cooldown of cultural tradition establishment)
-       [*]Each generation can get the God's Blessing trait
-       [*] Blocked the decision to forge the holy sword, the holy sword will be obtained when completing the divine examination, and you can hire a court craftsman to repair it
-       [*]Finally, the texture of the treasure is not crooked
-       [*]More treasures will not be updated temporarily 
+       [*]Date: 2022.5.14
+       [*]Added two new decisions: upgrade holy sword and a Junbao related decision
+       [*]Clan Heritage trait "Baptized in Holy Blood" will not be granted to non-Clan members
 [/list]
 
 [h1]Finally[/h1]
@@ -47,3 +42,6 @@ Not compatible with Iron Man
 If you think this mod is not bad, please don't be stingy with your likes 👍
 
 [b]✨✨✨Thanks for your support ✨✨✨[/b]
+
+[hr][/hr]
+⬇️See more content in the discussion area "Introduction"⬇️
