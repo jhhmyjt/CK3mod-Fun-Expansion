@@ -1,4 +1,4 @@
-namespace = cruise
+﻿namespace = cruise
 cruise.100 = {
 	hidden = yes
 }
@@ -644,7 +644,8 @@ cruise.009 = {
 		trigger_event = {
 			id = cruise.011
 			days = {
-				2,5
+				2
+				5
 			}
 		}
 	}
@@ -654,7 +655,8 @@ cruise.009 = {
 		trigger_event = {
 			id = cruise.010
 			days = {
-				2,5
+				2
+				5
 			}
 		}
 	}
@@ -663,7 +665,8 @@ cruise.009 = {
 		trigger_event = {
 			id = cruise.010
 			days = {
-				2,5
+				2
+				5
 			}
 		}
 	}
@@ -803,7 +806,8 @@ cruise.010 = {
 		trigger_event = {
 			id = cruise.012
 			days = {
-				2,5
+				2
+				5
 			}
 		}
 	}
@@ -1049,7 +1053,8 @@ cruise.011 = {
 		trigger_event = {
 			id = cruise.012
 			days = {
-				2,5
+				2
+				5
 			}
 		}
 	}

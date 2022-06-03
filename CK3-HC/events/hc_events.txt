@@ -1,56 +1,4 @@
-namespace = hc
-#desc event
-hc.101 = {
-	type = character_event
-	desc = hc.101.desc
-	title = hc.101.t
-	# left_portrait = {
-	# 	character = ROOT
-	# 	animation = stress
-	# }
-	theme = crown
-	trigger = {
-		is_ai = no
-	}
-	option = {
-		name = hc.101.a
-		flavor = "#F test#"
-	}
-	option = {
-		name = hc.101.b
-		hidden_effect = {
-			trigger_event = {
-				on_action = on_action_hc_every_year
-				years = 1
-			}
-		}
-	}
-}
-
-#test event
-hc.100 = {
-	type = character_event
-	desc = hc.100.desc
-	title = hc.100.t
-	left_portrait = {
-		character = ROOT
-		animation = stress
-	}
-	theme = crown
-	override_background = {
-		reference = corridor_night
-	}
-	trigger = {
-		is_ai = no
-	}
-	option = {
-		name = hc.100.a
-		hidden_effect = {
-			remove_decision_cooldown = hc_cruise_decision
-		}
-	}
-}
-
+﻿namespace = hc
 #接受神考
 hc.001 = {
 	type = character_event
@@ -396,7 +344,7 @@ hc.009 = {
 			limit = {
 				has_nickname = nick_the_god
 			}
-			remove_nickname = nick_the_god
+			remove_nickname = yes
 		}
 		give_nickname = nick_hc_the_hermit
 		add_trait = hc_recluse

@@ -1,4 +1,4 @@
-namespace = hc_special_build
+﻿namespace = hc_special_build
 #开始事件
 hc_special_build.001 = {
 	type = character_event
@@ -23,7 +23,6 @@ hc_special_build.001 = {
 	}
 	option = {
 		name = hc_special_build.001.a
-		custom_tooltip = hc_special_build.001.a_custom_tt_01
 		hidden_effect = {
 			random_list = {
 				30 = {
@@ -55,16 +54,19 @@ hc_special_build.001 = {
 					trigger_event = {
 						id = hc_special_build.002
 						days = {
-							3,7
+							3
+							7
 						}
 					}
 				}
 				50 = {
-					custom_tooltip = hc_special_build.001.a_custom_tt_02
+					custom_tooltip = hc_special_build.001.a_custom_tt_01
 					trigger_event = {
 						id = hc_special_build.003
 						months = {
-							1,2,3
+							1
+							2
+							3
 						}
 					}
 				}
@@ -154,7 +156,9 @@ hc_special_build.002 = {
 				trigger_event = {
 					id = hc_special_build.003
 					months = {
-						1,2,3
+						1
+						2
+						3
 					}
 				}
 			}

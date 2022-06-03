@@ -1,4 +1,4 @@
-cruise_start_events = {
+﻿cruise_start_events = {
 	events = {
 		cruise.100		# To set variables etc.
 	}

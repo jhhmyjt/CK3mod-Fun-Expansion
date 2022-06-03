@@ -1,4 +1,4 @@
-namespace = hc_sacrifice
+﻿namespace = hc_sacrifice
 #祭祀选择
 hc_sacrifice.001 = {
 	type = character_event

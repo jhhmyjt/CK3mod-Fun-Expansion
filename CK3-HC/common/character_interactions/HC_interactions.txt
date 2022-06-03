@@ -1,4 +1,4 @@
-hc_designate_knight_interaction = {
+﻿hc_designate_knight_interaction = {
 	category = interaction_category_friendly
 	common_interaction = yes
 	# use_diplomatic_range = no

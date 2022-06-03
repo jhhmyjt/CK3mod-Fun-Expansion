@@ -1,4 +1,4 @@
-embrace_roma_effect = {
+﻿embrace_roma_effect = {
 	# Scopes saves for localization
 	root = {
 		save_scope_as = embracer
@@ -209,6 +209,9 @@ hc_special_build_effect = {
 }
 
 hc_build_chrysotriclinium_decision_effect = {
+	root.dynasty = {
+		add_dynasty_prestige = 5000
+	}
 	title:c_byzantion = {
 		title_province = {
 			add_building_slot = 1

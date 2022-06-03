@@ -1,4 +1,4 @@
-nick_the_god = {
+﻿nick_the_god = {
 }
 
 #圣女

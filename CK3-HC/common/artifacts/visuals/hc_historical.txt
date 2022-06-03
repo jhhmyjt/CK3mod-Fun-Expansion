@@ -1,4 +1,4 @@
-hc_saint_sword = {
+﻿hc_saint_sword = {
 	icon = "hc_saint_sword.dds"
 	# African
 	asset = {

@@ -1,4 +1,4 @@
-namespace = hc_test
+﻿namespace = hc_test
 hc_test.01 = {
 	type = character_event
 	desc = "test event"

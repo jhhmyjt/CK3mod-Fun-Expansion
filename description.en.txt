@@ -32,9 +32,8 @@ Not compatible with Iron Man
 
 [h1]Recent update[/h1]
 [list]
-       [*]Date: 2022.5.14
-       [*]Added two new decisions: upgrade holy sword and a Junbao related decision
-       [*]Clan Heritage trait "Baptized in Holy Blood" will not be granted to non-Clan members
+[*]Date：2022.6.3
+[*]fixed some bugs.
 [/list]
 
 [h1]Finally[/h1]

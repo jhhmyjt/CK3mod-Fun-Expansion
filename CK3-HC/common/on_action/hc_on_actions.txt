@@ -1,4 +1,4 @@
-on_action_hc_every_year = {
+﻿on_action_hc_every_year = {
 	events = {
 		hc_switch.005
 	}

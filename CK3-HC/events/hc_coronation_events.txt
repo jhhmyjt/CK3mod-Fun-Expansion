@@ -1,4 +1,4 @@
-namespace = coronation
+﻿namespace = coronation
 #册封事件
 coronation.001 = {
 	type = character_event
@@ -28,10 +28,11 @@ coronation.001 = {
 				}
 				add_trait = hc_beauty
 			}
-			set_nickname_effect = {
-				NICKNAME = nick_hc_the_crowner
-				# NICKNAME = "加冕者"
-			}
+			# set_nickname_effect = {
+			# 	NICKNAME = nick_hc_the_crowner
+			# 	# NICKNAME = "加冕者"
+			# }
+			give_nickname = nick_hc_the_crowner
 			add_prestige = 750
 			add_piety = 600
 		}
@@ -46,8 +47,8 @@ coronation.001 = {
 coronation.100 = {
 	hidden = yes
 	type = character_event
-	desc = coronation.100.desc
-	title = coronation.100.t
+	# desc = coronation.100.desc
+	# title = coronation.100.t
 	left_portrait = {
 		character = ROOT
 		animation = stress
@@ -75,7 +76,12 @@ coronation.100 = {
 				}
 				remove_trait = hc_beauty
 			}
-			remove_nickname = nick_hc_the_crowner
+			if = {
+				limit = {
+					has_nickname = nick_hc_the_crowner
+				}
+				remove_nickname = yes
+			}
 		}
 	}
 }

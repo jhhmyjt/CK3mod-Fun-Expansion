@@ -1,4 +1,4 @@
-hc_temple_legacy_1 = {
+﻿hc_temple_legacy_1 = {
 	legacy = hc_temple_legacy_track
 	character_modifier = {
 		name = hc_temple_legacy_1_name

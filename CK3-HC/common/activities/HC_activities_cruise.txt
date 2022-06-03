@@ -1,4 +1,4 @@
-activity_cruise = {
+﻿activity_cruise = {
 	expiration_days = 100
 	days_until_auto_start = 5
 	solo = yes

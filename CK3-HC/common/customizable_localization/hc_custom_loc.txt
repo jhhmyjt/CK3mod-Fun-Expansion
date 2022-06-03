@@ -1,4 +1,4 @@
-#圣殿骑士
+﻿#圣殿骑士
 HC_knight = {
 	type = character
 	text = {

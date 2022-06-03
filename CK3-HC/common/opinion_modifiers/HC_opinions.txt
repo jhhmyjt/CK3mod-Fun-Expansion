@@ -1,4 +1,4 @@
-hc_my_knight_opinion = {
+﻿hc_my_knight_opinion = {
 	opinion = 60
 	decaying = yes
 	years = 10

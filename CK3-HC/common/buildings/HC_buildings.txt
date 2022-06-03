@@ -1,4 +1,4 @@
-###
+﻿###
 #The wonder of city
 #hc_wonder_011:罗马万神殿_01
 #hc_wonder_012:罗马万神殿_02
@@ -121,25 +121,22 @@ hc_wonder_030 = {
 	}
 	is_enabled = {
 	}
-	garrison = 2000
+	max_garrison = 2000
 	character_modifier = {
 		domain_limit = 5
 		vassal_limit = 10
 		feudal_government_tax_contribution_mult = 0.2
+		vassal_tax_contribution_mult = 0.2
+		happy_powerful_vassal_tax_contribution_mult = 0.2
+		character_capital_county_monthly_development_growth_add = 0.5
 	}
 	province_modifier = {
 		monthly_income = 10
 		fort_level = 5
-		defender_advantage = 10
 	}
 	county_modifier = {
 		development_growth = 0.2
-		monthly_income_mult = 0.2
-		domain_tax_mult = 0.2
-		vassal_tax_contribution_mult = 0.2
-		happy_powerful_vassal_tax_contribution_mult = 0.2
 		tax_mult = 0.2
-		character_capital_county_monthly_development_growth_add = 0.5
 		monthly_county_control_change_add = 0.5
 		monthly_county_control_change_factor = 0.2
 		development_growth_factor = 0.2
@@ -273,7 +270,7 @@ hc_wonder_070 = {
 	}
 	is_enabled = {
 	}
-	garrison = 2000
+	max_garrison = 2000
 	levy = 5000
 	character_modifier = {
 		men_at_arms_limit = 10
@@ -287,7 +284,6 @@ hc_wonder_070 = {
 		levy_size = 0.2
 		garrison_size = 0.2
 		levy_reinforcement_rate = 0.2
-		defender_advantage = 10
 		fort_level = 10
 	}
 	county_modifier = {
@@ -344,17 +340,14 @@ hc_chrysotriclinium = {
 	type_icon = "icon_building_hall_of_heroes.dds"
 	show_disabled = yes
 	character_modifier = {
-		monthly_prestige_mult = 0.5
-		monthly_piety_mult = 0.5
+		monthly_prestige_gain_mult = 0.5
+		monthly_piety_gain_per_knight_add = 0.5
 		court_grandeur_baseline_add = 18
 		councillor_opinion = 10
 		stress_gain_mult = -0.2
 		knight_limit = 2
 		knight_effectiveness_mult = 0.25
 		long_reign_bonus_mult = 0.25
-	}
-	duchy_capital_county_modifier = {
-		county_opinion_add = 30
 	}
 	county_modifier = {
 		development_growth = 0.25

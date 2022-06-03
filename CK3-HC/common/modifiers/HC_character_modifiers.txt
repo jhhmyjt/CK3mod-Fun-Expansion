@@ -1,4 +1,4 @@
-#角色修正
+﻿#角色修正
 #为君拔剑
 hc_char_modifier_01 = {
 	martial = 5

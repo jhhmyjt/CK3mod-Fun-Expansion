@@ -1,4 +1,4 @@
-namespace = hc_switch
+﻿namespace = hc_switch
 #开关事件组
 #战争结束移除为君王拔剑修正
 hc_switch.001 = {

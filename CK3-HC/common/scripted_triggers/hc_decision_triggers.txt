@@ -1,4 +1,4 @@
-hc_special_building_trigger = {
+﻿hc_special_building_trigger = {
 	NOT = {
 		AND = {
 			is_target_in_global_variable_list = {

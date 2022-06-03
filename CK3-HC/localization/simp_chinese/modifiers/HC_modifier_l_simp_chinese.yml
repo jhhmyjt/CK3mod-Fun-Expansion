@@ -31,8 +31,6 @@
  hc_country_modifier_01_desc:0 "该地区充满探索未知道路的勇敢"
  hc_country_modifier_02:0 "修建黄金议事宫"
  hc_country_modifier_02_desc:0 "黄金议事宫坐落于本地首府，它为本地发展注入强大力量。"
- hc_dynasty_pioneer_modifier:0 "探索前进的道路"
- hc_dynasty_pioneer_modifier_desc:0 "该家族具有非凡的勇气去迎接挑战"
  hc_dynasty_god_modifier:0 "受神灵眷顾"
  hc_dynasty_god_modifier_desc:0 "该家族受到诸灵的眷顾"
  hc_dynasty_alert_modifier:0 "祭祀之灵"

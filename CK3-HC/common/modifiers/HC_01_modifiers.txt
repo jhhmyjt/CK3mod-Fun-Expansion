@@ -1,10 +1,4 @@
-#神灵庇护
-hc_test_modifier = {
-	tax_mult = 0.15
-	icon = horse_positive
-}
-
-#神考
+﻿#神考
 hc_01_modifier = {
 	icon = stress_negative
 	health = -0.02
@@ -133,15 +127,14 @@ hc_12_modifier = {
 # 调皮捣蛋：调皮：爱玩爱闹，不听劝导，顽皮；捣蛋：不守秩序、令人讨厌或爱恶作剧的人。
 ##########################
 #冰雪聪明
-hc_13_modifier = {
-	icon = magic_positive
-	diplomacy = 2
-	attraction_opinion = 5
-}
-
-#生龙活虎
-hc_14_modifier = {
-	icon = outdoors_positive
-	prowess = 2
-	health = 0.25
-}
+# hc_13_modifier = {
+# 	icon = magic_positive
+# 	diplomacy = 2
+# 	attraction_opinion = 5
+# }
+# #生龙活虎
+# hc_14_modifier = {
+# 	icon = outdoors_positive
+# 	prowess = 2
+# 	health = 0.25
+# }

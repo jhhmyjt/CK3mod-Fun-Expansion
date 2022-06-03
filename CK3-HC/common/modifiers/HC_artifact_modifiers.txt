@@ -1,4 +1,4 @@
-hc_saint_sword_modifier = {
+﻿hc_saint_sword_modifier = {
 	court_grandeur_baseline_add = 10
 	monthly_prestige = 3
 	martial_per_prestige_level = 2

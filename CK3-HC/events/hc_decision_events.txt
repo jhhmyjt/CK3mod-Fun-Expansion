@@ -1,4 +1,4 @@
-namespace = hc_decision
+﻿namespace = hc_decision
 #君宝
 hc_decision.001 = {
 	type = character_event
@@ -57,7 +57,7 @@ hc_decision.002 = {
 		character = ROOT
 		animation = happiness
 	}
-	left_portrait = {
+	right_portrait = {
 		character = scope:hc_sword_helper
 		animation = personality_honorable
 	}

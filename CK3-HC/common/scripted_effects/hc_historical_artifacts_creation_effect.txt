@@ -1,4 +1,4 @@
-hc_create_artifact_saint_sword_effect = {
+﻿hc_create_artifact_saint_sword_effect = {
 	# Get the character the artifact is being made for.
 	$OWNER$ = {
 		save_scope_as = owner

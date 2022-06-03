@@ -1,4 +1,4 @@
-namespace = hc_call_war
+﻿namespace = hc_call_war
 #是否召集
 hc_call_war.001 = {
 	type = character_event
@@ -89,28 +89,5 @@ hc_call_war.002 = {
 				months = 1
 			}
 		}
-	}
-}
-
-#失败的
-hc_call_war.003 = {
-	type = character_event
-	desc = hc_call_war.003.desc
-	title = hc_call_war.003.t
-	left_portrait = {
-		character = ROOT
-		animation = personality_rational
-	}
-	theme = crown
-	override_background = {
-		reference = throne_room
-	}
-	trigger = {
-		is_ai = no
-	}
-	immediate = {
-	}
-	option = {
-		name = hc_call_war.003.a
 	}
 }

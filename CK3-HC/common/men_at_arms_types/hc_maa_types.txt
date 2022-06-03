@@ -1,4 +1,4 @@
-#圣殿裁决重装骑兵
+﻿#圣殿裁决重装骑兵
 hc_judgment_heavy_cavalry = {
 	type = heavy_cavalry
 	damage = 100

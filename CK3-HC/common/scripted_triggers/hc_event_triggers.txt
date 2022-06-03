@@ -1,4 +1,4 @@
-hc_special_building_finished_trigger = {
+﻿hc_special_building_finished_trigger = {
 	AND = {
 		is_target_in_global_variable_list = {
 			name = hc_unavailable_special_building

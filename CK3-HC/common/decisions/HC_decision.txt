@@ -1,8 +1,6 @@
-hc_test_decision = {
+﻿hc_test_decision = {
 	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
 	title = "hc mod test decision"
-	selection_tooltip = "test"
-	desc = "test decision"
 	confirm_text = "test"
 	ai_check_interval = 0
 	major = no
@@ -440,49 +438,6 @@ hc_coronation_decision = {
 			target = flag:coronation_decision
 		}
 	}
-	ai_potential = {
-		always = no
-	}
-	ai_will_do = {
-		base = 0
-	}
-}
-
-#重铸庇护 unused
-hc_rebuild_god_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
-	title = hc_rebuild_god_decision_t
-	selection_tooltip = hc_rebuild_god_decision_tooltip
-	desc = hc_rebuild_god_decision_desc
-	confirm_text = hc_rebuild_god_decision_confirm
-	ai_check_interval = 0
-	major = yes
-	cooldown = {
-		days = 3650
-	}
-	is_shown = {
-		always = no
-		is_ai = no
-		root.house = {
-			has_house_modifier = hc_dynasty_god_modifier
-		}
-		NOT = {
-			has_trait = god_descent
-		}
-	}
-	is_valid_showing_failures_only = {
-		is_imprisoned = no
-		is_available_adult = yes
-		is_at_war = no
-	}
-	effect = {
-		custom_tooltip = hc_rebuild_god_decision_effect_tt
-		trigger_event = {
-			id = hc_rebuild_god.100
-			days = 2
-		}
-	}
-	# ai_check_frequency = 0
 	ai_potential = {
 		always = no
 	}
@@ -1013,6 +968,12 @@ hc_build_chrysotriclinium_decision = {
 	effect = {
 		show_as_tooltip = {
 			hc_build_chrysotriclinium_decision_effect = yes
+		}
+		stress_impact = {
+			content = massive_stress_impact_gain
+			humble = massive_stress_impact_gain
+			ambitious = medium_stress_impact_loss
+			diligent = minor_stress_impact_loss
 		}
 		trigger_event = {
 			id = hc_decision.001
