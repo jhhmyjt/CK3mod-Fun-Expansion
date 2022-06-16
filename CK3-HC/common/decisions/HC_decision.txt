@@ -7,14 +7,32 @@
 	sort_order = 0
 	is_shown = {
 		is_ai = no
-		debug_only = yes
+		# debug_only = yes
 		always = no
 	}
 	is_valid = {
 	}
 	effect = {
+		if = {
+			limit = {
+				has_game_rule = normal_strength
+			}
+			add_gold = 100
+		}
+		if = {
+			limit = {
+				has_game_rule = low_strength
+			}
+			add_gold = 20
+		}
+		if = {
+			limit = {
+				has_game_rule = great_strength
+			}
+			add_gold = 200
+		}
 		trigger_event = {
-			id = hc_test.01
+			id = hc.002
 		}
 	}
 	ai_potential = {
@@ -240,7 +258,7 @@ hc_new_decision = {
 			has_house_modifier = hc_dynasty_god_modifier
 		}
 		NOT = {
-			has_trait = god_descent
+			hc_has_god_descent_trigger = yes
 		}
 		NOT = {
 			has_character_flag = flag_hc_has_saint_sword
@@ -284,7 +302,7 @@ hc_cruise_decision = {
 			divide = 1.5
 			if = {
 				limit = {
-					has_trait = god_descent
+					hc_has_god_descent_trigger = yes
 				}
 				multiply = 0
 			}
@@ -457,7 +475,7 @@ hc_establish_building_altar_decision = {
 	desc = hc_establish_building_altar_decision_desc
 	is_shown = {
 		is_landed = yes
-		has_trait = god_descent
+		hc_has_god_descent_trigger = yes
 		exists = capital_province
 		NOT = {
 			is_target_in_global_variable_list = {
@@ -468,17 +486,9 @@ hc_establish_building_altar_decision = {
 	}
 	is_valid = {
 		custom_description = {
-			text = is_god_dynasty
+			text = is_god_dynasty_trigger
 			root.house = {
 				has_house_modifier = hc_dynasty_god_modifier
-			}
-		}
-		custom_description = {
-			text = hc_has_special_building
-			capital_province = {
-				NOT = {
-					has_special_building = yes
-				}
 			}
 		}
 		OR = {
@@ -499,10 +509,6 @@ hc_establish_building_altar_decision = {
 		prestige = 900
 	}
 	effect = {
-		# set_global_variable = {
-		# 	name = hc_altar
-		# 	value = yes
-		# }
 		add_to_global_variable_list = {
 			name = unavailable_unique_decisions
 			target = flag:hc_establish_building_altar_decision
@@ -512,8 +518,8 @@ hc_establish_building_altar_decision = {
 		}
 		custom_tooltip = hc_establish_building_altar_decision_custom_tt_01
 		capital_province = {
-			add_special_building_slot = hc_scared_altar
-			add_special_building = hc_scared_altar
+			add_building_slot = 1
+			add_building = hc_scared_altar
 		}
 	}
 	ai_will_do = {
@@ -585,7 +591,7 @@ hc_establish_building_special_decision = {
 	# }
 	is_shown = {
 		is_landed = yes
-		has_trait = god_descent
+		hc_has_god_descent_trigger = yes
 		hc_special_building_trigger = yes
 	}
 	is_valid = {
@@ -604,11 +610,11 @@ hc_establish_building_special_decision = {
 			piety_level >= 3
 		}
 		custom_description = {
-			text = hc_can_establish_building_special_decision
+			text = hc_can_establish_building_special_trigger
 			hc_special_building_available_trigger = yes
 		}
 		custom_description = {
-			text = hc_establish_building_special_decision_custom_tt_03
+			text = hc_establish_building_special_cooldown_trigger
 			NOT = {
 				has_character_flag = hc_flag_build_cooldown
 			}
@@ -649,7 +655,7 @@ hc_call_decision = {
 			divide = 2
 			if = {
 				limit = {
-					has_trait = god_descent
+					hc_has_god_descent_trigger = yes
 				}
 				multiply = 0.3
 			}
@@ -665,7 +671,7 @@ hc_call_decision = {
 		prestige_level >= 3
 		is_at_war = yes
 		custom_description = {
-			text = hc_call_decision_custom_tt_01
+			text = hc_call_knight_ready_trigger
 			any_vassal = {
 				AND = {
 					has_trait = hc_knight
@@ -721,9 +727,9 @@ hc_adopt_advanced_succession_decision = {
 	}
 	is_valid = {
 		prestige_level >= high_prestige_level
-		highest_held_title_tier = tier_empire
+		highest_held_title_tier >= tier_kingdom
 		custom_description = {
-			text = is_god_dynasty
+			text = is_god_dynasty_trigger
 			root.house = {
 				has_house_modifier = hc_dynasty_god_modifier
 			}
@@ -808,12 +814,12 @@ hc_improve_culture_development_decision = {
 		prestige_level >= high_prestige_level
 		has_trait = scholar
 		custom_description = {
-			text = hc_is_culture_leader
+			text = hc_is_culture_leader_trigger
 			exists = culture.culture_head
 			culture.culture_head = root
 		}
 		custom_description = {
-			text = is_god_dynasty
+			text = is_god_dynasty_trigger
 			root.house = {
 				has_house_modifier = hc_dynasty_god_modifier
 			}
@@ -869,16 +875,14 @@ hc_strength_artifact_decision = {
 	is_valid = {
 		prestige_level >= high_prestige_level
 		custom_description = {
-			text = hc_strength_artifact_decision_cd_01
+			text = hc_strength_artifact_trigger_01
 			any_artifact = {
-				limit = {
-					has_variable = hc_saint_sword
-				}
+				has_variable = hc_saint_sword
 				artifact_durability >= 80
 			}
 		}
 		custom_description = {
-			text = hc_strength_artifact_decision_cd_02
+			text = hc_strength_artifact_trigger_02
 			any_court_position_holder = {
 				type = antiquarian_court_position
 			}
@@ -953,7 +957,7 @@ hc_build_chrysotriclinium_decision = {
 			title_held_years >= 10
 		}
 		custom_description = {
-			text = is_god_dynasty
+			text = is_god_dynasty_trigger
 			root.house = {
 				has_house_modifier = hc_dynasty_god_modifier
 			}

@@ -1,0 +1,12 @@
+﻿hc_strength_setting = {
+	default = normal_strength
+	#100%
+	normal_strength = {
+	}
+	#20%
+	low_strength = {
+	}
+	#200%
+	great_strength = {
+	}
+}

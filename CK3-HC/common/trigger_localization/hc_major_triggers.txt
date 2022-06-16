@@ -1,0 +1,27 @@
+﻿is_god_dynasty_trigger = {
+	global = trigger_desc_is_god_dynasty
+}
+
+hc_can_establish_building_special_trigger = {
+	global = trigger_desc_hc_can_establish_building_special
+}
+
+hc_establish_building_special_cooldown_trigger = {
+	global = trigger_desc_hc_establish_building_special_cooldown
+}
+
+hc_call_knight_ready_trigger = {
+	global = trigger_desc_hc_call_knight_ready
+}
+
+hc_is_culture_leader_trigger = {
+	global = trigger_desc_hc_is_culture_leader
+}
+
+hc_strength_artifact_trigger_01 = {
+	global = trigger_desc_hc_strength_artifact_01
+}
+
+hc_strength_artifact_trigger_02 = {
+	global = trigger_desc_hc_strength_artifact_02
+}

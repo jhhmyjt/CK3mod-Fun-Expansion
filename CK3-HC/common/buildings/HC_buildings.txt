@@ -332,7 +332,7 @@ hc_scared_altar = {
 	ai_value = {
 		base = 0
 	}
-	type = special
+	type = regular
 }
 
 #黄金议事宫

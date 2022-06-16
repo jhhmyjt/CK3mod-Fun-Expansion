@@ -10,9 +10,6 @@
 		dynasty_house_opinion = 10
 	}
 	effect = {
-		# custom_description_no_bullet = {
-		# 	text = hc_temple_legacy_1_effect
-		# }
 		custom_tooltip = hc_temple_legacy_dynasty_effect_tt_01
 		hidden_effect = {
 			root.house = {
@@ -29,7 +26,10 @@ hc_temple_legacy_2 = {
 	legacy = hc_temple_legacy_track
 	character_modifier = {
 		name = hc_temple_legacy_2_name
-		monthly_lifestyle_xp_gain_mult = 0.8
+		diplomatic_range_mult = 0.2
+		movement_speed = 0.1
+		naval_movement_speed_mult = 0.1
+		siege_morale_loss = 0.1
 	}
 	effect = {
 		custom_tooltip = hc_temple_legacy_dynasty_effect_tt_02
@@ -54,6 +54,7 @@ hc_temple_legacy_3 = {
 		men_at_arms_cap = 5
 		knight_effectiveness_mult = 0.3
 		cultural_head_fascination_mult = 0.8
+		cultural_head_acceptance_gain_mult = 0.3
 	}
 	effect = {
 		custom_tooltip = hc_temple_legacy_dynasty_effect_tt_03
@@ -81,6 +82,8 @@ hc_temple_legacy_4 = {
 		name = hc_temple_legacy_4_name
 		vassal_limit = 12
 		domain_limit = 6
+		court_grandeur_baseline_add = 5
+		monthly_court_grandeur_change_mult = 0.5
 		county_opinion_add = 15
 		development_growth_factor = 0.25
 	}

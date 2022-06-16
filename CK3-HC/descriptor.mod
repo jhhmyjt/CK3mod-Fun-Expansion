@@ -1,4 +1,4 @@
-version = "1.6.0"
+version = "1.6.0.*"
 tags = {
 	"Events"
 	"Decisions"
@@ -6,5 +6,5 @@ tags = {
 }
 
 name = "FUN EXPANSION"
-supported_version = "1.6.0"
+supported_version = "1.6.0.*"
 remote_file_id = "2491792487"

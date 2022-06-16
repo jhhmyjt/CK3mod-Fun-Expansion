@@ -13,12 +13,6 @@ hc.001 = {
 		reference = corridor_night
 	}
 	trigger = {
-		# NOT = {
-		# 	has_character_modifier = hc_modifier_01
-		# }
-		# NOT = {
-		# 	has_trait = god_descent
-		# }
 		is_ai = no
 	}
 	option = {
@@ -83,7 +77,7 @@ hc.002 = {
 	}
 	immediate = {
 		play_music_cue = "mx_cue_epic_sacral_moment"
-		add_trait = god_descent
+		hc_add_god_descent_effect = yes
 		if = {
 			limit = {
 				has_ep1_dlc_trigger = yes
@@ -253,10 +247,7 @@ hc.008 = {
 			}
 			save_scope_as = hc_artifacts_sword
 		}
-	}
-	option = {
-		name = hc.008.a
-		add_trait = god_descent
+		hc_add_god_descent_effect = yes
 		add_character_modifier = {
 			modifier = hc_04_modifier
 			months = 3
@@ -265,19 +256,13 @@ hc.008 = {
 			modifier = hc_12_modifier
 			years = 5
 		}
+	}
+	option = {
+		name = hc.008.a
 		give_nickname = nick_hc_the_succession
 	}
 	option = {
 		name = hc.008.b
-		add_trait = god_descent
-		add_character_modifier = {
-			modifier = hc_04_modifier
-			months = 3
-		}
-		add_character_modifier = {
-			modifier = hc_12_modifier
-			years = 5
-		}
 		add_stress = -30
 	}
 	after = {
@@ -336,9 +321,9 @@ hc.009 = {
 		name = hc.009.b
 		if = {
 			limit = {
-				has_trait = god_descent
+				hc_has_god_descent_trigger = yes
 			}
-			remove_trait = god_descent
+			hc_remove_god_descent_effect = yes
 		}
 		if = {
 			limit = {

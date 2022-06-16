@@ -250,7 +250,7 @@
 		}
 		modifier = {
 			add = -1000
-			has_trait = god_descent
+			hc_has_god_descent_trigger = yes
 			desc = interaction_god_descent
 		}
 	}

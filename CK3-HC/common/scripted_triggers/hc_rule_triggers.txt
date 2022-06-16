@@ -1,0 +1,7 @@
+﻿hc_has_god_descent_trigger = {
+	OR = {
+		has_trait = god_descent_pro
+		has_trait = god_descent_mini
+		has_trait = god_descent
+	}
+}

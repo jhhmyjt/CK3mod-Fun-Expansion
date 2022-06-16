@@ -73,32 +73,31 @@ hc_switch.003 = {
 }
 
 #依旧是直属
-hc_switch.004 = {
-	type = character_event
-	desc = hc_switch_common.desc
-	title = hc_switch_common.t
-	left_portrait = {
-		character = ROOT
-		animation = happiness
-	}
-	theme = crown
-	override_background = {
-		reference = corridor_day
-	}
-	trigger = {
-		has_trait = hc_knight
-		is_vassal_of = root
-	}
-	option = {
-		name = hc_switch_common.a
-		add_gold = 1000
-		trigger_event = {
-			on_action = on_action_trait_hc_knight
-			months = 1
-		}
-	}
-}
-
+# hc_switch.004 = {
+# 	type = character_event
+# 	desc = hc_switch_common.desc
+# 	title = hc_switch_common.t
+# 	left_portrait = {
+# 		character = ROOT
+# 		animation = happiness
+# 	}
+# 	theme = crown
+# 	override_background = {
+# 		reference = corridor_day
+# 	}
+# 	trigger = {
+# 		has_trait = hc_knight
+# 		is_vassal_of = root
+# 	}
+# 	option = {
+# 		name = hc_switch_common.a
+# 		add_gold = 1000
+# 		trigger_event = {
+# 			on_action = on_action_trait_hc_knight
+# 			months = 1
+# 		}
+# 	}
+# }
 #骑士退休
 hc_switch.005 = {
 	type = character_event

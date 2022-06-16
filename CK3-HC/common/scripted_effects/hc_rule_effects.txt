@@ -1,0 +1,41 @@
+﻿hc_add_god_descent_effect = {
+	if = {
+		limit = {
+			has_game_rule = normal_strength
+		}
+		add_trait = god_descent
+	}
+	else_if = {
+		limit = {
+			has_game_rule = low_strength
+		}
+		add_trait = god_descent_mini
+	}
+	else_if = {
+		limit = {
+			has_game_rule = great_strength
+		}
+		add_trait = god_descent_pro
+	}
+}
+
+hc_remove_god_descent_effect = {
+	if = {
+		limit = {
+			has_trait = god_descent
+		}
+		remove_trait = god_descent
+	}
+	else_if = {
+		limit = {
+			has_trait = god_descent_mini
+		}
+		remove_trait = god_descent_mini
+	}
+	else_if = {
+		limit = {
+			has_trait = god_descent_pro
+		}
+		remove_trait = god_descent_pro
+	}
+}

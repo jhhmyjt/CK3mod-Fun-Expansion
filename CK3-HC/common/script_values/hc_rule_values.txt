@@ -1,0 +1,15 @@
+﻿hc_god_skill_value = {
+	value = 10
+	if = {
+		limit = {
+			has_game_rule = low_strength
+		}
+		multiply = 0.2
+	}
+	if = {
+		limit = {
+			has_game_rule = great_strength
+		}
+		multiply = 2
+	}
+}

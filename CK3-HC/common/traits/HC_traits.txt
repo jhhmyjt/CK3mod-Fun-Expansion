@@ -1,26 +1,4 @@
-﻿#test
-hc_test_trait = {
-	index = 5111
-	ruler_designer_cost = 100
-	health = 0.8
-	genetic = no
-	good = yes
-	desc = {
-		first_valid = {
-			triggered_desc = {
-				trigger = {
-					NOT = {
-						exists = this
-					}
-				}
-				desc = test_desc
-			}
-			desc = test_character_desc
-		}
-	}
-}
-
-hc_beauty = {
+﻿hc_beauty = {
 	index = 5001
 	ruler_designer_cost = 100
 	diplomacy = 3
@@ -67,6 +45,78 @@ god_descent = {
 	monthly_piety_gain_mult = 0.5
 	monthly_prestige_gain_mult = 0.5
 	general_opinion = 12
+	genetic = no
+	good = yes
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = {
+						exists = this
+					}
+				}
+				desc = trait_god_descent_desc
+			}
+			desc = trait_god_descent_character_desc
+		}
+	}
+}
+
+#天神下凡
+god_descent_mini = {
+	ruler_designer_cost = 20
+	index = 5003
+	prowess = 2
+	diplomacy = 2
+	stewardship = 2
+	martial = 2
+	intrigue = 2
+	learning = 2
+	health = 0.2
+	fertility = 0.2
+	domain_limit = 2
+	monthly_dynasty_prestige_mult = 0.2
+	monthly_dynasty_prestige = 2
+	monthly_lifestyle_xp_gain_mult = 0.4
+	monthly_piety_gain_mult = 0.1
+	monthly_prestige_gain_mult = 0.1
+	general_opinion = 5
+	genetic = no
+	good = yes
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = {
+						exists = this
+					}
+				}
+				desc = trait_god_descent_desc
+			}
+			desc = trait_god_descent_character_desc
+		}
+	}
+}
+
+#天神下凡
+god_descent_pro = {
+	ruler_designer_cost = 100
+	index = 5004
+	prowess = 20
+	diplomacy = 20
+	stewardship = 20
+	martial = 20
+	intrigue = 20
+	learning = 20
+	health = 2
+	fertility = 0.4
+	domain_limit = 20
+	monthly_dynasty_prestige_mult = 2
+	monthly_dynasty_prestige = 20
+	monthly_lifestyle_xp_gain_mult = 4
+	monthly_piety_gain_mult = 1
+	monthly_prestige_gain_mult = 1
+	general_opinion = 20
 	genetic = no
 	good = yes
 	desc = {

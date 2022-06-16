@@ -1,0 +1,8 @@
+﻿l_english:
+ trigger_desc_is_god_dynasty:0 "Your family has the approval of the gods"
+  trigger_desc_hc_can_establish_building_special:0 "Counties with buildable wonders"
+  trigger_desc_hc_establish_building_special_cooldown:0 "Sage Time#weak (three months)#"
+  trigger_desc_hc_call_knight_ready:0 "The Templars are ready to go\n#weak (special [interactions|E] is required to make a vassal a Templar first, and they cannot be at war)#"
+  trigger_desc_hc_is_culture_leader:0 "You are the culture leader of the [GetPlayer.GetCulture.GetName] culture"
+  trigger_desc_hc_strength_artifact_01:0 "[artifact|E]Holy Sword Durandal[durability|E] no less than 80"
+  trigger_desc_hc_strength_artifact_02:0 "One $antiquarian_court_position$"
