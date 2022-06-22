@@ -3,9 +3,9 @@ hc_dynasty_god_modifier = {
 	icon = magic_positive
 	health = 0.05
 	monthly_lifestyle_xp_gain_mult = 0.1
-	positive_inactive_inheritance_chance = 0.2
 	direct_vassal_opinion = 5
-	monthly_prestige_gain_mult = 0.3
+	monthly_prestige_gain_mult = 0.15
+	monthly_piety_gain_mult = 0.15
 }
 
 #祭坛之灵
@@ -68,5 +68,55 @@ hc_dynasty_bless_modifier_05 = {
 	stewardship = 10
 	learning = 10
 	intrigue = 10
+	icon = magic_positive
+}
+
+hc_dynasty_bless_modifier_01s = {
+	prowess = 1
+	martial = 1
+	diplomacy = 1
+	stewardship = 1
+	learning = 1
+	intrigue = 1
+	icon = magic_positive
+}
+
+hc_dynasty_bless_modifier_02s = {
+	prowess = 2
+	martial = 2
+	diplomacy = 2
+	stewardship = 2
+	learning = 2
+	intrigue = 2
+	icon = magic_positive
+}
+
+hc_dynasty_bless_modifier_03s = {
+	prowess = 3
+	martial = 3
+	diplomacy = 3
+	stewardship = 3
+	learning = 3
+	intrigue = 3
+	icon = magic_positive
+}
+
+hc_dynasty_bless_modifier_04s = {
+	prowess = 4
+	martial = 4
+	diplomacy = 4
+	stewardship = 4
+	learning = 4
+	intrigue = 4
+	icon = magic_positive
+}
+
+hc_dynasty_bless_modifier_05s = {
+	prowess = 5
+	martial = 5
+	diplomacy = 5
+	stewardship = 5
+	learning = 5
+	intrigue = 5
 	icon = magic_positive
 }

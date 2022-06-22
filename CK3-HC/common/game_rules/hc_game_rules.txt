@@ -1,12 +1,24 @@
-﻿hc_strength_setting = {
-	default = normal_strength
+﻿#特质数值设置
+hc_trait_strength_setting = {
+	default = hc_trait_normal_strength
 	#100%
-	normal_strength = {
+	hc_trait_normal_strength = {
 	}
 	#20%
-	low_strength = {
+	hc_trait_low_strength = {
 	}
 	#200%
-	great_strength = {
+	hc_trait_great_strength = {
+	}
+}
+
+#家族修正设置
+hc_dynasty_modifier_strength_setting = {
+	default = hc_dynasty_modifier_normal_strength
+	#max 10
+	hc_dynasty_modifier_normal_strength = {
+	}
+	#max 5
+	hc_dynasty_modifier_low_strength = {
 	}
 }

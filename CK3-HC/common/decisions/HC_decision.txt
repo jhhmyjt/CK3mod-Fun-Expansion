@@ -15,19 +15,19 @@
 	effect = {
 		if = {
 			limit = {
-				has_game_rule = normal_strength
+				has_game_rule = hc_trait_normal_strength
 			}
 			add_gold = 100
 		}
 		if = {
 			limit = {
-				has_game_rule = low_strength
+				has_game_rule = hc_trait_low_strength
 			}
 			add_gold = 20
 		}
 		if = {
 			limit = {
-				has_game_rule = great_strength
+				has_game_rule = hc_trait_great_strength
 			}
 			add_gold = 200
 		}
@@ -99,13 +99,13 @@ hc_begin_decision = {
 		custom_tooltip = hc_begin_decision_effect_tt_01
 		custom_tooltip = hc_begin_decision_effect_tt_02
 		custom_tooltip = hc_begin_decision_effect_tt_03
-		custom_tooltip = hc_begin_decision_effect_tt_05
 		if = {
 			limit = {
 				has_ep1_dlc_trigger = yes
 			}
 			custom_tooltip = hc_begin_decision_effect_tt_04
 		}
+		custom_tooltip = hc_begin_decision_effect_tt_05
 		trigger_event = {
 			id = hc.001
 			days = 5

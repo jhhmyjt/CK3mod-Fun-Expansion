@@ -9,7 +9,7 @@
  hc_begin_decision_desc:0 "自你成年以来, 你内心一直受着强烈的召唤, 你感应到了诸位神圣的存在，神明们似乎在期待发生什么..."
  hc_begin_decision_confirm:0 "接受考验"
  hc_begin_decision_effect_tt_01:0 "你将获得持续的惩罚，#P 为期1年#!"
- hc_begin_decision_effect_tt_02:0 "完成获得[GetTrait('god_descent').GetName( GetPlayer )]"
+ hc_begin_decision_effect_tt_02:0 "完成获得特质：[GetTrait('god_descent').GetName( GetPlayer )]"
  hc_begin_decision_effect_tt_03:0 "完成解锁强大的[dynasty_perk|E]"
  hc_begin_decision_effect_tt_04:0 "完成获得一件[artifact|E]"
  hc_begin_decision_effect_tt_05:0 "获得更多..."

@@ -1,19 +1,19 @@
 ﻿hc_add_god_descent_effect = {
 	if = {
 		limit = {
-			has_game_rule = normal_strength
+			has_game_rule = hc_trait_normal_strength
 		}
 		add_trait = god_descent
 	}
 	else_if = {
 		limit = {
-			has_game_rule = low_strength
+			has_game_rule = hc_trait_low_strength
 		}
 		add_trait = god_descent_mini
 	}
 	else_if = {
 		limit = {
-			has_game_rule = great_strength
+			has_game_rule = hc_trait_great_strength
 		}
 		add_trait = god_descent_pro
 	}
@@ -37,5 +37,215 @@ hc_remove_god_descent_effect = {
 			has_trait = god_descent_pro
 		}
 		remove_trait = god_descent_pro
+	}
+}
+
+hc_add_house_bless_modifier_01_effect = {
+	if = {
+		limit = {
+			has_game_rule = hc_dynasty_modifier_normal_strength
+		}
+		root.house = {
+			add_house_modifier = hc_dynasty_bless_modifier_01
+		}
+	}
+	else_if = {
+		limit = {
+			has_game_rule = hc_dynasty_modifier_low_strength
+		}
+		root.house = {
+			add_house_modifier = hc_dynasty_bless_modifier_01s
+		}
+	}
+}
+
+hc_remove_house_bless_modifier_01_effect = {
+	if = {
+		limit = {
+			root.house = {
+				has_house_modifier = hc_dynasty_bless_modifier_01
+			}
+		}
+		root.house = {
+			remove_house_modifier = hc_dynasty_bless_modifier_01
+		}
+	}
+	else_if = {
+		limit = {
+			root.house = {
+				has_house_modifier = hc_dynasty_bless_modifier_01s
+			}
+		}
+		root.house = {
+			remove_house_modifier = hc_dynasty_bless_modifier_01s
+		}
+	}
+}
+
+hc_add_house_bless_modifier_02_effect = {
+	if = {
+		limit = {
+			has_game_rule = hc_dynasty_modifier_normal_strength
+		}
+		root.house = {
+			add_house_modifier = hc_dynasty_bless_modifier_02
+		}
+	}
+	else_if = {
+		limit = {
+			has_game_rule = hc_dynasty_modifier_low_strength
+		}
+		root.house = {
+			add_house_modifier = hc_dynasty_bless_modifier_02s
+		}
+	}
+}
+
+hc_remove_house_bless_modifier_02_effect = {
+	if = {
+		limit = {
+			root.house = {
+				has_house_modifier = hc_dynasty_bless_modifier_02
+			}
+		}
+		root.house = {
+			remove_house_modifier = hc_dynasty_bless_modifier_02
+		}
+	}
+	else_if = {
+		limit = {
+			root.house = {
+				has_house_modifier = hc_dynasty_bless_modifier_02s
+			}
+		}
+		root.house = {
+			remove_house_modifier = hc_dynasty_bless_modifier_02s
+		}
+	}
+}
+
+hc_add_house_bless_modifier_03_effect = {
+	if = {
+		limit = {
+			has_game_rule = hc_dynasty_modifier_normal_strength
+		}
+		root.house = {
+			add_house_modifier = hc_dynasty_bless_modifier_03
+		}
+	}
+	else_if = {
+		limit = {
+			has_game_rule = hc_dynasty_modifier_low_strength
+		}
+		root.house = {
+			add_house_modifier = hc_dynasty_bless_modifier_03s
+		}
+	}
+}
+
+hc_remove_house_bless_modifier_03_effect = {
+	if = {
+		limit = {
+			root.house = {
+				has_house_modifier = hc_dynasty_bless_modifier_03
+			}
+		}
+		root.house = {
+			remove_house_modifier = hc_dynasty_bless_modifier_03
+		}
+	}
+	else_if = {
+		limit = {
+			root.house = {
+				has_house_modifier = hc_dynasty_bless_modifier_03s
+			}
+		}
+		root.house = {
+			remove_house_modifier = hc_dynasty_bless_modifier_03s
+		}
+	}
+}
+
+hc_add_house_bless_modifier_04_effect = {
+	if = {
+		limit = {
+			has_game_rule = hc_dynasty_modifier_normal_strength
+		}
+		root.house = {
+			add_house_modifier = hc_dynasty_bless_modifier_04
+		}
+	}
+	else_if = {
+		limit = {
+			has_game_rule = hc_dynasty_modifier_low_strength
+		}
+		root.house = {
+			add_house_modifier = hc_dynasty_bless_modifier_04s
+		}
+	}
+}
+
+hc_remove_house_bless_modifier_04_effect = {
+	if = {
+		limit = {
+			root.house = {
+				has_house_modifier = hc_dynasty_bless_modifier_04
+			}
+		}
+		root.house = {
+			remove_house_modifier = hc_dynasty_bless_modifier_04
+		}
+	}
+	else_if = {
+		limit = {
+			root.house = {
+				has_house_modifier = hc_dynasty_bless_modifier_04s
+			}
+		}
+		root.house = {
+			remove_house_modifier = hc_dynasty_bless_modifier_04s
+		}
+	}
+}
+
+hc_add_house_bless_modifier_05_effect = {
+	if = {
+		limit = {
+			has_game_rule = hc_dynasty_modifier_normal_strength
+		}
+		root.house = {
+			add_house_modifier = hc_dynasty_bless_modifier_05
+		}
+	}
+	else_if = {
+		limit = {
+			has_game_rule = hc_dynasty_modifier_low_strength
+		}
+		root.house = {
+			add_house_modifier = hc_dynasty_bless_modifier_05s
+		}
+	}
+}
+
+hc_remove_house_bless_modifier_05_effect = {
+	if = {
+		limit = {
+			root.house = {
+				has_house_modifier = hc_dynasty_bless_modifier_05
+			}
+		}
+		root.house = {
+			remove_house_modifier = hc_dynasty_bless_modifier_05
+		}
+	}
+	else_if = {
+		limit = {
+			root.house = {
+				has_house_modifier = hc_dynasty_bless_modifier_05s
+			}
+		}
+		root.house = {
+			remove_house_modifier = hc_dynasty_bless_modifier_05s
+		}
 	}
 }

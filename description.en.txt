@@ -32,12 +32,10 @@ Not compatible with Iron Man
 
 [h1]Recent update[/h1]
 [list]
-       [*]Date: 2022.6.16
-       [*]Adopting advanced succession law requires the highest title to be no lower than the kingdom
-       [*]The type of building sacred altar changed to normal
-       [*] Temple Legacy: A thousand miles in a day effect modified to: +20% Diplomatic Distance, +10% March Speed, +10% Naval Speed, +10% Daily Siege Progress
-       [*]Added game rules: Strength setting, you can set the numerical strength at the beginning of the game (effective for Trait: God's Blessing)
-       [*]Fix Norgan program statement error
+[*] date: 2022.6.23
+[*] for game version 1.6.1.1
+[*] added rules of the game: clan lineage “Yakuza” strength settings, you can set the strength of the beginning
+[*] some of the numerical attributes have been changed (mainly in the lineage part)
 [/list]
 
 [h1]Finally[/h1]
