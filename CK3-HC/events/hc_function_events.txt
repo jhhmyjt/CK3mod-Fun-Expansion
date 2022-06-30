@@ -1,0 +1,31 @@
+﻿namespace = hc_fun
+#功能事件1 给出生的孩子赋予健康增益（父母都有至死不渝特质）
+hc_fun.001 = {
+	hidden = yes
+	trigger = {
+		is_ai = no
+		any_child = {
+			age = 0
+			is_child_of = root
+		}
+	}
+	immediate = {
+		every_child = {
+			limit = {
+				this.real_father = {
+					has_trait = hc_immutable
+				}
+				this.mother = {
+					has_trait = hc_immutable
+				}
+				NOT = {
+					has_character_modifier = hc_char_modifier_07
+				}
+			}
+			add_character_modifier = {
+				modifier = hc_char_modifier_07
+				years = 16
+			}
+		}
+	}
+}

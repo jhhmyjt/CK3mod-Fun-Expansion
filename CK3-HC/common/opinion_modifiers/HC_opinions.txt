@@ -31,3 +31,17 @@ hc_build_chrysotriclinium_opinion = {
 	years = 15
 	decaying = yes
 }
+
+#春风一度
+hc_sese_opinion = {
+	opinion = 20
+	months = 6
+	decaying = yes
+}
+
+#至死不渝的誓言
+hc_never_change_opinion = {
+	opinion = 100
+	years = 100
+	decaying = no
+}

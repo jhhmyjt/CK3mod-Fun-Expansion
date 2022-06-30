@@ -1,0 +1,52 @@
+﻿hc_random_reward_effect = {
+	random_list = {
+		10 = {
+			trigger = {
+				martial_lifestyle_perk_points < 1
+			}
+			add_martial_lifestyle_xp = 20
+		}
+		5 = {
+			add_martial_skill = 1
+		}
+		10 = {
+			trigger = {
+				intrigue_lifestyle_perk_points < 1
+			}
+			add_intrigue_lifestyle_xp = 20
+		}
+		5 = {
+			add_intrigue_skill = 1
+		}
+		10 = {
+			trigger = {
+				diplomacy_lifestyle_perk_points < 1
+			}
+			add_diplomacy_lifestyle_xp = 20
+		}
+		5 = {
+			add_diplomacy_skill = 1
+		}
+		10 = {
+			trigger = {
+				learning_lifestyle_perk_points < 1
+			}
+			add_learning_lifestyle_xp = 20
+		}
+		5 = {
+			add_learning_skill = 1
+		}
+		10 = {
+			trigger = {
+				stewardship_lifestyle_perk_points < 1
+			}
+			add_stewardship_lifestyle_xp = 20
+		}
+		5 = {
+			add_stewardship_skill = 1
+		}
+		5 = {
+			add_prowess_skill = 1
+		}
+	}
+}

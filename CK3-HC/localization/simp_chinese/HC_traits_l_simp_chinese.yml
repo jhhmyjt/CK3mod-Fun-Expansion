@@ -34,3 +34,6 @@
  trait_hc_holy_blood:0 "受圣血洗礼"
  trait_hc_holy_blood_desc:0 "受圣血洗礼"
  trait_hc_holy_blood_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip]受圣血洗礼，令人崇敬"
+ trait_hc_immutable:0 "至死不渝"
+ trait_hc_immutable_desc:0 "此人之爱，至死不渝\n\n注：桔梗花有爱情至死不渝的寓意，桔梗花的根茎笔直且不会生长出分枝，从而植株的花朵单生，仿佛一生只爱一人，将桔梗花赠送给恋人，可以表达出自己对她永恒不变的心。"
+ trait_hc_immutable_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip]对爱至死不渝。\n\n注：桔梗花有爱情至死不渝的寓意，桔梗花的根茎笔直且不会生长出分枝，从而植株的花朵单生，仿佛一生只爱一人，将桔梗花赠送给恋人，可以表达出自己对她永恒不变的心。\n\n#P 大幅减少AI勾引/求爱成功概率以及特质拥有者勾引/求爱他人成功概率（5000），并且与同至死不渝特质配偶所生孩子会获得增益\n\n增益具有延时性，不会在出生瞬间获得。#"

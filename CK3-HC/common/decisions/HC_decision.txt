@@ -1,82 +1,73 @@
-﻿hc_test_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
-	title = "hc mod test decision"
-	confirm_text = "test"
-	ai_check_interval = 0
-	major = no
-	sort_order = 0
-	is_shown = {
-		is_ai = no
-		# debug_only = yes
-		always = no
-	}
-	is_valid = {
-	}
-	effect = {
-		if = {
-			limit = {
-				has_game_rule = hc_trait_normal_strength
-			}
-			add_gold = 100
-		}
-		if = {
-			limit = {
-				has_game_rule = hc_trait_low_strength
-			}
-			add_gold = 20
-		}
-		if = {
-			limit = {
-				has_game_rule = hc_trait_great_strength
-			}
-			add_gold = 200
-		}
-		trigger_event = {
-			id = hc.002
-		}
-	}
-	ai_potential = {
-		always = no
-	}
-	ai_will_do = {
-		base = 0
-	}
-}
-
-#reset
-hc_reset_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
-	title = hc_reset_decision_t
-	selection_tooltip = hc_reset_decision_tt
-	desc = hc_reset_decision_desc
-	confirm_text = hc_reset_decision_confirm
-	ai_check_interval = 0
-	major = no
-	is_shown = {
-		always = no
-		is_ai = no
-		debug_only = yes
-	}
-	is_valid = {
-	}
-	effect = {
-		custom_tooltip = hc_reset_decision_effect_tt
-	}
-	ai_potential = {
-		always = no
-	}
-	ai_will_do = {
-		base = 0
-	}
-}
-
+﻿# hc_test_decision = {
+# 	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+# 	title = "hc mod test decision"
+# 	confirm_text = "test"
+# 	desc = hc_test_decision_desc
+# 	ai_check_interval = 0
+# 	major = no
+# 	sort_order = 0
+# 	is_shown = {
+# 		is_ai = no
+# 		# debug_only = yes
+# 		always = yes
+# 	}
+# 	is_valid = {
+# 	}
+# 	effect = {
+# 		trigger_event = {
+# 			id = hc.002
+# 		}
+# 	}
+# 	ai_potential = {
+# 		always = no
+# 	}
+# 	ai_will_do = {
+# 		base = 0
+# 	}
+# }
+# ntr_sys_decision = {
+# 	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+# 	title = "猎杀时刻"
+# 	desc = "开始大杀特杀吧！"
+# 	confirm_text = "猎杀时刻！"
+# 	ai_check_interval = 0
+# 	major = yes
+# 	sort_order = 0
+# 	is_shown = {
+# 		is_ai = no
+# 		always = yes
+# 	}
+# 	is_valid = {
+# 		custom_description = {
+# 			test = "发现潜在的牛头人"
+# 			any_vassal_or_below = {
+# 				has_trait = seducer
+# 			}
+# 		}
+# 	}
+# 	effect = {
+# 		every_vassal_or_below = {
+# 			limit = {
+# 				has_trait = seducer
+# 			}
+# 			death = {
+# 				death_reason = death_chopped_to_pieces
+# 				killer = root
+# 			}
+# 		}
+# 	}
+# 	ai_potential = {
+# 		always = no
+# 	}
+# 	ai_will_do = {
+# 		base = 0
+# 	}
+# }
 #开始
 hc_begin_decision = {
 	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
-	title = hc_begin_decision_t
 	selection_tooltip = hc_begin_decision_tooltip
 	desc = hc_begin_decision_desc
-	confirm_text = hc_begin_decision_confirm
 	ai_check_interval = 0
 	major = yes
 	cooldown = {
@@ -123,10 +114,8 @@ hc_begin_decision = {
 #结束故事
 hc_end_decision = {
 	picture = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
-	title = hc_end_decision_t
 	selection_tooltip = hc_end_decision_tooltip
 	desc = hc_end_decision_desc
-	confirm_text = hc_end_decision_confirm
 	major = no
 	ai_check_interval = 0
 	cooldown = {
@@ -146,6 +135,30 @@ hc_end_decision = {
 	}
 	effect = {
 		custom_tooltip = hc_end_decision_effect_tt
+		hidden_effect = {
+			player_heir.real_father = {
+				save_scope_as = real_father
+			}
+		}
+		if = {
+			limit = {
+				player_heir = {
+					exists = father
+					father = {
+						this = root
+					}
+				}
+				player_heir = {
+					exists = real_father
+					real_father = {
+						Not = {
+							this = root
+						}
+					}
+				}
+			}
+			custom_tooltip = hc_end_decision_green_effect_tt
+		}
 		trigger_event = {
 			id = hc.009
 		}
@@ -269,7 +282,7 @@ hc_new_decision = {
 	}
 	is_valid_showing_failures_only = {
 		is_imprisoned = no
-		is_available_adult = yes
+		# is_available_adult = yes
 		is_at_war = no
 	}
 	effect = {
@@ -857,8 +870,7 @@ hc_strength_artifact_decision = {
 		years = 10
 	}
 	cost = {
-		gold = 750
-		prestige = 500
+		gold = 200
 	}
 	is_shown = {
 		is_ai = no

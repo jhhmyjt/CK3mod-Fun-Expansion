@@ -45,24 +45,14 @@ coronation.001 = {
 
 #回收事件
 coronation.100 = {
-	hidden = yes
 	type = character_event
-	# desc = coronation.100.desc
-	# title = coronation.100.t
-	left_portrait = {
-		character = ROOT
-		animation = stress
-	}
-	theme = crown
-	override_background = {
-		reference = corridor_night
-	}
+	hidden = yes
 	trigger = {
 		any_former_spouse = {
 			exists = this
 		}
 	}
-	option = {
+	immediate = {
 		every_former_spouse = {
 			limit = {
 				OR = {

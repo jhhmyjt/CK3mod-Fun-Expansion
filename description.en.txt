@@ -1,48 +1,60 @@
 [b][i]Translated by Google[/i][/b]
 [h1]Overview[/h1]
-some decisions/events/traits/modifiers/nick/buildings
+Some interesting decisions/events/traits/nickname/buildings/character interactions
 
-[b]Attention[/b]: This is my first mod making, this mod is more for entertainment, the values are not vanilla style. If you have any suggestions, please leave a message 
-
-[h1]Feature[/h1]
+[b]Front row reminder[/b]: This is my first work, this mod is more for entertainment, and the values ​​are not in line with the vanilla version. If you have any suggestions, welcome to leave a message
+[b]About DLC[/b]: Enable the DLC "Royal Court" for the best experience.
+[h1]Details[/h1]
 [list]
-[*]Powerful traits that can be unlocked through a series of events 
-[*]Eight wonders scattered around
-[*]Can summon knights to join your war
-[*]Cruise around your own territory (similar to vanilla hunting) 
-[*]Strong dynasty heritage 
-[*]Others
+[*]Unlock powerful traits through special events
+[*]Powerful wonder buildings (built by decision)
+[*]Canonize knights and summon them to your war
+[*]Flavor Decisions (Citadel, Roman Empire, Primogeniture, etc.)
+[*]Unique and powerful clan heritage
+[*]Nogan titles, traits and character interactions
+[*]DLC "Royal Court" treasure
 [/list]
 [img]https://i.imgur.com/PZKaOKU.png[/img]
 [h1]Supported languages[/h1]
-简体中文
+Simplified Chinese
 English(by Google)
 
 [h1]Compatibility[/h1]
-Compatible with most mods (no surprises), trait id used: 5001~5011, 5111
-Compatible with existing save
-Not compatible with Iron Man 
+Compatible with most mods (except for mods with the same trait id, which use id: 5001~5010)
+Compatible with existing archives
+Not compatible with Iron Man
 
-[h1]Sources & Disclaimer[/h1]
-[b]Some materials come from the Internet. If there is any infringement, please contact me and I will delete it immediately. [/b]The list is as follows ：
+[h1]Source & Disclaimer[/h1]
+[b]Part of the material of the mod comes from the Internet. If there is any infringement, please contact me and it will be deleted immediately. [/b]The list is as follows:
 [list]
-[*]hc_temple_legacy_track 中世纪插画,[url=https://www.zcool.com.cn/work/ZNDE4NzAzNjg=.html]画师：King1st[/url]
-[*]hc_judgment_heavy_cavalry 骑士插画,[url=https://www.zcool.com.cn/work/ZMTg5NDY2NA==.html]画师：dj9fun[/url]
+[*]hc_temple_legacy_track Medieval Illustrator,[url=https://www.zcool.com.cn/work/ZNDE4NzAzNjg=.html]Artist: King1st[/url]
+[*]hc_judgment_heavy_cavalry knight illustrator,[url=https://www.zcool.com.cn/work/ZMTg5NDY2NA==.html]illustrator: dj9fun[/url]
+[*]Illustration of Campanulaceae flower,[url=https://www.zcool.com.cn/work/ZNDExNjEyMDg=.html]Artist: Su An[/url]
 [/list]
 
-[h1]Recent update[/h1]
+[h1]Recent updates[/h1]
+6.30
+new content
 [list]
-[*] date: 2022.6.23
-[*] for game version 1.6.1.1
-[*] added rules of the game: clan lineage “Yakuza” strength settings, you can set the strength of the beginning
-[*] some of the numerical attributes have been changed (mainly in the lineage part)
+      [*]Character interaction: Once the spring breeze. Intimate interaction with your spouse, side room
+      [*]Character interaction: marriage contract (same conditions as ordinary engagement, you need to complete the divine test first) and promise oath (married), the reward events for both are the same
+      [*]The theme of new treasures and traits (obtained through the above two interactions) is anti-green
+[/list]
+Value modification
+[list]
+      [*]Building: Holstein defense line attribute modified
+      [*]Resolution: Reinforce the holy sword and reduce the cost
+      [*]Clan Inheritance: Added cultural preference progress modifier for thousands of miles in a day
+[/list]
+other modifications
+[list]
+      [*]Resolution: Heritage Ceremony no longer restricts age
+      [*]Resolution: Retire, modify text information, and when your heir is your child but not your own, there will be a warning message and prompt its real biological father
+      [*]The size of the texture has been modified for some characteristics, and the visual effect of the texture has been modified by the baptism of holy blood and the blessing of the gods.
 [/list]
 
-[h1]Finally[/h1]
+[h1]Last[/h1]
 
-If you think this mod is not bad, please don't be stingy with your likes 👍
+If you think this mod is not bad, please don't be stingy with your likes👍
 
-[b]✨✨✨Thanks for your support ✨✨✨[/b]
-
-[hr][/hr]
-⬇️See more content in the discussion area "Introduction"⬇️
+[b]✨✨✨Everyone's support is the biggest motivation for my update✨✨✨[/b]

@@ -6,3 +6,4 @@
   trigger_desc_hc_is_culture_leader:0 "You are the culture leader of the [GetPlayer.GetCulture.GetName] culture"
   trigger_desc_hc_strength_artifact_01:0 "[artifact|E]Holy Sword Durandal[durability|E] no less than 80"
   trigger_desc_hc_strength_artifact_02:0 "One $antiquarian_court_position$"
+trigger_desc_hc_sese:0 "The other party or you have had a good time recently"

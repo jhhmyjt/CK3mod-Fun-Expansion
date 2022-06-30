@@ -1,0 +1,309 @@
+﻿namespace = hc_love
+#Day 0事件
+hc_love.01 = {
+	type = character_event
+	title = hc_love.01.t
+	desc = hc_love.01.desc
+	theme = lover_relation
+	left_portrait = {
+		character = scope:actor
+		animation = love
+	}
+	right_portrait = {
+		character = scope:recipient
+		animation = love
+	}
+	immediate = {
+		scope:recipient = {
+			add_character_modifier = {
+				modifier = hc_char_modifier_05
+				months = 3
+			}
+			#脱掉衣服
+			add_character_flag = {
+				flag = is_naked
+				days = 30
+			}
+		}
+		scope:actor = {
+			add_character_modifier = {
+				modifier = hc_char_modifier_04
+				months = 3
+			}
+			add_character_flag = {
+				flag = is_naked
+				days = 30
+			}
+		}
+	}
+	#浅尝辄止
+	option = {
+		name = hc_love.01.a
+		scope:recipient = {
+			add_stress = -10
+		}
+		scope:actor = {
+			add_stress = -10
+		}
+	}
+	#玉影成双
+	option = {
+		name = hc_love.01.b
+		# trigger = {
+		# 	scope:recipient = {
+		# 		fertility > 0.2
+		# 	}
+		# }
+		scope:actor = {
+			add_stress = -30
+			add_opinion = {
+				target = scope:recipient
+				modifier = hc_sese_opinion
+			}
+		}
+		scope:recipient = {
+			add_stress = -30
+			add_opinion = {
+				target = scope:actor
+				modifier = hc_sese_opinion
+			}
+			if = {
+				limit = {
+					is_pregnant = no
+				}
+				random = {
+					chance = {
+						value = 50
+						if = {
+							limit = {
+								has_trait = infertile
+							}
+							add = -100
+						}
+						if = {
+							limit = {
+								has_trait = inbred
+							}
+							add = -25
+						}
+						if = {
+							limit = {
+								has_trait = fecund
+							}
+							add = 25
+						}
+						if = {
+							limit = {
+								has_trait = pure_blooded
+							}
+							add = 10
+						}
+					}
+					make_pregnant = {
+						father = scope:actor
+					}
+				}
+			}
+		}
+	}
+	after = {
+		#额外奖励
+		if = {
+			limit = {
+				root.house = {
+					has_house_modifier = hc_dynasty_god_modifier
+				}
+			}
+			hidden_effect = {
+				hc_random_reward_effect = yes
+			}
+		}
+		#穿上衣服，减少体重
+		scope:recipient = {
+			custom_tooltip = hc_love.01_lose_w_effect_tt
+			hidden_effect = {
+				change_current_weight = -5
+			}
+			if = {
+				limit = {
+					has_character_flag = is_naked
+				}
+				remove_character_flag = is_naked
+			}
+		}
+		scope:actor = {
+			custom_tooltip = hc_love.01_lose_w_effect_tt
+			hidden_effect = {
+				change_current_weight = -5
+			}
+			if = {
+				limit = {
+					has_character_flag = is_naked
+				}
+				remove_character_flag = is_naked
+			}
+		}
+	}
+}
+
+hc_love.02 = {
+	type = character_event
+	title = hc_love.02.t
+	desc = hc_love.02.desc
+	theme = lover_relation
+	left_portrait = {
+		character = scope:actor
+		animation = happiness
+	}
+	right_portrait = {
+		character = scope:recipient
+		animation = happiness
+	}
+	immediate = {
+		play_music_cue_once = {
+			TRACK = mx_cue_marriage
+		}
+	}
+	#option1
+	option = {
+		name = hc_love.02.a
+		scope:recipient = {
+			add_stress = -30
+			add_prestige = 500
+			add_trait = hc_immutable
+		}
+		scope:actor = {
+			add_stress = -30
+			add_prestige = 500
+			add_trait = hc_immutable
+			#订婚
+			create_betrothal = scope:recipient
+		}
+		if = {
+			limit = {
+				has_ep1_dlc_trigger = yes
+			}
+			#打造两人的婚书
+			hc_create_artifact_marriage_certificate_effect = {
+				OWNER = scope:actor
+				TARGET = scope:recipient
+			}
+			hc_create_artifact_marriage_certificate_effect = {
+				OWNER = scope:recipient
+				TARGET = scope:actor
+			}
+		}
+		else = {
+			#增加人物修正
+			add_character_modifier = {
+				modifier = hc_char_modifier_06
+				years = 100
+			}
+		}
+		#发送信息
+		hidden_effect = {
+			send_interface_toast = {
+				type = event_generic_good_text
+				title = hc_marriage_notification
+				left_icon = scope:actor
+				right_icon = scope:recipient
+				scope:actor = {
+					add_opinion = {
+						target = scope:recipient
+						modifier = hc_never_change_opinion
+					}
+				}
+				scope:recipient = {
+					add_opinion = {
+						target = scope:actor
+						modifier = hc_never_change_opinion
+					}
+				}
+			}
+		}
+	}
+	#还没考虑清楚
+	option = {
+		name = hc_love.02.b
+	}
+}
+
+hc_love.03 = {
+	type = character_event
+	title = hc_love.03.t
+	desc = hc_love.03.desc
+	theme = lover_relation
+	left_portrait = {
+		character = scope:actor
+		animation = happiness
+	}
+	right_portrait = {
+		character = scope:recipient
+		animation = happiness
+	}
+	immediate = {
+		play_music_cue_once = {
+			TRACK = mx_cue_marriage
+		}
+	}
+	#option1
+	option = {
+		name = hc_love.03.a
+		scope:recipient = {
+			add_stress = -30
+			add_prestige = 500
+			add_trait = hc_immutable
+		}
+		scope:actor = {
+			add_stress = -30
+			add_prestige = 500
+			add_trait = hc_immutable
+		}
+		if = {
+			limit = {
+				has_ep1_dlc_trigger = yes
+			}
+			#打造两人的婚书
+			hc_create_artifact_marriage_certificate_effect = {
+				OWNER = scope:actor
+				TARGET = scope:recipient
+			}
+			hc_create_artifact_marriage_certificate_effect = {
+				OWNER = scope:recipient
+				TARGET = scope:actor
+			}
+		}
+		else = {
+			#增加人物修正
+			add_character_modifier = {
+				modifier = hc_char_modifier_06
+				years = 100
+			}
+		}
+		#发送信息
+		hidden_effect = {
+			send_interface_toast = {
+				type = event_generic_good_text
+				title = hc_marriage_with_married_notification
+				left_icon = scope:actor
+				right_icon = scope:recipient
+				scope:actor = {
+					add_opinion = {
+						target = scope:recipient
+						modifier = hc_never_change_opinion
+					}
+				}
+				scope:recipient = {
+					add_opinion = {
+						target = scope:actor
+						modifier = hc_never_change_opinion
+					}
+				}
+			}
+		}
+	}
+	#option2
+	option = {
+		name = hc_love.03.b
+	}
+}

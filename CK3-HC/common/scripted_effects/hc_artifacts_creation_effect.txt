@@ -1,0 +1,77 @@
+﻿hc_create_artifact_saint_sword_effect = {
+	# Get the character the artifact is being made for.
+	$OWNER$ = {
+		save_scope_as = owner
+	}
+	# Not really used, but if we don't set the scopes we get errors in the feature selection
+	set_artifact_rarity_illustrious = yes
+	# Create the artifact
+	create_artifact = {
+		name = artifact_saint_sword_name
+		description = artifact_saint_sword_description
+		type = sword
+		template = hc_saint_sword_template
+		visuals = hc_saint_sword
+		wealth = scope:wealth
+		quality = scope:quality
+		history = {
+			type = created_before_history
+		}
+		modifier = hc_saint_sword_modifier
+		save_scope_as = newly_created_artifact
+		decaying = no
+	}
+	scope:newly_created_artifact = {
+		set_variable = {
+			name = historical_unique_artifact
+			value = yes
+		}
+		set_variable = hc_saint_sword
+		save_scope_as = epic
+	}
+}
+
+hc_create_artifact_marriage_certificate_effect = {
+	$OWNER$ = {
+		save_scope_as = owner
+	}
+	$TARGET$ = {
+		save_scope_as = target		#A char
+	}
+	set_artifact_rarity_illustrious = yes
+	scope:owner = {
+		create_artifact = {
+			name = hc_artifact_marriage_certificate_name
+			description = hc_artifact_marriage_certificate_description
+			template = hc_marriage_certificate_template
+			visuals = hc_artifact_visual_marriage
+			type = miscellaneous
+			modifier = hc_marriage_certificate_modifier
+			wealth = scope:wealth
+			quality = scope:quality
+			decaying = no
+			save_scope_as = newly_created_artifact
+			history = {
+				type = created_before_history
+			}
+		}
+		scope:newly_created_artifact = {
+			set_variable = {
+				name = historical_unique_artifact
+				value = yes
+			}
+			set_variable = {
+				# Tracks character
+				name = marriage_target
+				value = scope:target
+			}
+			set_variable = {
+				# Tracks character
+				name = marriage_owner
+				value = scope:owner
+			}
+			set_variable = hc_marriage_certificate
+			save_scope_as = epic
+		}
+	}
+}

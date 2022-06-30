@@ -25,3 +25,7 @@ hc_strength_artifact_trigger_01 = {
 hc_strength_artifact_trigger_02 = {
 	global = trigger_desc_hc_strength_artifact_02
 }
+
+hc_sese_trigger = {
+	global_not = trigger_desc_hc_sese
+}

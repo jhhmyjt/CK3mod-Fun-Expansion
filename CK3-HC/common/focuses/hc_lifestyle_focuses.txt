@@ -27,100 +27,98 @@
 # }
 #bailan
 #小摆
-hc_bailan_s_focus = {
-	lifestyle = hc_bailai_lifestyle
-	modifier = {
-		stress_gain_mult = -0.1
-		stress_loss_mult = 0.1
-		monthly_prestige_gain_mult = -5
-		monthly_piety_gain_mult = -5
-		dynasty_opinion = -3
-	}
-	icon = diplomacy_foreign_affairs_focus
-	desc = {
-		desc = diplomacy_foreign_affairs_focus_desc
-		desc = line_break
-	}
-	auto_selection_weight = {
-		value = 11
-		if = {
-			limit = {
-				hc_has_god_descent_trigger = yes
-			}
-			add = 1989
-		}
-		if = {
-			limit = {
-				has_trait = shy
-			}
-			multiply = 0
-		}
-	}
-	focus_id = 61
-}
-
-#中摆
-hc_bailan_m_focus = {
-	lifestyle = hc_bailai_lifestyle
-	modifier = {
-		stress_gain_mult = -0.3
-		stress_loss_mult = 0.3
-		monthly_prestige_gain_mult = -5
-		monthly_piety_gain_mult = -5
-		dynasty_opinion = -5
-	}
-	icon = diplomacy_foreign_affairs_focus
-	desc = {
-		desc = diplomacy_foreign_affairs_focus_desc
-		desc = line_break
-	}
-	auto_selection_weight = {
-		value = 11
-		if = {
-			limit = {
-				hc_has_god_descent_trigger = yes
-			}
-			add = 1989
-		}
-		if = {
-			limit = {
-				has_trait = shy
-			}
-			multiply = 0
-		}
-	}
-	focus_id = 62
-}
-
-#大摆
-hc_bailan_l_focus = {
-	lifestyle = hc_bailai_lifestyle
-	modifier = {
-		stress_gain_mult = -0.5
-		stress_loss_mult = 0.5
-		monthly_prestige_gain_mult = -5
-		monthly_piety_gain_mult = -5
-		dynasty_opinion = -8
-	}
-	icon = diplomacy_foreign_affairs_focus
-	desc = {
-		desc = diplomacy_foreign_affairs_focus_desc
-		desc = line_break
-	}
-	auto_selection_weight = {
-		value = 11
-		if = {
-			limit = {
-				hc_has_god_descent_trigger = yes
-			}
-			add = 1989
-		}
-		if = {
-			limit = {
-				has_trait = shy
-			}
-			multiply = 0
-		}
-	}
-	focus_id = 63
-}
+# hc_bailan_s_focus = {
+# 	lifestyle = hc_bailai_lifestyle
+# 	modifier = {
+# 		stress_gain_mult = -0.1
+# 		stress_loss_mult = 0.1
+# 		monthly_prestige_gain_mult = -5
+# 		monthly_piety_gain_mult = -5
+# 		dynasty_opinion = -3
+# 	}
+# 	icon = diplomacy_foreign_affairs_focus
+# 	desc = {
+# 		desc = diplomacy_foreign_affairs_focus_desc
+# 		desc = line_break
+# 	}
+# 	auto_selection_weight = {
+# 		value = 11
+# 		if = {
+# 			limit = {
+# 				hc_has_god_descent_trigger = yes
+# 			}
+# 			add = 1989
+# 		}
+# 		if = {
+# 			limit = {
+# 				has_trait = shy
+# 			}
+# 			multiply = 0
+# 		}
+# 	}
+# 	focus_id = 61
+# }
+# #中摆
+# hc_bailan_m_focus = {
+# 	lifestyle = hc_bailai_lifestyle
+# 	modifier = {
+# 		stress_gain_mult = -0.3
+# 		stress_loss_mult = 0.3
+# 		monthly_prestige_gain_mult = -5
+# 		monthly_piety_gain_mult = -5
+# 		dynasty_opinion = -5
+# 	}
+# 	icon = diplomacy_foreign_affairs_focus
+# 	desc = {
+# 		desc = diplomacy_foreign_affairs_focus_desc
+# 		desc = line_break
+# 	}
+# 	auto_selection_weight = {
+# 		value = 11
+# 		if = {
+# 			limit = {
+# 				hc_has_god_descent_trigger = yes
+# 			}
+# 			add = 1989
+# 		}
+# 		if = {
+# 			limit = {
+# 				has_trait = shy
+# 			}
+# 			multiply = 0
+# 		}
+# 	}
+# 	focus_id = 62
+# }
+# #大摆
+# hc_bailan_l_focus = {
+# 	lifestyle = hc_bailai_lifestyle
+# 	modifier = {
+# 		stress_gain_mult = -0.5
+# 		stress_loss_mult = 0.5
+# 		monthly_prestige_gain_mult = -5
+# 		monthly_piety_gain_mult = -5
+# 		dynasty_opinion = -8
+# 	}
+# 	icon = diplomacy_foreign_affairs_focus
+# 	desc = {
+# 		desc = diplomacy_foreign_affairs_focus_desc
+# 		desc = line_break
+# 	}
+# 	auto_selection_weight = {
+# 		value = 11
+# 		if = {
+# 			limit = {
+# 				hc_has_god_descent_trigger = yes
+# 			}
+# 			add = 1989
+# 		}
+# 		if = {
+# 			limit = {
+# 				has_trait = shy
+# 			}
+# 			multiply = 0
+# 		}
+# 	}
+# 	focus_id = 63
+# }

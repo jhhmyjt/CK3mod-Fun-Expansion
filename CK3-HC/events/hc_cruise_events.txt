@@ -1,5 +1,6 @@
 ﻿namespace = cruise
 cruise.100 = {
+	type = character_event
 	hidden = yes
 }
 

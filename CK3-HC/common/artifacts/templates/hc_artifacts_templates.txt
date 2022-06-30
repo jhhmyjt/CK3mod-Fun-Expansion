@@ -12,3 +12,24 @@
 	}
 	unique = yes
 }
+
+hc_marriage_certificate_template = {
+	can_equip = {
+		always = yes
+	}
+	can_benefit = {
+		custom_tooltip = {
+			text = hc_marriage_certificate_can_benefit_desc
+			scope:artifact = {
+				exists = var:marriage_target
+				exists = var:marriage_owner
+			}
+			root = scope:artifact.var:marriage_owner
+			root.primary_spouse = scope:artifact.var:marriage_target
+		}
+	}
+	fallback = {
+		court_grandeur_baseline_add = 3
+	}
+	unique = yes
+}

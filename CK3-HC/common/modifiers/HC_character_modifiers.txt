@@ -31,3 +31,32 @@ hc_char_modifier_03 = {
 	clergy_opinion = -15
 	icon = magic_negative
 }
+
+#春风一度 male
+hc_char_modifier_04 = {
+	stress_gain_mult = -0.2
+	fertility = -0.05
+	icon = stress_positive
+}
+
+#female
+hc_char_modifier_05 = {
+	attraction_opinion = 10
+	stress_gain_mult = -0.2
+	icon = love_positive
+}
+
+#至死不渝
+hc_char_modifier_06 = {
+	monthly_prestige = 0.5
+	monthly_piety = 0.5
+	stress_gain_mult = -0.3
+	icon = love_positive
+}
+
+#受祝福的童年
+hc_char_modifier_07 = {
+	health = 0.2
+	negate_health_penalty_add = 0.8
+	icon = health_positive
+}

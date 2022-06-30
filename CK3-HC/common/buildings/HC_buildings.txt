@@ -270,11 +270,10 @@ hc_wonder_070 = {
 	}
 	is_enabled = {
 	}
-	max_garrison = 2000
-	levy = 5000
+	max_garrison = 1000
 	character_modifier = {
-		men_at_arms_limit = 10
-		men_at_arms_cap = 5
+		men_at_arms_limit = 5
+		men_at_arms_cap = 3
 		heavy_infantry_toughness_add = 10		#重步兵
 		heavy_infantry_damage_add = 10
 		heavy_cavalry_toughness_add = 20		#重骑兵

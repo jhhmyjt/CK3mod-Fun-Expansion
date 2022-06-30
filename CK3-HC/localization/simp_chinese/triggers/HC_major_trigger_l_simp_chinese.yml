@@ -6,3 +6,4 @@
  trigger_desc_hc_is_culture_leader:0 "你是[GetPlayer.GetCulture.GetName]文化的文化领袖"
  trigger_desc_hc_strength_artifact_01:0 "[artifact|E]圣剑杜兰达尔[durability|E]不低于80"
  trigger_desc_hc_strength_artifact_02:0 "一名$antiquarian_court_position$"
+ trigger_desc_hc_sese:0 "对方或你最近已春风一度"

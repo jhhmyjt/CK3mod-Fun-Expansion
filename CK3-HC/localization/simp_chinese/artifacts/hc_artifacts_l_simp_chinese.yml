@@ -1,3 +1,6 @@
 ﻿l_simp_chinese:
  artifact_saint_sword_name:0 "圣剑杜兰达尔"
  artifact_saint_sword_description:0 "圣剑杜兰达尔,著名诗歌《罗兰之歌》主人公圣骑士罗兰的佩剑，同时他也是史上第一位被称作圣骑士（帕拉丁）的人。相传杜兰达尔的剑身中藏着圣母的衣角和耶稣的血与毛发，这把剑也有着“天使之剑”的别名，持有着可以受到上帝和天使的庇护，杜兰达尔有恒久不变之意，又称恒常之剑，意味着“不灭之刃”（装备此剑，在战斗中能获得巨大增益）。"
+ hc_artifact_marriage_certificate_name:0 "[owner.GetFirstNameNoTooltip]与[target.GetFirstNameNoTooltip]的婚书"
+ hc_artifact_marriage_certificate_description:0 "这是[owner.GetFirstNameNoTooltip]与[target.GetFirstNameNoTooltip]的婚书，是二人神圣契约的见证。"
+ hc_marriage_certificate_can_benefit_desc:0 "与誓约的另一方保持婚姻关系"

@@ -134,6 +134,28 @@ god_descent_pro = {
 	}
 }
 
+#至死不渝 immutable
+hc_immutable = {
+	learning = 3
+	health = 0.5
+	monthly_piety = 0.5
+	same_opinion = 30
+	ruler_designer_cost = 200
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = {
+						exists = this
+					}
+				}
+				desc = trait_hc_immutable_desc
+			}
+			desc = trait_hc_immutable_character_desc
+		}
+	}
+}
+
 #归隐江湖
 hc_recluse = {
 	ruler_designer_cost = 50

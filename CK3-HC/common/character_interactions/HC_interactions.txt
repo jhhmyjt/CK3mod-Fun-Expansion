@@ -258,3 +258,554 @@
 		base = 0
 	}
 }
+
+#放松一下
+hc_sese_interaction = {
+	category = interaction_category_friendly
+	common_interaction = yes
+	# use_diplomatic_range = no
+	send_name = SEND_PROPOSAL
+	icon = icon_personal
+	interface_priority = 100
+	ai_frequency = 0
+	is_shown = {
+		scope:actor = {
+			is_physically_able_adult = yes
+			is_female = no
+		}
+		scope:recipient = {
+			OR = {
+				is_spouse_of = scope:actor
+				is_concubine_of = scope:actor
+			}
+			# age < 36
+			is_female = yes
+		}
+	}
+	is_valid_showing_failures_only = {
+		scope:recipient = {
+			is_adult = yes
+			is_imprisoned = no
+			Not = {
+				has_trait = impotent
+				has_trait = pregnant
+			}
+		}
+		scope:actor = {
+			Not = {
+				has_trait = impotent
+			}
+		}
+		custom_description = {
+			text = hc_sese_trigger
+			object = scope:recipient
+			scope:recipient = {
+				NOT = {
+					has_character_flag = hc_character_flag_sese
+				}
+			}
+		}
+		custom_description = {
+			text = hc_sese_trigger
+			object = scope:actor
+			scope:actor = {
+				NOT = {
+					has_character_modifier = hc_char_modifier_04
+				}
+			}
+		}
+	}
+	desc = hc_sese_interaction_desc
+	on_accept = {
+		scope:actor = {
+			stress_impact = {
+				lustful = minor_stress_impact_loss
+				seducer = minor_stress_impact_loss
+			}
+			custom_tooltip = hc_sese_interaction_effect_tt_01
+			trigger_event = hc_love.01
+		}
+		scope:recipient = {
+			add_character_flag = {
+				flag = hc_character_flag_sese
+				months = 6
+			}
+			custom_tooltip = hc_sese_interaction_effect_tt_02
+		}
+	}
+	auto_accept = {
+		custom_description = {
+			text = "spending_hook"
+			subject = scope:actor
+			object = scope:recipient
+			AND = {
+				always = scope:hook
+				scope:actor = {
+					has_strong_hook = scope:recipient
+				}
+			}
+		}
+	}
+	send_option = {
+		is_valid = {
+			scope:actor = {
+				has_usable_hook = scope:recipient
+			}
+		}
+		flag = hook
+		localization = SCHEME_HOOK
+	}
+	should_use_extra_icon = {
+		scope:actor = {
+			has_usable_hook = scope:recipient
+		}
+	}
+	extra_icon = "gfx/interface/icons/character_interactions/hook_icon.dds"
+	send_options_exclusive = no
+	ai_potential = {
+	}
+	auto_accept = no
+	ai_accept = {
+		base = 0
+		modifier = {
+			trigger = {
+				always = scope:hook
+			}
+			add = 100
+			desc = SCHEME_WEAK_HOOK_USED
+		}
+		modifier = {
+			trigger = {
+				is_close_family_of = root
+			}
+			add = 20
+			desc = interaction_common_desc
+		}
+		#opinion
+		modifier = {
+			add = 30
+			scope:recipient = {
+				opinion = {
+					target = scope:actor
+					value >= 50
+				}
+			}
+		}
+		modifier = {
+			add = -30
+			scope:recipient = {
+				opinion = {
+					target = scope:actor
+					value <= 0
+				}
+			}
+		}
+		modifier = {
+			trigger = {
+				scope:actor = {
+					has_trait = beauty_good_1
+				}
+			}
+			add = 20
+			desc = INTERACTION_BEAUTY_GOOD_1
+		}
+		modifier = {
+			trigger = {
+				scope:actor = {
+					has_trait = beauty_good_2
+				}
+			}
+			add = 40
+			desc = INTERACTION_BEAUTY_GOOD_2
+		}
+		modifier = {
+			trigger = {
+				scope:actor = {
+					has_trait = beauty_good_3
+				}
+			}
+			add = 60
+			desc = INTERACTION_BEAUTY_GOOD_3
+		}
+		modifier = {
+			trigger = {
+				scope:actor = {
+					has_trait = beauty_bad_1
+				}
+			}
+			add = -20
+			desc = INTERACTION_BEAUTY_BAD_1
+		}
+		modifier = {
+			trigger = {
+				scope:actor = {
+					has_trait = beauty_bad_2
+				}
+			}
+			add = -40
+			desc = INTERACTION_BEAUTY_BAD_2
+		}
+		modifier = {
+			trigger = {
+				scope:actor = {
+					has_trait = beauty_bad_3
+				}
+			}
+			add = -60
+			desc = INTERACTION_BEAUTY_BAD_3
+		}
+		modifier = {
+			trigger = {
+				has_relation_best_friend = scope:actor
+			}
+			add = 200
+			desc = interaction_common_desc
+		}
+		modifier = {
+			trigger = {
+				age>49
+			}
+			add = -50
+			desc = interaction_age_over_49_desc
+		}
+		modifier = {
+			trigger = {
+				has_relation_soulmate = scope:actor
+			}
+			add = 200
+			desc = interaction_common_desc
+		}
+		modifier = {
+			trigger = {
+				has_relation_lover = scope:actor
+			}
+			add = 50
+			desc = interaction_common_desc
+		}
+		modifier = {
+			add = -30
+			has_trait = shy
+			desc = INTERACTION_SHY
+		}
+		modifier = {
+			add = 30
+			has_trait = lustful
+			desc = INTERACTION_LUSTFUL
+		}
+		modifier = {
+			add = 50
+			has_trait = hc_immutable
+			desc = interaction_hc_immutable
+		}
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
+# 制作婚书
+hc_marriage_certificate_interaction = {
+	category = interaction_category_friendly
+	common_interaction = yes
+	send_name = SEND_PROPOSAL
+	icon = icon_personal
+	interface_priority = 120
+	ai_frequency = 0
+	is_shown = {
+		scope:actor = {
+			not = {
+				has_trait = hc_immutable
+			}
+			OR = {
+				is_adult = no
+				scope:recipient = {
+					is_adult = no
+				}
+			}
+			is_married = no
+			is_betrothed = no
+			allowed_to_marry_character_gender_trigger = {
+				CHARACTER = scope:recipient
+			}
+			scope:recipient = {
+				is_married = no
+				is_betrothed = no
+				not = {
+					has_trait = hc_immutable
+				}
+			}
+		}
+	}
+	is_valid_showing_failures_only = {
+		scope:recipient = {
+			is_imprisoned = no
+		}
+		scope:actor = {
+			is_imprisoned = no
+		}
+	}
+	desc = hc_marriage_certificate_interaction_desc
+	on_accept = {
+		#订婚
+		show_as_tooltip = {
+			scope:actor = {
+				create_betrothal = scope:recipient
+			}
+		}
+		scope:actor = {
+			#与对方缔结神圣契约 获得婚书
+			custom_tooltip = hc_marriage_certificate_interaction_effect_tt_01
+			show_as_tooltip = {
+				#获得特质
+				add_trait = hc_immutable
+			}
+			trigger_event = hc_love.02
+		}
+		scope:recipient = {
+			#与对方缔结神圣契约
+			custom_tooltip = hc_marriage_certificate_interaction_effect_tt_02
+			show_as_tooltip = {
+				#获得特质
+				add_trait = hc_immutable
+			}
+		}
+	}
+	auto_accept = {
+		custom_description = {
+			text = "spending_hook"
+			subject = scope:actor
+			object = scope:recipient
+			AND = {
+				always = scope:hook
+				scope:actor = {
+					has_strong_hook = scope:recipient
+				}
+			}
+		}
+	}
+	send_option = {
+		is_valid = {
+			scope:actor = {
+				has_usable_hook = scope:recipient
+			}
+		}
+		flag = hook
+		localization = SCHEME_HOOK
+	}
+	should_use_extra_icon = {
+		scope:actor = {
+			has_usable_hook = scope:recipient
+		}
+	}
+	extra_icon = "gfx/interface/icons/character_interactions/hook_icon.dds"
+	send_options_exclusive = no
+	ai_potential = {
+	}
+	auto_accept = no
+	ai_accept = {
+		base = 0
+		#more modifier:rank piety trait
+		#opinion
+		modifier = {
+			add = 30
+			scope:recipient = {
+				opinion = {
+					target = scope:actor
+					value >= 50
+				}
+			}
+		}
+		modifier = {
+			add = -30
+			scope:recipient = {
+				opinion = {
+					target = scope:actor
+					value <= 0
+				}
+			}
+		}
+		modifier = {
+			trigger = {
+				always = scope:hook
+			}
+			add = 100
+			desc = SCHEME_WEAK_HOOK_USED
+		}
+		modifier = {
+			trigger = {
+				is_close_family_of = root
+			}
+			add = -20
+			desc = interaction_close_family_desc
+		}
+		modifier = {
+			trigger = {
+				scope:actor = {
+					has_trait = beauty_good_1
+				}
+			}
+			add = 10
+			desc = INTERACTION_BEAUTY_GOOD_1
+		}
+		modifier = {
+			trigger = {
+				scope:actor = {
+					has_trait = beauty_good_2
+				}
+			}
+			add = 20
+			desc = INTERACTION_BEAUTY_GOOD_2
+		}
+		modifier = {
+			trigger = {
+				scope:actor = {
+					has_trait = beauty_good_3
+				}
+			}
+			add = 30
+			desc = INTERACTION_BEAUTY_GOOD_3
+		}
+		modifier = {
+			trigger = {
+				scope:actor = {
+					has_trait = gallant
+				}
+			}
+			add = 20
+			desc = interaction_gallant
+		}
+		modifier = {
+			trigger = {
+				scope:actor = {
+					has_trait = august
+				}
+			}
+			add = 20
+			desc = interaction_august
+		}
+		modifier = {
+			trigger = {
+				scope:actor = {
+					has_trait = beauty_bad_1
+				}
+			}
+			add = -10
+			desc = INTERACTION_BEAUTY_BAD_1
+		}
+		modifier = {
+			trigger = {
+				scope:actor = {
+					has_trait = beauty_bad_2
+				}
+			}
+			add = -20
+			desc = INTERACTION_BEAUTY_BAD_2
+		}
+		modifier = {
+			trigger = {
+				scope:actor = {
+					has_trait = beauty_bad_3
+				}
+			}
+			add = -30
+			desc = INTERACTION_BEAUTY_BAD_3
+		}
+		modifier = {
+			trigger = {
+				has_relation_best_friend = scope:actor
+			}
+			add = 50
+			desc = interaction_common_desc
+		}
+		modifier = {
+			trigger = {
+				age>49
+			}
+			add = -50
+			desc = interaction_age_over_49_desc
+		}
+		modifier = {
+			trigger = {
+				has_relation_soulmate = scope:actor
+			}
+			add = 200
+			desc = interaction_common_desc
+		}
+		modifier = {
+			trigger = {
+				has_relation_lover = scope:actor
+			}
+			add = 50
+			desc = interaction_common_desc
+		}
+		modifier = {
+			add = -30
+			has_trait = shy
+			desc = INTERACTION_SHY
+		}
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
+# 制作婚书（已结婚）
+hc_marriage_certificate_with_has_married_interaction = {
+	category = interaction_category_friendly
+	common_interaction = yes
+	send_name = SEND_PROPOSAL
+	icon = icon_personal
+	interface_priority = 120
+	ai_frequency = 0
+	is_shown = {
+		scope:actor = {
+			not = {
+				has_trait = hc_immutable
+			}
+			is_adult = yes
+			is_married = yes
+			scope:recipient = {
+				is_married = yes
+				is_spouse_of = scope:actor
+				not = {
+					has_trait = hc_immutable
+				}
+			}
+		}
+	}
+	is_valid_showing_failures_only = {
+		scope:recipient = {
+			is_imprisoned = no
+		}
+		scope:actor = {
+			is_imprisoned = no
+		}
+	}
+	desc = hc_marriage_certificate_with_has_married_interaction_desc
+	on_accept = {
+		scope:actor = {
+			#与对方缔结神圣契约 获得婚书
+			custom_tooltip = hc_marriage_certificate_with_has_married_interaction_effect_tt_01
+			show_as_tooltip = {
+				#获得特质
+				add_trait = hc_immutable
+			}
+			trigger_event = hc_love.03
+		}
+		scope:recipient = {
+			#与对方缔结神圣契约
+			custom_tooltip = hc_marriage_certificate_with_has_married_interaction_effect_tt_02
+			show_as_tooltip = {
+				#获得特质
+				add_trait = hc_immutable
+			}
+		}
+	}
+	send_options_exclusive = no
+	ai_potential = {
+	}
+	auto_accept = yes
+	ai_will_do = {
+		base = 0
+	}
+}

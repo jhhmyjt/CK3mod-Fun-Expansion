@@ -134,6 +134,27 @@ hc.002 = {
 		add_stress = -30
 	}
 	after = {
+		#解锁诺斯传承
+		# if = {
+		# 	limit = {
+		# 		root.dynasty = {
+		# 			not = {
+		# 				has_dynasty_perk = fp1_adventure_legacy_1
+		# 			}
+		# 			add_dynasty_perk = fp1_adventure_legacy_1
+		# 		}
+		# 	}
+		# }
+		# if = {
+		# 	limit = {
+		# 		root.dynasty = {
+		# 			not = {
+		# 				has_dynasty_perk = fp1_pillage_legacy_track
+		# 			}
+		# 			add_dynasty_perk = fp1_pillage_legacy_track
+		# 		}
+		# 	}
+		# }
 		trigger_event = {
 			on_action = on_action_hc
 		}
@@ -151,17 +172,7 @@ hc.002 = {
 #战争时指挥军队
 hc.003 = {
 	type = character_event
-	desc = hc.003.desc
-	title = hc.003.t
 	hidden = yes
-	left_portrait = {
-		character = ROOT
-		animation = personality_honorable
-	}
-	theme = battle
-	override_background = {
-		reference = army_camp
-	}
 	trigger = {
 		is_ai = no
 		is_in_army = yes
@@ -170,8 +181,7 @@ hc.003 = {
 			has_character_modifier = hc_char_modifier_02
 		}
 	}
-	option = {
-		name = hc.003.a
+	immediate = {
 		add_character_modifier = hc_char_modifier_02
 	}
 }
@@ -179,27 +189,15 @@ hc.003 = {
 #战争结束
 hc.004 = {
 	type = character_event
-	desc = hc.004.desc
-	title = hc.004.t
 	hidden = yes
-	left_portrait = {
-		character = ROOT
-		animation = personality_honorable
-	}
-	theme = battle
-	override_background = {
-		reference = army_camp
-	}
 	trigger = {
 		has_character_modifier = hc_char_modifier_02
 		OR = {
 			is_in_army = no
 			is_at_war = no
 		}
-		# is_ai = no
 	}
-	option = {
-		name = hc.004.a
+	immediate = {
 		remove_character_modifier = hc_char_modifier_02
 		if = {
 			limit = {
@@ -215,7 +213,7 @@ hc.004 = {
 	}
 }
 
-#命运选择-传统
+#传承事件
 hc.008 = {
 	type = character_event
 	title = hc.008.t
@@ -492,7 +490,6 @@ hc.010 = {
 						modifier = {
 							add = learning
 						}
-						give_nickname = nick_hc_the_wolong
 						add_learning_lifestyle_xp = 25
 					}
 					25 = {
@@ -502,7 +499,6 @@ hc.010 = {
 						modifier = {
 							add = diplomacy
 						}
-						give_nickname = nick_hc_the_strategist
 						add_diplomacy_lifestyle_xp = 25
 					}
 					25 = {
@@ -512,7 +508,6 @@ hc.010 = {
 						modifier = {
 							add = martial
 						}
-						give_nickname = nick_hc_the_fulong
 						add_martial_lifestyle_xp = 25
 					}
 					25 = {
@@ -522,7 +517,6 @@ hc.010 = {
 						modifier = {
 							add = stewardship
 						}
-						give_nickname = nick_hc_the_leader
 						add_stewardship_lifestyle_xp = 25
 					}
 					25 = {
@@ -532,7 +526,6 @@ hc.010 = {
 						modifier = {
 							add = intrigue
 						}
-						give_nickname = nick_hc_the_operator
 						add_intrigue_lifestyle_xp = 25
 					}
 					25 = {
@@ -542,7 +535,6 @@ hc.010 = {
 						modifier = {
 							add = prowess
 						}
-						give_nickname = nick_hc_the_thousands_enemies
 						add_dread = 30
 					}
 				}

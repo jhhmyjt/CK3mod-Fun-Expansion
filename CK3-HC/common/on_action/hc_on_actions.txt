@@ -1,6 +1,7 @@
 ﻿on_action_hc_every_year = {
 	events = {
 		hc_switch.005
+		hc_fun.001
 	}
 	on_actions = {
 		delay = {
@@ -36,15 +37,12 @@ on_action_hc = {
 
 #考核事件组
 on_action_certified = {
-	# random_events = {
-	# 	10 = 0
-	# }
 	events = {
 		hc.010
 	}
 	on_actions = {
 		delay = {
-			years = 5
+			years = 7
 		}
 		on_action_certified
 	}

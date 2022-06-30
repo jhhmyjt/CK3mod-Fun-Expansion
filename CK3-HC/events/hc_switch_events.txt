@@ -101,17 +101,7 @@ hc_switch.003 = {
 #骑士退休
 hc_switch.005 = {
 	type = character_event
-	desc = hc_switch_common.desc
-	title = hc_switch_common.t
 	hidden = yes
-	left_portrait = {
-		character = ROOT
-		animation = happiness
-	}
-	theme = crown
-	override_background = {
-		reference = corridor_day
-	}
 	trigger = {
 		is_ai = no
 		any_vassal = {
@@ -133,9 +123,6 @@ hc_switch.005 = {
 			}
 			save_scope_as = hc_scope_retired_knight
 		}
-	}
-	option = {
-		name = hc_switch_common.a
 		send_interface_message = {
 			type = event_generic_good
 			title = hc_switch.005_msg_t
