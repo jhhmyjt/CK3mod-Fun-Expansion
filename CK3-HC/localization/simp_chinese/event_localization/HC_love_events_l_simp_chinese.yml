@@ -4,6 +4,7 @@
  hc_love.01.a:0 "浅尝辄止"
  hc_love.01.b:0 "玉影成双"
  hc_love.01_lose_w_effect_tt:0 "减少些许体重"
+ hc_love.01_reward_effect_tt:0 "随机获得少量生活经验或属性奖励"
  hc_love.02.t:0 "订婚仪式"
  hc_love.02.desc:0 "伴随着优美典雅的音乐，在神父的引导下，我们开始进行仪式。\n\n“我以圣灵圣母的名义祝福你们,阿门! 上帝会永远保佑你们的!”神父庄严的声音传来，\n\n“而今而后，不论境遇好坏，家境贫富，生病与否，誓言相亲相爱，至死不分离。”我牵着[recipient.GetFirstNameNoTooltip]的手和她一齐说道。"
  hc_love.02.a:0 "永结同心"

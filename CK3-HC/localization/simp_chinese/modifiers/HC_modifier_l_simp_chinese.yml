@@ -51,6 +51,8 @@
  hc_char_modifier_06_desc:0 "该角色的婚姻受到祝福"
  hc_char_modifier_07:0 "受祝福的童年"
  hc_char_modifier_07_desc:0 "该角色的家庭受祝福（至死不渝）"
+ hc_char_modifier_08:0 "受过洗礼"
+ hc_char_modifier_08_desc:0 "该角色受过洗礼，诸邪不侵"
  hc_dynasty_holy_modifier:0 "沐浴神圣"
  hc_dynasty_holy_modifier_desc:0 "该角色受过圣血洗礼，高贵神圣"
  hc_dynasty_bless_modifier_01:0 "人中之龙"

@@ -568,3 +568,39 @@ hc.011 = {
 		embrace_roma_effect = yes
 	}
 }
+
+#洗礼事件
+hc.012 = {
+	type = character_event
+	title = hc.012.t
+	desc = hc.012.desc
+	theme = faith
+	left_portrait = {
+		character = scope:actor
+		animation = personality_honorable
+	}
+	right_portrait = {
+		character = scope:recipient
+		animation = admiration
+	}
+	#option1
+	option = {
+		name = hc.012.a
+		scope:recipient = {
+			add_piety = 500
+			#增加人物修正
+			add_character_modifier = {
+				modifier = hc_char_modifier_08
+				years = 100
+			}
+			add_opinion = {
+				target = scope:actor
+				modifier = hc_baptize_opinion
+			}
+		}
+	}
+	#option2
+	option = {
+		name = hc.012.b
+	}
+}

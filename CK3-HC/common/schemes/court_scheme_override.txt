@@ -218,6 +218,20 @@
 				has_trait = hc_immutable
 			}
 		}
+		modifier = {
+			add = -1000
+			desc = "hc_scheme_has_baptized_immutable"
+			scope:target = {
+				has_character_modifier = hc_char_modifier_08
+			}
+		}
+		modifier = {
+			add = -1000
+			desc = "hc_scheme_owner_has_baptized_immutable"
+			scope:owner = {
+				has_character_modifier = hc_char_modifier_08
+			}
+		}
 		#Language
 		modifier = {
 			add = 5

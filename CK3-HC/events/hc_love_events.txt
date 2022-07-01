@@ -107,17 +107,6 @@ hc_love.01 = {
 		}
 	}
 	after = {
-		#额外奖励
-		if = {
-			limit = {
-				root.house = {
-					has_house_modifier = hc_dynasty_god_modifier
-				}
-			}
-			hidden_effect = {
-				hc_random_reward_effect = yes
-			}
-		}
 		#穿上衣服，减少体重
 		scope:recipient = {
 			custom_tooltip = hc_love.01_lose_w_effect_tt
@@ -133,8 +122,18 @@ hc_love.01 = {
 		}
 		scope:actor = {
 			custom_tooltip = hc_love.01_lose_w_effect_tt
+			custom_tooltip = hc_love.01_reward_effect_tt
 			hidden_effect = {
 				change_current_weight = -5
+				#额外奖励
+				if = {
+					limit = {
+						root.house = {
+							has_house_modifier = hc_dynasty_god_modifier
+						}
+					}
+					hc_random_reward_effect = yes
+				}
 			}
 			if = {
 				limit = {
@@ -171,11 +170,23 @@ hc_love.02 = {
 			add_stress = -30
 			add_prestige = 500
 			add_trait = hc_immutable
+			if = {
+				limit = {
+					has_character_modifier = hc_char_modifier_08
+				}
+				remove_character_modifier = hc_char_modifier_08
+			}
 		}
 		scope:actor = {
 			add_stress = -30
 			add_prestige = 500
 			add_trait = hc_immutable
+			if = {
+				limit = {
+					has_character_modifier = hc_char_modifier_08
+				}
+				remove_character_modifier = hc_char_modifier_08
+			}
 			#订婚
 			create_betrothal = scope:recipient
 		}
@@ -200,8 +211,8 @@ hc_love.02 = {
 				years = 100
 			}
 		}
-		#发送信息
 		hidden_effect = {
+			#发送信息
 			send_interface_toast = {
 				type = event_generic_good_text
 				title = hc_marriage_notification
@@ -253,11 +264,23 @@ hc_love.03 = {
 			add_stress = -30
 			add_prestige = 500
 			add_trait = hc_immutable
+			if = {
+				limit = {
+					has_character_modifier = hc_char_modifier_08
+				}
+				remove_character_modifier = hc_char_modifier_08
+			}
 		}
 		scope:actor = {
 			add_stress = -30
 			add_prestige = 500
 			add_trait = hc_immutable
+			if = {
+				limit = {
+					has_character_modifier = hc_char_modifier_08
+				}
+				remove_character_modifier = hc_char_modifier_08
+			}
 		}
 		if = {
 			limit = {

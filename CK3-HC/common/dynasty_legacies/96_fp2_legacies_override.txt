@@ -1,0 +1,71 @@
+﻿# TO DO: should be available for any character involved in the Struggle instead of checking Iberian heritage
+fp2_urbanism_legacy_track = {
+	is_shown = {
+		has_dlc_feature = the_fate_of_iberia
+		OR = {
+			AND = {
+				root.house = {
+					has_house_modifier = hc_dynasty_god_modifier
+				}
+				has_game_rule = hc_dynasty_unlock_all_legacy
+			}
+			dynasty = {
+				OR = {
+					dynast = {
+						OR = {
+							any_character_struggle = {
+								involvement = involved
+							}
+							culture = {
+								has_cultural_pillar = heritage_iberian
+							}
+							AND = {
+								exists = capital_province
+								capital_province = {
+									geographical_region = world_europe_west_iberia
+								}
+							}
+						}
+					}
+					has_dynasty_perk = fp2_urbanism_legacy_1
+				}
+			}
+		}
+	}
+}
+
+# TO DO: should be available for any character involved in the Struggle instead of checking Iberian heritage
+fp2_coterie_legacy_track = {
+	is_shown = {
+		has_dlc_feature = the_fate_of_iberia
+		OR = {
+			AND = {
+				root.house = {
+					has_house_modifier = hc_dynasty_god_modifier
+				}
+				has_game_rule = hc_dynasty_unlock_all_legacy
+			}
+			dynasty = {
+				OR = {
+					dynast = {
+						OR = {
+							any_character_struggle = {
+								involvement = involved
+							}
+							culture = {
+								has_cultural_pillar = heritage_iberian
+							}
+							AND = {
+								exists = capital_province
+								capital_province = {
+									geographical_region = world_europe_west_iberia
+								}
+							}
+						}
+					}
+					has_dynasty_perk = fp2_coterie_legacy_1
+				}
+			}
+		}
+	}
+}

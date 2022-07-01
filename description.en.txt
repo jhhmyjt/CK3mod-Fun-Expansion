@@ -33,24 +33,17 @@ Not compatible with Iron Man
 [/list]
 
 [h1]Recent updates[/h1]
-6.30
+7.1
 new content
 [list]
-      [*]Character interaction: Once the spring breeze. Intimate interaction with your spouse, side room
-      [*]Character interaction: marriage contract (same conditions as ordinary engagement, you need to complete the divine test first) and promise oath (married), the reward events for both are the same
-      [*]The theme of new treasures and traits (obtained through the above two interactions) is anti-green
+       [*]Interaction: Baptism, baptizing characters in own court (gained anti-seduction/courtship modifier, removed when gaining the Unyielding trait)
+       [*]Game rules: Inheritance settings, complete the divine test to unlock all inheritances (Nos, Iberia), but only if there is a corresponding dlc
 [/list]
-Value modification
+Revise
 [list]
-      [*]Building: Holstein defense line attribute modified
-      [*]Resolution: Reinforce the holy sword and reduce the cost
-      [*]Clan Inheritance: Added cultural preference progress modifier for thousands of miles in a day
-[/list]
-other modifications
-[list]
-      [*]Resolution: Heritage Ceremony no longer restricts age
-      [*]Resolution: Retire, modify text information, and when your heir is your child but not your own, there will be a warning message and prompt its real biological father
-      [*]The size of the texture has been modified for some characteristics, and the visual effect of the texture has been modified by the baptism of holy blood and the blessing of the gods.
+       [*]Modify the Temple Judgment Heavy Cavalry Icon
+       [*]Modify the interactive icon of the canonized knight
+       [*] Some localization bugfixes
 [/list]
 
 [h1]Last[/h1]

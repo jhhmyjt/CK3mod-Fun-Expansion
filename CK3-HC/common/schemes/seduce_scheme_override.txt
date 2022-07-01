@@ -113,7 +113,8 @@
 			scope:owner = {
 				has_character_flag = is_party_baron
 			}
-		}		# The Party Baron wants friends, not lovers!
+		}
+		# The Party Baron wants friends, not lovers!
 	}
 	valid = {
 		#HARD-BLOCK: Incest Target is too young
@@ -164,12 +165,14 @@
 			scope:target = {
 				has_trait = intellect_bad_3
 			}
-		}		# Implies a mental development level akin to an average child
+		}
+		# Implies a mental development level akin to an average child
 		NOT = {
 			scope:target = {
 				has_trait = incapable
 			}
-		}		# Bed-ridden at best, but in many cases comatose or in a vegetative state
+		}
+		# Bed-ridden at best, but in many cases comatose or in a vegetative state
 		# One of you is celibate
 		NOT = {
 			has_trait = celibate
@@ -232,6 +235,20 @@
 			}
 			scope:owner = {
 				has_trait = hc_immutable
+			}
+		}
+		modifier = {
+			add = -1000
+			desc = "hc_scheme_has_baptized_immutable"
+			scope:target = {
+				has_character_modifier = hc_char_modifier_08
+			}
+		}
+		modifier = {
+			add = -1000
+			desc = "hc_scheme_owner_has_baptized_immutable"
+			scope:owner = {
+				has_character_modifier = hc_char_modifier_08
 			}
 		}
 		#Language
@@ -622,7 +639,8 @@
 						is_consort_of = scope:target
 					}
 				}
-			}			# Your spouse doesn't care if you're a different rank than them.
+			}
+			# Your spouse doesn't care if you're a different rank than them.
 			add = 40
 			desc = "HIGHER_RANK_THAN_SCHEME_TARGET"
 			scope:target = {
@@ -646,7 +664,8 @@
 						is_consort_of = scope:target
 					}
 				}
-			}			# Your spouse doesn't care if you're a different rank than them.
+			}
+			# Your spouse doesn't care if you're a different rank than them.
 			add = 20
 			desc = "HIGHER_RANK_THAN_SCHEME_TARGET"
 			scope:target = {
@@ -670,7 +689,8 @@
 						is_consort_of = scope:target
 					}
 				}
-			}			# Your spouse doesn't care if you're a different rank than them.
+			}
+			# Your spouse doesn't care if you're a different rank than them.
 			add = 10
 			desc = "HIGHER_RANK_THAN_SCHEME_TARGET"
 			scope:target = {
@@ -692,7 +712,8 @@
 				scope:owner = {
 					NOT = {
 						is_consort_of = scope:target
-					}					# Your spouse doesn't care if you're a different rank than them.
+					}
+					# Your spouse doesn't care if you're a different rank than them.
 					NOT = {
 						has_perk = subtle_desire_perk
 					}
@@ -716,7 +737,8 @@
 				scope:owner = {
 					NOT = {
 						is_consort_of = scope:target
-					}					# Your spouse doesn't care if you're a different rank than them.
+					}
+					# Your spouse doesn't care if you're a different rank than them.
 					NOT = {
 						has_perk = subtle_desire_perk
 					}
@@ -740,7 +762,8 @@
 				scope:owner = {
 					NOT = {
 						is_consort_of = scope:target
-					}					# Your spouse doesn't care if you're a different rank than them.
+					}
+					# Your spouse doesn't care if you're a different rank than them.
 					NOT = {
 						has_perk = subtle_desire_perk
 					}
@@ -767,7 +790,8 @@
 						is_consort_of = scope:target
 					}
 				}
-			}			# Your spouse doesn't care if you're a different rank than them.
+			}
+			# Your spouse doesn't care if you're a different rank than them.
 			add = 50
 			desc = "HIGHER_RANK_THAN_SCHEME_TARGET_LIEGE"
 			scope:target = {
@@ -791,7 +815,8 @@
 						is_consort_of = scope:target
 					}
 				}
-			}			# Your spouse doesn't care if you're a different rank than them.
+			}
+			# Your spouse doesn't care if you're a different rank than them.
 			add = 25
 			desc = "HIGHER_RANK_THAN_SCHEME_TARGET_LIEGE"
 			scope:target = {
@@ -815,7 +840,8 @@
 						is_consort_of = scope:target
 					}
 				}
-			}			# Your spouse doesn't care if you're a different rank than them.
+			}
+			# Your spouse doesn't care if you're a different rank than them.
 			add = 10
 			desc = "HIGHER_RANK_THAN_SCHEME_TARGET_LIEGE"
 			scope:target = {
@@ -837,7 +863,8 @@
 				scope:owner = {
 					NOT = {
 						is_consort_of = scope:target
-					}					# Your spouse doesn't care if you're a different rank than them.
+					}
+					# Your spouse doesn't care if you're a different rank than them.
 					NOT = {
 						has_perk = subtle_desire_perk
 					}
@@ -861,7 +888,8 @@
 				scope:owner = {
 					NOT = {
 						is_consort_of = scope:target
-					}					# Your spouse doesn't care if you're a different rank than them.
+					}
+					# Your spouse doesn't care if you're a different rank than them.
 					NOT = {
 						has_perk = subtle_desire_perk
 					}
@@ -885,7 +913,8 @@
 				scope:owner = {
 					NOT = {
 						is_consort_of = scope:target
-					}					# Your spouse doesn't care if you're a different rank than them.
+					}
+					# Your spouse doesn't care if you're a different rank than them.
 					NOT = {
 						has_perk = subtle_desire_perk
 					}
@@ -911,7 +940,8 @@
 						is_consort_of = scope:target
 					}
 				}
-			}			# No 'social climbing' if you're already their spouse!
+			}
+			# No 'social climbing' if you're already their spouse!
 			desc = SCHEME_SOCIAL_CLIMBER_RANK_BONUS
 			add = 10
 			scope:target = {
@@ -946,7 +976,8 @@
 						is_consort_of = scope:target
 					}
 				}
-			}			# No 'social climbing' if you're already their spouse!
+			}
+			# No 'social climbing' if you're already their spouse!
 			desc = SCHEME_SOCIAL_CLIMBER_RANK_PENALTY
 			add = -10
 			scope:target = {
@@ -1039,10 +1070,12 @@
 				NOR = {
 					accepts_incest_with_trigger = {
 						CHARACTER = scope:owner
-					}					#100% fine with incest with owner
+					}
+					#100% fine with incest with owner
 					scope:owner = {
 						has_perk = subtle_desire_perk
-					}					# The Subtle Desire Perk nullifies this
+					}
+					# The Subtle Desire Perk nullifies this
 					guaranteed_under_20_incest_rejection_trigger = {
 						# handled by hard block modifier
 						TARGET = scope:target

@@ -22,3 +22,14 @@ hc_dynasty_modifier_strength_setting = {
 	hc_dynasty_modifier_low_strength = {
 	}
 }
+
+#传承设置
+hc_dynasty_legacy_setting = {
+	default = hc_dynasty_vanilla_legacy
+	#原版
+	hc_dynasty_vanilla_legacy = {
+	}
+	#解锁所有传承（需要传承指定的dlc）
+	hc_dynasty_unlock_all_legacy = {
+	}
+}

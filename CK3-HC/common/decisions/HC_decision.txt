@@ -2,7 +2,6 @@
 # 	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
 # 	title = "hc mod test decision"
 # 	confirm_text = "test"
-# 	desc = hc_test_decision_desc
 # 	ai_check_interval = 0
 # 	major = no
 # 	sort_order = 0

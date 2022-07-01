@@ -11,3 +11,8 @@
  setting_hc_dynasty_modifier_normal_strength_desc:0 "最高全属性+10"
  setting_hc_dynasty_modifier_low_strength:0 "低强度"
  setting_hc_dynasty_modifier_low_strength_desc:0 "最高全属性+5"
+ rule_hc_dynasty_legacy_setting:0 "Fun Expansion 宗族传承设置"
+ setting_hc_dynasty_vanilla_legacy:0 "原版"
+ setting_hc_dynasty_vanilla_legacy_desc:0 "没有任何变化"
+ setting_hc_dynasty_unlock_all_legacy:0 "解锁所有传承"
+ setting_hc_dynasty_unlock_all_legacy_desc:0 "完成神考解锁所有传承（诺斯、伊比利亚），但前提是有对应的dlc。"

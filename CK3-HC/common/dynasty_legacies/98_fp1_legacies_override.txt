@@ -1,0 +1,57 @@
+﻿fp1_adventure_legacy_track = {
+	is_shown = {
+		has_dlc_feature = the_northern_lords
+		OR = {
+			AND = {
+				root.house = {
+					has_house_modifier = hc_dynasty_god_modifier
+				}
+				has_game_rule = hc_dynasty_unlock_all_legacy
+			}
+			dynasty = {
+				OR = {
+					dynast = {
+						culture = {
+							OR = {
+								this = culture:norse
+								any_parent_culture_or_above = {
+									this = culture:norse
+								}
+							}
+						}
+					}
+					has_dynasty_perk = fp1_adventure_legacy_1
+				}
+			}
+		}
+	}
+}
+
+fp1_pillage_legacy_track = {
+	is_shown = {
+		has_dlc_feature = the_northern_lords
+		OR = {
+			AND = {
+				root.house = {
+					has_house_modifier = hc_dynasty_god_modifier
+				}
+				has_game_rule = hc_dynasty_unlock_all_legacy
+			}
+			dynasty = {
+				OR = {
+					dynast = {
+						culture = {
+							OR = {
+								this = culture:norse
+								any_parent_culture_or_above = {
+									this = culture:norse
+								}
+							}
+						}
+					}
+					has_dynasty_perk = fp1_pillage_legacy_1
+				}
+			}
+		}
+	}
+}
