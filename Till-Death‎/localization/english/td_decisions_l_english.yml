@@ -1,0 +1,7 @@
+﻿l_english:
+ td_begin_decision:0 "Seek Eros for Asylum"
+  td_begin_decision_tooltip:0 "Seek Eros for Asylum"
+  td_begin_decision_desc:0 "Let Eros shelter the [ROOT.Char.GetDynasty.GetBaseNameNoTooltip] family"
+  td_begin_decision_confirm:0 "Seek Eros for Asylum"
+  td_begin_decision_effect_tt_01:0 "Unlock Interaction:#V Make a marriage contract, promise an oath, baptize it#"
+  td_begin_decision_effect_tt_02:0 "Possible to get [artifact|E]"

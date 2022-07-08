@@ -1,5 +1,4 @@
 ﻿hc_beauty = {
-	index = 5001
 	ruler_designer_cost = 100
 	diplomacy = 3
 	fertility = 0.2
@@ -29,7 +28,6 @@
 #天神下凡
 god_descent = {
 	ruler_designer_cost = 100
-	index = 5002
 	prowess = 10
 	diplomacy = 10
 	stewardship = 10
@@ -64,8 +62,7 @@ god_descent = {
 
 #天神下凡
 god_descent_mini = {
-	ruler_designer_cost = 20
-	index = 5003
+	ruler_designer_cost = 100
 	prowess = 2
 	diplomacy = 2
 	stewardship = 2
@@ -101,7 +98,6 @@ god_descent_mini = {
 #天神下凡
 god_descent_pro = {
 	ruler_designer_cost = 100
-	index = 5004
 	prowess = 20
 	diplomacy = 20
 	stewardship = 20
@@ -139,6 +135,7 @@ hc_immutable = {
 	learning = 3
 	health = 0.5
 	monthly_piety = 0.5
+	stress_gain_mult = -0.3
 	same_opinion = 30
 	ruler_designer_cost = 200
 	desc = {
@@ -159,7 +156,6 @@ hc_immutable = {
 #归隐江湖
 hc_recluse = {
 	ruler_designer_cost = 50
-	index = 5006
 	health = 0.1
 	stress_loss_mult = 0.5
 	hard_casualty_modifier = 0.5
@@ -187,8 +183,7 @@ hc_recluse = {
 
 #奇观之王
 hc_wonder_king = {
-	ruler_designer_cost = 50
-	index = 5007
+	ruler_designer_cost = 100
 	monthly_prestige = 5
 	domain_limit = 5
 	county_opinion_add = 10
@@ -215,7 +210,6 @@ hc_wonder_king = {
 #圣殿骑士
 hc_knight = {
 	ruler_designer_cost = 50
-	index = 5008
 	martial = 5
 	prowess = 5
 	liege_opinion = 30
@@ -247,7 +241,6 @@ hc_knight = {
 #骑士退休-供奉
 hc_retired_knight = {
 	ruler_designer_cost = 50
-	index = 5009
 	liege_opinion = 50
 	same_opinion = 30
 	monthly_prestige = 3
@@ -272,7 +265,6 @@ hc_retired_knight = {
 #受圣血洗礼
 hc_holy_blood = {
 	ruler_designer_cost = 50
-	index = 5010
 	religious_head_opinion = 15
 	realm_priest_opinion = 20
 	religious_vassal_opinion = 15

@@ -1,0 +1,7 @@
+﻿l_simp_chinese:
+ td_begin_decision:0 "寻求爱神庇护"
+ td_begin_decision_tooltip:0 "寻求爱神庇护"
+ td_begin_decision_desc:0 "让爱神庇护[ROOT.Char.GetDynasty.GetBaseNameNoTooltip]家族"
+ td_begin_decision_confirm:0 "寻求爱神庇护"
+ td_begin_decision_effect_tt_01:0 "解锁互动:#V 缔结婚约、许诺誓言、为其洗礼#"
+ td_begin_decision_effect_tt_02:0 "可能获得[artifact|E]"

@@ -33,3 +33,14 @@ hc_dynasty_legacy_setting = {
 	hc_dynasty_unlock_all_legacy = {
 	}
 }
+
+#勾引/求爱设置
+# hc_seduce_court_setting = {
+# 	default = hc_seduce_court_ai_player_cannot
+# 	#限制玩家和ai
+# 	hc_seduce_court_ai_player_cannot = {
+# 	}
+# 	#仅限制ai
+# 	hc_seduce_court_ai_cannot = {
+# 	}
+# }

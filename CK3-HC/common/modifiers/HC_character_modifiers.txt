@@ -50,7 +50,6 @@ hc_char_modifier_05 = {
 hc_char_modifier_06 = {
 	monthly_prestige = 0.5
 	monthly_piety = 0.5
-	stress_gain_mult = -0.3
 	icon = love_positive
 }
 

@@ -1,0 +1,4 @@
+﻿l_simp_chinese:
+ hc_artifact_marriage_certificate_name:0 "[owner.GetFirstNameNoTooltip]与[target.GetFirstNameNoTooltip]的婚书"
+ hc_artifact_marriage_certificate_description:0 "这是[owner.GetFirstNameNoTooltip]与[target.GetFirstNameNoTooltip]的婚书，是二人神圣契约的见证。"
+ hc_marriage_certificate_can_benefit_desc:0 "与誓约的另一方保持婚姻关系"

@@ -1,5 +1,5 @@
 ﻿l_english:
- hc_begin_decision_t:0 "Begin Divine Exam"
+ hc_begin_decision:0 "Begin Divine Exam"
  hc_begin_decision_tooltip:0 "You will begin to be tested by the gods"
  hc_begin_decision_desc:0 "Since you came of age, you have been strongly summoned within you, you have sensed your divine beings, and the gods seem to be expecting something to happen..."
  hc_begin_decision_confirm:0 "Accept the test"

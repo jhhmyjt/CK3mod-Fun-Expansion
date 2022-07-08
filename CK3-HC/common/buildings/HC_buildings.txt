@@ -344,7 +344,7 @@ hc_chrysotriclinium = {
 		court_grandeur_baseline_add = 18
 		councillor_opinion = 10
 		stress_gain_mult = -0.2
-		knight_limit = 2
+		knight_limit = 5
 		knight_effectiveness_mult = 0.25
 		long_reign_bonus_mult = 0.25
 	}

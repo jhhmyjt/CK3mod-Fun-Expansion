@@ -16,3 +16,8 @@
  setting_hc_dynasty_vanilla_legacy_desc:0 "没有任何变化"
  setting_hc_dynasty_unlock_all_legacy:0 "解锁所有传承"
  setting_hc_dynasty_unlock_all_legacy_desc:0 "完成神考解锁所有传承（诺斯、伊比利亚），但前提是有对应的dlc。"
+ rule_hc_seduce_court_setting:0 "Fun Expansion 勾引/求爱设置"
+ setting_hc_seduce_court_ai_player_cannot:0 "限制ai和玩家"
+ setting_hc_seduce_court_ai_player_cannot_desc:0 "ai和玩家都会受到特质至死不渝的限制（勾引/求爱）"
+ setting_hc_seduce_court_ai_cannot:0 "仅限制ai"
+ setting_hc_seduce_court_ai_cannot_desc:0 "仅ai会受到特质至死不渝的限制（勾引/求爱）"

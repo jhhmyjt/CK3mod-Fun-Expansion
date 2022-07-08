@@ -1,0 +1,9 @@
+﻿l_simp_chinese:
+ td_house_modifier:0 "受爱神庇护"
+ td_house_modifier_desc:0 "该家族受爱神庇护"
+ hc_char_modifier_06:0 "至死不渝"
+ hc_char_modifier_06_desc:0 "该角色的婚姻受到祝福"
+ hc_char_modifier_07:0 "受祝福的童年"
+ hc_char_modifier_07_desc:0 "该角色的家庭受祝福（至死不渝）"
+ hc_char_modifier_08:0 "受过洗礼"
+ hc_char_modifier_08_desc:0 "该角色受过洗礼，诸邪不侵"

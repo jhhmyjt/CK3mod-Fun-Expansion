@@ -1,0 +1,5 @@
+﻿l_english: 
+hc.012.t:0 "Baptism"
+  hc.012.desc:0 "You arranged for the priests to set up the church, and the priest who presided over the ceremony was ready to take place. You looked at the pious face of [recipient.GetFirstNameNoTooltip]..."
+  hc.012.a:0 "Let's get started!"
+  hc.012.b:0 "Maybe not now..."

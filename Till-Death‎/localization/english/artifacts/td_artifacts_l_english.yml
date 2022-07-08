@@ -1,0 +1,4 @@
+﻿l_english:
+ hc_artifact_marriage_certificate_name:0 "[owner.GetFirstNameNoTooltip] and [target.GetFirstNameNoTooltip]'s marriage certificate"
+  hc_artifact_marriage_certificate_description:0 "This is the marriage certificate between [owner.GetFirstNameNoTooltip] and [target.GetFirstNameNoTooltip], a testimony to their sacred covenant."
+  hc_marriage_certificate_can_benefit_desc:0 "Maintain a marriage relationship with the other party to the oath"

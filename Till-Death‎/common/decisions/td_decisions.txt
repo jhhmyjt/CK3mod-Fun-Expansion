@@ -1,0 +1,33 @@
+﻿#决议，选择神邸崇拜，获得永久家族修正，家族繁荣，香火不绝
+td_begin_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	ai_check_interval = 0
+	major = yes
+	is_shown = {
+		is_ai = no
+		NOT = {
+			root.house = {
+				has_house_modifier = td_house_modifier
+			}
+		}
+	}
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_at_war = no
+	}
+	cost = {
+		prestige = 300
+	}
+	effect = {
+		root.house = {
+			add_house_modifier = td_house_modifier
+		}
+		custom_tooltip = td_begin_decision_effect_tt_01
+		if = {
+			limit = {
+				has_ep1_dlc_trigger = yes
+			}
+			custom_tooltip = td_begin_decision_effect_tt_02
+		}
+	}
+}

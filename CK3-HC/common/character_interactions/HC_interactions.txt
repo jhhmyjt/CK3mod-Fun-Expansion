@@ -843,11 +843,6 @@ hc_baptism_interaction = {
 		scope:recipient = {
 			is_imprisoned = no
 		}
-		scope:actor = {
-			Not = {
-				has_trait = hc_immutable
-			}
-		}
 	}
 	desc = hc_baptism_interaction_desc
 	on_accept = {

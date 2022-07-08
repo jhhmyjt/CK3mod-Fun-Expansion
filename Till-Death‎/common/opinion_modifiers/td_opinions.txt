@@ -1,0 +1,13 @@
+﻿#至死不渝的誓言
+hc_never_change_opinion = {
+	opinion = 100
+	years = 100
+	decaying = no
+}
+
+#受过洗礼
+hc_baptize_opinion = {
+	opinion = 30
+	years = 18
+	decaying = yes
+}

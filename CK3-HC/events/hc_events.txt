@@ -134,27 +134,6 @@ hc.002 = {
 		add_stress = -30
 	}
 	after = {
-		#解锁诺斯传承
-		# if = {
-		# 	limit = {
-		# 		root.dynasty = {
-		# 			not = {
-		# 				has_dynasty_perk = fp1_adventure_legacy_1
-		# 			}
-		# 			add_dynasty_perk = fp1_adventure_legacy_1
-		# 		}
-		# 	}
-		# }
-		# if = {
-		# 	limit = {
-		# 		root.dynasty = {
-		# 			not = {
-		# 				has_dynasty_perk = fp1_pillage_legacy_track
-		# 			}
-		# 			add_dynasty_perk = fp1_pillage_legacy_track
-		# 		}
-		# 	}
-		# }
 		trigger_event = {
 			on_action = on_action_hc
 		}
@@ -270,6 +249,14 @@ hc.008 = {
 		trigger_event = {
 			years = 5
 			on_action = on_action_certified
+		}
+		trigger_event = {
+			on_action = on_action_hc_every_year
+			years = 1
+		}
+		trigger_event = {
+			on_action = on_action_hc_special_building
+			years = 1
 		}
 	}
 }
