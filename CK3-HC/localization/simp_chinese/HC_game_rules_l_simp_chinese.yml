@@ -21,3 +21,8 @@
  setting_hc_seduce_court_ai_player_cannot_desc:0 "ai和玩家都会受到特质至死不渝的限制（勾引/求爱）"
  setting_hc_seduce_court_ai_cannot:0 "仅限制ai"
  setting_hc_seduce_court_ai_cannot_desc:0 "仅ai会受到特质至死不渝的限制（勾引/求爱）"
+ rule_hc_certificate_quantity_setting:0 "Fun Expansion 契约设置"
+ setting_hc_one_certificate_quantity:0 "一对一"
+ setting_hc_one_certificate_quantity_desc:0 "玩家只能和一人缔结契约"
+ setting_hc_more_certificate_quantity:0 "一对多"
+ setting_hc_more_certificate_quantity_desc:0 "玩家可以和多人缔结契约"

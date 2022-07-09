@@ -6,12 +6,11 @@ hc_char_modifier_06 = {
 }
 
 #受祝福的童年
-hc_char_modifier_07 = {
-	health = 0.2
-	negate_health_penalty_add = 0.8
-	icon = health_positive
-}
-
+# hc_char_modifier_07 = {
+# 	health = 0.2
+# 	negate_health_penalty_add = 0.8
+# 	icon = health_positive
+# }
 #接受洗礼
 hc_char_modifier_08 = {
 	health = 0.1

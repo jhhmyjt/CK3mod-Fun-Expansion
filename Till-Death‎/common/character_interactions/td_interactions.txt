@@ -12,8 +12,13 @@ hc_marriage_certificate_interaction = {
 			this.house = {
 				has_house_modifier = td_house_modifier
 			}
-			not = {
-				has_trait = hc_immutable
+			trigger_if = {
+				limit = {
+					has_game_rule = hc_one_certificate_quantity
+				}
+				not = {
+					has_trait = hc_immutable
+				}
 			}
 			OR = {
 				is_adult = no
@@ -132,7 +137,7 @@ hc_marriage_certificate_interaction = {
 		}
 		modifier = {
 			trigger = {
-				is_close_family_of = root
+				is_close_family_of = scope:actor
 			}
 			add = -20
 			desc = interaction_close_family_desc
@@ -259,8 +264,13 @@ hc_marriage_certificate_with_has_married_interaction = {
 	is_shown = {
 		scope:actor = {
 			is_ai = no
-			not = {
-				has_trait = hc_immutable
+			trigger_if = {
+				limit = {
+					has_game_rule = hc_one_certificate_quantity
+				}
+				not = {
+					has_trait = hc_immutable
+				}
 			}
 			this.house = {
 				has_house_modifier = td_house_modifier
@@ -336,6 +346,7 @@ hc_baptism_interaction = {
 			OR = {
 				is_courtier_of = scope:actor
 				is_pool_guest_of = scope:actor
+				is_vassal_or_below_of = scope:actor
 			}
 			not = {
 				has_trait = hc_immutable
@@ -420,7 +431,7 @@ hc_baptism_interaction = {
 		}
 		modifier = {
 			trigger = {
-				is_close_family_of = root
+				is_close_family_of = scope:actor
 			}
 			add = 20
 			desc = interaction_common_desc

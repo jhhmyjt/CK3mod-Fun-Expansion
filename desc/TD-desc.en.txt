@@ -18,6 +18,20 @@ Not compatible with Iron Man
 [*]Illustration of Campanulaceae flower,[url=https://www.zcool.com.cn/work/ZNDExNjEyMDg=.html]画师：苏俺[/url]
 [/list]
 
+[h1]Recent updates[/h1]
+7.9
+new content
+[list]
+       [*] Rules of the game: Seduction/Court settings
+       [*] Rules of the game: Setting the number of contracts
+[/list]
+Revise
+[list]
+       [*]Attribute Modification: Trait immutable until death, Marriage Certificate
+       [*]Localized text modification
+       [*]Interaction: Baptize it can now be used on vassals
+[/list]
+
 [h1]End[/h1]
 
 If you think this mod is not bad, you can give me a like👍

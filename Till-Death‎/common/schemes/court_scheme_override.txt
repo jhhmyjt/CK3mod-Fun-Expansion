@@ -187,6 +187,14 @@
 		modifier = {
 			add = -5000
 			desc = "hc_scheme_target_has_immutable"
+			trigger_if = {
+				limit = {
+					has_game_rule = hc_seduce_court_ai_cannot
+				}
+				scope:owner = {
+					is_ai = yes
+				}
+			}
 			scope:target = {
 				has_trait = hc_immutable
 			}
@@ -199,6 +207,14 @@
 		modifier = {
 			add = -5000
 			desc = "hc_scheme_target_nothas_immutable"
+			trigger_if = {
+				limit = {
+					has_game_rule = hc_seduce_court_ai_cannot
+				}
+				scope:owner = {
+					is_ai = yes
+				}
+			}
 			scope:target = {
 				not = {
 					has_trait = hc_immutable
@@ -221,6 +237,14 @@
 		modifier = {
 			add = -1000
 			desc = "hc_scheme_has_baptized_immutable"
+			trigger_if = {
+				limit = {
+					has_game_rule = hc_seduce_court_ai_cannot
+				}
+				scope:owner = {
+					is_ai = yes
+				}
+			}
 			scope:target = {
 				has_character_modifier = hc_char_modifier_08
 			}
@@ -228,6 +252,14 @@
 		modifier = {
 			add = -1000
 			desc = "hc_scheme_owner_has_baptized_immutable"
+			trigger_if = {
+				limit = {
+					has_game_rule = hc_seduce_court_ai_cannot
+				}
+				scope:owner = {
+					is_ai = yes
+				}
+			}
 			scope:owner = {
 				has_character_modifier = hc_char_modifier_08
 			}

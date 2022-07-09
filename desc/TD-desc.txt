@@ -5,6 +5,14 @@
 
 [b]勿同时激活[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2491792487]娱乐向扩展[/url]和本mod，娱乐向扩展内容包含本mod[/b]
 
+[h1]详情[/h1]
+人物互动
+[list]
+[*]许诺誓言：与配偶缔结神圣契约
+[*]缔结婚约：与未婚/未订婚角色（需满足可订婚条件）订婚、许下誓言、缔结神圣契约
+[*]为其洗礼：为在你宫廷中的角色进行洗礼，使其免受欲念的困扰，并防止其恣情纵欲
+[/list]
+
 [h1]支持语言[/h1]
 简体中文
 English(by Google)
@@ -19,6 +27,19 @@ English(by Google)
 [*]桔梗花插画,[url=https://www.zcool.com.cn/work/ZNDExNjEyMDg=.html]画师：苏俺[/url]
 [/list]
 
+[h1]近期更新[/h1]
+7.9
+新增内容
+[list]
+      [*]游戏规则：勾引/求爱设置
+      [*]游戏规则：契约数量设置
+[/list]
+修改
+[list]
+      [*]属性修改：特质至死不渝、婚书
+      [*]本地化文本修改
+      [*]互动：为其洗礼现在可以对封臣使用
+[/list]
 
 [h1]最后[/h1]
 

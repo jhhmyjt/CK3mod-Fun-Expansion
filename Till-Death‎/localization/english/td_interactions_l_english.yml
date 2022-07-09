@@ -11,7 +11,7 @@
  hc_baptism_interaction_desc:0 "Baptize [recipient.GetFirstNameNoTooltip] from lust and prevent him from indulging in lust"
  hc_baptism_interaction_effect_tt_01:0 "Baptize [recipient.GetFirstNameNoTooltip]"
  hc_baptism_interaction_effect_tt_02:0 "Accept the baptism of [actor.GetFirstNameNoTooltip]"
- interaction_close_family_desc:0 "You are close relatives; $VALUE|=+0$"
+ interaction_close_family_desc:0 "You are close relatives:$VALUE|=+0$"
  INTERACTION_SHY:0 "[GetTrait('shy').GetName( recipient )]:$VALUE|=+0$"
  INTERACTION_LUSTFUL:0 "[GetTrait('lustful').GetName( recipient )]:$VALUE|=+0$"
  interaction_hc_immutable:0 "[GetTrait('hc_immutable').GetName( recipient )]:$VALUE|=+0$"

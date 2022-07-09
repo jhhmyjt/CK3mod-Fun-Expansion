@@ -33,17 +33,17 @@ Not compatible with Iron Man
 [/list]
 
 [h1]Recent updates[/h1]
-7.1
+7.9
 new content
 [list]
-       [*]Interaction: Baptism, baptizing characters in own court (gained anti-seduction/courtship modifier, removed when gaining the Unyielding trait)
-       [*]Game rules: Inheritance settings, complete the divine test to unlock all inheritances (Nos, Iberia), but only if there is a corresponding dlc
+       [*] Rules of the game: Seduction/Court settings
+       [*] Rules of the game: Setting the number of contracts
 [/list]
 Revise
 [list]
-       [*]Modify the Temple Judgment Heavy Cavalry Icon
-       [*]Modify the interactive icon of the canonized knight
-       [*] Some localization bugfixes
+       [*]Attribute Modification: Trait Unswerving, Marriage Certificate
+       [*]Localized text modification
+       [*]Interaction: Baptize it can now be used on vassals
 [/list]
 
 [h1]Last[/h1]
