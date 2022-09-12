@@ -1,9 +1,10 @@
-version="1"
-tags={
+version = "1.7"
+tags = {
 	"Events"
 	"Decisions"
 	"Character Interactions"
 }
-name="Till Death"
-supported_version="1.6.1.*"
-remote_file_id="2832082862"
+
+name = "Till Death"
+supported_version = "1.7.*"
+remote_file_id = "2832082862"

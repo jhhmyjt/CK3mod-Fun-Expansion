@@ -10,7 +10,7 @@ cruise_random_pulse = {
 	random_events = {
 		100 = cruise.003
 		100 = cruise.004
-		20 = cruise.009
+		10 = cruise.009
 		#50 = 0
 	}
 	fallback = cruise_end_pulse	#To complete the activity if no valid events exists

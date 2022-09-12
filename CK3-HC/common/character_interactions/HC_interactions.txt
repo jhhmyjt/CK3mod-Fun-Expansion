@@ -117,7 +117,7 @@
 	}
 	auto_accept = no
 	ai_accept = {
-		base = 0
+		base = 10
 		modifier = {
 			trigger = {
 				always = scope:hook
@@ -188,64 +188,83 @@
 			add = 50
 			desc = interaction_common_desc
 		}
+		#opinion
+		modifier = {
+			add = 30
+			scope:recipient = {
+				opinion = {
+					target = scope:actor
+					value >= 50
+				}
+			}
+		}
+		modifier = {
+			add = -30
+			scope:recipient = {
+				opinion = {
+					target = scope:actor
+					value <= 0
+				}
+			}
+		}
 		# Weight up for personality values.
-		ai_value_modifier = {
-			who = scope:recipient
-			ai_boldness = {
-				if = {
-					limit = {
-						scope:recipient = {
-							NOT = {
-								ai_boldness = 0
-							}
-						}
-					}
-					value = 0.5
-				}
-			}
-			ai_compassion = {
-				if = {
-					limit = {
-						scope:recipient = {
-							NOT = {
-								ai_compassion = 0
-							}
-						}
-					}
-					value = -0.5
-				}
-			}
-		}
-		modifier = {
-			add = -1000
-			has_trait = craven
-			desc = INTERACTION_CRAVEN
-		}
-		modifier = {
-			add = -50
-			has_trait = content
-			desc = INTERACTION_CONTENT
-		}
-		modifier = {
-			add = -50
-			has_trait = humble
-			desc = INTERACTION_HUMBLE
-		}
-		modifier = {
-			add = -50
-			has_trait = lazy
-			desc = INTERACTION_LAZY
-		}
-		modifier = {
-			add = 100
-			has_trait = brave
-			desc = INTERACTION_BRAVE
-		}
-		modifier = {
-			add = 25
-			has_trait = ambitious
-			desc = INTERACTION_AMBITIOUS
-		}
+		# ai_value_modifier = {
+		# 	who = scope:recipient
+		# 	ai_boldness = {
+		# 		if = {
+		# 			limit = {
+		# 				scope:recipient = {
+		# 					NOT = {
+		# 						ai_boldness = 0
+		# 					}
+		# 				}
+		# 			}
+		# 			value = 0.5
+		# 		}
+		# 	}
+		# 	ai_compassion = {
+		# 		if = {
+		# 			limit = {
+		# 				scope:recipient = {
+		# 					NOT = {
+		# 						ai_compassion = 0
+		# 					}
+		# 				}
+		# 			}
+		# 			value = -0.5
+		# 		}
+		# 	}
+		# }
+		# modifier = {
+		# 	add = -1000
+		# 	has_trait = craven
+		# 	desc = INTERACTION_CRAVEN
+		# }
+		# modifier = {
+		# 	add = -50
+		# 	has_trait = content
+		# 	desc = INTERACTION_CONTENT
+		# }
+		# modifier = {
+		# 	add = -50
+		# 	has_trait = humble
+		# 	desc = INTERACTION_HUMBLE
+		# }
+		# modifier = {
+		# 	add = -50
+		# 	has_trait = lazy
+		# 	desc = INTERACTION_LAZY
+		# }
+		# modifier = {
+		# 	add = 100
+		# 	has_trait = brave
+		# 	desc = INTERACTION_BRAVE
+		# }
+		# modifier = {
+		# 	add = 25
+		# 	has_trait = ambitious
+		# 	desc = INTERACTION_AMBITIOUS
+		# }
 		modifier = {
 			add = -1000
 			hc_has_god_descent_trigger = yes
@@ -364,7 +383,7 @@ hc_sese_interaction = {
 	}
 	auto_accept = no
 	ai_accept = {
-		base = 0
+		base = 10
 		modifier = {
 			trigger = {
 				always = scope:hook
@@ -607,7 +626,7 @@ hc_marriage_certificate_interaction = {
 	}
 	auto_accept = no
 	ai_accept = {
-		base = 0
+		base = 10
 		#more modifier:rank piety trait
 		#opinion
 		modifier = {
@@ -901,12 +920,12 @@ hc_baptism_interaction = {
 	}
 	cost = {
 		piety = {
-			value = 500
+			value = 100
 		}
 	}
 	auto_accept = no
 	ai_accept = {
-		base = 0
+		base = 10
 		modifier = {
 			trigger = {
 				always = scope:hook

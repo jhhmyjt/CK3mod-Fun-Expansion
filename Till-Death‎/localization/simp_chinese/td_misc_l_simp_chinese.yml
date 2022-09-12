@@ -1,4 +1,4 @@
 ﻿l_simp_chinese:
- hc_scheme_target_has_immutable:0 "对方拥有特质[GetTrait('hc_immutable').GetName( GetPlayer )]：$VALUE|+0=$"
- hc_scheme_owner_has_immutable:0 "对方拥有特质[GetTrait('hc_immutable').GetName( GetPlayer )]，[target.GetShortUIName]是你的[spouse|E]：$VALUE|+0=$"
+ hc_scheme_target_has_immutable:0 "[target.GetFirstNameNoTooltip]拥有特质[GetTrait('hc_immutable').GetName( GetPlayer )]：$VALUE|+0=$"
+ hc_scheme_owner_has_immutable:0 "[target.GetFirstNameNoTooltip]拥有特质[GetTrait('hc_immutable').GetName( GetPlayer )]，[target.GetShortUIName]是你的[spouse|E]：$VALUE|+0=$"
  hc_scheme_target_nothas_immutable:0 "你拥有特质[GetTrait('hc_immutable').GetName( GetPlayer )]：$VALUE|+0=$"

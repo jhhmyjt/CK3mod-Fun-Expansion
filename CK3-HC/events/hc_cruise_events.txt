@@ -389,7 +389,7 @@ cruise.004 = {
 	option = {
 		#同意商人
 		name = cruise.004.a
-		remove_short_term_gold = 270
+		remove_short_term_gold = 80
 		add_prestige = 100
 		trigger_event = {
 			id = cruise.001
@@ -579,6 +579,19 @@ cruise.009 = {
 		reference = terrain_activity
 	}
 	trigger = {
+		OR = {
+			num_of_relation_rival > 0
+			num_of_relation_potential_rival > 0
+		}
+		any_relation = {
+			type = rival
+			is_ai = yes
+			opinion = {
+				target = root
+				value <= 10
+			}
+			is_ai = yes
+		}
 		scope:activity = {
 			any_in_list = {
 				variable = potential_cruise_participants
@@ -587,16 +600,6 @@ cruise.009 = {
 					has_trait = ambitious
 					has_trait = sadistic
 				}
-				# OR = {
-				# 	opinion = {
-				# 		target = root
-				# 		value < 80
-				# 	}
-				# 	OR = {
-				# 		has_relation_rival = root
-				# 		has_relation_potential_rival = root
-				# 	}
-				# }
 			}
 			variable_list_size = {
 				name = potential_cruise_participants
@@ -605,6 +608,24 @@ cruise.009 = {
 		}
 	}
 	immediate = {
+		random_relation = {
+			type = rival
+			limit = {
+				opinion = {
+					target = root
+					value <= 0
+				}
+				is_ai = yes
+			}
+			alternative_limit = {
+				opinion = {
+					target = root
+					value <= 10
+				}
+				is_ai = yes
+			}
+			save_scope_as = rival
+		}
 		scope:activity = {
 			random_in_list = {
 				variable = potential_cruise_participants
@@ -624,16 +645,6 @@ cruise.009 = {
 						has_trait = ambitious
 						has_trait = sadistic
 					}
-					# OR = {
-					# 	opinion = {
-					# 		target = root
-					# 		value< = 80
-					# 	}
-					# 	or = {
-					# 		has_relation_rival = root
-					# 		has_relation_potential_rival = root
-					# 	}
-					# }
 				}
 				save_scope_as = cruise_knight_scope_02
 			}
@@ -1074,12 +1085,25 @@ cruise.012 = {
 		character = scope:cruise_knight_scope_02
 		animation = severelyinjured
 	}
+	lower_left_portrait = {
+		character = scope:cruise_knight_scope_01
+		animation = personality_honorable
+	}
 	theme = crown
 	override_background = {
 		reference = alley_night
 	}
 	trigger = {
 		is_ai = no
+	}
+	immediate = {
+		scope:rival = {
+			add_prestige = -200
+		}
+		add_character_modifier = {
+			modifier = more_vigilant_recistance_modifier
+			months = 3
+		}
 	}
 	option = {
 		name = cruise.012.a
@@ -1091,10 +1115,6 @@ cruise.012 = {
 		}
 		add_prestige = 350
 		add_dread = 30
-		add_character_modifier = {
-			modifier = more_vigilant_recistance_modifier
-			months = 3
-		}
 	}
 	option = {
 		name = cruise.012.b
@@ -1107,9 +1127,16 @@ cruise.012 = {
 			}
 		}
 		add_dread = -30
-		add_character_modifier = {
-			modifier = more_vigilant_recistance_modifier
-			months = 3
+	}
+	option = {
+		name = cruise.012.c
+		imprison = {
+			target = scope:cruise_knight_scope_02
+			type = dungeon
+		}
+		imprison = {
+			target = scope:rival
+			type = dungeon
 		}
 	}
 	after = {

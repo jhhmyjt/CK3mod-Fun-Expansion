@@ -1,5 +1,5 @@
 ﻿activity_cruise = {
-	expiration_days = 100
+	expiration_days = 60
 	days_until_auto_start = 5
 	solo = yes
 	color = {
@@ -57,7 +57,7 @@
 				on_action = cruise_random_pulse
 				days = {
 					10
-					20
+					15
 				}
 			}
 		}

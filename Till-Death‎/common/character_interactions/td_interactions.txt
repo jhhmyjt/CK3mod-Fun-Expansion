@@ -107,7 +107,7 @@ hc_marriage_certificate_interaction = {
 	}
 	auto_accept = no
 	ai_accept = {
-		base = 0
+		base = 10
 		#more modifier:rank piety trait
 		#opinion
 		modifier = {
@@ -416,12 +416,12 @@ hc_baptism_interaction = {
 	}
 	cost = {
 		piety = {
-			value = 500
+			value = 100
 		}
 	}
 	auto_accept = no
 	ai_accept = {
-		base = 0
+		base = 10
 		modifier = {
 			trigger = {
 				always = scope:hook

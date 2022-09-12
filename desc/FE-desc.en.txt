@@ -34,16 +34,11 @@ Not compatible with Iron Man
 
 [h1]Recent updates[/h1]
 7.9
-new content
+Minor edits
 [list]
-       [*] Rules of the game: Seduction/Court settings
-       [*] Rules of the game: Setting the number of contracts
-[/list]
-Revise
-[list]
-       [*]Attribute Modification: Trait Unswerving, Marriage Certificate
-       [*]Localized text modification
-       [*]Interaction: Baptize it can now be used on vassals
+       [*]Increased the basic willingness value of character interaction
+       [*]Reduced piety required for Baptism interaction
+       [*] Some localized text fixes
 [/list]
 
 [h1]Last[/h1]

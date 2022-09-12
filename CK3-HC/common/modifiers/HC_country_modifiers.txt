@@ -1,14 +1,4 @@
-﻿#未曾设想的道路
-# hc_country_modifier_01 = {
-# 	icon = stewardship_positive
-# 	monthly_county_control_change_factor = 0.1
-# 	development_growth_factor = 0.35
-# 	county_opinion_add = 15
-# 	build_speed = -0.2
-# 	build_gold_cost = -0.25
-# 	monthly_county_control_change_add = 1.5
-# }
-#修建黄金议事宫
+﻿#修建黄金议事宫
 hc_country_modifier_02 = {
 	icon = stewardship_positive
 	development_growth_factor = 0.5
