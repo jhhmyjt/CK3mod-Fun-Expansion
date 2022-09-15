@@ -1,4 +1,4 @@
-l_english:
+﻿l_english:
 hc_scheme_target_has_immutable:0 "[target.GetFirstNameNoTooltip] has the trait [GetTrait('hc_immutable').GetName( GetPlayer )]:$VALUE|+0=$"
   hc_scheme_owner_has_immutable:0 "[target.GetFirstNameNoTooltip] has the trait [GetTrait('hc_immutable').GetName( GetPlayer )], [target.GetShortUIName] is your [spouse|E]:$VALUE|+0=$"
   hc_scheme_target_nothas_immutable:0 "You have the trait [GetTrait('hc_immutable').GetName( GetPlayer )]:$VALUE|+0=$"

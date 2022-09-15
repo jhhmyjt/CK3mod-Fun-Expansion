@@ -214,7 +214,7 @@ hc_love.02 = {
 		hidden_effect = {
 			#发送信息
 			send_interface_toast = {
-				type = event_generic_good_text
+				type = event_generic_good
 				title = hc_marriage_notification
 				left_icon = scope:actor
 				right_icon = scope:recipient
@@ -306,7 +306,7 @@ hc_love.03 = {
 		#发送信息
 		hidden_effect = {
 			send_interface_toast = {
-				type = event_generic_good_text
+				type = event_generic_good
 				title = hc_marriage_with_married_notification
 				left_icon = scope:actor
 				right_icon = scope:recipient

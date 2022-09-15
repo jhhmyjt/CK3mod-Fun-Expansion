@@ -49,7 +49,12 @@ cruise.001 = {
 				modifier = {
 					add = stewardship
 				}
-				add_prestige = 150
+				send_interface_toast = {
+					type = event_generic_good
+					title = hc_cruise001_notification_01
+					left_icon = root
+					add_prestige = 150
+				}
 			}
 			30 = {
 				trigger = {
@@ -58,22 +63,42 @@ cruise.001 = {
 				modifier = {
 					add = stewardship
 				}
-				add_gold = 100
+				send_interface_toast = {
+					type = event_generic_good
+					title = hc_cruise001_notification_01
+					left_icon = root
+					add_gold = 100
+				}
 			}
 			10 = {
-				add_character_modifier = {
-					modifier = hc_10_modifier
-					months = 5
+				send_interface_toast = {
+					type = event_generic_good
+					title = hc_cruise001_notification_01
+					left_icon = root
+					add_character_modifier = {
+						modifier = hc_10_modifier
+						months = 5
+					}
 				}
 			}
 			5 = {
 				trigger = {
 					stewardship_lifestyle_perk_points < 1
 				}
-				add_stewardship_lifestyle_xp = 30
+				send_interface_toast = {
+					type = event_generic_good
+					title = hc_cruise001_notification_01
+					left_icon = root
+					add_stewardship_lifestyle_xp = 30
+				}
 			}
 			5 = {
-				add_stewardship_skill = 1
+				send_interface_toast = {
+					type = event_generic_good
+					title = hc_cruise001_notification_01
+					left_icon = root
+					add_stewardship_skill = 1
+				}
 			}
 		}
 		trigger_event = {
@@ -131,7 +156,12 @@ cruise.002 = {
 				modifier = {
 					add = martial
 				}
-				add_prestige = 200
+				send_interface_toast = {
+					type = event_generic_good
+					title = hc_cruise001_notification_01
+					left_icon = root
+					add_prestige = 200
+				}
 			}
 			30 = {
 				trigger = {
@@ -142,24 +172,44 @@ cruise.002 = {
 				modifier = {
 					add = martial
 				}
-				root.dynasty = {
-					add_dynasty_prestige = 100
+				send_interface_toast = {
+					type = event_generic_good
+					title = hc_cruise001_notification_01
+					left_icon = root
+					root.dynasty = {
+						add_dynasty_prestige = 100
+					}
 				}
 			}
 			10 = {
-				add_character_modifier = {
-					modifier = hc_11_modifier
-					months = 6
+				send_interface_toast = {
+					type = event_generic_good
+					title = hc_cruise001_notification_01
+					left_icon = root
+					add_character_modifier = {
+						modifier = hc_11_modifier
+						months = 6
+					}
 				}
 			}
 			10 = {
 				trigger = {
 					martial_lifestyle_perk_points < 1
 				}
-				add_martial_lifestyle_xp = 20
+				send_interface_toast = {
+					type = event_generic_good
+					title = hc_cruise001_notification_01
+					left_icon = root
+					add_martial_lifestyle_xp = 20
+				}
 			}
 			5 = {
-				add_martial_skill = 1
+				send_interface_toast = {
+					type = event_generic_good
+					title = hc_cruise001_notification_01
+					left_icon = root
+					add_martial_skill = 1
+				}
 			}
 		}
 		trigger_event = {
@@ -324,9 +374,14 @@ cruise.003 = {
 				}
 			}
 			20 = {
-				scope:cruise_province = {
-					this.county = {
-						change_county_control = -20
+				send_interface_toast = {
+					type = event_generic_bad
+					title = hc_cruise001_notification_01
+					left_icon = root
+					scope:cruise_province = {
+						this.county = {
+							change_county_control = -20
+						}
 					}
 				}
 				trigger_event = {
@@ -338,7 +393,12 @@ cruise.003 = {
 				}
 			}
 			30 = {
-				add_piety = -100
+				send_interface_toast = {
+					type = event_generic_bad
+					title = hc_cruise001_notification_01
+					left_icon = root
+					add_piety = -100
+				}
 				trigger_event = {
 					id = cruise.008
 					days = {
@@ -353,7 +413,12 @@ cruise.003 = {
 						has_trait = sadistic
 					}
 				}
-				add_trait = sadistic
+				send_interface_toast = {
+					type = event_generic_neutral
+					title = hc_cruise001_notification_01
+					left_icon = root
+					add_trait = sadistic
+				}
 				trigger_event = {
 					id = cruise.008
 					days = {
@@ -431,7 +496,12 @@ cruise.004 = {
 				trigger = {
 					intrigue_lifestyle_perk_points < 1
 				}
-				add_intrigue_lifestyle_xp = 10
+				send_interface_toast = {
+					type = event_generic_good
+					title = hc_cruise001_notification_01
+					left_icon = root
+					add_intrigue_lifestyle_xp = 10
+				}
 				trigger_event = {
 					id = cruise.008
 					days = {
@@ -441,7 +511,12 @@ cruise.004 = {
 				}
 			}
 			30 = {
-				add_prestige = -100
+				send_interface_toast = {
+					type = event_generic_bad
+					title = hc_cruise001_notification_01
+					left_icon = root
+					add_prestige = -100
+				}
 				trigger_event = {
 					id = cruise.008
 					days = {
@@ -456,7 +531,12 @@ cruise.004 = {
 						has_trait = fickle
 					}
 				}
-				add_trait = fickle
+				send_interface_toast = {
+					type = event_generic_neutral
+					title = hc_cruise001_notification_01
+					left_icon = root
+					add_trait = fickle
+				}
 				trigger_event = {
 					id = cruise.008
 					days = {

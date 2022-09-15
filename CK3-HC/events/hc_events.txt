@@ -1,4 +1,41 @@
 ﻿namespace = hc
+#test
+# hc.000 = {
+# 	type = character_event
+# 	desc = hc.001.desc
+# 	title = hc.001.t
+# 	left_portrait = {
+# 		character = ROOT
+# 		animation = stress
+# 	}
+# 	theme = crown
+# 	override_background = {
+# 		reference = corridor_night
+# 	}
+# 	option = {
+# 		name = hc.001.a
+# 		send_interface_toast = {
+# 			type = event_generic_good
+# 			title = hc_cruise001_notification_01
+# 			left_icon = root
+# 			add_prestige = 150
+# 		}
+# 	}
+# 	option = {
+# 		name = hc.001.b
+# 		add_prestige = 150
+# 		hidden_effect = {
+# 			send_interface_toast = {
+# 				type = event_generic_good
+# 				title = hc_cruise001_notification_01
+# 				left_icon = root
+# 				show_as_tooltip = {
+# 					add_prestige = 150
+# 				}
+# 			}
+# 		}
+# 	}
+# }
 #接受神考
 hc.001 = {
 	type = character_event
@@ -84,10 +121,6 @@ hc.002 = {
 			}
 			hc_create_artifact_saint_sword_effect = {
 				OWNER = root
-			}
-			add_to_global_variable_list = {
-				name = hc_unavailable_unique_art
-				target = flag:hc_artifact_saint_sword
 			}
 		}
 		root.house = {

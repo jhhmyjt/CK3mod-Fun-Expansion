@@ -66,3 +66,8 @@ hc_char_modifier_08 = {
 	monthly_piety = 0.8
 	icon = magic_positive
 }
+
+hc_char_modifier_09 = {
+	stress_gain_mult = -0.2
+	icon = stress_positive
+}

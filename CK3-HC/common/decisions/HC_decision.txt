@@ -194,7 +194,7 @@ hc_cruise_decision = {
 		}
 	}
 	cooldown = {
-		years = 3
+		years = 5
 	}
 	is_shown = {
 		is_landed = yes
@@ -219,7 +219,9 @@ hc_cruise_decision = {
 			athletic = -10
 			sadistic = 30
 			brave = -20
+			god_descent_mini = -50
 			god_descent = -50
+			god_descent_pro = -50
 		}
 		hidden_effect = {
 			random_sub_realm_barony = {
@@ -515,7 +517,6 @@ hc_establish_building_special_decision = {
 		custom_tooltip = hc_establish_building_special_decision_custom_tt_01
 		custom_tooltip = hc_establish_building_special_decision_custom_tt_02
 		hc_special_build_effect = yes
-		# hc_special_build_effect = yes
 		trigger_event = hc_special_build.001
 	}
 	ai_will_do = {

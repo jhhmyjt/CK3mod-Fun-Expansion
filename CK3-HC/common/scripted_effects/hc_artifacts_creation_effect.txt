@@ -50,12 +50,12 @@ hc_create_artifact_marriage_certificate_effect = {
 			wealth = scope:wealth
 			quality = scope:quality
 			decaying = no
-			save_scope_as = newly_created_artifact
+			save_scope_as = newly_created_marriage_certificate
 			history = {
 				type = created_before_history
 			}
 		}
-		scope:newly_created_artifact = {
+		scope:newly_created_marriage_certificate = {
 			set_variable = {
 				name = historical_unique_artifact
 				value = yes

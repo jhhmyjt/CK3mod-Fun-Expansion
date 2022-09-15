@@ -2,3 +2,5 @@
  hc_scheme_target_has_immutable:0 "[target.GetFirstNameNoTooltip]拥有特质[GetTrait('hc_immutable').GetName( GetPlayer )]：$VALUE|+0=$"
  hc_scheme_owner_has_immutable:0 "[target.GetFirstNameNoTooltip]拥有特质[GetTrait('hc_immutable').GetName( GetPlayer )]，[target.GetShortUIName]是你的[spouse|E]：$VALUE|+0=$"
  hc_scheme_target_nothas_immutable:0 "你拥有特质[GetTrait('hc_immutable').GetName( GetPlayer )]：$VALUE|+0=$"
+ hc_had_sex_with_effect_ct_01:0 "不能违背誓言！"
+ hc_had_sex_with_effect_ct_02:0 "神在看着我们！"

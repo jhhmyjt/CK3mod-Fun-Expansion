@@ -82,62 +82,176 @@ hc_decision.002 = {
 	}
 	option = {
 		name = hc_decision.002.a
-		trigger = {
-			is_ai = no
-		}
-		scope:hc_artifacts_sword = {
-			add_artifact_modifier = hc_saint_sword_strengthen_06
+		random_list = {
+			50 = {
+				send_interface_toast = {
+					type = event_generic_good
+					title = hc_strength_artifact_notification
+					left_icon = root
+					right_icon = scope:hc_artifacts_sword
+					scope:hc_artifacts_sword = {
+						add_artifact_modifier = hc_saint_sword_strengthen_knight_01
+					}
+				}
+			}
+			50 = {
+				send_interface_toast = {
+					type = event_generic_good
+					title = hc_strength_artifact_notification
+					left_icon = root
+					right_icon = scope:hc_artifacts_sword
+					scope:hc_artifacts_sword = {
+						add_artifact_modifier = hc_saint_sword_strengthen_knight_02
+					}
+				}
+			}
 		}
 	}
 	option = {
 		name = hc_decision.002.b
-		trigger = {
-			is_ai = no
-		}
 		random_list = {
 			50 = {
-				scope:hc_artifacts_sword = {
-					add_artifact_modifier = hc_saint_sword_strengthen_02
+				send_interface_toast = {
+					type = event_generic_good
+					title = hc_strength_artifact_notification
+					left_icon = root
+					right_icon = scope:hc_artifacts_sword
+					scope:hc_artifacts_sword = {
+						add_artifact_modifier = hc_saint_sword_strengthen_02
+					}
 				}
 			}
-			20 = {
-				scope:hc_artifacts_sword = {
-					add_artifact_modifier = hc_saint_sword_strengthen_05
+			50 = {
+				send_interface_toast = {
+					type = event_generic_good
+					title = hc_strength_artifact_notification
+					left_icon = root
+					right_icon = scope:hc_artifacts_sword
+					scope:hc_artifacts_sword = {
+						add_artifact_modifier = hc_saint_sword_strengthen_03
+					}
 				}
 			}
 		}
 	}
 	option = {
 		name = hc_decision.002.c
-		trigger = {
-			is_ai = no
-		}
 		random_list = {
 			30 = {
-				scope:hc_artifacts_sword = {
-					add_artifact_modifier = hc_saint_sword_strengthen_01
+				send_interface_toast = {
+					type = event_generic_good
+					title = hc_strength_artifact_notification
+					left_icon = root
+					right_icon = scope:hc_artifacts_sword
+					scope:hc_artifacts_sword = {
+						add_artifact_modifier = hc_saint_sword_strengthen_advantage_01
+					}
 				}
 			}
-			20 = {
-				scope:hc_artifacts_sword = {
-					add_artifact_modifier = hc_saint_sword_strengthen_03
+			30 = {
+				send_interface_toast = {
+					type = event_generic_good
+					title = hc_strength_artifact_notification
+					left_icon = root
+					right_icon = scope:hc_artifacts_sword
+					scope:hc_artifacts_sword = {
+						add_artifact_modifier = hc_saint_sword_strengthen_advantage_02
+					}
 				}
 			}
-			20 = {
-				scope:hc_artifacts_sword = {
-					add_artifact_modifier = hc_saint_sword_strengthen_04
+			30 = {
+				send_interface_toast = {
+					type = event_generic_good
+					title = hc_strength_artifact_notification
+					left_icon = root
+					right_icon = scope:hc_artifacts_sword
+					scope:hc_artifacts_sword = {
+						add_artifact_modifier = hc_saint_sword_strengthen_advantage_03
+					}
 				}
 			}
 		}
 	}
 	option = {
 		name = hc_decision.002.d
-		trigger = {
-			is_ai = no
+		random_list = {
+			20 = {
+				send_interface_toast = {
+					type = event_generic_good
+					title = hc_strength_artifact_notification
+					left_icon = root
+					right_icon = scope:hc_artifacts_sword
+					scope:hc_artifacts_sword = {
+						add_artifact_modifier = hc_saint_sword_strengthen_arm_01
+					}
+				}
+			}
+			20 = {
+				send_interface_toast = {
+					type = event_generic_good
+					title = hc_strength_artifact_notification
+					left_icon = root
+					right_icon = scope:hc_artifacts_sword
+					scope:hc_artifacts_sword = {
+						add_artifact_modifier = hc_saint_sword_strengthen_arm_02
+					}
+				}
+			}
+			20 = {
+				send_interface_toast = {
+					type = event_generic_good
+					title = hc_strength_artifact_notification
+					left_icon = root
+					right_icon = scope:hc_artifacts_sword
+					scope:hc_artifacts_sword = {
+						add_artifact_modifier = hc_saint_sword_strengthen_arm_03
+					}
+				}
+			}
+			20 = {
+				send_interface_toast = {
+					type = event_generic_good
+					title = hc_strength_artifact_notification
+					left_icon = root
+					right_icon = scope:hc_artifacts_sword
+					scope:hc_artifacts_sword = {
+						add_artifact_modifier = hc_saint_sword_strengthen_arm_04
+					}
+				}
+			}
 		}
+	}
+	option = {
+		name = hc_decision.002.e
+		random_list = {
+			20 = {
+				send_interface_toast = {
+					type = event_generic_good
+					title = hc_strength_artifact_notification
+					left_icon = root
+					right_icon = scope:hc_artifacts_sword
+					scope:hc_artifacts_sword = {
+						add_artifact_modifier = hc_saint_sword_strengthen_prestige_01
+					}
+				}
+			}
+			20 = {
+				send_interface_toast = {
+					type = event_generic_good
+					title = hc_strength_artifact_notification
+					left_icon = root
+					right_icon = scope:hc_artifacts_sword
+					scope:hc_artifacts_sword = {
+						add_artifact_modifier = hc_saint_sword_strengthen_prestige_02
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = hc_decision.002.f
 		hidden_effect = {
-			add_gold = 750
-			add_prestige_no_experience = 500
+			add_gold = 200
 			remove_decision_cooldown = hc_strength_artifact_decision
 		}
 	}
