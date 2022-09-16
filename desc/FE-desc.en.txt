@@ -33,12 +33,10 @@ Not compatible with Iron Man
 [/list]
 
 [h1]Recent updates[/h1]
-7.9
-Minor edits
+9.16
 [list]
-       [*]Increased the basic willingness value of character interaction
-       [*]Reduced piety required for Baptism interaction
-       [*] Some localized text fixes
+       [*]Baptism interaction directly sends result notifications, no longer through events (reduce repetitive operations)
+       [*] Modify the original had_sex_with_effect effect to achieve the following effects: Characters with the trait of immortality can only have relations with characters who also have the trait of immortality, and only AI restrictions can be set in the game rules (same as seduction/courtship) settings), characters who have been corrected by baptism cannot have relationships with characters other than their spouses. If there are any mistakes, please report in the message area
 [/list]
 
 [h1]Last[/h1]

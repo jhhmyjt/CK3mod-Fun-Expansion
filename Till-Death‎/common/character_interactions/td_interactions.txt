@@ -365,22 +365,27 @@ hc_baptism_interaction = {
 	on_accept = {
 		scope:actor = {
 			custom_tooltip = hc_baptism_interaction_effect_tt_01
-			trigger_event = hc.012
+			send_interface_toast = {
+				type = event_generic_good
+				title = hc_baptism_interaction_notification
+				left_icon = scope:recipient
+				right_icon = scope:actor
+				scope:recipient = {
+					add_piety = 500
+					#增加人物修正
+					add_character_modifier = {
+						modifier = hc_char_modifier_08
+						years = 100
+					}
+					add_opinion = {
+						target = scope:actor
+						modifier = hc_baptize_opinion
+					}
+				}
+			}
 		}
 		scope:recipient = {
 			custom_tooltip = hc_baptism_interaction_effect_tt_02
-			show_as_tooltip = {
-				add_piety = 500
-				#增加人物修正
-				add_character_modifier = {
-					modifier = hc_char_modifier_08
-					years = 100
-				}
-				add_opinion = {
-					target = scope:actor
-					modifier = hc_baptize_opinion
-				}
-			}
 		}
 	}
 	auto_accept = {

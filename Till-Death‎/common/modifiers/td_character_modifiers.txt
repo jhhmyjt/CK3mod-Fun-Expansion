@@ -5,15 +5,15 @@ hc_char_modifier_06 = {
 	icon = love_positive
 }
 
-#受祝福的童年
-# hc_char_modifier_07 = {
-# 	health = 0.2
-# 	negate_health_penalty_add = 0.8
-# 	icon = health_positive
-# }
 #接受洗礼
 hc_char_modifier_08 = {
 	health = 0.1
 	monthly_piety = 0.8
 	icon = magic_positive
+}
+
+#拒绝了诱惑
+hc_char_modifier_09 = {
+	stress_gain_mult = -0.2
+	icon = stress_positive
 }

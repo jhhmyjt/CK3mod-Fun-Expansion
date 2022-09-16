@@ -21,6 +21,7 @@
  hc_baptism_interaction_desc:0 "为[recipient.GetFirstNameNoTooltip]进行洗礼，使其免受欲念的困扰，并防止其恣情纵欲"
  hc_baptism_interaction_effect_tt_01:0 "对[recipient.GetFirstNameNoTooltip]进行洗礼"
  hc_baptism_interaction_effect_tt_02:0 "接受[actor.GetFirstNameNoTooltip]的洗礼"
+ hc_baptism_interaction_notification:0 "洗礼"
  interaction_close_family_desc:0 "与你是近亲；$VALUE|=+0$"
  INTERACTION_SHY:0 "[GetTrait('shy').GetName( recipient )]：$VALUE|=+0$"
  INTERACTION_LUSTFUL:0 "[GetTrait('lustful').GetName( recipient )]：$VALUE|=+0$"

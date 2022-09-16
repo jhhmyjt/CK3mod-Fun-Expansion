@@ -5,10 +5,18 @@
 # 	sort_order = 0
 # 	is_shown = {
 # 		is_ai = no
-# 		# debug_only = yes
-# 		always = no
+# 		always = yes
 # 	}
 # 	is_valid = {
+# 		any_player = {
+# 			has_trait = hc_immutable
+# 		}
+# 		any_player = {
+# 			has_trait = hc_immutable
+# 			any_spouse = {
+# 				this = root
+# 			}
+# 		}
 # 	}
 # 	effect = {
 # 	}
@@ -19,6 +27,46 @@
 # 		base = 0
 # 	}
 # }
+#检测压力
+hc_check_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	selection_tooltip = hc_check_decision
+	desc = hc_check_decision
+	ai_check_interval = 0
+	major = no
+	sort_order = 0
+	is_shown = {
+		is_ai = no
+		always = yes
+	}
+	is_valid = {
+		root.dynasty = {
+			any_dynasty_member = {
+				has_character_modifier = hc_char_modifier_09
+				NOT = {
+					this = root
+				}
+			}
+		}
+	}
+	effect = {
+		root.dynasty = {
+			every_dynasty_member = {
+				limit = {
+					has_character_modifier = hc_char_modifier_09
+				}
+				add_piety = -1
+			}
+		}
+	}
+	ai_potential = {
+		always = no
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
 #开始
 hc_begin_decision = {
 	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
@@ -863,3 +911,154 @@ hc_build_chrysotriclinium_decision = {
 		base = 0
 	}
 }
+
+#设立皇帝权威
+# hc_emperor_authority_decision = {
+# 	picture = "gfx/interface/illustrations/decisions/decision_knight_kneeling.dds"
+# 	desc = hc_emperor_authority_decision_desc
+# 	selection_tooltip = hc_emperor_authority_decision_tooltip
+# 	major = yes
+# 	ai_check_interval = 0
+# 	is_shown = {
+# 		is_ruler = yes
+# 		is_landed = yes
+# 		root.culture = {
+# 			has_cultural_era_or_later = culture_era_early_medieval
+# 		}
+# 		NOT = {
+# 			#Can only do it once.
+# 			is_target_in_global_variable_list = {
+# 				name = unavailable_unique_decisions
+# 				target = flag:flag_hc_emperor_authority
+# 			}
+# 		}
+# 		highest_held_title_tier > 4		#Kings and Emperors only.
+# 		NOR = {
+# 			has_government = theocracy_government
+# 			has_government = clan_government
+# 			has_government = tribal_government
+# 		}
+# 	}
+# 	is_valid = {
+# 		prestige_level >= 5
+# 		NOT = {
+# 			has_realm_law = crown_authority_0
+# 		}
+# 		#Must control core provinces either in the North or the South:
+# 		completely_controls = title:b_roma
+# 		#Must have basic innovations:
+# 		root.culture = {
+# 			has_innovation = innovation_plenary_assemblies
+# 		}
+# 		any_vassal = {
+# 			count> = 3
+# 			is_powerful_vassal = yes
+# 			is_councillor = yes
+# 			opinion = {
+# 				target = root
+# 				value >= high_positive_opinion
+# 			}
+# 		}
+# 	}
+# 	is_valid_showing_failures_only = {
+# 		is_capable_adult = yes
+# 		is_imprisoned = no
+# 		is_at_war = no
+# 	}
+# 	cost = {
+# 		prestige = 5000
+# 	}
+# 	effect = {
+# 		send_interface_toast = {
+# 			type = event_generic_good
+# 			title = hc_emperor_authority_decision_notification
+# 			left_icon = root
+# 			if = {
+# 				limit = {
+# 					has_realm_law = crown_authority_0
+# 				}
+# 				add_realm_law_skip_effects = crown_authority_1
+# 			}
+# 			else_if = {
+# 				limit = {
+# 					has_realm_law = crown_authority_1
+# 				}
+# 				add_realm_law_skip_effects = crown_authority_2
+# 			}
+# 			else_if = {
+# 				limit = {
+# 					has_realm_law = crown_authority_2
+# 				}
+# 				add_realm_law_skip_effects = crown_authority_3
+# 			}
+# 			culture = {
+# 				if = {
+# 					limit = {
+# 						NOT = {
+# 							has_innovation = innovation_royal_prerogative
+# 						}
+# 					}
+# 					add_innovation = innovation_royal_prerogative
+# 				}
+# 			}
+# 		}
+# 		hidden_effect = {
+# 			add_to_global_variable_list = {
+# 				name = unavailable_unique_decisions
+# 				target = flag:flag_hc_emperor_authority
+# 			}
+# 		}
+# 	}
+# 	ai_potential = {
+# 		always = no
+# 	}
+# 	ai_will_do = {
+# 		base = 0
+# 	}
+# }
+# hc_eclaim_roma_decision = {
+# 	picture = "gfx/interface/illustrations/decisions/decision_destiny_goal.dds"
+# 	major = yes
+# 	ai_check_interval = 0
+# 	desc = reclaim_britannia_decision_desc
+# 	is_shown = {
+# 		culture = {
+# 			has_cultural_pillar = heritage_frankish
+# 		}
+# 		is_landed = yes
+# 		any_sub_realm_county = {
+# 			title_province = {
+# 				geographical_region = world_europe_west_britannia
+# 			}
+# 			NOR = {
+# 				culture = {
+# 					has_cultural_pillar = heritage_goidelic
+# 				}
+# 				culture = {
+# 					has_cultural_pillar = heritage_brythonic
+# 				}
+# 			}
+# 		}
+# 	}
+# 	is_valid = {
+# 		has_title = title:b_roma
+# 	}
+# 	is_valid_showing_failures_only = {
+# 		is_imprisoned = no
+# 		is_available_adult = yes
+# 		is_at_war = no
+# 	}
+# 	effect = {
+# 		show_as_tooltip = {
+# 			reclaim_britannia_decision_effect = yes
+# 		}
+# 		trigger_event = british_isles.0001
+# 		# Send event to other players
+# 	}
+# 	ai_potential = {
+# 		always = no
+# 	}
+# 	ai_will_do = {
+# 		base = 0
+# 	}
+# }

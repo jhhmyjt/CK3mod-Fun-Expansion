@@ -67,6 +67,7 @@ hc_char_modifier_08 = {
 	icon = magic_positive
 }
 
+#拒绝了诱惑
 hc_char_modifier_09 = {
 	stress_gain_mult = -0.2
 	icon = stress_positive
