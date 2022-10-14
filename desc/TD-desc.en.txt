@@ -19,11 +19,13 @@ Not compatible with Iron Man
 [/list]
 
 [h1]Recent updates[/h1]
-9.16
-[list]
-       [*]Baptism interaction directly sends result notifications, no longer through events (reduce repetitive operations)
-       [*] Modify the original had_sex_with_effect effect to achieve the following effects: Characters with the trait of immortality can only have relations with characters who also have the trait of immortality, and only AI restrictions can be set in the game rules (same as seduction/courtship) settings), characters who have been corrected by baptism cannot have relationships with characters other than their spouses. If there are any mistakes, please report in the message area
-[/list]
+10.14
+1. Modify the pregnancy event in the pregnancy_events.txt file, and block the cheating event for characters with the trait of immortality or baptism modifier, as follows:
+   a. The pregnancy.2002 event, the original event titled "Someone else", was a married woman pregnant with an illegitimate child.
+   b. The pregnancy.2050 event, the original event titled "The Species of Others", was a woman who became pregnant when both spouses were female.
+   c. pregnancy.2001 event, the original event titled "pregnancy out of wedlock", the event was the pregnancy of an unmarried woman
+2. Modify the pregnancy.0001 event to greatly reduce the probability of dying in childbirth for mothers with the trait of perseverance
+3. Modify can_set_relation_lover_trigger in 00_relation_triggers. Under the default rules, a character with the trait of immortality can only become a lover relationship with a character who also has the trait of immortality
 
 [h1]Last[/h1]
 

@@ -8,17 +8,28 @@
 # 		always = yes
 # 	}
 # 	is_valid = {
-# 		any_player = {
-# 			has_trait = hc_immutable
-# 		}
-# 		any_player = {
-# 			has_trait = hc_immutable
-# 			any_spouse = {
-# 				this = root
-# 			}
-# 		}
 # 	}
 # 	effect = {
+# 		random_player = {
+# 			limit = {
+# 				is_adult = yes
+# 				age<40
+# 			}
+# 			save_scope_as = hc_random_spouse
+# 		}
+# 		scope:hc_random_spouse = {
+# 			add_piety = 500
+# 		}
+# 		if = {
+# 			limit = {
+# 				scope:hc_random_spouse = {
+# 					any_spouse = {
+# 						this = root
+# 					}
+# 				}
+# 			}
+# 			add_piety = 1000
+# 		}
 # 	}
 # 	ai_potential = {
 # 		always = no

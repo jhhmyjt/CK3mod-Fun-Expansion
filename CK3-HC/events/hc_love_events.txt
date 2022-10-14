@@ -13,6 +13,9 @@ hc_love.01 = {
 		character = scope:recipient
 		animation = love
 	}
+	trigger = {
+		is_ai = no
+	}
 	immediate = {
 		scope:recipient = {
 			add_character_modifier = {

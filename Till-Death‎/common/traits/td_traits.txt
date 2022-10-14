@@ -1,11 +1,12 @@
 ﻿#至死不渝 immutable
 hc_immutable = {
+	ruler_designer_cost = 200
 	learning = 3
 	health = 0.5
 	monthly_piety = 0.5
 	stress_gain_mult = -0.3
 	same_opinion = 30
-	ruler_designer_cost = 200
+	flag = hc_immutable_flag
 	desc = {
 		first_valid = {
 			triggered_desc = {

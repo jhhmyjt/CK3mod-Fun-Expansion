@@ -1,4 +1,6 @@
 ﻿l_simp_chinese:
  trait_hc_immutable:0 "至死不渝"
  trait_hc_immutable_desc:0 "此人之爱，至死不渝\n\n注：桔梗花有爱情至死不渝的寓意，桔梗花的根茎笔直且不会生长出分枝，从而植株的花朵单生，仿佛一生只爱一人，将桔梗花赠送给恋人，可以表达出自己对她永恒不变的心。"
- trait_hc_immutable_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip]对爱至死不渝。\n\n注：桔梗花有爱情至死不渝的寓意，桔梗花的根茎笔直且不会生长出分枝，从而植株的花朵单生，仿佛一生只爱一人，将桔梗花赠送给恋人，可以表达出自己对她永恒不变的心。\n\n#P 大幅减少外人对[ROOT.GetCharacter.GetFirstNameNoTooltip]勾引/求爱计谋的成功概率，并且减少[ROOT.GetCharacter.GetFirstNameNoTooltip]对外人勾引/求爱计谋的成功概率，同时增加[ROOT.GetCharacter.GetFirstNameNoTooltip]对拥有同样特质人物勾引/求爱计谋的成功概率#"
+ trait_hc_immutable_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip]对爱至死不渝。\n\n注：桔梗花有爱情至死不渝的寓意，桔梗花的根茎笔直且不会生长出分枝，从而植株的花朵单生，仿佛一生只爱一人，将桔梗花赠送给恋人，可以表达出自己对她永恒不变的心。\n\n#P [ROOT.GetCharacter.GetFirstNameNoTooltip]勾引/求爱其他未拥有该特质角色的概率大幅降低，未拥有该特质的角色勾引/求爱[ROOT.GetCharacter.GetFirstNameNoTooltip]的概率大幅降低，[ROOT.GetCharacter.GetFirstNameNoTooltip]对拥有该特质角色的勾引/求爱计谋成功概率大幅提高#"
+
+ TRAIT_FLAG_DESC_hc_immutable_flag:0 "拥有该特质的母亲死于难产的概率大幅降低"

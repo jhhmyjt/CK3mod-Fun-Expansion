@@ -75,7 +75,7 @@ hc_sacrifice.100 = {
 	}
 	option = {
 		name = hc_sacrifice.100.b
-		add_piety = 10000
+		add_prestige = 10000
 		add_character_modifier = {
 			modifier = hc_sacrifice_modifier
 			months = 3
@@ -83,7 +83,7 @@ hc_sacrifice.100 = {
 	}
 	option = {
 		name = hc_sacrifice.100.c
-		add_prestige = 10000
+		add_piety = 10000
 		add_character_modifier = {
 			modifier = hc_sacrifice_modifier
 			months = 3

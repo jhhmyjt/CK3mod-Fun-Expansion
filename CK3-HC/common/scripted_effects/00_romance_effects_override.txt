@@ -404,6 +404,28 @@ had_sex_with_effect = {
 	$CHARACTER$ = {
 		save_scope_as = had_sex_with_effect_partner
 	}
+	scope:had_sex_with_effect_partner = {
+		if = {
+			limit = {
+				has_variable = hc_sex_count
+			}
+			change_variable = {
+				name = hc_sex_count
+				add = 1
+			}
+		}
+	}
+	scope:had_sex_root_character = {
+		if = {
+			limit = {
+				has_variable = hc_sex_count
+			}
+			change_variable = {
+				name = hc_sex_count
+				add = 1
+			}
+		}
+	}
 	if = {
 		limit = {
 			trigger_if = {
@@ -470,31 +492,39 @@ had_sex_with_effect = {
 	}
 	else_if = {
 		limit = {
+			# or = {
+			# 	and = {
+			# 		scope:had_sex_with_effect_partner = {
+			# 			has_character_modifier = hc_char_modifier_08
+			# 		}
+			# 		# TODO：是否生效？（直接禁止行为，增加去除互动）
+			# 		not = {
+			# 			scope:had_sex_with_effect_partner = {
+			# 				any_spouse = {
+			# 					this = scope:had_sex_root_character
+			# 				}
+			# 			}
+			# 		}
+			# 	}
+			# 	and = {
+			# 		scope:had_sex_root_character = {
+			# 			has_character_modifier = hc_char_modifier_08
+			# 		}
+			# 		not = {
+			# 			scope:had_sex_root_character = {
+			# 				any_spouse = {
+			# 					this = scope:had_sex_with_effect_partner
+			# 				}
+			# 			}
+			# 		}
+			# 	}
+			# }
 			or = {
-				and = {
-					scope:had_sex_with_effect_partner = {
-						has_character_modifier = hc_char_modifier_08
-					}
-					# TODO：是否生效？（直接禁止行为，增加去除互动）
-					not = {
-						scope:had_sex_with_effect_partner = {
-							any_spouse = {
-								this = scope:had_sex_root_character
-							}
-						}
-					}
+				scope:had_sex_with_effect_partner = {
+					has_variable = hc_baptism
 				}
-				and = {
-					scope:had_sex_root_character = {
-						has_character_modifier = hc_char_modifier_08
-					}
-					not = {
-						scope:had_sex_root_character = {
-							any_spouse = {
-								this = scope:had_sex_with_effect_partner
-							}
-						}
-					}
+				scope:had_sex_root_character = {
+					has_variable = hc_baptism
 				}
 			}
 		}
