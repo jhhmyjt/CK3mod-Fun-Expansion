@@ -256,3 +256,65 @@ hc_decision.002 = {
 		}
 	}
 }
+
+#推行禁欲
+hc_decision.003 = {
+	type = character_event
+	title = hc_decision.003.t
+	desc = hc_decision.003.desc
+	theme = crown
+	left_portrait = {
+		character = root
+		animation = personality_zealous
+	}
+	trigger = {
+		is_ai = no
+	}
+	option = {
+		name = hc_decision.003.a
+		add_piety = 100
+		root.dynasty = {
+			add_dynasty_modifier = {
+				modifier = hc_dynasty_celibacy_modifier_01
+				years = 30
+			}
+		}
+	}
+	option = {
+		name = hc_decision.003.b
+		add_piety = 300
+		root.dynasty = {
+			add_dynasty_modifier = {
+				modifier = hc_dynasty_celibacy_modifier_02
+				years = 30
+			}
+		}
+	}
+	option = {
+		name = hc_decision.003.c
+		add_piety = 500
+		root.dynasty = {
+			add_dynasty_modifier = {
+				modifier = hc_dynasty_celibacy_modifier_03
+				years = 30
+			}
+		}
+	}
+	option = {
+		name = hc_decision.003.d
+		add_piety = 750
+		give_nickname = nick_hc_the_celibacy
+		root.dynasty = {
+			add_dynasty_modifier = {
+				modifier = hc_dynasty_celibacy_modifier_04
+				years = 30
+			}
+		}
+	}
+	option = {
+		name = hc_decision.003.e
+		hidden_effect = {
+			remove_decision_cooldown = hc_pursue_celibacy_decision
+		}
+	}
+}

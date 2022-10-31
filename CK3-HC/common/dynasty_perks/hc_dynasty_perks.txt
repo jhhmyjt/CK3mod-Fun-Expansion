@@ -11,6 +11,9 @@
 	}
 	effect = {
 		custom_tooltip = hc_temple_legacy_dynasty_effect_tt_01
+		custom_description_no_bullet = {
+			text = hc_temple_legacy_1_unlock_effect
+		}
 		hidden_effect = {
 			hc_add_house_bless_modifier_01_effect = yes
 		}
@@ -33,6 +36,9 @@ hc_temple_legacy_2 = {
 	}
 	effect = {
 		custom_tooltip = hc_temple_legacy_dynasty_effect_tt_02
+		custom_description_no_bullet = {
+			text = hc_temple_legacy_2_unlock_effect
+		}
 		hidden_effect = {
 			hc_remove_house_bless_modifier_01_effect = yes
 			hc_add_house_bless_modifier_02_effect = yes

@@ -4,6 +4,18 @@
 	third = HC_JUDGMENT_HEAVY_CAVALRY_UNLOCK_DESCRIPTION
 }
 
+hc_temple_legacy_2_unlock_effect = {
+	global = HC_GUARD_UNLOCK_DESCRIPTION
+	first = HC_GUARD_UNLOCK_DESCRIPTION
+	third = HC_GUARD_UNLOCK_DESCRIPTION
+}
+
+hc_temple_legacy_1_unlock_effect = {
+	global = HC_FOOTMAN_UNLOCK_DESCRIPTION
+	first = HC_FOOTMAN_UNLOCK_DESCRIPTION
+	third = HC_FOOTMAN_UNLOCK_DESCRIPTION
+}
+
 hc_temple_legacy_3_effect = {
 	global = HC_JUDGMENT_HEAVY_CAVALRY_DESCRIPTION
 	first = HC_JUDGMENT_HEAVY_CAVALRY_DESCRIPTION

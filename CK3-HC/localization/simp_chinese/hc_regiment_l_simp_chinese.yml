@@ -1,3 +1,7 @@
 ﻿l_simp_chinese:
  hc_judgment_heavy_cavalry:0 "圣殿裁决重骑"
  hc_judgment_heavy_cavalry_flavor:0 "#F 圣殿裁决重骑是听命于圣骑士的精锐骑兵，强壮的身体素质和坚固无比的盔甲令战场上的敌人闻风丧胆。#!"
+ hc_footmen:0 "圣殿仆从"
+ hc_footmen_flavor:0 "#F 圣殿仆从虽装备轻便易碎，但他们庞大的人数和不屈的信仰足以吞噬敌方军队集群#!"
+ hc_guards:0 "圣殿卫队"
+ hc_guards_flavor:0 "#F 圣殿卫队装备精良、训练有素，是维护圣殿威严的中坚力量，这些多面手战士可以应对众多地形、气候。任何来犯之敌都会畏惧他们毁灭性的力量#!"

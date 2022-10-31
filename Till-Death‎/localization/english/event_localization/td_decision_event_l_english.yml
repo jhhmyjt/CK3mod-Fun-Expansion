@@ -1,0 +1,8 @@
+﻿l_english: 
+hc_decision.003.t:0 "Promotion of Abstinence"
+  hc_decision.003.desc:0 "Choose the degree to which abstinence will be implemented..."
+  hc_decision.003.a:0 "Just a simple compliance"
+  hc_decision.003.b:0 "Going further..."
+  hc_decision.003.c:0 "Strictly practice abstinence"
+  hc_decision.003.d:0 "Abandon the flesh!"
+  hc_decision.003.e:0 "We're not ready..."

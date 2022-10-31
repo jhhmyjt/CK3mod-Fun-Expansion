@@ -120,3 +120,34 @@ hc_dynasty_bless_modifier_05s = {
 	intrigue = 5
 	icon = magic_positive
 }
+
+#禁欲主义
+hc_dynasty_celibacy_modifier_01 = {
+	monthly_piety_gain_mult = 0.05
+	fertility = -0.2
+	learning = 1
+	icon = piety_positive
+}
+
+hc_dynasty_celibacy_modifier_02 = {
+	monthly_piety_gain_mult = 0.1
+	fertility = -0.5
+	learning = 2
+	icon = piety_positive
+}
+
+hc_dynasty_celibacy_modifier_03 = {
+	monthly_piety_gain_mult = 0.2
+	fertility = -1
+	learning = 3
+	icon = piety_positive
+}
+
+hc_dynasty_celibacy_modifier_04 = {
+	monthly_piety_gain_mult = 0.5
+	health = 0.3
+	negate_health_penalty_add = 0.8
+	fertility = -10
+	learning = 6
+	icon = piety_positive
+}

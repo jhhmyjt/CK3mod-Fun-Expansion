@@ -1,0 +1,3 @@
+﻿#禁欲主义者
+nick_hc_the_celibacy = {
+}

@@ -23,11 +23,58 @@ td_begin_decision = {
 			add_house_modifier = td_house_modifier
 		}
 		custom_tooltip = td_begin_decision_effect_tt_01
+		custom_tooltip = td_begin_decision_effect_tt_03
 		if = {
 			limit = {
 				has_ep1_dlc_trigger = yes
 			}
 			custom_tooltip = td_begin_decision_effect_tt_02
 		}
+	}
+}
+
+#推行禁欲
+hc_pursue_celibacy_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	selection_tooltip = hc_pursue_celibacy_decision_tooltip
+	desc = hc_pursue_celibacy_decision_desc
+	ai_check_interval = 0
+	major = yes
+	cooldown = {
+		years = 30
+	}
+	is_shown = {
+		is_ai = no
+		root.house = {
+			has_house_modifier = td_house_modifier
+		}
+		NOT = {
+			root.dynasty = {
+				or = {
+					has_dynasty_modifier = hc_dynasty_celibacy_modifier_01
+					has_dynasty_modifier = hc_dynasty_celibacy_modifier_02
+					has_dynasty_modifier = hc_dynasty_celibacy_modifier_03
+				}
+			}
+		}
+	}
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+	effect = {
+		custom_tooltip = hc_pursue_celibacy_decision_effect_tt
+		trigger_event = {
+			id = hc_decision.003
+			days = 3
+		}
+	}
+	# ai_check_frequency = 0
+	ai_potential = {
+		always = no
+	}
+	ai_will_do = {
+		base = 0
 	}
 }

@@ -56,3 +56,7 @@ nick_hc_the_succession = {
 #议事宫掌权者
 nick_hc_the_master_of_chrysotriclinium = {
 }
+
+#禁欲主义者
+nick_hc_the_celibacy = {
+}

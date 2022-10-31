@@ -583,6 +583,69 @@ hc_establish_building_special_decision = {
 	}
 }
 
+#建造特殊建筑
+# hc_establish_building_special_decision_test = {
+# 	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+# 	major = yes
+# 	ai_check_interval = 0
+# 	title = hc_establish_building_special_decision_t
+# 	selection_tooltip = hc_establish_building_special_decision_tooltip
+# 	confirm_text = hc_establish_building_special_decision_confirm
+# 	desc = hc_establish_building_special_decision_test_desc
+# 	# cooldown = {
+# 	# 	months = 3
+# 	# }
+# 	widget = {
+# 		controller = create_holy_order
+# 		barony_valid = {
+# 			trigger_if = {
+# 				limit = {
+# 					exists = this
+# 				}
+# 			}
+# 			trigger_else = {
+# 				custom_description = {
+# 					text = "has_holy_order_barony_selected"
+# 					always = no
+# 				}
+# 			}
+# 		}
+# 	}
+# 	is_shown = {
+# 	}
+# 	is_valid = {
+# 	}
+# 	is_valid_showing_failures_only = {
+# 	}
+# 	effect = {
+# 		scope:barony.title_province = {
+# 			add_building_slot = 1
+# 			add_building = hc_wonder_011
+# 		}
+# 		hidden_effect = {
+# 			if = {
+# 				limit = {
+# 					Not = {
+# 						has_variable = hc_count_test
+# 					}
+# 				}
+# 				set_variable = {
+# 					name = hc_count_test
+# 					value = 1
+# 				}
+# 			}
+# 			else = {
+# 				change_variable = {
+# 					name = hc_count_test
+# 					add = 1
+# 				}
+# 			}
+# 		}
+# 	}
+# 	ai_will_do = {
+# 		base = 0
+# 	}
+# }
 #摇人
 hc_call_decision = {
 	picture = "gfx/interface/illustrations/decisions/decision_invite_knights.dds"
@@ -915,6 +978,52 @@ hc_build_chrysotriclinium_decision = {
 			}
 		}
 	}
+	ai_potential = {
+		always = no
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
+#推行禁欲
+hc_pursue_celibacy_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	selection_tooltip = hc_pursue_celibacy_decision_tooltip
+	desc = hc_pursue_celibacy_decision_desc
+	ai_check_interval = 0
+	major = yes
+	cooldown = {
+		years = 30
+	}
+	is_shown = {
+		is_ai = no
+		root.house = {
+			has_house_modifier = hc_dynasty_god_modifier
+		}
+		NOT = {
+			root.dynasty = {
+				or = {
+					has_dynasty_modifier = hc_dynasty_celibacy_modifier_01
+					has_dynasty_modifier = hc_dynasty_celibacy_modifier_02
+					has_dynasty_modifier = hc_dynasty_celibacy_modifier_03
+				}
+			}
+		}
+	}
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+	effect = {
+		custom_tooltip = hc_pursue_celibacy_decision_effect_tt
+		trigger_event = {
+			id = hc_decision.003
+			days = 3
+		}
+	}
+	# ai_check_frequency = 0
 	ai_potential = {
 		always = no
 	}
