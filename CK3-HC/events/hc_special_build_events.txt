@@ -417,11 +417,6 @@ hc_special_build.004 = {
 			add_dynasty_prestige = 1200
 		}
 		add_trait = hc_wonder_king
-		# root.house = {
-		# 	add_house_modifier = {
-		# 		modifier = hc_dynasty_god_modifier
-		# 	}
-		# }
 	}
 	option = {
 		name = hc_special_build.004.a

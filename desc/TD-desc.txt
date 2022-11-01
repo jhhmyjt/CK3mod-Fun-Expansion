@@ -20,6 +20,7 @@ English(by Google)
 [h1]兼容性[/h1]
 兼容现有存档
 不兼容铁人
+修改过的原文件：court_scheme.txt seduce_scheme.txt 00_romance_effects.txt 00_relation_triggers.txt pregnancy_events.txt
 
 [h1]素材来源&免责声明[/h1]
 [b]mod部分素材来自于网络，如有侵权请联系我，会立刻删除。[/b]列表如下：

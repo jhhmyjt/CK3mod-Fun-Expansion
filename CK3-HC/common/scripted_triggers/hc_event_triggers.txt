@@ -1,36 +1,34 @@
 ﻿hc_special_building_finished_trigger = {
-	AND = {
-		is_target_in_global_variable_list = {
-			name = hc_unavailable_special_building
-			target = flag:hc_unavailable_special_building_hc_wonder_011
-		}
-		is_target_in_global_variable_list = {
-			name = hc_unavailable_special_building
-			target = flag:hc_unavailable_special_building_hc_wonder_021
-		}
-		is_target_in_global_variable_list = {
-			name = hc_unavailable_special_building
-			target = flag:hc_unavailable_special_building_hc_wonder_030
-		}
-		is_target_in_global_variable_list = {
-			name = hc_unavailable_special_building
-			target = flag:hc_unavailable_special_building_hc_wonder_040
-		}
-		is_target_in_global_variable_list = {
-			name = hc_unavailable_special_building
-			target = flag:hc_unavailable_special_building_hc_wonder_050
-		}
-		is_target_in_global_variable_list = {
-			name = hc_unavailable_special_building
-			target = flag:hc_unavailable_special_building_hc_wonder_061
-		}
-		is_target_in_global_variable_list = {
-			name = hc_unavailable_special_building
-			target = flag:hc_unavailable_special_building_hc_wonder_070
-		}
-		is_target_in_global_variable_list = {
-			name = hc_unavailable_special_building
-			target = flag:hc_unavailable_special_building_hc_wonder_081
-		}
+	is_target_in_global_variable_list = {
+		name = hc_special_building_done_list
+		target = flag:hc_building_flag_wonder_01
+	}
+	is_target_in_global_variable_list = {
+		name = hc_special_building_done_list
+		target = flag:hc_building_flag_wonder_02
+	}
+	is_target_in_global_variable_list = {
+		name = hc_special_building_done_list
+		target = flag:hc_building_flag_wonder_03
+	}
+	is_target_in_global_variable_list = {
+		name = hc_special_building_done_list
+		target = flag:hc_building_flag_wonder_04
+	}
+	is_target_in_global_variable_list = {
+		name = hc_special_building_done_list
+		target = flag:hc_building_flag_wonder_05
+	}
+	is_target_in_global_variable_list = {
+		name = hc_special_building_done_list
+		target = flag:hc_building_flag_wonder_06
+	}
+	is_target_in_global_variable_list = {
+		name = hc_special_building_done_list
+		target = flag:hc_building_flag_wonder_07
+	}
+	is_target_in_global_variable_list = {
+		name = hc_special_building_done_list
+		target = flag:hc_building_flag_wonder_08
 	}
 }

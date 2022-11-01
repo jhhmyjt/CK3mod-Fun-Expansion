@@ -80,6 +80,35 @@ can_set_relation_lover_trigger = {
 			}
 		}
 	}
+	trigger_if = {
+		limit = {
+			or = {
+				has_character_modifier = hc_char_modifier_08
+				$CHARACTER$ = {
+					has_character_modifier = hc_char_modifier_08
+				}
+			}
+		}
+		or = {
+			and = {
+				has_character_modifier = hc_char_modifier_08
+				$CHARACTER$ = {
+					has_character_modifier = hc_char_modifier_08
+				}
+			}
+			trigger_if = {
+				limit = {
+					has_game_rule = hc_seduce_court_ai_cannot
+				}
+				not = {
+					is_ai = yes
+					$CHARACTER$ = {
+						is_ai = yes
+					}
+				}
+			}
+		}
+	}
 	is_adult = yes
 	NOT = {
 		this = $CHARACTER$

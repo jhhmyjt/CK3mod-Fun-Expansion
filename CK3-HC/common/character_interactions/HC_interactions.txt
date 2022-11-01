@@ -900,14 +900,14 @@ hc_baptism_interaction = {
 						target = scope:actor
 						modifier = hc_baptize_opinion
 					}
-					set_variable = {
-						name = hc_baptism
-						value = flag:hc_had_baptism
-					}
-					set_variable = {
-						name = hc_sex_count
-						value = 0
-					}
+					# set_variable = {
+					# 	name = hc_baptism
+					# 	value = flag:hc_had_baptism
+					# }
+					# set_variable = {
+					# 	name = hc_sex_count
+					# 	value = 0
+					# }
 				}
 			}
 		}

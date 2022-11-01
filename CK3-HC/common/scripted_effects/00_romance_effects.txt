@@ -404,28 +404,28 @@ had_sex_with_effect = {
 	$CHARACTER$ = {
 		save_scope_as = had_sex_with_effect_partner
 	}
-	scope:had_sex_with_effect_partner = {
-		if = {
-			limit = {
-				has_variable = hc_sex_count
-			}
-			change_variable = {
-				name = hc_sex_count
-				add = 1
-			}
-		}
-	}
-	scope:had_sex_root_character = {
-		if = {
-			limit = {
-				has_variable = hc_sex_count
-			}
-			change_variable = {
-				name = hc_sex_count
-				add = 1
-			}
-		}
-	}
+	# scope:had_sex_with_effect_partner = {
+	# 	if = {
+	# 		limit = {
+	# 			has_variable = hc_sex_count
+	# 		}
+	# 		change_variable = {
+	# 			name = hc_sex_count
+	# 			add = 1
+	# 		}
+	# 	}
+	# }
+	# scope:had_sex_root_character = {
+	# 	if = {
+	# 		limit = {
+	# 			has_variable = hc_sex_count
+	# 		}
+	# 		change_variable = {
+	# 			name = hc_sex_count
+	# 			add = 1
+	# 		}
+	# 	}
+	# }
 	if = {
 		limit = {
 			trigger_if = {

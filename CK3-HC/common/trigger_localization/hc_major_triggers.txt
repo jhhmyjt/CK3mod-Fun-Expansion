@@ -29,3 +29,11 @@ hc_strength_artifact_trigger_02 = {
 hc_sese_trigger = {
 	global_not = trigger_desc_hc_sese
 }
+
+hc_building_special_decision_06_knight = {
+	global = hc_building_special_decision_06_knight
+}
+
+hc_building_special_decision_04_martial = {
+	global = hc_building_special_decision_04_martial
+}

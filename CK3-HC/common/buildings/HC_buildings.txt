@@ -111,7 +111,6 @@ hc_wonder_022 = {
 	type = regular
 }
 
-#君临城
 hc_wonder_030 = {
 	type_icon = "icon_structure_theodosian_walls.dds"
 	can_construct = {

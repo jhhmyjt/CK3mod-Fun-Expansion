@@ -7,3 +7,5 @@
  trigger_desc_hc_strength_artifact_01:0 "[artifact|E]圣剑杜兰达尔[durability|E]不低于80"
  trigger_desc_hc_strength_artifact_02:0 "一名$antiquarian_court_position$"
  trigger_desc_hc_sese:0 "对方或你最近已春风一度"
+ hc_building_special_decision_06_knight:0 "[knight|E]数量大于10"
+ hc_building_special_decision_04_martial:0 "[martial|E]大于20"

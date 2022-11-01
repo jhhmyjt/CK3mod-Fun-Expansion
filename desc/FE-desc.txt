@@ -19,9 +19,9 @@
 English(by Google)
 
 [h1]兼容性[/h1]
-与绝大多数mod兼容
 兼容现有存档
 不兼容铁人
+修改过的原文件：court_scheme.txt seduce_scheme.txt 00_romance_effects.txt 00_relation_triggers.txt pregnancy_events.txt
 
 [h1]素材来源&免责声明[/h1]
 [b]mod部分素材来自于网络，如有侵权请联系我，会立刻删除。[/b]列表如下：
@@ -40,6 +40,11 @@ English(by Google)
 [*]修改00_relation_triggers中的情人关系触发器，在默认规则下，拥有至死不渝特质的角色只能和同样拥有至死不渝特质的角色成为情人关系
 [*]修复一些文本错误 
 [*]修复裁决骑士插图分辨率错误
+[/list]
+11.1
+[list]
+[*]重新设计了建造奇观决议，现在可以指定建造位置（这意味你可以把所有奇观造在一个地方）
+[*]和旧档的兼容情况：更新前建造的奇观依然保留，但收集进度清空（全收集需要用新决议重新建造一遍）
 [/list]
 
 [h1]最后[/h1]

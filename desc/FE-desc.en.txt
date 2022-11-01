@@ -20,9 +20,10 @@ Simplified Chinese
 English(by Google)
 
 [h1]Compatibility[/h1]
-Compatible with most mods (except for mods with the same trait id, which use id: 5001~5010)
-Compatible with existing archives
+Compatible with save game
 Not compatible with Iron Man
+Modified vanilla files:court_scheme.txt seduce_scheme.txt 00_romance_effects.txt 00_relation_triggers.txt pregnancy_events.txt
+
 
 [h1]Source & Disclaimer[/h1]
 [b]Part of the material of the mod comes from the Internet. If there is any infringement, please contact me and it will be deleted immediately. [/b]The list is as follows:

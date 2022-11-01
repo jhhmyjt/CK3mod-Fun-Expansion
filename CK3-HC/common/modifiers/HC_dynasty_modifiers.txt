@@ -151,3 +151,10 @@ hc_dynasty_celibacy_modifier_04 = {
 	learning = 6
 	icon = piety_positive
 }
+
+#兴建奇观
+hc_dynasty_building_modifier = {
+	stewardship = 2
+	monthly_income_mult = 0.06
+	icon = stewardship_positive
+}
