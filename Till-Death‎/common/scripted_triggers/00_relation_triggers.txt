@@ -990,15 +990,7 @@ minor_interest_skilled_courtiers_trigger = {
 		learning > high_skill_rating
 		prowess > high_skill_rating
 	}
-	average_skill_rating >= {
-		add = diplomacy
-		add = martial
-		add = stewardship
-		add = intrigue
-		add = learning
-		add = prowess
-		divide = 6
-	}
+	average_skill_rating >= average_of_all_skills_and_prowess
 	NOT = {
 		is_in_list = $LISTNAME$
 	}

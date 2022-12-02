@@ -1,0 +1,9 @@
+96_fp2_legacies_override
+98_fp1_legacies_override
+01_fp1_dynasty_perks_override
+03_fp2_dynasty_perks_override
+00_romance_effects
+00_relation_triggers
+pregnancy_events
+court_scheme
+seduce_scheme

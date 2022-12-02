@@ -125,10 +125,14 @@ hc_build_chrysotriclinium_decision_effect = {
 	spawn_army = {
 		men_at_arms = {
 			type = hc_judgment_heavy_cavalry
+			stacks = 3
+		}
+		men_at_arms = {
+			type = hc_guards
 			stacks = 5
 		}
 		men_at_arms = {
-			type = hc_judgment_heavy_cavalry
+			type = hc_guards
 			stacks = 5
 		}
 		location = title:c_byzantion.title_province

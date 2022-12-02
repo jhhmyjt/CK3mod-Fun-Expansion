@@ -891,23 +891,14 @@ hc_baptism_interaction = {
 				scope:recipient = {
 					add_piety = 500
 					#增加人物修正
-					# add_character_modifier = {
-					# 	modifier = hc_char_modifier_08
-					# 	years = 100
-					# }
-					add_character_modifier = hc_char_modifier_08
+					add_character_modifier = {
+						modifier = hc_char_modifier_08
+						years = 100
+					}
 					add_opinion = {
 						target = scope:actor
 						modifier = hc_baptize_opinion
 					}
-					# set_variable = {
-					# 	name = hc_baptism
-					# 	value = flag:hc_had_baptism
-					# }
-					# set_variable = {
-					# 	name = hc_sex_count
-					# 	value = 0
-					# }
 				}
 			}
 		}

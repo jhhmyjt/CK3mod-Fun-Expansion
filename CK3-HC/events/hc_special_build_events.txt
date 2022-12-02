@@ -1,398 +1,399 @@
 ﻿namespace = hc_special_build
+#以下三个事件001、002、003已经废除，尚不删除原因是事件链可能存在已保存的游戏
 #开始事件
-hc_special_build.001 = {
-	type = character_event
-	desc = hc_special_build.001.desc
-	title = hc_special_build.001.t
-	left_portrait = {
-		character = ROOT
-		animation = personality_rational
-	}
-	theme = crown
-	override_background = {
-		reference = throne_room
-	}
-	trigger = {
-		is_ai = no
-	}
-	immediate = {
-		add_character_flag = {
-			flag = hc_flag_build_cooldown
-			months = 3
-		}
-	}
-	option = {
-		name = hc_special_build.001.a
-		hidden_effect = {
-			random_list = {
-				30 = {
-					trigger = {
-						any_vassal = {
-							is_powerful_vassal_of = root
-							opinion = {
-								target = root
-								value <= 60
-							}
-						}
-					}
-					modifier = {
-						add = 30
-						any_vassal = {
-							is_powerful_vassal_of = root
-							opinion = {
-								target = root
-								value <= 60
-							}
-							OR = {
-								has_trait = brave
-								has_trait = just
-								has_trait = sadistic
-								has_trait = ambitious
-							}
-						}
-					}
-					trigger_event = {
-						id = hc_special_build.002
-						days = {
-							3
-							7
-						}
-					}
-				}
-				50 = {
-					custom_tooltip = hc_special_build.001.a_custom_tt_01
-					trigger_event = {
-						id = hc_special_build.003
-						months = {
-							1
-							3
-						}
-					}
-				}
-			}
-		}
-	}
-	option = {
-		name = hc_special_build.001.b
-		hidden_effect = {
-			remove_character_flag = hc_flag_build_cooldown
-		}
-	}
-}
+# hc_special_build.001 = {
+# 	type = character_event
+# 	desc = hc_special_build.001.desc
+# 	title = hc_special_build.001.t
+# 	left_portrait = {
+# 		character = ROOT
+# 		animation = personality_rational
+# 	}
+# 	theme = crown
+# 	override_background = {
+# 		reference = throne_room
+# 	}
+# 	trigger = {
+# 		is_ai = no
+# 	}
+# 	immediate = {
+# 		add_character_flag = {
+# 			flag = hc_flag_build_cooldown
+# 			months = 3
+# 		}
+# 	}
+# 	option = {
+# 		name = hc_special_build.001.a
+# 		hidden_effect = {
+# 			random_list = {
+# 				30 = {
+# 					trigger = {
+# 						any_vassal = {
+# 							is_powerful_vassal_of = root
+# 							opinion = {
+# 								target = root
+# 								value <= 60
+# 							}
+# 						}
+# 					}
+# 					modifier = {
+# 						add = 30
+# 						any_vassal = {
+# 							is_powerful_vassal_of = root
+# 							opinion = {
+# 								target = root
+# 								value <= 60
+# 							}
+# 							OR = {
+# 								has_trait = brave
+# 								has_trait = just
+# 								has_trait = sadistic
+# 								has_trait = ambitious
+# 							}
+# 						}
+# 					}
+# 					trigger_event = {
+# 						id = hc_special_build.002
+# 						days = {
+# 							3
+# 							7
+# 						}
+# 					}
+# 				}
+# 				50 = {
+# 					custom_tooltip = hc_special_build.001.a_custom_tt_01
+# 					trigger_event = {
+# 						id = hc_special_build.003
+# 						months = {
+# 							1
+# 							3
+# 						}
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = hc_special_build.001.b
+# 		hidden_effect = {
+# 			remove_character_flag = hc_flag_build_cooldown
+# 		}
+# 	}
+# }
 
-#强力反对
-hc_special_build.002 = {
-	type = character_event
-	desc = hc_special_build.002.desc
-	title = hc_special_build.002.t
-	left_portrait = {
-		character = ROOT
-		animation = stress
-	}
-	right_portrait = {
-		character = scope:hc_build_vassal
-		animation = disapproval
-	}
-	theme = crown
-	override_background = {
-		reference = throne_room
-	}
-	trigger = {
-		is_ai = no
-	}
-	immediate = {
-		if = {
-			limit = {
-				any_vassal = {
-					is_powerful_vassal_of = root
-					opinion = {
-						target = root
-						value <= 60
-					}
-				}
-			}
-			random_vassal = {
-				limit = {
-					is_powerful_vassal_of = root
-					opinion = {
-						target = root
-						value <= 60
-					}
-				}
-				save_scope_as = hc_build_vassal
-			}
-		}
-		else = {
-			random_vassal = {
-				limit = {
-					is_powerful_vassal_of = root
-				}
-				save_scope_as = hc_build_vassal
-			}
-		}
-	}
-	option = {
-		name = hc_special_build.002.a
-		duel = {
-			target = scope:hc_build_vassal
-			skill = diplomacy
-			30 = {
-				compare_modifier = {
-					value = scope:duel_value
-				}
-				desc = hc_special_build.002.a.success
-				send_interface_toast = {
-					left_icon = scope:hc_build_vassal
-					title = hc_special_build.002.a.success
-					scope:hc_build_vassal = {
-						add_opinion = {
-							target = ROOT
-							modifier = scheme_sway_opinion
-							opinion = 20
-						}
-					}
-				}
-				trigger_event = {
-					id = hc_special_build.003
-					months = {
-						1
-						3
-					}
-				}
-			}
-			20 = {
-				compare_modifier = {
-					value = scope:duel_value
-					multiplier = -1
-				}
-				desc = hc_special_build.002.a.failure
-				send_interface_toast = {
-					left_icon = scope:hc_build_vassal
-					title = hc_special_build.002.a.failure
-					scope:hc_build_vassal = {
-						add_opinion = {
-							target = ROOT
-							modifier = scheme_sway_opinion
-							opinion = -10
-						}
-					}
-				}
-			}
-		}
-	}
-	option = {
-		name = hc_special_build.002.b
-		add_prestige = -100
-	}
-}
+# #强力反对
+# hc_special_build.002 = {
+# 	type = character_event
+# 	desc = hc_special_build.002.desc
+# 	title = hc_special_build.002.t
+# 	left_portrait = {
+# 		character = ROOT
+# 		animation = stress
+# 	}
+# 	right_portrait = {
+# 		character = scope:hc_build_vassal
+# 		animation = disapproval
+# 	}
+# 	theme = crown
+# 	override_background = {
+# 		reference = throne_room
+# 	}
+# 	trigger = {
+# 		is_ai = no
+# 	}
+# 	immediate = {
+# 		if = {
+# 			limit = {
+# 				any_vassal = {
+# 					is_powerful_vassal_of = root
+# 					opinion = {
+# 						target = root
+# 						value <= 60
+# 					}
+# 				}
+# 			}
+# 			random_vassal = {
+# 				limit = {
+# 					is_powerful_vassal_of = root
+# 					opinion = {
+# 						target = root
+# 						value <= 60
+# 					}
+# 				}
+# 				save_scope_as = hc_build_vassal
+# 			}
+# 		}
+# 		else = {
+# 			random_vassal = {
+# 				limit = {
+# 					is_powerful_vassal_of = root
+# 				}
+# 				save_scope_as = hc_build_vassal
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = hc_special_build.002.a
+# 		duel = {
+# 			target = scope:hc_build_vassal
+# 			skill = diplomacy
+# 			30 = {
+# 				compare_modifier = {
+# 					value = scope:duel_value
+# 				}
+# 				desc = hc_special_build.002.a.success
+# 				send_interface_toast = {
+# 					left_icon = scope:hc_build_vassal
+# 					title = hc_special_build.002.a.success
+# 					scope:hc_build_vassal = {
+# 						add_opinion = {
+# 							target = ROOT
+# 							modifier = scheme_sway_opinion
+# 							opinion = 20
+# 						}
+# 					}
+# 				}
+# 				trigger_event = {
+# 					id = hc_special_build.003
+# 					months = {
+# 						1
+# 						3
+# 					}
+# 				}
+# 			}
+# 			20 = {
+# 				compare_modifier = {
+# 					value = scope:duel_value
+# 					multiplier = -1
+# 				}
+# 				desc = hc_special_build.002.a.failure
+# 				send_interface_toast = {
+# 					left_icon = scope:hc_build_vassal
+# 					title = hc_special_build.002.a.failure
+# 					scope:hc_build_vassal = {
+# 						add_opinion = {
+# 							target = ROOT
+# 							modifier = scheme_sway_opinion
+# 							opinion = -10
+# 						}
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = hc_special_build.002.b
+# 		add_prestige = -100
+# 	}
+# }
 
-#建造
-hc_special_build.003 = {
-	type = character_event
-	desc = hc_special_build.003.desc
-	title = hc_special_build.003.t
-	left_portrait = {
-		character = ROOT
-		animation = happiness
-	}
-	theme = crown
-	override_background = {
-		reference = courtyard
-	}
-	trigger = {
-		is_ai = no
-	}
-	option = {
-		name = hc_special_build.003.a
-		trigger = {
-			has_title = title:b_roma
-			NOT = {
-				is_target_in_global_variable_list = {
-					name = hc_unavailable_special_building
-					target = flag:hc_unavailable_special_building_hc_wonder_011
-				}
-			}
-		}
-		remove_short_term_gold = 500
-		title:b_roma = {
-			title_province = {
-				add_building_slot = 1
-				add_building = hc_wonder_011
-			}
-		}
-		add_to_global_variable_list = {
-			name = hc_unavailable_special_building
-			target = flag:hc_unavailable_special_building_hc_wonder_011
-		}
-	}
-	option = {
-		name = hc_special_build.003.b
-		trigger = {
-			has_title = title:b_hradec
-			NOT = {
-				is_target_in_global_variable_list = {
-					name = hc_unavailable_special_building
-					target = flag:hc_unavailable_special_building_hc_wonder_021
-				}
-			}
-		}
-		remove_short_term_gold = 500
-		title:b_hradec = {
-			title_province = {
-				add_building_slot = 1
-				add_building = hc_wonder_021
-			}
-		}
-		add_to_global_variable_list = {
-			name = hc_unavailable_special_building
-			target = flag:hc_unavailable_special_building_hc_wonder_021
-		}
-	}
-	option = {
-		name = hc_special_build.003.c
-		trigger = {
-			has_title = title:b_aquileia
-			NOT = {
-				is_target_in_global_variable_list = {
-					name = hc_unavailable_special_building
-					target = flag:hc_unavailable_special_building_hc_wonder_030
-				}
-			}
-		}
-		remove_short_term_gold = 500
-		title:b_aquileia = {
-			title_province = {
-				add_building_slot = 1
-				add_building = hc_wonder_030
-			}
-		}
-		add_to_global_variable_list = {
-			name = hc_unavailable_special_building
-			target = flag:hc_unavailable_special_building_hc_wonder_030
-		}
-	}
-	option = {
-		name = hc_special_build.003.d
-		trigger = {
-			has_title = title:b_bordeaux
-			NOT = {
-				is_target_in_global_variable_list = {
-					name = hc_unavailable_special_building
-					target = flag:hc_unavailable_special_building_hc_wonder_040
-				}
-			}
-		}
-		remove_short_term_gold = 500
-		title:b_bordeaux = {
-			title_province = {
-				add_building_slot = 1
-				add_building = hc_wonder_040
-			}
-		}
-		add_to_global_variable_list = {
-			name = hc_unavailable_special_building
-			target = flag:hc_unavailable_special_building_hc_wonder_040
-		}
-	}
-	option = {
-		name = hc_special_build.003.e
-		trigger = {
-			has_title = title:b_eichtstad
-			NOT = {
-				is_target_in_global_variable_list = {
-					name = hc_unavailable_special_building
-					target = flag:hc_unavailable_special_building_hc_wonder_050
-				}
-			}
-		}
-		remove_short_term_gold = 500
-		title:b_eichtstad = {
-			title_province = {
-				add_building_slot = 1
-				add_building = hc_wonder_050
-			}
-		}
-		add_to_global_variable_list = {
-			name = hc_unavailable_special_building
-			target = flag:hc_unavailable_special_building_hc_wonder_050
-		}
-	}
-	option = {
-		name = hc_special_build.003.f
-		trigger = {
-			has_title = title:b_roma
-			NOT = {
-				is_target_in_global_variable_list = {
-					name = hc_unavailable_special_building
-					target = flag:hc_unavailable_special_building_hc_wonder_061
-				}
-			}
-		}
-		remove_short_term_gold = 500
-		title:b_roma = {
-			title_province = {
-				add_building_slot = 1
-				add_building = hc_wonder_061
-			}
-		}
-		add_to_global_variable_list = {
-			name = hc_unavailable_special_building
-			target = flag:hc_unavailable_special_building_hc_wonder_061
-		}
-	}
-	option = {
-		name = hc_special_build.003.g
-		trigger = {
-			has_title = title:b_lubeck
-			NOT = {
-				is_target_in_global_variable_list = {
-					name = hc_unavailable_special_building
-					target = flag:hc_unavailable_special_building_hc_wonder_070
-				}
-			}
-		}
-		remove_short_term_gold = 500
-		title:b_lubeck = {
-			title_province = {
-				add_building_slot = 1
-				add_building = hc_wonder_070
-			}
-		}
-		add_to_global_variable_list = {
-			name = hc_unavailable_special_building
-			target = flag:hc_unavailable_special_building_hc_wonder_070
-		}
-	}
-	option = {
-		name = hc_special_build.003.h
-		trigger = {
-			has_title = title:b_cordoba
-			NOT = {
-				is_target_in_global_variable_list = {
-					name = hc_unavailable_special_building
-					target = flag:hc_unavailable_special_building_hc_wonder_081
-				}
-			}
-		}
-		remove_short_term_gold = 500
-		title:b_cordoba = {
-			title_province = {
-				add_building_slot = 1
-				add_building = hc_wonder_081
-			}
-		}
-		add_to_global_variable_list = {
-			name = hc_unavailable_special_building
-			target = flag:hc_unavailable_special_building_hc_wonder_081
-		}
-	}
-	option = {
-		name = hc_special_build.003.i
-		hidden_effect = {
-			remove_decision_cooldown = hc_establish_building_special_decision
-		}
-	}
-}
+# #建造
+# hc_special_build.003 = {
+# 	type = character_event
+# 	desc = hc_special_build.003.desc
+# 	title = hc_special_build.003.t
+# 	left_portrait = {
+# 		character = ROOT
+# 		animation = happiness
+# 	}
+# 	theme = crown
+# 	override_background = {
+# 		reference = courtyard
+# 	}
+# 	trigger = {
+# 		is_ai = no
+# 	}
+# 	option = {
+# 		name = hc_special_build.003.a
+# 		trigger = {
+# 			has_title = title:b_roma
+# 			NOT = {
+# 				is_target_in_global_variable_list = {
+# 					name = hc_unavailable_special_building
+# 					target = flag:hc_unavailable_special_building_hc_wonder_011
+# 				}
+# 			}
+# 		}
+# 		remove_short_term_gold = 500
+# 		title:b_roma = {
+# 			title_province = {
+# 				add_building_slot = 1
+# 				add_building = hc_wonder_011
+# 			}
+# 		}
+# 		add_to_global_variable_list = {
+# 			name = hc_unavailable_special_building
+# 			target = flag:hc_unavailable_special_building_hc_wonder_011
+# 		}
+# 	}
+# 	option = {
+# 		name = hc_special_build.003.b
+# 		trigger = {
+# 			has_title = title:b_hradec
+# 			NOT = {
+# 				is_target_in_global_variable_list = {
+# 					name = hc_unavailable_special_building
+# 					target = flag:hc_unavailable_special_building_hc_wonder_021
+# 				}
+# 			}
+# 		}
+# 		remove_short_term_gold = 500
+# 		title:b_hradec = {
+# 			title_province = {
+# 				add_building_slot = 1
+# 				add_building = hc_wonder_021
+# 			}
+# 		}
+# 		add_to_global_variable_list = {
+# 			name = hc_unavailable_special_building
+# 			target = flag:hc_unavailable_special_building_hc_wonder_021
+# 		}
+# 	}
+# 	option = {
+# 		name = hc_special_build.003.c
+# 		trigger = {
+# 			has_title = title:b_aquileia
+# 			NOT = {
+# 				is_target_in_global_variable_list = {
+# 					name = hc_unavailable_special_building
+# 					target = flag:hc_unavailable_special_building_hc_wonder_030
+# 				}
+# 			}
+# 		}
+# 		remove_short_term_gold = 500
+# 		title:b_aquileia = {
+# 			title_province = {
+# 				add_building_slot = 1
+# 				add_building = hc_wonder_030
+# 			}
+# 		}
+# 		add_to_global_variable_list = {
+# 			name = hc_unavailable_special_building
+# 			target = flag:hc_unavailable_special_building_hc_wonder_030
+# 		}
+# 	}
+# 	option = {
+# 		name = hc_special_build.003.d
+# 		trigger = {
+# 			has_title = title:b_bordeaux
+# 			NOT = {
+# 				is_target_in_global_variable_list = {
+# 					name = hc_unavailable_special_building
+# 					target = flag:hc_unavailable_special_building_hc_wonder_040
+# 				}
+# 			}
+# 		}
+# 		remove_short_term_gold = 500
+# 		title:b_bordeaux = {
+# 			title_province = {
+# 				add_building_slot = 1
+# 				add_building = hc_wonder_040
+# 			}
+# 		}
+# 		add_to_global_variable_list = {
+# 			name = hc_unavailable_special_building
+# 			target = flag:hc_unavailable_special_building_hc_wonder_040
+# 		}
+# 	}
+# 	option = {
+# 		name = hc_special_build.003.e
+# 		trigger = {
+# 			has_title = title:b_eichtstad
+# 			NOT = {
+# 				is_target_in_global_variable_list = {
+# 					name = hc_unavailable_special_building
+# 					target = flag:hc_unavailable_special_building_hc_wonder_050
+# 				}
+# 			}
+# 		}
+# 		remove_short_term_gold = 500
+# 		title:b_eichtstad = {
+# 			title_province = {
+# 				add_building_slot = 1
+# 				add_building = hc_wonder_050
+# 			}
+# 		}
+# 		add_to_global_variable_list = {
+# 			name = hc_unavailable_special_building
+# 			target = flag:hc_unavailable_special_building_hc_wonder_050
+# 		}
+# 	}
+# 	option = {
+# 		name = hc_special_build.003.f
+# 		trigger = {
+# 			has_title = title:b_roma
+# 			NOT = {
+# 				is_target_in_global_variable_list = {
+# 					name = hc_unavailable_special_building
+# 					target = flag:hc_unavailable_special_building_hc_wonder_061
+# 				}
+# 			}
+# 		}
+# 		remove_short_term_gold = 500
+# 		title:b_roma = {
+# 			title_province = {
+# 				add_building_slot = 1
+# 				add_building = hc_wonder_061
+# 			}
+# 		}
+# 		add_to_global_variable_list = {
+# 			name = hc_unavailable_special_building
+# 			target = flag:hc_unavailable_special_building_hc_wonder_061
+# 		}
+# 	}
+# 	option = {
+# 		name = hc_special_build.003.g
+# 		trigger = {
+# 			has_title = title:b_lubeck
+# 			NOT = {
+# 				is_target_in_global_variable_list = {
+# 					name = hc_unavailable_special_building
+# 					target = flag:hc_unavailable_special_building_hc_wonder_070
+# 				}
+# 			}
+# 		}
+# 		remove_short_term_gold = 500
+# 		title:b_lubeck = {
+# 			title_province = {
+# 				add_building_slot = 1
+# 				add_building = hc_wonder_070
+# 			}
+# 		}
+# 		add_to_global_variable_list = {
+# 			name = hc_unavailable_special_building
+# 			target = flag:hc_unavailable_special_building_hc_wonder_070
+# 		}
+# 	}
+# 	option = {
+# 		name = hc_special_build.003.h
+# 		trigger = {
+# 			has_title = title:b_cordoba
+# 			NOT = {
+# 				is_target_in_global_variable_list = {
+# 					name = hc_unavailable_special_building
+# 					target = flag:hc_unavailable_special_building_hc_wonder_081
+# 				}
+# 			}
+# 		}
+# 		remove_short_term_gold = 500
+# 		title:b_cordoba = {
+# 			title_province = {
+# 				add_building_slot = 1
+# 				add_building = hc_wonder_081
+# 			}
+# 		}
+# 		add_to_global_variable_list = {
+# 			name = hc_unavailable_special_building
+# 			target = flag:hc_unavailable_special_building_hc_wonder_081
+# 		}
+# 	}
+# 	option = {
+# 		name = hc_special_build.003.i
+# 		hidden_effect = {
+# 			remove_decision_cooldown = hc_establish_building_special_decision
+# 		}
+# 	}
+# }
 
 #全部建造完成
 hc_special_build.004 = {

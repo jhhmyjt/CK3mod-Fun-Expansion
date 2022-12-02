@@ -1,4 +1,4 @@
-version = "1.7"
+version = "1.8"
 tags = {
 	"Events"
 	"Decisions"
@@ -6,5 +6,5 @@ tags = {
 }
 
 name = "Till Death"
-supported_version = "1.7.*"
+supported_version = "1.8.*"
 remote_file_id = "2832082862"

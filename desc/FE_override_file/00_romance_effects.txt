@@ -1,11 +1,15 @@
-﻿#####################################################################
+﻿
+#####################################################################
 # EFFECT LIST
 #####################################################################
 # !!! Remember to add all new effects with a short description here !!!
+
 #casual_sex_or_lover_event_effect - triggers an event about two characters after they've had sex to determine if it was just casual or if there's something more going on
+
 #####################################################################
 # EFFECTS
 #####################################################################
+
 love_letter_calculation_effect = {
 	hidden_effect = {
 		save_scope_as = letterAuthor
@@ -53,8 +57,7 @@ love_letter_calculation_effect = {
 lover_activity_set_variable_effect = {
 	hidden_effect = {
 		random_list = {
-			10 = {
-				#No trigger, always available
+			10 = { #No trigger, always available
 				modifier = {
 					OR = {
 						has_trait = lifestyle_herbalist
@@ -68,8 +71,7 @@ lover_activity_set_variable_effect = {
 					days = 1
 				}
 			}
-			10 = {
-				#No trigger, always available
+			10 = { #No trigger, always available
 				modifier = {
 					OR = {
 						has_trait = gregarious
@@ -83,8 +85,7 @@ lover_activity_set_variable_effect = {
 					days = 1
 				}
 			}
-			10 = {
-				#No trigger, always available
+			10 = { #No trigger, always available
 				modifier = {
 					has_trait = greedy
 					factor = 5
@@ -102,11 +103,7 @@ lover_activity_set_variable_effect = {
 						has_trait = callous
 						has_trait = sadistic
 					}
-					NOT = {
-						PREV = {
-							has_trait = shy
-						}
-					}
+					NOT = { PREV = { has_trait = shy } }
 				}
 				modifier = {
 					OR = {
@@ -123,17 +120,9 @@ lover_activity_set_variable_effect = {
 			}
 			10 = {
 				trigger = {
-					PREV = {
-						stewardship > 10
-					}
-					NOT = {
-						has_trait = greedy
-					}
-					NOT = {
-						PREV = {
-							has_trait = generous
-						}
-					}
+					PREV = { stewardship > 10 }
+					NOT = { has_trait = greedy }
+					NOT = { PREV = { has_trait = generous } }
 				}
 				set_variable = {
 					name = lover_activity
@@ -147,11 +136,7 @@ lover_activity_set_variable_effect = {
 						has_trait = shy
 						has_trait = temperate
 					}
-					NOT = {
-						PREV = {
-							has_trait = temperate
-						}
-					}
+					NOT = { PREV = { has_trait = temperate } }
 				}
 				modifier = {
 					OR = {
@@ -175,7 +160,7 @@ lover_activity_set_variable_effect = {
 						has_trait = physique_bad_3
 					}
 					PREV = {
-						NOR = {
+						NOR  ={
 							has_trait = craven
 							has_trait = physique_bad_1
 							has_trait = physique_bad_2
@@ -214,9 +199,7 @@ lover_activity_set_variable_effect = {
 			}
 			10 = {
 				trigger = {
-					NOT = {
-						has_trait = humble
-					}
+					NOT = { has_trait = humble }
 				}
 				modifier = {
 					has_trait = arrogant
@@ -233,11 +216,7 @@ lover_activity_set_variable_effect = {
 					NOT = {
 						has_trait = cynical
 					}
-					PREV = {
-						NOT = {
-							has_trait = cynical
-						}
-					}
+					PREV = { NOT = { has_trait = cynical } }
 					religion = PREV.religion
 				}
 				modifier = {
@@ -259,7 +238,7 @@ lover_activity_set_variable_effect = {
 						has_trait = physique_bad_3
 					}
 					PREV = {
-						NOR = {
+						NOR  ={
 							has_trait = craven
 							has_trait = physique_bad_1
 							has_trait = physique_bad_2
@@ -279,14 +258,8 @@ lover_activity_set_variable_effect = {
 			}
 			10 = {
 				trigger = {
-					NOT = {
-						has_trait = cynical
-					}
-					PREV = {
-						NOT = {
-							has_trait = cynical
-						}
-					}
+					NOT = { has_trait = cynical }
+					PREV = { NOT = { has_trait = cynical } }
 				}
 				modifier = {
 					OR = {
@@ -309,32 +282,16 @@ lover_activity_set_variable_effect = {
 						has_trait = calm
 					}
 					OR = {
-						opinion = {
-							target = PREV
-							value < 15
-						}
-						reverse_opinion = {
-							target = PREV
-							value < 15
-						}
+						opinion = { target = PREV value < 15 }
+						reverse_opinion = { target = PREV value < 15 }
 						has_trait = wrathful
 					}
-					PREV = {
-						NOT = {
-							has_trait = calm
-						}
-					}
+					PREV = { NOT = { has_trait = calm } }
 				}
 				modifier = {
 					OR = {
-						opinion = {
-							target = PREV
-							value < 0
-						}
-						reverse_opinion = {
-							target = PREV
-							value < 0
-						}
+						opinion = { target = PREV value < 0 }
+						reverse_opinion = { target = PREV value < 0 }
 						has_trait = wrathful
 					}
 					factor = 5
@@ -351,9 +308,7 @@ lover_activity_set_variable_effect = {
 						learning = 12
 						has_trait = scholar
 					}
-					PREV = {
-						learning = 10
-					}
+					PREV = { learning = 10 }
 				}
 				modifier = {
 					has_trait = scholar
@@ -397,181 +352,40 @@ lover_activity_set_variable_effect = {
 }
 
 lover_activity_remove_flag_effect = {
+	
 }
+
+
+
 
 had_sex_with_effect = {
 	save_temporary_scope_as = had_sex_root_character
-	$CHARACTER$ = {
-		save_scope_as = had_sex_with_effect_partner
-	}
+	$CHARACTER$ = { save_scope_as = had_sex_with_effect_partner }
+
 	if = {
-		limit = {
-			trigger_if = {
-				limit = {
-					has_game_rule = hc_seduce_court_ai_cannot
-				}
-				scope:had_sex_root_character = {
-					is_ai = yes
-				}
-				scope:had_sex_with_effect_partner = {
-					is_ai = yes
-				}
-			}
-			or = {
-				and = {
-					scope:had_sex_with_effect_partner = {
-						has_trait = hc_immutable
-					}
-					scope:had_sex_root_character = {
-						not = {
-							has_trait = hc_immutable
-						}
-					}
-				}
-				and = {
-					scope:had_sex_with_effect_partner = {
-						not = {
-							has_trait = hc_immutable
-						}
-					}
-					scope:had_sex_root_character = {
-						has_trait = hc_immutable
-					}
-				}
-			}
-		}
-		custom_tooltip = hc_had_sex_with_effect_ct_01
-		scope:had_sex_with_effect_partner = {
-			if = {
-				limit = {
-					not = {
-						has_character_modifier = hc_char_modifier_09
-					}
-				}
-				add_character_modifier = {
-					modifier = hc_char_modifier_09
-					months = 6
-				}
-			}
-		}
-		scope:had_sex_root_character = {
-			if = {
-				limit = {
-					not = {
-						has_character_modifier = hc_char_modifier_09
-					}
-				}
-				add_character_modifier = {
-					modifier = hc_char_modifier_09
-					months = 6
-				}
-			}
-		}
+		limit = { this = root }
+		custom_tooltip = had_sex_with_effect.first_person.tt
 	}
 	else_if = {
-		limit = {
-			or = {
-				and = {
-					scope:had_sex_with_effect_partner = {
-						has_character_modifier = hc_char_modifier_08
-					}
-					# TODO：是否生效？（直接禁止行为，增加去除互动）
-					not = {
-						scope:had_sex_with_effect_partner = {
-							any_spouse = {
-								this = scope:had_sex_root_character
-							}
-						}
-					}
-				}
-				and = {
-					scope:had_sex_root_character = {
-						has_character_modifier = hc_char_modifier_08
-					}
-					not = {
-						scope:had_sex_root_character = {
-							any_spouse = {
-								this = scope:had_sex_with_effect_partner
-							}
-						}
-					}
-				}
-			}
-		}
-		custom_tooltip = hc_had_sex_with_effect_ct_02
-		scope:had_sex_with_effect_partner = {
-			if = {
-				limit = {
-					not = {
-						has_character_modifier = hc_char_modifier_09
-					}
-				}
-				add_character_modifier = {
-					modifier = hc_char_modifier_09
-					months = 6
-				}
-			}
-		}
-		scope:had_sex_root_character = {
-			if = {
-				limit = {
-					not = {
-						has_character_modifier = hc_char_modifier_09
-					}
-				}
-				add_character_modifier = {
-					modifier = hc_char_modifier_09
-					months = 6
-				}
-			}
-		}
+		limit = { root = scope:had_sex_with_effect_partner }
+		custom_tooltip = had_sex_with_effect.other_person.tt
 	}
 	else = {
+		custom_tooltip = had_sex_with_effect.third_person.tt
+	}
+
+	create_character_memory = {
+		type = had_sex
+		participants = {
+			sex_partner = scope:had_sex_with_effect_partner
+		}
+	}
+
+
+	#Stress
+	$CHARACTER$ = {
 		if = {
-			limit = {
-				this = root
-			}
-			custom_tooltip = had_sex_with_effect.first_person.tt
-		}
-		else_if = {
-			limit = {
-				root = scope:had_sex_with_effect_partner
-			}
-			custom_tooltip = had_sex_with_effect.other_person.tt
-		}
-		else = {
-			custom_tooltip = had_sex_with_effect.third_person.tt
-		}
-		create_character_memory = {
-			type = had_sex
-			participants = {
-				sex_partner = scope:had_sex_with_effect_partner
-			}
-		}
-		#Stress
-		$CHARACTER$ = {
-			if = {
-				limit = {
-					this = root
-				}
-				stress_impact = {
-					lustful = minor_stress_impact_loss
-					rakish = minor_stress_impact_loss
-				}
-			}
-			else = {
-				hidden_effect = {
-					stress_impact = {
-						lustful = minor_stress_impact_loss
-						rakish = minor_stress_impact_loss
-					}
-				}
-			}
-		}
-		if = {
-			limit = {
-				this = root
-			}
+			limit = { this = root }
 			stress_impact = {
 				lustful = minor_stress_impact_loss
 				rakish = minor_stress_impact_loss
@@ -585,260 +399,224 @@ had_sex_with_effect = {
 				}
 			}
 		}
-		#Pregnancy & story cycles
+	}
+	if = {
+		limit = { this = root }
+		stress_impact = {
+			lustful = minor_stress_impact_loss
+			rakish = minor_stress_impact_loss
+		}
+	}
+	else = {
+		hidden_effect = {
+			stress_impact = {
+				lustful = minor_stress_impact_loss
+				rakish = minor_stress_impact_loss
+			}
+		}
+	}	
+	
+
+	#Pregnancy & story cycles
+	hidden_effect = {
+		if = {
+			limit = {
+				is_female = yes
+				$CHARACTER$ = { is_male = yes }
+				possible_pregnancy_after_sex_with_character_trigger = { CHARACTER = scope:had_sex_with_effect_partner }
+			}
+			add_to_variable_list = {
+				name = potential_father_variable_list
+				target = $CHARACTER$
+			}
+			random = {
+				chance = $PREGNANCY_CHANCE$
+				make_pregnant = {
+					father = $CHARACTER$
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_character_flag = had_story_cycle_peasant_affair }
+					is_ruler = yes
+					$CHARACTER$ = {
+						is_lowborn = yes
+						is_landed = no
+						is_courtier = no
+					}
+					NOT = {
+						any_scheme = {
+							scheme_target = $CHARACTER$
+						}
+					}
+				}
+				set_variable = {
+					name = story_peasant_affair_target
+					value = $CHARACTER$
+				}
+				create_story = story_peasant_affair
+			}
+		}
+		else_if = {
+			limit = {
+				is_male = yes
+				$CHARACTER$ = { is_female = yes }
+				possible_pregnancy_after_sex_with_character_trigger = { CHARACTER = scope:had_sex_with_effect_partner }
+			}
+			$CHARACTER$ = {
+				add_to_variable_list = {
+					name = potential_father_variable_list
+					target = scope:had_sex_with_effect_partner
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_character_flag = had_story_cycle_peasant_affair }
+					is_ruler = yes
+					$CHARACTER$ = {
+						is_lowborn = yes
+						is_landed = no
+						is_courtier = no
+					}
+					NOT = {
+						any_scheme = {
+							scheme_target = $CHARACTER$
+						}
+					}
+				}
+				set_variable = {
+					name = story_peasant_affair_target
+					value = $CHARACTER$
+				}
+				$CHARACTER$ = {
+					if = {
+						limit = {
+							is_pregnant = no
+							fertility >= 0.1
+							is_visibly_fertile = yes
+						}
+						random = {
+							chance = $PREGNANCY_CHANCE$
+							add_character_flag = {
+								flag = peasant_is_pregnant
+								days = 560
+							}
+						}
+					}
+				}
+				create_story = story_peasant_affair
+			}
+			else = {
+				$CHARACTER$ = {
+					random = {
+						chance = $PREGNANCY_CHANCE$
+						make_pregnant = {
+							father = scope:had_sex_root_character
+						}
+					}
+				}
+			}
+		}
+		
+		#STD transmission
+		risk_of_std_from_effect = { PARTNER = $CHARACTER$ }
+		hidden_effect = {
+			$CHARACTER$ = { risk_of_std_from_effect = { PARTNER = scope:had_sex_root_character } }
+		}
+	
+		#Adultery suspicion
 		hidden_effect = {
 			if = {
 				limit = {
-					is_female = yes
-					$CHARACTER$ = {
-						is_male = yes
+					OR = {
+						is_married = yes
+						is_concubine = yes
 					}
-					possible_pregnancy_after_sex_with_character_trigger = {
-						CHARACTER = scope:had_sex_with_effect_partner
-					}
+					NOT = { any_consort = { this = $CHARACTER$ } }
 				}
-				add_to_variable_list = {
-					name = potential_father_variable_list
-					target = $CHARACTER$
+				set_variable = {
+					name = had_recent_sex_with
+					value = $CHARACTER$
+					days = 1000
 				}
 				random = {
-					chance = $PREGNANCY_CHANCE$
-					make_pregnant = {
-						father = $CHARACTER$
-					}
-				}
-				if = {
-					limit = {
-						NOT = {
-							has_character_flag = had_story_cycle_peasant_affair
+					chance = 50 #This should be quite high as there is a chance that adultery.0001 "fails" i.e. spouse doesn't realize
+					every_relation = {
+						type = soulmate
+						limit = {
+							NOT = { this = $CHARACTER$ } #Soulmates should not grow suspicous of adulterous affairs after sleeping with their lover
 						}
-						is_ruler = yes
-						$CHARACTER$ = {
-							is_lowborn = yes
-							is_landed = no
-							is_courtier = no
-						}
-						NOT = {
-							any_scheme = {
-								scheme_target = $CHARACTER$
-							}
-						}
+						add_to_temporary_list = partners_1
 					}
-					set_variable = {
-						name = story_peasant_affair_target
-						value = $CHARACTER$
+					every_consort = {
+						add_to_temporary_list = partners_1
 					}
-					create_story = story_peasant_affair
-				}
-			}
-			else_if = {
-				limit = {
-					is_male = yes
-					$CHARACTER$ = {
-						is_female = yes
-					}
-					possible_pregnancy_after_sex_with_character_trigger = {
-						CHARACTER = scope:had_sex_with_effect_partner
-					}
-				}
-				$CHARACTER$ = {
-					add_to_variable_list = {
-						name = potential_father_variable_list
-						target = scope:had_sex_with_effect_partner
-					}
-				}
-				if = {
-					limit = {
-						NOT = {
-							has_character_flag = had_story_cycle_peasant_affair
-						}
-						is_ruler = yes
-						$CHARACTER$ = {
-							is_lowborn = yes
-							is_landed = no
-							is_courtier = no
-						}
-						NOT = {
-							any_scheme = {
-								scheme_target = $CHARACTER$
-							}
-						}
-					}
-					set_variable = {
-						name = story_peasant_affair_target
-						value = $CHARACTER$
-					}
-					$CHARACTER$ = {
-						if = {
-							limit = {
-								is_pregnant = no
-								fertility >= 0.1
-								is_visibly_fertile = yes
-							}
-							random = {
-								chance = $PREGNANCY_CHANCE$
-								add_character_flag = {
-									flag = peasant_is_pregnant
-									days = 560
-								}
-							}
-						}
-					}
-					create_story = story_peasant_affair
-				}
-				else = {
-					$CHARACTER$ = {
-						random = {
-							chance = $PREGNANCY_CHANCE$
-							make_pregnant = {
-								father = scope:had_sex_root_character
-							}
+					random_in_list = {
+						list = partners_1
+						limit = { is_ai = no }
+						alternative_limit = { always = yes }
+						trigger_event = {
+							id = adultery.0001
+							days = { 14 365 }
 						}
 					}
 				}
 			}
-			#STD transmission
-			risk_of_std_from_effect = {
-				PARTNER = $CHARACTER$
-			}
-			hidden_effect = {
-				$CHARACTER$ = {
-					risk_of_std_from_effect = {
-						PARTNER = scope:had_sex_root_character
-					}
-				}
-			}
-			#Adultery suspicion
-			hidden_effect = {
+			$CHARACTER$ = {
 				if = {
 					limit = {
 						OR = {
 							is_married = yes
 							is_concubine = yes
 						}
-						NOT = {
-							any_consort = {
-								this = $CHARACTER$
-							}
-						}
+						NOT = { any_consort = { this = scope:had_sex_root_character }}
 					}
 					set_variable = {
 						name = had_recent_sex_with
-						value = $CHARACTER$
+						value = scope:had_sex_root_character
 						days = 1000
 					}
 					random = {
-						chance = 50						#This should be quite high as there is a chance that adultery.0001 "fails" i.e. spouse doesn't realize
+						chance = 50 #This should be quite high as there is a chance that adultery.0001 "fails" i.e. spouse doesn't realize
 						every_relation = {
 							type = soulmate
 							limit = {
-								NOT = {
-									this = $CHARACTER$
-								}
-								#Soulmates should not grow suspicous of adulterous affairs after sleeping with their lover
+								NOT = { this = scope:had_sex_root_character } #Soulmates should not grow suspicous of adulterous affairs after sleeping with their lover
 							}
-							add_to_temporary_list = partners_1
+							add_to_temporary_list = partners_2
 						}
 						every_consort = {
-							add_to_temporary_list = partners_1
+							add_to_temporary_list = partners_2
 						}
 						random_in_list = {
-							list = partners_1
-							limit = {
-								is_ai = no
-							}
-							alternative_limit = {
-								always = yes
-							}
+							list = partners_2
+							limit = { is_ai = no }
+							alternative_limit = { always = yes }
 							trigger_event = {
 								id = adultery.0001
-								days = {
-									14
-									365
-								}
+								days = { 14 365 }
 							}
 						}
-					}
-				}
-				$CHARACTER$ = {
-					if = {
-						limit = {
-							OR = {
-								is_married = yes
-								is_concubine = yes
-							}
-							NOT = {
-								any_consort = {
-									this = scope:had_sex_root_character
-								}
-							}
-						}
-						set_variable = {
-							name = had_recent_sex_with
-							value = scope:had_sex_root_character
-							days = 1000
-						}
-						random = {
-							chance = 50							#This should be quite high as there is a chance that adultery.0001 "fails" i.e. spouse doesn't realize
-							every_relation = {
-								type = soulmate
-								limit = {
-									NOT = {
-										this = scope:had_sex_root_character
-									}
-									#Soulmates should not grow suspicous of adulterous affairs after sleeping with their lover
-								}
-								add_to_temporary_list = partners_2
-							}
-							every_consort = {
-								add_to_temporary_list = partners_2
-							}
-							random_in_list = {
-								list = partners_2
-								limit = {
-									is_ai = no
-								}
-								alternative_limit = {
-									always = yes
-								}
-								trigger_event = {
-									id = adultery.0001
-									days = {
-										14
-										365
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-			#Incestuous Relations
-			give_incest_secret_or_nothing_with_target_effect = {
-				CHARACTER = $CHARACTER$
-			}
-			hidden_effect = {
-				$CHARACTER$ = {
-					give_incest_secret_or_nothing_with_target_effect = {
-						CHARACTER = scope:had_sex_root_character
-					}
-				}
-			}
-			#Homosexuality
-			give_homosexual_secret_or_nothing_with_target_effect = {
-				CHARACTER = $CHARACTER$
-			}
-			hidden_effect = {
-				$CHARACTER$ = {
-					give_homosexual_secret_or_nothing_with_target_effect = {
-						CHARACTER = scope:had_sex_root_character
 					}
 				}
 			}
 		}
-		# Achievements
-		fp2_had_friend_with_benefits = yes		# FP2 History's Best Friend
+
+		#Incestuous Relations
+		give_incest_secret_or_nothing_with_target_effect = { CHARACTER = $CHARACTER$ }
+		hidden_effect = {
+			$CHARACTER$ = { give_incest_secret_or_nothing_with_target_effect = { CHARACTER = scope:had_sex_root_character } }
+		}
+
+		#Homosexuality
+		give_homosexual_secret_or_nothing_with_target_effect = { CHARACTER = $CHARACTER$ }
+		hidden_effect = {
+			$CHARACTER$ = { give_homosexual_secret_or_nothing_with_target_effect = { CHARACTER = scope:had_sex_root_character } }
+		}
 	}
+
+	# Achievements
+	fp2_had_friend_with_benefits = yes # FP2 History's Best Friend
 }
 
 #For having sex with "someone" (not a character)
@@ -847,181 +625,49 @@ had_sex_with_unknown_effect = {
 		name = gender
 		value = flag:$GENDER$
 	}
+
+	#Stress release
 	if = {
 		limit = {
-			trigger_if = {
-				limit = {
-					has_game_rule = hc_seduce_court_ai_cannot
-				}
-				scope:had_sex_root_character = {
-					is_ai = yes
-				}
-				scope:had_sex_with_effect_partner = {
-					is_ai = yes
-				}
-			}
-			or = {
-				and = {
-					scope:had_sex_with_effect_partner = {
-						has_trait = hc_immutable
-					}
-					scope:had_sex_root_character = {
-						not = {
-							has_trait = hc_immutable
-						}
-					}
-				}
-				and = {
-					scope:had_sex_with_effect_partner = {
-						not = {
-							has_trait = hc_immutable
-						}
-					}
-					scope:had_sex_root_character = {
-						has_trait = hc_immutable
-					}
-				}
+			OR = {
+				has_trait = lustful
+				has_trait = lifestyle_reveler
 			}
 		}
-		custom_tooltip = hc_had_sex_with_effect_ct_01
-		scope:had_sex_with_effect_partner = {
-			if = {
-				limit = {
-					not = {
-						has_character_modifier = hc_char_modifier_09
-					}
-				}
-				add_character_modifier = {
-					modifier = hc_char_modifier_09
-					months = 6
-				}
-			}
-		}
-		scope:had_sex_root_character = {
-			if = {
-				limit = {
-					not = {
-						has_character_modifier = hc_char_modifier_09
-					}
-				}
-				add_character_modifier = {
-					modifier = hc_char_modifier_09
-					months = 6
-				}
-			}
-		}
+		add_stress = minor_stress_loss
 	}
-	else_if = {
-		limit = {
-			or = {
-				and = {
-					scope:had_sex_with_effect_partner = {
-						has_character_modifier = hc_char_modifier_08
-					}
-					# TODO：是否生效？（直接禁止行为，增加去除互动）
-					not = {
-						scope:had_sex_with_effect_partner = {
-							any_spouse = {
-								this = scope:had_sex_root_character
-							}
-						}
-					}
-				}
-				and = {
-					scope:had_sex_root_character = {
-						has_character_modifier = hc_char_modifier_08
-					}
-					not = {
-						scope:had_sex_root_character = {
-							any_spouse = {
-								this = scope:had_sex_with_effect_partner
-							}
-						}
-					}
-				}
-			}
-		}
-		custom_tooltip = hc_had_sex_with_effect_ct_02
-		scope:had_sex_with_effect_partner = {
-			if = {
-				limit = {
-					not = {
-						has_character_modifier = hc_char_modifier_09
-					}
-				}
-				add_character_modifier = {
-					modifier = hc_char_modifier_09
-					months = 6
-				}
-			}
-		}
-		scope:had_sex_root_character = {
-			if = {
-				limit = {
-					not = {
-						has_character_modifier = hc_char_modifier_09
-					}
-				}
-				add_character_modifier = {
-					modifier = hc_char_modifier_09
-					months = 6
-				}
-			}
-		}
+
+	#Sodomy
+	if = {
+		limit = { scope:gender = flag:male }
+		give_homosexual_secret_or_nothing_with_target_effect = { CHARACTER = dummy_male }
 	}
-	else = {
-		#Stress release
-		if = {
-			limit = {
-				OR = {
-					has_trait = lustful
-					has_trait = lifestyle_reveler
-				}
-			}
-			add_stress = minor_stress_loss
+
+	hidden_effect = {
+		#Adultery suspicion
+		set_variable = {
+			name = had_recent_sex
+			value = flag:$GENDER$
 		}
-		#Sodomy
-		if = {
-			limit = {
-				scope:gender = flag:male
-			}
-			give_homosexual_secret_or_nothing_with_target_effect = {
-				CHARACTER = dummy_male
+		random = {
+			chance = 5
+			random_spouse = {
+				limit = { is_ai = no }
+				alternative_limit = { always = yes }
+				trigger_event = adultery.0001
 			}
 		}
-		hidden_effect = {
-			#Adultery suspicion
-			set_variable = {
-				name = had_recent_sex
-				value = flag:$GENDER$
+
+		#STD transmission
+		random_list = {
+			95 = {
+				#Nothing
 			}
-			random = {
-				chance = 5
-				random_spouse = {
-					limit = {
-						is_ai = no
-					}
-					alternative_limit = {
-						always = yes
-					}
-					trigger_event = adultery.0001
-				}
+			4 = {
+				contract_disease_notify_effect = { DISEASE = lovers_pox }
 			}
-			#STD transmission
-			random_list = {
-				95 = {
-					#Nothing
-				}
-				4 = {
-					contract_disease_notify_effect = {
-						DISEASE = lovers_pox
-					}
-				}
-				1 = {
-					contract_disease_notify_effect = {
-						DISEASE = great_pox
-					}
-				}
+			1 = {
+				contract_disease_notify_effect = { DISEASE = great_pox }
 			}
 		}
 	}
@@ -1052,6 +698,7 @@ lose_lover_effect = {
 			remove_character_flag = can_be_confronted_about_lover_exclusivity
 		}
 	}
+
 	#To remove the object of importance if it exists
 	if = {
 		limit = {
@@ -1083,9 +730,7 @@ lose_lover_effect = {
 				}
 			}
 		}
-		$LOVER$ = {
-			clear_variable_list = lover_object_of_importance
-		}
+		$LOVER$ = { clear_variable_list = lover_object_of_importance }
 	}
 	else_if = {
 		limit = {
@@ -1097,11 +742,11 @@ lose_lover_effect = {
 				}
 			}
 		}
-		$LOVER$ = {
-			clear_variable_list = lover_object_of_importance_2
-		}
+		$LOVER$ = { clear_variable_list = lover_object_of_importance_2 }
 	}
 }
+
+
 
 #Which one of the two characters do I love the most?
 whom_do_i_love_the_most_effect = {
@@ -1224,14 +869,10 @@ whom_do_i_love_the_most_effect = {
 										}
 										random_list = {
 											50 = {
-												$CHARACTER1$ = {
-													save_scope_as = most_beloved
-												}
+												$CHARACTER1$ = { save_scope_as = most_beloved }
 											}
 											50 = {
-												$CHARACTER2$ = {
-													save_scope_as = most_beloved
-												}
+												$CHARACTER2$ = { save_scope_as = most_beloved }
 											}
 										}
 									}
@@ -1243,9 +884,7 @@ whom_do_i_love_the_most_effect = {
 												value >= 80
 											}
 										}
-										$CHARACTER1$ = {
-											save_scope_as = most_beloved
-										}
+										$CHARACTER1$ = { save_scope_as = most_beloved }
 									}
 									else_if = {
 										limit = {
@@ -1255,9 +894,7 @@ whom_do_i_love_the_most_effect = {
 												value >= 80
 											}
 										}
-										$CHARACTER2$ = {
-											save_scope_as = most_beloved
-										}
+										$CHARACTER2$ = { save_scope_as = most_beloved }
 									}
 								}
 								else_if = {
@@ -1268,9 +905,7 @@ whom_do_i_love_the_most_effect = {
 											value >= 70
 										}
 									}
-									$CHARACTER1$ = {
-										save_scope_as = most_beloved
-									}
+									$CHARACTER1$ = { save_scope_as = most_beloved }
 								}
 								else_if = {
 									limit = {
@@ -1280,9 +915,7 @@ whom_do_i_love_the_most_effect = {
 											value >= 70
 										}
 									}
-									$CHARACTER2$ = {
-										save_scope_as = most_beloved
-									}
+									$CHARACTER2$ = { save_scope_as = most_beloved }
 								}
 							}
 							else_if = {
@@ -1293,9 +926,7 @@ whom_do_i_love_the_most_effect = {
 										value >= 60
 									}
 								}
-								$CHARACTER1$ = {
-									save_scope_as = most_beloved
-								}
+								$CHARACTER1$ = { save_scope_as = most_beloved }
 							}
 							else_if = {
 								limit = {
@@ -1305,9 +936,7 @@ whom_do_i_love_the_most_effect = {
 										value >= 60
 									}
 								}
-								$CHARACTER2$ = {
-									save_scope_as = most_beloved
-								}
+								$CHARACTER2$ = { save_scope_as = most_beloved }
 							}
 						}
 						else_if = {
@@ -1318,9 +947,7 @@ whom_do_i_love_the_most_effect = {
 									value >= 50
 								}
 							}
-							$CHARACTER1$ = {
-								save_scope_as = most_beloved
-							}
+							$CHARACTER1$ = { save_scope_as = most_beloved }
 						}
 						else_if = {
 							limit = {
@@ -1330,9 +957,7 @@ whom_do_i_love_the_most_effect = {
 									value >= 50
 								}
 							}
-							$CHARACTER2$ = {
-								save_scope_as = most_beloved
-							}
+							$CHARACTER2$ = { save_scope_as = most_beloved }
 						}
 					}
 					else_if = {
@@ -1343,9 +968,7 @@ whom_do_i_love_the_most_effect = {
 								value >= 40
 							}
 						}
-						$CHARACTER1$ = {
-							save_scope_as = most_beloved
-						}
+						$CHARACTER1$ = { save_scope_as = most_beloved }
 					}
 					else_if = {
 						limit = {
@@ -1355,9 +978,7 @@ whom_do_i_love_the_most_effect = {
 								value >= 40
 							}
 						}
-						$CHARACTER2$ = {
-							save_scope_as = most_beloved
-						}
+						$CHARACTER2$ = { save_scope_as = most_beloved }
 					}
 				}
 				else_if = {
@@ -1368,9 +989,7 @@ whom_do_i_love_the_most_effect = {
 							value >= 30
 						}
 					}
-					$CHARACTER1$ = {
-						save_scope_as = most_beloved
-					}
+					$CHARACTER1$ = { save_scope_as = most_beloved }
 				}
 				else_if = {
 					limit = {
@@ -1380,9 +999,7 @@ whom_do_i_love_the_most_effect = {
 							value >= 30
 						}
 					}
-					$CHARACTER2$ = {
-						save_scope_as = most_beloved
-					}
+					$CHARACTER2$ = { save_scope_as = most_beloved }
 				}
 			}
 			else_if = {
@@ -1393,9 +1010,7 @@ whom_do_i_love_the_most_effect = {
 						value >= 20
 					}
 				}
-				$CHARACTER1$ = {
-					save_scope_as = most_beloved
-				}
+				$CHARACTER1$ = { save_scope_as = most_beloved }
 			}
 			else_if = {
 				limit = {
@@ -1405,9 +1020,7 @@ whom_do_i_love_the_most_effect = {
 						value >= 20
 					}
 				}
-				$CHARACTER2$ = {
-					save_scope_as = most_beloved
-				}
+				$CHARACTER2$ = { save_scope_as = most_beloved }
 			}
 		}
 		else_if = {
@@ -1418,9 +1031,7 @@ whom_do_i_love_the_most_effect = {
 					value >= 10
 				}
 			}
-			$CHARACTER1$ = {
-				save_scope_as = most_beloved
-			}
+			$CHARACTER1$ = { save_scope_as = most_beloved }
 		}
 		else_if = {
 			limit = {
@@ -1430,9 +1041,7 @@ whom_do_i_love_the_most_effect = {
 					value >= 10
 				}
 			}
-			$CHARACTER2$ = {
-				save_scope_as = most_beloved
-			}
+			$CHARACTER2$ = { save_scope_as = most_beloved }
 		}
 	}
 	else_if = {
@@ -1443,9 +1052,7 @@ whom_do_i_love_the_most_effect = {
 				value >= 0
 			}
 		}
-		$CHARACTER1$ = {
-			save_scope_as = most_beloved
-		}
+		$CHARACTER1$ = { save_scope_as = most_beloved }
 	}
 	else_if = {
 		limit = {
@@ -1455,30 +1062,22 @@ whom_do_i_love_the_most_effect = {
 				value >= 0
 			}
 		}
-		$CHARACTER2$ = {
-			save_scope_as = most_beloved
-		}
+		$CHARACTER2$ = { save_scope_as = most_beloved }
 	}
 	else = {
 		random_list = {
 			50 = {
-				$CHARACTER1$ = {
-					save_scope_as = most_beloved
-				}
+				$CHARACTER1$ = { save_scope_as = most_beloved }
 			}
 			50 = {
-				$CHARACTER2$ = {
-					save_scope_as = most_beloved
-				}
+				$CHARACTER2$ = { save_scope_as = most_beloved }
 			}
 		}
 	}
 }
 
 casual_sex_or_lover_event_effect = {
-	$CHARACTER_2$ = {
-		save_scope_as = married_seducer
-	}
+	$CHARACTER_2$ = { save_scope_as = married_seducer }
 	$CHARACTER_1$ = {
 		trigger_event = {
 			id = yearly.1002
@@ -1486,3 +1085,5 @@ casual_sex_or_lover_event_effect = {
 		}
 	}
 }
+
+

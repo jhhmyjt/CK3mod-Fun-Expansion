@@ -1483,6 +1483,50 @@ hc_pursue_celibacy_decision = {
 	}
 }
 
+#end the road of wonderful buliding 
+# hc_ending_of_building_decision = {
+# 	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+# 	selection_tooltip = hc_ending_of_building_decision_tooltip
+# 	desc = hc_ending_of_building_decision_desc
+# 	ai_check_interval = 0
+# 	major = yes
+# 	is_shown = {
+# 		is_ai = no
+# 		NOT = {
+# 			root.house = {
+# 				has_house_modifier = hc_dynasty_god_modifier
+# 			}
+# 		}
+# 	}
+# 	is_valid_showing_failures_only = {
+# 		is_imprisoned = no
+# 		is_available_adult = yes
+# 		is_at_war = no
+# 	}
+# 	effect = {
+# 		custom_tooltip = hc_begin_decision_effect_tt_01
+# 		custom_tooltip = hc_begin_decision_effect_tt_02
+# 		custom_tooltip = hc_begin_decision_effect_tt_03
+# 		if = {
+# 			limit = {
+# 				has_ep1_dlc_trigger = yes
+# 			}
+# 			custom_tooltip = hc_begin_decision_effect_tt_04
+# 		}
+# 		custom_tooltip = hc_begin_decision_effect_tt_05
+# 		trigger_event = {
+# 			id = hc.001
+# 			days = 5
+# 		}
+# 	}
+# 	# ai_check_frequency = 0
+# 	ai_potential = {
+# 		always = no
+# 	}
+# 	ai_will_do = {
+# 		base = 0
+# 	}
+# }
 #设立皇帝权威
 # hc_emperor_authority_decision = {
 # 	picture = "gfx/interface/illustrations/decisions/decision_knight_kneeling.dds"

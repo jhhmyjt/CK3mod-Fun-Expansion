@@ -1,5 +1,14 @@
 ﻿hc_barony_is_valid_for_build_special_trigger = {
 	holder = $CHARACTER$
+	#只可建造在封建地产上
+	#TODO： 不同建筑有不同要求，且一旦转换地产建筑就会消失（效果尚未测试）
+	holder = {
+		has_government = feudal_government
+	}
+	#has_government = tribal_government
+	#has_government = feudal_government
+	#has_government = theocracy_government
+	#has_government = republic_government
 	NOT = {
 		is_leased_out = yes
 	}

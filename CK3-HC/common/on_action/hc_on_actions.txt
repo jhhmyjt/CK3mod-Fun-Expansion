@@ -63,6 +63,11 @@ on_action_coronation = {
 
 #奇观事件组
 on_action_hc_special_building = {
+	trigger = {
+		Not = {
+			has_trait = hc_wonder_king
+		}
+	}
 	events = {
 		hc_special_build.004
 	}
