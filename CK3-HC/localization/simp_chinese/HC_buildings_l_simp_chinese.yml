@@ -19,7 +19,7 @@
  building_type_hc_wonder_040_desc:0 "圣米歇尔山（Le Mont-St-Michel）位于法国北部芒甚省（La Manche），是耸立在诺曼底和布列塔尼之间海面上的一个花岗岩小岛，从布列塔尼海岸望去宛如童话世界一般：周围是碧海白沙，四周既无树木又无房屋，一座锥形的小山兀然拔地而起。最为壮观的是，山顶上的圣米歇尔教堂建筑群足足比它赖以存在的、直径约1公里的小山高出近两倍！教堂哥特式的尖顶高耸入云，顶上大天使圣米歇尔雕像手持利剑直指苍穹。其景象恍若海上仙山。"
  building_hc_wonder_040:0 "$building_type_hc_wonder_040$"
  building_hc_wonder_040_desc:0 "$building_type_hc_wonder_040_desc$"
- building_type_hc_wonder_050:0 "暴君之眼"
+ building_type_hc_wonder_050:0 "$wonder_05$"
  building_type_hc_wonder_050_desc:0 "它是不知多少年前陨石撞击地表形成的巨大陨石坑，造型狰狞，似一只野兽的眼睛。"
  building_hc_wonder_050:0 "$building_type_hc_wonder_050$"
  building_hc_wonder_050_desc:0 "$building_type_hc_wonder_050_desc$"

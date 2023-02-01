@@ -1,6 +1,6 @@
 ﻿on_action_hc_every_year = {
 	events = {
-		hc_switch.005
+		hc_switch.005		#检测失去骑士特质的圣殿骑士，激活退休事件
 		hc_fun.001
 	}
 	on_actions = {
@@ -62,23 +62,25 @@ on_action_coronation = {
 }
 
 #奇观事件组
+#TODO：下次更新删除
 on_action_hc_special_building = {
 	trigger = {
 		Not = {
 			has_trait = hc_wonder_king
 		}
 	}
-	events = {
-		hc_special_build.004
-	}
+	# events = {
+	# 	hc_special_build.004
+	# }
 	on_actions = {
 		delay = {
 			years = 1
 		}
-		on_action_hc_special_building
+		#什么也不发生
 	}
 }
 
+#为参加战争的骑士添加修正，001判断战争是否结束，结束移除修正。002战争继续，重新调用on_action_hc_knight。判断频率1m
 on_action_hc_knight = {
 	events = {
 		hc_switch.001
@@ -86,9 +88,9 @@ on_action_hc_knight = {
 	}
 }
 
+#移除圣殿骑士特质，时间30年
 on_action_trait_hc_knight = {
 	events = {
 		hc_switch.003
-		# hc_switch.004
 	}
 }

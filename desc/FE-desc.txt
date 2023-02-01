@@ -16,7 +16,6 @@
 [img]https://i.imgur.com/PZKaOKU.png[/img]
 [h1]支持语言[/h1]
 简体中文
-English(by Google)
 
 [h1]兼容性[/h1]
 兼容现有存档
@@ -31,6 +30,19 @@ English(by Google)
 [*]桔梗花插画,[url=https://www.zcool.com.cn/work/ZNDExNjEyMDg=.html]画师：苏俺[/url]
 [/list]
 
+[h1]近期更新[/h1]
+12.7
+数值更新：
+[list]
+[*]君之眼建筑数值调整（之前的军队维护数值已经严重溢出了，威望获取也多。另外删除了大众好感减少修正）
+[*]圣殿骑士的任期从10年改为30年
+[/list]
+其他更新：
+[list]
+[*]修建奇观等决议设置为非主要决议
+[*]增加新决议：奇观之王
+[*]增加新决议：停止禁欲
+[/list]
 
 [h1]最后[/h1]
 

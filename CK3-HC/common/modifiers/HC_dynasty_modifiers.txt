@@ -6,6 +6,7 @@ hc_dynasty_god_modifier = {
 	direct_vassal_opinion = 5
 	monthly_prestige_gain_mult = 0.15
 	monthly_piety_gain_mult = 0.15
+	stress_gain_mult = -0.1
 }
 
 #祭坛之灵
@@ -154,7 +155,14 @@ hc_dynasty_celibacy_modifier_04 = {
 
 #兴建奇观
 hc_dynasty_building_modifier = {
-	stewardship = 2
 	monthly_income_mult = 0.06
+	icon = stewardship_positive
+}
+
+#奇观之族
+hc_dynasty_building_king_modifier = {
+	stewardship = 3
+	monthly_income_mult = 0.05
+	monthly_prestige_gain_mult = 0.02
 	icon = stewardship_positive
 }

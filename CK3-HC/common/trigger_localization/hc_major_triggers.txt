@@ -37,3 +37,35 @@ hc_building_special_decision_06_knight = {
 hc_building_special_decision_04_martial = {
 	global = hc_building_special_decision_04_martial
 }
+
+hc_finished_wonder_01_text = {
+	global = hc_finished_wonder_01_text
+}
+
+hc_finished_wonder_02_text = {
+	global = hc_finished_wonder_02_text
+}
+
+hc_finished_wonder_03_text = {
+	global = hc_finished_wonder_03_text
+}
+
+hc_finished_wonder_04_text = {
+	global = hc_finished_wonder_04_text
+}
+
+hc_finished_wonder_05_text = {
+	global = hc_finished_wonder_05_text
+}
+
+hc_finished_wonder_06_text = {
+	global = hc_finished_wonder_06_text
+}
+
+hc_finished_wonder_07_text = {
+	global = hc_finished_wonder_07_text
+}
+
+hc_finished_wonder_08_text = {
+	global = hc_finished_wonder_08_text
+}

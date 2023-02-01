@@ -1,42 +1,124 @@
-﻿#检测压力
-# hc_check_decision = {
-# 	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
-# 	selection_tooltip = hc_check_decision
-# 	desc = hc_check_decision
-# 	ai_check_interval = 0
-# 	major = no
-# 	sort_order = 0
-# 	is_shown = {
-# 		is_ai = no
-# 		always = yes
-# 	}
-# 	is_valid = {
-# 		root.dynasty = {
-# 			any_dynasty_member = {
-# 				has_character_modifier = hc_char_modifier_09
-# 				NOT = {
-# 					this = root
-# 				}
-# 			}
-# 		}
-# 	}
-# 	effect = {
-# 		root.dynasty = {
-# 			every_dynasty_member = {
-# 				limit = {
-# 					has_character_modifier = hc_char_modifier_09
-# 				}
-# 				add_piety = -1
-# 			}
-# 		}
-# 	}
-# 	ai_potential = {
-# 		always = no
-# 	}
-# 	ai_will_do = {
-# 		base = 0
-# 	}
-# }
+﻿#test
+#TODO：测试决议，更新前删除
+#审判日
+hc_test_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	desc = hc_test_decision_desc
+	ai_check_interval = 0
+	major = yes
+	is_shown = {
+		is_ai = no
+		is_landed = yes
+		hc_has_god_descent_trigger = yes
+		or = {
+			any_vassal_or_below = {
+				is_male = yes
+				or = {
+					has_trait = lustful
+					has_trait = rakish
+					has_trait = seducer
+				}
+			}
+			any_courtier_or_guest = {
+				is_male = yes
+				or = {
+					has_trait = lustful
+					has_trait = rakish
+					has_trait = seducer
+				}
+			}
+		}
+	}
+	cooldown = {
+		months = 3
+	}
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_landed = yes
+	}
+	cost = {
+		piety = 300
+		prestige = 200
+	}
+	effect = {
+		every_vassal_or_below = {
+			limit = {
+				is_male = yes
+				or = {
+					has_trait = lustful
+					has_trait = rakish
+					has_trait = seducer
+				}
+			}
+			save_scope_as = hc_ntr
+			if = {
+				limit = {
+					has_trait = seducer
+				}
+				random_independent_ruler = {
+					save_scope_as = rando
+				}
+				scope:hc_ntr = {
+					death = {
+						death_reason = death_duel
+						killer = scope:rando
+					}
+				}
+			}
+			else = {
+				#阉割
+				scope:hc_ntr = {
+					add_trait = eunuch
+				}
+			}
+			# root = {
+			# 	imprison = {
+			# 		target = scope:hc_ntr
+			# 		type = house_arrest
+			# 	}
+			# }
+		}
+		every_courtier_or_guest = {
+			limit = {
+				is_male = yes
+				or = {
+					has_trait = lustful
+					has_trait = rakish
+					has_trait = seducer
+				}
+			}
+			save_scope_as = hc_ntr
+			if = {
+				limit = {
+					has_trait = seducer
+				}
+				random_independent_ruler = {
+					save_scope_as = rando
+				}
+				scope:hc_ntr = {
+					death = {
+						death_reason = death_duel
+						killer = scope:rando
+					}
+				}
+			}
+			else = {
+				#阉割
+				scope:hc_ntr = {
+					add_trait = eunuch
+				}
+			}
+		}
+	}
+	ai_potential = {
+		always = no
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
+#end test
 #开始
 hc_begin_decision = {
 	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
@@ -90,7 +172,6 @@ hc_end_decision = {
 	picture = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
 	selection_tooltip = hc_end_decision_tooltip
 	desc = hc_end_decision_desc
-	major = no
 	ai_check_interval = 0
 	cooldown = {
 		days = 5
@@ -198,6 +279,7 @@ hc_cruise_decision = {
 	selection_tooltip = hc_cruise_decision_tooltip
 	desc = hc_cruise_decision_desc
 	confirm_text = hc_cruise_decision_confirm
+	sort_order = 0
 	ai_check_interval = 0
 	cost = {
 		gold = {
@@ -436,6 +518,7 @@ hc_establish_building_altar_decision = {
 hc_sacrificial_ceremony_decision = {
 	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
 	ai_check_interval = 0
+	sort_order = 50
 	cooldown = {
 		years = 1
 	}
@@ -455,11 +538,11 @@ hc_sacrificial_ceremony_decision = {
 	is_valid = {
 		OR = {
 			root.dynasty = {
-				dynasty_prestige >= 100000
+				dynasty_prestige > 100000
 			}
-			prestige >= 100000
-			piety >= 100000
-			gold >= 100000
+			prestige > 100000
+			piety > 100000
+			gold > 100000
 		}
 	}
 	is_valid_showing_failures_only = {
@@ -536,7 +619,7 @@ hc_establish_building_special_decision = {
 #罗马万神殿
 hc_building_special_decision_01 = {
 	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	major = yes
+	sort_order = 70
 	ai_check_interval = 0
 	selection_tooltip = hc_building_special_decision_01_tooltip
 	desc = hc_building_special_decision_01_desc
@@ -611,7 +694,7 @@ hc_building_special_decision_01 = {
 #波西米亚城堡
 hc_building_special_decision_02 = {
 	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	major = yes
+	sort_order = 70
 	ai_check_interval = 0
 	selection_tooltip = hc_building_special_decision_02_tooltip
 	desc = hc_building_special_decision_02_desc
@@ -678,7 +761,7 @@ hc_building_special_decision_02 = {
 #古罗马商业区
 hc_building_special_decision_03 = {
 	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	major = yes
+	sort_order = 70
 	ai_check_interval = 0
 	selection_tooltip = hc_building_special_decision_03_tooltip
 	desc = hc_building_special_decision_03_desc
@@ -745,7 +828,7 @@ hc_building_special_decision_03 = {
 #圣米歇尔山
 hc_building_special_decision_04 = {
 	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	major = yes
+	sort_order = 70
 	ai_check_interval = 0
 	selection_tooltip = hc_building_special_decision_04_tooltip
 	desc = hc_building_special_decision_04_desc
@@ -818,7 +901,7 @@ hc_building_special_decision_04 = {
 
 hc_building_special_decision_05 = {
 	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	major = yes
+	sort_order = 70
 	ai_check_interval = 0
 	selection_tooltip = hc_building_special_decision_05_tooltip
 	desc = hc_building_special_decision_05_desc
@@ -889,7 +972,7 @@ hc_building_special_decision_05 = {
 
 hc_building_special_decision_06 = {
 	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	major = yes
+	sort_order = 70
 	ai_check_interval = 0
 	selection_tooltip = hc_building_special_decision_06_tooltip
 	desc = hc_building_special_decision_06_desc
@@ -964,7 +1047,7 @@ hc_building_special_decision_06 = {
 
 hc_building_special_decision_07 = {
 	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	major = yes
+	sort_order = 70
 	ai_check_interval = 0
 	selection_tooltip = hc_building_special_decision_07_tooltip
 	desc = hc_building_special_decision_07_desc
@@ -1031,7 +1114,7 @@ hc_building_special_decision_07 = {
 
 hc_building_special_decision_08 = {
 	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	major = yes
+	sort_order = 70
 	ai_check_interval = 0
 	selection_tooltip = hc_building_special_decision_08_tooltip
 	desc = hc_building_special_decision_08_desc
@@ -1097,14 +1180,116 @@ hc_building_special_decision_08 = {
 	}
 }
 
+#完成建造所有特殊建筑
+hc_establish_building_all_finished_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	major = yes
+	ai_check_interval = 0
+	desc = hc_establish_building_all_finished_decision_desc
+	is_shown = {
+		is_landed = yes
+		hc_has_god_descent_trigger = yes
+		NOT = {
+			#Can only do it once.
+			is_target_in_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:flag_hc_establish_building_all_finished_decision
+			}
+		}
+		root.dynasty = {
+			has_dynasty_modifier = hc_dynasty_building_modifier
+		}
+	}
+	is_valid = {
+		#hc_special_building_finished_trigger = yes
+		# calc_true_if = {
+		# 	amount = 8
+		# }
+		custom_description = {
+			text = hc_finished_wonder_01_text
+			is_target_in_global_variable_list = {
+				name = hc_special_building_done_list
+				target = flag:hc_building_flag_wonder_01
+			}
+		}
+		custom_description = {
+			text = hc_finished_wonder_02_text
+			is_target_in_global_variable_list = {
+				name = hc_special_building_done_list
+				target = flag:hc_building_flag_wonder_02
+			}
+		}
+		custom_description = {
+			text = hc_finished_wonder_03_text
+			is_target_in_global_variable_list = {
+				name = hc_special_building_done_list
+				target = flag:hc_building_flag_wonder_03
+			}
+		}
+		custom_description = {
+			text = hc_finished_wonder_04_text
+			is_target_in_global_variable_list = {
+				name = hc_special_building_done_list
+				target = flag:hc_building_flag_wonder_04
+			}
+		}
+		custom_description = {
+			text = hc_finished_wonder_05_text
+			is_target_in_global_variable_list = {
+				name = hc_special_building_done_list
+				target = flag:hc_building_flag_wonder_05
+			}
+		}
+		custom_description = {
+			text = hc_finished_wonder_06_text
+			is_target_in_global_variable_list = {
+				name = hc_special_building_done_list
+				target = flag:hc_building_flag_wonder_06
+			}
+		}
+		custom_description = {
+			text = hc_finished_wonder_07_text
+			is_target_in_global_variable_list = {
+				name = hc_special_building_done_list
+				target = flag:hc_building_flag_wonder_07
+			}
+		}
+		custom_description = {
+			text = hc_finished_wonder_08_text
+			is_target_in_global_variable_list = {
+				name = hc_special_building_done_list
+				target = flag:hc_building_flag_wonder_08
+			}
+		}
+	}
+	is_valid_showing_failures_only = {
+		is_at_war = no
+		is_capable_adult = yes
+		is_imprisoned = no
+	}
+	effect = {
+		show_as_tooltip = {
+			hc_king_of_wonder_effect = yes
+		}
+		trigger_event = hc_special_build.004
+		hidden_effect = {
+			add_to_global_variable_list = {
+				name = unavailable_unique_decisions
+				target = flag:flag_hc_establish_building_all_finished_decision
+			}
+		}
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
 #摇人
 hc_call_decision = {
 	picture = "gfx/interface/illustrations/decisions/decision_invite_knights.dds"
 	major = no
 	ai_check_interval = 0
 	title = hc_call_decision_t
-	selection_tooltip = hc_call_decision_tooltip
-	confirm_text = hc_call_decision_confirm
 	desc = hc_call_decision_desc
 	cooldown = {
 		months = 1
@@ -1458,6 +1643,7 @@ hc_pursue_celibacy_decision = {
 					has_dynasty_modifier = hc_dynasty_celibacy_modifier_01
 					has_dynasty_modifier = hc_dynasty_celibacy_modifier_02
 					has_dynasty_modifier = hc_dynasty_celibacy_modifier_03
+					has_dynasty_modifier = hc_dynasty_celibacy_modifier_04
 				}
 			}
 		}
@@ -1483,50 +1669,62 @@ hc_pursue_celibacy_decision = {
 	}
 }
 
-#end the road of wonderful buliding 
-# hc_ending_of_building_decision = {
-# 	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
-# 	selection_tooltip = hc_ending_of_building_decision_tooltip
-# 	desc = hc_ending_of_building_decision_desc
-# 	ai_check_interval = 0
-# 	major = yes
-# 	is_shown = {
-# 		is_ai = no
-# 		NOT = {
-# 			root.house = {
-# 				has_house_modifier = hc_dynasty_god_modifier
-# 			}
-# 		}
-# 	}
-# 	is_valid_showing_failures_only = {
-# 		is_imprisoned = no
-# 		is_available_adult = yes
-# 		is_at_war = no
-# 	}
-# 	effect = {
-# 		custom_tooltip = hc_begin_decision_effect_tt_01
-# 		custom_tooltip = hc_begin_decision_effect_tt_02
-# 		custom_tooltip = hc_begin_decision_effect_tt_03
-# 		if = {
-# 			limit = {
-# 				has_ep1_dlc_trigger = yes
-# 			}
-# 			custom_tooltip = hc_begin_decision_effect_tt_04
-# 		}
-# 		custom_tooltip = hc_begin_decision_effect_tt_05
-# 		trigger_event = {
-# 			id = hc.001
-# 			days = 5
-# 		}
-# 	}
-# 	# ai_check_frequency = 0
-# 	ai_potential = {
-# 		always = no
-# 	}
-# 	ai_will_do = {
-# 		base = 0
-# 	}
-# }
+#终止禁欲
+hc_end_pursue_celibacy_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	desc = hc_end_pursue_celibacy_decision_desc
+	ai_check_interval = 0
+	major = yes
+	is_shown = {
+		is_ai = no
+		root.dynasty = {
+			or = {
+				has_dynasty_modifier = hc_dynasty_celibacy_modifier_01
+				has_dynasty_modifier = hc_dynasty_celibacy_modifier_02
+				has_dynasty_modifier = hc_dynasty_celibacy_modifier_03
+				has_dynasty_modifier = hc_dynasty_celibacy_modifier_04
+			}
+		}
+	}
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+	effect = {
+		root.dynasty = {
+			if = {
+				limit = {
+					has_dynasty_modifier = hc_dynasty_celibacy_modifier_01
+				}
+				remove_dynasty_modifier = hc_dynasty_celibacy_modifier_01
+			}
+			else_if = {
+				limit = {
+					has_dynasty_modifier = hc_dynasty_celibacy_modifier_02
+				}
+				remove_dynasty_modifier = hc_dynasty_celibacy_modifier_02
+			}
+			else_if = {
+				limit = {
+					has_dynasty_modifier = hc_dynasty_celibacy_modifier_03
+				}
+				remove_dynasty_modifier = hc_dynasty_celibacy_modifier_03
+			}
+			else = {
+				remove_dynasty_modifier = hc_dynasty_celibacy_modifier_04
+			}
+		}
+	}
+	# ai_check_frequency = 0
+	ai_potential = {
+		always = no
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
 #设立皇帝权威
 # hc_emperor_authority_decision = {
 # 	picture = "gfx/interface/illustrations/decisions/decision_knight_kneeling.dds"

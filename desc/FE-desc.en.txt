@@ -17,7 +17,6 @@ Some interesting decisions/events/traits/nickname/buildings/character interactio
 [img]https://i.imgur.com/PZKaOKU.png[/img]
 [h1]Supported languages[/h1]
 Simplified Chinese
-English(by Google)
 
 [h1]Compatibility[/h1]
 Compatible with save game

@@ -179,6 +179,12 @@ hc_love.02 = {
 				}
 				remove_character_modifier = hc_char_modifier_08
 			}
+			#TODO：1对1跟踪，对于多对一只跟踪最后一个。该代码暂时不用
+			# set_variable = {
+			# 	# 跟踪契约对象
+			# 	name = hc_marriage
+			# 	value = scope:actor
+			# }
 		}
 		scope:actor = {
 			add_stress = -30
@@ -192,6 +198,11 @@ hc_love.02 = {
 			}
 			#订婚
 			create_betrothal = scope:recipient
+			# set_variable = {
+			# 	# 跟踪契约对象
+			# 	name = hc_marriage
+			# 	value = scope:recipient
+			# }
 		}
 		if = {
 			limit = {
@@ -273,6 +284,11 @@ hc_love.03 = {
 				}
 				remove_character_modifier = hc_char_modifier_08
 			}
+			# set_variable = {
+			# 	# 跟踪契约对象
+			# 	name = hc_marriage
+			# 	value = scope:actor
+			# }
 		}
 		scope:actor = {
 			add_stress = -30
@@ -284,6 +300,11 @@ hc_love.03 = {
 				}
 				remove_character_modifier = hc_char_modifier_08
 			}
+			# set_variable = {
+			# 	# 跟踪契约对象
+			# 	name = hc_marriage
+			# 	value = scope:recipient
+			# }
 		}
 		if = {
 			limit = {

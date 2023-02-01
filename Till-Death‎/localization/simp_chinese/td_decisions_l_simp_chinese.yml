@@ -12,3 +12,7 @@
  hc_pursue_celibacy_decision_confirm:0 "禁欲即是正义"
  hc_pursue_celibacy_decision_effect_tt:0 "你将在家族中推行禁欲"
  hc_establish_building_special_decision_test_desc:0 "count [THIS.Var('hc_count_test').GetValue|0]"
+ hc_end_pursue_celibacy_decision:0 "停止禁欲"
+ hc_end_pursue_celibacy_decision_tooltip:0 "你将停止[ROOT.Char.GetDynasty.GetBaseNameNoTooltip]家族的禁欲"
+ hc_end_pursue_celibacy_decision_desc:0 "#F 我们的家族需要新鲜的血液。#"
+ hc_end_pursue_celibacy_decision_confirm:0 "停止禁欲"

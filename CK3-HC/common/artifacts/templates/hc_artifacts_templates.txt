@@ -25,7 +25,16 @@ hc_marriage_certificate_template = {
 				exists = var:marriage_owner
 			}
 			root = scope:artifact.var:marriage_owner
-			root.primary_spouse = scope:artifact.var:marriage_target
+			scope:artifact.var:marriage_owner = {
+				OR = {
+					any_spouse = {
+						this = scope:artifact.var:marriage_target
+					}
+					any_concubine = {
+						this = scope:artifact.var:marriage_target
+					}
+				}
+			}
 		}
 	}
 	fallback = {

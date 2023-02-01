@@ -1,4 +1,132 @@
-﻿hc_designate_knight_interaction = {
+﻿#test
+#TODO：测试互动，更新前删除
+#给我生
+hc_get_pregnant_interaction = {
+	icon = icon_dynasty
+	category = interaction_category_friendly
+	interface_priority = 80
+	desc = hc_get_pregnant_interaction_desc
+	use_diplomatic_range = no
+	is_shown = {
+		scope:recipient = {
+			is_female = yes
+			is_adult = yes
+			age<45
+		}
+		#实施者是宗族族长并且被实施者与实施者属于同一个宗族
+		scope:actor = {
+			is_dynast = yes
+			dynasty = scope:recipient.dynasty
+		}
+	}
+	is_valid_showing_failures_only = {
+		scope:recipient = {
+			is_adult = yes
+			any_spouse = {
+				is_available_adult = yes
+				is_imprisoned = no
+				Not = {
+					has_trait = impotent
+				}
+			}
+			is_imprisoned = no
+			Not = {
+				has_trait = impotent
+				has_trait = pregnant
+			}
+		}
+	}
+	on_accept = {
+		scope:recipient = {
+			random_spouse = {
+				limit = {
+					is_available_adult = yes
+					is_imprisoned = no
+					Not = {
+						has_trait = impotent
+					}
+				}
+				save_scope_as = hc_husband
+			}
+			if = {
+				limit = {
+					is_pregnant = no
+				}
+				make_pregnant = {
+					father = scope:hc_husband
+				}
+			}
+		}
+	}
+	cost = {
+		prestige = 100
+	}
+	auto_accept = yes
+	ai_frequency = 0
+	ai_potential = {
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
+#永生
+# hc_get_immortal_interaction = {
+# 	icon = icon_dynasty
+# 	category = interaction_category_friendly
+# 	interface_priority = 80
+# 	desc = hc_get_immortal_interaction_desc
+# 	use_diplomatic_range = no
+# 	is_shown = {
+# 		scope:recipient = {
+# 			OR = {
+# 				AND = {
+# 					OR = {
+# 						is_spouse_of = scope:actor
+# 						is_concubine_of = scope:actor
+# 					}
+# 					is_female = yes
+# 				}
+# 				hc_has_god_descent_trigger = yes
+# 			}
+# 			is_adult = yes
+# 			Not = {
+# 				has_variable = hc_immortal_age
+# 			}
+# 		}
+# 		scope:actor = {
+# 			hc_has_god_descent_trigger = yes
+# 		}
+# 	}
+# 	is_valid_showing_failures_only = {
+# 		scope:recipient = {
+# 			is_adult = yes
+# 			is_imprisoned = no
+# 		}
+# 	}
+# 	on_accept = {
+# 		scope:recipient = {
+# 			set_immortal_age = 20
+# 			set_variable = {
+# 				name = hc_immortal_age
+# 				value = 20
+# 			}
+# 		}
+# 	}
+# 	cost = {
+# 		prestige = 100
+# 	}
+# 	auto_accept = yes
+# 	ai_frequency = 0
+# 	ai_potential = {
+# 	}
+# 	ai_will_do = {
+# 		base = 0
+# 	}
+# }
+#end test
+#册封骑士
+hc_designate_knight_interaction = {
 	category = interaction_category_friendly
 	common_interaction = yes
 	# use_diplomatic_range = no
@@ -59,7 +187,7 @@
 			add_character_flag = hc_knight_flag
 			trigger_event = {
 				on_action = on_action_trait_hc_knight
-				years = 10
+				years = 30
 			}
 		}
 		hidden_effect = {
@@ -297,7 +425,6 @@ hc_sese_interaction = {
 				is_spouse_of = scope:actor
 				is_concubine_of = scope:actor
 			}
-			# age < 36
 			is_female = yes
 		}
 	}

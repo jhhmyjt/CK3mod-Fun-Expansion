@@ -15,6 +15,9 @@ hc_sacrifice.001 = {
 	option = {
 		#金钱
 		name = hc_sacrifice.001.a
+		trigger = {
+			gold>100000
+		}
 		remove_short_term_gold = 100000
 		trigger_event = {
 			id = hc_sacrifice.100
@@ -24,6 +27,9 @@ hc_sacrifice.001 = {
 	option = {
 		#虔诚
 		name = hc_sacrifice.001.b
+		trigger = {
+			prestige>100000
+		}
 		add_prestige = -100000
 		trigger_event = {
 			id = hc_sacrifice.100
@@ -33,6 +39,9 @@ hc_sacrifice.001 = {
 	option = {
 		#威望
 		name = hc_sacrifice.001.c
+		trigger = {
+			piety>100000
+		}
 		add_piety = -100000
 		trigger_event = {
 			id = hc_sacrifice.100
@@ -42,6 +51,11 @@ hc_sacrifice.001 = {
 	option = {
 		#威望
 		name = hc_sacrifice.001.d
+		trigger = {
+			root.dynasty = {
+				dynasty_prestige>-100000
+			}
+		}
 		root.dynasty = {
 			add_dynasty_prestige = -100000
 		}

@@ -233,6 +233,16 @@
 			scope:owner = {
 				has_trait = hc_immutable
 			}
+			# scope:target = {
+			# 	has_trait = hc_immutable
+			# 	exists = var:hc_marriage
+			# }
+			# scope:owner = {
+			# 	has_trait = hc_immutable
+			# 	exists = var:hc_marriage
+			# }
+			# scope:owner = scope:target.var:hc_marriage
+			# scope:target = scope:owner.var:hc_marriage
 		}
 		modifier = {
 			add = -1000

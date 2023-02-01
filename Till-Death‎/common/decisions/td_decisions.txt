@@ -54,6 +54,7 @@ hc_pursue_celibacy_decision = {
 					has_dynasty_modifier = hc_dynasty_celibacy_modifier_01
 					has_dynasty_modifier = hc_dynasty_celibacy_modifier_02
 					has_dynasty_modifier = hc_dynasty_celibacy_modifier_03
+					has_dynasty_modifier = hc_dynasty_celibacy_modifier_04
 				}
 			}
 		}
@@ -68,6 +69,62 @@ hc_pursue_celibacy_decision = {
 		trigger_event = {
 			id = hc_decision.003
 			days = 3
+		}
+	}
+	# ai_check_frequency = 0
+	ai_potential = {
+		always = no
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
+#终止禁欲
+hc_end_pursue_celibacy_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	desc = hc_end_pursue_celibacy_decision_desc
+	ai_check_interval = 0
+	major = yes
+	is_shown = {
+		is_ai = no
+		root.dynasty = {
+			or = {
+				has_dynasty_modifier = hc_dynasty_celibacy_modifier_01
+				has_dynasty_modifier = hc_dynasty_celibacy_modifier_02
+				has_dynasty_modifier = hc_dynasty_celibacy_modifier_03
+				has_dynasty_modifier = hc_dynasty_celibacy_modifier_04
+			}
+		}
+	}
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+	effect = {
+		root.dynasty = {
+			if = {
+				limit = {
+					has_dynasty_modifier = hc_dynasty_celibacy_modifier_01
+				}
+				remove_dynasty_modifier = hc_dynasty_celibacy_modifier_01
+			}
+			else_if = {
+				limit = {
+					has_dynasty_modifier = hc_dynasty_celibacy_modifier_02
+				}
+				remove_dynasty_modifier = hc_dynasty_celibacy_modifier_02
+			}
+			else_if = {
+				limit = {
+					has_dynasty_modifier = hc_dynasty_celibacy_modifier_03
+				}
+				remove_dynasty_modifier = hc_dynasty_celibacy_modifier_03
+			}
+			else = {
+				remove_dynasty_modifier = hc_dynasty_celibacy_modifier_04
+			}
 		}
 	}
 	# ai_check_frequency = 0

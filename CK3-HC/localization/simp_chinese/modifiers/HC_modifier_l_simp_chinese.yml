@@ -98,3 +98,5 @@
  hc_saint_sword_strengthen_prestige_02:0 "宗族威望"
  hc_dynasty_building_modifier:0 "兴建奇观"
  hc_dynasty_building_modifier_desc:0 "该家族兴建奇观"
+ hc_dynasty_building_king_modifier:0 "奇观之族"
+ hc_dynasty_building_king_modifier_desc:0 "该家族完成了修建所有奇观的壮举"

@@ -12,3 +12,7 @@
   hc_pursue_celibacy_decision_confirm:0 "Abstinence is justice"
   hc_pursue_celibacy_decision_effect_tt:0 "You will enforce abstinence in your clan"
   hc_establish_building_special_decision_test_desc:0 "count [THIS.Var('hc_count_test').GetValue|0]"
+hc_end_pursue_celibacy_decision:0 "End Abstinence"
+  hc_end_pursue_celibacy_decision_tooltip:0 "You will end the abstinence of the [ROOT.Char.GetDynasty.GetBaseNameNoTooltip] family"
+  hc_end_pursue_celibacy_decision_desc:0 "#F Our family needs fresh blood.#"
+  hc_end_pursue_celibacy_decision_confirm:0 "End Abstinence"

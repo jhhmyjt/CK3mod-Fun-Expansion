@@ -29,7 +29,6 @@ hc_call_war.001 = {
 		name = hc_call_war.001.b
 		hidden_effect = {
 			remove_decision_cooldown = hc_call_decision
-			# remove_character_flag = hc_flag_build_cooldown
 		}
 	}
 }
@@ -55,6 +54,9 @@ hc_call_war.002 = {
 		is_ai = no
 	}
 	immediate = {
+	}
+	option = {
+		name = hc_call_war.002.a
 		random_vassal = {
 			limit = {
 				AND = {
@@ -64,22 +66,17 @@ hc_call_war.002 = {
 			}
 			save_scope_as = hc_call
 		}
-	}
-	option = {
-		name = hc_call_war.002.a
-		root = {
-			every_character_war = {
-				limit = {
-					is_attacker = root
-				}
-				add_attacker = scope:hc_call
+		every_character_war = {
+			limit = {
+				is_attacker = root
 			}
-			every_character_war = {
-				limit = {
-					is_defender = root
-				}
-				add_defender = scope:hc_call
+			add_attacker = scope:hc_call
+		}
+		every_character_war = {
+			limit = {
+				is_defender = root
 			}
+			add_defender = scope:hc_call
 		}
 		scope:hc_call = {
 			add_prestige = 200
@@ -87,6 +84,36 @@ hc_call_war.002 = {
 			trigger_event = {
 				on_action = on_action_hc_knight
 				months = 1
+			}
+		}
+	}
+	option = {
+		name = hc_call_war.002.b
+		every_vassal = {
+			limit = {
+				has_trait = hc_knight
+				is_at_war = no
+			}
+			save_scope_as = hc_called_knight
+			add_prestige = 200
+			add_character_modifier = hc_char_modifier_01
+			trigger_event = {
+				on_action = on_action_hc_knight
+				months = 1
+			}
+			root = {
+				every_character_war = {
+					limit = {
+						is_attacker = root
+					}
+					add_attacker = scope:hc_called_knight
+				}
+				every_character_war = {
+					limit = {
+						is_defender = root
+					}
+					add_defender = scope:hc_called_knight
+				}
 			}
 		}
 	}

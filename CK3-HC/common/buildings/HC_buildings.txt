@@ -186,12 +186,11 @@ hc_wonder_050 = {
 	is_enabled = {
 	}
 	character_modifier = {
-		monthly_prestige_gain_per_dread_add = 2
+		monthly_prestige_gain_per_dread_add = 0.3
 		monthly_dread = 10
 		tyranny_loss_mult = 0.5
 		dread_per_tyranny_add = 10
-		men_at_arms_maintenance_per_dread_mult = -0.2
-		general_opinion = -5
+		men_at_arms_maintenance_per_dread_mult = -0.005
 		liege_opinion = 5
 		councillor_opinion = 5
 	}
