@@ -1,5 +1,6 @@
 ﻿#至死不渝 immutable
 hc_immutable = {
+	category = fame
 	ruler_designer_cost = 200
 	learning = 3
 	health = 0.5

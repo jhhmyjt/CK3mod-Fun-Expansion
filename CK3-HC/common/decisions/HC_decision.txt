@@ -1,124 +1,38 @@
-﻿#test
-#TODO：测试决议，更新前删除
-#审判日
-hc_test_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	desc = hc_test_decision_desc
-	ai_check_interval = 0
-	major = yes
-	is_shown = {
-		is_ai = no
-		is_landed = yes
-		hc_has_god_descent_trigger = yes
-		or = {
-			any_vassal_or_below = {
-				is_male = yes
-				or = {
-					has_trait = lustful
-					has_trait = rakish
-					has_trait = seducer
-				}
-			}
-			any_courtier_or_guest = {
-				is_male = yes
-				or = {
-					has_trait = lustful
-					has_trait = rakish
-					has_trait = seducer
-				}
-			}
-		}
-	}
-	cooldown = {
-		months = 3
-	}
-	is_valid_showing_failures_only = {
-		is_imprisoned = no
-		is_landed = yes
-	}
-	cost = {
-		piety = 300
-		prestige = 200
-	}
-	effect = {
-		every_vassal_or_below = {
-			limit = {
-				is_male = yes
-				or = {
-					has_trait = lustful
-					has_trait = rakish
-					has_trait = seducer
-				}
-			}
-			save_scope_as = hc_ntr
-			if = {
-				limit = {
-					has_trait = seducer
-				}
-				random_independent_ruler = {
-					save_scope_as = rando
-				}
-				scope:hc_ntr = {
-					death = {
-						death_reason = death_duel
-						killer = scope:rando
-					}
-				}
-			}
-			else = {
-				#阉割
-				scope:hc_ntr = {
-					add_trait = eunuch
-				}
-			}
-			# root = {
-			# 	imprison = {
-			# 		target = scope:hc_ntr
-			# 		type = house_arrest
-			# 	}
-			# }
-		}
-		every_courtier_or_guest = {
-			limit = {
-				is_male = yes
-				or = {
-					has_trait = lustful
-					has_trait = rakish
-					has_trait = seducer
-				}
-			}
-			save_scope_as = hc_ntr
-			if = {
-				limit = {
-					has_trait = seducer
-				}
-				random_independent_ruler = {
-					save_scope_as = rando
-				}
-				scope:hc_ntr = {
-					death = {
-						death_reason = death_duel
-						killer = scope:rando
-					}
-				}
-			}
-			else = {
-				#阉割
-				scope:hc_ntr = {
-					add_trait = eunuch
-				}
-			}
-		}
-	}
-	ai_potential = {
-		always = no
-	}
-	ai_will_do = {
-		base = 0
-	}
-}
-
-#end test
+﻿#debug
+# hc_debug_decision = {
+# 	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+# 	desc = hc_test_decision_desc
+# 	ai_check_interval = 0
+# 	major = yes
+# 	is_shown = {
+# 		is_ai = no
+# 	}
+# 	is_valid_showing_failures_only = {
+# 	}
+# 	is_valid = {
+# 		OR = {
+# 			root.dynasty = {
+# 				dynasty_prestige >= 100000
+# 			}
+# 			prestige >= 100000
+# 			piety >= 100000
+# 			gold >= 100000
+# 		}
+# 	}
+# 	cost = {
+# 		piety = 100
+# 		prestige = 100
+# 	}
+# 	effect = {
+# 		add_piety = 50
+# 	}
+# 	ai_potential = {
+# 		always = no
+# 	}
+# 	ai_will_do = {
+# 		base = 0
+# 	}
+# }
 #开始
 hc_begin_decision = {
 	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
@@ -273,75 +187,74 @@ hc_new_decision = {
 }
 
 #巡游事件
-hc_cruise_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_destiny_goal.dds"
-	title = hc_cruise_decision_t
-	selection_tooltip = hc_cruise_decision_tooltip
-	desc = hc_cruise_decision_desc
-	confirm_text = hc_cruise_decision_confirm
-	sort_order = 0
-	ai_check_interval = 0
-	cost = {
-		gold = {
-			add = standard_activity_cost
-			divide = 1.5
-			if = {
-				limit = {
-					hc_has_god_descent_trigger = yes
-				}
-				multiply = 0
-			}
-		}
-	}
-	cooldown = {
-		years = 5
-	}
-	is_shown = {
-		is_landed = yes
-		highest_held_title_tier > tier_county
-	}
-	is_valid_showing_failures_only = {
-		is_available_adult = yes
-	}
-	effect = {
-		custom_tooltip = hc_cruise_decision_effect_tt.e
-		custom_tooltip = hc_cruise_decision_effect_tt.a
-		custom_tooltip = hc_cruise_decision_effect_tt.b
-		custom_tooltip = hc_cruise_decision_effect_tt.c
-		custom_tooltip = hc_cruise_decision_effect_tt.d
-		#Stress loss
-		stress_impact = {
-			base = -20
-			lazy = 60
-			compassionate = -10
-			craven = 50
-			diligent = -10
-			athletic = -10
-			sadistic = 30
-			brave = -20
-			god_descent_mini = -50
-			god_descent = -50
-			god_descent_pro = -50
-		}
-		hidden_effect = {
-			random_sub_realm_barony = {
-				title_province = {
-					spawn_activity = {
-						type = activity_cruise
-						owner = root
-					}
-				}
-			}
-		}
-	}
-	ai_potential = {
-		always = no
-	}
-	ai_will_do = {
-		base = 0
-	}
-}
-
+# hc_cruise_decision = {
+# 	picture = "gfx/interface/illustrations/decisions/decision_destiny_goal.dds"
+# 	title = hc_cruise_decision_t
+# 	selection_tooltip = hc_cruise_decision_tooltip
+# 	desc = hc_cruise_decision_desc
+# 	confirm_text = hc_cruise_decision_confirm
+# 	sort_order = 0
+# 	ai_check_interval = 0
+# 	cost = {
+# 		gold = {
+# 			add = standard_activity_cost
+# 			divide = 1.5
+# 			if = {
+# 				limit = {
+# 					hc_has_god_descent_trigger = yes
+# 				}
+# 				multiply = 0
+# 			}
+# 		}
+# 	}
+# 	cooldown = {
+# 		years = 5
+# 	}
+# 	is_shown = {
+# 		is_landed = yes
+# 		highest_held_title_tier > tier_county
+# 	}
+# 	is_valid_showing_failures_only = {
+# 		is_available_adult = yes
+# 	}
+# 	effect = {
+# 		custom_tooltip = hc_cruise_decision_effect_tt.e
+# 		custom_tooltip = hc_cruise_decision_effect_tt.a
+# 		custom_tooltip = hc_cruise_decision_effect_tt.b
+# 		custom_tooltip = hc_cruise_decision_effect_tt.c
+# 		custom_tooltip = hc_cruise_decision_effect_tt.d
+# 		#Stress loss
+# 		stress_impact = {
+# 			base = -20
+# 			lazy = 60
+# 			compassionate = -10
+# 			craven = 50
+# 			diligent = -10
+# 			athletic = -10
+# 			sadistic = 30
+# 			brave = -20
+# 			god_descent_mini = -50
+# 			god_descent = -50
+# 			god_descent_pro = -50
+# 		}
+# 		hidden_effect = {
+# 			random_sub_realm_barony = {
+# 				title_province = {
+# 					spawn_activity = {
+# 						type = activity_cruise
+# 						owner = root
+# 					}
+# 				}
+# 			}
+# 		}
+# 	}
+# 	ai_potential = {
+# 		always = no
+# 	}
+# 	ai_will_do = {
+# 		base = 0
+# 	}
+# }
 #恢复罗马正统
 embrace_roma_decision = {
 	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
@@ -385,7 +298,7 @@ embrace_roma_decision = {
 			target = flag:embrace_roma_decision
 		}
 		show_as_tooltip = {
-			embrace_roma_effect = yes
+			# embrace_roma_effect = yes
 		}
 		trigger_event = hc.011
 	}
@@ -505,7 +418,7 @@ hc_establish_building_altar_decision = {
 		}
 		custom_tooltip = hc_establish_building_altar_decision_custom_tt_01
 		capital_province = {
-			add_building_slot = 1
+			add_province_modifier = extra_building_slot
 			add_building = hc_scared_altar
 		}
 	}
@@ -538,11 +451,11 @@ hc_sacrificial_ceremony_decision = {
 	is_valid = {
 		OR = {
 			root.dynasty = {
-				dynasty_prestige > 100000
+				dynasty_prestige >= 100000
 			}
-			prestige > 100000
-			piety > 100000
-			gold > 100000
+			prestige >= 100000
+			piety >= 100000
+			gold >= 100000
 		}
 	}
 	is_valid_showing_failures_only = {
@@ -675,7 +588,7 @@ hc_building_special_decision_01 = {
 	}
 	effect = {
 		scope:barony.title_province = {
-			add_building_slot = 1
+			add_province_modifier = extra_building_slot
 			add_building = hc_wonder_011
 		}
 		#添加建筑到已建列表
@@ -742,7 +655,7 @@ hc_building_special_decision_02 = {
 	}
 	effect = {
 		scope:barony.title_province = {
-			add_building_slot = 1
+			add_province_modifier = extra_building_slot
 			add_building = hc_wonder_021
 		}
 		#添加建筑到已建列表
@@ -809,7 +722,7 @@ hc_building_special_decision_03 = {
 	}
 	effect = {
 		scope:barony.title_province = {
-			add_building_slot = 1
+			add_province_modifier = extra_building_slot
 			add_building = hc_wonder_030
 		}
 		#添加建筑到已建列表
@@ -867,7 +780,7 @@ hc_building_special_decision_04 = {
 		or = {
 			custom_description = {
 				text = hc_building_special_decision_04_martial
-				martial > 20
+				martial >= 20
 			}
 			has_trait = overseer
 		}
@@ -883,7 +796,7 @@ hc_building_special_decision_04 = {
 	}
 	effect = {
 		scope:barony.title_province = {
-			add_building_slot = 1
+			add_province_modifier = extra_building_slot
 			add_building = hc_wonder_040
 		}
 		#添加建筑到已建列表
@@ -938,7 +851,7 @@ hc_building_special_decision_05 = {
 	}
 	is_valid = {
 		OR = {
-			dread > 80
+			dread >= 80
 			has_trait = torturer
 		}
 		prestige_level >= 3
@@ -954,7 +867,7 @@ hc_building_special_decision_05 = {
 	}
 	effect = {
 		scope:barony.title_province = {
-			add_building_slot = 1
+			add_province_modifier = extra_building_slot
 			add_building = hc_wonder_050
 		}
 		#添加建筑到已建列表
@@ -1029,7 +942,7 @@ hc_building_special_decision_06 = {
 	}
 	effect = {
 		scope:barony.title_province = {
-			add_building_slot = 1
+			add_province_modifier = extra_building_slot
 			add_building = hc_wonder_061
 		}
 		#添加建筑到已建列表
@@ -1096,7 +1009,7 @@ hc_building_special_decision_07 = {
 	}
 	effect = {
 		scope:barony.title_province = {
-			add_building_slot = 1
+			add_province_modifier = extra_building_slot
 			add_building = hc_wonder_070
 		}
 		#添加建筑到已建列表
@@ -1164,7 +1077,7 @@ hc_building_special_decision_08 = {
 	}
 	effect = {
 		scope:barony.title_province = {
-			add_building_slot = 1
+			add_province_modifier = extra_building_slot
 			add_building = hc_wonder_081
 		}
 		#添加建筑到已建列表
@@ -1558,6 +1471,7 @@ hc_build_chrysotriclinium_decision = {
 		is_ai = no
 		is_ruler = yes
 		is_landed = yes
+		has_title = title:c_byzantion
 		NOT = {
 			#Can only do it once.
 			is_target_in_global_variable_list = {
@@ -1717,6 +1631,532 @@ hc_end_pursue_celibacy_decision = {
 		}
 	}
 	# ai_check_frequency = 0
+	ai_potential = {
+		always = no
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
+#建立皇家卫队决议及升级决议
+#建立皇家护卫队
+hc_create_royal_guard_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	desc = hc_create_royal_guard_decision_desc
+	ai_check_interval = 0
+	major = yes
+	is_shown = {
+		is_ai = no
+		root.house = {
+			has_house_modifier = hc_dynasty_god_modifier
+			Not = {
+				OR = {
+					has_house_modifier = hc_royal_guard_modifier_01
+					has_house_modifier = hc_royal_guard_modifier_02
+					has_house_modifier = hc_royal_guard_modifier_03
+				}
+			}
+		}
+	}
+	is_valid = {
+		prestige_level >= 3
+		is_independent_ruler = yes
+		OR = {
+			martial >= 15
+			intrigue >= 15
+		}
+		custom_description = {
+			text = is_god_dynasty_trigger
+			root.house = {
+				has_house_modifier = hc_dynasty_god_modifier
+			}
+		}
+	}
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+	cost = {
+		prestige = 300
+	}
+	effect = {
+		root.house = {
+			add_house_modifier = hc_royal_guard_modifier_01
+		}
+		custom_tooltip = hc_create_royal_guard_decision_custom_tt_01
+	}
+	# ai_check_frequency = 0
+	ai_potential = {
+		always = no
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
+#升级为皇家亲卫队
+hc_create_royal_personal_guard_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	desc = hc_create_royal_personal_guard_decision_desc
+	ai_check_interval = 0
+	major = yes
+	is_shown = {
+		is_ai = no
+		root.house = {
+			has_house_modifier = hc_royal_guard_modifier_01
+			Not = {
+				has_house_modifier = hc_royal_guard_modifier_02
+			}
+		}
+	}
+	is_valid = {
+		prestige_level >= 3
+		is_independent_ruler = yes
+		OR = {
+			martial >= 15
+			intrigue >= 15
+		}
+		custom_description = {
+			text = is_god_dynasty_trigger
+			root.house = {
+				has_house_modifier = hc_royal_guard_modifier_01
+			}
+		}
+	}
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+	cost = {
+		prestige = 300
+	}
+	effect = {
+		root.house = {
+			add_house_modifier = hc_royal_guard_modifier_02
+			remove_house_modifier = hc_royal_guard_modifier_01
+		}
+		custom_tooltip = hc_create_royal_personal_guard_decision_custom_tt_01
+	}
+	# ai_check_frequency = 0
+	ai_potential = {
+		always = no
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
+#升级为皇家禁卫
+hc_create_royal_great_guard_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	desc = hc_create_royal_great_guard_decision_desc
+	ai_check_interval = 0
+	major = yes
+	is_shown = {
+		is_ai = no
+		root.house = {
+			has_house_modifier = hc_royal_guard_modifier_02
+			Not = {
+				has_house_modifier = hc_royal_guard_modifier_03
+			}
+		}
+	}
+	is_valid = {
+		prestige_level >= 3
+		is_independent_ruler = yes
+		OR = {
+			martial >= 15
+			intrigue >= 15
+		}
+		custom_description = {
+			text = is_god_dynasty_trigger
+			root.house = {
+				has_house_modifier = hc_royal_guard_modifier_02
+			}
+		}
+	}
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_available_adult = yes
+		is_at_war = no
+	}
+	cost = {
+		prestige = 300
+	}
+	effect = {
+		root.house = {
+			add_house_modifier = hc_royal_guard_modifier_03
+			remove_house_modifier = hc_royal_guard_modifier_02
+		}
+		custom_tooltip = hc_create_royal_great_guard_decision_custom_tt_01
+	}
+	# ai_check_frequency = 0
+	ai_potential = {
+		always = no
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
+#皇家卫队解锁决议
+#招募人才
+hc_recruitment_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	desc = hc_recruitment_decision_desc
+	ai_check_interval = 0
+	major = yes
+	is_shown = {
+		is_ai = no
+		is_landed = yes
+		hc_has_god_descent_trigger = yes
+		any_prisoner = {
+			is_imprisoned_by = root
+			prowess >= 12
+			is_busy_in_events_localised = yes
+			is_landed = no
+			custom_description = {
+				text = "currently_being_tortured"
+				NOT = {
+					has_character_flag = is_being_tortured
+				}
+			}
+		}
+	}
+	cooldown = {
+		months = 3
+	}
+	is_valid = {
+		OR = {
+			trigger_if = {
+				limit = {
+					root.house = {
+						has_house_modifier = hc_royal_guard_modifier_01
+					}
+				}
+				root.house = {
+					has_house_modifier = hc_royal_guard_modifier_01
+				}
+			}
+			trigger_if = {
+				limit = {
+					root.house = {
+						has_house_modifier = hc_royal_guard_modifier_02
+					}
+				}
+				root.house = {
+					has_house_modifier = hc_royal_guard_modifier_02
+				}
+			}
+			trigger_if = {
+				limit = {
+					root.house = {
+						has_house_modifier = hc_royal_guard_modifier_03
+					}
+				}
+				root.house = {
+					has_house_modifier = hc_royal_guard_modifier_03
+				}
+			}
+		}
+	}
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_landed = yes
+	}
+	cost = {
+		prestige = 50
+	}
+	effect = {
+		every_prisoner = {
+			limit = {
+				is_imprisoned_by = root
+				prowess >= 12
+				is_landed = no
+				is_busy_in_events_localised = yes
+				NOT = {
+					has_character_flag = is_being_tortured
+				}
+			}
+			save_scope_as = hc_prisoner
+			add_opinion = {
+				modifier = loyal_servant
+				target = scope:root
+			}
+			root = {
+				if = {
+					limit = {
+						can_add_hook = {
+							target = scope:hc_prisoner
+							type = loyalty_hook
+						}
+					}
+					add_hook = {
+						type = loyalty_hook
+						target = scope:hc_prisoner
+					}
+				}
+			}
+			root = {
+				add_courtier = scope:hc_prisoner
+			}
+			if = {
+				limit = {
+					is_imprisoned = yes
+				}
+				release_from_prison = yes
+			}
+		}
+	}
+	ai_potential = {
+		always = no
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
+#追查凶手
+hc_track_murderer_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	desc = hc_track_murderer_decision_desc
+	ai_check_interval = 0
+	major = yes
+	is_shown = {
+		is_ai = no
+		is_landed = yes
+		hc_has_god_descent_trigger = yes
+		OR = {
+			any_courtier_or_guest = {
+				any_scheme = {
+					scheme_type = murder
+					scheme_target = root
+				}
+			}
+			any_vassal_or_below = {
+				any_scheme = {
+					scheme_type = murder
+					scheme_target = root
+				}
+			}
+		}
+	}
+	cooldown = {
+		months = 3
+	}
+	is_valid = {
+		#有一个骑士，并且谋略大于12
+		custom_description = {
+			text = hc_have_high_intrigue_knight
+			any_knight = {
+				intrigue >= 12
+			}
+		}
+		OR = {
+			trigger_if = {
+				limit = {
+					root.house = {
+						has_house_modifier = hc_royal_guard_modifier_02
+					}
+				}
+				root.house = {
+					has_house_modifier = hc_royal_guard_modifier_02
+				}
+			}
+			trigger_if = {
+				limit = {
+					root.house = {
+						has_house_modifier = hc_royal_guard_modifier_03
+					}
+				}
+				root.house = {
+					has_house_modifier = hc_royal_guard_modifier_03
+				}
+			}
+		}
+	}
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_landed = yes
+	}
+	cost = {
+		prestige = 100
+	}
+	effect = {
+		custom_tooltip = hc_track_murderer_decision_effect_tt
+		random_courtier_or_guest = {
+			limit = {
+				any_scheme = {
+					scheme_type = murder
+					scheme_target = root
+				}
+			}
+			save_scope_as = murderer
+		}
+		random_vassal_or_below = {
+			limit = {
+				any_scheme = {
+					scheme_type = murder
+					scheme_target = root
+				}
+			}
+			save_scope_as = murderer
+		}
+		random_knight = {
+			limit = {
+				intrigue >= 12
+			}
+			save_scope_as = knight
+		}
+		scope:knight = {
+			add_prestige = 100
+		}
+		hidden_effect = {
+			send_interface_message = {
+				type = event_generic_good
+				title = hc_track_murderer_decision_notification
+				# left_icon = scope:knight
+				right_icon = scope:murderer
+				scope:murderer = {
+					add_prestige = -100
+				}
+				scope:murderer = {
+					every_scheme = {
+						limit = {
+							scheme_type = murder
+							scheme_target = root
+						}
+						add_scheme_modifier = {
+							type = hc_anti_murder_modifier
+						}
+						if = {
+							limit = {
+								is_scheme_exposed = no
+							}
+							expose_scheme = yes
+						}
+					}
+				}
+			}
+		}
+	}
+	ai_potential = {
+		always = no
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
+#审判日
+hc_adjudgment_day_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	desc = hc_adjudgment_day_decision_desc
+	ai_check_interval = 0
+	major = yes
+	is_shown = {
+		is_ai = no
+		is_landed = yes
+		hc_has_god_descent_trigger = yes
+		OR = {
+			any_vassal_or_below = {
+				is_male = yes
+				OR = {
+					has_trait = lustful
+					has_trait = rakish
+					has_trait = seducer
+				}
+			}
+			any_courtier_or_guest = {
+				is_male = yes
+				OR = {
+					has_trait = lustful
+					has_trait = rakish
+					has_trait = seducer
+				}
+			}
+		}
+	}
+	cooldown = {
+		months = 3
+	}
+	is_valid = {
+		root.house = {
+			has_house_modifier = hc_royal_guard_modifier_03
+		}
+		#有一个骑士，并且勇武大于12
+		custom_description = {
+			text = hc_have_high_prowess_knight
+			any_knight = {
+				prowess >= 12
+			}
+		}
+	}
+	is_valid_showing_failures_only = {
+		is_imprisoned = no
+		is_landed = yes
+	}
+	cost = {
+		piety = 100
+		prestige = 100
+	}
+	effect = {
+		random_knight = {
+			save_scope_as = knight
+		}
+		scope:knight = {
+			add_prestige = 100
+		}
+		every_vassal_or_below = {
+			limit = {
+				is_male = yes
+				or = {
+					has_trait = lustful
+					has_trait = rakish
+					has_trait = seducer
+				}
+			}
+			if = {
+				limit = {
+					has_trait = seducer
+				}
+				death = {
+					death_reason = death_duel
+					killer = scope:knight
+				}
+			}
+			else = {
+				#阉割
+				add_trait = eunuch
+			}
+		}
+		every_courtier_or_guest = {
+			limit = {
+				is_male = yes
+				or = {
+					has_trait = lustful
+					has_trait = rakish
+					has_trait = seducer
+				}
+			}
+			if = {
+				limit = {
+					has_trait = seducer
+				}
+				death = {
+					death_reason = death_duel
+					killer = scope:knight
+				}
+			}
+			else = {
+				#阉割
+				add_trait = eunuch
+			}
+		}
+	}
 	ai_potential = {
 		always = no
 	}

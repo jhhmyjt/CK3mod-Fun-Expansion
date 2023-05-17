@@ -3,15 +3,8 @@ fp2_urbanism_legacy_1 = {
 	# Flourishing Cities
 	legacy = fp2_urbanism_legacy_track
 	can_be_picked = {
-		OR = {
-			eligible_for_fp2_dynasty_legacies_trigger = yes
-			AND = {
-				root.house = {
-					has_house_modifier = hc_dynasty_god_modifier
-				}
-				has_game_rule = hc_dynasty_unlock_all_legacy
-			}
-		}
+		hc_unlock_dynasty_legacy = yes
+		eligible_for_fp2_dynasty_legacies_trigger = yes
 	}
 	effect = {
 		# Each city increases development rate of their county
@@ -101,15 +94,8 @@ fp2_coterie_legacy_1 = {
 	# Inner Circle
 	legacy = fp2_coterie_legacy_track
 	can_be_picked = {
-		OR = {
-			eligible_for_fp2_dynasty_legacies_trigger = yes
-			AND = {
-				root.house = {
-					has_house_modifier = hc_dynasty_god_modifier
-				}
-				has_game_rule = hc_dynasty_unlock_all_legacy
-			}
-		}
+		hc_unlock_dynasty_legacy = yes
+		eligible_for_fp2_dynasty_legacies_trigger = yes
 	}
 	effect = {
 		custom_description_no_bullet = {
@@ -141,9 +127,6 @@ fp2_coterie_legacy_1 = {
 fp2_coterie_legacy_2 = {
 	# House bonds
 	legacy = fp2_coterie_legacy_track
-	can_be_picked = {
-		eligible_for_fp2_dynasty_legacies_trigger = yes
-	}
 	effect = {
 		custom_description_no_bullet = {
 			text = fp2_coterie_legacy_2_effect
@@ -157,9 +140,6 @@ fp2_coterie_legacy_2 = {
 fp2_coterie_legacy_3 = {
 	# Unity
 	legacy = fp2_coterie_legacy_track
-	can_be_picked = {
-		eligible_for_fp2_dynasty_legacies_trigger = yes
-	}
 	effect = {
 		custom_description_no_bullet = {
 			text = fp2_coterie_legacy_3_effect
@@ -176,9 +156,6 @@ fp2_coterie_legacy_3 = {
 fp2_coterie_legacy_4 = {
 	# Eternal Trust
 	legacy = fp2_coterie_legacy_track
-	can_be_picked = {
-		eligible_for_fp2_dynasty_legacies_trigger = yes
-	}
 	effect = {
 		custom_description_no_bullet = {
 			text = fp2_coterie_legacy_4_effect
@@ -192,9 +169,6 @@ fp2_coterie_legacy_4 = {
 fp2_coterie_legacy_5 = {
 	# Pragmatic Roots
 	legacy = fp2_coterie_legacy_track
-	can_be_picked = {
-		eligible_for_fp2_dynasty_legacies_trigger = yes
-	}
 	effect = {
 		custom_description_no_bullet = {
 			text = fp2_coterie_legacy_5_effect

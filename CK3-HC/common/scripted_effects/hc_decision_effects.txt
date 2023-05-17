@@ -1,4 +1,4 @@
-﻿#TODO: bug
+﻿#TODO: bug，暂时屏蔽效果
 embrace_roma_effect = {
 	# Scopes saves for localization
 	root = {
@@ -36,7 +36,7 @@ hc_build_chrysotriclinium_decision_effect = {
 	}
 	title:c_byzantion = {
 		title_province = {
-			add_building_slot = 1
+			add_province_modifier = extra_building_slot
 			add_building = hc_chrysotriclinium
 		}
 	}

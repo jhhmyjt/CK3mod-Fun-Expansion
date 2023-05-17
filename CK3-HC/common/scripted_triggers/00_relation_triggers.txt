@@ -1,21 +1,18 @@
-﻿###TRIGGER LIST
+﻿
+###TRIGGER LIST
+
 #################################
 # RELATIONSHIP SETTING TRIGGERS #
 #################################
+
 ### FRIEND ###
 can_set_relation_potential_friend_trigger = {
-	NOT = {
-		has_relation_potential_friend = $CHARACTER$
-	}
-	can_set_relation_friend_trigger = {
-		CHARACTER = $CHARACTER$
-	}
+	NOT = { has_relation_potential_friend = $CHARACTER$ }
+	can_set_relation_friend_trigger = { CHARACTER = $CHARACTER$ }
 }
 
 can_set_relation_friend_trigger = {
-	NOT = {
-		this = $CHARACTER$
-	}
+	NOT = { this = $CHARACTER$ }
 	NOR = {
 		has_relation_friend = $CHARACTER$
 		has_relation_best_friend = $CHARACTER$
@@ -25,28 +22,20 @@ can_set_relation_friend_trigger = {
 }
 
 can_set_relation_best_friend_trigger = {
-	NOT = {
-		this = $CHARACTER$
-	}
+	NOT = { this = $CHARACTER$ }
 	NOR = {
 		has_relation_best_friend = $CHARACTER$
 		has_relation_rival = $CHARACTER$
 		has_relation_nemesis = $CHARACTER$
 	}
 	num_of_relation_best_friend = 0
-	$CHARACTER$ = {
-		num_of_relation_best_friend = 0
-	}
+	$CHARACTER$ = { num_of_relation_best_friend = 0 }
 }
 
 ### LOVER ###
 can_set_relation_potential_lover_trigger = {
-	NOT = {
-		has_relation_potential_lover = $CHARACTER$
-	}
-	can_set_relation_lover_trigger = {
-		CHARACTER = $CHARACTER$
-	}
+	NOT = { has_relation_potential_lover = $CHARACTER$ }
+	can_set_relation_lover_trigger = { CHARACTER = $CHARACTER$ }
 }
 
 #TD
@@ -110,24 +99,18 @@ can_set_relation_lover_trigger = {
 		}
 	}
 	is_adult = yes
-	NOT = {
-		this = $CHARACTER$
-	}
+	NOT = { this = $CHARACTER$ }
 	is_attracted_to_gender_of = $CHARACTER$
 	$CHARACTER$ = {
 		is_adult = yes
 		is_attracted_to_gender_of = prev
 	}
-	NOT = {
-		has_relation_lover = $CHARACTER$
-	}
+	NOT = { has_relation_lover = $CHARACTER$ }
 }
 
 can_set_relation_soulmate_trigger = {
 	is_adult = yes
-	NOT = {
-		this = $CHARACTER$
-	}
+	NOT = { this = $CHARACTER$ }
 	is_attracted_to_gender_of = $CHARACTER$
 	$CHARACTER$ = {
 		is_adult = yes
@@ -138,25 +121,17 @@ can_set_relation_soulmate_trigger = {
 		has_relation_nemesis = $CHARACTER$
 	}
 	num_of_relation_soulmate = 0
-	$CHARACTER$ = {
-		num_of_relation_soulmate = 0
-	}
+	$CHARACTER$ = { num_of_relation_soulmate = 0 }
 }
 
 ### RIVAL ###
 can_set_relation_potential_rival_trigger = {
-	can_set_relation_rival_if_adult_trigger = {
-		CHARACTER = $CHARACTER$
-	}
-	NOT = {
-		has_relation_potential_rival = $CHARACTER$
-	}
+	can_set_relation_rival_if_adult_trigger = { CHARACTER = $CHARACTER$ }
+	NOT = { has_relation_potential_rival = $CHARACTER$ }
 }
 
 can_set_relation_rival_if_adult_trigger = {
-	NOT = {
-		this = $CHARACTER$
-	}
+	NOT = { this = $CHARACTER$ }
 	NOR = {
 		has_relation_friend = $CHARACTER$
 		has_relation_best_friend = $CHARACTER$
@@ -167,40 +142,26 @@ can_set_relation_rival_if_adult_trigger = {
 
 can_set_relation_rival_trigger = {
 	is_adult = yes
-	$CHARACTER$ = {
-		is_adult = yes
-	}
-	can_set_relation_rival_if_adult_trigger = {
-		CHARACTER = $CHARACTER$
-	}
+	$CHARACTER$ = { is_adult = yes }
+	can_set_relation_rival_if_adult_trigger = { CHARACTER = $CHARACTER$ }
 }
 
 can_set_relation_nemesis_trigger = {
 	is_adult = yes
-	NOT = {
-		this = $CHARACTER$
-	}
-	$CHARACTER$ = {
-		is_adult = yes
-	}
+	NOT = { this = $CHARACTER$ }
+	$CHARACTER$ = { is_adult = yes }
 	NOR = {
 		has_relation_friend = $CHARACTER$
 		has_relation_best_friend = $CHARACTER$
 	}
 	num_of_relation_nemesis = 0
-	$CHARACTER$ = {
-		num_of_relation_nemesis = 0
-	}
+	$CHARACTER$ = { num_of_relation_nemesis = 0 }
 }
 
 can_set_relation_bully_trigger = {
 	is_adult = no
-	NOT = {
-		this = $CHARACTER$
-	}
-	$CHARACTER$ = {
-		is_adult = no
-	}
+	NOT = { this = $CHARACTER$ }
+	$CHARACTER$ = { is_adult = no }
 	NOR = {
 		has_relation_friend = $CHARACTER$
 		has_relation_best_friend = $CHARACTER$
@@ -211,12 +172,8 @@ can_set_relation_bully_trigger = {
 
 can_set_relation_victim_trigger = {
 	is_adult = no
-	NOT = {
-		this = $CHARACTER$
-	}
-	$CHARACTER$ = {
-		is_adult = no
-	}
+	NOT = { this = $CHARACTER$ }
+	$CHARACTER$ = { is_adult = no }
 	NOR = {
 		has_relation_friend = $CHARACTER$
 		has_relation_best_friend = $CHARACTER$
@@ -236,9 +193,7 @@ can_set_relation_rival_even_if_teen_trigger = {
 			child_is_teen_trigger = yes
 		}
 	}
-	can_set_relation_rival_if_adult_trigger = {
-		CHARACTER = $CHARACTER$
-	}
+	can_set_relation_rival_if_adult_trigger = { CHARACTER = $CHARACTER$ }
 }
 
 can_set_relation_nemesis_even_if_teen_trigger = {
@@ -252,45 +207,39 @@ can_set_relation_nemesis_even_if_teen_trigger = {
 			child_is_teen_trigger = yes
 		}
 	}
-	NOT = {
-		this = $CHARACTER$
-	}
+	NOT = { this = $CHARACTER$ }
 	NOR = {
 		has_relation_friend = $CHARACTER$
 		has_relation_best_friend = $CHARACTER$
 	}
 	num_of_relation_nemesis = 0
-	$CHARACTER$ = {
-		num_of_relation_nemesis = 0
-	}
+	$CHARACTER$ = { num_of_relation_nemesis = 0 }
 }
 
 ####################
 # RELATION UPGRADE #
 ####################
+
 # These are not hard blockers for upgrading relations, but are used in relation_upgrade events
+
 ### FRIEND
 upgrade_ready_potential_friend_to_friend_trigger = {
-	can_set_relation_friend_trigger = {
-		CHARACTER = $CHARACTER$
-	}
+	can_set_relation_friend_trigger = { CHARACTER = $CHARACTER$ }
 }
+
 
 ### BEST FRIEND
 upgrade_ready_friend_to_best_friend_trigger = {
-	can_set_relation_best_friend_trigger = {
-		CHARACTER = $CHARACTER$
-	}
+	can_set_relation_best_friend_trigger = { CHARACTER = $CHARACTER$ }
 }
+
 
 ### LOVER
 upgrade_ready_potential_lover_to_lover_support_trigger = {
 	OR = {
-		is_ai = no		#Players chose if they are ready
+		is_ai = no #Players chose if they are ready
 		trigger_if = {
-			limit = {
-				has_trait = chaste
-			}
+			limit = { has_trait = chaste }
 			opinion = {
 				target = $CHARACTER$
 				value >= high_positive_opinion
@@ -319,50 +268,42 @@ upgrade_ready_potential_lover_to_lover_support_trigger = {
 }
 
 upgrade_ready_potential_lover_to_lover_trigger = {
-	can_set_relation_lover_trigger = {
-		CHARACTER = $CHARACTER$
-	}
-	upgrade_ready_potential_lover_to_lover_support_trigger = {
-		CHARACTER = $CHARACTER$
-	}
+	can_set_relation_lover_trigger = { CHARACTER = $CHARACTER$ }
+	upgrade_ready_potential_lover_to_lover_support_trigger = { CHARACTER = $CHARACTER$ }
 	save_temporary_scope_as = potential_lover_root
-	$CHARACTER$ = {
-		upgrade_ready_potential_lover_to_lover_support_trigger = {
-			CHARACTER = scope:potential_lover_root
-		}
-	}
+	$CHARACTER$ = { upgrade_ready_potential_lover_to_lover_support_trigger = { CHARACTER = scope:potential_lover_root } }
 }
 
 ### SOULMATE
 upgrade_ready_lover_to_soulmate_trigger = {
-	can_set_relation_soulmate_trigger = {
-		CHARACTER = $CHARACTER$
-	}
+	can_set_relation_soulmate_trigger = { CHARACTER = $CHARACTER$ }
 }
+
 
 ### RIVAL
 upgrade_ready_potential_rival_to_rival_trigger = {
-	can_set_relation_rival_trigger = {
-		CHARACTER = $CHARACTER$
-	}
+	can_set_relation_rival_trigger = { CHARACTER = $CHARACTER$ }
 }
 
 ### NEMESIS
 upgrade_ready_rival_to_nemesis_trigger = {
-	can_set_relation_nemesis_trigger = {
-		CHARACTER = $CHARACTER$
-	}
+	can_set_relation_nemesis_trigger = { CHARACTER = $CHARACTER$ }
 }
+
+
+
+
 
 ########################
 # AI RELATIONSHIP CAPS #
 ########################
+
 # Soft caps, mostly for schemes
+
 is_below_ai_friend_soft_cap_trigger = {
 	trigger_if = {
-		limit = {
-			is_ai = yes
-		}
+		limit = { is_ai = yes }
+
 		trigger_if = {
 			limit = {
 				OR = {
@@ -383,9 +324,8 @@ is_below_ai_friend_soft_cap_trigger = {
 
 is_below_ai_lover_soft_cap_trigger = {
 	trigger_if = {
-		limit = {
-			is_ai = yes
-		}
+		limit = { is_ai = yes }
+
 		trigger_if = {
 			limit = {
 				has_trait = lustful
@@ -403,9 +343,11 @@ is_below_ai_lover_soft_cap_trigger = {
 	}
 }
 
+
 ###############################
 # Character priority triggers #
 ###############################
+
 has_important_relationship_with_character_trigger = {
 	OR = {
 		has_relation_lover = $CHARACTER$
@@ -441,15 +383,24 @@ has_any_moderate_good_relationship_with_character_trigger = {
 }
 
 has_any_only_moderate_good_relationship_with_character_trigger = {
-	has_any_moderate_good_relationship_with_character_trigger = {
-		CHARACTER = $CHARACTER$
-	}
+	has_any_moderate_good_relationship_with_character_trigger = { CHARACTER = $CHARACTER$ }
 	# Exclude the max-tier positive relationships if we're being this specific.
 	NOT = {
-		has_any_best_good_relationship_with_character_trigger = {
-			CHARACTER = $CHARACTER$
-		}
+		has_any_best_good_relationship_with_character_trigger = { CHARACTER = $CHARACTER$ }
 	}
+}
+
+has_any_fertility_relationship_with_character_trigger = {
+	OR = {
+		has_relation_wedding_very_bad_fertility = $CHARACTER$
+		has_relation_wedding_bad_fertility = $CHARACTER$
+		has_relation_wedding_good_fertility = $CHARACTER$
+		has_relation_wedding_very_good_fertility = $CHARACTER$
+	}
+}
+
+has_any_fertility_relationship_with_root_trigger = {
+	has_any_fertility_relationship_with_character_trigger = { CHARACTER = root }
 }
 
 has_any_best_good_relationship_with_character_trigger = {
@@ -459,14 +410,47 @@ has_any_best_good_relationship_with_character_trigger = {
 	}
 }
 
+likes_character_trigger = {
+	OR = {
+		opinion = {
+			target = $CHARACTER$
+			value >= 25
+		}
+		has_relation_lover = $CHARACTER$
+		has_relation_friend = $CHARACTER$
+		has_relation_crush = $CHARACTER$
+		AND = {
+			OR = {
+				has_relation_potential_friend = $CHARACTER$
+				has_relation_guardian = $CHARACTER$
+			}
+			opinion = {
+				target = $CHARACTER$
+				value >= 0
+			}
+		}
+		AND = {
+			has_trait = loyal
+			OR = {
+				liege ?= $CHARACTER$
+				is_consort_of = $CHARACTER$
+				is_close_or_extended_family_of = $CHARACTER$
+			}
+		}
+	}
+	NOR = {
+		has_relation_victim = $CHARACTER$
+		has_relation_bully = $CHARACTER$
+		has_relation_rival = $CHARACTER$
+		is_at_war_with = $CHARACTER$
+		is_imprisoned_by = $CHARACTER$
+	}
+}
+
 has_any_good_relationship_with_character_trigger = {
 	OR = {
-		has_any_mild_good_relationship_with_character_trigger = {
-			CHARACTER = $CHARACTER$
-		}
-		has_any_moderate_good_relationship_with_character_trigger = {
-			CHARACTER = $CHARACTER$
-		}
+		has_any_mild_good_relationship_with_character_trigger = { CHARACTER = $CHARACTER$ }
+		has_any_moderate_good_relationship_with_character_trigger = { CHARACTER = $CHARACTER$ }
 	}
 }
 
@@ -485,9 +469,7 @@ has_any_moderate_bad_relationship_with_character_trigger = {
 has_any_only_moderate_bad_relationship_with_character_trigger = {
 	has_relation_rival = $CHARACTER$
 	NOT = {
-		has_any_worst_bad_relationship_with_character_trigger = {
-			CHARACTER = $CHARACTER$
-		}
+		has_any_worst_bad_relationship_with_character_trigger = { CHARACTER = $CHARACTER$ }
 	}
 }
 
@@ -497,37 +479,25 @@ has_any_worst_bad_relationship_with_character_trigger = {
 
 has_any_bad_relationship_with_character_trigger = {
 	OR = {
-		has_any_mild_bad_relationship_with_character_trigger = {
-			CHARACTER = $CHARACTER$
-		}
-		has_any_moderate_bad_relationship_with_character_trigger = {
-			CHARACTER = $CHARACTER$
-		}
+		has_any_mild_bad_relationship_with_character_trigger = { CHARACTER = $CHARACTER$ }
+		has_any_moderate_bad_relationship_with_character_trigger = { CHARACTER = $CHARACTER$ }
 	}
 }
 
 has_important_relationship_with_root_trigger = {
-	has_important_relationship_with_character_trigger = {
-		CHARACTER = root
-	}
+	has_important_relationship_with_character_trigger = { CHARACTER = root }
 }
 
 has_friendly_relationship_with_root_trigger = {
-	has_friendly_relationship_with_character_trigger = {
-		CHARACTER = root
-	}
+	has_friendly_relationship_with_character_trigger = { CHARACTER = root }
 }
 
 has_any_good_relationship_with_root_trigger = {
-	has_any_good_relationship_with_character_trigger = {
-		CHARACTER = root
-	}
+	has_any_good_relationship_with_character_trigger = { CHARACTER = root }
 }
 
 has_any_bad_relationship_with_root_trigger = {
-	has_any_bad_relationship_with_character_trigger = {
-		CHARACTER = root
-	}
+	has_any_bad_relationship_with_character_trigger = { CHARACTER = root }
 }
 
 lover_is_secret_trigger = {
@@ -537,14 +507,15 @@ lover_is_secret_trigger = {
 	}
 }
 
+
+
 ###############################################
 # Triggers that take an argument and NOT root
 ##############################################
+
 # List of all localizable relations (e.g, My vassal Alex, My courtier Lisa, My liege Frank, My cousin Teddy, etc.)
 has_any_relation_trigger = {
-	NOT = {
-		this = $CHARACTER$
-	}
+	NOT = { this = $CHARACTER$ }
 	OR = {
 		# They are our liege
 		AND = {
@@ -555,21 +526,25 @@ has_any_relation_trigger = {
 		is_vassal_of = $CHARACTER$
 		is_courtier_of = $CHARACTER$
 		is_councillor_of = $CHARACTER$
+
 		# They are our heir/spouse/familyetc.
 		is_heir_of = $CHARACTER$
 		is_consort_of = $CHARACTER$
 		is_close_or_extended_family_of = $CHARACTER$
+
 		#They are the head of our faith
 		AND = {
 			exists = $CHARACTER$.faith.religious_head
 			this = $CHARACTER$.faith.religious_head
 		}
+
 		# Other relations
 		has_relation_lover = $CHARACTER$
 		has_relation_rival = $CHARACTER$
 		has_relation_friend = $CHARACTER$
 		has_relation_guardian = $CHARACTER$
 		has_relation_ward = $CHARACTER$
+
 		AND = {
 			has_employed_any_court_position = yes
 			any_court_position_holder = {
@@ -580,9 +555,7 @@ has_any_relation_trigger = {
 }
 
 is_of_major_interest_trigger = {
-	NOT = {
-		this = $CHARACTER$
-	}
+	NOT = { this = $CHARACTER$ }
 	OR = {
 		is_heir_of = $CHARACTER$
 		AND = {
@@ -596,11 +569,13 @@ is_of_major_interest_trigger = {
 			exists = $CHARACTER$.player_heir
 			this = $CHARACTER$.player_heir
 		}
+
 		#They are the head of our faith
 		AND = {
 			exists = $CHARACTER$.faith.religious_head
 			this = $CHARACTER$.faith.religious_head
 		}
+
 		trigger_if = {
 			limit = {
 				exists = liege
@@ -625,16 +600,22 @@ is_of_major_interest_trigger = {
 			this = $CHARACTER$.house.house_head
 		}
 		is_child_of = $CHARACTER$
+		# Activity Intents
+		trigger_if = {
+			limit = {
+				exists = involved_activity
+				exists = intent_target
+			}
+			intent_target = $CHARACTER$
+		}
 	}
 }
 
 is_of_minor_interest_trigger = {
-	NOT = {
-		this = $CHARACTER$
-	}
+	NOT = { this = $CHARACTER$ }
 	OR = {
 		is_vassal_of = $CHARACTER$
-		betrothed = $CHARACTER$
+		betrothed ?= $CHARACTER$
 		has_relation_lover = $CHARACTER$
 		has_relation_rival = $CHARACTER$
 		has_relation_friend = $CHARACTER$
@@ -647,12 +628,8 @@ is_of_minor_interest_trigger = {
 			}
 		}
 		AND = {
-			$CHARACTER$ = {
-				target_is_liege_or_above = prev
-			}
-			NOT = {
-				this = $CHARACTER$.liege
-			}
+			$CHARACTER$ = { target_is_liege_or_above = prev }
+			NOT = { this = $CHARACTER$.liege }
 		}
 		#"Highly skilled courtiers"
 		AND = {
@@ -674,15 +651,10 @@ is_of_minor_interest_trigger = {
 
 is_of_major_or_minor_interest_trigger = {
 	OR = {
-		is_of_major_interest_trigger = {
-			CHARACTER = $CHARACTER$
-		}
-		is_of_minor_interest_trigger = {
-			CHARACTER = $CHARACTER$
-		}
+		is_of_major_interest_trigger = { CHARACTER = $CHARACTER$ }
+		is_of_minor_interest_trigger = { CHARACTER = $CHARACTER$ }
 	}
 }
-
 has_important_relationship_trigger = {
 	OR = {
 		has_relation_lover = $CHARACTER$
@@ -746,9 +718,12 @@ has_no_particular_noble_roots_trigger = {
 	}
 }
 
+
+
 ###################################
 # Root argument versions
 ###################################
+
 is_of_major_interest_to_root_trigger = {
 	is_of_major_interest_trigger = {
 		CHARACTER = root
@@ -761,17 +736,15 @@ is_of_minor_interest_to_root_trigger = {
 	}
 }
 
+
 ###############
 # Character Lists
 ###############
+
 #Support trigger
 major_interest_player_heir_trigger = {
 	exists = player_heir
-	NOT = {
-		player_heir = {
-			is_in_list = $LISTNAME$
-		}
-	}
+	NOT = { player_heir = { is_in_list = $LISTNAME$ } }
 }
 
 #Support trigger
@@ -779,34 +752,25 @@ major_interest_liege_trigger = {
 	exists = liege
 	NOR = {
 		this = this.liege
-		liege = {
-			is_in_list = $LISTNAME$
-		}
+		liege = { is_in_list = $LISTNAME$ }
 	}
 }
 
 #Support trigger
 major_interest_realm_priest_trigger = {
-	faith = {
-		has_doctrine = doctrine_theocracy_temporal
-	}
+	faith = { has_doctrine = doctrine_theocracy_temporal }
 	exists = cp:councillor_court_chaplain
 	NOT = {
-		cp:councillor_court_chaplain = {
-			is_in_list = $LISTNAME$
-		}
+		cp:councillor_court_chaplain = { is_in_list = $LISTNAME$ }
 	}
 }
 
 #Support trigger
 major_interest_primary_spouse_trigger = {
 	exists = primary_spouse
-	NOT = {
-		primary_spouse = {
-			is_in_list = $LISTNAME$
-		}
-	}
+	NOT = { primary_spouse = { is_in_list = $LISTNAME$ } }
 }
+
 
 #Support trigger
 major_interest_potential_heirs_trigger = {
@@ -814,103 +778,72 @@ major_interest_potential_heirs_trigger = {
 		target = $CHARACTER$
 		value <= 5
 	}
-	NOT = {
-		is_in_list = $LISTNAME$
-	}
+	NOT = { is_in_list = $LISTNAME$ }
 }
 
 #Makes a list of every character of major interest
-#Parameters:
-# CHARACTER - the character who the list will be for
-# LISTNAME - the name of the list
+	#Parameters:
+	# CHARACTER - the character who the list will be for
+	# LISTNAME - the name of the list
 get_characters_of_major_interest_trigger = {
 	save_temporary_scope_as = major_root
 	# 1 - Player heir
 	trigger_if = {
 		limit = {
-			major_interest_player_heir_trigger = {
-				LISTNAME = $LISTNAME$
-			}
+			major_interest_player_heir_trigger = { LISTNAME = $LISTNAME$ }
 		}
-		player_heir = {
-			add_to_temporary_list = $LISTNAME$
-		}
+		player_heir = { add_to_temporary_list = $LISTNAME$ }
 	}
 	# 2 - Liege
 	trigger_if = {
 		limit = {
-			major_interest_liege_trigger = {
-				LISTNAME = $LISTNAME$
-			}
+			major_interest_liege_trigger = { LISTNAME = $LISTNAME$ }
 		}
-		liege = {
-			add_to_temporary_list = $LISTNAME$
-		}
+		liege = { add_to_temporary_list = $LISTNAME$ }
 	}
 	# 3 - Realm Priest
 	trigger_if = {
 		limit = {
-			major_interest_realm_priest_trigger = {
-				LISTNAME = $LISTNAME$
-			}
+			major_interest_realm_priest_trigger = { LISTNAME = $LISTNAME$ }
 		}
-		cp:councillor_court_chaplain = {
-			add_to_temporary_list = $LISTNAME$
-		}
+		cp:councillor_court_chaplain = { add_to_temporary_list = $LISTNAME$ }
 	}
 	# 4 - Primary Spouse
 	trigger_if = {
 		limit = {
-			major_interest_primary_spouse_trigger = {
-				LISTNAME = $LISTNAME$
-			}
+			major_interest_primary_spouse_trigger = { LISTNAME = $LISTNAME$ }
 		}
-		primary_spouse = {
-			add_to_temporary_list = $LISTNAME$
-		}
+		primary_spouse = { add_to_temporary_list = $LISTNAME$ }
 	}
 	# 5 - Spymaster & # 11 - Other councillors
 	any_normal_councillor = {
-		NOT = {
-			is_in_list = $LISTNAME$
-		}
+		NOT = { is_in_list = $LISTNAME$ }
 		count = all
 		add_to_temporary_list = $LISTNAME$
 	}
 	# 6 - Powerful vassals
 	any_powerful_vassal = {
-		NOT = {
-			is_in_list = $LISTNAME$
-		}
+		NOT = { is_in_list = $LISTNAME$ }
 		count = all
 		add_to_temporary_list = $LISTNAME$
 	}
 	# 7 - Religious head (Excluded because they're highly context-specific)
 	# 8 - Potential heirs (Player only)
 	trigger_if = {
-		limit = {
-			is_ai = no
-		}
+		limit = { is_ai = no }
 		trigger_if = {
-			limit = {
-				exists = dynasty
-			}
+			limit = { exists = dynasty }
 			dynasty = {
 				any_dynasty_member = {
-					major_interest_potential_heirs_trigger = {
-						LISTNAME = $LISTNAME$
-						CHARACTER = scope:major_root
-					}
+					major_interest_potential_heirs_trigger = { LISTNAME = $LISTNAME$ CHARACTER = scope:major_root }
 					count = all
 					add_to_temporary_list = $LISTNAME$
 				}
 			}
 		}
-		# 9 - Allies (Player only, Enemies are only relevant for content about wars)
+	# 9 - Allies (Player only, Enemies are only relevant for content about wars)
 		any_ally = {
-			NOT = {
-				is_in_list = $LISTNAME$
-			}
+			NOT = { is_in_list = $LISTNAME$ }
 			count = all
 			add_to_temporary_list = $LISTNAME$
 		}
@@ -921,29 +854,21 @@ get_characters_of_major_interest_trigger = {
 #Support trigger
 minor_interest_concubines_secondary_spouses_trigger = {
 	trigger_if = {
-		limit = {
-			exists = $CHARACTER$.primary_spouse
-		}
-		NOT = {
-			this = $CHARACTER$.primary_spouse
-		}
+		limit = { exists = $CHARACTER$.primary_spouse }
+		NOT = { this = $CHARACTER$.primary_spouse  }
 	}
-	NOT = {
-		is_in_list = $LISTNAME$
-	}
+	NOT = { is_in_list = $LISTNAME$ }
 }
 
 #Support trigger
 minor_interest_high_tier_vassal_trigger = {
-	is_powerful_vassal = no	#Already included in major
-	#	highest_held_title_tier >= {
-	#		value = liege.highest_held_title_tier
-	#		subtract = 2
-	#		min = 2 #Must be at least a count
-	#	}
-	NOT = {
-		is_in_list = $LISTNAME$
-	}
+	is_powerful_vassal = no #Already included in major
+#	highest_held_title_tier >= {
+#		value = liege.highest_held_title_tier
+#		subtract = 2
+#		min = 2 #Must be at least a count
+#	}
+	NOT = { is_in_list = $LISTNAME$ }
 }
 
 minor_interest_close_relatives_trigger = {
@@ -951,19 +876,11 @@ minor_interest_close_relatives_trigger = {
 		#Blocking the most common overlap with high prio
 		AND = {
 			is_cousin_of = $CHARACTER$
-			NOT = {
-				is_close_family_of = $CHARACTER$
-			}
-			#Because... incest. Sigh.
+			NOT = { is_close_family_of = $CHARACTER$ } #Because... incest. Sigh.
 		}
-		major_interest_potential_heirs_trigger = {
-			CHARACTER = $CHARACTER$
-			LISTNAME = $LISTNAME$
-		}
+		major_interest_potential_heirs_trigger = { CHARACTER = $CHARACTER$ LISTNAME = $LISTNAME$ }
 		trigger_if = {
-			limit = {
-				exists = $CHARACTER$.player_heir
-			}
+			limit = { exists = $CHARACTER$.player_heir }
 			this = $CHARACTER$.player_heir
 		}
 		is_in_list = $LISTNAME$
@@ -973,11 +890,7 @@ minor_interest_close_relatives_trigger = {
 #Support trigger
 minor_interest_betrothed_trigger = {
 	exists = betrothed
-	betrothed = {
-		NOT = {
-			is_in_list = $LISTNAME$
-		}
-	}
+	betrothed = { NOT = { is_in_list = $LISTNAME$ }  }
 }
 
 #Support trigger
@@ -991,9 +904,7 @@ minor_interest_skilled_courtiers_trigger = {
 		prowess > high_skill_rating
 	}
 	average_skill_rating >= average_of_all_skills_and_prowess
-	NOT = {
-		is_in_list = $LISTNAME$
-	}
+	NOT = { is_in_list = $LISTNAME$ }
 }
 
 #Support trigger
@@ -1005,125 +916,93 @@ minor_interest_liege_or_above_trigger = {
 }
 
 #Makes a list of every character of minor interest
-#Parameters:
-# LISTNAME - the name of the list
+	#Parameters:
+	# LISTNAME - the name of the list
 get_characters_of_minor_interest_trigger = {
 	save_temporary_scope_as = minor_root
 	# 1 - Concubines & secondary spouses
 	any_consort = {
-		minor_interest_concubines_secondary_spouses_trigger = {
-			CHARACTER = scope:minor_root
-			LISTNAME = $LISTNAME$
-		}
+		minor_interest_concubines_secondary_spouses_trigger = { CHARACTER = scope:minor_root LISTNAME = $LISTNAME$ }
 		count = all
 		add_to_temporary_list = $LISTNAME$
-	}
+	}	
 	# 2 - Direct vassals of high tier
 	any_vassal = {
-		minor_interest_high_tier_vassal_trigger = {
-			LISTNAME = $LISTNAME$
-		}
+		minor_interest_high_tier_vassal_trigger = { LISTNAME = $LISTNAME$ }
 		count = all
 		add_to_temporary_list = $LISTNAME$
 	}
 	# 3 - Betrothed
 	trigger_if = {
-		limit = {
-			minor_interest_betrothed_trigger = {
-				LISTNAME = $LISTNAME$
-			}
-		}
-		betrothed = {
-			add_to_temporary_list = $LISTNAME$
-		}
+		limit = { minor_interest_betrothed_trigger = { LISTNAME = $LISTNAME$ } }
+		betrothed = { add_to_temporary_list = $LISTNAME$ }
 	}
 	# 4 - Lovers
 	any_relation = {
 		type = lover
-		NOT = {
-			is_in_list = $LISTNAME$
-		}
+		NOT = { is_in_list = $LISTNAME$ }
 		count = all
 		add_to_temporary_list = $LISTNAME$
 	}
 	# 5 - Rivals (excluded as they're typically only used in specific contexts)
 	# 6 - Close relatives
 	any_close_or_extended_family_member = {
-		minor_interest_close_relatives_trigger = {
-			CHARACTER = scope:minor_root
-			LISTNAME = $LISTNAME$
-		}
+		minor_interest_close_relatives_trigger = { CHARACTER = scope:minor_root LISTNAME = $LISTNAME$ }
 		count = all
 		add_to_temporary_list = $LISTNAME$
 	}
-	trigger_if = {
-		#Below is just for players
-		limit = {
-			is_ai = no
-		}
-		# 7 - Guardian
+	trigger_if = { #Below is just for players
+		limit = { is_ai = no }
+	# 7 - Guardian
 		any_relation = {
 			type = guardian
-			NOT = {
-				is_in_list = $LISTNAME$
-			}
+			NOT = { is_in_list = $LISTNAME$ }
 			count = all
 			add_to_temporary_list = $LISTNAME$
 		}
-		# 8 - Ward
+	# 8 - Ward
 		any_relation = {
 			type = ward
-			NOT = {
-				is_in_list = $LISTNAME$
-			}
+			NOT = { is_in_list = $LISTNAME$ }
 			count = all
 			add_to_temporary_list = $LISTNAME$
 		}
-		# 9 - Friends
+	# 9 - Friends
 		any_relation = {
 			type = friend
-			NOT = {
-				is_in_list = $LISTNAME$
-			}
+			NOT = { is_in_list = $LISTNAME$ }
 			count = all
 			add_to_temporary_list = $LISTNAME$
 		}
-		# 10 - Knights
+	# 10 - Knights
 		any_knight = {
-			NOT = {
-				is_in_list = $LISTNAME$
-			}
+			NOT = { is_in_list = $LISTNAME$ }
 			count = all
 			add_to_temporary_list = $LISTNAME$
 		}
-		# 11 - Highly skilled courtiers (players only)
+	# 11 - Highly skilled courtiers (players only)
 		trigger_if = {
-			limit = {
-				is_ai = no
-			}
+			limit = { is_ai = no }
 			any_courtier = {
-				minor_interest_skilled_courtiers_trigger = {
-					LISTNAME = $LISTNAME$
-				}
+				minor_interest_skilled_courtiers_trigger = { LISTNAME = $LISTNAME$ }
 				count = all
 				add_to_temporary_list = $LISTNAME$
 			}
 		}
 		any_liege_or_above = {
-			minor_interest_liege_or_above_trigger = {
-				CHARACTER = scope:minor_root
-				LISTNAME = $LISTNAME$
-			}
+			minor_interest_liege_or_above_trigger = { CHARACTER = scope:minor_root LISTNAME = $LISTNAME$ }
 			count = all
 			add_to_temporary_list = $LISTNAME$
 		}
 	}
 }
 
+
+
 #Makes a list of all characters of interest
-#Parameters:
-# CHARACTER - the character the list is for
-# LISTNAME - the name of the list
+	#Parameters:
+	# CHARACTER - the character the list is for
+	# LISTNAME - the name of the list
 get_characters_of_interest_trigger = {
 	get_characters_of_major_interest_trigger = {
 		LISTNAME = $LISTNAME$
@@ -1133,13 +1012,16 @@ get_characters_of_interest_trigger = {
 	}
 }
 
+
+
 ################
 # Potential Enemies
 ################
+
 #Makes a list of characters who are classified as potential enemies
-#Parameters
-# CHARACTER - The character whose enemies are being found
-# LISTNAME - The name of the list
+	#Parameters
+	# CHARACTER - The character whose enemies are being found
+	# LISTNAME - The name of the list
 get_potential_enemies_effect = {
 	$CHARACTER$ = {
 		trigger_if = {
@@ -1188,13 +1070,12 @@ get_potential_enemies_effect = {
 		}
 		#Potential Heirs that do not like you
 		#A Religious Head that dislikes you and you are powerful enough
+
 		any_in_list = {
 			count = all
 			trigger_if = {
 				limit = {
-					NOT = {
-						is_in_list = $LISTNAME$
-					}
+					NOT = { is_in_list = $LISTNAME$ }
 					OR = {
 						#Vassal enemies
 						AND = {
@@ -1209,9 +1090,7 @@ get_potential_enemies_effect = {
 						has_relation_rival = $CHARACTER$
 						#Lieges
 						AND = {
-							$CHARACTER$ = {
-								is_independent_ruler = no
-							}
+							$CHARACTER$ = { is_independent_ruler = no }
 							this = $CHARACTER$.liege
 							opinion = {
 								target = $CHARACTER$
@@ -1223,9 +1102,7 @@ get_potential_enemies_effect = {
 							any_neighboring_top_liege_realm_owner = {
 								this = $CHARACTER$
 							}
-							NOT = {
-								is_allied_to = $CHARACTER$
-							}
+							NOT = { is_allied_to = $CHARACTER$ }
 							OR = {
 								opinion = {
 									target = $CHARACTER$
@@ -1250,10 +1127,7 @@ get_potential_enemies_effect = {
 
 has_RelationToMe_relation = {
 	save_temporary_scope_as = relation_check
-	NOT = {
-		this = $CHARACTER$
-	}
-	# Don't print our relation to ourselves!
+	NOT = { this = $CHARACTER$ } # Don't print our relation to ourselves!
 	OR = {
 		is_close_or_extended_family_of = $CHARACTER$
 		any_spouse = {
@@ -1276,33 +1150,15 @@ has_RelationToMe_relation = {
 		has_relation_bully = $CHARACTER$
 		has_relation_victim = $CHARACTER$
 		is_councillor_of = $CHARACTER$
-		any_spouse = {
-			any_child = {
-				this = $CHARACTER$
-			}
-		}
-		any_parent = {
-			any_spouse = {
-				this = $CHARACTER$
-			}
-		}
-		any_parent = {
-			any_spouse = {
-				any_child = {
-					this = $CHARACTER$
-				}
-			}
-		}
+		any_spouse = { any_child = { this = $CHARACTER$ } }
+		any_parent = { any_spouse = { this = $CHARACTER$ } }
+		any_parent = { any_spouse = { any_child = { this = $CHARACTER$ } } }
 		AND = {
 			exists = liege
 			liege = $CHARACTER$
 		}
-		any_courtier = {
-			this = $CHARACTER$
-		}
-		any_vassal = {
-			this = $CHARACTER$
-		}
+		any_courtier = { this = $CHARACTER$ }
+		any_vassal = { this = $CHARACTER$ }
 		has_relation_crush = $CHARACTER$
 		has_relation_ward = $CHARACTER$
 		has_relation_guardian = $CHARACTER$
@@ -1314,14 +1170,10 @@ has_RelationToMe_relation = {
 				this = $CHARACTER$
 			}
 		}
-		$CHARACTER$ = {
-			is_sibling_in_law_of_root_trigger = yes
-		}
+		$CHARACTER$ = { is_sibling_in_law_of_root_trigger = yes }
 		AND = {
 			exists = dynasty
-			$CHARACTER$ = {
-				exists = dynasty
-			}
+			$CHARACTER$ = { exists = dynasty }
 			dynasty = $CHARACTER$.dynasty
 		}
 		$CHARACTER$ = {
@@ -1338,9 +1190,7 @@ has_RelationToMe_relation = {
 				AND = {
 					exists = inspiration
 					inspiration = {
-						inspiration_sponsor = {
-							this = scope:relation_check
-						}
+						inspiration_sponsor = { this = scope:relation_check }
 					}
 				}
 				AND = {
@@ -1355,9 +1205,7 @@ has_RelationToMe_relation = {
 			}
 		}
 		is_imprisoned_by = $CHARACTER$
-		$CHARACTER$ = {
-			is_imprisoned_by = scope:relation_check
-		}
+		$CHARACTER$ = { is_imprisoned_by = scope:relation_check }
 		AND = {
 			exists = host
 			host = $CHARACTER$

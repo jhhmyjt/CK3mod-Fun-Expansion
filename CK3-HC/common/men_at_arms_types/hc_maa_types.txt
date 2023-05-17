@@ -1,10 +1,10 @@
 ﻿#圣殿裁决重装骑兵
 hc_judgment_heavy_cavalry = {
 	type = heavy_cavalry
-	damage = 100
-	toughness = 30
-	pursuit = 20
-	screen = 10
+	damage = 130
+	toughness = 45
+	pursuit = 35
+	screen = 25
 	terrain_bonus = {
 		plains = {
 			damage = 45
@@ -28,26 +28,6 @@ hc_judgment_heavy_cavalry = {
 			damage = -60
 			toughness = -20
 			pursuit = -10
-		}
-	}
-	era_bonus = {
-		culture_era_early_medieval = {
-			damage = 15
-			toughness = 5
-			pursuit = 5
-			screen = 5
-		}
-		culture_era_high_medieval = {
-			damage = 30
-			toughness = 10
-			pursuit = 10
-			screen = 10
-		}
-		culture_era_late_medieval = {
-			damage = 50
-			toughness = 20
-			pursuit = 20
-			screen = 20
 		}
 	}
 	counters = {
@@ -94,8 +74,8 @@ hc_judgment_heavy_cavalry = {
 #圣殿仆从
 hc_footmen = {
 	type = skirmishers
-	damage = 10
-	toughness = 15
+	damage = 14
+	toughness = 18
 	pursuit = 10
 	screen = 15
 	terrain_bonus = {
@@ -125,20 +105,6 @@ hc_footmen = {
 	counters = {
 		heavy_infantry = 1
 	}
-	era_bonus = {
-		culture_era_early_medieval = {
-			damage = 2
-			toughness = 1
-		}
-		culture_era_high_medieval = {
-			damage = 3
-			toughness = 3
-		}
-		culture_era_late_medieval = {
-			damage = 5
-			toughness = 5
-		}
-	}
 	buy_cost = {
 		gold = 20
 	}
@@ -164,10 +130,10 @@ hc_footmen = {
 #圣殿卫队
 hc_guards = {
 	type = heavy_infantry
-	damage = 30
-	toughness = 20
+	damage = 45
+	toughness = 35
 	pursuit = 0
-	screen = 10
+	screen = 25
 	terrain_bonus = {
 		jungle = {
 			damage = 10
@@ -200,23 +166,6 @@ hc_guards = {
 		archers = 1
 		skirmishers = 1
 		light_cavalry = 1
-	}
-	era_bonus = {
-		culture_era_early_medieval = {
-			damage = 5
-			toughness = 5
-			screen = 6
-		}
-		culture_era_high_medieval = {
-			damage = 10
-			toughness = 10
-			screen = 15
-		}
-		culture_era_late_medieval = {
-			damage = 18
-			toughness = 15
-			screen = 20
-		}
 	}
 	buy_cost = {
 		gold = 100

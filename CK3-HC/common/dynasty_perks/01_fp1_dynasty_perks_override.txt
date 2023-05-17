@@ -3,15 +3,8 @@ fp1_adventure_legacy_1 = {
 	# Wanderlust
 	legacy = fp1_adventure_legacy_track
 	can_be_picked = {
-		OR = {
-			AND = {
-				root.house = {
-					has_house_modifier = hc_dynasty_god_modifier
-				}
-				has_game_rule = hc_dynasty_unlock_all_legacy
-			}
-			eligible_for_fp1_dynasty_legacies_trigger = yes
-		}
+		hc_unlock_dynasty_legacy = yes
+		eligible_for_fp1_dynasty_legacies_trigger = yes
 	}
 	character_modifier = {
 		diplomatic_range_mult = 0.3
@@ -128,15 +121,8 @@ fp1_pillage_legacy_1 = {
 	# Sea-Wolves
 	legacy = fp1_pillage_legacy_track
 	can_be_picked = {
-		OR = {
-			AND = {
-				root.house = {
-					has_house_modifier = hc_dynasty_god_modifier
-				}
-				has_game_rule = hc_dynasty_unlock_all_legacy
-			}
-			eligible_for_fp1_dynasty_legacies_trigger = yes
-		}
+		hc_unlock_dynasty_legacy = yes
+		eligible_for_fp1_dynasty_legacies_trigger = yes
 	}
 	character_modifier = {
 		naval_movement_speed_mult = 0.2

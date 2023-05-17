@@ -69,3 +69,11 @@ hc_finished_wonder_07_text = {
 hc_finished_wonder_08_text = {
 	global = hc_finished_wonder_08_text
 }
+
+hc_have_high_prowess_knight = {
+	global = trigger_desc_hc_have_high_prowess_knight
+}
+
+hc_have_high_intrigue_knight = {
+	global = trigger_desc_hc_have_high_intrigue_knight
+}

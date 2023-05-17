@@ -16,7 +16,7 @@ hc_sacrifice.001 = {
 		#金钱
 		name = hc_sacrifice.001.a
 		trigger = {
-			gold>100000
+			gold >= 100000
 		}
 		remove_short_term_gold = 100000
 		trigger_event = {
@@ -28,7 +28,7 @@ hc_sacrifice.001 = {
 		#虔诚
 		name = hc_sacrifice.001.b
 		trigger = {
-			prestige>100000
+			prestige >= 100000
 		}
 		add_prestige = -100000
 		trigger_event = {
@@ -40,7 +40,7 @@ hc_sacrifice.001 = {
 		#威望
 		name = hc_sacrifice.001.c
 		trigger = {
-			piety>100000
+			piety >= 100000
 		}
 		add_piety = -100000
 		trigger_event = {

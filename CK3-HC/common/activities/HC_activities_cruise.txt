@@ -1,72 +1,72 @@
-﻿activity_cruise = {
-	expiration_days = 60
-	days_until_auto_start = 5
-	solo = yes
-	color = {
-		0.253906
-		0.867188
-		0.105469
-		1
-	}
-	on_spawn = {
-		invite_character_to_activity = activity_owner
-		accept_invitation_for_character = activity_owner
-		#save scope
-		activity_owner = {
-			if = {
-				limit = {
-					any_knight = {
-						is_available_healthy_ai_adult = yes
-					}
-				}
-				every_knight = {
-					limit = {
-						is_available_healthy_ai_adult = yes
-						scope:activity = {
-							NOT = {
-								is_target_in_variable_list = {
-									name = potential_cruise_participants
-									target = prev
-								}
-							}
-						}
-					}
-					scope:activity = {
-						add_to_variable_list = {
-							name = potential_cruise_participants
-							target = prev
-						}
-					}
-				}
-			}
-		}
-		scope:activity = {
-			activity_province = {
-				save_scope_as = cruise_province
-			}
-		}
-		activity_owner = {
-			trigger_event = {
-				on_action = cruise_start_events
-			}
-		}
-	}
-	on_activate = {
-		activity_owner = {
-			trigger_event = {
-				on_action = cruise_random_pulse
-				days = {
-					10
-					15
-				}
-			}
-		}
-	}
-	on_complete = {
-		activity_owner = {
-			remove_character_flag = hc_flag_cruise_event_run
-		}
-	}
-	on_expire = {
-	}
-}
+﻿# activity_cruise = {
+# 	expiration_days = 60
+# 	days_until_auto_start = 5
+# 	solo = yes
+# 	color = {
+# 		0.253906
+# 		0.867188
+# 		0.105469
+# 		1
+# 	}
+# 	on_spawn = {
+# 		invite_character_to_activity = activity_owner
+# 		accept_invitation_for_character = activity_owner
+# 		#save scope
+# 		activity_owner = {
+# 			if = {
+# 				limit = {
+# 					any_knight = {
+# 						is_available_healthy_ai_adult = yes
+# 					}
+# 				}
+# 				every_knight = {
+# 					limit = {
+# 						is_available_healthy_ai_adult = yes
+# 						scope:activity = {
+# 							NOT = {
+# 								is_target_in_variable_list = {
+# 									name = potential_cruise_participants
+# 									target = prev
+# 								}
+# 							}
+# 						}
+# 					}
+# 					scope:activity = {
+# 						add_to_variable_list = {
+# 							name = potential_cruise_participants
+# 							target = prev
+# 						}
+# 					}
+# 				}
+# 			}
+# 		}
+# 		scope:activity = {
+# 			activity_province = {
+# 				save_scope_as = cruise_province
+# 			}
+# 		}
+# 		activity_owner = {
+# 			trigger_event = {
+# 				on_action = cruise_start_events
+# 			}
+# 		}
+# 	}
+# 	on_activate = {
+# 		activity_owner = {
+# 			trigger_event = {
+# 				on_action = cruise_random_pulse
+# 				days = {
+# 					10
+# 					15
+# 				}
+# 			}
+# 		}
+# 	}
+# 	on_complete = {
+# 		activity_owner = {
+# 			remove_character_flag = hc_flag_cruise_event_run
+# 		}
+# 	}
+# 	on_expire = {
+# 	}
+# }

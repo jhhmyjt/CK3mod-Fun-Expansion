@@ -42,7 +42,7 @@ on_action_certified = {
 	}
 	on_actions = {
 		delay = {
-			years = 7
+			years = 10
 		}
 		on_action_certified
 	}
@@ -58,25 +58,6 @@ on_action_coronation = {
 			years = 1
 		}
 		on_action_coronation
-	}
-}
-
-#奇观事件组
-#TODO：下次更新删除
-on_action_hc_special_building = {
-	trigger = {
-		Not = {
-			has_trait = hc_wonder_king
-		}
-	}
-	# events = {
-	# 	hc_special_build.004
-	# }
-	on_actions = {
-		delay = {
-			years = 1
-		}
-		#什么也不发生
 	}
 }
 

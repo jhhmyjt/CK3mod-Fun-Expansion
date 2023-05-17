@@ -9,13 +9,13 @@
 	power_per_skill_point = 4
 	resistance_per_skill_point = 0
 	minimum_progress_chance = 20
-	icon = icon_scheme_personal
+	icon = icon_scheme_romance
 	allow = {
 		is_adult = yes
+		is_travelling = no
 		scope:target = {
 			is_adult = yes
-		}
-		scope:target = {
+			is_travelling = no
 			NOT = {
 				this = scope:owner
 			}
@@ -183,95 +183,14 @@
 	}
 	base_success_chance = {
 		base = 0
-		#HC_modifier
+		hc_anti_ntr_scheme_modifier = yes
+		# You got a wedding night memento
 		modifier = {
-			add = -5000
-			desc = "hc_scheme_target_has_immutable"
-			trigger_if = {
-				limit = {
-					has_game_rule = hc_seduce_court_ai_cannot
-				}
-				scope:owner = {
-					is_ai = yes
-				}
-			}
-			scope:target = {
-				has_trait = hc_immutable
-			}
+			add = 20
+			desc = "SCHEME_WNIGHT_COURT_MEMENTO"
 			scope:owner = {
-				not = {
-					has_trait = hc_immutable
-				}
-			}
-		}
-		modifier = {
-			add = -5000
-			desc = "hc_scheme_target_nothas_immutable"
-			trigger_if = {
-				limit = {
-					has_game_rule = hc_seduce_court_ai_cannot
-				}
-				scope:owner = {
-					is_ai = yes
-				}
-			}
-			scope:target = {
-				not = {
-					has_trait = hc_immutable
-				}
-			}
-			scope:owner = {
-				has_trait = hc_immutable
-			}
-		}
-		modifier = {
-			add = 1000
-			desc = "hc_scheme_owner_has_immutable"
-			scope:target = {
-				has_trait = hc_immutable
-			}
-			scope:owner = {
-				has_trait = hc_immutable
-			}
-			# scope:target = {
-			# 	has_trait = hc_immutable
-			# 	exists = var:hc_marriage
-			# }
-			# scope:owner = {
-			# 	has_trait = hc_immutable
-			# 	exists = var:hc_marriage
-			# }
-			# scope:owner = scope:target.var:hc_marriage
-			# scope:target = scope:owner.var:hc_marriage
-		}
-		modifier = {
-			add = -1000
-			desc = "hc_scheme_has_baptized_immutable"
-			trigger_if = {
-				limit = {
-					has_game_rule = hc_seduce_court_ai_cannot
-				}
-				scope:owner = {
-					is_ai = yes
-				}
-			}
-			scope:target = {
-				has_character_modifier = hc_char_modifier_08
-			}
-		}
-		modifier = {
-			add = -1000
-			desc = "hc_scheme_owner_has_baptized_immutable"
-			trigger_if = {
-				limit = {
-					has_game_rule = hc_seduce_court_ai_cannot
-				}
-				scope:owner = {
-					is_ai = yes
-				}
-			}
-			scope:owner = {
-				has_character_modifier = hc_char_modifier_08
+				exists = var:wnight_court_memento_var
+				var:wnight_court_memento_var = scope:target
 			}
 		}
 		modifier = {
@@ -590,6 +509,8 @@
 				}
 			}
 		}
+		# Diarchs are better at schemes within their liege's realm
+		diarch_scheming_within_realm_bonus_modifier = yes
 		#Gubermint difference
 		modifier = {
 			#3 or more higher rank
@@ -598,11 +519,11 @@
 			exists = scope:target.court_owner
 			scope:target.court_owner = {
 				NOT = {
-					has_government = tribal_government
+					government_has_flag = government_is_tribal
 				}
 			}
 			scope:owner = {
-				has_government = tribal_government
+				government_has_flag = government_is_tribal
 			}
 		}
 		#Religious Heads
@@ -999,6 +920,8 @@
 		}
 	}
 	success_desc = "COURT_SUCCESS_DESC"
+	freeze_scheme_when_traveling = yes
+	freeze_scheme_when_traveling_target = yes
 }
 
 #DESIGN NOTES

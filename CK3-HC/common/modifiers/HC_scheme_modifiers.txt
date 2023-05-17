@@ -1,0 +1,4 @@
+﻿hc_anti_murder_modifier = {
+	icon = intrigue_negative
+	scheme_power = -10
+}

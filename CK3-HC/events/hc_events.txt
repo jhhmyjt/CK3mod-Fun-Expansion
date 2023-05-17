@@ -171,12 +171,12 @@ hc.002 = {
 			on_action = on_action_hc
 		}
 		trigger_event = {
-			on_action = on_action_hc_special_building
+			on_action = on_action_hc_every_year
 			years = 1
 		}
 		trigger_event = {
-			on_action = on_action_hc_every_year
-			years = 1
+			years = 10
+			on_action = on_action_certified
 		}
 	}
 }
@@ -280,15 +280,11 @@ hc.008 = {
 			on_action = on_action_hc
 		}
 		trigger_event = {
-			years = 5
+			years = 10
 			on_action = on_action_certified
 		}
 		trigger_event = {
 			on_action = on_action_hc_every_year
-			years = 1
-		}
-		trigger_event = {
-			on_action = on_action_hc_special_building
 			years = 1
 		}
 	}
@@ -381,16 +377,16 @@ hc.010 = {
 		character = ROOT
 		triggered_animation = {
 			trigger = {
-				prestige_level > 2
-				piety_level > 2
+				prestige_level >= 3
+				piety_level >= 3
 			}
 			animation = happiness
 		}
 		triggered_animation = {
 			trigger = {
 				NOT = {
-					prestige_level > 2
-					piety_level > 2
+					prestige_level >= 3
+					piety_level >= 3
 				}
 			}
 			animation = sadness
@@ -407,8 +403,8 @@ hc.010 = {
 		name = {
 			#good job
 			trigger = {
-				prestige_level > 2
-				piety_level > 2
+				prestige_level >= 3
+				piety_level >= 3
 			}
 			text = hc.010.c
 		}
@@ -585,7 +581,7 @@ hc.011 = {
 	}
 	option = {
 		name = hc.011.a
-		embrace_roma_effect = yes
+		# embrace_roma_effect = yes
 	}
 }
 

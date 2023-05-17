@@ -5,3 +5,12 @@
 		has_trait = god_descent
 	}
 }
+
+hc_unlock_dynasty_legacy = {
+	AND = {
+		root.house = {
+			has_house_modifier = hc_dynasty_god_modifier
+		}
+		has_game_rule = hc_dynasty_unlock_all_legacy
+	}
+}

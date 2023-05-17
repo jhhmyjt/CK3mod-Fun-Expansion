@@ -166,3 +166,22 @@ hc_dynasty_building_king_modifier = {
 	monthly_prestige_gain_mult = 0.02
 	icon = stewardship_positive
 }
+
+#皇家护卫队
+hc_royal_guard_modifier_01 = {
+	icon = intrigue_positive
+	intrigue = 1
+	hostile_scheme_resistance_add = 4
+}
+
+hc_royal_guard_modifier_02 = {
+	icon = intrigue_positive
+	intrigue = 2
+	hostile_scheme_resistance_add = 8
+}
+
+hc_royal_guard_modifier_03 = {
+	icon = intrigue_positive
+	intrigue = 4
+	hostile_scheme_resistance_add = 12
+}

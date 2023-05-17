@@ -1,5 +1,8 @@
 ﻿#特质数值设置
 hc_trait_strength_setting = {
+	categories = {
+		difficulty
+	}
 	default = hc_trait_normal_strength
 	#100%
 	hc_trait_normal_strength = {
@@ -14,6 +17,9 @@ hc_trait_strength_setting = {
 
 #家族修正设置
 hc_dynasty_modifier_strength_setting = {
+	categories = {
+		difficulty
+	}
 	default = hc_dynasty_modifier_normal_strength
 	#max 10
 	hc_dynasty_modifier_normal_strength = {
@@ -25,6 +31,9 @@ hc_dynasty_modifier_strength_setting = {
 
 #传承设置
 hc_dynasty_legacy_setting = {
+	categories = {
+		difficulty
+	}
 	default = hc_dynasty_vanilla_legacy
 	#原版
 	hc_dynasty_vanilla_legacy = {
@@ -36,6 +45,9 @@ hc_dynasty_legacy_setting = {
 
 #勾引/求爱设置
 hc_seduce_court_setting = {
+	categories = {
+		difficulty
+	}
 	default = hc_seduce_court_ai_player_cannot
 	#限制玩家和ai
 	hc_seduce_court_ai_player_cannot = {
@@ -47,6 +59,9 @@ hc_seduce_court_setting = {
 
 #契约限制
 hc_certificate_quantity_setting = {
+	categories = {
+		difficulty
+	}
 	default = hc_one_certificate_quantity
 	#一对一
 	hc_one_certificate_quantity = {

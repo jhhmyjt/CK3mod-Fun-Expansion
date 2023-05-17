@@ -1,19 +1,15 @@
 ﻿#Events for pregnancy on actions
-
 namespace = pregnancy
-
-
-
 # This event is always called on pregnancy start. Determines if the pregnancy will continue smoothly, if it will continue with complications, or be terminated prematurely.
 #If either the birth goes smoothly, the mother grows sick, or the child grows sick, it will trigger the ordinary birth event (birth.0001). Otherwise a custom event will be triggered.
-
 # by Linnéa Thimrén
 pregnancy.0001 = {
 	hidden = yes
 	immediate = {
 		#PREGNANCY COMPLICATION CALCULATIONS & FLAG-SETTING
 		random_list = {
-			200 = { #All goes smoothly!
+			200 = {
+				#All goes smoothly!
 				#Less likely if health is bad
 				modifier = {
 					health <= fine_health
@@ -23,7 +19,6 @@ pregnancy.0001 = {
 					health <= poor_health
 					add = -15
 				}
-
 				#More kids means less risk of complications!
 				modifier = {
 					add = 5
@@ -39,78 +34,97 @@ pregnancy.0001 = {
 						count >= 4
 					}
 				}
-
 				#More likely if you have sacred childbirth
 				modifier = {
-					factor = 2 # Religious doctrine focusing on providing a sanitary birthing chamber and supplies should have a substantial impact on birth complications.
+					factor = 2					# Religious doctrine focusing on providing a sanitary birthing chamber and supplies should have a substantial impact on birth complications.
 					faith = {
 						has_doctrine_parameter = safer_childbirths_active
 					}
 				}
 				#More likely if the Dynasty has the Kin legacy
 				modifier = {
-					factor = 1.5 # So too should constant care of pregnant/birthing mothers.
+					factor = 1.5					# So too should constant care of pregnant/birthing mothers.
 					has_dynasty = yes
 					dynasty = {
 						has_dynasty_perk = kin_legacy_3
 					}
 				}
-
 				add_character_flag = {
 					flag = birth_will_go_smoothly
 					days = 270
 				}
 			}
-			10 = { #Pregnancy ends prematurely
+			10 = {
+				#Pregnancy ends prematurely
 				trigger_event = {
 					id = pregnancy.2101
-					days = { 80 120 }
+					days = {
+						80
+						120
+					}
 				}
 			}
-			3 = { #Child dies during delivery (this triggers when the birth "should" have gone down, since we don't want to create the baby)
+			3 = {
+				#Child dies during delivery (this triggers when the birth "should" have gone down, since we don't want to create the baby)
 				trigger_event = {
 					id = birth.3001
-					days = { 180 200 }
+					days = {
+						180
+						200
+					}
 				}
 			}
-			2 = { #Mother dies
-				modifier = { #to keep players from dying excessively
+			2 = {
+				#Mother dies
+				modifier = {
+					#to keep players from dying excessively
 					add = -2
 					is_ai = no
 				}
-				add_character_flag = { #Flags blocks other birth events
+				add_character_flag = {
+					#Flags blocks other birth events
 					flag = birth_mother_will_die
 					days = 270
 				}
 			}
-			2 = { #Mother and child dies (this triggers when the birth "should" have gone down, since we don't want to create the baby)
-				modifier = { #to keep players from dying excessively
+			2 = {
+				#Mother and child dies (this triggers when the birth "should" have gone down, since we don't want to create the baby)
+				modifier = {
+					#to keep players from dying excessively
 					add = -2
 					is_ai = no
 				}
 				trigger_event = {
 					id = birth.3021
-					days = { 180 200 }
+					days = {
+						180
+						200
+					}
 				}
 			}
-			10 = { #Sickly child (all other events happen as usual)
+			10 = {
+				#Sickly child (all other events happen as usual)
 				modifier = {
-					factor = 0.5 # Religious doctrine focusing on providing a sanitary birthing chamber and supplies should have a substantial impact on birth complications.
+					factor = 0.5					# Religious doctrine focusing on providing a sanitary birthing chamber and supplies should have a substantial impact on birth complications.
 					faith = {
 						has_doctrine_parameter = healthier_children_active
 					}
 				}
-				add_character_flag = { #Flags blocks other birth events
+				add_character_flag = {
+					#Flags blocks other birth events
 					flag = birth_child_will_become_sickly
 					days = 270
 				}
 			}
-			5 = { #Ill mother (all other events happen as usual)
-				modifier = { #to keep players from dying excessively
+			5 = {
+				#Ill mother (all other events happen as usual)
+				modifier = {
+					#to keep players from dying excessively
 					add = -4
 					is_ai = no
 				}
-				add_character_flag = { #Flags blocks other birth events
+				add_character_flag = {
+					#Flags blocks other birth events
 					flag = birth_mother_will_become_ill
 					days = 270
 				}
@@ -119,38 +133,53 @@ pregnancy.0001 = {
 	}
 }
 
-
-
 #####################################
 # Ordinary "I'm pregnant" events!
 ####################################
-
 # for the mother
 pregnancy.1001 = {
 	title = pregnancy.1001.t
 	desc = pregnancy.1001.d
 	theme = pregnancy
-	left_portrait = scope:real_father
-
+	override_background = {
+		reference = bedchamber
+	}
+	left_portrait = {
+		character = root
+	}
+	right_portrait = {
+		character = scope:real_father
+		triggered_animation = {
+			trigger = {
+				has_any_bad_relationship_with_character_trigger = {
+					CHARACTER = root
+				}
+			}
+			animation = stress
+		}
+		animation = happiness
+	}
 	trigger = {
 		any_consort = {
 			this = scope:real_father
 		}
 	}
-
 	immediate = {
 		play_music_cue = "mx_cue_succession"
 		add_trait = pregnant
 		scope:real_father = {
 			if = {
 				limit = {
-					NOT = { faith = { has_doctrine_parameter = no_unfaithfulness_penalty_active } }
+					NOT = {
+						faith = {
+							has_doctrine_parameter = no_unfaithfulness_penalty_active
+						}
+					}
 				}
 			}
 			pregnancy_spouse_suspicion_chance_effect = yes
 		}
 	}
-	
 	option = {
 		name = pregnancy.1001.a
 	}
@@ -161,12 +190,27 @@ pregnancy.1002 = {
 	title = pregnancy.1002.t
 	desc = pregnancy.1002.d
 	theme = pregnancy
-	left_portrait = scope:mother
-
+	override_background = {
+		reference = bedchamber
+	}
+	left_portrait = {
+		character = scope:mother
+	}
+	right_portrait = {
+		character = root
+		triggered_animation = {
+			trigger = {
+				has_any_bad_relationship_with_character_trigger = {
+					CHARACTER = root
+				}
+			}
+			animation = stress
+		}
+		animation = happiness
+	}
 	immediate = {
 		play_music_cue = "mx_cue_succession"
 	}
-
 	option = {
 		name = pregnancy.1002.a
 		show_as_tooltip = {
@@ -177,8 +221,9 @@ pregnancy.1002 = {
 	}
 }
 
-scripted_trigger former_consort_was_father = {
-	OR = {	
+scripted_trigger
+former_consort_was_father = {
+	OR = {
 		any_former_spouse = {
 			even_if_dead = yes
 			this = scope:father
@@ -187,7 +232,11 @@ scripted_trigger former_consort_was_father = {
 				limit = {
 					is_alive = yes
 				}
-				NOT = { any_consort = { this = root } }
+				NOT = {
+					any_consort = {
+						this = root
+					}
+				}
 			}
 		}
 		any_former_concubinist = {
@@ -198,7 +247,11 @@ scripted_trigger former_consort_was_father = {
 				limit = {
 					is_alive = yes
 				}
-				NOT = { any_consort = { this = root } }
+				NOT = {
+					any_consort = {
+						this = root
+					}
+				}
 			}
 		}
 		any_former_concubine = {
@@ -209,7 +262,11 @@ scripted_trigger former_consort_was_father = {
 				limit = {
 					is_alive = yes
 				}
-				NOT = { any_consort = { this = root } }
+				NOT = {
+					any_consort = {
+						this = root
+					}
+				}
 			}
 		}
 	}
@@ -243,18 +300,21 @@ pregnancy.1101 = {
 				desc = pregnancy.1101.desc.dead
 			}
 			desc = pregnancy.1101.desc.divorced
-			
 		}
 		desc = pregnancy.1101.desc.end
 	}
 	theme = pregnancy
-	left_portrait = scope:ex_spouse
-
+	override_background = {
+		reference = bedchamber
+	}
+	left_portrait = {
+		character = root
+	}
+	right_portrait = scope:ex_spouse
 	trigger = {
 		# Event is only valid if our former spouse (dead or divorced) is both the real and assumed father (e.g., it was a legitimate pregnancy when the child was conceived).
 		former_consort_was_father = yes
 	}
-
 	immediate = {
 		play_music_cue = "mx_cue_succession"
 		add_trait = pregnant
@@ -262,7 +322,6 @@ pregnancy.1101 = {
 			save_scope_as = ex_spouse
 		}
 	}
-
 	option = {
 		name = {
 			trigger = {
@@ -280,7 +339,6 @@ pregnancy.1101 = {
 			}
 			text = pregnancy.1101.a.dead
 		}
-
 		# Notify spouses about the pregnancy.
 		every_spouse = {
 			trigger_event = pregnancy.1102
@@ -302,8 +360,24 @@ pregnancy.1102 = {
 	title = pregnancy.1102.t
 	desc = pregnancy.1102.desc
 	theme = pregnancy
-	left_portrait = scope:mother
-
+	override_background = {
+		reference = bedchamber
+	}
+	left_portrait = {
+		character = scope:mother
+	}
+	right_portrait = {
+		character = scope:ex_spouse
+		triggered_animation = {
+			trigger = {
+				has_any_bad_relationship_with_character_trigger = {
+					CHARACTER = scope:mother
+				}
+			}
+			animation = stress
+		}
+		animation = happiness
+	}
 	option = {
 		name = pregnancy.1102.a
 		show_as_tooltip = {
@@ -314,20 +388,23 @@ pregnancy.1102 = {
 	}
 }
 
-
 # For the father, explaining that their ex-wife will bear them a new child soon.
 pregnancy.1103 = {
 	type = letter_event
 	opening = {
 		first_valid = {
 			triggered_desc = {
-			    trigger = {
+				trigger = {
 					OR = {
-						any_former_concubine = { this = scope:mother }
-						any_former_concubinist = { this = scope:mother }
+						any_former_concubine = {
+							this = scope:mother
+						}
+						any_former_concubinist = {
+							this = scope:mother
+						}
 					}
-			    }
-			    desc = pregnancy.1103.opening_concubine
+				}
+				desc = pregnancy.1103.opening_concubine
 			}
 			desc = pregnancy.1103.opening
 		}
@@ -335,19 +412,22 @@ pregnancy.1103 = {
 	desc = {
 		first_valid = {
 			triggered_desc = {
-			    trigger = {
+				trigger = {
 					OR = {
-						any_former_concubine = { this = scope:mother }
-						any_former_concubinist = { this = scope:mother }
+						any_former_concubine = {
+							this = scope:mother
+						}
+						any_former_concubinist = {
+							this = scope:mother
+						}
 					}
-			    }
-			    desc = pregnancy.1103.desc_concubine
+				}
+				desc = pregnancy.1103.desc_concubine
 			}
 			desc = pregnancy.1103.desc
 		}
 	}
 	sender = scope:mother
-
 	option = {
 		name = pregnancy.1103.a
 		show_as_tooltip = {
@@ -361,7 +441,6 @@ pregnancy.1103 = {
 ###########################
 # Bastard pregnancies
 ###########################
-
 #Unmarried mother pregnant with child
 pregnancy.2001 = {
 	title = pregnancy.2001.t
@@ -370,7 +449,9 @@ pregnancy.2001 = {
 		first_valid = {
 			triggered_desc = {
 				trigger = {
-					scope:real_father = { is_married = yes }
+					scope:real_father = {
+						is_married = yes
+					}
 				}
 				desc = pregnancy.2001.father_is_married
 			}
@@ -378,10 +459,26 @@ pregnancy.2001 = {
 		}
 	}
 	theme = pregnancy
-	left_portrait = scope:real_father
-
+	override_background = {
+		reference = bedchamber
+	}
+	left_portrait = {
+		character = root
+	}
+	right_portrait = {
+		character = scope:real_father
+		triggered_animation = {
+			trigger = {
+				has_any_bad_relationship_with_character_trigger = {
+					CHARACTER = scope:mother
+				}
+			}
+			animation = stress
+		}
+		animation = happiness
+	}
 	trigger = {
-		is_pregnant = yes # Fix to prevent pipeline failures on account of set_num_pregnancy_children being used on an unpregnant character
+		is_pregnant = yes		# Fix to prevent pipeline failures on account of set_num_pregnancy_children being used on an unpregnant character
 		NOR = {
 			# If we are married or have concubines (or are a concubine) this event is not valid, as there is a (assumed) father.
 			any_consort = {
@@ -391,7 +488,6 @@ pregnancy.2001 = {
 			former_consort_was_father = yes
 		}
 	}
-
 	immediate = {
 		play_music_cue = "mx_cue_succession"
 		hidden_effect = {
@@ -403,8 +499,8 @@ pregnancy.2001 = {
 		}
 		unmarried_mother_pregnancy_effect = yes
 	}
-
-	option = { #Publicly name the father!
+	option = {
+		#Publicly name the father!
 		name = pregnancy.2001.a
 		bastardy_pregnancy_announcement_effect = yes
 		hidden_effect = {
@@ -432,11 +528,12 @@ pregnancy.2001 = {
 			}
 		}
 	}
-
-	option = { #Only tell the real_father
+	option = {
+		#Only tell the real_father
 		name = pregnancy.2001.b
 		hidden_effect = {
-			add_character_flag = { #Add flag to determine what should happen in adultery.1101
+			add_character_flag = {
+				#Add flag to determine what should happen in adultery.1101
 				flag = planning_to_confess_to_real_father
 				days = 22
 			}
@@ -450,7 +547,7 @@ pregnancy.2001 = {
 					}
 				}
 			}
-			add_character_flag = is_looking_for_peasant #To take the story_peasant_affair to the next step
+			add_character_flag = is_looking_for_peasant			#To take the story_peasant_affair to the next step
 			add_character_flag = peasant_affair_already_looking
 			custom_tooltip = search_for_real_father_tt
 		}
@@ -464,14 +561,17 @@ pregnancy.2001 = {
 				ai_compassion = 1
 				ai_rationality = 0.5
 			}
-			modifier = { # Never hide the truth in faiths with the Polyamory tenet.
+			modifier = {
+				# Never hide the truth in faiths with the Polyamory tenet.
 				factor = 0
-				faith = { has_doctrine_parameter = no_unfaithfulness_penalty_active }
+				faith = {
+					has_doctrine_parameter = no_unfaithfulness_penalty_active
+				}
 			}
 		}
 	}
-
-	option = { #Keep it secret!
+	option = {
+		#Keep it secret!
 		name = pregnancy.2001.c
 		flavor = pregnancy.2001.c.tt
 		ai_chance = {
@@ -479,14 +579,17 @@ pregnancy.2001 = {
 			ai_value_modifier = {
 				ai_rationality = 0.5
 			}
-			modifier = { # Never hide the truth in faiths with the Polyamory tenet.
+			modifier = {
+				# Never hide the truth in faiths with the Polyamory tenet.
 				factor = 0
-				faith = { has_doctrine_parameter = no_unfaithfulness_penalty_active }
+				faith = {
+					has_doctrine_parameter = no_unfaithfulness_penalty_active
+				}
 			}
 		}
 	}
-
-	option = { #Attempt to terminate the pregnancy
+	option = {
+		#Attempt to terminate the pregnancy
 		name = pregnancy.2001.d
 		pregnancy_termination_attempt_effect = yes
 		ai_chance = {
@@ -494,9 +597,12 @@ pregnancy.2001 = {
 			ai_value_modifier = {
 				ai_rationality = 0.5
 			}
-			modifier = { # Never hide the truth in faiths with the Polyamory tenet.
+			modifier = {
+				# Never hide the truth in faiths with the Polyamory tenet.
 				factor = 0
-				faith = { has_doctrine_parameter = no_unfaithfulness_penalty_active }
+				faith = {
+					has_doctrine_parameter = no_unfaithfulness_penalty_active
+				}
 			}
 		}
 	}
@@ -509,7 +615,11 @@ pregnancy.2002 = {
 	desc = {
 		first_valid = {
 			triggered_desc = {
-				trigger = { faith = { has_doctrine_parameter = no_unfaithfulness_penalty_active } }
+				trigger = {
+					faith = {
+						has_doctrine_parameter = no_unfaithfulness_penalty_active
+					}
+				}
 				desc = pregnancy.2002.desc.polyamorous
 			}
 			desc = pregnancy.2002.desc
@@ -518,29 +628,30 @@ pregnancy.2002 = {
 	theme = pregnancy
 	left_portrait = scope:real_father
 	right_portrait = scope:father
-	
 	trigger = {
 		# If we are married and/or have concubines, but the real father is not one of them, it's a bastard!
 		any_consort = {
 			is_male = yes
 		}
 		pregnancy_real_father = {
-			NOT = {	is_consort_of = root }	
+			NOT = {
+				is_consort_of = root
+			}
 		}
-
 		# OBJECTION! If a former spouse/concubine is both the real and assumed father, it's not actually a bastard!
-		NOT = {	
+		NOT = {
 			former_consort_was_father = yes
 		}
 	}
-
 	immediate = {
 		play_music_cue = "mx_cue_succession"
 		# If we got pregnant before our marriage, there will be no assumed father set. However, we need one for the event logic to work correctly.
 		# Since this is a pretty rare edge case, we just go ahead and set the assumed father to a current living spouse.
 		if = {
 			limit = {
-				NOT = { exists = pregnancy_assumed_father }
+				NOT = {
+					exists = pregnancy_assumed_father
+				}
 			}
 			random_consort = {
 				save_scope_as = assumed_father
@@ -549,9 +660,8 @@ pregnancy.2002 = {
 				set_pregnancy_assumed_father = scope:assumed_father
 			}
 		}
-
 		save_scope_as = mother
-		hidden_effect = {	
+		hidden_effect = {
 			set_num_pregnancy_children = 1
 			if = {
 				limit = {
@@ -572,18 +682,26 @@ pregnancy.2002 = {
 			}
 		}
 	}
-
-	option = { #Confess
+	option = {
+		#Confess
 		name = {
-			trigger = { NOT = { faith = { has_doctrine_parameter = no_unfaithfulness_penalty_active } } }
+			trigger = {
+				NOT = {
+					faith = {
+						has_doctrine_parameter = no_unfaithfulness_penalty_active
+					}
+				}
+			}
 			text = pregnancy.2002.a
-
 		}
 		name = {
-			trigger = { faith = { has_doctrine_parameter = no_unfaithfulness_penalty_active } }
+			trigger = {
+				faith = {
+					has_doctrine_parameter = no_unfaithfulness_penalty_active
+				}
+			}
 			text = pregnancy.2001.a
 		}
-
 		married_mother_pregnancy_effect = yes
 		add_fornicator_trait_or_nothing_effect = yes
 		bastardy_pregnancy_announcement_effect = yes
@@ -593,14 +711,17 @@ pregnancy.2002 = {
 		}
 		ai_chance = {
 			base = 0
-			modifier = { # Never hide the truth in faiths with the Polyamory tenet.
+			modifier = {
+				# Never hide the truth in faiths with the Polyamory tenet.
 				add = 100
-				faith = { has_doctrine_parameter = no_unfaithfulness_penalty_active }
+				faith = {
+					has_doctrine_parameter = no_unfaithfulness_penalty_active
+				}
 			}
 		}
 	}
-
-	option = { #Tell the real father
+	option = {
+		#Tell the real father
 		name = pregnancy.2002.b
 		trigger = {
 			NOT = {
@@ -616,14 +737,15 @@ pregnancy.2002 = {
 					}
 				}
 			}
-			add_character_flag = is_looking_for_peasant #To take the story_peasant_affair to the next step
+			add_character_flag = is_looking_for_peasant			#To take the story_peasant_affair to the next step
 			add_character_flag = peasant_affair_already_looking
 			custom_tooltip = search_for_real_father_tt
 		}
 		else = {
 			custom_tooltip = reveal_illegitimate_pregnancy_to_real_father_tt
 		}
-		add_character_flag = { #Add flag to determine what should happen in adultery.1101
+		add_character_flag = {
+			#Add flag to determine what should happen in adultery.1101
 			flag = planning_to_confess_to_real_father
 			days = 22
 		}
@@ -635,17 +757,20 @@ pregnancy.2002 = {
 				ai_compassion = 1
 				ai_rationality = 0.5
 			}
-			modifier = { # Never hide the truth in faiths with the Polyamory tenet.
+			modifier = {
+				# Never hide the truth in faiths with the Polyamory tenet.
 				factor = 0
-				faith = { has_doctrine_parameter = no_unfaithfulness_penalty_active }
+				faith = {
+					has_doctrine_parameter = no_unfaithfulness_penalty_active
+				}
 			}
 		}
 		stress_impact = {
 			honest = medium_stress_impact_gain
 		}
 	}
-
-	option = { #Keep it secret!
+	option = {
+		#Keep it secret!
 		name = pregnancy.2002.c
 		custom_tooltip = pregnancy.2002.c.tt
 		married_mother_pregnancy_effect = yes
@@ -657,23 +782,24 @@ pregnancy.2002 = {
 			ai_value_modifier = {
 				ai_rationality = 0.5
 			}
-			modifier = { # Never hide the truth in faiths with the Polyamory tenet.
+			modifier = {
+				# Never hide the truth in faiths with the Polyamory tenet.
 				factor = 0
-				faith = { has_doctrine_parameter = no_unfaithfulness_penalty_active }
+				faith = {
+					has_doctrine_parameter = no_unfaithfulness_penalty_active
+				}
 			}
 		}
 	}
-
-	option = { #Attempt to get rid of the child
+	option = {
+		#Attempt to get rid of the child
 		name = pregnancy.2002.d
 		pregnancy_termination_attempt_effect = yes
-
 		ai_chance = {
 			base = 0
 		}
 	}
 }
-
 
 ################
 # Attempted Termination Chain
@@ -694,13 +820,12 @@ pregnancy.2003 = {
 		character = root
 		animation = happiness
 	}
-
 	immediate = {
 		end_pregnancy = yes
 		pregnancy_cleanup_effect = yes
 	}
-
-	option = { #It is for the best
+	option = {
+		#It is for the best
 		name = pregnancy.2003.a
 	}
 }
@@ -715,14 +840,13 @@ pregnancy.2004 = {
 		character = root
 		animation = personality_cynical
 	}
-
 	immediate = {
 		end_pregnancy = yes
 		add_trait_force_tooltip = ill
 		pregnancy_cleanup_effect = yes
 	}
-
-	option = { #It was what had to be done
+	option = {
+		#It was what had to be done
 		name = pregnancy.2004.a
 	}
 }
@@ -737,8 +861,7 @@ pregnancy.2005 = {
 		character = root
 		animation = sadness
 	}
-
-	immediate = {	
+	immediate = {
 		if = {
 			limit = {
 				is_married = no
@@ -749,8 +872,8 @@ pregnancy.2005 = {
 			married_mother_pregnancy_effect = yes
 		}
 	}
-
-	option = { #I had to try
+	option = {
+		#I had to try
 		name = pregnancy.2005.a
 	}
 }
@@ -765,12 +888,11 @@ pregnancy.2007 = {
 		character = root
 		animation = grief
 	}
-
 	immediate = {
 		play_music_cue = "mx_cue_murder"
 	}
-
-	option = { #It was what had to be done
+	option = {
+		#It was what had to be done
 		name = pregnancy.2007.a
 		death = {
 			death_reason = death_attempted_treatment
@@ -778,12 +900,10 @@ pregnancy.2007 = {
 	}
 }
 
-
 ################
 # Same-sex
 # 250 - 2059
 ###############
-
 # Pregnant while all mother's consorts are women
 # by Linnéa Thimrén
 pregnancy.2050 = {
@@ -791,7 +911,11 @@ pregnancy.2050 = {
 	desc = {
 		first_valid = {
 			triggered_desc = {
-				trigger = { faith = { has_doctrine_parameter = no_unfaithfulness_penalty_active } }
+				trigger = {
+					faith = {
+						has_doctrine_parameter = no_unfaithfulness_penalty_active
+					}
+				}
 				desc = pregnancy.2050.desc.polyamorous
 			}
 			desc = pregnancy.2050.desc
@@ -800,27 +924,27 @@ pregnancy.2050 = {
 	theme = pregnancy
 	left_portrait = scope:real_father
 	right_portrait = scope:spouse
-
 	trigger = {
 		# If we are married and/or have concubines, but all of them are women as well, it's a bastard!
 		any_consort = {
-			NOT = { is_male = yes }
+			NOT = {
+				is_male = yes
+			}
 		}
 		pregnancy_real_father = {
-			NOT = {	is_consort_of = root }	
+			NOT = {
+				is_consort_of = root
+			}
 		}
-
 		# OBJECTION! If a former spouse/concubine is both the real and assumed father, it's not actually a bastard!
-		NOT = {	
+		NOT = {
 			former_consort_was_father = yes
 		}
 	}
-
 	immediate = {
 		play_music_cue = "mx_cue_succession"
-
 		save_scope_as = mother
-		hidden_effect = {	
+		hidden_effect = {
 			set_num_pregnancy_children = 1
 			if = {
 				limit = {
@@ -840,22 +964,29 @@ pregnancy.2050 = {
 				months = 9
 			}
 		}
-
 		# People will know you've been unfaithful, obviously
 		add_fornicator_trait_or_nothing_effect = yes
 	}
-
-	option = { #Confess (for now this is the only option since you cannot deny that you've slept with someone else)
+	option = {
+		#Confess (for now this is the only option since you cannot deny that you've slept with someone else)
 		name = {
-			trigger = { NOT = { faith = { has_doctrine_parameter = no_unfaithfulness_penalty_active } } }
+			trigger = {
+				NOT = {
+					faith = {
+						has_doctrine_parameter = no_unfaithfulness_penalty_active
+					}
+				}
+			}
 			text = pregnancy.2002.a
-
 		}
 		name = {
-			trigger = { faith = { has_doctrine_parameter = no_unfaithfulness_penalty_active } }
+			trigger = {
+				faith = {
+					has_doctrine_parameter = no_unfaithfulness_penalty_active
+				}
+			}
 			text = pregnancy.2001.a
 		}
-
 		married_mother_pregnancy_effect = yes
 		bastardy_pregnancy_announcement_effect = yes
 		expose_lover_secret_or_run_consequence_effect = {
@@ -867,8 +998,6 @@ pregnancy.2050 = {
 		}
 	}
 }
-
-
 
 ####################
 # Pregnancy ended prematurely (naturally)
@@ -899,11 +1028,9 @@ pregnancy.2101 = {
 		character = root
 		animation = personality_cynical
 	}
-	
 	trigger = {
 		is_pregnant = yes
 	}
-
 	immediate = {
 		if = {
 			limit = {
@@ -918,18 +1045,17 @@ pregnancy.2101 = {
 			pregnancy_cleanup_effect = yes
 		}
 	}
-
 	option = {
 		name = pregnancy.2101.a
-
 		#To tell spouse
 		if = {
 			limit = {
 				exists = scope:spouse
 			}
-			scope:spouse = { trigger_event = pregnancy.2102 }
+			scope:spouse = {
+				trigger_event = pregnancy.2102
+			}
 		}
-
 		#To tell real_father if they're not your spouse and they know of the pregnancy
 		if = {
 			limit = {
@@ -939,7 +1065,9 @@ pregnancy.2101 = {
 					has_character_flag = pregnancy_real_father_knows
 				}
 			}
-			scope:real_father = { trigger_event = pregnancy.2102 }
+			scope:real_father = {
+				trigger_event = pregnancy.2102
+			}
 		}
 	}
 }
@@ -954,17 +1082,14 @@ pregnancy.2102 = {
 		character = scope:mother
 		animation = personality_cynical
 	}
-
 	option = {
 		name = pregnancy.2102.a
 	}
 }
 
-
 ###############
 #3000: Events for the real father
 ######################
-
 #real_father suspects they are the father
 #Can be triggered if the mother tries to keep fatherhood hidden from real_father in pregnancy.2002 or 2003
 pregnancy.3001 = {
@@ -975,7 +1100,12 @@ pregnancy.3001 = {
 		first_valid = {
 			triggered_desc = {
 				trigger = {
-					scope:mother = { any_relation = { type = lover this = root } }
+					scope:mother = {
+						any_relation = {
+							type = lover
+							this = root
+						}
+					}
 					has_opinion_modifier = {
 						modifier = love_opinion
 						target = scope:mother
@@ -985,7 +1115,12 @@ pregnancy.3001 = {
 			}
 			triggered_desc = {
 				trigger = {
-					scope:mother = { any_relation = { type = lover this = root } }
+					scope:mother = {
+						any_relation = {
+							type = lover
+							this = root
+						}
+					}
 				}
 				desc = pregnancy.3001.lovers_not_love
 			}
@@ -994,25 +1129,26 @@ pregnancy.3001 = {
 	}
 	theme = pregnancy
 	left_portrait = scope:mother
-	
 	trigger = {
 		scope:mother = {
 			is_pregnant = yes
 			NOR = {
 				any_owned_story = {
 					exists = var:peasant_character
-					var:peasant_character = { this = root }
+					var:peasant_character = {
+						this = root
+					}
 				}
 				has_character_flag = pregnancy_real_father_knows
 			}
 		}
-
 		#Safety block for spouses that are also lovers, since this event is for bastard fathers
-		NOT = { is_consort_of = scope:mother }
+		NOT = {
+			is_consort_of = scope:mother
+		}
 	}
-
-
-	option = { #I must confront her about it!
+	option = {
+		#I must confront her about it!
 		name = pregnancy.3001.a
 		custom_tooltip = pregnancy.3001.a.tt
 		hidden_effect = {
@@ -1020,18 +1156,20 @@ pregnancy.3001 = {
 			scope:mother = {
 				trigger_event = {
 					id = pregnancy.5001
-					days = { 3 5 }
+					days = {
+						3
+						5
+					}
 				}
 			}
 		}
 	}
-
-	option = { #Could it be...
+	option = {
+		#Could it be...
 		name = pregnancy.3001.b
 		custom_tooltip = pregnancy.3001.b.tt
 	}
 }
-
 
 #Mother chooses to tell the real father in pregnancy.2002
 pregnancy.3002 = {
@@ -1040,29 +1178,34 @@ pregnancy.3002 = {
 	desc = {
 		first_valid = {
 			triggered_desc = {
-				trigger = { any_relation = { type = lover this = scope:mother }}
+				trigger = {
+					any_relation = {
+						type = lover
+						this = scope:mother
+					}
+				}
 				desc = pregnancy.3002.lovers
 			}
 			desc = pregnancy.3002.not_lovers
 		}
 		triggered_desc = {
-			trigger = { exists = scope:spouse }
+			trigger = {
+				exists = scope:spouse
+			}
 		}
 	}
 	theme = pregnancy
 	left_portrait = scope:mother
-
 	trigger = {
 		scope:mother = {
 			is_pregnant = yes
 		}
 	}
-
 	immediate = {
 		play_music_cue = "mx_cue_succession"
 	}
-
-	option = { #What will become of the child
+	option = {
+		#What will become of the child
 		name = pregnancy.3002.a
 		trigger = {
 			has_opinion_modifier = {
@@ -1079,8 +1222,8 @@ pregnancy.3002 = {
 			}
 		}
 	}
-
-	option = { #What will become of the child
+	option = {
+		#What will become of the child
 		name = {
 			trigger = {
 				OR = {
@@ -1117,8 +1260,8 @@ pregnancy.3002 = {
 			}
 		}
 	}
-
-	option = { #The whole world must know the truth
+	option = {
+		#The whole world must know the truth
 		name = pregnancy.3002.c
 		trigger = {
 			is_married = no
@@ -1130,8 +1273,6 @@ pregnancy.3002 = {
 		bastardy_pregnancy_announcement_effect = yes
 	}
 }
-
-
 
 #Unmarried mother comes to unmarried father
 pregnancy.3003 = {
@@ -1152,13 +1293,11 @@ pregnancy.3003 = {
 	}
 	theme = pregnancy
 	left_portrait = scope:mother
-
 	trigger = {
 		scope:mother = {
 			is_pregnant = yes
 		}
 	}
-
 	immediate = {
 		play_music_cue = "mx_cue_succession"
 		scope:mother = {
@@ -1176,8 +1315,8 @@ pregnancy.3003 = {
 			}
 		}
 	}
-
-	option = { #This must be kept secret!
+	option = {
+		#This must be kept secret!
 		name = pregnancy.3003.a
 		custom_tooltip = pregnancy.3003.a.tt
 		ai_chance = {
@@ -1187,16 +1326,15 @@ pregnancy.3003 = {
 			}
 		}
 	}
-
-	option = { #The whole world must know!
+	option = {
+		#The whole world must know!
 		name = pregnancy.3003.b
 		bastardy_pregnancy_announcement_effect = yes
 		ai_chance = {
 			base = 25
 		}
-	}	
+	}
 }
-
 
 #Unmarried mother comes to married father
 pregnancy.3004 = {
@@ -1206,13 +1344,11 @@ pregnancy.3004 = {
 	theme = pregnancy
 	left_portrait = scope:mother
 	right_portrait = scope:spouse
-
 	trigger = {
 		scope:mother = {
 			is_pregnant = yes
 		}
 	}
-
 	immediate = {
 		play_music_cue = "mx_cue_succession"
 		#The real father knows now
@@ -1227,10 +1363,10 @@ pregnancy.3004 = {
 			save_scope_as = spouse
 		}
 	}
-
-	option = { #This must be kept secret!
+	option = {
+		#This must be kept secret!
 		name = pregnancy.3004.a
-	}	
+	}
 }
 
 #5000: Follow-ups
@@ -1243,7 +1379,9 @@ pregnancy.5001 = {
 		desc = pregnancy.5001.desc
 		first_valid = {
 			triggered_desc = {
-				trigger = { scope:real_father = scope:real_father_inquirer }
+				trigger = {
+					scope:real_father = scope:real_father_inquirer
+				}
 				desc = pregnancy.5001.real_father
 			}
 			desc = pregnancy.5001.not_father
@@ -1256,18 +1394,19 @@ pregnancy.5001 = {
 	}
 	right_portrait = {
 		trigger = {
-			NOT = { scope:spouse = scope:real_father_inquirer }
+			NOT = {
+				scope:spouse = scope:real_father_inquirer
+			}
 		}
 		character = scope:spouse
 	}
-
 	trigger = {
 		scope:mother = {
 			is_pregnant = yes
 		}
 	}
-
-	option = { #It is true!
+	option = {
+		#It is true!
 		name = pregnancy.5001.a
 		trigger = {
 			scope:real_father_inquirer = scope:real_father
@@ -1278,28 +1417,37 @@ pregnancy.5001 = {
 		}
 		scope:real_father = {
 			trigger_event = {
-				id = pregnancy.5002 #The truth is revealed to them
-				days = { 3 5 }
+				id = pregnancy.5002				#The truth is revealed to them
+				days = {
+					3
+					5
+				}
 			}
 		}
 	}
-
-	option = { #Insist real_father is wrong
+	option = {
+		#Insist real_father is wrong
 		name = pregnancy.5001.b
-		trigger = { NOT = { scope:real_father_inquirer = scope:real_father } }
-		fallback = yes # Only show if they are not the father
+		trigger = {
+			NOT = {
+				scope:real_father_inquirer = scope:real_father
+			}
+		}
+		fallback = yes		# Only show if they are not the father
 		ai_chance = {
 			base = 100
 		}
 		scope:real_father = {
 			trigger_event = {
-				id = pregnancy.5003 #Denial
-				days = { 3 5 }
+				id = pregnancy.5003				#Denial
+				days = {
+					3
+					5
+				}
 			}
 		}
 	}
 }
-
 
 #Mother confesses that root is the real_father, sharing the secret with them
 pregnancy.5002 = {
@@ -1321,13 +1469,11 @@ pregnancy.5002 = {
 	}
 	theme = pregnancy
 	left_portrait = scope:mother
-
 	trigger = {
 		scope:mother = {
 			is_pregnant = yes
 		}
 	}
-
 	immediate = {
 		hidden_effect = {
 			scope:mother = {
@@ -1346,12 +1492,11 @@ pregnancy.5002 = {
 			}
 		}
 	}
-
-	option = { #Ah, what will become of our child?
+	option = {
+		#Ah, what will become of our child?
 		name = pregnancy.5002.a
 		custom_tooltip = pregnancy.3003.a.tt
 	}
-
 	option = {
 		name = pregnancy.5002.b
 		expose_lover_secret_or_run_consequence_effect = {
@@ -1361,7 +1506,6 @@ pregnancy.5002 = {
 		bastardy_pregnancy_announcement_effect = yes
 	}
 }
-
 
 #Mother keeps insisting the child is not root's
 pregnancy.5003 = {
@@ -1373,19 +1517,16 @@ pregnancy.5003 = {
 		character = scope:mother
 		animation = personality_callous
 	}
-	
-	option = { #Are they really telling the truth?
+	option = {
+		#Are they really telling the truth?
 		name = pregnancy.5003.a
-	}	
+	}
 }
-
-
 
 ########################
 # Someone publicly announces the child is theirs
 # 6000
 ########################
-
 ### 6000 - 6099: Mother announces
 #Mother announces the child - and the real father
 pregnancy.6001 = {
@@ -1398,13 +1539,11 @@ pregnancy.6001 = {
 		animation = personality_callous
 	}
 	right_portrait = scope:real_father
-
 	option = {
 		name = pregnancy.6001.a
 		custom_tooltip = pregnancy_announcement_my_child_will_be_a_bastard
 	}
 }
-
 
 #Mother announces child father - event for real father
 pregnancy.6002 = {
@@ -1415,7 +1554,13 @@ pregnancy.6002 = {
 		triggered_desc = {
 			trigger = {
 				exists = scope:spouse
-				scope:spouse = { NOT = { faith = { has_doctrine_parameter = no_unfaithfulness_penalty_active } } }
+				scope:spouse = {
+					NOT = {
+						faith = {
+							has_doctrine_parameter = no_unfaithfulness_penalty_active
+						}
+					}
+				}
 			}
 			desc = pregnancy.6002.married
 		}
@@ -1440,19 +1585,23 @@ pregnancy.6002 = {
 			desc = pregnancy.6002.unmarried_sympathetic
 		}
 	}
-
 	theme = pregnancy
 	left_portrait = scope:mother
 	right_portrait = {
 		character = scope:spouse
 		animation = disapproval
 	}
-
 	immediate = {
 		if = {
 			limit = {
 				exists = primary_partner
-				primary_partner = { NOT = { faith = { has_doctrine_parameter = no_unfaithfulness_penalty_active } } }
+				primary_partner = {
+					NOT = {
+						faith = {
+							has_doctrine_parameter = no_unfaithfulness_penalty_active
+						}
+					}
+				}
 			}
 			primary_partner = {
 				save_scope_as = spouse
@@ -1461,23 +1610,26 @@ pregnancy.6002 = {
 		else = {
 			random_consort = {
 				limit = {
-					NOT = { faith = { has_doctrine_parameter = no_unfaithfulness_penalty_active } }
+					NOT = {
+						faith = {
+							has_doctrine_parameter = no_unfaithfulness_penalty_active
+						}
+					}
 				}
 				save_scope_as = spouse
 			}
 		}
 	}
-
 	option = {
 		name = pregnancy.6002.a
-		trigger = { is_married = no }
+		trigger = {
+			is_married = no
+		}
 	}
-
 	after = {
 		custom_tooltip = pregnancy_announcement_the_child_will_be_a_bastard_real_father
 	}
 }
-
 
 #Mother announces child father - event for spouse of mother
 pregnancy.6003 = {
@@ -1487,17 +1639,14 @@ pregnancy.6003 = {
 	theme = pregnancy
 	left_portrait = scope:mother
 	lower_left_portrait = scope:real_father
-
 	immediate = {
 		play_music_cue = "mx_cue_prison"
 	}
-
 	option = {
 		name = pregnancy.6003.a
 		custom_tooltip = pregnancy_announcement_the_child_will_be_a_bastard
 	}
 }
-
 
 #Mother announces child father - event for family of mother
 pregnancy.6004 = {
@@ -1513,7 +1662,11 @@ pregnancy.6004 = {
 							CHARACTER = scope:real_father
 						}
 					}
-					trait_is_criminal_in_faith_trigger = { TRAIT = incestuous FAITH = root.faith GENDER_CHARACTER = scope:mother }
+					trait_is_criminal_in_faith_trigger = {
+						TRAIT = incestuous
+						FAITH = root.faith
+						GENDER_CHARACTER = scope:mother
+					}
 				}
 				desc = pregnancy.6004.incest
 			}
@@ -1529,26 +1682,24 @@ pregnancy.6004 = {
 	theme = pregnancy
 	left_portrait = scope:mother
 	lower_left_portrait = scope:real_father
-
 	immediate = {
 		play_music_cue = "mx_cue_prison"
 		scope:mother = {
 			if = {
-				limit = { exists = primary_partner }
+				limit = {
+					exists = primary_partner
+				}
 				primary_partner = {
 					save_scope_as = spouse
 				}
 			}
 		}
 	}
-
 	option = {
 		name = pregnancy.6004.a
 		custom_tooltip = pregnancy_announcement_the_child_will_be_a_bastard
 	}
 }
-
-
 
 #Mother announces child father - event for spouse of real_father
 pregnancy.6005 = {
@@ -1558,18 +1709,14 @@ pregnancy.6005 = {
 	theme = pregnancy
 	left_portrait = scope:real_father
 	right_portrait = scope:mother
-
 	immediate = {
 		play_music_cue = "mx_cue_prison"
 	}
-
 	option = {
 		name = pregnancy.6005.a
 		custom_tooltip = pregnancy_announcement_the_child_will_be_a_bastard
 	}
 }
-
-
 
 #Mother announces child father - event for family of real_father
 pregnancy.6006 = {
@@ -1591,24 +1738,23 @@ pregnancy.6006 = {
 	left_portrait = scope:mother
 	lower_left_portrait = scope:real_father
 	right_portrait = scope:spouse
-
 	immediate = {
 		play_music_cue = "mx_cue_prison"
 		scope:real_father = {
 			if = {
-				limit = { exists = primary_partner }
+				limit = {
+					exists = primary_partner
+				}
 				primary_partner = {
 					save_scope_as = spouse
 				}
 			}
 		}
 	}
-
 	option = {
 		name = pregnancy.6006.a
 	}
 }
-
 
 #Mother announces child father - event for real_father
 pregnancy.6999 = {
@@ -1618,7 +1764,6 @@ pregnancy.6999 = {
 	theme = pregnancy
 	left_portrait = scope:mother
 	right_portrait = scope:real_father
-
 	option = {
 		name = pregnancy.6999.a
 		custom_tooltip = pregnancy_announcement_the_child_will_be_a_bastard

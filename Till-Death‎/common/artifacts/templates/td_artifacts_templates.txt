@@ -10,7 +10,11 @@
 				exists = var:marriage_owner
 			}
 			root = scope:artifact.var:marriage_owner
-			root.primary_spouse = scope:artifact.var:marriage_target
+			scope:artifact.var:marriage_owner = {
+				any_consort = {
+					this = scope:artifact.var:marriage_target
+				}
+			}
 		}
 	}
 	fallback = {
