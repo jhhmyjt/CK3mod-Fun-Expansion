@@ -3,8 +3,10 @@ fp2_urbanism_legacy_1 = {
 	# Flourishing Cities
 	legacy = fp2_urbanism_legacy_track
 	can_be_picked = {
-		hc_unlock_dynasty_legacy = yes
-		eligible_for_fp2_dynasty_legacies_trigger = yes
+		OR = {
+			hc_unlock_dynasty_legacy = yes
+			eligible_for_fp2_dynasty_legacies_trigger = yes
+		}
 	}
 	effect = {
 		# Each city increases development rate of their county
@@ -94,8 +96,10 @@ fp2_coterie_legacy_1 = {
 	# Inner Circle
 	legacy = fp2_coterie_legacy_track
 	can_be_picked = {
-		hc_unlock_dynasty_legacy = yes
-		eligible_for_fp2_dynasty_legacies_trigger = yes
+		OR = {
+			hc_unlock_dynasty_legacy = yes
+			eligible_for_fp2_dynasty_legacies_trigger = yes
+		}
 	}
 	effect = {
 		custom_description_no_bullet = {

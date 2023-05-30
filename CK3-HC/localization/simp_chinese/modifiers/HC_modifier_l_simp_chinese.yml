@@ -29,6 +29,8 @@
  hc_14_modifier_desc:0 "该角色幼年活泼矫健，富有生气。"
  hc_country_modifier_02:0 "修建黄金议事宫"
  hc_country_modifier_02_desc:0 "黄金议事宫坐落于本地首府，它为本地发展注入强大力量。"
+ hc_country_modifier_03:0 "建筑开发"
+ hc_country_modifier_03_desc:0 "该伯爵领因开发建筑发展加快"
  hc_dynasty_god_modifier:0 "受神灵眷顾"
  hc_dynasty_god_modifier_desc:0 "该家族受到诸灵的眷顾"
  hc_dynasty_alert_modifier:0 "祭祀之灵"

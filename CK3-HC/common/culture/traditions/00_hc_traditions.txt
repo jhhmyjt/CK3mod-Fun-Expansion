@@ -1,0 +1,22 @@
+﻿hc_tradition_more = {
+	category = societal
+	layers = {
+		0 = learning
+		1 = western
+		4 = conversation.dds
+	}
+	can_pick = {
+	}
+	culture_modifier = {
+		culture_tradition_max_add = 50
+	}
+	character_modifier = {
+		different_culture_opinion = 5
+	}
+	cost = {
+		prestige = 1000
+	}
+	ai_will_do = {
+		value = 0
+	}
+}

@@ -5,3 +5,11 @@ hc_country_modifier_02 = {
 	build_speed = -0.2
 	build_gold_cost = -0.2
 }
+
+#开发建筑
+hc_country_modifier_03 = {
+	icon = stewardship_positive
+	development_growth_factor = 0.1
+	build_speed = -0.05
+	build_gold_cost = -0.05
+}

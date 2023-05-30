@@ -123,6 +123,7 @@ hc_footmen = {
 		dynasty = {
 			has_dynasty_perk = hc_temple_legacy_1
 		}
+		# hc_has_god_descent_trigger = yes
 	}
 	icon = skirmishers
 }

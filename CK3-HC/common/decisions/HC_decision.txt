@@ -10,21 +10,38 @@
 # 	is_valid_showing_failures_only = {
 # 	}
 # 	is_valid = {
-# 		OR = {
-# 			root.dynasty = {
-# 				dynasty_prestige >= 100000
-# 			}
-# 			prestige >= 100000
-# 			piety >= 100000
-# 			gold >= 100000
-# 		}
 # 	}
 # 	cost = {
 # 		piety = 100
 # 		prestige = 100
 # 	}
 # 	effect = {
-# 		add_piety = 50
+# 		if = {
+# 			limit = {
+# 				any_vassal_or_below = {
+# 					is_male = yes
+# 					OR = {
+# 						has_trait = lustful
+# 						has_trait = rakish
+# 						has_trait = seducer
+# 					}
+# 				}
+# 			}
+# 			add_prestige = 100
+# 		}
+# 		if = {
+# 			limit = {
+# 				any_courtier_or_guest = {
+# 					is_male = yes
+# 					OR = {
+# 						has_trait = lustful
+# 						has_trait = rakish
+# 						has_trait = seducer
+# 					}
+# 				}
+# 			}
+# 			add_piety = 100
+# 		}
 # 	}
 # 	ai_potential = {
 # 		always = no
@@ -1712,11 +1729,11 @@ hc_create_royal_personal_guard_decision = {
 		}
 	}
 	is_valid = {
-		prestige_level >= 3
+		prestige_level >= 4
 		is_independent_ruler = yes
 		OR = {
-			martial >= 15
-			intrigue >= 15
+			martial >= 20
+			intrigue >= 20
 		}
 		custom_description = {
 			text = is_god_dynasty_trigger
@@ -1731,7 +1748,7 @@ hc_create_royal_personal_guard_decision = {
 		is_at_war = no
 	}
 	cost = {
-		prestige = 300
+		prestige = 500
 	}
 	effect = {
 		root.house = {
@@ -1765,11 +1782,11 @@ hc_create_royal_great_guard_decision = {
 		}
 	}
 	is_valid = {
-		prestige_level >= 3
+		prestige_level >= 5
 		is_independent_ruler = yes
 		OR = {
-			martial >= 15
-			intrigue >= 15
+			martial >= 25
+			intrigue >= 25
 		}
 		custom_description = {
 			text = is_god_dynasty_trigger
@@ -1784,7 +1801,7 @@ hc_create_royal_great_guard_decision = {
 		is_at_war = no
 	}
 	cost = {
-		prestige = 300
+		prestige = 1000
 	}
 	effect = {
 		root.house = {
@@ -2069,6 +2086,9 @@ hc_adjudgment_day_decision = {
 					has_trait = rakish
 					has_trait = seducer
 				}
+				Not = {
+					has_trait = eunuch
+				}
 			}
 			any_courtier_or_guest = {
 				is_male = yes
@@ -2076,6 +2096,9 @@ hc_adjudgment_day_decision = {
 					has_trait = lustful
 					has_trait = rakish
 					has_trait = seducer
+				}
+				Not = {
+					has_trait = eunuch
 				}
 			}
 		}
@@ -2110,55 +2133,197 @@ hc_adjudgment_day_decision = {
 		scope:knight = {
 			add_prestige = 100
 		}
-		every_vassal_or_below = {
-			limit = {
-				is_male = yes
-				or = {
-					has_trait = lustful
-					has_trait = rakish
-					has_trait = seducer
-				}
-			}
-			if = {
+		show_as_tooltip = {
+			every_vassal_or_below = {
 				limit = {
-					has_trait = seducer
+					is_male = yes
+					or = {
+						has_trait = lustful
+						has_trait = rakish
+						has_trait = seducer
+					}
+					Not = {
+						has_trait = eunuch
+					}
 				}
-				death = {
-					death_reason = death_duel
-					killer = scope:knight
+				if = {
+					limit = {
+						has_trait = seducer
+					}
+					death = {
+						death_reason = death_duel
+						killer = scope:knight
+					}
+				}
+				else = {
+					#阉割
+					add_trait = eunuch
 				}
 			}
-			else = {
-				#阉割
-				add_trait = eunuch
+			every_courtier_or_guest = {
+				limit = {
+					is_male = yes
+					or = {
+						has_trait = lustful
+						has_trait = rakish
+						has_trait = seducer
+					}
+					Not = {
+						has_trait = eunuch
+					}
+				}
+				if = {
+					limit = {
+						has_trait = seducer
+					}
+					death = {
+						death_reason = death_duel
+						killer = scope:knight
+					}
+				}
+				else = {
+					#阉割
+					add_trait = eunuch
+				}
 			}
 		}
-		every_courtier_or_guest = {
-			limit = {
-				is_male = yes
-				or = {
-					has_trait = lustful
-					has_trait = rakish
-					has_trait = seducer
+		hidden_effect = {
+			send_interface_message = {
+				type = event_generic_good
+				title = hc_adjudgment_day_decision_notification
+				right_icon = scope:knight
+				every_vassal_or_below = {
+					limit = {
+						is_male = yes
+						or = {
+							has_trait = lustful
+							has_trait = rakish
+							has_trait = seducer
+						}
+						Not = {
+							has_trait = eunuch
+						}
+					}
+					if = {
+						limit = {
+							has_trait = seducer
+						}
+						death = {
+							death_reason = death_duel
+							killer = scope:knight
+						}
+					}
+					else = {
+						#阉割
+						add_trait = eunuch
+					}
 				}
-			}
-			if = {
-				limit = {
-					has_trait = seducer
+				every_courtier_or_guest = {
+					limit = {
+						is_male = yes
+						or = {
+							has_trait = lustful
+							has_trait = rakish
+							has_trait = seducer
+						}
+						Not = {
+							has_trait = eunuch
+						}
+					}
+					if = {
+						limit = {
+							has_trait = seducer
+						}
+						death = {
+							death_reason = death_duel
+							killer = scope:knight
+						}
+					}
+					else = {
+						#阉割
+						add_trait = eunuch
+					}
 				}
-				death = {
-					death_reason = death_duel
-					killer = scope:knight
-				}
-			}
-			else = {
-				#阉割
-				add_trait = eunuch
 			}
 		}
 	}
 	ai_potential = {
 		always = no
+	}
+	ai_will_do = {
+		base = 0
+	}
+}
+
+#建筑开发
+hc_add_building_decision = {
+	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	sort_order = 80
+	ai_check_interval = 0
+	desc = hc_add_building_decision_desc
+	widget = {
+		gui = decision_view_widget_hc_building_special
+		controller = create_holy_order
+		barony_valid = {
+			trigger_if = {
+				limit = {
+					exists = this
+				}
+				hc_barony_is_valid_for_build_special_trigger = {
+					CHARACTER = scope:ruler
+				}
+			}
+			trigger_else = {
+				custom_description = {
+					text = "has_holy_order_barony_selected"
+					always = no
+				}
+			}
+		}
+	}
+	is_shown = {
+		is_ai = no
+	}
+	is_valid = {
+		OR = {
+			stewardship >= 18
+			has_trait = architect
+		}
+		custom_description = {
+			text = is_god_dynasty_trigger
+			root.house = {
+				has_house_modifier = hc_dynasty_god_modifier
+			}
+		}
+	}
+	cost = {
+		gold = 500
+	}
+	cooldown = {
+		years = 5
+	}
+	is_valid_showing_failures_only = {
+		is_at_war = no
+		is_imprisoned = no
+	}
+	effect = {
+		scope:barony.title_province = {
+			add_province_modifier = extra_building_slot
+		}
+		scope:barony.county = {
+			add_county_modifier = {
+				modifier = hc_country_modifier_03
+				years = 5
+			}
+		}
+		hidden_effect = {
+			send_interface_message = {
+				type = event_generic_good
+				title = hc_add_building_decision_msg_t
+				right_icon = root
+				custom_tooltip = hc_add_building_decision_msg_tt
+			}
+		}
 	}
 	ai_will_do = {
 		base = 0

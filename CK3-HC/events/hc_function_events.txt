@@ -29,3 +29,31 @@ hc_fun.001 = {
 		}
 	}
 }
+
+#TODO 加强可汗，生成可汗事件 mongol_invasion.0001
+# hc_fun.002 = {
+# 	hidden = yes
+# 	trigger = {
+# 		any_ruler = {
+# 			is_ai = yes
+# 			is_available = yes
+# 			has_trait = greatest_of_khans
+# 		}
+# 	}
+# 	immediate = {
+# 		random_ruler = {
+# 			limit = {
+# 				has_trait = greatest_of_khans
+# 			}
+# 			save_scope_as = hc_khan
+# 		}
+# 		send_interface_message = {
+# 			type = event_generic_good
+# 			title = hc_fun.002_msg_t
+# 			right_icon = scope:hc_khan
+# 			scope:hc_khan = {
+# 				add_prestige = 500
+# 			}
+# 		}
+# 	}
+# }

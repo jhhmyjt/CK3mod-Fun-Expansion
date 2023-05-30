@@ -17,5 +17,5 @@
  hc_finished_wonder_06_text:0 "完成修建古罗马斗兽场"
  hc_finished_wonder_07_text:0 "完成修建荷尔斯泰因防线"
  hc_finished_wonder_08_text:0 "完成修建圣足山"
- trigger_desc_hc_have_high_prowess_knight:0 "有勇武高于12的骑士"
- trigger_desc_hc_have_high_intrigue_knight:0 "有谋略高于12的骑士"
+ trigger_desc_hc_have_high_prowess_knight:0 "有一名勇武高于12的骑士"
+ trigger_desc_hc_have_high_intrigue_knight:0 "有一名谋略高于12的骑士"

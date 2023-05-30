@@ -59,21 +59,19 @@ hc_05_modifier = {
 }
 
 #江山如画
-hc_06_modifier = {
-	icon = county_modifier_control_positive
-	# development_growth = 1
-	monthly_county_control_change_factor = 0.1
-	development_growth_factor = 0.2
-	county_opinion_add = 15
-}
-
+# hc_06_modifier = {
+# 	icon = county_modifier_control_positive
+# 	# development_growth = 1
+# 	monthly_county_control_change_factor = 0.1
+# 	development_growth_factor = 0.2
+# 	county_opinion_add = 15
+# }
 #体恤民情
-hc_07_modifier = {
-	icon = social_positive
-	health = 0.02
-	county_opinion_add = 20
-}
-
+# hc_07_modifier = {
+# 	icon = social_positive
+# 	health = 0.02
+# 	county_opinion_add = 20
+# }
 #举案齐眉
 hc_08_modifier = {
 	icon = social_positive
@@ -91,17 +89,15 @@ hc_09_modifier = {
 }
 
 #商业奇才
-hc_10_modifier = {
-	icon = economy_positive
-	domain_tax_mult = 0.1
-}
-
+# hc_10_modifier = {
+# 	icon = economy_positive
+# 	domain_tax_mult = 0.1
+# }
 #先见之明
-hc_11_modifier = {
-	icon = learning_positive
-	hostile_scheme_resistance_add = 20
-}
-
+# hc_11_modifier = {
+# 	icon = learning_positive
+# 	hostile_scheme_resistance_add = 20
+# }
 #神灵庇护
 hc_12_modifier = {
 	monthly_dynasty_prestige_mult = 0.2

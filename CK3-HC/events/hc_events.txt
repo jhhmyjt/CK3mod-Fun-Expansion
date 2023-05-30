@@ -132,8 +132,6 @@ hc.002 = {
 		custom_tooltip = hc.002_effect_tt
 		hidden_effect = {
 			every_vassal_or_below = {
-				limit = {
-				}
 				add_opinion = {
 					modifier = hc_finish_test_opinion
 					years = 10
