@@ -4,6 +4,9 @@
 # 	type = character_event
 # 	desc = hc.001.desc
 # 	title = hc.001.t
+# 	trigger = {
+# 		# always = no
+# 	}
 # 	left_portrait = {
 # 		character = ROOT
 # 		animation = stress

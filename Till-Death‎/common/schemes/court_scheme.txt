@@ -704,6 +704,12 @@
 		house_feud_sway_scheme_success_modifier = yes
 	}
 	on_ready = {
+		# Set up a block for the inappropriate cheating error?
+		save_scope_value_as = {
+			name = ignore_cheating_error_check
+			value = yes
+		}
+		# Proceed to rolls.
 		scheme_owner = {
 			#DISCOVERY ROLL
 			save_scope_value_as = {

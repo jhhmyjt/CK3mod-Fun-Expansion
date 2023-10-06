@@ -1378,7 +1378,7 @@ pregnancy.3004 = {
 	desc = pregnancy.3004.desc
 	theme = pregnancy
 	left_portrait = scope:mother
-	right_portrait = scope:spouse
+	lower_right_portrait = scope:spouse
 	trigger = {
 		scope:mother = {
 			is_pregnant = yes
@@ -1396,6 +1396,11 @@ pregnancy.3004 = {
 		#For portrait and desc purposes
 		primary_spouse = {
 			save_scope_as = spouse
+		}
+		show_as_tooltip = {
+			scope:mother = {
+				add_trait_force_tooltip = pregnant
+			}
 		}
 	}
 	option = {

@@ -16,32 +16,7 @@
 # 		prestige = 100
 # 	}
 # 	effect = {
-# 		if = {
-# 			limit = {
-# 				any_vassal_or_below = {
-# 					is_male = yes
-# 					OR = {
-# 						has_trait = lustful
-# 						has_trait = rakish
-# 						has_trait = seducer
-# 					}
-# 				}
-# 			}
-# 			add_prestige = 100
-# 		}
-# 		if = {
-# 			limit = {
-# 				any_courtier_or_guest = {
-# 					is_male = yes
-# 					OR = {
-# 						has_trait = lustful
-# 						has_trait = rakish
-# 						has_trait = seducer
-# 					}
-# 				}
-# 			}
-# 			add_piety = 100
-# 		}
+# 		trigger_event = hc.000
 # 	}
 # 	ai_potential = {
 # 		always = no
@@ -75,7 +50,6 @@ hc_begin_decision = {
 	}
 	effect = {
 		custom_tooltip = hc_begin_decision_effect_tt_01
-		custom_tooltip = hc_begin_decision_effect_tt_02
 		custom_tooltip = hc_begin_decision_effect_tt_03
 		if = {
 			limit = {
@@ -84,6 +58,9 @@ hc_begin_decision = {
 			custom_tooltip = hc_begin_decision_effect_tt_04
 		}
 		custom_tooltip = hc_begin_decision_effect_tt_05
+		show_as_tooltip = {
+			hc_add_god_descent_effect = yes
+		}
 		trigger_event = {
 			id = hc.001
 			days = 5
@@ -1261,6 +1238,7 @@ hc_call_decision = {
 	}
 	effect = {
 		custom_tooltip = hc_call_decision_custom_tt_02
+		custom_tooltip = hc_call_decision_custom_tt_01
 		trigger_event = {
 			id = hc_call_war.001
 			days = 3
@@ -1678,7 +1656,6 @@ hc_create_royal_guard_decision = {
 	}
 	is_valid = {
 		prestige_level >= 3
-		is_independent_ruler = yes
 		OR = {
 			martial >= 15
 			intrigue >= 15
@@ -1730,7 +1707,6 @@ hc_create_royal_personal_guard_decision = {
 	}
 	is_valid = {
 		prestige_level >= 4
-		is_independent_ruler = yes
 		OR = {
 			martial >= 20
 			intrigue >= 20
@@ -1783,7 +1759,6 @@ hc_create_royal_great_guard_decision = {
 	}
 	is_valid = {
 		prestige_level >= 5
-		is_independent_ruler = yes
 		OR = {
 			martial >= 25
 			intrigue >= 25
