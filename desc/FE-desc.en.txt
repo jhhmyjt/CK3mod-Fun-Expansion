@@ -17,11 +17,21 @@ Some interesting decisions/events/traits/nickname/buildings/character interactio
 [img]https://i.imgur.com/PZKaOKU.png[/img]
 [h1]Supported languages[/h1]
 Simplified Chinese
+English(by @Kod)
 
 [h1]Compatibility[/h1]
 Compatible with save game
-Not compatible with Iron Man
-Modified vanilla files:court_scheme.txt seduce_scheme.txt 00_romance_effects.txt 00_relation_triggers.txt pregnancy_events.txt
+Modified vanilla files:
+00_relation_triggers
+00_romance_effects
+01_fp1_dynasty_perks
+03_fp2_dynasty_perks
+96_fp2_legacies
+98_fp1_legacies
+adultery_events
+court_scheme
+pregnancy_events
+seduce_scheme
 
 
 [h1]Source & Disclaimer[/h1]

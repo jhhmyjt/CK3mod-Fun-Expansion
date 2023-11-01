@@ -1,8 +1,4 @@
 ﻿l_simp_chinese:
- hc.101.t:0 "mod更新说明"
- hc.101.desc:0 "更新内容：\n1.添加新的决议：召集圣殿骑士，现在你可以召集你的骑士加入战争\n2.。。。\n#italic 下次更新：人物剧本#\n本次更新需要重置mod，选择重置mod选项一次即可！"
- hc.101.a:0 "知道了"
- hc.101.b:0 "重置mod"
  hc_switch_common.t:0 "开关事件组"
  hc_switch_common.desc:0 "开关事件组"
  hc_switch_common.a:0 "开关事件组"

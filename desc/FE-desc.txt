@@ -16,23 +16,29 @@
 [img]https://i.imgur.com/PZKaOKU.png[/img]
 [h1]支持语言[/h1]
 简体中文
+English(by @Kod)
 
 [h1]近期更新[/h1]
-1.9版本更新
-添加决议：建立皇家护卫队（获得密谋buff，解锁特殊决议并且可以升级）、升级为皇家亲卫队、升级为皇家禁卫
-添加决议：招募人才、追查凶手、审判日，需要上述决议解锁
-屏蔽决议 巡游天下，该决议待完善
-兵种属性调整，移除了时代加成
-5.20更新
-添加传统：多多益善，在社会分类中，增加50传统槽位
-添加决议：开发建筑，为选择的伯爵领增加1建筑槽位
-修改了一些文本
+兼容1.10版本
+受@海娃 启发，修改了部分特质的名称和描述
+取消了皇家护卫队系列决议中独立统治者的限制条件 @荣耀C龙
+决议召集圣殿骑士：普通骑士可能加入你的战争（好感度影响）
+未复现bug“缔结婚姻可以对自己用”，但对互动添加了限制条件，应该能修复
 
 [h1]兼容性[/h1]
 兼容现有存档
 不兼容铁人
-修改过的原文件：court_scheme.txt seduce_scheme.txt 00_romance_effects.txt 00_relation_triggers.txt pregnancy_events.txt
-
+修改过的原文件：
+00_relation_triggers
+00_romance_effects
+01_fp1_dynasty_perks
+03_fp2_dynasty_perks
+96_fp2_legacies
+98_fp1_legacies
+adultery_events
+court_scheme
+pregnancy_events
+seduce_scheme
 [h1]素材来源&免责声明[/h1]
 [b]mod部分素材来自于网络，如有侵权请联系我，会立刻删除。[/b]列表如下：
 [list]

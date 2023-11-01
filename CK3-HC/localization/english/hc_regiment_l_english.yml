@@ -1,3 +1,7 @@
 ﻿l_english:
- hc_judgment_heavy_cavalry:0 "Templar Judgment Heavy Cavalry "
- hc_judgment_heavy_cavalry_flavor:0 "#F Templar Judgment Heavy Cavalry is an elite cavalry under the orders of the Paladins, his strong physique and incomparably sturdy armor frighten the enemies on the battlefield.#!"
+ hc_judgment_heavy_cavalry:0 "Templar Judgment Heavy Cavalry"
+ hc_judgment_heavy_cavalry_flavor:0 "#F The Templar Judgment Heavy Cavalry is an elite cavalry at the behest of the Paladin, whose strong physical prowess and unbelievably sturdy armor strike fear into the hearts of enemies on the battlefield. #!"
+ hc_footmen:0 "Templar Servant"
+ hc_footmen_flavor:0 "#F The Templar Servants may be lightly armed and fragile, but their sheer numbers and unyielding faith are enough to devour clusters of enemy armies #!"
+ hc_guards:0 "Temple Guard"
+ hc_guards_flavor:0 "#F The Temple Guards are well-equipped, well-trained, and the backbone of maintaining the majesty of the Temple, these multi-faceted warriors can handle a multitude of terrains and climates. Any incoming enemy will fear their devastating power #!"

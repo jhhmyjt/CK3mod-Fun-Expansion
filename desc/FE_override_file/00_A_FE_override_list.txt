@@ -7,3 +7,14 @@
 pregnancy_events
 court_scheme
 seduce_scheme
+File:
+00_relation_triggers
+00_romance_effects
+01_fp1_dynasty_perks
+03_fp2_dynasty_perks
+96_fp2_legacies
+98_fp1_legacies
+adultery_events
+court_scheme
+pregnancy_events
+seduce_scheme

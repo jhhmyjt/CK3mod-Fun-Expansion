@@ -1,4 +1,6 @@
 ﻿l_english:
  HC_JUDGMENT_HEAVY_CAVALRY_UNLOCK_DESCRIPTION:0 "Can recruit [GetMaA('hc_judgment_heavy_cavalry').GetName][men_at_arms|E]"
- HC_JUDGMENT_HEAVY_CAVALRY_DESCRIPTION:0 "#weak Sanctuary Judgment Heavy Cavalry is powerful but expensive, watch out for the treasury#!"
-hc_chrysotriclinium_army:0 "The Golden Temple Guard Paladins"
+ HC_JUDGMENT_HEAVY_CAVALRY_DESCRIPTION:0 "#weak Templar Judgment Heavy Cavalry is powerful but also expensive, beware of the treasury#!"
+ HC_FOOTMAN_UNLOCK_DESCRIPTION:0 "Can recruit [GetMaA('hc_footmen').GetName][men_at_arms|E]"
+ HC_GUARD_UNLOCK_DESCRIPTION:0 "Can recruit [GetMaA('hc_guards').GetName][men_at_arms|E]"
+ hc_chrysotriclinium_army:0 "Golden Temple Forbidden Paladin Legion"
