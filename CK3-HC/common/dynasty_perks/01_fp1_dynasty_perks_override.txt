@@ -3,9 +3,9 @@ fp1_adventure_legacy_1 = {
 	# Wanderlust
 	legacy = fp1_adventure_legacy_track
 	can_be_picked = {
-		OR = {
-			hc_unlock_dynasty_legacy = yes
+		or = {
 			eligible_for_fp1_dynasty_legacies_trigger = yes
+			hc_unlock_dynasty_legacy = yes
 		}
 	}
 	character_modifier = {
@@ -123,9 +123,9 @@ fp1_pillage_legacy_1 = {
 	# Sea-Wolves
 	legacy = fp1_pillage_legacy_track
 	can_be_picked = {
-		OR = {
-			hc_unlock_dynasty_legacy = yes
+		or = {
 			eligible_for_fp1_dynasty_legacies_trigger = yes
+			hc_unlock_dynasty_legacy = yes
 		}
 	}
 	character_modifier = {

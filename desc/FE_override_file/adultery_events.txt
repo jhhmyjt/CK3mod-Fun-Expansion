@@ -1,43 +1,32 @@
 ﻿#Events fired by any kind of adultery going on/suspicion about adultery
-
 namespace = adultery
-
 #ADULTERY OVERVIEW
 #Adultery events can be triggered based on a number of different conditions:
-
 #Lover secret (last updated 2018-11-08)
 #When a lover secret is revealed or exposed to a lover or a consort, it triggers the story cycle infidelity_confrontation_story
 #When a lover secret exists, adultery.0001 has increased chance of triggering (via yearly_playable_pulse), which lets character confront their spouse
-
 #Had_sex_with_effect
-
-
 #Bastards
-
-
 #0001		- Spouse suspects spouse/soulmate of having lover (can be true or false)
 #1001-1999 - Suspicious Pregnancy
 #2001-2999 - Suspecting your Child's Parentage
 #3001-3999 - Misc Bastard Child Events
 #4001-		extramarital_sex_exposure_consequences_effect events
-
-
-
-
-
 #############################################
 # Spouse suspects spouse/soulmate of having lover (can be true or false) #
 # Triggered through "yearly_playable_pulse" pulse  #
 #############################################
-
 #By Linnéa Thimrén & Mathilda Bjarnehed
-scripted_trigger adultery_0001_unfaithful_trigger = {
+scripted_trigger
+adultery_0001_unfaithful_trigger = {
 	save_temporary_scope_as = unfaithful
 	OR = {
-		any_relation = { 
-			type = lover 
+		any_relation = {
+			type = lover
 			NOR = {
-				any_consort = { this = scope:unfaithful }
+				any_consort = {
+					this = scope:unfaithful
+				}
 				has_relation_soulmate = scope:unfaithful
 			}
 		}
@@ -45,7 +34,9 @@ scripted_trigger adultery_0001_unfaithful_trigger = {
 			has_variable = had_recent_sex_with
 			var:had_recent_sex_with = {
 				NOR = {
-					any_consort = { this = scope:unfaithful }
+					any_consort = {
+						this = scope:unfaithful
+					}
 					has_relation_soulmate = scope:unfaithful
 				}
 			}
@@ -54,17 +45,18 @@ scripted_trigger adultery_0001_unfaithful_trigger = {
 	}
 }
 
-scripted_trigger adultery_0001_valid_partner_trigger = {
+scripted_trigger
+adultery_0001_valid_partner_trigger = {
 	is_imprisoned = no
-	NOT = { has_character_flag = was_recently_suspected_of_adultery } # To avoid event spamming
+	NOT = {
+		has_character_flag = was_recently_suspected_of_adultery
+	}	# To avoid event spamming
 }
 
 adultery.0001 = {
 	hidden = yes
-
 	trigger = {
 		basic_is_valid_for_yearly_events_trigger = yes
-
 		# Is there someone to suspect at all
 		OR = {
 			any_consort = {
@@ -76,7 +68,7 @@ adultery.0001 = {
 			}
 		}
 		OR = {
-			is_ai = no #Players don't need to fulfill more specific conditions, rest is to limit it for the AI
+			is_ai = no			#Players don't need to fulfill more specific conditions, rest is to limit it for the AI
 			has_trait = paranoid
 			any_consort = {
 				adultery_0001_valid_partner_trigger = yes
@@ -96,23 +88,28 @@ adultery.0001 = {
 				}
 			}
 		}
-		NOT = { faith = { has_doctrine_parameter = no_unfaithfulness_penalty_active } }
+		NOT = {
+			faith = {
+				has_doctrine_parameter = no_unfaithfulness_penalty_active
+			}
+		}
 	}
-
 	immediate = {
 		save_scope_as = spouse
-
 		# Add all partners to list
 		every_consort = {
-			limit = { adultery_0001_valid_partner_trigger = yes }
+			limit = {
+				adultery_0001_valid_partner_trigger = yes
+			}
 			add_to_list = partners
 		}
 		every_relation = {
 			type = soulmate
-			limit = { adultery_0001_valid_partner_trigger = yes }
+			limit = {
+				adultery_0001_valid_partner_trigger = yes
+			}
 			add_to_list = partners
 		}
-
 		# Randomize a partner to check, weighted by most likely adulterer
 		random_in_list = {
 			list = partners
@@ -127,7 +124,9 @@ adultery.0001 = {
 					}
 					add = 2
 				}
-				ai_honor_target_modifier = { VALUE = -2 }
+				ai_honor_target_modifier = {
+					VALUE = -2
+				}
 				modifier = {
 					adultery_0001_unfaithful_trigger = yes
 					add = 5
@@ -135,10 +134,9 @@ adultery.0001 = {
 			}
 			save_scope_as = lover_spouse
 		}
-
 		scope:lover_spouse = {
 			random = {
-				chance = 0.5 # 0.5 yields ~5% chance for it to happen in a decade, excluding other conditions, or ~20% chance of happening at all in a 50-year marriage without lovers
+				chance = 0.5				# 0.5 yields ~5% chance for it to happen in a decade, excluding other conditions, or ~20% chance of happening at all in a 50-year marriage without lovers
 				# Increased base chance if there is a lover at all
 				modifier = {
 					add = 14.5
@@ -186,15 +184,22 @@ adultery.0001 = {
 				}
 				#Increased chance if spouse is paranoid
 				modifier = {
-					factor = 2 # Doubles the chance
-					scope:spouse = { has_trait = paranoid }
+					factor = 2					# Doubles the chance
+					scope:spouse = {
+						has_trait = paranoid
+					}
 				}
 				#Negative modifier if the spouse is smart and there's no lover
 				modifier = {
 					add = -5
 					OR = {
 						adultery_0001_unfaithful_trigger = no
-						any_relation = { type = lover NOT = { is_consort_of = scope:lover_spouse } }
+						any_relation = {
+							type = lover
+							NOT = {
+								is_consort_of = scope:lover_spouse
+							}
+						}
 					}
 					scope:spouse = {
 						has_trait_rank = {
@@ -207,7 +212,12 @@ adultery.0001 = {
 					add = -10
 					OR = {
 						adultery_0001_unfaithful_trigger = no
-						any_relation = { type = lover NOT = { is_consort_of = scope:lover_spouse } }
+						any_relation = {
+							type = lover
+							NOT = {
+								is_consort_of = scope:lover_spouse
+							}
+						}
 					}
 					scope:spouse = {
 						has_trait_rank = {
@@ -215,13 +225,17 @@ adultery.0001 = {
 							rank > 1
 						}
 					}
-
 				}
 				modifier = {
 					add = -15
 					OR = {
 						adultery_0001_unfaithful_trigger = no
-						any_relation = { type = lover NOT = { is_consort_of = scope:lover_spouse } }
+						any_relation = {
+							type = lover
+							NOT = {
+								is_consort_of = scope:lover_spouse
+							}
+						}
 					}
 					scope:spouse = {
 						has_trait_rank = {
@@ -249,11 +263,11 @@ adultery.0001 = {
 						rank > 0
 					}
 				}
-				add_character_flag = { #To avoid spamming the event
+				add_character_flag = {
+					#To avoid spamming the event
 					flag = was_recently_suspected_of_adultery
 					years = 5
 				}
-
 				#SUSPICION!
 				scope:spouse = {
 					trigger_event = adultery.0002
@@ -263,15 +277,18 @@ adultery.0001 = {
 	}
 }
 
-
 #Suspecting that partner has an affair
 adultery.0002 = {
 	type = character_event
 	title = adultery.0002.t
-	desc = {	
+	desc = {
 		first_valid = {
 			triggered_desc = {
-				trigger = { scope:lover_spouse = { is_consort_of = root } }
+				trigger = {
+					scope:lover_spouse = {
+						is_consort_of = root
+					}
+				}
 				desc = adultery.0002.consort_start.desc
 			}
 			desc = adultery.0002.soulmate_start.desc
@@ -280,14 +297,17 @@ adultery.0002 = {
 	}
 	theme = marriage
 	override_icon = {
-		trigger = { has_relation_soulmate = scope:lover_spouse }
+		trigger = {
+			has_relation_soulmate = scope:lover_spouse
+		}
 		reference = "gfx/interface/icons/event_types/type_love.dds"
 	}
 	left_portrait = scope:lover_spouse
-
 	trigger = {
 		NOR = {
-			faith = { has_doctrine_parameter = no_unfaithfulness_penalty_active }
+			faith = {
+				has_doctrine_parameter = no_unfaithfulness_penalty_active
+			}
 			reverse_has_opinion_modifier = {
 				target = scope:lover_spouse
 				modifier = unfaithful_spouse_exposed_opinion
@@ -298,8 +318,8 @@ adultery.0002 = {
 			}
 		}
 	}
-
-	option = { #Confront partner!
+	option = {
+		#Confront partner!
 		name = adultery.0002.a
 		custom_tooltip = adultery.0002.a.tt
 		scope:lover_spouse = {
@@ -314,8 +334,8 @@ adultery.0002 = {
 			}
 		}
 	}
-
-	option = { #High intrigue - look into this yourself
+	option = {
+		#High intrigue - look into this yourself
 		name = adultery.0002.b
 		trigger = {
 			intrigue >= decent_skill_rating
@@ -324,7 +344,8 @@ adultery.0002 = {
 		duel = {
 			skill = intrigue
 			target = scope:lover_spouse
-			15 = { # SUCCESS
+			15 = {
+				# SUCCESS
 				desc = adultery.0002.b.success
 				custom_tooltip = adultery.0002.b.tt
 				compare_modifier = {
@@ -334,7 +355,9 @@ adultery.0002 = {
 				hidden_effect = {
 					if = {
 						limit = {
-							scope:lover_spouse = { adultery_0001_unfaithful_trigger = yes }
+							scope:lover_spouse = {
+								adultery_0001_unfaithful_trigger = yes
+							}
 						}
 						#If there is a secret, reveal a secret...
 						if = {
@@ -343,7 +366,9 @@ adultery.0002 = {
 									any_secret = {
 										secret_type = secret_lover
 										any_secret_knower = {
-											NOT = { this = root }
+											NOT = {
+												this = root
+											}
 										}
 									}
 								}
@@ -353,7 +378,9 @@ adultery.0002 = {
 									limit = {
 										secret_type = secret_lover
 										any_secret_knower = {
-											NOT = { this = root }
+											NOT = {
+												this = root
+											}
 										}
 									}
 									set_variable = {
@@ -385,7 +412,8 @@ adultery.0002 = {
 					}
 				}
 			}
-			10 = { # FAILURE
+			10 = {
+				# FAILURE
 				desc = adultery.0002.b.failure
 				compare_modifier = {
 					value = scope:duel_value
@@ -402,8 +430,8 @@ adultery.0002 = {
 			base = 100
 		}
 	}
-
-	option = { #Spy on partner
+	option = {
+		#Spy on partner
 		name = adultery.0002.c
 		trigger = {
 			exists = cp:councillor_spymaster
@@ -414,7 +442,9 @@ adultery.0002 = {
 					}
 					trigger_if = {
 						limit = {
-							scope:lover_spouse = { is_landed = yes }
+							scope:lover_spouse = {
+								is_landed = yes
+							}
 						}
 						councillor_task_target = scope:lover_spouse
 					}
@@ -426,7 +456,9 @@ adultery.0002 = {
 				trigger_else = {
 					trigger_if = {
 						limit = {
-							scope:lover_spouse = { is_landed = yes }
+							scope:lover_spouse = {
+								is_landed = yes
+							}
 						}
 						is_council_task_valid = {
 							task_type = task_find_secrets
@@ -443,10 +475,11 @@ adultery.0002 = {
 				}
 			}
 		}
-
 		if = {
 			limit = {
-				scope:lover_spouse = { is_landed = yes }
+				scope:lover_spouse = {
+					is_landed = yes
+				}
 				NOT = {
 					cp:councillor_spymaster = {
 						is_performing_council_task = task_find_secrets
@@ -471,7 +504,9 @@ adultery.0002 = {
 			limit = {
 				exists = scope:lover_spouse.liege
 				NOR = {
-					scope:lover_spouse = { is_landed = yes }
+					scope:lover_spouse = {
+						is_landed = yes
+					}
 					cp:councillor_spymaster = {
 						is_performing_council_task = task_find_secrets
 						councillor_task_target = scope:lover_spouse.liege
@@ -494,19 +529,19 @@ adultery.0002 = {
 		else = {
 			custom_tooltip = adultery.0002.c.tt
 		}
-
-
 		ai_chance = {
 			base = 50
 		}
 	}
-	
-	option = { #Do nothing
+	option = {
+		#Do nothing
 		name = {
 			text = {
 				first_valid = {
 					triggered_desc = {
-						trigger = { is_spouse_of = scope:lover_spouse }
+						trigger = {
+							is_spouse_of = scope:lover_spouse
+						}
 						desc = adultery.0002.d
 					}
 					desc = adultery.0002.d.concubine_or_soulmate
@@ -532,7 +567,6 @@ adultery.0002 = {
 	}
 }
 
-
 #My partner is confronting me about having a lover!
 adultery.0003 = {
 	type = character_event
@@ -540,18 +574,23 @@ adultery.0003 = {
 	desc = adultery.0003.desc
 	theme = marriage
 	override_icon = {
-		trigger = { has_relation_soulmate = scope:lover_spouse }
+		trigger = {
+			has_relation_soulmate = scope:lover_spouse
+		}
 		reference = "gfx/interface/icons/event_types/type_love.dds"
 	}
 	left_portrait = {
 		character = scope:spouse
 		animation = worry
 	}
-
 	immediate = {
 		scope:spouse = {
 			if = {
-				limit = { root = { is_ai = no }	}
+				limit = {
+					root = {
+						is_ai = no
+					}
+				}
 				assign_quirk_effect = yes
 			}
 		}
@@ -571,7 +610,9 @@ adultery.0003 = {
 			}
 			if = {
 				limit = {
-					NOT = { exists = scope:secret_to_reveal }
+					NOT = {
+						exists = scope:secret_to_reveal
+					}
 					has_variable = had_recent_sex_with
 				}
 				var:had_recent_sex_with = {
@@ -580,8 +621,8 @@ adultery.0003 = {
 			}
 		}
 	}
-
-	option = { #Deny
+	option = {
+		#Deny
 		name = adultery.0003.a
 		flavor = {
 			first_valid = {
@@ -594,7 +635,8 @@ adultery.0003 = {
 				desc = adultery.0003.a.tt_truth
 			}
 		}
-		scope:spouse = { #Response for spouse
+		scope:spouse = {
+			#Response for spouse
 			random = {
 				chance = 25
 				modifier = {
@@ -609,7 +651,10 @@ adultery.0003 = {
 			}
 			trigger_event = {
 				id = adultery.0004
-				days = { 2 4 }
+				days = {
+					2
+					4
+				}
 			}
 		}
 		ai_chance = {
@@ -623,18 +668,23 @@ adultery.0003 = {
 			}
 		}
 	}
-
-	option = { #Confess
+	option = {
+		#Confess
 		name = adultery.0003.b
 		trigger = {
 			adultery_0001_unfaithful_trigger = yes
 			# Extra block just in case one's soulmate is married to another and you're the one they slept with
-			exists = scope:sex_partner  
-			scope:sex_partner = { NOT = { this = scope:spouse } }
+			exists = scope:sex_partner
+			scope:sex_partner = {
+				NOT = {
+					this = scope:spouse
+				}
+			}
 		}
-
 		if = {
-			limit = { exists = scope:secret_to_reveal }
+			limit = {
+				exists = scope:secret_to_reveal
+			}
 			show_as_tooltip = {
 				scope:secret_to_reveal = {
 					reveal_to = scope:spouse
@@ -642,8 +692,11 @@ adultery.0003 = {
 			}
 			scope:spouse = {
 				trigger_event = {
-					id = adultery.0005 #Reveals lover secret
-					days = { 2 4 }
+					id = adultery.0005					#Reveals lover secret
+					days = {
+						2
+						4
+					}
 				}
 			}
 		}
@@ -658,18 +711,17 @@ adultery.0003 = {
 					modifier = betrayed_our_promise
 				}
 			}
-
 			scope:spouse = {
 				trigger_event = {
-					id = adultery.0006 #Reveals that they slept with someone
-					days = { 2 4 }
+					id = adultery.0006					#Reveals that they slept with someone
+					days = {
+						2
+						4
+					}
 				}
 			}
 		}
-		
-
 		custom_tooltip = adultery.0003.b.tt
-
 		ai_chance = {
 			base = 10
 			ai_value_modifier = {
@@ -688,7 +740,6 @@ adultery.0003 = {
 	}
 }
 
-
 #My spouse denied that they have a lover
 adultery.0004 = {
 	type = character_event
@@ -696,14 +747,15 @@ adultery.0004 = {
 	desc = adultery.0004.desc
 	theme = marriage
 	override_icon = {
-		trigger = { has_relation_soulmate = scope:lover_spouse }
+		trigger = {
+			has_relation_soulmate = scope:lover_spouse
+		}
 		reference = "gfx/interface/icons/event_types/type_love.dds"
 	}
 	left_portrait = {
 		character = scope:lover_spouse
 		animation = disapproval
 	}
-
 	immediate = {
 		scope:lover_spouse = {
 			add_opinion = {
@@ -713,8 +765,8 @@ adultery.0004 = {
 			}
 		}
 	}
-
-	option = { #I'll let it be.
+	option = {
+		#I'll let it be.
 		name = adultery.0004.b
 		flavor = {
 			triggered_desc = {
@@ -728,15 +780,15 @@ adultery.0004 = {
 }
 
 #Confession of lover
-adultery.0005 = { #by Mathilda Bjarnehed
+adultery.0005 = {
+	#by Mathilda Bjarnehed
 	type = character_event
 	hidden = yes
-	
 	#All reveals of lover secrets are handled by the infidelity_confrontation_story. It will have special desc when triggered from here.
 	immediate = {
 		scope:secret_to_reveal = {
 			set_variable = {
-				name = revealed_through_confession_to_desc #To get special texts in infidelity_confrontation.1000
+				name = revealed_through_confession_to_desc				#To get special texts in infidelity_confrontation.1000
 				value = root
 			}
 			reveal_to = root
@@ -744,7 +796,8 @@ adultery.0005 = { #by Mathilda Bjarnehed
 	}
 }
 
-scripted_trigger adultery_0006_apologetic_trigger = {
+scripted_trigger
+adultery_0006_apologetic_trigger = {
 	scope:lover_spouse = {
 		OR = {
 			ai_compassion >= medium_positive_ai_value
@@ -757,10 +810,11 @@ scripted_trigger adultery_0006_apologetic_trigger = {
 }
 
 #My partner confessed that they slept with someone else (not lover)
-adultery.0006 = { #by Mathilda Bjarnehed
+adultery.0006 = {
+	#by Mathilda Bjarnehed
 	type = character_event
 	title = adultery.0002.t
-	desc = {	
+	desc = {
 		first_valid = {
 			#Apologetic
 			triggered_desc = {
@@ -773,7 +827,9 @@ adultery.0006 = { #by Mathilda Bjarnehed
 						triggered_desc = {
 							trigger = {
 								exists = scope:sex_partner
-								scope:lover_spouse = { is_close_or_extended_family_of = scope:sex_partner }
+								scope:lover_spouse = {
+									is_close_or_extended_family_of = scope:sex_partner
+								}
 							}
 							desc = adultery.0006.my_lovername.desc
 						}
@@ -784,11 +840,19 @@ adultery.0006 = { #by Mathilda Bjarnehed
 							desc = adultery.0006.your_lovername.desc
 						}
 						triggered_desc = {
-							trigger = { scope:lover_spouse = { var:had_recent_sex = flag:male } }
+							trigger = {
+								scope:lover_spouse = {
+									var:had_recent_sex = flag:male
+								}
+							}
 							desc = adultery.0006.male_lover.desc
 						}
 						triggered_desc = {
-							trigger = { scope:lover_spouse = { var:had_recent_sex = flag:female } }
+							trigger = {
+								scope:lover_spouse = {
+									var:had_recent_sex = flag:female
+								}
+							}
 							desc = adultery.0006.female_lover.desc
 						}
 					}
@@ -802,7 +866,9 @@ adultery.0006 = { #by Mathilda Bjarnehed
 					triggered_desc = {
 						trigger = {
 							exists = scope:sex_partner
-							scope:lover_spouse = { is_close_or_extended_family_of = scope:sex_partner }
+							scope:lover_spouse = {
+								is_close_or_extended_family_of = scope:sex_partner
+							}
 						}
 						desc = adultery.0006.my_lovername.desc
 					}
@@ -813,11 +879,19 @@ adultery.0006 = { #by Mathilda Bjarnehed
 						desc = adultery.0006.your_lovername.desc
 					}
 					triggered_desc = {
-						trigger = { scope:lover_spouse = { var:had_recent_sex = flag:male } }
+						trigger = {
+							scope:lover_spouse = {
+								var:had_recent_sex = flag:male
+							}
+						}
 						desc = adultery.0006.male_lover.desc
 					}
 					triggered_desc = {
-						trigger = { scope:lover_spouse = { var:had_recent_sex = flag:female } }
+						trigger = {
+							scope:lover_spouse = {
+								var:had_recent_sex = flag:female
+							}
+						}
 						desc = adultery.0006.female_lover.desc
 					}
 				}
@@ -827,7 +901,9 @@ adultery.0006 = { #by Mathilda Bjarnehed
 	}
 	theme = marriage
 	override_icon = {
-		trigger = { has_relation_soulmate = scope:lover_spouse }
+		trigger = {
+			has_relation_soulmate = scope:lover_spouse
+		}
 		reference = "gfx/interface/icons/event_types/type_love.dds"
 	}
 	left_portrait = {
@@ -839,17 +915,20 @@ adultery.0006 = { #by Mathilda Bjarnehed
 			animation = schadenfreude
 		}
 		triggered_animation = {
-			trigger = { always = yes }
+			trigger = {
+				always = yes
+			}
 			animation = idle
 		}
 	}
 	right_portrait = scope:sex_partner
-
 	immediate = {
 		play_music_cue = mx_cue_death
 		scope:lover_spouse = {
 			if = {
-				limit = { has_variable = had_recent_sex_with }
+				limit = {
+					has_variable = had_recent_sex_with
+				}
 				var:had_recent_sex_with = {
 					save_scope_as = sex_partner
 				}
@@ -868,46 +947,65 @@ adultery.0006 = { #by Mathilda Bjarnehed
 			}
 		}
 	}
-	
 	#Reveal it to everyone & break up if soulmate
 	option = {
 		name = adultery.0006.a
-		
 		if = {
-			limit = { has_relation_soulmate = scope:lover_spouse }
-			show_as_tooltip = { remove_relation_soulmate = scope:lover_spouse }
+			limit = {
+				has_relation_soulmate = scope:lover_spouse
+			}
+			show_as_tooltip = {
+				remove_relation_soulmate = scope:lover_spouse
+			}
 		}
-
 		scope:lover_spouse = {
 			if = {
-				limit = { has_variable = had_recent_sex_with }
-				show_as_tooltip = { extramarital_sex_exposure_consequences_with_target_effect = { TARGET = scope:sex_partner SPOUSE_EVENT = no } }
+				limit = {
+					has_variable = had_recent_sex_with
+				}
+				show_as_tooltip = {
+					extramarital_sex_exposure_consequences_with_target_effect = {
+						TARGET = scope:sex_partner
+						SPOUSE_EVENT = no
+					}
+				}
 			}
 			else = {
-				show_as_tooltip = { extramaritial_sex_exposure_consequences_with_had_recent_sex_var_effect = { SPOUSE_EVENT = no } }
-			}	
-			trigger_event = adultery.0008 #Runs extramaritial effects here
+				show_as_tooltip = {
+					extramaritial_sex_exposure_consequences_with_had_recent_sex_var_effect = {
+						SPOUSE_EVENT = no
+					}
+				}
+			}
+			trigger_event = adultery.0008			#Runs extramaritial effects here
 		}
-
 		#Lover tooltip (if relevant ) + event
 		if = {
-			limit = { exists = scope:sex_partner }
+			limit = {
+				exists = scope:sex_partner
+			}
 			scope:sex_partner = {
 				if = {
-					limit = { is_of_major_or_minor_interest_trigger = { CHARACTER = root } }
-					show_as_tooltip = { extramarital_sex_exposure_consequences_with_target_effect = { TARGET = scope:lover_spouse SPOUSE_EVENT = no } }
+					limit = {
+						is_of_major_or_minor_interest_trigger = {
+							CHARACTER = root
+						}
+					}
+					show_as_tooltip = {
+						extramarital_sex_exposure_consequences_with_target_effect = {
+							TARGET = scope:lover_spouse
+							SPOUSE_EVENT = no
+						}
+					}
 				}
-				trigger_event = adultery.0008 #Runs extramaritial effects here
+				trigger_event = adultery.0008				#Runs extramaritial effects here
 			}
 		}
-
-
 		reverse_add_opinion = {
 			target = scope:lover_spouse
 			modifier = angry_opinion
 			opinion = -15
 		}
-
 		ai_chance = {
 			base = 100
 			ai_value_modifier = {
@@ -920,25 +1018,27 @@ adultery.0006 = { #by Mathilda Bjarnehed
 					secret_type = secret_lover
 					secret_target = scope:lover_spouse
 				}
-				add = -75 # Dangerous to make a spectacle, if we're secret soulmates
+				add = -75				# Dangerous to make a spectacle, if we're secret soulmates
 			}
 		}
 	}
-
 	#Break up if soulmate
 	option = {
-		trigger = { has_relation_soulmate = scope:lover_spouse }
-		name = adultery.0006.c
-
-		if = {
-			limit = { has_relation_soulmate = scope:lover_spouse }
-			show_as_tooltip = { remove_relation_soulmate = scope:lover_spouse }
+		trigger = {
+			has_relation_soulmate = scope:lover_spouse
 		}
-
+		name = adultery.0006.c
+		if = {
+			limit = {
+				has_relation_soulmate = scope:lover_spouse
+			}
+			show_as_tooltip = {
+				remove_relation_soulmate = scope:lover_spouse
+			}
+		}
 		scope:lover_spouse = {
 			trigger_event = adultery.0009
 		}
-
 		ai_chance = {
 			base = 100
 			ai_value_modifier = {
@@ -947,14 +1047,14 @@ adultery.0006 = { #by Mathilda Bjarnehed
 			}
 		}
 	}
-
 	#Let it go
 	option = {
 		name = adultery.0006.b
-
 		if = {
 			limit = {
-				scope:lover_spouse = { is_ai = yes }
+				scope:lover_spouse = {
+					is_ai = yes
+				}
 				can_add_hook = {
 					target = scope:lover_spouse
 					type = favor_hook
@@ -965,16 +1065,13 @@ adultery.0006 = { #by Mathilda Bjarnehed
 				type = favor_hook
 			}
 		}
-
 		reverse_add_opinion = {
 			target = scope:lover_spouse
 			modifier = grateful_opinion
 			opinion = 30
 		}
-
 		ai_chance = {
 			base = -1000
-
 			opinion_modifier = {
 				opinion_target = scope:lover_spouse
 			}
@@ -984,8 +1081,6 @@ adultery.0006 = { #by Mathilda Bjarnehed
 			}
 		}
 	}
-
-
 	after = {
 		scope:lover_spouse = {
 			if = {
@@ -994,9 +1089,13 @@ adultery.0006 = { #by Mathilda Bjarnehed
 				}
 				if = {
 					limit = {
-						var:had_recent_sex_with = { is_alive = yes }
+						var:had_recent_sex_with = {
+							is_alive = yes
+						}
 					}
-					var:had_recent_sex_with = { remove_variable = had_recent_sex_with }
+					var:had_recent_sex_with = {
+						remove_variable = had_recent_sex_with
+					}
 				}
 				remove_variable = had_recent_sex_with
 			}
@@ -1007,18 +1106,22 @@ adultery.0006 = { #by Mathilda Bjarnehed
 	}
 }
 
-
 #I discovered that my partner slept with someone else (not lover, but a one time thing: a character or an unknown person)
-adultery.0007 = { #by Mathilda Bjarnehed
+adultery.0007 = {
+	#by Mathilda Bjarnehed
 	type = character_event
 	title = adultery.0002.t
-	desc = {	
+	desc = {
 		desc = adultery.0007.start.desc
 		first_valid = {
 			triggered_desc = {
 				trigger = {
 					exists = scope:sex_partner
-					scope:sex_partner = { has_RelationToMe_relation = { CHARACTER = scope:lover_spouse } }
+					scope:sex_partner = {
+						has_RelationToMe_relation = {
+							CHARACTER = scope:lover_spouse
+						}
+					}
 				}
 				desc = adultery.0007.lover_herhis.desc
 			}
@@ -1029,11 +1132,19 @@ adultery.0007 = { #by Mathilda Bjarnehed
 				desc = adultery.0007.lover_my.desc
 			}
 			triggered_desc = {
-				trigger = { scope:lover_spouse = { var:had_recent_sex = flag:male } }
+				trigger = {
+					scope:lover_spouse = {
+						var:had_recent_sex = flag:male
+					}
+				}
 				desc = adultery.0007.male_lover.desc
 			}
 			triggered_desc = {
-				trigger = { scope:lover_spouse = { var:had_recent_sex = flag:female } }
+				trigger = {
+					scope:lover_spouse = {
+						var:had_recent_sex = flag:female
+					}
+				}
 				desc = adultery.0007.female_lover.desc
 			}
 		}
@@ -1041,22 +1152,29 @@ adultery.0007 = { #by Mathilda Bjarnehed
 	}
 	theme = marriage
 	override_icon = {
-		trigger = { has_relation_soulmate = scope:lover_spouse }
+		trigger = {
+			has_relation_soulmate = scope:lover_spouse
+		}
 		reference = "gfx/interface/icons/event_types/type_love.dds"
 	}
 	left_portrait = scope:lover_spouse
 	right_portrait = scope:sex_partner
-
 	immediate = {
 		play_music_cue = mx_cue_death
 		scope:lover_spouse = {
 			if = {
-				limit = { has_variable = had_recent_sex_with }
-				var:had_recent_sex_with = { save_scope_as = sex_partner }
+				limit = {
+					has_variable = had_recent_sex_with
+				}
+				var:had_recent_sex_with = {
+					save_scope_as = sex_partner
+				}
 			}
 		}
 		if = {
-			limit = { exists = scope:sex_partner }
+			limit = {
+				exists = scope:sex_partner
+			}
 			hidden_effect = {
 				mother_of_young_child_has_lover_variable_effect = {
 					SPOUSE = root
@@ -1078,47 +1196,66 @@ adultery.0007 = { #by Mathilda Bjarnehed
 			}
 		}
 	}
-	
 	#Reveal it to everyone & break up if soulmates
 	option = {
 		name = adultery.0006.a
-	
 		if = {
-			limit = { has_relation_soulmate = scope:lover_spouse }
-			show_as_tooltip = { remove_relation_soulmate = scope:lover_spouse }
+			limit = {
+				has_relation_soulmate = scope:lover_spouse
+			}
+			show_as_tooltip = {
+				remove_relation_soulmate = scope:lover_spouse
+			}
 		}
-
 		#Spouse effect tooltips + event
 		scope:lover_spouse = {
 			if = {
-				limit = { has_variable = had_recent_sex_with }
-				show_as_tooltip = { extramarital_sex_exposure_consequences_with_target_effect = { TARGET = scope:sex_partner SPOUSE_EVENT = no } }
+				limit = {
+					has_variable = had_recent_sex_with
+				}
+				show_as_tooltip = {
+					extramarital_sex_exposure_consequences_with_target_effect = {
+						TARGET = scope:sex_partner
+						SPOUSE_EVENT = no
+					}
+				}
 			}
 			else = {
-				show_as_tooltip = { extramaritial_sex_exposure_consequences_with_had_recent_sex_var_effect = { SPOUSE_EVENT = no } }
-			}	
-			trigger_event = adultery.0008 #Runs extramaritial effects here
+				show_as_tooltip = {
+					extramaritial_sex_exposure_consequences_with_had_recent_sex_var_effect = {
+						SPOUSE_EVENT = no
+					}
+				}
+			}
+			trigger_event = adultery.0008			#Runs extramaritial effects here
 		}
-
 		#Lover tooltip (if relevant ) + event
 		if = {
-			limit = { exists = scope:sex_partner }
+			limit = {
+				exists = scope:sex_partner
+			}
 			scope:sex_partner = {
 				if = {
-					limit = { is_of_major_or_minor_interest_trigger = { CHARACTER = root } }
-					show_as_tooltip = { extramarital_sex_exposure_consequences_with_target_effect = { TARGET = scope:lover_spouse SPOUSE_EVENT = no } }
+					limit = {
+						is_of_major_or_minor_interest_trigger = {
+							CHARACTER = root
+						}
+					}
+					show_as_tooltip = {
+						extramarital_sex_exposure_consequences_with_target_effect = {
+							TARGET = scope:lover_spouse
+							SPOUSE_EVENT = no
+						}
+					}
 				}
-				trigger_event = adultery.0008 #Runs extramaritial effects here
+				trigger_event = adultery.0008				#Runs extramaritial effects here
 			}
 		}
-
-
 		reverse_add_opinion = {
 			target = scope:lover_spouse
 			modifier = angry_opinion
 			opinion = -15
 		}
-
 		ai_chance = {
 			base = 100
 			ai_value_modifier = {
@@ -1131,25 +1268,27 @@ adultery.0007 = { #by Mathilda Bjarnehed
 					secret_type = secret_lover
 					secret_target = scope:lover_spouse
 				}
-				add = -75 # Dangerous to make a spectacle, if we're secret soulmates
+				add = -75				# Dangerous to make a spectacle, if we're secret soulmates
 			}
 		}
 	}
-
 	#Break up if soulmate
 	option = {
-		trigger = { has_relation_soulmate = scope:lover_spouse }
-		name = adultery.0006.c
-
-		if = {
-			limit = { has_relation_soulmate = scope:lover_spouse }
-			show_as_tooltip = { remove_relation_soulmate = scope:lover_spouse }
+		trigger = {
+			has_relation_soulmate = scope:lover_spouse
 		}
-
+		name = adultery.0006.c
+		if = {
+			limit = {
+				has_relation_soulmate = scope:lover_spouse
+			}
+			show_as_tooltip = {
+				remove_relation_soulmate = scope:lover_spouse
+			}
+		}
 		scope:lover_spouse = {
 			trigger_event = adultery.0009
 		}
-
 		ai_chance = {
 			base = 100
 			ai_value_modifier = {
@@ -1158,14 +1297,14 @@ adultery.0007 = { #by Mathilda Bjarnehed
 			}
 		}
 	}
-
 	#Let it go
 	option = {
 		name = adultery.0006.b
-
 		if = {
 			limit = {
-				scope:lover_spouse = { is_ai = yes }
+				scope:lover_spouse = {
+					is_ai = yes
+				}
 				can_add_hook = {
 					target = scope:lover_spouse
 					type = favor_hook
@@ -1176,16 +1315,13 @@ adultery.0007 = { #by Mathilda Bjarnehed
 				type = favor_hook
 			}
 		}
-
 		reverse_add_opinion = {
 			target = scope:lover_spouse
 			modifier = grateful_opinion
 			opinion = 30
 		}
-
 		ai_chance = {
 			base = 0
-
 			opinion_modifier = {
 				opinion_target = scope:lover_spouse
 			}
@@ -1195,14 +1331,21 @@ adultery.0007 = { #by Mathilda Bjarnehed
 			}
 		}
 	}
-
 	after = {
 		scope:lover_spouse = {
 			if = {
-				limit = { has_variable = had_recent_sex_with }
+				limit = {
+					has_variable = had_recent_sex_with
+				}
 				if = {
-					limit = { var:had_recent_sex_with = { is_alive = yes } }
-					var:had_recent_sex_with = { remove_variable = had_recent_sex_with }
+					limit = {
+						var:had_recent_sex_with = {
+							is_alive = yes
+						}
+					}
+					var:had_recent_sex_with = {
+						remove_variable = had_recent_sex_with
+					}
 				}
 				remove_variable = had_recent_sex_with
 			}
@@ -1214,13 +1357,16 @@ adultery.0007 = { #by Mathilda Bjarnehed
 }
 
 #I had sex with someone (once, not lovers) and my/their partner revealed it to everyone
-adultery.0008 = { #by Mathilda Bjarnehed
+adultery.0008 = {
+	#by Mathilda Bjarnehed
 	type = character_event
 	title = adultery.0008.t
 	desc = {
 		first_valid = {
 			triggered_desc = {
-				trigger = { exists = scope:sex_partner }
+				trigger = {
+					exists = scope:sex_partner
+				}
 				desc = adultery.0008.sex_partner.desc
 			}
 			desc = adultery.0008.no_sex_partner.desc
@@ -1228,52 +1374,65 @@ adultery.0008 = { #by Mathilda Bjarnehed
 	}
 	theme = marriage
 	override_icon = {
-		trigger = { has_relation_soulmate = scope:lover_spouse }
+		trigger = {
+			has_relation_soulmate = scope:lover_spouse
+		}
 		reference = "gfx/interface/icons/event_types/type_love.dds"
 	}
 	left_portrait = scope:spouse
 	right_portrait = scope:sex_partner
-	
 	immediate = {
 		play_music_cue = mx_cue_death
 		#There is a character partner
 		if = {
-			limit = { exists = scope:sex_partner }
+			limit = {
+				exists = scope:sex_partner
+			}
 			#I am the sex partner..
 			if = {
 				limit = {
 					scope:sex_partner = root
 				}
-				scope:lover_spouse = { save_scope_as = sex_partner } #save the lover_spouse instead for portraits + text
-
+				scope:lover_spouse = {
+					save_scope_as = sex_partner
+				}				#save the lover_spouse instead for portraits + text
 				#Add effects and tell my partner (because they're not the revealer)
-				extramarital_sex_exposure_consequences_with_target_effect = { TARGET = scope:sex_partner SPOUSE_EVENT = yes }
+				extramarital_sex_exposure_consequences_with_target_effect = {
+					TARGET = scope:sex_partner
+					SPOUSE_EVENT = yes
+				}
 			}
 			#I am not the sex partner, so run the effect silently (my spouse already knows)
 			else = {
-				extramarital_sex_exposure_consequences_with_target_effect = { TARGET = scope:sex_partner SPOUSE_EVENT = no }
+				extramarital_sex_exposure_consequences_with_target_effect = {
+					TARGET = scope:sex_partner
+					SPOUSE_EVENT = no
+				}
 			}
 		}
 		#I had sex with an unknown character, just run that effect
 		else = {
-			extramaritial_sex_exposure_consequences_with_had_recent_sex_var_effect = { SPOUSE_EVENT = no }
+			extramaritial_sex_exposure_consequences_with_had_recent_sex_var_effect = {
+				SPOUSE_EVENT = no
+			}
 		}
 	}
-
 	option = {
 		name = adultery.0008.a
 	}
 }
 
-
 # My soulmate broke up with me over dalliance
-adultery.0009 = { #by Mathilda Bjarnehed
+adultery.0009 = {
+	#by Mathilda Bjarnehed
 	type = character_event
 	title = adultery.0003.t
 	desc = adultery.0009.desc
 	theme = marriage
 	override_icon = {
-		trigger = { has_relation_soulmate = scope:lover_spouse }
+		trigger = {
+			has_relation_soulmate = scope:lover_spouse
+		}
 		reference = "gfx/interface/icons/event_types/type_love.dds"
 	}
 	left_portrait = {
@@ -1281,29 +1440,21 @@ adultery.0009 = { #by Mathilda Bjarnehed
 		animation = grief
 	}
 	right_portrait = scope:sex_partner
-	
 	immediate = {
 		play_music_cue = mx_cue_death
 		remove_relation_soulmate = scope:spouse
 	}
-
 	option = {
 		name = adultery.0009.a
 	}
 }
-
-
-
-
 
 ###############################
 # Suspicious Pregnancy Events
 # 1001 - 1999
 # by Petter Vilberg
 ###############################
-
 #Father suspects something about the pregnancy
-
 adultery.1001 = {
 	type = character_event
 	title = adultery.1001.t
@@ -1403,19 +1554,21 @@ adultery.1001 = {
 	}
 	left_portrait = scope:mother
 	theme = pregnancy
-
 	immediate = {
 		save_scope_as = adultery_spouse
 	}
-	
-	option = { #Confront Mother
+	option = {
+		#Confront Mother
 		name = adultery.1001.a
 		custom_tooltip = adultery.1001.a.tt
 		hidden_effect = {
 			scope:mother = {
 				trigger_event = {
 					id = adultery.1002
-					days = { 1 3 }
+					days = {
+						1
+						3
+					}
 				}
 			}
 		}
@@ -1430,16 +1583,13 @@ adultery.1001 = {
 			}
 		}
 	}
-
-	option = { #Try to figure it out
+	option = {
+		#Try to figure it out
 		name = adultery.1001.b
-		
 		spy_on_mother_pregnancy_adultery_effect = yes
-
 		stress_impact = {
 			trusting = major_stress_impact_gain
 		}
-
 		ai_chance = {
 			base = 100
 			ai_value_modifier = {
@@ -1447,8 +1597,8 @@ adultery.1001 = {
 			}
 		}
 	}
-	
-	option = { #Do nothing
+	option = {
+		#Do nothing
 		name = adultery.1001.c
 		custom_tooltip = adultery.1001.c.tt
 		stress_impact = {
@@ -1470,15 +1620,17 @@ adultery.1001 = {
 	}
 }
 
-
 #Mother: Spouse suspects something about the pregnancy
-scripted_effect adultery_1002_reveal_lover_secret_effect = {
+scripted_effect
+adultery_1002_reveal_lover_secret_effect = {
 	scope:mother = {
 		random_secret = {
 			limit = {
 				secret_type = secret_lover
 				secret_target = scope:real_father
-				NOT = { is_known_by = scope:adultery_spouse }
+				NOT = {
+					is_known_by = scope:adultery_spouse
+				}
 			}
 			reveal_to = scope:adultery_spouse
 		}
@@ -1578,7 +1730,6 @@ adultery.1002 = {
 		desc = adultery.1002.conclusion
 	}
 	theme = pregnancy
-	
 	left_portrait = {
 		character = scope:adultery_spouse
 		triggered_animation = {
@@ -1623,34 +1774,37 @@ adultery.1002 = {
 			animation = schadenfreude
 		}
 		triggered_animation = {
-			trigger = { always = yes }
+			trigger = {
+				always = yes
+			}
 			animation = personality_cynical
 		}
 	}
-
 	trigger = {
 		scope:mother = {
 			has_trait = pregnant
-			NOT = { has_character_flag = pregnancy_real_father_of_bastard_is_known_flag }
+			NOT = {
+				has_character_flag = pregnancy_real_father_of_bastard_is_known_flag
+			}
 		}
 	}
-
 	immediate = {
 		get_quirk_character_effect = yes
 		pregnancy_real_father = {
 			save_scope_as = real_father
 		}
 	}
-	
-	option = { #Confess
+	option = {
+		#Confess
 		name = adultery.1002.a
 		trigger = {
 			has_character_flag = bastard_pregnancy
 			is_pregnant = yes
-			NOT = { pregnancy_real_father = scope:adultery_spouse }
+			NOT = {
+				pregnancy_real_father = scope:adultery_spouse
+			}
 		}
 		custom_tooltip = adultery.1002.a.confession_tt
-
 		show_as_tooltip = {
 			adultery_1002_reveal_lover_secret_effect = yes
 		}
@@ -1658,7 +1812,10 @@ adultery.1002 = {
 			debug_log = "adultery.1002 firing adultery.1004"
 			trigger_event = {
 				id = adultery.1004
-				days = { 1 3 }
+				days = {
+					1
+					3
+				}
 			}
 		}
 		stress_impact = {
@@ -1678,8 +1835,8 @@ adultery.1002 = {
 			}
 		}
 	}
-
-	option = { #Insist on innocence
+	option = {
+		#Insist on innocence
 		name = adultery.1002.b
 		trigger = {
 			has_character_flag = bastard_pregnancy
@@ -1688,7 +1845,10 @@ adultery.1002 = {
 		scope:adultery_spouse = {
 			trigger_event = {
 				id = adultery.1003
-				days = { 1 3 }
+				days = {
+					1
+					3
+				}
 			}
 		}
 		stress_impact = {
@@ -1700,8 +1860,8 @@ adultery.1002 = {
 			base = 100
 		}
 	}
-
-	option = { #Insist on innocence
+	option = {
+		#Insist on innocence
 		name = adultery.1002.c
 		trigger = {
 			NOT = {
@@ -1712,12 +1872,14 @@ adultery.1002 = {
 		scope:adultery_spouse = {
 			trigger_event = {
 				id = adultery.1003
-				days = { 1 3 }
+				days = {
+					1
+					3
+				}
 			}
 		}
 	}
 }
-
 
 #Spouse: Mother insists the child is yours
 adultery.1003 = {
@@ -1726,25 +1888,27 @@ adultery.1003 = {
 	desc = adultery.1003.desc
 	left_portrait = scope:mother
 	theme = pregnancy
-	
 	trigger = {
 		scope:mother = {
 			has_trait = pregnant
-			is_pregnant = yes # In case this fires at the same time as the pregnancy ends, before backup trait removal
-			NOT = { has_character_flag = pregnancy_real_father_of_bastard_is_known_flag }
+			is_pregnant = yes			# In case this fires at the same time as the pregnancy ends, before backup trait removal
+			NOT = {
+				has_character_flag = pregnancy_real_father_of_bastard_is_known_flag
+			}
 		}
 	}
-
 	immediate = {
 		if = {
-			limit = { is_ai = no }
+			limit = {
+				is_ai = no
+			}
 			scope:mother = {
 				assign_quirk_effect = yes
 			}
 		}
 	}
-
-	option = { #I only needed to hear you say it
+	option = {
+		#I only needed to hear you say it
 		name = adultery.1003.a
 		custom_tooltip = adultery.1003.a.tt
 		stress_impact = {
@@ -1761,11 +1925,10 @@ adultery.1003 = {
 			}
 		}
 	}
-
-	option = { #Hm, I don't believe it
+	option = {
+		#Hm, I don't believe it
 		name = adultery.1003.b
 		spy_on_mother_pregnancy_adultery_effect = yes
-
 		stress_impact = {
 			trusting = major_stress_impact_gain
 		}
@@ -1787,9 +1950,7 @@ adultery.1003 = {
 	}
 }
 
-
 #Spouse: Mother confesses to a bastard pregnancy
-
 adultery.1004 = {
 	type = character_event
 	title = adultery.1002.t
@@ -1906,13 +2067,14 @@ adultery.1004 = {
 			animation = schadenfreude
 		}
 		triggered_animation = {
-			trigger = { always = yes }
+			trigger = {
+				always = yes
+			}
 			animation = sadness
 		}
 	}
 	right_portrait = scope:real_father
 	theme = bastardy
-
 	trigger = {
 		is_consort_of = scope:mother
 		scope:mother = {
@@ -1921,11 +2083,14 @@ adultery.1004 = {
 				has_character_flag = unmarried_bastard_pregnancy
 				has_character_flag = bastard_pregnancy
 			}
-			NOT = { pregnancy_real_father = root }
-			NOT = { has_character_flag = pregnancy_real_father_of_bastard_is_known_flag }
+			NOT = {
+				pregnancy_real_father = root
+			}
+			NOT = {
+				has_character_flag = pregnancy_real_father_of_bastard_is_known_flag
+			}
 		}
 	}
-	
 	immediate = {
 		play_music_cue = mx_cue_death
 		scope:mother = {
@@ -1934,11 +2099,10 @@ adultery.1004 = {
 			}
 			add_character_flag = pregnancy_spouse_knows_of_bastardy
 		}
-
 		adultery_1002_reveal_lover_secret_effect = yes
 	}
-
-	option = { #Leave it be
+	option = {
+		#Leave it be
 		name = adultery.1004.a
 		trigger = {
 			scope:mother = {
@@ -1948,12 +2112,14 @@ adultery.1004 = {
 			}
 		}
 		flavor = adultery.1004.a.tt
-
 		scope:mother = {
 			add_character_flag = pregnancy_spouse_knows_of_bastardy
 			trigger_event = {
 				id = adultery.1006
-				days = { 1 5 }
+				days = {
+					1
+					5
+				}
 			}
 		}
 		stress_impact = {
@@ -1971,8 +2137,8 @@ adultery.1004 = {
 			}
 		}
 	}
-
-	option = { #Leave it be
+	option = {
+		#Leave it be
 		name = adultery.1004.b
 		trigger = {
 			scope:mother = {
@@ -1982,7 +2148,10 @@ adultery.1004 = {
 		scope:mother = {
 			trigger_event = {
 				id = adultery.1006
-				days = { 1 5 }
+				days = {
+					1
+					5
+				}
 			}
 		}
 		flavor = adultery.1004.a.tt
@@ -2001,19 +2170,23 @@ adultery.1004 = {
 			}
 		}
 	}
-
-	option = { #The world will know!
+	option = {
+		#The world will know!
 		name = adultery.1004.c
 		bastardy_pregnancy_announcement_effect = yes
 		if = {
-			limit = { scope:real_father = root }
+			limit = {
+				scope:real_father = root
+			}
 			debug_log = "scope:real_father was also root in adultery.1004! Why??"
 		}
 		scope:mother = {
 			if = {
 				limit = {
 					exists = scope:real_father
-					NOT = { scope:real_father = pregnancy_assumed_father }
+					NOT = {
+						scope:real_father = pregnancy_assumed_father
+					}
 				}
 			}
 			expose_lover_secret_or_run_consequence_effect = {
@@ -2035,8 +2208,6 @@ adultery.1004 = {
 		}
 	}
 }
-
-
 
 #Mother: Spouse confronts Mother with the illegitimacy of the pregnancy, but it remains a Secret
 adultery.1006 = {
@@ -2075,8 +2246,6 @@ adultery.1006 = {
 	theme = pregnancy
 	left_portrait = scope:adultery_spouse
 	right_portrait = scope:real_father
-	
-
 	trigger = {
 		scope:mother = {
 			has_trait = pregnant
@@ -2084,15 +2253,15 @@ adultery.1006 = {
 				has_character_flag = unmarried_bastard_pregnancy
 				has_character_flag = bastard_pregnancy
 			}
-			NOT = { has_character_flag = pregnancy_real_father_of_bastard_is_known_flag }
+			NOT = {
+				has_character_flag = pregnancy_real_father_of_bastard_is_known_flag
+			}
 		}
 	}
-
 	option = {
 		name = adultery.1006.a
 	}
 }
-
 
 #Spouse has been spying on a mother suspected of carrying a bastard, but found nothing
 adultery.1009 = {
@@ -2102,26 +2271,27 @@ adultery.1009 = {
 	left_portrait = scope:mother
 	right_portrait = scope:spymaster
 	theme = pregnancy
-	
 	trigger = {
 		scope:mother = {
 			is_alive = yes
-			NOT = { has_character_flag = pregnancy_real_father_of_bastard_is_known_flag }
+			NOT = {
+				has_character_flag = pregnancy_real_father_of_bastard_is_known_flag
+			}
 		}
 	}
-
 	immediate = {
 		if = {
 			limit = {
 				exists = cp:councillor_spymaster
-				NOT = { cp:councillor_spymaster = scope:mother }
+				NOT = {
+					cp:councillor_spymaster = scope:mother
+				}
 			}
 			cp:councillor_spymaster = {
 				save_scope_as = spymaster
 			}
 		}
 	}
-
 	option = {
 		name = adultery.1009.a
 		flavor = {
@@ -2134,12 +2304,9 @@ adultery.1009 = {
 	}
 }
 
-
-
 #Set up either confession or suspicion chance for real_father
 adultery.1101 = {
 	hidden = yes
-
 	trigger = {
 		is_pregnant = yes
 		OR = {
@@ -2151,29 +2318,35 @@ adultery.1101 = {
 			has_character_flag = pregnancy_spouse_knows_of_bastardy
 		}
 	}
-
 	immediate = {
 		#If something has gone terribly wrong, apply the Pregnant trait to make sure it's there:
 		if = {
 			limit = {
-				is_pregnant = yes #Double check that the Pregnant trait will never be added to someone who is not pregnant
-				NOT = { has_trait = pregnant }
+				is_pregnant = yes				#Double check that the Pregnant trait will never be added to someone who is not pregnant
+				NOT = {
+					has_trait = pregnant
+				}
 			}
 			add_trait = pregnant
 		}
 		if = {
-			limit = { #Mother has decided to tell
+			limit = {
+				#Mother has decided to tell
 				has_character_flag = planning_to_confess_to_real_father
 			}
 			if = {
 				limit = {
-					any_consort = { count = 0 }
+					any_consort = {
+						count = 0
+					}
 				}
 				scope:real_father = {
 					if = {
 						limit = {
 							#checking spouse instead of consort as the follow-up event pregnancy 3004 specifically refers to a mariage
-							any_spouse = { count = 0 }
+							any_spouse = {
+								count = 0
+							}
 						}
 						trigger_event = pregnancy.3003
 					}
@@ -2194,14 +2367,10 @@ adultery.1101 = {
 	}
 }
 
-
-
 #####################################
 # Suspecting your Child's Parentage #
 # 2001 - 2999						#
 #####################################
-
-
 #Is the father suspicious of child or not?
 adultery.2001 = {
 	type = character_event
@@ -2210,7 +2379,9 @@ adultery.2001 = {
 		first_valid = {
 			triggered_desc = {
 				trigger = {
-					NOT = { exists = scope:adultery_spouse }
+					NOT = {
+						exists = scope:adultery_spouse
+					}
 				}
 				desc = adultery.2001.desc_dislike
 			}
@@ -2229,7 +2400,9 @@ adultery.2001 = {
 							}
 							any_secret = {
 								secret_type = secret_lover
-								any_secret_knower = { this = root }
+								any_secret_knower = {
+									this = root
+								}
 							}
 						}
 					}
@@ -2259,11 +2432,9 @@ adultery.2001 = {
 		}
 		desc = adultery.2001.desc_end
 	}
-	
 	theme = marriage
 	left_portrait = scope:adultery_child
 	right_portrait = scope:adultery_spouse
-	
 	trigger = {
 		any_child = {
 			is_landed = no
@@ -2275,13 +2446,14 @@ adultery.2001 = {
 				has_trait = legitimized_bastard
 			}
 			exists = mother
-			mother = { is_alive = yes }
+			mother = {
+				is_alive = yes
+			}
 			mother = {
 				is_consort_of = root
 			}
 		}
 	}
-
 	weight_multiplier = {
 		base = 0
 		modifier = {
@@ -2303,42 +2475,66 @@ adultery.2001 = {
 			add = 0.1
 			has_trait = intellect_good_1
 			scope:child_check = {
-				real_father = { NOT = { this = root } }
+				real_father = {
+					NOT = {
+						this = root
+					}
+				}
 			}
 		}
 		modifier = {
 			add = 0.3
 			has_trait = intellect_good_2
 			scope:child_check = {
-				real_father = { NOT = { this = root } }
+				real_father = {
+					NOT = {
+						this = root
+					}
+				}
 			}
 		}
 		modifier = {
 			add = 0.5
 			has_trait = intellect_good_3
 			scope:child_check = {
-				real_father = { NOT = { this = root } }
+				real_father = {
+					NOT = {
+						this = root
+					}
+				}
 			}
 		}
 		modifier = {
 			add = -0.1
 			has_trait = intellect_bad_1
 			scope:child_check = {
-				real_father = { NOT = { this = root } }
+				real_father = {
+					NOT = {
+						this = root
+					}
+				}
 			}
 		}
 		modifier = {
 			add = -0.3
 			has_trait = intellect_bad_2
 			scope:child_check = {
-				real_father = { NOT = { this = root } }
+				real_father = {
+					NOT = {
+						this = root
+					}
+				}
 			}
 		}
 		modifier = {
 			add = -0.5
 			has_trait = intellect_bad_3
 			scope:child_check = {
-				real_father = { NOT = { this = root } }
+				real_father = {
+					NOT = {
+						this = root
+					}
+				}
 			}
 		}
 		#The smarter the mother is, the less likely it is that he'll suspect a bastard child
@@ -2348,7 +2544,11 @@ adultery.2001 = {
 				has_trait = intellect_good_1
 			}
 			scope:child_check = {
-				real_father = { NOT = { this = root } }
+				real_father = {
+					NOT = {
+						this = root
+					}
+				}
 			}
 		}
 		modifier = {
@@ -2357,7 +2557,11 @@ adultery.2001 = {
 				has_trait = intellect_good_2
 			}
 			scope:child_check = {
-				real_father = { NOT = { this = root } }
+				real_father = {
+					NOT = {
+						this = root
+					}
+				}
 			}
 		}
 		modifier = {
@@ -2366,7 +2570,11 @@ adultery.2001 = {
 				has_trait = intellect_good_3
 			}
 			scope:child_check = {
-				real_father = { NOT = { this = root } }
+				real_father = {
+					NOT = {
+						this = root
+					}
+				}
 			}
 		}
 		modifier = {
@@ -2375,7 +2583,11 @@ adultery.2001 = {
 				has_trait = intellect_bad_1
 			}
 			scope:child_check = {
-				real_father = { NOT = { this = root } }
+				real_father = {
+					NOT = {
+						this = root
+					}
+				}
 			}
 		}
 		modifier = {
@@ -2384,7 +2596,11 @@ adultery.2001 = {
 				has_trait = intellect_bad_2
 			}
 			scope:child_check = {
-				real_father = { NOT = { this = root } }
+				real_father = {
+					NOT = {
+						this = root
+					}
+				}
 			}
 		}
 		modifier = {
@@ -2393,7 +2609,11 @@ adultery.2001 = {
 				has_trait = intellect_bad_3
 			}
 			scope:child_check = {
-				real_father = { NOT = { this = root } }
+				real_father = {
+					NOT = {
+						this = root
+					}
+				}
 			}
 		}
 		#The less you like the child the more likely you are to suspect them
@@ -2442,13 +2662,19 @@ adultery.2001 = {
 				}
 			}
 		}
-		modifier = { #More likely if they actually are a bastard
+		modifier = {
+			#More likely if they actually are a bastard
 			add = 0.5
 			scope:child_check = {
-				real_father = { NOT = { this = root } }
+				real_father = {
+					NOT = {
+						this = root
+					}
+				}
 			}
 		}
-		modifier = { #More likely if mother has a known lover
+		modifier = {
+			#More likely if mother has a known lover
 			add = 0.8
 			scope:child_check.mother = {
 				any_relation = {
@@ -2460,7 +2686,8 @@ adultery.2001 = {
 				}
 			}
 		}
-		modifier = { #Much more likely if mother has young child and a known lover
+		modifier = {
+			#Much more likely if mother has young child and a known lover
 			add = 5
 			exists = var:mother_of_young_child_has_lover
 		}
@@ -2469,16 +2696,17 @@ adultery.2001 = {
 			has_trait = paranoid
 		}
 	}
-
 	immediate = {
 		random_child = {
 			limit = {
-				NOT = { has_character_flag = cleared_of_bastardy_suspicion }
+				NOT = {
+					has_character_flag = cleared_of_bastardy_suspicion
+				}
 				is_landed = no
 				father = root
 				exists = mother
-				mother = { 
-					is_alive = yes 
+				mother = {
+					is_alive = yes
 					is_consort_of = root
 				}
 				NOR = {
@@ -2486,16 +2714,20 @@ adultery.2001 = {
 					has_trait = legitimized_bastard
 				}
 				#If a suspicious child exists, pick them
-				root = { exists = var:mother_of_young_child_has_lover }
+				root = {
+					exists = var:mother_of_young_child_has_lover
+				}
 				mother = root.var:mother_of_young_child_has_lover
 			}
 			alternative_limit = {
-				NOT = { has_character_flag = cleared_of_bastardy_suspicion }
+				NOT = {
+					has_character_flag = cleared_of_bastardy_suspicion
+				}
 				is_landed = no
 				father = root
 				exists = mother
-				mother = { 
-					is_alive = yes 
+				mother = {
+					is_alive = yes
 					is_consort_of = root
 				}
 				NOR = {
@@ -2508,11 +2740,13 @@ adultery.2001 = {
 				days = 3650
 			}
 			save_scope_as = adultery_child
-			mother = { save_scope_as = adultery_spouse }
+			mother = {
+				save_scope_as = adultery_spouse
+			}
 		}
 	}
-
-	option = { #Spy on kid/spouse
+	option = {
+		#Spy on kid/spouse
 		name = adultery.2001.a
 		custom_tooltip = adultery.2001.a.tt
 		show_as_tooltip = {
@@ -2527,7 +2761,6 @@ adultery.2001 = {
 					desc = adultery.2001.a.duel_success
 					custom_tooltip = adultery.2001.a.duel_success.tooltip
 				}
-	
 				40 = {
 					compare_modifier = {
 						value = scope:duel_value
@@ -2543,7 +2776,6 @@ adultery.2001 = {
 							modifier = spied_on_me_opinion
 						}
 					}
-					
 				}
 			}
 		}
@@ -2557,14 +2789,18 @@ adultery.2001 = {
 						multiplier = 0.5
 					}
 					trigger = {
-						NOT = { scope:adultery_child.real_father = root }
+						NOT = {
+							scope:adultery_child.real_father = root
+						}
 					}
 					trigger_event = {
 						id = adultery.2008
-						days = { 10 20 }
+						days = {
+							10
+							20
+						}
 					}
 				}
-	
 				40 = {
 					compare_modifier = {
 						value = scope:duel_value
@@ -2572,10 +2808,13 @@ adultery.2001 = {
 					}
 					trigger_event = {
 						id = adultery.2002
-						days = { 10 20 }
+						days = {
+							10
+							20
+						}
 					}
 				}
-			}				
+			}
 		}
 		if = {
 			limit = {
@@ -2589,12 +2828,11 @@ adultery.2001 = {
 			}
 		}
 	}
-
-	option = { #Do nothing
+	option = {
+		#Do nothing
 		name = adultery.2001.b
 	}
 }
-
 
 #Spy on failure - There was nothing to find about the child
 adultery.2002 = {
@@ -2609,7 +2847,9 @@ adultery.2002 = {
 							is_pregnant = yes
 							has_character_flag = father_suspects_this_pregnancy
 						}
-						NOT = { exists = scope:adultery_child }
+						NOT = {
+							exists = scope:adultery_child
+						}
 					}
 				}
 				desc = adultery.2002.t_a
@@ -2631,7 +2871,9 @@ adultery.2002 = {
 			}
 			triggered_desc = {
 				trigger = {
-					NOT = { exists = scope:adultery_child }
+					NOT = {
+						exists = scope:adultery_child
+					}
 				}
 				desc = adultery.2002.desc_no_child
 			}
@@ -2644,14 +2886,14 @@ adultery.2002 = {
 			desc = adultery.2002.desc
 		}
 	}
-	
 	theme = marriage
 	left_portrait = scope:adultery_child
 	right_portrait = scope:adultery_spouse
-	
 	trigger = {
 		exists = scope:adultery_spouse
-		scope:adultery_spouse = { is_alive = yes }
+		scope:adultery_spouse = {
+			is_alive = yes
+		}
 		exists = scope:adultery_child.father
 		scope:adultery_child.father = root
 		scope:adultery_spouse = {
@@ -2664,22 +2906,20 @@ adultery.2002 = {
 			}
 		}
 	}
-
 	immediate = {
 		reverse_add_opinion = {
 			target = scope:adultery_spouse
 			modifier = spied_on_me_opinion
 		}
 	}
-
-	option = { #Keep spying on kid!
+	option = {
+		#Keep spying on kid!
 		name = adultery.2002.a
 		custom_tooltip = adultery.2001.a.tt
 		show_as_tooltip = {
 			duel = {
 				skill = intrigue
 				target = scope:adultery_spouse
-
 				60 = {
 					compare_modifier = {
 						value = scope:duel_value
@@ -2688,7 +2928,6 @@ adultery.2002 = {
 					desc = adultery.2001.a.duel_success
 					custom_tooltip = adultery.2001.a.duel_success.tooltip
 				}
-
 				40 = {
 					compare_modifier = {
 						value = scope:duel_value
@@ -2706,13 +2945,12 @@ adultery.2002 = {
 						opinion = -30
 					}
 				}
-			}	
+			}
 		}
 		hidden_effect = {
 			duel = {
 				skill = intrigue
 				target = scope:adultery_spouse
-
 				60 = {
 					compare_modifier = {
 						value = scope:duel_value
@@ -2725,10 +2963,12 @@ adultery.2002 = {
 					}
 					trigger_event = {
 						id = adultery.2003
-						days = { 10 20 }
+						days = {
+							10
+							20
+						}
 					}
 				}
-
 				40 = {
 					compare_modifier = {
 						value = scope:duel_value
@@ -2736,14 +2976,17 @@ adultery.2002 = {
 					}
 					trigger_event = {
 						id = adultery.2009
-						days = { 10 20 }
+						days = {
+							10
+							20
+						}
 					}
 				}
-			}				
+			}
 		}
 	}
-
-	option = { #They seem legit enough
+	option = {
+		#They seem legit enough
 		name = adultery.2002.b
 		if = {
 			limit = {
@@ -2762,11 +3005,9 @@ adultery.2003 = {
 	type = character_event
 	title = adultery.2001.t
 	desc = adultery.2003.desc
-	
 	theme = marriage
 	left_portrait = scope:adultery_child
 	right_portrait = scope:adultery_spouse
-	
 	trigger = {
 		scope:adultery_child = {
 			is_child_of = root
@@ -2776,7 +3017,6 @@ adultery.2003 = {
 			}
 		}
 	}
-
 	immediate = {
 		scope:target = {
 			random_known_secret = {
@@ -2805,19 +3045,17 @@ adultery.2003 = {
 				save_scope_as = real_father
 			}
 		}
-		
 		scope:adultery_child = {
-			trigger_event = adultery.2006 #Response event for child
+			trigger_event = adultery.2006			#Response event for child
 		}
-
-		if = { #To remove the saved child scope
+		if = {
+			#To remove the saved child scope
 			limit = {
 				exists = var:suspect_this_child_of_illegitimacy
 			}
 			remove_variable = suspect_this_child_of_illegitimacy
 		}
 	}
-
 	option = {
 		name = adultery.2003.a
 		scope:secret = {
@@ -2836,25 +3074,21 @@ adultery.2003 = {
 	}
 }
 
-
 #Reaction event for child, father knows that I'm a bastard!
 adultery.2006 = {
 	type = character_event
 	title = adultery.2006.t
 	desc = adultery.2006.desc
-	
 	theme = marriage
 	left_portrait = scope:owner
 	right_portrait = scope:adultery_spouse
 	lower_right_portrait = scope:real_father
-
 	immediate = {
 		play_music_cue = mx_cue_death
 	}
-
 	option = {
 		name = adultery.2006.a
-		show_as_tooltip ={
+		show_as_tooltip = {
 			scope:owner = {
 				scope:secret = {
 					reveal_to = root
@@ -2864,7 +3098,6 @@ adultery.2006 = {
 	}
 }
 
-
 adultery.2008 = {
 	type = character_event
 	title = adultery.2008.t
@@ -2873,7 +3106,6 @@ adultery.2008 = {
 	lower_left_portrait = scope:adultery_child
 	right_portrait = scope:real_father
 	theme = bastardy
-	
 	trigger = {
 		scope:adultery_spouse = {
 			any_secret = {
@@ -2885,7 +3117,6 @@ adultery.2008 = {
 			}
 		}
 	}
-
 	immediate = {
 		play_music_cue = mx_cue_death
 		scope:adultery_spouse = {
@@ -2904,14 +3135,12 @@ adultery.2008 = {
 			save_scope_as = real_father
 		}
 	}
-
 	option = {
 		name = adultery.2008.a
 		scope:secret = {
 			expose_secret = root
 		}
 	}
-
 	option = {
 		name = adultery.2008.b
 		custom_tooltip = adultery.2008.b.tt
@@ -2929,11 +3158,9 @@ adultery.2009 = {
 	}
 	lower_left_portrait = scope:adultery_spouse
 	theme = bastardy
-	
 	trigger = {
 		scope:adultery_child.father = root
 	}
-
 	option = {
 		name = adultery.2009.a
 		reverse_add_opinion = {
@@ -2953,7 +3180,6 @@ adultery.2009 = {
 # Misc Bastard Child Events #
 # 3001 - 3999				#
 #############################
-
 #Mother tells child their secret
 adultery.3001 = {
 	type = character_event
@@ -2977,30 +3203,34 @@ adultery.3001 = {
 	right_portrait = scope:real_father
 	lower_right_portrait = scope:father
 	theme = pregnancy
-
 	trigger = {
-		any_parent = { #ai parent and child is NOT a secret knower
+		any_parent = {
+			#ai parent and child is NOT a secret knower
 			is_ai = yes
 			OR = {
 				any_secret = {
 					secret_type = secret_disputed_heritage
 					secret_target = root
 					NOT = {
-						any_secret_knower = { this = root }
+						any_secret_knower = {
+							this = root
+						}
 					}
 				}
 				any_secret = {
 					secret_type = secret_unmarried_illegitimate_child
 					secret_target = root
 					NOT = {
-						any_secret_knower = { this = root }
+						any_secret_knower = {
+							this = root
+						}
 					}
 				}
 			}
 		}
 	}
-
-	weight_multiplier = { #more likely if mother likes child/child dislikes father
+	weight_multiplier = {
+		#more likely if mother likes child/child dislikes father
 		base = 0.5
 		modifier = {
 			add = 5
@@ -3046,7 +3276,9 @@ adultery.3001 = {
 					secret_type = secret_disputed_heritage
 					secret_target = root
 					NOT = {
-						any_secret_knower = { this = root }
+						any_secret_knower = {
+							this = root
+						}
 					}
 				}
 				opinion = {
@@ -3065,7 +3297,9 @@ adultery.3001 = {
 					secret_type = secret_disputed_heritage
 					secret_target = root
 					NOT = {
-						any_secret_knower = { this = root }
+						any_secret_knower = {
+							this = root
+						}
 					}
 				}
 				opinion = {
@@ -3075,7 +3309,6 @@ adultery.3001 = {
 			}
 		}
 	}
-
 	immediate = {
 		play_music_cue = mx_cue_death
 		if = {
@@ -3086,14 +3319,18 @@ adultery.3001 = {
 						secret_type = secret_disputed_heritage
 						secret_target = root
 						NOT = {
-							any_secret_knower = { this = root }
+							any_secret_knower = {
+								this = root
+							}
 						}
 					}
 					any_secret = {
 						secret_type = secret_disputed_heritage
 						secret_target = root
 						NOT = {
-							any_secret_knower = { this = root }
+							any_secret_knower = {
+								this = root
+							}
 						}
 					}
 				}
@@ -3105,7 +3342,9 @@ adultery.3001 = {
 						secret_type = secret_disputed_heritage
 						secret_target = root
 						NOT = {
-							any_secret_knower = { this = root }
+							any_secret_knower = {
+								this = root
+							}
 						}
 					}
 				}
@@ -3115,7 +3354,9 @@ adultery.3001 = {
 						secret_type = secret_disputed_heritage
 						secret_target = root
 						NOT = {
-							any_secret_knower = { this = root }
+							any_secret_knower = {
+								this = root
+							}
 						}
 					}
 					save_scope_as = secret
@@ -3130,7 +3371,9 @@ adultery.3001 = {
 						secret_type = secret_unmarried_illegitimate_child
 						secret_target = root
 						NOT = {
-							any_secret_knower = { this = root }
+							any_secret_knower = {
+								this = root
+							}
 						}
 					}
 				}
@@ -3140,7 +3383,9 @@ adultery.3001 = {
 						secret_type = secret_unmarried_illegitimate_child
 						secret_target = root
 						NOT = {
-							any_secret_knower = { this = root }
+							any_secret_knower = {
+								this = root
+							}
 						}
 					}
 					save_scope_as = secret
@@ -3169,36 +3414,46 @@ adultery.3001 = {
 			}
 		}
 	}
-
 	option = {
 		name = adultery.3001.a
 		custom_tooltip = adultery.3001.a.tt
 		scope:secret = {
-			reveal_to_without_events_effect = { CHARACTER = root }
+			reveal_to_without_events_effect = {
+				CHARACTER = root
+			}
 		}
 	}
 }
 
-
 ###############################################
 # extramarital_sex_exposure_consequences_effect events #
 ###############################################
-
 #My spouse had sex with someone (not lovers)
-scripted_trigger adultery_4001_can_be_imprisoned_trigger = {
+scripted_trigger
+adultery_4001_can_be_imprisoned_trigger = {
 	save_temporary_scope_as = imprisonment_check
-	root = { allowed_to_imprison_character_trigger = { CHARACTER = scope:imprisonment_check } }
+	root = {
+		allowed_to_imprison_character_trigger = {
+			CHARACTER = scope:imprisonment_check
+		}
+	}
 	trigger_if = {
 		limit = {
 			exists = scope:sex_partner
 			this = scope:sex_partner
 		}
-		NOT = { exists = scope:unsuccessful_sex_attempt }
-		sexual_activity_with_partner_is_criminal_in_faith_trigger = { PARTNER = scope:adultery_spouse FAITH = root.faith }
+		NOT = {
+			exists = scope:unsuccessful_sex_attempt
+		}
+		sexual_activity_with_partner_is_criminal_in_faith_trigger = {
+			PARTNER = scope:adultery_spouse
+			FAITH = root.faith
+		}
 	}
 }
 
-adultery.4001 = { #by Mathilda Bjarnehed
+adultery.4001 = {
+	#by Mathilda Bjarnehed
 	type = character_event
 	title = adultery.4001.t
 	desc = {
@@ -3224,25 +3479,44 @@ adultery.4001 = { #by Mathilda Bjarnehed
 				#Who? Known, servant or commoner?
 				random_valid = {
 					triggered_desc = {
-						trigger = { exists = scope:sex_partner }
+						trigger = {
+							exists = scope:sex_partner
+						}
 						desc = adultery.4001.sex_partner.desc
 					}
 					triggered_desc = {
-						trigger = { NOT = { exists = scope:sex_partner } }
+						trigger = {
+							NOT = {
+								exists = scope:sex_partner
+							}
+						}
 						desc = adultery.4001.commoner.desc
 					}
 					triggered_desc = {
-						trigger = { NOT = { exists = scope:sex_partner } }
+						trigger = {
+							NOT = {
+								exists = scope:sex_partner
+							}
+						}
 						desc = adultery.4001.servant.desc
 					}
 				}
 				#Where? Or specify gender if a) unknown b) same gender as spouse and c) homosexuality isn't accepted/not gay/bi yourself
 				first_valid = {
-					triggered_desc = { #Homosexuality
+					triggered_desc = {
+						#Homosexuality
 						trigger = {
-							NOT = { exists = scope:sex_partner }
-							scope:adultery_spouse = { sex_same_as = scope:unknown_sex_partner }
-							faith = { NOT = { has_doctrine_parameter = homosexuality_accepted } }
+							NOT = {
+								exists = scope:sex_partner
+							}
+							scope:adultery_spouse = {
+								sex_same_as = scope:unknown_sex_partner
+							}
+							faith = {
+								NOT = {
+									has_doctrine_parameter = homosexuality_accepted
+								}
+							}
 							NOR = {
 								has_sexuality = homosexual
 								has_sexuality = bisexual
@@ -3250,19 +3524,32 @@ adultery.4001 = { #by Mathilda Bjarnehed
 						}
 						desc = adultery.4001.another_gender.desc
 					}
-					desc = { #Location
+					desc = {
+						#Location
 						random_valid = {
 							desc = adultery.4001.bed.desc
 							triggered_desc = {
-								trigger = { scope:adultery_spouse = { is_female = yes } }
+								trigger = {
+									scope:adultery_spouse = {
+										is_female = yes
+									}
+								}
 								desc = adultery.4001.mare.desc
 							}
 							triggered_desc = {
-								trigger = { scope:adultery_spouse = { is_male = yes } }
+								trigger = {
+									scope:adultery_spouse = {
+										is_male = yes
+									}
+								}
 								desc = adultery.4001.stallion.desc
 							}
 							triggered_desc = {
-								trigger = { capital_province = { geographical_region = world_europe } }
+								trigger = {
+									capital_province = {
+										geographical_region = world_europe
+									}
+								}
 								desc = adultery.4001.deer.desc
 							}
 							triggered_desc = {
@@ -3289,11 +3576,9 @@ adultery.4001 = { #by Mathilda Bjarnehed
 		}
 		desc = adultery.4001.end.desc
 	}
-	
 	theme = marriage
 	left_portrait = scope:adultery_spouse
 	right_portrait = scope:sex_partner
-
 	immediate = {
 		play_music_cue = mx_cue_combat_stinger
 		show_as_tooltip = {
@@ -3304,11 +3589,15 @@ adultery.4001 = { #by Mathilda Bjarnehed
 						OR = {
 							AND = {
 								exists = scope:sex_partner
-								relation_with_character_is_sodomy_in_my_or_lieges_faith_trigger = { CHARACTER = scope:sex_partner }
+								relation_with_character_is_sodomy_in_my_or_lieges_faith_trigger = {
+									CHARACTER = scope:sex_partner
+								}
 							}
 							AND = {
 								exists = scope:unknown_sex_partner
-								relation_with_character_is_sodomy_in_my_or_lieges_faith_trigger = { CHARACTER = scope:unknown_sex_partner }
+								relation_with_character_is_sodomy_in_my_or_lieges_faith_trigger = {
+									CHARACTER = scope:unknown_sex_partner
+								}
 							}
 						}
 					}
@@ -3317,50 +3606,67 @@ adultery.4001 = { #by Mathilda Bjarnehed
 				if = {
 					limit = {
 						exists = scope:sex_partner
-						relation_with_character_is_incestuous_in_my_or_lieges_faith_trigger = { CHARACTER = scope:sex_partner }
+						relation_with_character_is_incestuous_in_my_or_lieges_faith_trigger = {
+							CHARACTER = scope:sex_partner
+						}
 					}
 					add_trait = incestuous
 				}
 			}
 		}
-	}	
-
+	}
 	#Ok (not liege or above/not illegal)
 	option = {
 		trigger = {
 			NOR = {
-				scope:adultery_spouse = { adultery_4001_can_be_imprisoned_trigger = yes }
+				scope:adultery_spouse = {
+					adultery_4001_can_be_imprisoned_trigger = yes
+				}
 				trigger_if = {
-					limit = { exists = scope:sex_partner }
-					scope:sex_partner = { adultery_4001_can_be_imprisoned_trigger = yes }
+					limit = {
+						exists = scope:sex_partner
+					}
+					scope:sex_partner = {
+						adultery_4001_can_be_imprisoned_trigger = yes
+					}
 				}
 			}
 		}
 		name = adultery.4001.a
 	}
-
 	#Liege or above: imprison
 	option = {
 		trigger = {
 			OR = {
-				scope:adultery_spouse = { adultery_4001_can_be_imprisoned_trigger = yes }
+				scope:adultery_spouse = {
+					adultery_4001_can_be_imprisoned_trigger = yes
+				}
 				trigger_if = {
-					limit = { exists = scope:sex_partner }
-					scope:sex_partner = { adultery_4001_can_be_imprisoned_trigger = yes }
+					limit = {
+						exists = scope:sex_partner
+					}
+					scope:sex_partner = {
+						adultery_4001_can_be_imprisoned_trigger = yes
+					}
 				}
 			}
 		}
-		
 		name = {
 			text = {
 				first_valid = {
 					#Only imprison spouse
 					triggered_desc = {
 						trigger = {
-							scope:adultery_spouse = { adultery_4001_can_be_imprisoned_trigger = yes }
+							scope:adultery_spouse = {
+								adultery_4001_can_be_imprisoned_trigger = yes
+							}
 							OR = {
-								NOT = { exists = scope:sex_partner }
-								scope:sex_partner = { adultery_4001_can_be_imprisoned_trigger = no }
+								NOT = {
+									exists = scope:sex_partner
+								}
+								scope:sex_partner = {
+									adultery_4001_can_be_imprisoned_trigger = no
+								}
 							}
 						}
 						desc = adultery.4001.b
@@ -3370,7 +3676,6 @@ adultery.4001 = { #by Mathilda Bjarnehed
 				}
 			}
 		}
-
 		if = {
 			limit = {
 				scope:adultery_spouse = {
@@ -3386,11 +3691,16 @@ adultery.4001 = { #by Mathilda Bjarnehed
 		if = {
 			limit = {
 				exists = scope:sex_partner
-				NOT = { exists = scope:unsuccessful_sex_attempt }
+				NOT = {
+					exists = scope:unsuccessful_sex_attempt
+				}
 				scope:sex_partner = {
 					target_is_liege_or_above = root
 					is_imprisoned = no
-					sexual_activity_with_partner_is_criminal_in_faith_trigger = { PARTNER = scope:adultery_spouse FAITH = root.faith }
+					sexual_activity_with_partner_is_criminal_in_faith_trigger = {
+						PARTNER = scope:adultery_spouse
+						FAITH = root.faith
+					}
 				}
 			}
 			imprison_character_effect = {
@@ -3398,11 +3708,9 @@ adultery.4001 = { #by Mathilda Bjarnehed
 				IMPRISONER = root
 			}
 		}
-
 		stress_impact = {
 			forgiving = minor_stress_impact_gain
 		}
-
 		ai_chance = {
 			base = 100
 			ai_value_modifier = {
@@ -3430,20 +3738,24 @@ adultery.4001 = { #by Mathilda Bjarnehed
 			}
 		}
 	}
-	
 	#Liege or above: forgive
 	option = {
 		trigger = {
 			OR = {
-				scope:adultery_spouse = { adultery_4001_can_be_imprisoned_trigger = yes }
+				scope:adultery_spouse = {
+					adultery_4001_can_be_imprisoned_trigger = yes
+				}
 				trigger_if = {
-					limit = { exists = scope:sex_partner }
-					scope:sex_partner = { adultery_4001_can_be_imprisoned_trigger = yes }
+					limit = {
+						exists = scope:sex_partner
+					}
+					scope:sex_partner = {
+						adultery_4001_can_be_imprisoned_trigger = yes
+					}
 				}
 			}
 		}
 		name = adultery.4001.c
-		
 		reverse_add_opinion = {
 			target = scope:adultery_spouse
 			modifier = grateful_opinion
@@ -3452,8 +3764,12 @@ adultery.4001 = { #by Mathilda Bjarnehed
 		if = {
 			limit = {
 				exists = scope:sex_partner
-				NOT = { exists = scope:unsuccessful_sex_attempt }
-				scope:sex_partner = { target_is_liege_or_above = root }
+				NOT = {
+					exists = scope:unsuccessful_sex_attempt
+				}
+				scope:sex_partner = {
+					target_is_liege_or_above = root
+				}
 			}
 			reverse_add_opinion = {
 				target = scope:sex_partner
@@ -3461,14 +3777,11 @@ adultery.4001 = { #by Mathilda Bjarnehed
 				opinion = 20
 			}
 		}
-
 		add_piety = medium_piety_loss
-
 		stress_impact = {
 			paranoid = medium_stress_impact_gain
 			vengeful = medium_stress_impact_gain
 		}
-
 		ai_chance = {
 			base = 10
 			ai_value_modifier = {
@@ -3479,11 +3792,11 @@ adultery.4001 = { #by Mathilda Bjarnehed
 				add = 100
 			}
 			modifier = {
-				scope:adultery_spouse = { is_ai = no }
+				scope:adultery_spouse = {
+					is_ai = no
+				}
 				add = 50
 			}
 		}
 	}
 }
-
-
