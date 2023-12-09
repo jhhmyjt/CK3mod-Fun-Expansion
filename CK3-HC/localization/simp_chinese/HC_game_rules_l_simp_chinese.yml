@@ -1,4 +1,11 @@
 ﻿l_simp_chinese:
+ rule_hc_army_strength_setting:0 "Fun Expansion兵种强度"
+ setting_hc_army_normal_strength:0 "正常强度"
+ setting_hc_army_normal_strength_desc:0 "正常强度的兵种"
+ setting_hc_army_low_strength:0 "低强度"
+ setting_hc_army_low_strength_desc:0 "低强度的兵种（对比原版兵种不相上下）"
+ setting_hc_army_bottom_strength:0 "超低强度"
+ setting_hc_army_bottom_strength_desc:0 "超低强度的兵种（更低的数值）"
  rule_hc_trait_strength_setting:0 "Fun Expansion 特质强度"
  setting_hc_trait_normal_strength:0 "普通强度"
  setting_hc_trait_normal_strength_desc:0 "100%数值强度（影响特质：诸神眷顾）"

@@ -19,11 +19,10 @@
 English(by @Kod)
 
 [h1]近期更新[/h1]
-兼容1.10版本
-受@海娃 启发，修改了部分特质的名称和描述
-取消了皇家护卫队系列决议中独立统治者的限制条件 @荣耀C龙
-决议召集圣殿骑士：普通骑士可能加入你的战争（好感度影响）
-未复现bug“缔结婚姻可以对自己用”，但对互动添加了限制条件，应该能修复
+更新12.10
+1. 适配1.11.2版本
+2. 修改了部分宝物插图
+3. 添加游戏规则：兵种强度
 
 [h1]兼容性[/h1]
 兼容现有存档
@@ -45,12 +44,15 @@ seduce_scheme
 [*]hc_temple_legacy_track中世纪插画,[url=https://www.zcool.com.cn/work/ZNDE4NzAzNjg=.html]画师：King1st[/url]
 [*]hc_judgment_heavy_cavalry骑士插画,[url=https://www.zcool.com.cn/work/ZMTg5NDY2NA==.html]画师：dj9fun[/url]
 [*]桔梗花插画,[url=https://www.zcool.com.cn/work/ZNDExNjEyMDg=.html]画师：苏俺[/url]
+[*]preview,by [url=https://unsplash.com/@tjump?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash]Nik Shuliahin[/url] on [url=https://unsplash.com/photos/gray-stainless-steel-armor-JOzv_pAkcMk?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash]Unsplash[/url]
 [/list]
 
 
 [h1]最后[/h1]
 
 如果你觉得这个mod还不错的话, 请不要吝啬你的赞👍
+或者，你可以考虑支持一下我：
+[img]https://i.imgur.com/2Le2Q1Q.jpg[/img]
 
 [b]✨✨✨大家的支持就是我更新的最大动力✨✨✨[/b]
 

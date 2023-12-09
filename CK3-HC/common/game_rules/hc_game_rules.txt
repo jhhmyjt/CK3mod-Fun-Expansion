@@ -15,6 +15,20 @@ hc_trait_strength_setting = {
 	}
 }
 
+#军种数值设置
+hc_army_strength_setting = {
+	categories = {
+		difficulty
+	}
+	default = hc_army_normal_strength
+	hc_army_normal_strength = {
+	}
+	hc_army_low_strength = {
+	}
+	hc_army_bottom_strength = {
+	}
+}
+
 #家族修正设置
 hc_dynasty_modifier_strength_setting = {
 	categories = {

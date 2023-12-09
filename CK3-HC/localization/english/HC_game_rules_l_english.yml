@@ -1,4 +1,11 @@
 ﻿l_english:
+rule_hc_army_strength_setting:0 "Fun Expansion troop strength"
+ setting_hc_army_normal_strength:0 "Normal Strength"
+ setting_hc_army_normal_strength_desc:0 "Normal Strength Troop Type"
+ setting_hc_army_low_strength:0 "low strength"
+ setting_hc_army_low_strength_desc:0 "Low strength troop type (not comparable to the original)"
+ setting_hc_army_bottom_strength:0 "Ultra low strength"
+ setting_hc_army_bottom_strength_desc:0 "Ultra-low strength troop type (lower values)"
 rule_hc_trait_strength_setting:0 "Fun Expansion Trait Strength"
  setting_hc_trait_normal_strength:0 "Normal Strength"
  setting_hc_trait_normal_strength_desc:0 "100% Numeric Strength (Affects Trait:Gods Descent)"

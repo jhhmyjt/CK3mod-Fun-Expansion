@@ -63,6 +63,7 @@ hc_judgment_heavy_cavalry = {
 		value = 0
 	}
 	can_recruit = {
+		has_game_rule = hc_army_normal_strength
 		exists = dynasty
 		dynasty = {
 			has_dynasty_perk = hc_temple_legacy_3
@@ -119,6 +120,7 @@ hc_footmen = {
 		value = 0
 	}
 	can_recruit = {
+		has_game_rule = hc_army_normal_strength
 		exists = dynasty
 		dynasty = {
 			has_dynasty_perk = hc_temple_legacy_1
@@ -183,6 +185,399 @@ hc_guards = {
 		value = 0
 	}
 	can_recruit = {
+		has_game_rule = hc_army_normal_strength
+		exists = dynasty
+		dynasty = {
+			has_dynasty_perk = hc_temple_legacy_2
+		}
+	}
+	icon = heavy_infantry
+}
+
+#圣殿裁决重装骑兵
+hc_judgment_heavy_cavalry_02 = {
+	type = heavy_cavalry
+	damage = 115
+	toughness = 35
+	pursuit = 20
+	screen = 15
+	terrain_bonus = {
+		plains = {
+			damage = 30
+		}
+		drylands = {
+			damage = 25
+		}
+		hills = {
+			damage = -20
+		}
+		jungle = {
+			damage = -20
+		}
+		mountains = {
+			damage = -50
+		}
+		desert_mountains = {
+			damage = -70
+		}
+		wetlands = {
+			damage = -70
+			toughness = -30
+			pursuit = -20
+		}
+	}
+	counters = {
+		archers = 1
+		skirmishers = 1
+		light_cavalry = 1
+		heavy_infantry = 1
+		archer_cavalry = 1
+		camel_cavalry = 1
+	}
+	winter_bonus = {
+		normal_winter = {
+			damage = -30
+			toughness = -20
+		}
+		harsh_winter = {
+			damage = -50
+			toughness = -30
+		}
+	}
+	buy_cost = {
+		gold = 265
+		prestige = 160
+	}
+	low_maintenance_cost = {
+		gold = 1.6
+	}
+	high_maintenance_cost = {
+		gold = 3.2
+	}
+	stack = 100
+	ai_quality = {
+		value = 0
+	}
+	can_recruit = {
+		has_game_rule = hc_army_low_strength
+		exists = dynasty
+		dynasty = {
+			has_dynasty_perk = hc_temple_legacy_3
+		}
+	}
+	icon = hc_judgment_heavy_cavalry
+}
+
+#圣殿仆从
+hc_footmen_02 = {
+	type = skirmishers
+	damage = 12
+	toughness = 16
+	pursuit = 10
+	screen = 10
+	terrain_bonus = {
+		forest = {
+			damage = 5
+			toughness = 5
+		}
+		taiga = {
+			damage = 5
+			toughness = 5
+		}
+		jungle = {
+			damage = 5
+			toughness = 5
+		}
+	}
+	winter_bonus = {
+		normal_winter = {
+			damage = -2
+			toughness = -5
+		}
+		harsh_winter = {
+			damage = -5
+			toughness = -10
+		}
+	}
+	counters = {
+		heavy_infantry = 1
+	}
+	buy_cost = {
+		gold = 20
+	}
+	low_maintenance_cost = {
+		gold = 0.15
+	}
+	high_maintenance_cost = {
+		gold = 0.5
+	}
+	stack = 200
+	ai_quality = {
+		value = 0
+	}
+	can_recruit = {
+		has_game_rule = hc_army_low_strength
+		exists = dynasty
+		dynasty = {
+			has_dynasty_perk = hc_temple_legacy_1
+		}
+		# hc_has_god_descent_trigger = yes
+	}
+	icon = skirmishers
+}
+
+#圣殿卫队
+hc_guards_02 = {
+	type = heavy_infantry
+	damage = 40
+	toughness = 30
+	pursuit = 0
+	screen = 20
+	terrain_bonus = {
+		jungle = {
+			damage = 10
+			toughness = 5
+		}
+		hills = {
+			damage = 10
+			toughness = 5
+		}
+		forest = {
+			damage = 5
+		}
+		wetlands = {
+			damage = -5
+		}
+		desert = {
+			toughness = -5
+		}
+	}
+	winter_bonus = {
+		normal_winter = {
+			damage = -3
+		}
+		harsh_winter = {
+			damage = -5
+		}
+	}
+	counters = {
+		pikemen = 2
+		archers = 1
+		skirmishers = 1
+		light_cavalry = 1
+	}
+	buy_cost = {
+		gold = 100
+		piety = 50
+	}
+	low_maintenance_cost = {
+		gold = 0.5
+	}
+	high_maintenance_cost = {
+		gold = 1.8
+	}
+	stack = 100
+	ai_quality = {
+		value = 0
+	}
+	can_recruit = {
+		has_game_rule = hc_army_low_strength
+		exists = dynasty
+		dynasty = {
+			has_dynasty_perk = hc_temple_legacy_2
+		}
+	}
+	icon = heavy_infantry
+}
+
+#圣殿裁决重装骑兵
+hc_judgment_heavy_cavalry_03 = {
+	type = heavy_cavalry
+	damage = 100
+	toughness = 20
+	pursuit = 10
+	screen = 10
+	terrain_bonus = {
+		plains = {
+			damage = 20
+		}
+		drylands = {
+			damage = 20
+		}
+		hills = {
+			damage = -20
+		}
+		jungle = {
+			damage = -20
+		}
+		mountains = {
+			damage = -50
+		}
+		desert_mountains = {
+			damage = -70
+		}
+		wetlands = {
+			damage = -70
+			toughness = -30
+			pursuit = -20
+		}
+	}
+	counters = {
+		archers = 1
+		skirmishers = 1
+		light_cavalry = 1
+		heavy_infantry = 1
+		archer_cavalry = 1
+		camel_cavalry = 1
+	}
+	winter_bonus = {
+		normal_winter = {
+			damage = -30
+			toughness = -20
+		}
+		harsh_winter = {
+			damage = -50
+			toughness = -30
+		}
+	}
+	buy_cost = {
+		gold = 280
+		prestige = 200
+	}
+	low_maintenance_cost = {
+		gold = 1.8
+	}
+	high_maintenance_cost = {
+		gold = 3.5
+	}
+	stack = 50
+	ai_quality = {
+		value = 0
+	}
+	can_recruit = {
+		has_game_rule = hc_army_bottom_strength
+		exists = dynasty
+		dynasty = {
+			has_dynasty_perk = hc_temple_legacy_3
+		}
+	}
+	icon = hc_judgment_heavy_cavalry
+}
+
+#圣殿仆从
+hc_footmen_03 = {
+	type = skirmishers
+	damage = 10
+	toughness = 15
+	pursuit = 5
+	screen = 5
+	terrain_bonus = {
+		forest = {
+			damage = 5
+			toughness = 5
+		}
+		taiga = {
+			damage = 5
+			toughness = 5
+		}
+		jungle = {
+			damage = 5
+			toughness = 5
+		}
+	}
+	winter_bonus = {
+		normal_winter = {
+			damage = -2
+			toughness = -5
+		}
+		harsh_winter = {
+			damage = -5
+			toughness = -10
+		}
+	}
+	counters = {
+		heavy_infantry = 1
+	}
+	buy_cost = {
+		gold = 20
+	}
+	low_maintenance_cost = {
+		gold = 0.2
+	}
+	high_maintenance_cost = {
+		gold = 0.7
+	}
+	stack = 100
+	ai_quality = {
+		value = 0
+	}
+	can_recruit = {
+		has_game_rule = hc_army_bottom_strength
+		exists = dynasty
+		dynasty = {
+			has_dynasty_perk = hc_temple_legacy_1
+		}
+		# hc_has_god_descent_trigger = yes
+	}
+	icon = skirmishers
+}
+
+#圣殿卫队
+hc_guards_03 = {
+	type = heavy_infantry
+	damage = 35
+	toughness = 20
+	pursuit = 0
+	screen = 15
+	terrain_bonus = {
+		jungle = {
+			damage = 10
+			toughness = 5
+		}
+		hills = {
+			damage = 10
+			toughness = 5
+		}
+		forest = {
+			damage = 5
+		}
+		wetlands = {
+			damage = -5
+		}
+		desert = {
+			toughness = -5
+		}
+	}
+	winter_bonus = {
+		normal_winter = {
+			damage = -3
+		}
+		harsh_winter = {
+			damage = -5
+		}
+	}
+	counters = {
+		pikemen = 2
+		archers = 1
+		skirmishers = 1
+		light_cavalry = 1
+	}
+	buy_cost = {
+		gold = 100
+		piety = 50
+	}
+	low_maintenance_cost = {
+		gold = 0.7
+	}
+	high_maintenance_cost = {
+		gold = 2.2
+	}
+	stack = 100
+	ai_quality = {
+		value = 0
+	}
+	can_recruit = {
+		has_game_rule = hc_army_bottom_strength
 		exists = dynasty
 		dynasty = {
 			has_dynasty_perk = hc_temple_legacy_2
