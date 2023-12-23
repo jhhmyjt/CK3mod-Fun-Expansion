@@ -1,0 +1,24 @@
+﻿l_simp_chinese:
+  bloodline_random.001.title:1 "求援之情"
+  bloodline_random.001.desc.intro:0 "[adviser.GetTitledFirstName]在你的书房里走了进来。\n\n\"[ROOT.Char.GetLadyLord]，一个孩子走进了我们的领地，状态非常糟糕。\n\n显然，[orphan.GetSheHe]与一队商队一同旅行，但被土匪伏击，[orphan.GetSheHe]是唯一的幸存者。\n\n[orphan.GetSheHe|U]不说太多，但[orphan.GetSheHe]抱着这封写给你的信，我的[ROOT.Char.GetLadyLord]\""
+  bloodline_random.001.read_letter:0 "让我读读这封信"
+
+  bloodline_random.001.desc.orphan:0 ""
+
+  bloodline_random.0011.title:0 "求援之情"
+  bloodline_random.0011.desc:0 "尊敬的[ROOT.Char.GetLadyLord] [ROOT.Char.GetFullName]\n\n我叫[orphan_mother.GetLadyLord] [orphan_mother.GetFullName]，是一家被人遗忘已久的小贵族之首。我怀着极大的悲伤写信给你，我的医者告诉我我在这个世界上的时间不多了。\n\n孩子，我的[orphan.Custom('GetDaughterSon')]是我唯一留下的。[orphan.GetHerHis]父亲很久以前就去世了，没有其他人了。[orphan.GetTitledFirstName]是我们王朝的最后一人，应该被抚养在一个体面的贵族精灵家庭中。[orphan.GetSheHe]的血液中流淌着一个伟大家族的血脉，[orphan.GetSheHe]有着坚韧的精神，如果你能给[orphan.GetHerHim]一个机会，[orphan.GetSheHe]会为你效力。\n尽管我们从未见过面，但我恳求你，请给我这最后一个请求....\n致我心爱的[orphan.GetTitledFirstName]，我爱你，永远与你同在。"
+  bloodline_random.0011.a:0 "关闭信件"
+
+  bloodline_random.0012.title:0 "求援之情"
+  bloodline_random.0012.desc:0 "那么，M'[ROOT.Char.GetLadyLord]，这个孩子将会怎样呢？"
+
+  bloodline_random.0012.a1:0 "我将把这个孩子当作我的养子"
+  bloodline_random.0012.a2:0 "我们会在我的宫廷找个地方给他们"
+  bloodline_random.0012.a3:0 "我们没有更多的慈善之地"
+
+  bloodline_random.0013.title:0 "求援之情"
+  bloodline_random.0013.desc:0 "孩子开口说：\"我不会让你失望的，M'[ROOT.Char.GetLadyLord]\""
+  bloodline_random.0013.a1:0 "我相信你！"
+
+  bloodline_orphan_visit:0 "一位出生高贵的孤儿来访"
+  bloodline_orphan_visit_desc:0 "我被一位出生高贵的孤儿来访"

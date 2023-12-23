@@ -1,0 +1,5 @@
+﻿l_simp_chinese:
+REQUIRES_COVEN_OF_SEVEN:0 "需要[教义|E] 七巫结社"
+REQUIRES_FEMALE_DOMINATED:0 "需要[教义|E] 女性主导"
+REQUIRES_FEMALE_ONLY_CLERICAL_GENDER:0 "需要[教义|E] 仅限女性神职性别"
+MARRY_DIFFERENT_FAITH_DIVINE_ENDEARMENT_REASON:0 "神圣宠爱 - 尽管[接收者.GetShortUINamePossessive] [信仰|E] 与你的不同，但他们几乎本能地接受与你的信仰结合的配对: $VALUE|+0$"

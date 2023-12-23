@@ -1,0 +1,39 @@
+﻿l_simp_chinese:
+  # 机智的试炼
+  expedition.00512.title:0 "机智的试炼"
+  expedition.00512.desc:0 "你进入了一间宏伟的大厅。房间中央似乎是某种游戏棋盘。你注意到雕刻着各种人物的图案。似乎你需要玩某种游戏来通过这个试炼。\n\n你将首先扮演哪一步棋子呢？"
+
+  expedition.game_score:0 "玩家选择 - [SCOPE.GetFlagName('player_choice_name')] | AI选择 - [SCOPE.GetFlagName('ai_choice_name')] \n\n玩家分数 - [ROOT.Var('player_score').GetValue] | AI分数 - [ROOT.Var('ai_score').GetValue]\n\n玩家选项..."
+
+  expedition.00512.chosen_pieces:0 "你的选择 - [SCOPE.GetFlagName('player_choice_name')] | 对手的选择 - [SCOPE.GetFlagName('ai_choice_name')]"
+  expedition.00512.current_score:0 "\n\n你的得分 - [ROOT.Var('player_score').GetValue] | 对手的得分 - [ROOT.Var('ai_score').GetValue]"
+  expedition.00512.remaining_ai_pieces:0 "\n__ 剩余对手的棋子 __"
+  expedition.00512.king:0 "\n国王"
+  expedition.00512.queen:0 "\n王后"
+  expedition.00512.priestess:0 "\n女祭司"
+  expedition.00512.noble:0 "\n贵族"
+  expedition.00512.knight:0 "\n骑士"
+  expedition.00512.bandit:0 "\n强盗"
+  expedition.00512.peasant:0 "\n农民"
+
+  expedition.005121.title:0 "机智的试炼 - 回合结果"
+  expedition.005121.tie:0 "\n平局回合"
+  expedition.005121.player_won:0 "\n你赢了这个回合！"
+  expedition.005121.ai_won:0 "\n你的对手赢了这个回合"
+  expedition.005121.error:0 "出了些问题 ;( \n\n $expedition.game_score$"
+
+  expedition.00512.playKing:0 "扮演国王"
+  expedition.00512.playQueen:0 "扮演王后"
+  expedition.00512.playPriestess:0 "扮演女祭司"
+  expedition.00512.playNoble:0 "扮演贵族"
+  expedition.00512.playKnight:0 "扮演骑士"
+  expedition.00512.playBandit:0 "扮演强盗"
+  expedition.00512.playPeasant:0 "扮演农民"
+
+  expedition.005122.title:0 "机智的试炼 - 胜利！"
+  expedition.005122.desc:0 "你通过了机智的试炼！一扇巨大的石门开始缓缓打开，露出一个新的房间。"
+  expedition.005122.ok:0 "万岁！"
+
+  expedition.005123.title:0 "机智的试炼 - 失败！"
+  expedition.005123.desc:0 "你未能通过机智的试炼！房间仍然紧闭着。"
+  expedition.005123.ok:0 "肯定是它作弊了！"

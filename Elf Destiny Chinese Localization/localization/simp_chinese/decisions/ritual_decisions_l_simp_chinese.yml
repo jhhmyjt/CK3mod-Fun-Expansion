@@ -1,0 +1,9 @@
+﻿l_simp_chinese:
+  ascension_ritual_decision:0 "飞升仪式"
+  ascension_ritual_decision_desc:0 "您已达到当前精灵层次的巅峰，准备飞升！\n\n退至您的房间，开始冥想。如果圣焰愿意接纳您，您将成为更高层次的存在。"
+  ascension_ritual_threshold_1_decision_desc:0 "瞧，您的辉煌！您已达到一个绝对的高度！您已经达到了低级精灵的绝对巅峰形态，准备飞升成为更高级别的精灵，至高精灵屹立于万人之上，其下诸子莫有不服。"
+  ascension_ritual_decision_confirm:0 "我准备好了"
+
+  blessing_ritual_decision:0 "圣焰祝福仪式"
+  blessing_ritual_decision_desc:0 "您已经积累了足够的圣焰的好意，可以寻求祝福！\n\n退至您的房间，开始冥想。"
+  blessing_ritual_decision_confirm:0 "一切顺利！"

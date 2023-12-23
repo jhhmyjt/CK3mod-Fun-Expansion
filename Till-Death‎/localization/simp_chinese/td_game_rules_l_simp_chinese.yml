@@ -1,10 +1,11 @@
 ﻿l_simp_chinese:
- rule_hc_seduce_court_setting:0 "至死不渝 勾引/求爱设置"
+ game_rule_category_td: "@hc_text_icon_02! 至死不渝"
+ rule_hc_seduce_court_setting:0 "@hc_text_icon_02!至死不渝 勾引/求爱设置"
  setting_hc_seduce_court_ai_player_cannot:0 "限制ai和玩家"
  setting_hc_seduce_court_ai_player_cannot_desc:0 "ai和玩家都会受到特质至死不渝的限制（勾引/求爱）"
  setting_hc_seduce_court_ai_cannot:0 "仅限制ai"
  setting_hc_seduce_court_ai_cannot_desc:0 "仅ai会受到特质至死不渝的限制（勾引/求爱）"
- rule_hc_certificate_quantity_setting:0 "至死不渝 契约设置"
+ rule_hc_certificate_quantity_setting:0 "@hc_text_icon_02!至死不渝 契约设置"
  setting_hc_one_certificate_quantity:0 "一对一"
  setting_hc_one_certificate_quantity_desc:0 "玩家只能和一人缔结契约"
  setting_hc_more_certificate_quantity:0 "一对多"

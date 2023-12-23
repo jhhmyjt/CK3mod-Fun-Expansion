@@ -1,0 +1,20 @@
+﻿l_simp_chinese:
+  # Aeluran Advisor
+aeluran_advisor:0 "埃露兰顾问"
+aeluran_advisor_desc:0 "埃露兰顾问是宫廷中的一位强大而有影响力的人物。他们负责招募和培训魔法师，是顾问手下的法师军队的负责人。"
+
+game_concept_aeluran_advisor:0 "埃露兰顾问"
+game_concept_aeluran_advisor_desc:0 "$game_concept_aeluran_advisor$是您领地的[aeluran_advisor|E]，负责管理您的魔法师核心的副手。"
+
+councillor_aeluran_advisor:0 "埃露兰顾问"
+councillor_aeluran_advisor_possessive:0 "埃露兰顾问的"
+task_aeluran_coven_magistration_effect_desc:3 "\n\n#P [SCOPE.ScriptValue('aeluran_improve_magi_core_monthly_chance_value')|1P]%#! 每月提高或发现新的[magi|E]或[empowered|E]的机会\n$TAB$Councillor's [learning_skill|E]: #P +[SCOPE.ScriptValue('aeluran_improve_magi_core_monthly_chance_value_base')|1P]%#!"
+task_aeluran_magistration_recruit_magi:0 "\n$EFFECT_LIST_BULLET$#P 招募新的并更好地培训现有的魔法师#!"
+task_aeluran_magistration_hooks:0 "\n$EFFECT_LIST_BULLET$#P 在您的臣民中获得挂钩并使其皈依#!"
+task_aeluran_magistration_dominance_loss:0 "\n$EFFECT_LIST_BULLET$#N 失去玩家支配力#!"
+task_aeluran_magistration_modifier:0 "治理魔法"
+
+# 理事任务
+task_aeluran_magistration:0 "治理魔法"
+task_aeluran_conversion:0 "灌输"
+task_aeluran_fabricate_claim:0 "破坏"

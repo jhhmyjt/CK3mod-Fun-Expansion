@@ -1,7 +1,8 @@
 ﻿#勾引/求爱设置
 hc_seduce_court_setting = {
 	categories = {
-		difficulty
+		td
+		tweaks
 	}
 	default = hc_seduce_court_ai_player_cannot
 	#限制玩家和ai
@@ -15,7 +16,8 @@ hc_seduce_court_setting = {
 #契约限制
 hc_certificate_quantity_setting = {
 	categories = {
-		difficulty
+		td
+		tweaks
 	}
 	default = hc_one_certificate_quantity
 	#一对一

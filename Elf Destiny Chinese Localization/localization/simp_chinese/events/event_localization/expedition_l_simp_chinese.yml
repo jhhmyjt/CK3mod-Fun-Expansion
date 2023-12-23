@@ -1,0 +1,77 @@
+﻿l_simp_chinese:
+# 建立基地营地
+expedition.001.title:0 "建立基地营地"
+expedition.001.desc:0 "你的队伍已经抵达探险地点的门前。在开始探险之前，你需要设立基地营地。"
+expedition.001.set_up_camp:0 "让我们确保我们已经准备好了！"
+
+# 探险未发现任何事物
+expedition.002.title:0 "探险未发现任何事物"
+expedition.002.desc:0 "你整天都在探索和研究这个地点，但没有找到值得一提的东西。"
+expedition.002.ok:0 "也许是下一天吧"
+
+# 探险遇到危险
+expedition.003.title:0 "探险遇到危险"
+expedition.003.desc:0 "你的队伍触发了一个陷阱！尖刺从墙上飞出，你的队伍中可能有人受伤！"
+expedition.003.ok:0 "哎呀！"
+
+# 探险发现小宝藏
+expedition.004.title:0 "一次小发现！"
+expedition.004.desc:0 "你的队伍偶然发现了一个被遗忘的储藏室。里面有一把古老的精灵武器，刀刃仍然锋利！"
+expedition.004.ok:0 "这份财富将有助于我的领地"
+
+expedition.0041.title:0 "一次小发现！"
+expedition.0041.desc:0 "你的队伍偶然发现了一个被遗忘的储藏室。里面有一些 @gold_icon！多么幸运"
+expedition.0041.ok:0 "这份财富将有助于我的领地"
+expedition.0041.minor_gold_discovery:0 "已经添加了 25@gold_icon！到你的探险战利品中"
+
+
+  # # Expedition Finds Thing Of Significance
+  # expedition.005.title:0 "A Major Discovery!!"
+  # expedition.005.desc:0 "Your party comes upo"
+  # expedition.005.ok:0 "This wealth will serve my realm well"
+
+  # Find Sigil Of The Realm Lord
+ expedition.0069.title:0 "一位王者之墓"
+expedition.0069.desc:0 "你来到一个宽敞的大厅，也许曾经是古老领主们举行法庭的地方。\"多么大的发现啊！\" 朱莉娅大喊着，当你和她走向房间中心时，你发现一位久远的国王的躯体；他的王座是他最后的安息之地。在他的颈间挂着一枚光辉夺目的护身符。你担心你可能正在失去自己，因为你发誓这颗令人陶醉的宝石在呼唤着你。\"那么，[ROOT.Char.GetLadyLord]呢？\" 朱莉娅说道。\"你还等什么？"
+expedition.0069.ok:0 "伸手拿取宝石"
+
+expedition.00691.title:0 "强大的存在"
+expedition.00691.desc:0 "触摸宝石时，一道明亮的耀眼光芒笼罩着你和朱莉娅。突然间，你迷失了方向，在一片刺眼的白光暴风雨中的一只小船。你知道你不是孤单的。不是朱莉娅，而是其他巨大而不可思议的意志存在于此。它安慰着你，又让你感到恐惧。你的感官被提升，你能以前所未有的方式感觉到自己的身体。"
+expedition.00691.ok:0 "这是死亡吗？"
+
+expedition.00692.title:0 "惊人的变化"
+expedition.00692.desc:0 "光芒最终消退，世界重新变得清晰。你感觉到不同。看着朱莉娅，你震惊地盯着她现在变长的耳朵。在看到她震惊的表情并指着你的头后，你伸手确认了你的耳朵也变长了。\"[ROOT.Char.GetLadyLord]，我们似乎已经变成了精灵！像古老的传说中的人一样！\" 你惊讶地看着仍然握在手中的宝石。对于这种变化对你意味着什么，尚有待发现。"
+expedition.00692.ok:0 "我们应该回家反思一下"
+
+expedition.006901.desc:0 "你来到一个封闭的石门。在门的一侧墙上刻有文字。\n\n\"[ROOT.Char.GetLadyLord]，这是精灵留下的一个谜\" 朱莉娅说:\"显然我们必须解开它才能继续前行。\""
+expedition.006901.ok:0 "好吧，上面写了什么？"
+
+
+  # Trial of Wisdom
+  expedition.00511.desc:0 "古代的人留下了一道试炼，挑战那些想要冒险他们故土的人。你必须回答给定的谜题，以证明你的智慧并看看前方隐藏了什么。"
+expedition.00511.ok:0 "我准备好了"
+
+# Expedition Has Ended
+expedition.006.title:0 "探险结束"
+expedition.006.desc:0 "你已经耗尽了资助供应，需要回家了"
+expedition.006.ok:0 "我准备回家了"
+
+# Culture evolution discovery
+expedition_unique_encounters.001.title:0 "文化重要性的发现！"
+expedition_unique_encounters.001.desc:0 "你走进一个充满古老奇观的房间。你能感觉到空气中弥漫着神圣火花的存在。\n\n当你四处看时，你发现一个特殊的文物，你能感觉到它脉动着神圣火花。你是境主，本能地知道这个古怪的东西代表了你的领域的古代知识，你可以重新铸造成精灵人民。\n\n这是什么文物？"
+
+expedition_unique_encounters.001.tribal_ascension:0 "一个记录着部落人民历史的图腾"
+expedition_unique_encounters.001.fey_agoras:0 "一幅描绘学者在广场上争论的宏伟壁画"
+expedition_unique_encounters.001.beast_tamers:0 "皇家兽栏的养殖指南第三版"
+expedition_unique_encounters.001.woodland_bounty:0 "装满你从未见过的奇怪种子的木盒"
+expedition_unique_encounters.001.elf_craftsmanship:0 "一套复杂的金属工具，也许是来自铁匠铺"
+expedition_unique_encounters.001.adventure_guilds:0 "自豪地展示着珍宝和奖杯的男女肖像"
+expedition_unique_encounters.001.people_of_the_bow:0 "一张由未知木材制成、工艺精湛的弓"
+
+expedition_unique_encounters.0022.title:0 "发现传送门导航中继！"
+expedition_unique_encounters.0022.desc:0 "你在一个布满蜘蛛网的、摆满了复杂的钢铁装置的旧储藏室中搜寻。在垃圾中，你发现了一个真正的宝藏！这是你一直在寻找的传送门导航中继！"
+expedition.030.takeNavigationRelay:0 "离终极目标更近了一步！"
+
+expedition_unique_encounters.0021.title:0 "发现传送门电容器！"
+expedition_unique_encounters.0021.desc:0 "你正在翻找一个看起来像是某种古老神殿的地方。在一个后房里，你发现了一个布满灰尘的老箱子。打开后，你欣喜若狂。这是一个传送门电容器水晶！恰好是恢复宏伟传送门所需的！"
+expedition.0021.takeCapacitor:0 "离终极目标更近了一步！"

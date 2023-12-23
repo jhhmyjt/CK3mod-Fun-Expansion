@@ -1,0 +1,37 @@
+﻿l_simp_chinese:
+  ### MAGISTRATION ###
+  # New Magi is recruited
+  aeluran_advisor_task.0101.t:0 "一位新的法师加入我们的队伍！"
+  aeluran_advisor_task.0101.desc:0 "一位强大的法师，被 [councillor.GetTitledFirstName] 说服加入你的法师核心！"
+  aeluran_advisor_task.0101.a:0 "干得好 [councillor.GetTitledFirstName]！我们变得更加强大"
+  aeluran_advisor_task.0101.b:0 "我们不需要这样的法师，把他们送走"
+
+  # advisor heals child of devotee_target
+  aeluran_advisor_task.01021.t:0 "宗教陶醉！"
+  aeluran_advisor_task.01021.desc:0 "真是个奇迹！[devotee_target.GetName] 的孩子被 [councillor.GetTitledFirstName] 治愈了！"
+  aeluran_advisor_task.01021.a:0 "干得好 [councillor.GetTitledFirstName]！他们将终身感激"
+  # advisor has private session with devotee_target
+  aeluran_advisor_task.01022.t:0 "宗教陶醉！"
+  aeluran_advisor_task.01022.desc:0 "在与 [councillor.GetTitledFirstName] 进行私人会话后，[devotee_target.GetName] 显得更有活力。"
+  aeluran_advisor_task.01022.a:0 "你做得很好 [councillor.GetTitledFirstName]，能激发这样的热诚。"
+  # advisor mesmerizes crowd with spark
+  aeluran_advisor_task.01023.t:0 "宗教陶醉！"
+  aeluran_advisor_task.01023.desc:0 "人群被 [councillor.GetTitledFirstName] 的表演迷住了。"
+  aeluran_advisor_task.01023.a:0 "赞美，我会利用他们的热诚。"
+
+  # Increase Control in random counties
+  aeluran_advisor_task.0103.t:0 "人民服务"
+  aeluran_advisor_task.0103.desc:0 "[councillor.GetTitledFirstName] 已经使人民归顺于我们的事业。"
+  aeluran_advisor_task.0103.a:0 "干得好 [councillor.GetTitledFirstName]！"
+
+
+  ### UNDERMINE ###
+  aeluran_advisor_task.0301.t:0 "这片土地真正属于谁？"
+  aeluran_advisor_task.0301.desc:0 "[councillor.GetTitledFirstName] 走到你身边，低声对你说。\n\n我的忠实追随者已经在 [county.GetName] 定居，并在卑微的人群中传播了真理。[county.GetName] 没有真正的 [ROOT.Char.GetLadyLord|U]，只有你"
+  aeluran_advisor_task.0301.a:0 "干得好 [councillor.GetTitledFirstName]！[county.GetName] 很快就会是我的，因为人们期望着它"
+  aeluran_advisor_task.0301.b:0 "我感激你的努力 [councillor.GetTitledFirstName]，但现在我不会再插手了"
+
+  aeluran_advisor_task.0302.t:0 "这片土地真正属于谁！"
+  aeluran_advisor_task.0302.desc:0 "[councillor.GetTitledFirstName] 笑容满面地走到你身边。\n\n我的 [ROOT.Char.GetLadyLord|U]，忠实的追随者们已经在 [county.GetName] 的农民中引起了狂热。不仅仅是那里的人们呼喊着要你的领导，整个公国也已经被转变，可能会被我们控制。他们不想要的不是 [ROOT.Char.GetLadyLord|U]，而是你！"
+  aeluran_advisor_task.0302.a:0 "非常出色的工作 [councillor.GetTitledFirstName]！这个公国很快就会属于我的"
+  aeluran_advisor_task.0302.b:0 "我感激你的努力 [councillor.GetTitledFirstName]，但现在我不会再插手了"

@@ -1,10 +1,11 @@
 ﻿l_english:
-rule_hc_seduce_court_setting:0 "Till Death Seduce/Court Setting"
+game_rule_category_td: "@hc_text_icon_02! Till Death"
+rule_hc_seduce_court_setting:0 "@hc_text_icon_02!Till Death Seduce/Court Setting"
   setting_hc_seduce_court_ai_player_cannot:0 "Restrict ai and players"
   setting_hc_seduce_court_ai_player_cannot_desc:0 "both the ai and the player are limited by the trait to die for (seduce/court)"
   setting_hc_seduce_court_ai_cannot:0 "Limit ai only"
   setting_hc_seduce_court_ai_cannot_desc:0 "Only ai will be limited by the trait to die for (seduce/court)"
-  rule_hc_certificate_quantity_setting:0 "Till Death Contract Setting"
+  rule_hc_certificate_quantity_setting:0 "@hc_text_icon_02!Till Death Contract Setting"
   setting_hc_one_certificate_quantity:0 "One to One"
   setting_hc_one_certificate_quantity_desc:0 "A player can only make a contract with one person"
   setting_hc_more_certificate_quantity:0 "One-to-many"

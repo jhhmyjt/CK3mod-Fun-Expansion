@@ -1,0 +1,56 @@
+﻿l_simp_chinese:
+   #expedition
+ activity_expedition:0 "远征"
+expedition_phase_desc:0 "探索废墟，发现你能找到的一切"
+activity_expedition_name:0 "[ACTIVITY.GetOwner.GetNamePossessiveOrMy|U] 远征"
+activity_expedition_desc:4 "远征活动旨在重新发现古代精灵文明的秘密。\n\n你和一队骑士和冒险家将探索精灵废墟，寻找失落的知识和宝藏"
+activity_expedition_owner:0 "冒险家"
+
+activity_window_character_adventurer:0 "冒险家\n[Character.GetShortUINameNoTooltip|U]"
+
+base_camp_phase:0 "在基地营地准备"
+
+TRAVEL_NAME_FOR_activity_expedition:1 "[Character.GetFirstNamePossessiveNoTooltip] 前往远征地点"
+
+# 远征活动菜单选项
+activity_expedition_host_desc:0 "$BULLET_WITH_TAB$可能获得 [gold_i][gold|E]\n$BULLET_WITH_TAB$可能获得古代精灵 [prowess_i][artifacts|E]\n$BULLET_WITH_TAB$可能发现新的 @cultural_acceptance_icon! [culture_tradition|E]"
+
+activity_expedition_host_desc_prestige:0 "$BULLET_WITH_TAB$参与者可能获得 [prestige_i|E][prestige|E]\n$BULLET_WITH_TAB$参与者可能失去 [stress_loss_i][stress|E]\n"
+
+activity_expedition_host_desc_recent:0 "\n@warning_icon!
+
+# 计划选项
+expedition_option_funding:0 "远征资金"
+
+expedition_funding_min:0 "最低资金"
+expedition_funding_min_desc:0 "最基本的资金，只带上必需品！\n\n足够供应 #bold 两天 #!的废墟探险"
+
+
+expedition_funding_mid:0 "平均资金"
+expedition_funding_mid_desc:0 "足够的资金，也许我们可以在这次旅行中吃上一顿体面的饭菜！\n\n足够供应 #bold 三天 #!的废墟探险"
+
+expedition_funding_max:0 "奢华资金"
+expedition_funding_max_desc:0 "现在说的就是这个！带个帐篷？我们干脆带个小城堡吧！\n\n足够供应 #bold 五天 #!的废墟探险"
+
+expedition_option_party_size:0 "远征队规模"
+
+expedition_party_size_min:0 "小团队"
+expedition_party_size_min_desc:0 "我们只需要一小群冒险家。太多人会拖慢我们的速度！\n\n足够的黄金，可以带上 #bold 三名 #!冒险家"
+
+expedition_party_size_mid:0 "适中规模团队"
+expedition_party_size_mid_desc:0 "一支可靠的冒险家小队！\n\n足够的黄金，可以带上 #bold 五名 #!冒险家"
+
+expedition_party_size_max:0 "庞大随行团队"
+expedition_party_size_max_desc:0 "这些天任何人都可以成为冒险家，还是一并带上整个王国吧...\n\n足够的黄金，可以带上 #bold 七名 #!冒险家"
+
+# Logs
+expedition_completed_success_log_title:0 "远征结果 42069"
+expedition_completed_success_log:0 "[CHARACTER.GetShortUINamePossessive|U] 队伍找到了一些古代精灵装备"
+
+# Conclusion
+expedition.conclusion:1 "远征是关于重新发现我们所失去的。今天，我们为这个事业做出了贡献！"
+
+activity_expedition_province_desc:0 "你在[ROOT.Province.GetName]进行了一次远征\n在所有重要的发现都被完成后，该省将不再是一个有效的远征地点。\n"
+activity_expedition_guest_desc:1 "$BULLET_WITH_TAB$ 参与者可能获得 [adventurer_experience|E]\n$BULLET_WITH_TAB$ 参与者可能提高对其他参与者的 [opinion|E]\n$BULLET_WITH_TAB$ 参与者可能获得 [gold|E] 和/或 [artifact|E]\n$BULLET_WITH_TAB$ 参与者可能受伤或丧生"
+
+activity_expedition_selection_tooltip:1 "探索古代精灵废墟，试图发现那里被时间遗忘的秘密。\n\n预期奖励:\n$BULLET_WITH_TAB$[gold_i] [gold|E]\n$BULLET_WITH_TAB$[prowess_i] [artifacts|E]\n$BULLET_WITH_TAB$@cultural_acceptance_icon! [culture_tradition|E]"

@@ -1,0 +1,18 @@
+texticon = {
+	icon = hc_text_icon_01
+	iconsize = {
+		texture = "gfx/interface/icons/hc_text_icon_01.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}
+texticon = {
+	icon = hc_text_icon_02
+	iconsize = {
+		texture = "gfx/interface/icons/hc_text_icon_02.dds"
+		size = { 25 25 }
+		offset = { 0 6 }
+		fontsize = 16
+	}
+}

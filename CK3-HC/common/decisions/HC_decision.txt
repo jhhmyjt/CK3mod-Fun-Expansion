@@ -6,6 +6,7 @@
 # 	major = yes
 # 	is_shown = {
 # 		is_ai = no
+# 		debug_only = yes
 # 	}
 # 	is_valid_showing_failures_only = {
 # 	}
@@ -16,7 +17,11 @@
 # 		prestige = 100
 # 	}
 # 	effect = {
-# 		trigger_event = hc.000
+# 		# trigger_event = hc.000
+# 		error_log = "HC Log"
+# 		error_log = "hc_debug_decision: [ROOT.GetCharacter.GetFirstNameNoTooltip]"
+# 		debug_log = "HC Debug Log"
+# 		debug_log = "hc_debug_decision: [ROOT.GetCharacter.GetFirstNameNoTooltip]"
 # 	}
 # 	ai_potential = {
 # 		always = no

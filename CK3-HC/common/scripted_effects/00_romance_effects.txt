@@ -530,6 +530,8 @@ had_sex_with_effect = {
 				}
 			}
 		}
+		debug_log = "HC_Debug_Log"
+		debug_log = "had_sex_with_effect trigger 1"
 	}
 	else_if = {
 		limit = {
@@ -588,6 +590,8 @@ had_sex_with_effect = {
 				}
 			}
 		}
+		debug_log = "HC_Debug_Log"
+		debug_log = "had_sex_with_effect trigger 2"
 	}
 	else = {
 		if = {

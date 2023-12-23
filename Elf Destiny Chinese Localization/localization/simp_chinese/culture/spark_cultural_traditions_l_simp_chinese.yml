@@ -1,0 +1,52 @@
+﻿l_simp_chinese:
+  # ========= 传统 =========
+
+  elf_tradition_not_discovered:0 "你尚未发现这个传统... 尝试进行一次远征吧！"
+  elf_blessing_not_given:0 "神圣火花尚未赐予你这份祝福"
+
+  # 精灵工艺
+  tradition_elf_craftsmanship_name:0 "精灵工艺"
+  tradition_elf_craftsmanship_desc:2 "这个文化有着完善各种手艺的悠久传统，他们的工匠以技艺和对细节的关注而闻名。他们的作品常常备受追捧，因此他们的工匠往往需求量巨大。"
+
+  # 冒险行会
+  tradition_adventure_guilds_name:0 "冒险行会"
+  tradition_adventure_guilds_desc:2 "这个文化渴望探索和发现的满足感。他们已经将这种欲望制度化为一系列行会网络，资助冒险者和探险家探索新的土地和新的民族。这些行会往往是第一个接触新文化的人，也是第一个带回新思想和技术的人。"
+
+  # 精灵战略
+  tradition_fey_strategics_name:0 "精灵战略"
+  tradition_fey_strategics_desc:0 "$innovation_fey_strategics_desc$"
+  innovation_fey_strategics_desc:1 "精灵骑兵弓手从出生就被培养与他们的坐骑建立联系。$fey_riders$ 以完美的精准度和狂暴的速度发动攻击。"
+  culture_parameter_unlock_maa_fey_riders:0 "可以招募 [GetMaA('fey_riders').GetName] 作为 [men_at_arms|E]"
+
+  fey_riders:1 "精灵骑手"
+  fey_riders_flavor:1 "#F与他们的坐骑完美连接并擅长弓术，神秘的 $fey_riders$ 精灵骑兵弓手在战场上通过惊人的速度和骚扰摧毁敌军。#!"
+
+  # 古老之道
+  tradition_the_old_ways_name:0 "古老之道"
+  tradition_the_old_ways_desc:0 "这个文化古老而神秘，它寻找过去的指引。他们知道过去有秘密可寻，而且古老的方法通常是最好的方法。"
+
+  culture_parameter_unlock_maa_fey_archers:0 "可以招募 [GetMaA('fey_archers').GetName] 作为 [men_at_arms|E]"
+
+  # 发情期
+  tradition_the_rut_name:0 "繁衍期"
+  tradition_the_rut_desc:0 "神圣火花通过创造生命来增加力量，因此为了进一步推动这一目标，它显露了它的意志。这个文化中肥沃的成员并不是那么不经意地被神圣火花推动着繁荣和繁衍。"
+
+  culture_parameter_the_rut_enabled:0 "每隔几年，这个文化中的年轻成员会被一种强烈的欲望驱使进行交配。受影响的成员在发情期过去之前会获得 [GetTrait('lustful').GetName( GetNullCharacter )] 特质"
+
+  culture_parameter_fecund_festival_enabled:0 "解锁白兔盛宴活动 | (仍在建设中，请稍后再来)"
+
+  culture_parameter_multi_birthing:0 "这个文化中的成员更有可能在每次分娩时生育多个孩子"
+
+  # 贵族畜牧
+  tradition_noble_husbandry_name:0 "贵族畜牧"
+  tradition_noble_husbandry_desc:0 "这个文化过分迷恋他们的血统和纯种的家系。他们对优生学的谨慎实践导致了一个贵族文化，贵族在身体和心智上都优于普通人。"
+
+  culture_parameter_higher_level_base_genetics_unlocked:0 "通过精心培育，精灵可以进一步发掘他们的基因潜力，并成为 [GetTrait('beauty_good_4').GetName( GetNullCharacter )]、[GetTrait('intellect_good_4').GetName( GetNullCharacter )] 和 [GetTrait('physique_good_4').GetName( GetNullCharacter )]"
+
+  # 神圣灵感
+  tradition_divine_inspirations_name:0 "神圣灵感"
+  tradition_divine_inspirations_desc:0 "这个文化的艺术家属于最高阶层。神圣火花赋予了他们创造真正神圣艺术品的能力。他们的作品常常蕴含有魔法属性，深受富有和有权势的人们追捧。"
+
+  # 锻炼的火花血脉
+  tradition_tempered_spark_veins_name:0 "锻炼的火花血脉"
+  tradition_tempered_spark_veins_desc:0 "这个文化的成员被赋予了更强大的驾驭神圣火花的能力。他们的血脉被神圣火花的力量所磨砺，他们能够更轻松和更强大地引导它
