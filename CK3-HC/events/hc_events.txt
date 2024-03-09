@@ -196,7 +196,16 @@ hc.003 = {
 		}
 	}
 	immediate = {
-		add_character_modifier = hc_char_modifier_02
+		hidden_effect = {
+			send_interface_message = {
+				type = event_generic_good
+				title = hc.003_msg_t
+				right_icon = root
+				root={
+					add_character_modifier = hc_char_modifier_02
+				}
+			}
+		}
 	}
 }
 
@@ -212,18 +221,28 @@ hc.004 = {
 		}
 	}
 	immediate = {
-		remove_character_modifier = hc_char_modifier_02
-		if = {
-			limit = {
-				Not = {
-					has_character_modifier = hc_02_modifier
+		hidden_effect = {
+			send_interface_message = {
+				type = event_generic_good
+				title = hc.004_msg_t
+				right_icon = root
+				root={
+					remove_character_modifier = hc_char_modifier_02
+					if = {
+						limit = {
+							Not = {
+								has_character_modifier = hc_02_modifier
+							}
+						}
+						add_character_modifier = {
+							modifier = hc_02_modifier
+							months = 3
+						}
+					}
 				}
 			}
-			add_character_modifier = {
-				modifier = hc_02_modifier
-				months = 3
-			}
 		}
+		
 	}
 }
 

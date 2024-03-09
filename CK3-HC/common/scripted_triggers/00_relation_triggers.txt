@@ -49,7 +49,7 @@ can_set_relation_potential_lover_trigger = {
 	}
 }
 
-#TD
+#TD HC
 can_set_relation_lover_trigger = {
 	trigger_if = {
 		limit = {
@@ -109,6 +109,7 @@ can_set_relation_lover_trigger = {
 			}
 		}
 	}
+	
 	is_adult = yes
 	NOT = {
 		this = $CHARACTER$
@@ -123,7 +124,7 @@ can_set_relation_lover_trigger = {
 	}
 }
 
-#TD
+#TD HC
 can_set_relation_soulmate_trigger = {
 	trigger_if = {
 		limit = {
@@ -183,6 +184,7 @@ can_set_relation_soulmate_trigger = {
 			}
 		}
 	}
+	
 	is_adult = yes
 	NOT = {
 		this = $CHARACTER$
@@ -489,14 +491,14 @@ has_any_mild_good_relationship_with_character_trigger = {
 		has_relation_ward = $CHARACTER$
 		AND = {
 			betrothed = $CHARACTER$
-			reverse_opinion = {
+			opinion = {
 				target = $CHARACTER$
 				value >= 1
 			}
 		}
 		AND = {
 			is_spouse_of = $CHARACTER$
-			reverse_opinion = {
+			opinion = {
 				target = $CHARACTER$
 				value >= 1
 			}
@@ -510,7 +512,7 @@ has_any_moderate_good_relationship_with_character_trigger = {
 		has_relation_friend = $CHARACTER$
 		AND = {
 			is_spouse_of = $CHARACTER$
-			reverse_opinion = {
+			opinion = {
 				target = $CHARACTER$
 				value >= medium_positive_opinion
 			}
@@ -738,6 +740,7 @@ is_of_major_interest_trigger = {
 	}
 	OR = {
 		is_heir_of = $CHARACTER$
+		is_diarch_of_target = $CHARACTER$
 		AND = {
 			exists = $CHARACTER$.liege
 			this = $CHARACTER$.liege
@@ -1117,8 +1120,7 @@ minor_interest_close_relatives_trigger = {
 			is_cousin_of = $CHARACTER$
 			NOT = {
 				is_close_family_of = $CHARACTER$
-			}
-			#Because... incest. Sigh.
+			}			#Because... incest. Sigh.
 		}
 		major_interest_potential_heirs_trigger = {
 			CHARACTER = $CHARACTER$
@@ -1416,8 +1418,7 @@ has_RelationToMe_relation = {
 	save_temporary_scope_as = relation_check
 	NOT = {
 		this = $CHARACTER$
-	}
-	# Don't print our relation to ourselves!
+	}	# Don't print our relation to ourselves!
 	OR = {
 		is_close_or_extended_family_of = $CHARACTER$
 		any_spouse = {

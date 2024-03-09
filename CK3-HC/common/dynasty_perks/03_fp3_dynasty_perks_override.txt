@@ -2,7 +2,7 @@
 	# Sense of Purpose
 	legacy = fp3_khvarenah_legacy_track
 	can_be_picked = {
-		or = {
+		OR = {
 			eligible_for_fp3_khvarenah_legacy_trigger = yes
 			hc_unlock_dynasty_legacy = yes
 		}
@@ -38,7 +38,7 @@ fp3_khvarenah_legacy_2 = {
 	# Lofty Ambitions 
 	legacy = fp3_khvarenah_legacy_track
 	can_be_picked = {
-		or = {
+		OR = {
 			eligible_for_fp3_khvarenah_legacy_trigger = yes
 			hc_unlock_dynasty_legacy = yes
 		}
@@ -62,7 +62,7 @@ fp3_khvarenah_legacy_3 = {
 	# Light of Glory 
 	legacy = fp3_khvarenah_legacy_track
 	can_be_picked = {
-		or = {
+		OR = {
 			eligible_for_fp3_khvarenah_legacy_trigger = yes
 			hc_unlock_dynasty_legacy = yes
 		}
@@ -88,7 +88,7 @@ fp3_khvarenah_legacy_4 = {
 	# Ancient Authority
 	legacy = fp3_khvarenah_legacy_track
 	can_be_picked = {
-		or = {
+		OR = {
 			eligible_for_fp3_khvarenah_legacy_trigger = yes
 			hc_unlock_dynasty_legacy = yes
 		}
@@ -118,7 +118,7 @@ fp3_khvarenah_legacy_5 = {
 	# Splendor Reborn 
 	legacy = fp3_khvarenah_legacy_track
 	can_be_picked = {
-		or = {
+		OR = {
 			eligible_for_fp3_khvarenah_legacy_trigger = yes
 			hc_unlock_dynasty_legacy = yes
 		}
