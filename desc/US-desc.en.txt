@@ -1,0 +1,16 @@
+[h1]Overview[/h1].
+Unlimited spouses for player, with Ai limited to single spouses. This rule ignores the original mate system.
+
+[img]https://i.imgur.com/hT9aoW2.png[/img]
+
+[i]The UI Mod:[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2838140104]RUI:Character[/url][/i]
+
+[h1]Compatibility[/h1].
+Compatible with existing save
+Modified original file: 00_marriage_interactions.txt 00_ritual_traditions.txt 00_doctrines.txt
+[h1]Last[/h1]
+If you think this mod is not bad, you can give me a like👍
+Or, Buy me a cup of coffee:
+[url=https://www.buymeacoffee.com/jhhmyjt][img]https://media.giphy.com/media/7kZE0z52Sd9zSESzDA/giphy.gif[/img][/url]
+
+[b]✨✨✨✨✨✨✨✨✨✨✨✨✨[/b]

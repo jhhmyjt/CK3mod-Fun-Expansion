@@ -1,0 +1,18 @@
+[h1]概述[/h1]
+控制角色无限配偶，Ai限制为单配偶。该规则无视原版配偶制度
+
+[img]https://i.imgur.com/hT9aoW2.png[/img]
+
+[i]演示图中UI Mod:[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2838140104]RUI:Character[/url][/i]
+
+[h1]兼容性[/h1]
+兼容现有存档
+修改过的原文件：00_marriage_interactions.txt 00_ritual_traditions.txt 00_doctrines.txt
+
+[h1]最后[/h1]
+
+如果你觉得这个mod还不错的话, 可以给我一个赞👍
+或者，你可以考虑支持一下我：
+[img]https://i.imgur.com/AZYMzbU.jpg[/img]
+
+[b]✨✨✨大家的支持就是我更新的最大动力✨✨✨[/b]

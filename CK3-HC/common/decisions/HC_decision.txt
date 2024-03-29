@@ -18,10 +18,21 @@
 # 	}
 # 	effect = {
 # 		# trigger_event = hc.000
-# 		error_log = "HC Log"
-# 		error_log = "hc_debug_decision: [ROOT.GetCharacter.GetFirstNameNoTooltip]"
-# 		debug_log = "HC Debug Log"
-# 		debug_log = "hc_debug_decision: [ROOT.GetCharacter.GetFirstNameNoTooltip]"
+# 		# error_log = "HC Log"
+# 		# error_log = "hc_debug_decision: [ROOT.GetCharacter.GetFirstNameNoTooltip]"
+# 		# debug_log = "HC Debug Log"
+# 		# debug_log = "hc_debug_decision: [ROOT.GetCharacter.GetFirstNameNoTooltip]"
+# 		if={
+# 			limit = {
+# 				any_spouse = {
+# 					count = 0
+# 				}
+# 				any_concubine = {
+# 					count = 0
+# 				}
+# 			}
+# 			add_piety = 50   
+# 		}
 # 	}
 # 	ai_potential = {
 # 		always = no
