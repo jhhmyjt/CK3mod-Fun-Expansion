@@ -136,8 +136,8 @@ hc_wonder_030 = {
 	county_modifier = {
 		development_growth = 0.2
 		tax_mult = 0.2
-		monthly_county_control_change_add = 0.5
-		monthly_county_control_change_factor = 0.2
+		monthly_county_control_growth_add = 0.5
+		monthly_county_control_growth_factor = 0.2
 		development_growth_factor = 0.2
 	}
 	ai_value = {
@@ -322,7 +322,7 @@ hc_scared_altar = {
 	character_modifier = {
 		monthly_dynasty_prestige = 5
 		monthly_dynasty_prestige_mult = 0.3
-		monthly_county_control_change_factor = 0.1
+		monthly_county_control_growth_factor = 0.1
 		religious_head_opinion = 20
 		dynasty_house_opinion = 10
 	}
@@ -348,7 +348,7 @@ hc_chrysotriclinium = {
 	}
 	county_modifier = {
 		development_growth = 0.25
-		monthly_county_control_change_add = 0.3
+		monthly_county_control_growth_add = 0.3
 	}
 	ai_value = {
 		base = 0

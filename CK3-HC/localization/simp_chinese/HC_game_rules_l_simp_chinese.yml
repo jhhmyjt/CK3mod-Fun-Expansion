@@ -1,5 +1,10 @@
 ﻿l_simp_chinese:
  game_rule_category_hc: "@hc_text_icon_01! 娱乐向扩展"
+ rule_hc_army_active_setting:0 "@hc_text_icon_01! Fun Expansion特殊兵种启用"
+ setting_hc_army_inactive:0 "禁用"
+ setting_hc_army_inactive_desc:0 "禁用特殊兵种"
+ setting_hc_army_active:0 "启动"
+ setting_hc_army_active_desc:0 "启动特殊兵种"
  rule_hc_army_strength_setting:0 "@hc_text_icon_01! Fun Expansion兵种强度"
  setting_hc_army_normal_strength:0 "正常强度"
  setting_hc_army_normal_strength_desc:0 "正常强度的兵种"

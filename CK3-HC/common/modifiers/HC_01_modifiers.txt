@@ -40,7 +40,7 @@ hc_03_modifier = {
 #余威犹在
 hc_04_modifier = {
 	icon = county_modifier_control_positive
-	monthly_county_control_change_add = 5
+	monthly_county_control_growth_add = 5
 	general_opinion = 10
 	dynasty_house_opinion = 10
 	councillor_opinion = 10
@@ -62,7 +62,7 @@ hc_05_modifier = {
 # hc_06_modifier = {
 # 	icon = county_modifier_control_positive
 # 	# development_growth = 1
-# 	monthly_county_control_change_factor = 0.1
+# 	monthly_county_control_growth_factor = 0.1
 # 	development_growth_factor = 0.2
 # 	county_opinion_add = 15
 # }
@@ -105,7 +105,7 @@ hc_12_modifier = {
 	knight_effectiveness_mult = 0.1
 	army_maintenance_mult = -0.1
 	controlled_province_advantage = 5
-	monthly_county_control_change_factor = 0.2
+	monthly_county_control_growth_factor = 0.2
 	icon = horse_positive
 }
 

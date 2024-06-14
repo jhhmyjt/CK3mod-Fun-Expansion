@@ -1,6 +1,6 @@
 ﻿l_simp_chinese:
  hc_designate_knight_interaction:0 "册封圣殿骑士"
- hc_designate_knight_interaction_desc:0 "向[recipient.GetFirstNameNoTooltip]提出作为你的[recipient.Custom('HC_knight')|U]为你而战。\n\n#weak [recipient.Custom('HC_knight')|U]是你从众多[direct_vassals|E]中挑选的精英。可以提议[close_family|E]、[friend|E]、[mentor|E]等和你关系匪浅的角色成为[recipient.Custom('HC_knight')|U]，他们可以在你需要的时候为你赴汤蹈火！\n(每位[recipient.Custom('HC_knight')|U]有十年任期，不可连任，一生只有一次！#"
+ hc_designate_knight_interaction_desc:0 "向[recipient.GetFirstNameNoTooltip]提出作为你的[recipient.Custom('HC_knight')|U]为你而战。\n\n#weak [recipient.Custom('HC_knight')|U]是你从众多[direct_vassals|E]中挑选的精英。可以提议[close_family|E]、[friend|E]、[mentor|E]等和你关系匪浅的角色成为[recipient.Custom('HC_knight')|U]，他们可以在你需要的时候为你赴汤蹈火！\n(每位[recipient.Custom('HC_knight')|U]有三十年任期，不可连任，一生只有一次！#"
  hc_designate_knight_interaction_notification:0 "[recipient.GetShortUIName]成为一名[recipient.Custom('HC_knight')|U]！"
  interaction_common_desc:0 "[recipient.GetSheHe|U]和你关系匪浅：$VALUE|=+0$"
  interaction_god_descent:0 "[GetTrait('god_descent').GetName( recipient )]：$VALUE|=+0$"

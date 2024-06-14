@@ -91,7 +91,7 @@ hc_temple_legacy_4 = {
 		monthly_court_grandeur_change_mult = 0.5
 		county_opinion_add = 10
 		development_growth_factor = 0.25
-		monthly_county_control_change_factor = 0.2
+		monthly_county_control_growth_factor = 0.2
 	}
 	effect = {
 		custom_tooltip = hc_temple_legacy_dynasty_effect_tt_04

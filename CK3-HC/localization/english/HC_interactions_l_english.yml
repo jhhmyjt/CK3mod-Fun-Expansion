@@ -1,6 +1,6 @@
 ﻿l_english:
  hc_designate_knight_interaction:0 "Designate Templar"
- hc_designate_knight_interaction_desc:0 "Offer to [recipient.GetFirstNameNoTooltip] to fight for you as your [recipient.Custom('HC_knight')|U]. \n\n#weak [recipient.Custom('HC_knight')|U] is your pick of the cream of the crop from the many [direct_vassals|E]. Characters such as [close_family|E], [friend|E], [mentor|E], and others who are very close to you can be proposed to become [recipient.Custom('HC_knight')|U], and they can go to bat for you in your time of need! \n(Each [recipient.Custom('HC_knight')|U] has a ten-year, non-renewable, once-in-a-lifetime term! #"
+ hc_designate_knight_interaction_desc:0 "Offer to [recipient.GetFirstNameNoTooltip] to fight for you as your [recipient.Custom('HC_knight')|U]. \n\n#weak [recipient.Custom('HC_knight')|U] is your pick of the cream of the crop from the many [direct_vassals|E]. Characters such as [close_family|E], [friend|E], [mentor|E], and others who are very close to you can be proposed to become [recipient.Custom('HC_knight')|U], and they can go to bat for you in your time of need! \n(Each [recipient.Custom('HC_knight')|U] has a thirty-year, non-renewable, once-in-a-lifetime term! #"
  hc_designate_knight_interaction_notification:0 "[recipe.GetShortUIName] Become a [recipe.Custom('HC_knight')|U]!"
  interaction_common_desc:0 "[recent.GetSheHe|U] is very close to you: $VALUE|=+0$"
  interaction_god_descent:0 "[GetTrait('god_descent').GetName( recipient )]: $VALUE|=+0$"

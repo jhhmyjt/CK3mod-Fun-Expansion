@@ -64,6 +64,7 @@ hc_judgment_heavy_cavalry = {
 	}
 	can_recruit = {
 		has_game_rule = hc_army_normal_strength
+		has_game_rule = hc_army_active
 		exists = dynasty
 		dynasty = {
 			has_dynasty_perk = hc_temple_legacy_3
@@ -117,10 +118,11 @@ hc_footmen = {
 	}
 	stack = 200
 	ai_quality = {
-		value = 0
+		value = -1000
 	}
 	can_recruit = {
 		has_game_rule = hc_army_normal_strength
+		has_game_rule = hc_army_active
 		exists = dynasty
 		dynasty = {
 			has_dynasty_perk = hc_temple_legacy_1
@@ -186,6 +188,7 @@ hc_guards = {
 	}
 	can_recruit = {
 		has_game_rule = hc_army_normal_strength
+		has_game_rule = hc_army_active
 		exists = dynasty
 		dynasty = {
 			has_dynasty_perk = hc_temple_legacy_2
@@ -260,6 +263,7 @@ hc_judgment_heavy_cavalry_02 = {
 	}
 	can_recruit = {
 		has_game_rule = hc_army_low_strength
+		has_game_rule = hc_army_active
 		exists = dynasty
 		dynasty = {
 			has_dynasty_perk = hc_temple_legacy_3
@@ -313,10 +317,11 @@ hc_footmen_02 = {
 	}
 	stack = 200
 	ai_quality = {
-		value = 0
+		value = -1000
 	}
 	can_recruit = {
 		has_game_rule = hc_army_low_strength
+		has_game_rule = hc_army_active
 		exists = dynasty
 		dynasty = {
 			has_dynasty_perk = hc_temple_legacy_1
@@ -382,6 +387,7 @@ hc_guards_02 = {
 	}
 	can_recruit = {
 		has_game_rule = hc_army_low_strength
+		has_game_rule = hc_army_active
 		exists = dynasty
 		dynasty = {
 			has_dynasty_perk = hc_temple_legacy_2
@@ -456,6 +462,7 @@ hc_judgment_heavy_cavalry_03 = {
 	}
 	can_recruit = {
 		has_game_rule = hc_army_bottom_strength
+		has_game_rule = hc_army_active
 		exists = dynasty
 		dynasty = {
 			has_dynasty_perk = hc_temple_legacy_3
@@ -509,10 +516,11 @@ hc_footmen_03 = {
 	}
 	stack = 100
 	ai_quality = {
-		value = 0
+		value = -1000
 	}
 	can_recruit = {
 		has_game_rule = hc_army_bottom_strength
+		has_game_rule = hc_army_active
 		exists = dynasty
 		dynasty = {
 			has_dynasty_perk = hc_temple_legacy_1
@@ -578,6 +586,7 @@ hc_guards_03 = {
 	}
 	can_recruit = {
 		has_game_rule = hc_army_bottom_strength
+		has_game_rule = hc_army_active
 		exists = dynasty
 		dynasty = {
 			has_dynasty_perk = hc_temple_legacy_2

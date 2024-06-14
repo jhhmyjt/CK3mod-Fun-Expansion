@@ -30,6 +30,18 @@ hc_army_strength_setting = {
 	hc_army_bottom_strength = {
 	}
 }
+#军种数值设置
+hc_army_active_setting = {
+	categories = {
+		difficulty
+		hc
+	}
+	default = hc_army_active
+	hc_army_inactive = {
+	}
+	hc_army_active = {
+	}
+}
 
 #家族修正设置
 hc_dynasty_modifier_strength_setting = {
