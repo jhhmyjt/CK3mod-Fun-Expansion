@@ -1,0 +1,4 @@
+﻿td_decision = {
+	sort_order = 86
+	gui_tags = { big_button }
+}

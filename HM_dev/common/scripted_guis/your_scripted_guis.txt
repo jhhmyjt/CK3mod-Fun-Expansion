@@ -1,0 +1,42 @@
+﻿show_manage_holdings_window = {
+	open_window = manage_holdings_window
+	trigger = {
+		always = yes
+	}
+	on_open = {
+		clear_window = holdings_container
+		every_held_title = {
+			limit = {
+				holder = scope:actor
+			}
+			add_to_gui_list = {
+				list_name = holdings_container
+				display_name = name
+				template = {
+					name = "holding_template"
+					position = { x = 0 y = 0 }
+					size = { width = 780 height = 50 }
+					containerWindowType = {
+						name = "holding_info"
+						position = { x = 0 y = 0 }
+						size = { width = 780 height = 50 }
+						layout = horizontal
+						text = {
+							name = "holding_name"
+							position = { x = 10 y = 0 }
+							size = { width = 300 height = 50 }
+							text = name
+						}
+						buttonType = {
+							name = "build_button"
+							position = { x = 600 y = 10 }
+							size = { width = 100 height = 30 }
+							buttonText = "Build"
+							click = "build_in_holding"
+						}
+					}
+				}
+			}
+		}
+	}
+}

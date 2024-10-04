@@ -151,6 +151,7 @@ pregnancy.1001 = {
 	}
 	left_portrait = {
 		character = root
+		animation = war_over_tie
 	}
 	right_portrait = {
 		character = scope:real_father
@@ -1075,6 +1076,12 @@ pregnancy.2101 = {
 				save_scope_as = spouse
 			}
 		}
+		create_character_memory = {
+			type = child_premature
+			participants = {
+				mother = root
+			}
+		}
 		hidden_effect = {
 			end_pregnancy = yes
 			pregnancy_cleanup_effect = yes
@@ -1116,6 +1123,14 @@ pregnancy.2102 = {
 	right_portrait = {
 		character = scope:mother
 		animation = personality_cynical
+	}
+	immediate = {
+		create_character_memory = {
+			type = child_premature
+			participants = {
+				mother = scope:mother
+			}
+		}
 	}
 	option = {
 		name = pregnancy.2102.a
@@ -1777,7 +1792,15 @@ pregnancy.6006 = {
 	theme = pregnancy
 	left_portrait = scope:mother
 	lower_left_portrait = scope:real_father
-	right_portrait = scope:spouse
+	lower_center_portrait = scope:spouse
+	override_background = {
+		reference = dungeon
+		trigger = {
+			scope:mother = {
+				is_imprisoned = yes
+			}
+		}
+	}
 	immediate = {
 		play_music_cue = "mx_cue_prison"
 		scope:real_father = {
@@ -1795,7 +1818,6 @@ pregnancy.6006 = {
 		name = pregnancy.6006.a
 	}
 }
-
 #Mother announces child father - event for real_father
 pregnancy.6999 = {
 	type = character_event

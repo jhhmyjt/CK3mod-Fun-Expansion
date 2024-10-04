@@ -1465,8 +1465,15 @@ has_RelationToMe_relation = {
 		any_courtier = {
 			this = $CHARACTER$
 		}
-		any_vassal = {
+		any_vassal_or_below = {
 			this = $CHARACTER$
+		}
+		AND = {
+			is_independent_ruler = no
+			$CHARACTER$ = {
+				is_independent_ruler = no
+			}
+			liege = $CHARACTER$.liege
 		}
 		has_relation_crush = $CHARACTER$
 		has_relation_ward = $CHARACTER$

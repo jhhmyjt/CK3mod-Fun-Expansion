@@ -1,4 +1,4 @@
-﻿##############################
+##############################
 # RITUAL CULTURAL TRADITIONS #
 ##############################
 
@@ -41,7 +41,7 @@ tradition_monogamous = {
 	}
 	
 	parameters = {
-		number_of_spouses = 99
+		number_of_spouses = 1
 		romance_scheme_bonus_vs_spouse = yes
 	}
 	
@@ -116,7 +116,7 @@ tradition_polygamous = {
 	}
 	
 	parameters = {
-		number_of_spouses = 99
+		number_of_spouses = 4
 	}
 	
 	cost = {
@@ -189,8 +189,8 @@ tradition_concubines = {
 	}
 	
 	parameters = {
-		number_of_spouses = 99
-		number_of_consorts = 99
+		number_of_spouses = 1
+		number_of_consorts = 3
 	}
 	
 	cost = {

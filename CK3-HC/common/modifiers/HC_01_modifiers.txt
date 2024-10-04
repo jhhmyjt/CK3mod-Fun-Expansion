@@ -96,7 +96,7 @@ hc_09_modifier = {
 #先见之明
 # hc_11_modifier = {
 # 	icon = learning_positive
-# 	hostile_scheme_resistance_add = 20
+# 	enemy_hostile_scheme_phase_duration_add = 20
 # }
 #神灵庇护
 hc_12_modifier = {

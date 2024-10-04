@@ -1,0 +1,12 @@
+﻿manage_holdings_interaction = {
+	target_type = character
+	ai_goal = no
+	# Icon for the interaction
+	icon = "interaction_manage_holdings"
+	# Interaction name
+	localization_key = manage_holdings_interaction
+	# Scripted effect to open the GUI
+	effect = {
+		show_manage_holdings_window = yes
+	}
+}

@@ -1,4 +1,4 @@
-﻿marriage_ai_accept_modifier = {
+marriage_ai_accept_modifier = {
 	###MARRIAGE SCRIPTED MODIFIERS###
 	modifier = {
 		scope:actor = {
@@ -1104,13 +1104,6 @@
 			is_married = yes
 		}
 		AND = {
-			#TD US
-			scope:secondary_actor = {
-				is_ai = yes
-			}
-			scope:secondary_recipient = {
-				is_ai = yes
-			}
 			scope:secondary_recipient.culture = {
 				NOT = {
 					has_cultural_tradition = tradition_polygamous
@@ -1701,13 +1694,6 @@
 	### FAMILY CONSIDERATIONS
 	modifier = {
 		add = -1000
-		#TD US
-		scope:secondary_recipient = {
-			is_ai = yes
-		}
-		scope:secondary_actor ?= {
-			is_ai = yes
-		}
 		scope:recipient.faith = {
 			NOT = {
 				faith_allows_marriage_consanguinity_trigger = {
@@ -2415,13 +2401,6 @@ elopment_ai_accept_modifier = {
 	#########################
 	modifier = {
 		add = -1000
-		#TD US
-		scope:secondary_recipient = {
-			is_ai = yes
-		}
-		scope:secondary_actor ?= {
-			is_ai = yes
-		}
 		scope:recipient.faith = {
 			NOT = {
 				faith_allows_marriage_consanguinity_trigger = {

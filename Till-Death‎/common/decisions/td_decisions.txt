@@ -1,8 +1,11 @@
 ﻿#决议，选择神邸崇拜，获得永久家族修正，家族繁荣，香火不绝
 td_begin_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	picture = {
+		reference="gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	}
+	decision_group_type = td_decision
 	ai_check_interval = 0
-	major = yes
+	
 	is_shown = {
 		is_ai = no
 		NOT = {
@@ -35,11 +38,14 @@ td_begin_decision = {
 
 #推行禁欲
 hc_pursue_celibacy_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	picture = {
+		reference="gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
 	selection_tooltip = hc_pursue_celibacy_decision_tooltip
 	desc = hc_pursue_celibacy_decision_desc
+	decision_group_type = td_decision
 	ai_check_interval = 0
-	major = yes
+	
 	cooldown = {
 		years = 30
 	}
@@ -82,10 +88,13 @@ hc_pursue_celibacy_decision = {
 
 #终止禁欲
 hc_end_pursue_celibacy_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	picture = {
+		reference="gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
 	desc = hc_end_pursue_celibacy_decision_desc
+	decision_group_type = td_decision
 	ai_check_interval = 0
-	major = yes
+	
 	is_shown = {
 		is_ai = no
 		root.dynasty = {

@@ -1,9 +1,10 @@
 ﻿#debug
 # hc_debug_decision = {
 # 	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
-# 	desc = hc_test_decision_desc
-# 	ai_check_interval = 0
-# 	major = yes
+# 	desc = hc__decision_desc
+# 	decision_group_type = hc_decision
+#ai_check_interval = 0
+# 	
 # 	is_shown = {
 # 		is_ai = no
 # 		debug_only = yes
@@ -43,11 +44,13 @@
 # }
 #开始
 hc_begin_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	}
 	selection_tooltip = hc_begin_decision_tooltip
 	desc = hc_begin_decision_desc
+	decision_group_type = hc_decision
 	ai_check_interval = 0
-	major = yes
 	cooldown = {
 		years = 20
 	}
@@ -93,9 +96,12 @@ hc_begin_decision = {
 
 #结束故事
 hc_end_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+	}
 	selection_tooltip = hc_end_decision_tooltip
 	desc = hc_end_decision_desc
+	decision_group_type = hc_decision
 	ai_check_interval = 0
 	cooldown = {
 		days = 5
@@ -153,12 +159,14 @@ hc_end_decision = {
 
 #新的开始
 hc_new_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+	}
 	title = hc_new_decision_t
 	selection_tooltip = hc_new_decision_tooltip
 	desc = hc_new_decision_desc
 	confirm_text = hc_new_decision_confirm
-	major = yes
+	decision_group_type = hc_decision
 	ai_check_interval = 0
 	is_shown = {
 		is_ai = no
@@ -199,12 +207,13 @@ hc_new_decision = {
 #巡游事件
 # hc_cruise_decision = {
 # 	picture = "gfx/interface/illustrations/decisions/decision_destiny_goal.dds"
-# 	title = hc_cruise_decision_t
+# 	
+#title = hc_cruise_decision_t
 # 	selection_tooltip = hc_cruise_decision_tooltip
 # 	desc = hc_cruise_decision_desc
 # 	confirm_text = hc_cruise_decision_confirm
 # 	sort_order = 0
-# 	ai_check_interval = 0
+# 	decision_group_type = hc_decision
 # 	cost = {
 # 		gold = {
 # 			add = standard_activity_cost
@@ -267,8 +276,10 @@ hc_new_decision = {
 # }
 #恢复罗马正统
 embrace_roma_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	major = yes
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	decision_group_type = hc_decision
 	ai_check_interval = 0
 	title = embrace_roma_decision_t
 	selection_tooltip = embrace_roma_decision_tooltip
@@ -322,12 +333,14 @@ embrace_roma_decision = {
 
 #册封女帝
 hc_coronation_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	}
 	title = hc_coronation_decision_t
 	selection_tooltip = hc_coronation_decision_tooltip
 	desc = hc_coronation_decision_desc
 	confirm_text = hc_coronation_decision_confirm
-	major = yes
+	decision_group_type = hc_decision
 	ai_check_interval = 0
 	is_shown = {
 		is_ai = no
@@ -376,8 +389,10 @@ hc_coronation_decision = {
 
 #添加神圣祭坛
 hc_establish_building_altar_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	major = yes
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	decision_group_type = hc_decision
 	ai_check_interval = 0
 	title = hc_establish_building_altar_decision_t
 	selection_tooltip = hc_establish_building_altar_decision_tooltip
@@ -439,7 +454,10 @@ hc_establish_building_altar_decision = {
 
 #举行祭祀仪式
 hc_sacrificial_ceremony_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+	}
+	decision_group_type = hc_decision
 	ai_check_interval = 0
 	sort_order = 50
 	cooldown = {
@@ -490,8 +508,10 @@ hc_sacrificial_ceremony_decision = {
 
 #建造特殊建筑
 hc_establish_building_special_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	major = yes
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	decision_group_type = hc_decision
 	ai_check_interval = 0
 	title = hc_establish_building_special_decision_t
 	selection_tooltip = hc_establish_building_special_decision_tooltip
@@ -541,8 +561,11 @@ hc_establish_building_special_decision = {
 #建造奇观
 #罗马万神殿
 hc_building_special_decision_01 = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
 	sort_order = 70
+	decision_group_type = hc_decision
 	ai_check_interval = 0
 	selection_tooltip = hc_building_special_decision_01_tooltip
 	desc = hc_building_special_decision_01_desc
@@ -616,8 +639,11 @@ hc_building_special_decision_01 = {
 
 #波西米亚城堡
 hc_building_special_decision_02 = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
 	sort_order = 70
+	decision_group_type = hc_decision
 	ai_check_interval = 0
 	selection_tooltip = hc_building_special_decision_02_tooltip
 	desc = hc_building_special_decision_02_desc
@@ -683,8 +709,11 @@ hc_building_special_decision_02 = {
 
 #古罗马商业区
 hc_building_special_decision_03 = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
 	sort_order = 70
+	decision_group_type = hc_decision
 	ai_check_interval = 0
 	selection_tooltip = hc_building_special_decision_03_tooltip
 	desc = hc_building_special_decision_03_desc
@@ -750,8 +779,11 @@ hc_building_special_decision_03 = {
 
 #圣米歇尔山
 hc_building_special_decision_04 = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
 	sort_order = 70
+	decision_group_type = hc_decision
 	ai_check_interval = 0
 	selection_tooltip = hc_building_special_decision_04_tooltip
 	desc = hc_building_special_decision_04_desc
@@ -823,8 +855,11 @@ hc_building_special_decision_04 = {
 }
 
 hc_building_special_decision_05 = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
 	sort_order = 70
+	decision_group_type = hc_decision
 	ai_check_interval = 0
 	selection_tooltip = hc_building_special_decision_05_tooltip
 	desc = hc_building_special_decision_05_desc
@@ -894,8 +929,11 @@ hc_building_special_decision_05 = {
 }
 
 hc_building_special_decision_06 = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
 	sort_order = 70
+	decision_group_type = hc_decision
 	ai_check_interval = 0
 	selection_tooltip = hc_building_special_decision_06_tooltip
 	desc = hc_building_special_decision_06_desc
@@ -969,8 +1007,11 @@ hc_building_special_decision_06 = {
 }
 
 hc_building_special_decision_07 = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
 	sort_order = 70
+	decision_group_type = hc_decision
 	ai_check_interval = 0
 	selection_tooltip = hc_building_special_decision_07_tooltip
 	desc = hc_building_special_decision_07_desc
@@ -1036,8 +1077,11 @@ hc_building_special_decision_07 = {
 }
 
 hc_building_special_decision_08 = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
 	sort_order = 70
+	decision_group_type = hc_decision
 	ai_check_interval = 0
 	selection_tooltip = hc_building_special_decision_08_tooltip
 	desc = hc_building_special_decision_08_desc
@@ -1105,8 +1149,10 @@ hc_building_special_decision_08 = {
 
 #完成建造所有特殊建筑
 hc_establish_building_all_finished_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	major = yes
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
+	decision_group_type = hc_decision
 	ai_check_interval = 0
 	desc = hc_establish_building_all_finished_decision_desc
 	is_shown = {
@@ -1209,8 +1255,10 @@ hc_establish_building_all_finished_decision = {
 
 #摇人
 hc_call_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_invite_knights.dds"
-	major = no
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_invite_knights.dds"
+	}
+	decision_group_type = hc_decision
 	ai_check_interval = 0
 	title = hc_call_decision_t
 	desc = hc_call_decision_desc
@@ -1267,12 +1315,14 @@ hc_call_decision = {
 
 #采用先进继承法
 hc_adopt_advanced_succession_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	}
 	title = hc_adopt_advanced_succession_decision_t
 	desc = hc_adopt_advanced_succession_decision_desc
 	selection_tooltip = hc_adopt_advanced_succession_decision_tooltip
 	confirm_text = hc_adopt_advanced_succession_decision_confirm
-	major = yes
+	decision_group_type = hc_decision
 	ai_check_interval = 0
 	cost = {
 		prestige = 2500
@@ -1346,12 +1396,14 @@ hc_adopt_advanced_succession_decision = {
 
 #加快文化发展
 hc_improve_culture_development_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_misc.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_misc.dds"
+	}
 	title = hc_improve_culture_development_decision_t
 	desc = hc_improve_culture_development_decision_desc
 	selection_tooltip = hc_improve_culture_development_decision_tooltip
 	confirm_text = hc_improve_culture_development_decision_confirm
-	major = yes
+	decision_group_type = hc_decision
 	ai_check_interval = 0
 	cooldown = {
 		years = 1
@@ -1402,12 +1454,14 @@ hc_improve_culture_development_decision = {
 
 #强化圣剑
 hc_strength_artifact_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_smith.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_smith.dds"
+	}
 	title = hc_strength_artifact_decision_t
 	desc = hc_strength_artifact_decision_desc
 	selection_tooltip = hc_strength_artifact_decision_tooltip
 	confirm_text = hc_strength_artifact_decision_confirm
-	major = yes
+	decision_group_type = hc_decision
 	ai_check_interval = 0
 	cooldown = {
 		years = 10
@@ -1465,12 +1519,14 @@ hc_strength_artifact_decision = {
 
 # 在君士但丁堡修建黄金议事宫
 hc_build_chrysotriclinium_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_knight_kneeling.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_knight_kneeling.dds"
+	}
 	title = hc_build_chrysotriclinium_decision_t
 	desc = hc_build_chrysotriclinium_decision_desc
 	selection_tooltip = hc_build_chrysotriclinium_decision_tooltip
 	confirm_text = hc_build_chrysotriclinium_decision_confirm
-	major = yes
+	decision_group_type = hc_decision
 	ai_check_interval = 0
 	cost = {
 		prestige = 3200
@@ -1549,11 +1605,13 @@ hc_build_chrysotriclinium_decision = {
 
 #推行禁欲
 hc_pursue_celibacy_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
 	selection_tooltip = hc_pursue_celibacy_decision_tooltip
 	desc = hc_pursue_celibacy_decision_desc
+	decision_group_type = hc_decision
 	ai_check_interval = 0
-	major = yes
 	cooldown = {
 		years = 30
 	}
@@ -1596,10 +1654,12 @@ hc_pursue_celibacy_decision = {
 
 #终止禁欲
 hc_end_pursue_celibacy_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
 	desc = hc_end_pursue_celibacy_decision_desc
+	decision_group_type = hc_decision
 	ai_check_interval = 0
-	major = yes
 	is_shown = {
 		is_ai = no
 		root.dynasty = {
@@ -1653,10 +1713,12 @@ hc_end_pursue_celibacy_decision = {
 #建立皇家卫队决议及升级决议
 #建立皇家护卫队
 hc_create_royal_guard_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	}
 	desc = hc_create_royal_guard_decision_desc
+	decision_group_type = hc_decision
 	ai_check_interval = 0
-	major = yes
 	is_shown = {
 		is_ai = no
 		root.house = {
@@ -1708,10 +1770,12 @@ hc_create_royal_guard_decision = {
 
 #升级为皇家亲卫队
 hc_create_royal_personal_guard_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	}
 	desc = hc_create_royal_personal_guard_decision_desc
+	decision_group_type = hc_decision
 	ai_check_interval = 0
-	major = yes
 	is_shown = {
 		is_ai = no
 		root.house = {
@@ -1760,10 +1824,12 @@ hc_create_royal_personal_guard_decision = {
 
 #升级为皇家禁卫
 hc_create_royal_great_guard_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+	}
 	desc = hc_create_royal_great_guard_decision_desc
+	decision_group_type = hc_decision
 	ai_check_interval = 0
-	major = yes
 	is_shown = {
 		is_ai = no
 		root.house = {
@@ -1813,10 +1879,12 @@ hc_create_royal_great_guard_decision = {
 #皇家卫队解锁决议
 #招募人才
 hc_recruitment_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
 	desc = hc_recruitment_decision_desc
+	decision_group_type = hc_decision
 	ai_check_interval = 0
-	major = yes
 	is_shown = {
 		is_ai = no
 		is_landed = yes
@@ -1929,10 +1997,12 @@ hc_recruitment_decision = {
 
 #追查凶手
 hc_track_murderer_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
 	desc = hc_track_murderer_decision_desc
+	decision_group_type = hc_decision
 	ai_check_interval = 0
-	major = yes
 	is_shown = {
 		is_ai = no
 		is_landed = yes
@@ -1941,13 +2011,13 @@ hc_track_murderer_decision = {
 			any_courtier_or_guest = {
 				any_scheme = {
 					scheme_type = murder
-					scheme_target = root
+					scheme_target_character = root
 				}
 			}
 			any_vassal_or_below = {
 				any_scheme = {
 					scheme_type = murder
-					scheme_target = root
+					scheme_target_character = root
 				}
 			}
 		}
@@ -1999,7 +2069,7 @@ hc_track_murderer_decision = {
 			limit = {
 				any_scheme = {
 					scheme_type = murder
-					scheme_target = root
+					scheme_target_character = root
 				}
 			}
 			save_scope_as = murderer
@@ -2008,7 +2078,7 @@ hc_track_murderer_decision = {
 			limit = {
 				any_scheme = {
 					scheme_type = murder
-					scheme_target = root
+					scheme_target_character = root
 				}
 			}
 			save_scope_as = murderer
@@ -2035,7 +2105,7 @@ hc_track_murderer_decision = {
 					every_scheme = {
 						limit = {
 							scheme_type = murder
-							scheme_target = root
+							scheme_target_character = root
 						}
 						add_scheme_modifier = {
 							type = hc_anti_murder_modifier
@@ -2061,10 +2131,12 @@ hc_track_murderer_decision = {
 
 #审判日
 hc_adjudgment_day_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
 	desc = hc_adjudgment_day_decision_desc
+	decision_group_type = hc_decision
 	ai_check_interval = 0
-	major = yes
 	is_shown = {
 		is_ai = no
 		is_landed = yes
@@ -2078,7 +2150,7 @@ hc_adjudgment_day_decision = {
 					has_trait = seducer
 				}
 				Not = {
-					has_trait = eunuch
+					has_trait = eunuch_1
 				}
 			}
 			any_courtier_or_guest = {
@@ -2089,7 +2161,7 @@ hc_adjudgment_day_decision = {
 					has_trait = seducer
 				}
 				Not = {
-					has_trait = eunuch
+					has_trait = eunuch_1
 				}
 			}
 		}
@@ -2134,7 +2206,7 @@ hc_adjudgment_day_decision = {
 						has_trait = seducer
 					}
 					Not = {
-						has_trait = eunuch
+						has_trait = eunuch_1
 					}
 				}
 				if = {
@@ -2148,7 +2220,7 @@ hc_adjudgment_day_decision = {
 				}
 				else = {
 					#阉割
-					add_trait = eunuch
+					add_trait = eunuch_1
 				}
 			}
 			every_courtier_or_guest = {
@@ -2160,7 +2232,7 @@ hc_adjudgment_day_decision = {
 						has_trait = seducer
 					}
 					Not = {
-						has_trait = eunuch
+						has_trait = eunuch_1
 					}
 				}
 				if = {
@@ -2174,7 +2246,7 @@ hc_adjudgment_day_decision = {
 				}
 				else = {
 					#阉割
-					add_trait = eunuch
+					add_trait = eunuch_1
 				}
 			}
 		}
@@ -2192,7 +2264,7 @@ hc_adjudgment_day_decision = {
 							has_trait = seducer
 						}
 						Not = {
-							has_trait = eunuch
+							has_trait = eunuch_1
 						}
 					}
 					if = {
@@ -2206,7 +2278,7 @@ hc_adjudgment_day_decision = {
 					}
 					else = {
 						#阉割
-						add_trait = eunuch
+						add_trait = eunuch_1
 					}
 				}
 				every_courtier_or_guest = {
@@ -2218,7 +2290,7 @@ hc_adjudgment_day_decision = {
 							has_trait = seducer
 						}
 						Not = {
-							has_trait = eunuch
+							has_trait = eunuch_1
 						}
 					}
 					if = {
@@ -2232,7 +2304,7 @@ hc_adjudgment_day_decision = {
 					}
 					else = {
 						#阉割
-						add_trait = eunuch
+						add_trait = eunuch_1
 					}
 				}
 			}
@@ -2248,8 +2320,11 @@ hc_adjudgment_day_decision = {
 
 #建筑开发
 hc_add_building_decision = {
-	picture = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+	}
 	sort_order = 80
+	decision_group_type = hc_decision
 	ai_check_interval = 0
 	desc = hc_add_building_decision_desc
 	widget = {
@@ -2291,7 +2366,8 @@ hc_add_building_decision = {
 		gold = 500
 	}
 	cooldown = {
-		years = 5
+		# years = 5
+		days = 1
 	}
 	is_valid_showing_failures_only = {
 		is_at_war = no
@@ -2326,8 +2402,8 @@ hc_add_building_decision = {
 # 	picture = "gfx/interface/illustrations/decisions/decision_knight_kneeling.dds"
 # 	desc = hc_emperor_authority_decision_desc
 # 	selection_tooltip = hc_emperor_authority_decision_tooltip
-# 	major = yes
-# 	ai_check_interval = 0
+# 	
+# 	decision_group_type = hc_decision
 # 	is_shown = {
 # 		is_ruler = yes
 # 		is_landed = yes
@@ -2380,7 +2456,7 @@ hc_add_building_decision = {
 # 	effect = {
 # 		send_interface_toast = {
 # 			type = event_generic_good
-# 			title = hc_emperor_authority_decision_notification
+#  title = hc_emperor_authority_decision_notification
 # 			left_icon = root
 # 			if = {
 # 				limit = {
@@ -2427,8 +2503,8 @@ hc_add_building_decision = {
 # }
 # hc_eclaim_roma_decision = {
 # 	picture = "gfx/interface/illustrations/decisions/decision_destiny_goal.dds"
-# 	major = yes
-# 	ai_check_interval = 0
+# 	
+# 	decision_group_type = hc_decision
 # 	desc = reclaim_britannia_decision_desc
 # 	is_shown = {
 # 		culture = {

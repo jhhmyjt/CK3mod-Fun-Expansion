@@ -1,4 +1,4 @@
-﻿doctrine_marriage_type = {
+doctrine_marriage_type = {
 	group = "marriage"
 	doctrine_monogamy = {
 		piety_cost = {
@@ -11,7 +11,7 @@
 			}
 		}
 		parameters = {
-			number_of_spouses = 99
+			number_of_spouses = 1
 			marriage_event = yes
 		}
 	}
@@ -26,7 +26,7 @@
 			}
 		}
 		parameters = {
-			number_of_spouses = 99
+			number_of_spouses = 4
 			spouse_piety_loss = yes
 		}
 	}
@@ -41,8 +41,8 @@
 			}
 		}
 		parameters = {
-			number_of_spouses = 99
-			number_of_consorts = 99
+			number_of_spouses = 1
+			number_of_consorts = 3
 		}
 	}
 }

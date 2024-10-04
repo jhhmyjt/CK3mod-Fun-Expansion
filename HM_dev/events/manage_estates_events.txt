@@ -1,0 +1,22 @@
+﻿namespace = manage_estates
+
+# 打开管理界面的事件
+manage_estates.001 = {
+    type = character_event
+    on_action = yes
+    immediate = {
+        show_window = manage_estates_window
+        list_holdings = {
+            filter = {
+                OR = {
+                    is_primary_holder = root
+                    is_secondary_holder = root
+                }
+            }
+        }
+    }
+
+    option = {
+        name = "OK"
+    }
+}

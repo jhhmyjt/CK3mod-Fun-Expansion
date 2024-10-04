@@ -1,25 +1,43 @@
 ﻿seduce = {
+	# Basic Setup
 	skill = intrigue
 	desc = seduce_desc_general
-	# cooldown = { months = 2 }
-	is_secret = yes
-	base_secrecy = 10
-	uses_agents = no
-	power_per_skill_point = 8
-	resistance_per_skill_point = 0
-	minimum_progress_chance = 35
-	maximum_progress_chance = 90
-	maximum_success = 95
+	success_desc = "SEDUCE_SUCCESS_DESC"
 	icon = icon_scheme_seduce
-	# Does not use Spymaster
-	spymaster_power_per_skill_point = 0
-	spymaster_resistance_per_skill_point = 0
+	illustration = "gfx/interface/illustrations/event_scenes/corridor.dds"
+	target_type = character
+	is_secret = yes
+	maximum_breaches = 5
+	is_basic = yes
+	# Parameters
+	speed_per_skill_point = -2.5
+	spymaster_speed_per_skill_point = 0
+	base_progress_goal = 365
+	base_maximum_success = 95
+	minimum_success = 5
+	# Core Triggers
 	allow = {
 		is_adult = yes
-		is_travelling = no
+		trigger_if = {
+			limit = {
+				NOT = {
+					government_has_flag = government_is_landless_adventurer
+				}
+			}
+			is_travelling = no
+		}
 		scope:target = {
 			is_adult = yes
-			is_travelling = no
+			trigger_if = {
+				limit = {
+					scope:owner = {
+						NOT = {
+							government_has_flag = government_is_landless_adventurer
+						}
+					}
+				}
+				is_travelling = no
+			}
 		}
 		# Mutual attraction is a hard limit because this scheme implies real romantic feelings and we don't model romantic attraction separately from sexual attraction
 		OR = {
@@ -95,7 +113,7 @@
 					}
 					OR = {
 						is_lowborn = no
-						is_landed = yes
+						is_playable_character = yes
 					}
 				}
 				trigger_if = {
@@ -203,12 +221,25 @@
 		}
 	}
 	use_secrecy = {
-		use_seduce_secrecy_trigger = yes
+		use_seduce_secrecy_trigger = {
+			TARGET = scope:target
+			OWNER = scope:owner
+		}
 	}
+	odds_prediction = {
+		add = base_odds_prediction_target_is_char_value
+		add = odds_skill_contribution_intrigue_value
+		add = odds_seduce_scheme_misc_value
+		min = 0
+	}
+	# Base Chances
 	base_success_chance = {
-		base = 5
-		#SCHEME OWNER#
-		#Seducer
+		base = 0
+		scheme_type_skill_success_chance_modifier = {
+			SKILL = INTRIGUE
+		}
+		# Countermeasures.
+		apply_opportunistic_scheme_success_chance_adjustments_modifier = yes
 		# You got a wedding night memento
 		modifier = {
 			add = 20
@@ -368,6 +399,23 @@
 			}
 			add = -25
 		}
+		#Events
+		modifier = {
+			desc = scheme_promoter_of_courtly_love
+			scope:owner.liege ?= {
+				has_character_modifier = promoter_of_courtly_love_modifier
+			}
+			scope:owner.location = scope:owner.liege.location
+			add = 20
+		}
+		modifier = {
+			desc = scheme_detractor_of_courtly_love
+			scope:owner.liege ?= {
+				has_character_modifier = detractor_of_courtly_love_modifier
+			}
+			scope:owner.location = scope:owner.liege.location
+			add = -20
+		}
 		#TARGET#
 		#Lustful/hedonist
 		modifier = {
@@ -390,7 +438,7 @@
 			scope:target = {
 				has_trait = chaste
 			}
-			add = -15
+			add = -25
 		}
 		modifier = {
 			desc = "SCHEME_SHY_TRAIT"
@@ -604,12 +652,8 @@
 		modifier = {
 			#3 or more higher rank
 			trigger = {
-				scope:owner = {
-					NOT = {
-						is_consort_of = scope:target
-					}
-				}
-			}			# Your spouse doesn't care if you're a different rank than them.
+				personal_scheme_should_not_evaluate_tier_differences_trigger = yes
+			}
 			add = 40
 			desc = "HIGHER_RANK_THAN_SCHEME_TARGET"
 			scope:target = {
@@ -628,12 +672,8 @@
 		modifier = {
 			#2 higher rank
 			trigger = {
-				scope:owner = {
-					NOT = {
-						is_consort_of = scope:target
-					}
-				}
-			}			# Your spouse doesn't care if you're a different rank than them.
+				personal_scheme_should_not_evaluate_tier_differences_trigger = yes
+			}
 			add = 20
 			desc = "HIGHER_RANK_THAN_SCHEME_TARGET"
 			scope:target = {
@@ -652,12 +692,8 @@
 		modifier = {
 			#1 higher rank
 			trigger = {
-				scope:owner = {
-					NOT = {
-						is_consort_of = scope:target
-					}
-				}
-			}			# Your spouse doesn't care if you're a different rank than them.
+				personal_scheme_should_not_evaluate_tier_differences_trigger = yes
+			}
 			add = 10
 			desc = "HIGHER_RANK_THAN_SCHEME_TARGET"
 			scope:target = {
@@ -749,12 +785,8 @@
 		modifier = {
 			#3 or more higher rank
 			trigger = {
-				scope:owner = {
-					NOT = {
-						is_consort_of = scope:target
-					}
-				}
-			}			# Your spouse doesn't care if you're a different rank than them.
+				personal_scheme_should_not_evaluate_tier_differences_trigger = yes
+			}
 			add = 50
 			desc = "HIGHER_RANK_THAN_SCHEME_TARGET_LIEGE"
 			scope:target = {
@@ -773,12 +805,8 @@
 		modifier = {
 			#2 higher rank
 			trigger = {
-				scope:owner = {
-					NOT = {
-						is_consort_of = scope:target
-					}
-				}
-			}			# Your spouse doesn't care if you're a different rank than them.
+				personal_scheme_should_not_evaluate_tier_differences_trigger = yes
+			}
 			add = 25
 			desc = "HIGHER_RANK_THAN_SCHEME_TARGET_LIEGE"
 			scope:target = {
@@ -797,12 +825,8 @@
 		modifier = {
 			#1 higher rank
 			trigger = {
-				scope:owner = {
-					NOT = {
-						is_consort_of = scope:target
-					}
-				}
-			}			# Your spouse doesn't care if you're a different rank than them.
+				personal_scheme_should_not_evaluate_tier_differences_trigger = yes
+			}
 			add = 10
 			desc = "HIGHER_RANK_THAN_SCHEME_TARGET_LIEGE"
 			scope:target = {
@@ -822,9 +846,7 @@
 			#1 lower rank
 			trigger = {
 				scope:owner = {
-					NOT = {
-						is_consort_of = scope:target
-					}					# Your spouse doesn't care if you're a different rank than them.
+					personal_scheme_should_not_evaluate_tier_differences_trigger = yes
 					NOT = {
 						has_perk = subtle_desire_perk
 					}
@@ -846,9 +868,7 @@
 			#2 lower rank
 			trigger = {
 				scope:owner = {
-					NOT = {
-						is_consort_of = scope:target
-					}					# Your spouse doesn't care if you're a different rank than them.
+					personal_scheme_should_not_evaluate_tier_differences_trigger = yes
 					NOT = {
 						has_perk = subtle_desire_perk
 					}
@@ -870,9 +890,7 @@
 			#3 or less lower rank
 			trigger = {
 				scope:owner = {
-					NOT = {
-						is_consort_of = scope:target
-					}					# Your spouse doesn't care if you're a different rank than them.
+					personal_scheme_should_not_evaluate_tier_differences_trigger = yes
 					NOT = {
 						has_perk = subtle_desire_perk
 					}
@@ -1112,20 +1130,136 @@
 				}
 			}
 		}
+		# Modifiers
+		modifier = {
+			scope:owner = {
+				has_character_modifier = poet_for_seduction_schemes_modifier
+			}
+			desc = poet_for_seduction_schemes_modifier
+			add = 20
+		}
+		# house_head_request_interaction
+		modifier = {
+			add = personal_scheme_variable_list_value
+			scope:owner = {
+				has_variable_list = supporting_personal_schemes
+			}
+			desc = HOUSE_HEAD_SCHEME_SUPPORT_DESC
+		}
+		modifier = {
+			add = -10
+			scope:owner = {
+				has_character_modifier = personal_schemes_distracted_modifier
+			}
+			desc = personal_schemes_distracted_modifier
+		}
+		# Estate
+		modifier = {
+			scope:owner.domicile ?= {
+				has_domicile_parameter = increased_success_personal_schemes_1
+			}
+			add = estate_increased_personal_scheme_success_1_value
+		}
+		modifier = {
+			scope:owner.domicile ?= {
+				has_domicile_parameter = increased_success_personal_schemes_2
+			}
+			add = estate_increased_personal_scheme_success_2_value
+		}
+		modifier = {
+			scope:owner.domicile ?= {
+				has_domicile_parameter = increased_success_personal_schemes_3
+			}
+			add = estate_increased_personal_scheme_success_3_value
+		}
 	}
-	on_ready = {
+	base_secrecy = {
+		add = secrecy_base_value
+		add = countermeasure_apply_secrecy_maluses_value
+	}
+	# On Actions
+	on_start = {
+		set_variable = {
+			name = apply_countermeasures
+			value = flag:opportunistic
+		}
+		#Handle incest hard reject
+		save_scope_as = scheme
+		scheme_owner = {
+			save_scope_as = owner
+		}
+		scheme_target_character = {
+			save_scope_as = target
+		}
+		if = {
+			limit = {
+				scope:target = {
+					is_close_or_extended_family_of = scope:owner
+					NOT = {
+						is_consort_of = scope:owner
+					}
+				}
+			}
+			scope:target = {
+				trigger_event = {
+					id = seduce_outcome.8101					#Hard reject event, ai weights on options determine yes/no
+					days = {
+						7
+						14
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					scope:target = {
+						existing_feud_against_target_trigger = {
+							TARGET = scope:owner
+						}
+					}
+					scope:owner = {
+						existing_feud_against_target_trigger = {
+							TARGET = scope:target
+						}
+					}
+				}
+			}
+			scope:target = {
+				trigger_event = {
+					id = bp1_house_feud.0700					#Hard reject event, ai weights on options determine yes/no
+					days = {
+						7
+						14
+					}
+				}
+			}
+		}
+	}
+	on_phase_completed = {
+		# Grab our scopes.
+		save_scope_as = scheme
+		scheme_target_character = {
+			save_scope_as = target
+		}
+		scheme_owner = {
+			save_scope_as = owner
+		}
 		# Set up a block for the inappropriate cheating error?
 		save_scope_value_as = {
 			name = ignore_cheating_error_check
 			value = yes
 		}
 		# Proceed to rolls.
-		scheme_owner = {
+		scope:scheme.scheme_owner = {
 			#Do I want to proceed to a roll?
 			if = {
 				limit = {
 					is_ai = no
-					use_seduce_secrecy_trigger = yes
+					use_seduce_secrecy_trigger = {
+						TARGET = scope:target
+						OWNER = scope:owner
+					}
 				}
 				trigger_event = seduce_outcome.0001
 			}
@@ -1135,8 +1269,70 @@
 			}
 		}
 	}
+	on_monthly = {
+		save_scope_as = scheme
+		scheme_owner = {
+			save_scope_as = owner
+		}
+		scheme_target_character = {
+			save_scope_as = target
+		}
+		hostile_scheme_monthly_discovery_chance_effect = yes
+		#Milestone 1 event
+		if = {
+			limit = {
+				scheme_agent_charges < 6
+				NOR = {
+					has_scheme_modifier = seduce_success_1_modifier
+					has_scheme_modifier = seduce_failure_1_modifier
+					has_variable = declined_seduce_milestone_1_event
+				}
+				scheme_owner = {
+					is_available = yes
+				}
+				scheme_target_character = {
+					is_available = yes
+				}
+				player_target_available_for_personal_scheme_ongoing_events_trigger = {
+					OWNER = scope:owner
+					TARGET = scope:target
+				}
+			}
+			scheme_owner = {
+				trigger_event = {
+					on_action = seduce_ongoing_milestone_1
+				}
+			}
+		}
+		#Milestone 2 event
+		else_if = {
+			limit = {
+				scheme_agent_charges >= 6
+				NOR = {
+					has_scheme_modifier = seduce_success_2_modifier
+					has_scheme_modifier = seduce_failure_2_modifier
+					has_variable = declined_seduce_milestone_2_event
+				}
+				scheme_owner = {
+					is_available = yes
+				}
+				scheme_target_character = {
+					is_available = yes
+				}
+				player_target_available_for_personal_scheme_ongoing_events_trigger = {
+					OWNER = scope:owner
+					TARGET = scope:target
+				}
+			}
+			scheme_owner = {
+				trigger_event = {
+					on_action = seduce_ongoing_milestone_2
+				}
+			}
+		}
+	}
 	on_invalidated = {
-		scheme_target = {
+		scheme_target_character = {
 			save_scope_as = target
 		}
 		scheme_owner = {
@@ -1204,8 +1400,8 @@
 				}
 			}
 			scope:owner = {
-				send_interface_message = {
-					type = event_generic_neutral
+				send_interface_toast = {
+					type = event_toast_effect_neutral
 					title = seduce
 					left_icon = scope:target
 					custom_tooltip = seduce_invalid
@@ -1222,6 +1418,7 @@
 			}
 			scope:owner = {
 				send_interface_toast = {
+					type = event_toast_effect_neutral
 					title = seduce_invalidated_title
 					left_icon = scope:target
 					custom_description_no_bullet = {
@@ -1232,123 +1429,4 @@
 			}
 		}
 	}
-	on_start = {
-		#Handle incest hard reject
-		save_scope_as = scheme
-		scheme_owner = {
-			save_scope_as = owner
-		}
-		scheme_target = {
-			save_scope_as = target
-		}
-		if = {
-			limit = {
-				scope:target = {
-					is_close_or_extended_family_of = scope:owner
-					NOT = {
-						is_consort_of = scope:owner
-					}
-				}
-			}
-			scope:target = {
-				trigger_event = {
-					id = seduce_outcome.8101					#Hard reject event, ai weights on options determine yes/no
-					days = {
-						7
-						14
-					}
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				OR = {
-					scope:target = {
-						existing_feud_against_target_trigger = {
-							TARGET = scope:owner
-						}
-					}
-					scope:owner = {
-						existing_feud_against_target_trigger = {
-							TARGET = scope:target
-						}
-					}
-				}
-			}
-			scope:target = {
-				trigger_event = {
-					id = bp1_house_feud.0700					#Hard reject event, ai weights on options determine yes/no
-					days = {
-						7
-						14
-					}
-				}
-			}
-		}
-	}
-	on_monthly = {
-		save_scope_as = scheme
-		scheme_owner = {
-			save_scope_as = owner
-		}
-		scheme_target = {
-			save_scope_as = target
-		}
-		#Milestone 1 event
-		if = {
-			limit = {
-				scheme_progress >= 3
-				scheme_progress < 7
-				NOR = {
-					has_scheme_modifier = seduce_success_1_modifier
-					has_scheme_modifier = seduce_failure_1_modifier
-					has_variable = declined_seduce_milestone_1_event
-				}
-				scheme_owner = {
-					is_available = yes
-				}
-				scheme_target = {
-					is_available = yes
-				}
-				player_target_available_for_personal_scheme_ongoing_events_trigger = {
-					OWNER = scope:owner
-					TARGET = scope:target
-				}
-			}
-			scheme_owner = {
-				trigger_event = {
-					on_action = seduce_ongoing_milestone_1
-				}
-			}
-		}
-		#Milestone 2 event
-		else_if = {
-			limit = {
-				scheme_progress >= 7
-				NOR = {
-					has_scheme_modifier = seduce_success_2_modifier
-					has_scheme_modifier = seduce_failure_2_modifier
-					has_variable = declined_seduce_milestone_2_event
-				}
-				scheme_owner = {
-					is_available = yes
-				}
-				scheme_target = {
-					is_available = yes
-				}
-				player_target_available_for_personal_scheme_ongoing_events_trigger = {
-					OWNER = scope:owner
-					TARGET = scope:target
-				}
-			}
-			scheme_owner = {
-				trigger_event = {
-					on_action = seduce_ongoing_milestone_2
-				}
-			}
-		}
-	}
-	success_desc = "SEDUCE_SUCCESS_DESC"
-	freeze_scheme_when_traveling = yes
-	freeze_scheme_when_traveling_target = yes
 }

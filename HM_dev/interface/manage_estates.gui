@@ -1,0 +1,33 @@
+windowType = {
+    name = "manage_holdings_window"
+    position = { x = center y = center }
+    size = { width = 800 height = 600 }
+    # Window title
+    title = "Manage Holdings"
+
+    background = {
+        texture = "gfx/interface/some_background_texture.dds"
+    }
+
+    # Define the layout and content of the window
+    containerWindowType = {
+        name = "holdings_list"
+        position = { x = 10 y = 50 }
+        size = { width = 780 height = 500 }
+        # Scrollable list of holdings
+        scrollViewType = {
+            name = "holdings_scroll"
+            position = { x = 0 y = 0 }
+            size = { width = 780 height = 500 }
+            # Here we will dynamically populate the list of holdings
+        }
+    }
+
+    buttonType = {
+        name = "close_button"
+        position = { x = 740 y = 10 }
+        size = { width = 50 height = 30 }
+        buttonText = "Close"
+        click = "close_manage_holdings_window"
+    }
+}

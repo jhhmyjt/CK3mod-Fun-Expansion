@@ -1,0 +1,4 @@
+﻿hc_decision = {
+	sort_order = 89
+	gui_tags = { big_button }
+}

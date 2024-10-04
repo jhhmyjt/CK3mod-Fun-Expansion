@@ -1,8 +1,8 @@
-version = "1.0"
+version = "1.13"
 tags = {
 	"Character Interactions"
 }
 
 name = "Unlimited Spouse"
-supported_version = "1.12.*"
+supported_version = "1.13.*"
 remote_file_id = "3205136615"

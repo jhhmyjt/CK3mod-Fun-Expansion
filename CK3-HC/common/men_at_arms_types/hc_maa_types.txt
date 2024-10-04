@@ -62,6 +62,7 @@ hc_judgment_heavy_cavalry = {
 	ai_quality = {
 		value = 0
 	}
+	provision_cost = 20
 	can_recruit = {
 		has_game_rule = hc_army_normal_strength
 		has_game_rule = hc_army_active
@@ -120,6 +121,7 @@ hc_footmen = {
 	ai_quality = {
 		value = -1000
 	}
+	provision_cost = 3
 	can_recruit = {
 		has_game_rule = hc_army_normal_strength
 		has_game_rule = hc_army_active
@@ -186,6 +188,7 @@ hc_guards = {
 	ai_quality = {
 		value = 0
 	}
+	provision_cost = 10
 	can_recruit = {
 		has_game_rule = hc_army_normal_strength
 		has_game_rule = hc_army_active
@@ -258,6 +261,7 @@ hc_judgment_heavy_cavalry_02 = {
 		gold = 3.2
 	}
 	stack = 100
+	provision_cost = 20
 	ai_quality = {
 		value = 0
 	}
@@ -319,6 +323,7 @@ hc_footmen_02 = {
 	ai_quality = {
 		value = -1000
 	}
+	provision_cost = 3
 	can_recruit = {
 		has_game_rule = hc_army_low_strength
 		has_game_rule = hc_army_active
@@ -385,6 +390,7 @@ hc_guards_02 = {
 	ai_quality = {
 		value = 0
 	}
+	provision_cost = 10
 	can_recruit = {
 		has_game_rule = hc_army_low_strength
 		has_game_rule = hc_army_active
@@ -468,6 +474,7 @@ hc_judgment_heavy_cavalry_03 = {
 			has_dynasty_perk = hc_temple_legacy_3
 		}
 	}
+	provision_cost = 20
 	icon = hc_judgment_heavy_cavalry
 }
 
@@ -518,6 +525,7 @@ hc_footmen_03 = {
 	ai_quality = {
 		value = -1000
 	}
+	provision_cost = 3
 	can_recruit = {
 		has_game_rule = hc_army_bottom_strength
 		has_game_rule = hc_army_active
@@ -584,6 +592,7 @@ hc_guards_03 = {
 	ai_quality = {
 		value = 0
 	}
+	provision_cost = 10
 	can_recruit = {
 		has_game_rule = hc_army_bottom_strength
 		has_game_rule = hc_army_active
