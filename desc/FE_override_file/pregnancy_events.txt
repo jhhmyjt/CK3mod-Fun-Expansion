@@ -196,6 +196,7 @@ pregnancy.1002 = {
 	}
 	left_portrait = {
 		character = scope:mother
+		animation = love
 	}
 	right_portrait = {
 		character = root

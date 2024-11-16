@@ -141,6 +141,7 @@ hc_immutable = {
 	monthly_piety = 0.5
 	stress_gain_mult = -0.3
 	same_opinion = 100
+	flag = hc_immutable_flag
 	ruler_designer_cost = 200
 	desc = {
 		first_valid = {

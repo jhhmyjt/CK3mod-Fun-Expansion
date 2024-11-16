@@ -1,4 +1,4 @@
-doctrine_marriage_type = {
+﻿doctrine_marriage_type = {
 	group = "marriage"
 	doctrine_monogamy = {
 		piety_cost = {
