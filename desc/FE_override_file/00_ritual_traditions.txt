@@ -1339,7 +1339,8 @@ tradition_by_the_sword = {
 				faith = {
 					NOT = {
 						has_doctrine_parameter = holy_wars_forbidden
-					}					# Pacifists cannot Holy War
+					}
+					# Pacifists cannot Holy War
 				}
 			}
 		}

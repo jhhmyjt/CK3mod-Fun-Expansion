@@ -178,12 +178,14 @@ courting = {
 			scope:target = {
 				has_trait = intellect_bad_3
 			}
-		}		# Implies a mental development level akin to an average child
+		}
+		# Implies a mental development level akin to an average child
 		NOT = {
 			scope:target = {
 				has_trait = incapable
 			}
-		}		# Bed-ridden at best, but in many cases comatose or in a vegetative state
+		}
+		# Bed-ridden at best, but in many cases comatose or in a vegetative state
 		# One of you is celibate
 		NOT = {
 			has_trait = celibate
@@ -678,10 +680,12 @@ courting = {
 				NOR = {
 					accepts_incest_with_trigger = {
 						CHARACTER = scope:owner
-					}					#100% fine with incest with owner
+					}
+					#100% fine with incest with owner
 					scope:owner = {
 						has_perk = subtle_desire_perk
-					}					# The Subtle Desire Perk nullifies this
+					}
+					# The Subtle Desire Perk nullifies this
 					guaranteed_under_20_incest_rejection_trigger = {
 						# handled by hard block modifier
 						TARGET = scope:target

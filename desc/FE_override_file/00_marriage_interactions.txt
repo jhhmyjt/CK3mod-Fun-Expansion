@@ -2939,8 +2939,7 @@ ai_make_concubine_interaction = {
 			scope:recipient = {
 				can_have_children_with = {
 					CHARACTER = scope:actor
-				}
-				# Only if you can have kids since this is about fertility and genetic traits
+				}				# Only if you can have kids since this is about fertility and genetic traits
 				fertility > 0.2
 				is_young_character = yes
 			}
@@ -2951,8 +2950,7 @@ ai_make_concubine_interaction = {
 				is_imprisoned_by = scope:actor
 				can_have_children_with = {
 					CHARACTER = scope:actor
-				}
-				# Only if you can have kids since this is about fertility and genetic traits
+				}				# Only if you can have kids since this is about fertility and genetic traits
 				OR = {
 					is_lowborn = no
 					num_of_good_genetic_traits > 0
@@ -4239,8 +4237,7 @@ divorce_character_house_head_interaction = {
 		exists = scope:actor.house.house_head
 		NOT = {
 			scope:actor = scope:actor.house.house_head
-		}
-		# no need to ask yourself
+		}		# no need to ask yourself
 		scope:actor.faith = {
 			has_doctrine = doctrine_divorce_approval
 		}

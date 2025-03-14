@@ -6,9 +6,9 @@
 				dynast = {
 					culture = {
 						OR = {
-							has_cultural_pillar = heritage_iranian 
+							has_cultural_pillar = heritage_iranian
 							any_parent_culture_or_above = {
-								has_cultural_pillar = heritage_iranian 
+								has_cultural_pillar = heritage_iranian
 							}
 						}
 					}
@@ -18,5 +18,3 @@
 		}
 	}
 }
-
-

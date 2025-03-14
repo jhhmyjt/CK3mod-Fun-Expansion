@@ -682,7 +682,8 @@ had_sex_with_effect = {
 						limit = {
 							NOT = {
 								this = $CHARACTER$
-							}							#Soulmates should not grow suspicous of adulterous affairs after sleeping with their lover
+							}
+							#Soulmates should not grow suspicous of adulterous affairs after sleeping with their lover
 						}
 						add_to_temporary_list = partners_1
 					}
@@ -732,7 +733,8 @@ had_sex_with_effect = {
 							limit = {
 								NOT = {
 									this = scope:had_sex_root_character
-								}								#Soulmates should not grow suspicous of adulterous affairs after sleeping with their lover
+								}
+								#Soulmates should not grow suspicous of adulterous affairs after sleeping with their lover
 							}
 							add_to_temporary_list = partners_2
 						}

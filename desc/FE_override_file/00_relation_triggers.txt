@@ -1001,7 +1001,8 @@ minor_interest_close_relatives_trigger = {
 			is_cousin_of = $CHARACTER$
 			NOT = {
 				is_close_family_of = $CHARACTER$
-			}			#Because... incest. Sigh.
+			}
+			#Because... incest. Sigh.
 		}
 		major_interest_potential_heirs_trigger = {
 			CHARACTER = $CHARACTER$
@@ -1299,7 +1300,8 @@ has_RelationToMe_relation = {
 	save_temporary_scope_as = relation_check
 	NOT = {
 		this = $CHARACTER$
-	}	# Don't print our relation to ourselves!
+	}
+	# Don't print our relation to ourselves!
 	OR = {
 		is_close_or_extended_family_of = $CHARACTER$
 		any_spouse = {
