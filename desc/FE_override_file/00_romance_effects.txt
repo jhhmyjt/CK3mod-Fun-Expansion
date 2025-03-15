@@ -592,7 +592,7 @@ had_sex_with_effect = {
 			$CHARACTER$ = {
 				add_to_variable_list = {
 					name = potential_father_variable_list
-					target = scope:had_sex_with_effect_partner
+					target = scope:had_sex_root_character
 				}
 			}
 			if = {
@@ -682,8 +682,7 @@ had_sex_with_effect = {
 						limit = {
 							NOT = {
 								this = $CHARACTER$
-							}
-							#Soulmates should not grow suspicous of adulterous affairs after sleeping with their lover
+							}							#Soulmates should not grow suspicous of adulterous affairs after sleeping with their lover
 						}
 						add_to_temporary_list = partners_1
 					}
@@ -733,8 +732,7 @@ had_sex_with_effect = {
 							limit = {
 								NOT = {
 									this = scope:had_sex_root_character
-								}
-								#Soulmates should not grow suspicous of adulterous affairs after sleeping with their lover
+								}								#Soulmates should not grow suspicous of adulterous affairs after sleeping with their lover
 							}
 							add_to_temporary_list = partners_2
 						}

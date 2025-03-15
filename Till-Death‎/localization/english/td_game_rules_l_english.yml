@@ -10,3 +10,8 @@ rule_hc_seduce_court_setting:0 "@hc_text_icon_02!Till Death Seduce/Court Setting
   setting_hc_one_certificate_quantity_desc:0 "A player can only make a contract with one person"
   setting_hc_more_certificate_quantity:0 "One-to-many"
   setting_hc_more_certificate_quantity_desc:0 "Players can make contracts with multiple people"
+  rule_hc_difficult_birth_setting:0 "@hc_text_icon_02!Till Death Difficult Birth Setting"
+  setting_hc_all_character_no_difficult_birth:0 "All characters will not have difficult births"
+  setting_hc_all_character_no_difficult_birth_desc:0 "All characters will not have difficult births"
+  setting_hc_character_no_difficult_birth:0 "Specific characters will not have difficult births"
+  setting_hc_character_no_difficult_birth_desc:0 "Specific characters will not have difficult births (trait: Till Death)"

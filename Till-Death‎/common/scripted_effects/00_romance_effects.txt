@@ -467,6 +467,7 @@ had_sex_with_effect = {
 	}
 	### Plus, remove the blocking scope we might have.
 	clear_saved_scope = ignore_cheating_error_check
+	#TD check
 	if = {
 		limit = {
 			trigger_if = {
@@ -719,7 +720,7 @@ had_sex_with_effect = {
 				$CHARACTER$ = {
 					add_to_variable_list = {
 						name = potential_father_variable_list
-						target = scope:had_sex_with_effect_partner
+						target = scope:had_sex_root_character
 					}
 				}
 				if = {
@@ -730,12 +731,12 @@ had_sex_with_effect = {
 						is_ruler = yes
 						$CHARACTER$ = {
 							is_lowborn = yes
-							is_landed = no
+							is_playable_character = no
 							is_courtier = no
 						}
 						NOT = {
 							any_scheme = {
-								scheme_target_character = $CHARACTER$
+								scheme_target_character ?= $CHARACTER$
 							}
 						}
 					}

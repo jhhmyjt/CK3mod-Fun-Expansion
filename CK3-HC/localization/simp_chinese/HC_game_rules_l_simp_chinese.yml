@@ -39,3 +39,8 @@
  setting_hc_one_certificate_quantity_desc:0 "玩家只能和一人缔结契约"
  setting_hc_more_certificate_quantity:0 "一对多"
  setting_hc_more_certificate_quantity_desc:0 "玩家可以和多人缔结契约"
+ rule_hc_difficult_birth_setting:0 "@hc_text_icon_02!至死不渝 难产设置"
+ setting_hc_all_character_no_difficult_birth:0 "所有角色不会难产"
+ setting_hc_all_character_no_difficult_birth_desc:0 "所有角色不会难产"
+ setting_hc_character_no_difficult_birth:0 "特定角色不会难产"
+ setting_hc_character_no_difficult_birth_desc:0 "特定角色不会难产（特质：至死不渝）"

@@ -12,14 +12,19 @@
 [*]缔结婚约：与未婚/未订婚角色（需满足可订婚条件）订婚、许下誓言、缔结神圣契约
 [*]为其洗礼：为在你宫廷中的角色进行洗礼，使其免受欲念的困扰，并防止其恣情纵欲
 [/list]
+本mod可以阻止ntr事件的发生（[b]仅针对原版环境[/b]）,具体有如下措施：
+1. 修改原版爱人关系判定
+2. 修改原版“与某角色睡觉”效果
+3. 修改原版ntr相关事件判定，阻止其发生
+
+[img]https://i.imgur.com/XwvRPPC.png[/img]
 
 [h1]支持语言[/h1]
 简体中文
 English(by Google)
 
 [h1]兼容性[/h1]
-兼容现有存档
-不兼容铁人
+兼容现有存档，不建议在中途删除本mod
 修改过的原文件：court_scheme.txt seduce_scheme.txt 00_romance_effects.txt 00_relation_triggers.txt pregnancy_events.txt
 
 [h1]素材来源&免责声明[/h1]

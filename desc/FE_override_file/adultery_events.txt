@@ -62,8 +62,7 @@ adultery_0001_valid_partner_trigger = {
 	is_physically_able_adult = yes
 	NOT = {
 		has_character_flag = was_recently_suspected_of_adultery
-	}
-	# To avoid event spamming
+	}	# To avoid event spamming
 }
 
 adultery.0001 = {
@@ -1343,8 +1342,7 @@ adultery.0008 = {
 				}
 				scope:lover_spouse = {
 					save_scope_as = sex_partner
-				}
-				#save the lover_spouse instead for portraits + text
+				}				#save the lover_spouse instead for portraits + text
 				#Add effects and tell my partner (because they're not the revealer)
 				extramarital_sex_exposure_consequences_with_target_effect = {
 					TARGET = scope:sex_partner

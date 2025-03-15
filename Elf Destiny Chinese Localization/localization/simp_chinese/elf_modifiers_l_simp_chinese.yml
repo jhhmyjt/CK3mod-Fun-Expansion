@@ -1,5 +1,0 @@
-﻿l_simp_chinese:
-  #
-scheme_power_against_lover_add:0 "[scheme_power|E] against your [lovers|E]"
-max_seduce_schemes_add:0 "最大 [GetScheme('seduce').GetTypeName] 计划次数"
-seduce_scheme_resistance_add:0 "[GetScheme('seduce').GetTypeName] 诱惑计划抵抗"

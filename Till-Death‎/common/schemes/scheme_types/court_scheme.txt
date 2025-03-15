@@ -915,7 +915,7 @@ courting = {
 					#Milestone 1 event
 					AND = {
 						scope:scheme = {
-							scheme_agent_charges >= 2
+							scheme_progress >= scheme_progress_33
 						}
 						NOT = {
 							exists = var:court_milestone_event
@@ -924,7 +924,7 @@ courting = {
 					#Milestone 2 event
 					AND = {
 						scope:scheme = {
-							scheme_agent_charges >= 4
+							scheme_progress >= scheme_progress_50
 						}
 						OR = {
 							NOT = {
@@ -936,7 +936,7 @@ courting = {
 					#Milestone 3 event
 					AND = {
 						scope:scheme = {
-							scheme_agent_charges >= 8
+							scheme_progress >= scheme_progress_66
 						}
 						OR = {
 							NOT = {

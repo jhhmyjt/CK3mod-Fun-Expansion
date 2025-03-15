@@ -11,7 +11,6 @@ English(by Google)
 
 [h1]Compatibility[/h1]
 Compatible with save game
-Not compatible with Iron Man
 Modified vanilla files:court_scheme.txt seduce_scheme.txt 00_romance_effects.txt 00_relation_triggers.txt pregnancy_events.txt
 
 [h1]Source & Disclaimer[/h1]

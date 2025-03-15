@@ -1,29 +1,43 @@
 ﻿#勾引/求爱设置
 hc_seduce_court_setting = {
-	categories = {
-		td
-		tweaks
-	}
-	default = hc_seduce_court_ai_player_cannot
-	#限制玩家和ai
-	hc_seduce_court_ai_player_cannot = {
-	}
-	#仅限制ai
-	hc_seduce_court_ai_cannot = {
-	}
+    categories = {
+        td
+        tweaks
+    }
+    default = hc_seduce_court_ai_player_cannot
+    #限制玩家和ai
+    hc_seduce_court_ai_player_cannot = {
+    }
+    #仅限制ai
+    hc_seduce_court_ai_cannot = {
+    }
 }
 
 #契约限制
 hc_certificate_quantity_setting = {
-	categories = {
-		td
-		tweaks
+    categories = {
+        td
+        tweaks
+    }
+    default = hc_one_certificate_quantity
+    #一对一
+    hc_one_certificate_quantity = {
+    }
+    #一对多
+    hc_more_certificate_quantity = {
+    }
+}
+#难产设置
+hc_difficult_birth_setting = {
+    categories = {
+        td
+        tweaks
+    }
+    default = hc_character_no_difficult_birth
+    #所有角色不会难产
+    hc_all_character_no_difficult_birth = {
 	}
-	default = hc_one_certificate_quantity
-	#一对一
-	hc_one_certificate_quantity = {
-	}
-	#一对多
-	hc_more_certificate_quantity = {
+    #只有特定特质的角色不会难产
+	hc_character_no_difficult_birth = {
 	}
 }

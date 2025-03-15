@@ -1,5 +1,5 @@
 ﻿l_english:
- trait_hc_immutable:0 "immutable until death"
+ trait_hc_immutable:0 "Till Death"
   trait_hc_immutable_desc:0 "This person's love will last forever\n\nNote:The platycodon flower has the meaning of unswerving love, the rhizome of the platycodon flower is straight and does not grow branches, so the flowers of the plant are solitary, As if you love only one person in your life, giving the bellflower flower to your lover can express your eternal heart for her."
   trait_hc_immutable_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] loves to the death.\n\nNote:Platycodon flower has the meaning of love to the death. The rhizome of Platycodon flower is straight and does not grow branches, so the plant The flowers are single, as if you only love one person in your life. Giving the bellflower flower to your lover can express your eternal heart for her.\n\n#P Greatly reduce the success chance of an outsider's seduce/court scheme to [ROOT.GetCharacter.GetFirstNameNoTooltip] and the success chance of [ROOT.GetCharacter.GetFirstNameNoTooltip]'s seduce/court scheme to outside, while increasing the success chance of [ROOT.GetCharacter.GetFirstNameNoTooltip]'s seduce/court scheme to people with the same trait.#"
 

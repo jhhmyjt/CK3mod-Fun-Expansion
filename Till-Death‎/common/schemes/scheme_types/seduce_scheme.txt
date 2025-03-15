@@ -235,7 +235,7 @@
 		add = odds_seduce_scheme_misc_value
 		add = {
 			value = 0
-			desc = "SCHEME_LUST_DEMON_MODIFIER"
+			desc = "possessed_by_lust_demon_modifier"
 			if = {
 				limit = {
 					scope:owner = {
@@ -269,14 +269,6 @@
 				var:wnight_seduce_memento_var = scope:target
 			}
 		}
-		#Language
-		modifier = {
-			add = 5
-			desc = YOU_SPEAK_THE_LANGUAGE
-			scope:owner = {
-				knows_language_of_culture = scope:target.culture
-			}
-		}
 		#Lust demon rep makes people wanna help you out... sexually
 		modifier = {
 			add = scope:target.ai_zeal
@@ -286,6 +278,14 @@
 			}
 			scope:target = {
 				ai_zeal > medium_positive_ai_value
+			}
+		}
+		#Language
+		modifier = {
+			add = 5
+			desc = YOU_SPEAK_THE_LANGUAGE
+			scope:owner = {
+				knows_language_of_culture = scope:target.culture
 			}
 		}
 		modifier = {
@@ -1319,7 +1319,7 @@
 		#Milestone 1 event
 		if = {
 			limit = {
-				scheme_agent_charges < 6
+				scheme_progress < scheme_progress_50
 				NOR = {
 					has_scheme_modifier = seduce_success_1_modifier
 					has_scheme_modifier = seduce_failure_1_modifier
@@ -1345,7 +1345,7 @@
 		#Milestone 2 event
 		else_if = {
 			limit = {
-				scheme_agent_charges >= 6
+				scheme_progress >= scheme_progress_50
 				NOR = {
 					has_scheme_modifier = seduce_success_2_modifier
 					has_scheme_modifier = seduce_failure_2_modifier
@@ -1370,6 +1370,7 @@
 		}
 	}
 	on_invalidated = {
+		save_scope_as = scheme
 		scheme_target_character = {
 			save_scope_as = target
 		}
@@ -1390,7 +1391,7 @@
 		if = {
 			limit = {
 				NOT = {
-					scheme_progress = 10
+					scheme_progress = scope:scheme.scheme_phase_duration
 				}
 				scope:owner = {
 					has_relation_lover = scope:target

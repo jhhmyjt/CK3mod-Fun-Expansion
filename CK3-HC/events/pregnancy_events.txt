@@ -52,7 +52,12 @@ pregnancy.0001 = {
 				#TD trait immutable
 				modifier = {
 					add = 9999
-					has_trait = hc_immutable
+					trigger_if = {
+						limit = {
+							has_game_rule = hc_character_no_difficult_birth
+						}
+						has_trait = hc_immutable	
+					}
 				}
 				add_character_flag = {
 					flag = birth_will_go_smoothly
@@ -73,7 +78,12 @@ pregnancy.0001 = {
 				#TD trait immutable
 				modifier = {
 					add = -3
-					has_trait = hc_immutable
+					trigger_if = {
+						limit = {
+							has_game_rule = hc_character_no_difficult_birth
+						}
+						has_trait = hc_immutable	
+					}
 				}
 				#Child dies during delivery (this triggers when the birth "should" have gone down, since we don't want to create the baby)
 				trigger_event = {
@@ -90,9 +100,15 @@ pregnancy.0001 = {
 					#to keep players from dying excessively
 					add = -2
 					#TD trait immutable
-					or = {
-						has_trait = hc_immutable
-						is_ai = no
+					# or = {
+					# 	has_trait = hc_immutable
+					# 	is_ai = no
+					# }
+					trigger_if = {
+						limit = {
+							has_game_rule = hc_character_no_difficult_birth
+						}
+						has_trait = hc_immutable	
 					}
 				}
 				add_character_flag = {
@@ -107,9 +123,15 @@ pregnancy.0001 = {
 					#to keep players from dying excessively
 					add = -2
 					#TD trait immutable
-					or = {
-						has_trait = hc_immutable
-						is_ai = no
+					# or = {
+					# 	has_trait = hc_immutable
+					# 	is_ai = no
+					# }
+					trigger_if = {
+						limit = {
+							has_game_rule = hc_character_no_difficult_birth
+						}
+						has_trait = hc_immutable	
 					}
 				}
 				trigger_event = {
@@ -561,6 +583,11 @@ pregnancy.2001 = {
 	option = {
 		#Only tell the real_father
 		name = pregnancy.2001.b
+		trigger = {
+			scope:real_father = {
+				is_alive = yes
+			}
+		}
 		hidden_effect = {
 			add_character_flag = {
 				#Add flag to determine what should happen in adultery.1101
@@ -656,7 +683,12 @@ pregnancy.2002 = {
 		}
 	}
 	theme = pregnancy
-	left_portrait = scope:real_father
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+	right_portrait = scope:father
+	lower_center_portrait = scope:real_father
 	right_portrait = scope:father
 	trigger = {
 		#TD
