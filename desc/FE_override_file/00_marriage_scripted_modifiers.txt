@@ -902,8 +902,7 @@
 			scope:secondary_actor.dynasty = {
 				dynasty_prestige_level = 1
 			}
-		}
-		#Would equal a value of 0, so we hide it
+		}		#Would equal a value of 0, so we hide it
 		add = {
 			value = scope:secondary_actor.dynasty.dynasty_prestige_level
 			multiply = 5
