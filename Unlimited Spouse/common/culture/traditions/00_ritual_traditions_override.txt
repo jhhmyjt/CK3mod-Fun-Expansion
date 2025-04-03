@@ -1,23 +1,22 @@
 ﻿##############################
 # RITUAL CULTURAL TRADITIONS #
 ##############################
-
 tradition_monogamous = {
 	category = ritual
-
 	layers = {
 		0 = learning
 		1 = western
 		4 = knight.dds
 	}
-	
 	can_pick = {
 		custom_tooltip = {
 			text = only_one_marriage_tradition_allowed
 			trigger_if = {
 				limit = {
 					OR = {
-						NOT = { exists = scope:replacing }
+						NOT = {
+							exists = scope:replacing
+						}
 						NOR = {
 							scope:replacing = culture_tradition:tradition_polygamous
 							scope:replacing = culture_tradition:tradition_concubines
@@ -25,8 +24,12 @@ tradition_monogamous = {
 					}
 				}
 				NOR = {
-					culture_tradition:tradition_polygamous = { is_in_list = traits }
-					culture_tradition:tradition_concubines = { is_in_list = traits }
+					culture_tradition:tradition_polygamous = {
+						is_in_list = traits
+					}
+					culture_tradition:tradition_concubines = {
+						is_in_list = traits
+					}
 				}
 			}
 		}
@@ -34,21 +37,21 @@ tradition_monogamous = {
 	can_pick_for_hybridization = {
 		custom_tooltip = {
 			text = only_one_marriage_tradition_allowed
-			NOT = { # Only blocks polygamous to avoid duplicate warnings, but is blocked by concubines
-				culture_tradition:tradition_polygamous = { is_in_list = traits }
+			NOT = {
+				# Only blocks polygamous to avoid duplicate warnings, but is blocked by concubines
+				culture_tradition:tradition_polygamous = {
+					is_in_list = traits
+				}
 			}
 		}
 	}
-	
 	parameters = {
 		number_of_spouses = 99
 		romance_scheme_bonus_vs_spouse = yes
 	}
-	
 	character_modifier = {
 		spouse_opinion = 10
 	}
-	
 	cost = {
 		prestige = {
 			add = {
@@ -69,30 +72,30 @@ tradition_monogamous = {
 					desc = cheaper_tradition_from_faith
 				}
 			}
-			
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
-	ai_will_do = { value = 0 }
+	ai_will_do = {
+		value = 0
+	}
 }
 
 tradition_polygamous = {
 	category = ritual
-
 	layers = {
 		0 = diplo
 		1 = mena
 		4 = temple.dds
 	}
-	
 	can_pick = {
 		custom_tooltip = {
 			text = only_one_marriage_tradition_allowed
 			trigger_if = {
 				limit = {
 					OR = {
-						NOT = { exists = scope:replacing }
+						NOT = {
+							exists = scope:replacing
+						}
 						NOR = {
 							scope:replacing = culture_tradition:tradition_monogamous
 							scope:replacing = culture_tradition:tradition_concubines
@@ -100,8 +103,12 @@ tradition_polygamous = {
 					}
 				}
 				NOR = {
-					culture_tradition:tradition_monogamous = { is_in_list = traits }
-					culture_tradition:tradition_concubines = { is_in_list = traits }
+					culture_tradition:tradition_monogamous = {
+						is_in_list = traits
+					}
+					culture_tradition:tradition_concubines = {
+						is_in_list = traits
+					}
 				}
 			}
 		}
@@ -109,16 +116,17 @@ tradition_polygamous = {
 	can_pick_for_hybridization = {
 		custom_tooltip = {
 			text = only_one_marriage_tradition_allowed
-			NOT = { # Only blocks concubines to avoid duplicate warnings, but is blocked by monogamous
-				culture_tradition:tradition_concubines = { is_in_list = traits }
+			NOT = {
+				# Only blocks concubines to avoid duplicate warnings, but is blocked by monogamous
+				culture_tradition:tradition_concubines = {
+					is_in_list = traits
+				}
 			}
 		}
 	}
-	
 	parameters = {
 		number_of_spouses = 99
 	}
-	
 	cost = {
 		prestige = {
 			add = {
@@ -142,30 +150,30 @@ tradition_polygamous = {
 					desc = cheaper_tradition_from_faith
 				}
 			}
-			
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
-	ai_will_do = { value = 0 }
+	ai_will_do = {
+		value = 0
+	}
 }
 
 tradition_concubines = {
 	category = ritual
-
 	layers = {
 		0 = intrigue
 		1 = indian
 		4 = greeting.dds
 	}
-	
 	can_pick = {
 		custom_tooltip = {
 			text = only_one_marriage_tradition_allowed
 			trigger_if = {
 				limit = {
 					OR = {
-						NOT = { exists = scope:replacing }
+						NOT = {
+							exists = scope:replacing
+						}
 						NOR = {
 							scope:replacing = culture_tradition:tradition_monogamous
 							scope:replacing = culture_tradition:tradition_polygamous
@@ -173,8 +181,12 @@ tradition_concubines = {
 					}
 				}
 				NOR = {
-					culture_tradition:tradition_monogamous = { is_in_list = traits }
-					culture_tradition:tradition_polygamous = { is_in_list = traits }
+					culture_tradition:tradition_monogamous = {
+						is_in_list = traits
+					}
+					culture_tradition:tradition_polygamous = {
+						is_in_list = traits
+					}
 				}
 			}
 		}
@@ -182,17 +194,18 @@ tradition_concubines = {
 	can_pick_for_hybridization = {
 		custom_tooltip = {
 			text = only_one_marriage_tradition_allowed
-			NOT = { # Only blocks monogamous to avoid duplicate warnings, but is blocked by polygamous
-				culture_tradition:tradition_monogamous = { is_in_list = traits }
+			NOT = {
+				# Only blocks monogamous to avoid duplicate warnings, but is blocked by polygamous
+				culture_tradition:tradition_monogamous = {
+					is_in_list = traits
+				}
 			}
 		}
 	}
-	
 	parameters = {
 		number_of_spouses = 99
 		number_of_consorts = 99
 	}
-	
 	cost = {
 		prestige = {
 			add = {
@@ -216,23 +229,21 @@ tradition_concubines = {
 					desc = cheaper_tradition_from_faith
 				}
 			}
-			
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
-	ai_will_do = { value = 0 }
+	ai_will_do = {
+		value = 0
+	}
 }
 
 tradition_sacred_mountains = {
 	category = ritual
-
 	layers = {
 		0 = learning
 		1 = mediterranean
 		4 = mountain.dds
 	}
-
 	is_shown = {
 		NOR = {
 			has_cultural_pillar = heritage_somalian
@@ -246,7 +257,9 @@ tradition_sacred_mountains = {
 			}
 			has_cultural_tradition = tradition_himalayan_settlers
 		}
-		scope:character = { government_has_flag = government_is_tribal }
+		scope:character = {
+			government_has_flag = government_is_tribal
+		}
 	}
 	can_pick = {
 		custom_description = {
@@ -261,7 +274,6 @@ tradition_sacred_mountains = {
 			}
 		}
 	}
-	
 	parameters = {
 		piety_gain_on_building_complete_in_mountains = yes
 	}
@@ -269,7 +281,6 @@ tradition_sacred_mountains = {
 		desert_mountains_tax_mult = 0.05
 		mountains_tax_mult = 0.05
 	}
-	
 	cost = {
 		prestige = {
 			add = {
@@ -280,7 +291,9 @@ tradition_sacred_mountains = {
 			if = {
 				limit = {
 					NOT = {
-						culture_pillar:ethos_spiritual = { is_in_list = traits }
+						culture_pillar:ethos_spiritual = {
+							is_in_list = traits
+						}
 					}
 				}
 				add = {
@@ -307,16 +320,18 @@ tradition_sacred_mountains = {
 					desc = mountain_percentage_desc
 				}
 			}
-			
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
 	ai_will_do = {
 		value = 100
 		if = {
 			limit = {
-				NOT = { culture_pillar:ethos_spiritual = { is_in_list = traits } }
+				NOT = {
+					culture_pillar:ethos_spiritual = {
+						is_in_list = traits
+					}
+				}
 			}
 			multiply = 0.25
 		}
@@ -366,15 +381,15 @@ tradition_sacred_mountains = {
 
 tradition_sacred_groves = {
 	category = ritual
-
 	layers = {
 		0 = learning
 		1 = western
 		4 = forest.dds
 	}
-	
 	is_shown = {
-		scope:character = { government_has_flag = government_is_tribal }
+		scope:character = {
+			government_has_flag = government_is_tribal
+		}
 	}
 	can_pick = {
 		custom_description = {
@@ -390,7 +405,6 @@ tradition_sacred_groves = {
 			}
 		}
 	}
-	
 	parameters = {
 		piety_gain_on_building_complete_in_forest_taiga = yes
 	}
@@ -399,7 +413,6 @@ tradition_sacred_groves = {
 		taiga_tax_mult = 0.05
 		jungle_tax_mult = 0.05
 	}
-	
 	cost = {
 		prestige = {
 			add = {
@@ -410,7 +423,9 @@ tradition_sacred_groves = {
 			if = {
 				limit = {
 					NOT = {
-						culture_pillar:ethos_spiritual = { is_in_list = traits }
+						culture_pillar:ethos_spiritual = {
+							is_in_list = traits
+						}
 					}
 				}
 				add = {
@@ -438,16 +453,18 @@ tradition_sacred_groves = {
 					desc = forest_percentage_desc
 				}
 			}
-			
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
 	ai_will_do = {
 		value = 100
 		if = {
 			limit = {
-				NOT = { culture_pillar:ethos_spiritual = { is_in_list = traits } }
+				NOT = {
+					culture_pillar:ethos_spiritual = {
+						is_in_list = traits
+					}
+				}
 			}
 			multiply = 0.25
 		}
@@ -499,13 +516,11 @@ tradition_sacred_groves = {
 
 tradition_culinary_art = {
 	category = ritual
-
 	layers = {
 		0 = diplo
 		1 = indian
 		4 = food.dds
 	}
-	
 	can_pick = {
 		custom_tooltip = {
 			text = culture_in_farmlands_or_floodplains_terrain_desc
@@ -519,7 +534,6 @@ tradition_culinary_art = {
 			}
 		}
 	}
-	
 	parameters = {
 		more_expensive_feasts = yes
 		refined_feasts = yes
@@ -527,7 +541,6 @@ tradition_culinary_art = {
 		characters_are_better_food_tasters = yes
 		better_food_tasters = yes
 	}
-	
 	cost = {
 		prestige = {
 			add = {
@@ -538,9 +551,15 @@ tradition_culinary_art = {
 			if = {
 				limit = {
 					NOR = {
-						culture_pillar:ethos_courtly = { is_in_list = traits }
-						culture_pillar:ethos_communal = { is_in_list = traits }
-						culture_pillar:ethos_spiritual = { is_in_list = traits }
+						culture_pillar:ethos_courtly = {
+							is_in_list = traits
+						}
+						culture_pillar:ethos_communal = {
+							is_in_list = traits
+						}
+						culture_pillar:ethos_spiritual = {
+							is_in_list = traits
+						}
 					}
 				}
 				add = {
@@ -567,11 +586,9 @@ tradition_culinary_art = {
 					desc = culture_in_farmlands_or_floodplains_terrain_count_desc
 				}
 			}
-			
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
 	ai_will_do = {
 		value = 50
 		if = {
@@ -598,19 +615,16 @@ tradition_culinary_art = {
 
 tradition_festivities = {
 	category = ritual
-
 	layers = {
 		0 = diplo
 		1 = indian
 		4 = food.dds
 	}
-	
 	parameters = {
 		more_frequent_feasts = yes
 		reveler_traits_more_common = yes
 		reveler_traits_more_valued = yes
 	}
-	
 	cost = {
 		prestige = {
 			add = {
@@ -621,9 +635,15 @@ tradition_festivities = {
 			if = {
 				limit = {
 					NOR = {
-						culture_pillar:ethos_courtly = { is_in_list = traits }
-						culture_pillar:ethos_communal = { is_in_list = traits }
-						culture_pillar:ethos_stoic = { is_in_list = traits }
+						culture_pillar:ethos_courtly = {
+							is_in_list = traits
+						}
+						culture_pillar:ethos_communal = {
+							is_in_list = traits
+						}
+						culture_pillar:ethos_stoic = {
+							is_in_list = traits
+						}
 					}
 				}
 				add = {
@@ -657,11 +677,9 @@ tradition_festivities = {
 					desc = rulers_with_reveler_lifestyle_desc
 				}
 			}
-			
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
 	ai_will_do = {
 		value = 100
 		if = {
@@ -682,16 +700,13 @@ tradition_festivities = {
 
 tradition_sorcerous_metallurgy = {
 	category = ritual
-
 	layers = {
 		0 = learning
 		1 = mediterranean
 		4 = tools.dds
 	}
-
 	is_shown = {
 	}
-
 	can_pick = {
 		scope:character = {
 			faith = {
@@ -702,17 +717,14 @@ tradition_sorcerous_metallurgy = {
 			}
 		}
 	}
-
 	parameters = {
 		more_expensive_weapon_inspiration = yes
 		improved_weapon_inspiration = yes
 		building_barracks_piety_bonuses = yes
 	}
-
 	character_modifier = {
 		prowess_per_piety_level = 2
 	}
-	
 	cost = {
 		prestige = {
 			add = {
@@ -723,8 +735,12 @@ tradition_sorcerous_metallurgy = {
 			if = {
 				limit = {
 					NOR = {
-						culture_pillar:ethos_spiritual = { is_in_list = traits }
-						culture_pillar:ethos_communal = { is_in_list = traits }
+						culture_pillar:ethos_spiritual = {
+							is_in_list = traits
+						}
+						culture_pillar:ethos_communal = {
+							is_in_list = traits
+						}
 					}
 				}
 				add = {
@@ -758,11 +774,9 @@ tradition_sorcerous_metallurgy = {
 					desc = three_witch_rulers_desc
 				}
 			}
-			
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
 	ai_will_do = {
 		value = 100
 		if = {
@@ -783,20 +797,18 @@ tradition_sorcerous_metallurgy = {
 
 tradition_mystical_ancestors = {
 	category = ritual
-
 	layers = {
 		0 = learning
 		1 = mediterranean
 		4 = philosopher.dds
 	}
-
 	is_shown = {
 		any_parent_culture_or_above = {
 			has_cultural_tradition = tradition_mystical_ancestors
 		}
 	}
-
-	can_pick = { #Can pick if your culture has mystical ancestors in its history
+	can_pick = {
+		#Can pick if your culture has mystical ancestors in its history
 		custom_tooltip = {
 			text = any_ancestor_culture_was_mystical
 			any_parent_culture_or_above = {
@@ -804,17 +816,14 @@ tradition_mystical_ancestors = {
 			}
 		}
 	}
-	
 	parameters = {
 		cannot_disherit = yes
 		landing_house_members_gives_renown = yes
 		piety_penalty_for_revoking_titles_from_house_members = yes
 	}
-
 	character_modifier = {
 		dynasty_opinion = 10
 	}
-
 	cost = {
 		prestige = {
 			add = {
@@ -824,7 +833,9 @@ tradition_mystical_ancestors = {
 			if = {
 				limit = {
 					NOT = {
-						culture_pillar:ethos_spiritual = { is_in_list = traits }
+						culture_pillar:ethos_spiritual = {
+							is_in_list = traits
+						}
 					}
 				}
 				add = {
@@ -832,26 +843,26 @@ tradition_mystical_ancestors = {
 					desc = not_spiritual_desc
 				}
 			}
-			
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
-	ai_will_do = { value = 1000 }
+	ai_will_do = {
+		value = 1000
+	}
 }
 
 tradition_religion_blending = {
 	category = ritual
-
 	layers = {
 		0 = diplo
 		1 = mediterranean
 		4 = temple.dds
 	}
-	
 	is_shown = {
 		NOT = {
-			culture_tradition:tradition_steppe_tolerance = { is_in_list = traits }
+			culture_tradition:tradition_steppe_tolerance = {
+				is_in_list = traits
+			}
 		}
 	}
 	can_pick = {
@@ -861,22 +872,21 @@ tradition_religion_blending = {
 				any_vassal = {
 					count >= 2
 					culture = prev.culture
-					NOT = { faith = prev.faith }
+					NOT = {
+						faith = prev.faith
+					}
 				}
 			}
 		}
 	}
-	
 	parameters = {
 		more_easily_converted = yes
 	}
-
 	character_modifier = {
 		faith_creation_piety_cost_mult = -0.2
 		faith_conversion_piety_cost_mult = -0.2
 		ignore_opinion_of_different_faith = yes
 	}
-	
 	cost = {
 		prestige = {
 			add = {
@@ -887,9 +897,15 @@ tradition_religion_blending = {
 			if = {
 				limit = {
 					NOR = {
-						culture_pillar:ethos_courtly = { is_in_list = traits }
-						culture_pillar:ethos_communal = { is_in_list = traits }
-						culture_pillar:ethos_spiritual = { is_in_list = traits }
+						culture_pillar:ethos_courtly = {
+							is_in_list = traits
+						}
+						culture_pillar:ethos_communal = {
+							is_in_list = traits
+						}
+						culture_pillar:ethos_spiritual = {
+							is_in_list = traits
+						}
 					}
 				}
 				add = {
@@ -904,7 +920,9 @@ tradition_religion_blending = {
 							any_vassal = {
 								count >= 5
 								culture = prev.culture
-								NOT = { faith = prev.faith }
+								NOT = {
+									faith = prev.faith
+								}
 							}
 						}
 					}
@@ -914,11 +932,9 @@ tradition_religion_blending = {
 					desc = rulers_following_different_faiths_desc
 				}
 			}
-			
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
 	ai_will_do = {
 		value = 100
 		if = {
@@ -928,7 +944,9 @@ tradition_religion_blending = {
 						any_vassal = {
 							count >= 5
 							culture = prev.culture
-							NOT = { faith = prev.faith }
+							NOT = {
+								faith = prev.faith
+							}
 						}
 					}
 				}
@@ -940,13 +958,11 @@ tradition_religion_blending = {
 
 tradition_religious_patronage = {
 	category = ritual
-
 	layers = {
 		0 = steward
 		1 = indian
 		4 = temple.dds
 	}
-	
 	can_pick = {
 		custom_tooltip = {
 			any_culture_county = {
@@ -958,7 +974,6 @@ tradition_religious_patronage = {
 			text = 20_percent_churches
 		}
 	}
-	
 	parameters = {
 		extra_piety_from_temple_construction = yes
 		renown_from_temple_construction = yes
@@ -967,7 +982,6 @@ tradition_religious_patronage = {
 	character_modifier = {
 		monthly_piety_from_buildings_mult = 0.25
 	}
-	
 	cost = {
 		prestige = {
 			add = {
@@ -978,9 +992,15 @@ tradition_religious_patronage = {
 			if = {
 				limit = {
 					NOR = {
-						culture_pillar:ethos_courtly = { is_in_list = traits }
-						culture_pillar:ethos_communal = { is_in_list = traits }
-						culture_pillar:ethos_spiritual = { is_in_list = traits }
+						culture_pillar:ethos_courtly = {
+							is_in_list = traits
+						}
+						culture_pillar:ethos_communal = {
+							is_in_list = traits
+						}
+						culture_pillar:ethos_spiritual = {
+							is_in_list = traits
+						}
 					}
 				}
 				add = {
@@ -1015,7 +1035,6 @@ tradition_religious_patronage = {
 					desc = rulers_with_same_faith_zealous_desc
 				}
 			}
-			
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
@@ -1034,22 +1053,18 @@ tradition_religious_patronage = {
 
 tradition_medicinal_plants = {
 	category = ritual
-
 	layers = {
 		0 = learning
 		1 = indian
 		4 = forest.dds
 	}
-	
 	parameters = {
 		herbalist_traits_more_common = yes
 		herbalist_trait_gives_bonuses = yes
 	}
-
 	character_modifier = {
 		owned_hostile_scheme_success_chance_add = 5
 	}
-	
 	cost = {
 		prestige = {
 			add = {
@@ -1060,8 +1075,12 @@ tradition_medicinal_plants = {
 			if = {
 				limit = {
 					NOR = {
-						culture_pillar:ethos_bureaucratic = { is_in_list = traits }
-						culture_pillar:ethos_stoic = { is_in_list = traits }
+						culture_pillar:ethos_bureaucratic = {
+							is_in_list = traits
+						}
+						culture_pillar:ethos_stoic = {
+							is_in_list = traits
+						}
 					}
 				}
 				add = {
@@ -1095,11 +1114,9 @@ tradition_medicinal_plants = {
 					desc = rulers_with_lifestyle_herbalist_desc
 				}
 			}
-			
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
 	ai_will_do = {
 		value = 100
 		if = {
@@ -1120,26 +1137,26 @@ tradition_medicinal_plants = {
 
 tradition_sacred_hunts = {
 	category = ritual
-
 	layers = {
 		0 = intrigue
 		1 = mediterranean
 		4 = hunter.dds
 	}
-	
 	can_pick = {
 		culture_not_pacifistic_trigger = yes
 		custom_tooltip = {
 			text = cannot_have_tradition_vegetarianism
-			NOT = { culture_tradition:tradition_vegetarianism = { is_in_list = traits } }
+			NOT = {
+				culture_tradition:tradition_vegetarianism = {
+					is_in_list = traits
+				}
+			}
 		}
 	}
-	
 	parameters = {
 		sacred_hunts = yes
 		hunting_traits_more_pious = yes
 	}
-	
 	cost = {
 		prestige = {
 			add = {
@@ -1150,9 +1167,15 @@ tradition_sacred_hunts = {
 			if = {
 				limit = {
 					NOR = {
-						culture_pillar:ethos_bellicose = { is_in_list = traits }
-						culture_pillar:ethos_spiritual = { is_in_list = traits }
-						culture_pillar:ethos_stoic = { is_in_list = traits }
+						culture_pillar:ethos_bellicose = {
+							is_in_list = traits
+						}
+						culture_pillar:ethos_spiritual = {
+							is_in_list = traits
+						}
+						culture_pillar:ethos_stoic = {
+							is_in_list = traits
+						}
 					}
 				}
 				add = {
@@ -1186,18 +1209,20 @@ tradition_sacred_hunts = {
 					desc = rulers_with_hunter_lifestyle_desc
 				}
 			}
-			
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
 	ai_will_do = {
 		value = 100
 		if = {
 			limit = {
 				NOR = {
-					culture_pillar:ethos_spiritual = { is_in_list = traits }
-					culture_pillar:ethos_bellicose = { is_in_list = traits }
+					culture_pillar:ethos_spiritual = {
+						is_in_list = traits
+					}
+					culture_pillar:ethos_bellicose = {
+						is_in_list = traits
+					}
 				}
 			}
 			multiply = 0.5
@@ -1207,13 +1232,11 @@ tradition_sacred_hunts = {
 
 tradition_faith_bound = {
 	category = ritual
-
 	layers = {
 		0 = learning
 		1 = indian
 		4 = crown.dds
 	}
-	
 	parameters = {
 		same_faith_inheritance_only = yes
 	}
@@ -1231,7 +1254,9 @@ tradition_faith_bound = {
 			if = {
 				limit = {
 					NOT = {
-						culture_pillar:ethos_spiritual = { is_in_list = traits }
+						culture_pillar:ethos_spiritual = {
+							is_in_list = traits
+						}
 					}
 				}
 				add = {
@@ -1248,7 +1273,9 @@ tradition_faith_bound = {
 							}
 							any_ruler = {
 								culture = prev
-								NOT = { THIS = scope:character }
+								NOT = {
+									THIS = scope:character
+								}
 								faith = scope:character.faith
 								primary_title.tier >= tier_county
 							}
@@ -1283,7 +1310,6 @@ tradition_faith_bound = {
 					desc = traditionalist_discount_desc
 				}
 			}
-			
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
@@ -1302,24 +1328,23 @@ tradition_faith_bound = {
 
 tradition_by_the_sword = {
 	category = ritual
-
 	layers = {
 		0 = learning
 		1 = mena
 		4 = swords.dds
 	}
-	
 	can_pick = {
 		custom_tooltip = {
 			text = faith_not_allowed_holy_war_desc
 			scope:character = {
 				faith = {
-					NOT = { has_doctrine_parameter = holy_wars_forbidden }	# Pacifists cannot Holy War
+					NOT = {
+						has_doctrine_parameter = holy_wars_forbidden
+					}					# Pacifists cannot Holy War
 				}
 			}
 		}
 	}
-	
 	parameters = {
 		no_limit_to_kingdom_level_holy_wars = yes
 		cb_lower_piety_level_requirement = yes
@@ -1341,7 +1366,9 @@ tradition_by_the_sword = {
 			if = {
 				limit = {
 					NOT = {
-						culture_pillar:ethos_spiritual = { is_in_list = traits }
+						culture_pillar:ethos_spiritual = {
+							is_in_list = traits
+						}
 					}
 				}
 				add = {
@@ -1376,7 +1403,6 @@ tradition_by_the_sword = {
 					desc = rulers_with_same_faith_zealous_desc
 				}
 			}
-			
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
@@ -1403,13 +1429,11 @@ tradition_by_the_sword = {
 
 tradition_language_scholars = {
 	category = ritual
-
 	layers = {
 		0 = intrigue
 		1 = indian
 		4 = philosopher.dds
 	}
-	
 	parameters = {
 		piety_from_language_schemes = yes
 		language_success_chance_per_piety_level = yes
@@ -1429,9 +1453,15 @@ tradition_language_scholars = {
 			if = {
 				limit = {
 					NOR = {
-						culture_pillar:ethos_spiritual = { is_in_list = traits }
-						culture_pillar:ethos_bureaucratic = { is_in_list = traits }
-						culture_pillar:ethos_egalitarian = { is_in_list = traits }
+						culture_pillar:ethos_spiritual = {
+							is_in_list = traits
+						}
+						culture_pillar:ethos_bureaucratic = {
+							is_in_list = traits
+						}
+						culture_pillar:ethos_egalitarian = {
+							is_in_list = traits
+						}
 					}
 				}
 				add = {
@@ -1453,7 +1483,6 @@ tradition_language_scholars = {
 					desc = piety_level_kown_languages_desc
 				}
 			}
-			
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
@@ -1465,13 +1494,11 @@ tradition_language_scholars = {
 # This is the free version of runestones.
 tradition_runestones = {
 	category = ritual
-
 	layers = {
 		0 = steward
 		1 = western
 		4 = runestone.dds
 	}
-
 	# Runestones are available in a slightly reduced form in the base title, so we let you access this tradition regardless of whether you have FP1 or not.
 	is_shown = {
 		has_cultural_pillar = heritage_north_germanic
@@ -1479,14 +1506,16 @@ tradition_runestones = {
 	can_pick = {
 		custom_tooltip = {
 			text = cannot_have_tradition_fp1_northern_stories
-			NOT = { culture_tradition:tradition_fp1_northern_stories = { is_in_list = traits } }
+			NOT = {
+				culture_tradition:tradition_fp1_northern_stories = {
+					is_in_list = traits
+				}
+			}
 		}
 	}
-	
 	parameters = {
 		has_access_to_runestones = yes
 	}
-
 	cost = {
 		prestige = {
 			# Base cost.
@@ -1499,8 +1528,12 @@ tradition_runestones = {
 			if = {
 				limit = {
 					NOR = {
-						culture_pillar:ethos_bellicose = { is_in_list = traits }
-						culture_pillar:ethos_bureaucratic = { is_in_list = traits }
+						culture_pillar:ethos_bellicose = {
+							is_in_list = traits
+						}
+						culture_pillar:ethos_bureaucratic = {
+							is_in_list = traits
+						}
 					}
 				}
 				add = {
@@ -1539,11 +1572,9 @@ tradition_runestones = {
 					desc = rulers_lacks_storytelling_traits_desc
 				}
 			}
-			
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
 	ai_will_do = {
 		value = 100
 	}
@@ -1551,25 +1582,25 @@ tradition_runestones = {
 
 tradition_merciful_blindings = {
 	category = ritual
-
 	layers = {
 		0 = intrigue
 		1 = mediterranean
 		4 = tools.dds
 	}
-	
 	can_pick = {
 		custom_tooltip = {
 			text = cannot_have_tradition_byzantine_succession
-			NOT = { culture_tradition:tradition_byzantine_succession = { is_in_list = traits } }
+			NOT = {
+				culture_tradition:tradition_byzantine_succession = {
+					is_in_list = traits
+				}
+			}
 		}
 	}
-	
 	parameters = {
 		can_blind_prisoners = yes
 		merciful_blinding = yes
 	}
-	
 	cost = {
 		prestige = {
 			add = {
@@ -1580,8 +1611,12 @@ tradition_merciful_blindings = {
 			if = {
 				limit = {
 					NOR = {
-						culture_pillar:ethos_spiritual = { is_in_list = traits }
-						culture_pillar:ethos_courtly = { is_in_list = traits }
+						culture_pillar:ethos_spiritual = {
+							is_in_list = traits
+						}
+						culture_pillar:ethos_courtly = {
+							is_in_list = traits
+						}
 					}
 				}
 				add = {
@@ -1609,16 +1644,17 @@ tradition_merciful_blindings = {
 					desc = no_prisoner_with_harsh_reason_desc
 				}
 			}
-			
 			multiply = tradition_replacement_cost_if_relevant
 		}
 	}
-	
 	ai_will_do = {
 		value = 100
 		if = {
-			limit = { # Reduce chance of picking this if the culture has another use of prisoners already
-				culture_tradition:tradition_talent_acquisition = { is_in_list = traits }
+			limit = {
+				# Reduce chance of picking this if the culture has another use of prisoners already
+				culture_tradition:tradition_talent_acquisition = {
+					is_in_list = traits
+				}
 			}
 			multiply = 0.5
 		}
