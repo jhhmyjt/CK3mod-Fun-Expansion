@@ -1,0 +1,14 @@
+﻿l_simp_chinese:
+  hc_certificate_married:0 "缔结神圣契约"
+  hc_certificate_married_desc:0 "与[spouse.GetFirstNameNoTooltip]缔结神圣契约"
+  hc_certificate_married_desc_second_perspective:0 "与[spouse.GetFirstNameNoTooltip]缔结神圣契约"
+  hc_certificate_married_desc_third_perspective:0 "与[spouse.GetFirstNameNoTooltip]缔结神圣契约"
+  hc_finish_holy_test:0 "通过神圣考核"
+  hc_finish_holy_test_desc:0 "通过神圣考核"
+  hc_finish_holy_test_desc_second_perspective:0 "通过神圣考核"
+  hc_finish_holy_test_desc_third_perspective:0 "通过神圣考核"
+  hc_baptism:0 "接受洗礼"
+  hc_baptism_desc:0 "接受[father.GetFirstNameNoTooltip]的洗礼"
+  hc_baptism_desc_second_perspective:0 "接受[father.GetFirstNameNoTooltip]的洗礼"
+  hc_baptism_desc_third_perspective:0 "接受[father.GetFirstNameNoTooltip]的洗礼"
+

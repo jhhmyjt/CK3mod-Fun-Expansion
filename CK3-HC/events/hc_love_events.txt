@@ -179,6 +179,12 @@ hc_love.02 = {
 				}
 				remove_character_modifier = hc_char_modifier_08
 			}
+			create_character_memory = {
+				type = hc_certificate_married
+				participants = {
+					spouse = scope:actor
+				}
+			}
 			#TODO：1对1跟踪，对于多对一只跟踪最后一个。该代码暂时不用
 			# set_variable = {
 			# 	# 跟踪契约对象
@@ -195,6 +201,12 @@ hc_love.02 = {
 					has_character_modifier = hc_char_modifier_08
 				}
 				remove_character_modifier = hc_char_modifier_08
+			}
+			create_character_memory = {
+				type = hc_certificate_married
+				participants = {
+					spouse = scope:recipient
+				}
 			}
 			#订婚
 			create_betrothal = scope:recipient
@@ -284,6 +296,12 @@ hc_love.03 = {
 				}
 				remove_character_modifier = hc_char_modifier_08
 			}
+			create_character_memory = {
+				type = hc_certificate_married
+				participants = {
+					spouse = scope:actor
+				}
+			}
 			# set_variable = {
 			# 	# 跟踪契约对象
 			# 	name = hc_marriage
@@ -299,6 +317,12 @@ hc_love.03 = {
 					has_character_modifier = hc_char_modifier_08
 				}
 				remove_character_modifier = hc_char_modifier_08
+			}
+			create_character_memory = {
+				type = hc_certificate_married
+				participants = {
+					spouse = scope:recipient
+				}
 			}
 			# set_variable = {
 			# 	# 跟踪契约对象

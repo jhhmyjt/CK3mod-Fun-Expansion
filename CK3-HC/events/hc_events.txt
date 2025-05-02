@@ -132,6 +132,9 @@ hc.002 = {
 				modifier = hc_dynasty_god_modifier
 			}
 		}
+		create_character_memory = {
+			type = hc_finish_holy_test
+		}
 		remove_character_modifier = hc_01_modifier
 		custom_tooltip = hc.002_effect_tt
 		hidden_effect = {

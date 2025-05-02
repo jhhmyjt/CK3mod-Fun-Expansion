@@ -1,24 +1,26 @@
 ﻿#至死不渝 immutable
 hc_immutable = {
-	category = fame
-	ruler_designer_cost = 200
-	learning = 3
-	health = 0.5
-	monthly_piety = 0.5
-	stress_gain_mult = -0.3
-	same_opinion = 100
-	flag = hc_immutable_flag
-	desc = {
-		first_valid = {
-			triggered_desc = {
-				trigger = {
-					NOT = {
-						exists = this
-					}
-				}
-				desc = trait_hc_immutable_desc
-			}
-			desc = trait_hc_immutable_character_desc
-		}
-	}
+    category = fame
+    ruler_designer_cost = 200
+    learning = 3
+    health = 0.5
+    monthly_piety = 0.5
+    stress_gain_mult = -0.3
+    enemy_personal_scheme_success_chance_add= -10
+    enemy_hostile_scheme_success_chance_add= -10
+    same_opinion = 100
+    flag = hc_immutable_flag
+    desc = {
+        first_valid = {
+            triggered_desc = {
+                trigger = {
+                    NOT = {
+                        exists = this
+                    }
+                }
+                desc = trait_hc_immutable_desc
+            }
+            desc = trait_hc_immutable_character_desc
+        }
+    }
 }

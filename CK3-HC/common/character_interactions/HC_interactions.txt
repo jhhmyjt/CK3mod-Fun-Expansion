@@ -975,6 +975,12 @@ hc_baptism_interaction = {
 						target = scope:actor
 						modifier = hc_baptize_opinion
 					}
+					create_character_memory = {
+						type = hc_baptism
+						participants = {
+							father = scope:actor
+						}
+					}
 				}
 			}
 		}

@@ -1,0 +1,174 @@
+﻿hc_beauty_template = {
+    age = { 18 28 }
+    gender = female
+    random_traits = no
+    random_traits_list = {
+        count = 3
+        patient = {}
+        temperate = {}
+        fickle = {}
+        brave = {}
+        honest={}
+        humble={}
+        just={}
+    }
+    trait = beauty_good_2
+
+    random_traits_list = {
+        count = 1
+        intellect_good_3 = {weight = { base = 10 }}
+        intellect_good_2 = {weight = { base = 50 }}
+        intellect_good_1 = {weight = { base = 50 }}
+        fecund = {weight = { base = 5 }}
+        shrewd = {weight = { base = 5 }}
+        strong={weight = { base = 5 }}
+    }
+    random_traits_list = {
+        count = 1
+        physique_good_3 = {weight = { base = 10 }}
+        physique_good_2 = {weight = { base = 25 }}
+        physique_good_1 = {weight = { base = 25 }}
+        fecund = {weight = { base = 5 }}
+        shrewd = {weight = { base = 5 }}
+        strong={weight = { base = 5 }}
+    }
+
+    random_traits_list = {
+        count = 1
+        education_stewardship_2 = {weight = { base = 50 }}
+        education_stewardship_3 = {weight = { base = 10 }}
+        education_stewardship_4 = {weight = { base = 10 }}
+    }
+    martial = {10 15}
+    stewardship = { 10 18 }
+    prowess = { 6 12 }
+    diplomacy = { 13 19 }
+    learning = { 12 19 }
+    intrigue= { 10 15 }
+}
+hc_beauty_template_2 = {
+    age = { 18 28 }
+    gender = female
+    random_traits = no
+    random_traits_list = {
+        count = 3
+        patient = {}
+        temperate = {}
+        fickle = {}
+        brave = {}
+        honest={}
+        humble={}
+        just={}
+    }
+    trait = beauty_good_2
+
+    random_traits_list = {
+        count = 1
+        intellect_good_3 = {weight = { base = 10 }}
+        intellect_good_2 = {weight = { base = 50 }}
+        intellect_good_1 = {weight = { base = 30 }}
+        fecund = {weight = { base = 10 }}
+        shrewd = {weight = { base = 10 }}
+        strong={weight = { base = 10 }}
+    }
+    random_traits_list = {
+        count = 1
+        physique_good_3 = {weight = { base = 10 }}
+        physique_good_2 = {weight = { base = 20 }}
+        physique_good_1 = {weight = { base = 20 }}
+        fecund = {weight = { base = 10 }}
+        shrewd = {weight = { base = 10 }}
+        strong={weight = { base = 10 }}
+    }
+
+    random_traits_list = {
+        count = 1
+        education_stewardship_2 = {weight = { base = 50 }}
+        education_stewardship_3 = {weight = { base = 20 }}
+        education_stewardship_4 = {weight = { base = 10 }}
+    }
+    martial = {10 20}
+    stewardship = { 10 22 }
+    prowess = { 6 18 }
+    diplomacy = { 13 24 }
+    learning = { 12 22 }
+    intrigue= { 10 16 }
+}
+hc_beauty_template_3 = {
+    age = { 18 28 }
+    gender = female
+    random_traits = no
+    random_traits_list = {
+        count = 3
+        patient = {}
+        temperate = {}
+        fickle = {}
+        brave = {}
+        honest={}
+        humble={}
+        just={}
+    }
+    trait = beauty_good_3
+
+    random_traits_list = {
+        count = 1
+        intellect_good_3 = {weight = { base = 10 }}
+        intellect_good_2 = {weight = { base = 25 }}
+        intellect_good_1 = {weight = { base = 25 }}
+        fecund = {weight = { base = 15 }}
+        shrewd = {weight = { base = 15 }}
+        strong={weight = { base = 15 }}
+    }
+    random_traits_list = {
+        count = 1
+        physique_good_3 = {weight = { base = 10 }}
+        physique_good_2 = {weight = { base = 25 }}
+        physique_good_1 = {weight = { base = 25 }}
+        fecund = {weight = { base = 15 }}
+        shrewd = {weight = { base = 15 }}
+        strong={weight = { base = 15 }}
+    }
+
+    random_traits_list = {
+        count = 1
+        education_stewardship_2 = {weight = { base = 25 }}
+        education_stewardship_3 = {weight = { base = 20 }}
+        education_stewardship_4 = {weight = { base = 10 }}
+    }
+    martial = {10 22}
+    stewardship = { 10 24 }
+    prowess = { 6 18 }
+    diplomacy = { 13 25 }
+    learning = { 12 24 }
+    intrigue= { 12 19 }
+}
+hc_beauty_template_4 = {
+    age = { 18 28 }
+    gender = female
+    random_traits = no
+    random_traits_list = {
+        count = 3
+        patient = {}
+        temperate = {}
+        fickle = {}
+        brave = {}
+        honest={}
+        humble={}
+        just={}
+    }
+    trait = beauty_good_3
+    trait = pure_blooded
+    trait = intellect_good_3
+    trait = fecund
+    trait = strong
+    trait = shrewd
+    trait = physique_good_3
+    trait = education_stewardship_4
+
+    martial = {15 25}
+    stewardship = { 16 29 }
+    prowess = { 12 19 }
+    diplomacy = { 16 29 }
+    learning = { 17 28 }
+    intrigue= { 16 25 }
+}

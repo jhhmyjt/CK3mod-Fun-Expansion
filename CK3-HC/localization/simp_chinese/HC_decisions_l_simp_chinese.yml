@@ -33,7 +33,7 @@
  hc_new_decision_effect_tt:0 "你将拥有圣剑杜兰达尔的使用权"
  hc_cruise_decision_t:0 "巡游天下"
  hc_cruise_decision_tooltip:0 "你将在你的一处领地巡游"
- hc_cruise_decision_desc:0 "有所谓 “勤本事、夙兴夜寐、朝夕不懈、视听不怠”, 上帝赐予你的荣耀, 你将带领官兵们出巡, 在你的领土上刻录石碑, 歌颂功德。"
+ hc_cruise_decision_desc:0 "有所谓 "勤本事、夙兴夜寐、朝夕不懈、视听不怠", 上帝赐予你的荣耀, 你将带领官兵们出巡, 在你的领土上刻录石碑, 歌颂功德。"
  hc_cruise_decision_confirm:0 "准备出巡"
  hc_cruise_decision_effect_tt.a:0 "你能有机会提高你的[prestige|E]"
  hc_cruise_decision_effect_tt.b:0 "你能有机会提高你领地的的[control|E]"
@@ -106,7 +106,7 @@
  hc_building_special_decision_08:0 "建造圣足山"
  hc_building_special_decision_08_tooltip:0 "建造圣足山"
  hc_building_special_decision_08_confirm:0 "上帝的杰作"
- hc_building_special_decision_08_desc:0 "高耸于斯里兰卡的圣足山（又名“亚当峰”），拥有奇特的圆锥形外表，因为在山峰上发现的“足印”而被诸多宗教一直尊为圣山。这个所谓的足印——一个在山巅的岩石上被发现的大坑，被归因于佛陀、湿婆神以及《圣经》中的亚当，使得这座山在佛教、印度教以及伊斯兰教的信徒中广受尊崇。每年都有成千上万的朝圣者跋山涉水攀上山顶，向圣地致以他们的崇高敬意。"
+ hc_building_special_decision_08_desc:0 "高耸于斯里兰卡的圣足山（又名"亚当峰"），拥有奇特的圆锥形外表，因为在山峰上发现的"足印"而被诸多宗教一直尊为圣山。这个所谓的足印——一个在山巅的岩石上被发现的大坑，被归因于佛陀、湿婆神以及《圣经》中的亚当，使得这座山在佛教、印度教以及伊斯兰教的信徒中广受尊崇。每年都有成千上万的朝圣者跋山涉水攀上山顶，向圣地致以他们的崇高敬意。"
  hc_establish_building_all_finished_decision:0 "奇观之王"
  hc_establish_building_all_finished_decision_tooltip:0 "奇观之王"
  hc_establish_building_all_finished_decision_confirm:0 "旅途的终点"
@@ -180,5 +180,10 @@
  hc_add_building_decision_confirm:0 "开发建筑"
  hc_add_building_decision_msg_t:0 "建筑槽增加"
  hc_add_building_decision_msg_tt:0 "[barony.GetProvince.GetName]的建筑槽位加一"
+ hc_recruit_three_beautiful_women_decision_t:0 "邀请美女"
+ hc_recruit_three_beautiful_women_decision_tooltip:0 "邀请三位美女以提升宫廷的魅力"
+ hc_recruit_three_beautiful_women_decision_desc: "#F 为了提升宫廷的魅力和吸引力，你决定招募三位才貌双全的美女。她们将成为宫廷中的璀璨明珠，为你的统治增添光彩。#!"
+ hc_recruit_three_beautiful_women_decision_confirm:0 "静候佳人"
+ hc_recruit_three_beautiful_women_decision.tt:0 "邀请三位美女以提升宫廷的魅力，她们会在几个月内陆续到访你的宫廷"
 
  

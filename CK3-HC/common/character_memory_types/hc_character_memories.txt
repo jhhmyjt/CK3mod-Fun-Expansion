@@ -1,0 +1,74 @@
+﻿hc_certificate_married = {
+	categories = { positive marriage }
+	icon = "marriage.dds"
+	description = {
+		random_valid = {
+			desc = hc_certificate_married_desc
+		}
+	}
+
+	second_perspective_description = {
+		random_valid = {
+			desc = hc_certificate_married_desc_second_perspective
+		}
+	}
+
+	third_perspective_description = {
+		random_valid = {
+			desc = hc_certificate_married_desc_third_perspective
+		}
+	}
+
+	participants = { spouse }
+
+	duration = {
+		years = memory_default_duration
+	}
+}
+#通过神圣考核后的记忆
+hc_finish_holy_test = {
+	categories = { positive }
+	icon = "contract_tier.dds"
+	description = {
+		random_valid = {
+			desc = hc_finish_holy_test_desc
+		}
+	}
+    second_perspective_description = {
+		random_valid = {
+			desc = hc_finish_holy_test_desc_second_perspective
+		}
+	}
+    third_perspective_description = {
+		random_valid = {
+			desc = hc_finish_holy_test_desc_third_perspective
+		}
+	}
+	duration = {
+		years = memory_default_duration
+	}
+}
+#接收了洗礼的记忆
+hc_baptism = {
+	categories = { positive religious }
+	icon = "_default.dds"
+	description = {
+		random_valid = {
+			desc = hc_baptism_desc
+		}
+	}
+	second_perspective_description = {
+		random_valid = {
+			desc = hc_baptism_desc_second_perspective
+		}
+	}
+	third_perspective_description = {
+		random_valid = {
+			desc = hc_baptism_desc_third_perspective
+		}
+	}
+	duration = {
+		years = memory_default_duration
+	}
+    participants = { father }
+}

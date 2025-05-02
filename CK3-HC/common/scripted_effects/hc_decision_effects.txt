@@ -1,122 +1,122 @@
 ﻿#TODO: bug，暂时屏蔽效果
 embrace_roma_effect = {
-	# Scopes saves for localization
-	root = {
-		save_scope_as = embracer
-	}
-	# Prestige Bonus
-	add_prestige = 1000
-	#Flip Counties
-	hidden_effect = {
-		every_county_in_region = {
-			region = custom_roman_full_borders
-			# custom = embrace_roma_counties_custom
-			limit = {
-				target_is_de_facto_liege_or_above = root.primary_title
-			}
-			add_county_modifier = {
-				modifier = hc_09_modifier
-				years = 100
-			}
-			hidden_effect = {
-				if = {
-					limit = {
-						development_level < 5
-					}
-					change_development_level = 1
-				}
-			}
-		}
-	}
+    # Scopes saves for localization
+    root = {
+        save_scope_as = embracer
+    }
+    # Prestige Bonus
+    add_prestige = 1000
+    #Flip Counties
+    hidden_effect = {
+        every_county_in_region = {
+            region = custom_roman_full_borders
+            # custom = embrace_roma_counties_custom
+            limit = {
+                target_is_de_facto_liege_or_above = root.primary_title
+            }
+            add_county_modifier = {
+                modifier = hc_09_modifier
+                years = 100
+            }
+            hidden_effect = {
+                if = {
+                    limit = {
+                        development_level < 5
+                    }
+                    change_development_level = 1
+                }
+            }
+        }
+    }
 }
 
 hc_build_chrysotriclinium_decision_effect = {
-	root.dynasty = {
-		add_dynasty_prestige = 5000
-	}
-	title:c_byzantion = {
-		title_province = {
-			add_province_modifier = extra_building_slot
-			add_building = hc_chrysotriclinium
-		}
-	}
-	title:c_byzantion = {
-		add_county_modifier = {
-			modifier = hc_country_modifier_02
-			years = 200
-		}
-		change_development_level = medium_development_level_gain
-	}
-	if = {
-		limit = {
-			has_game_rule = hc_army_normal_strength
-		}
-		spawn_army = {
-			men_at_arms = {
-				type = hc_judgment_heavy_cavalry
-				stacks = 3
-			}
-			men_at_arms = {
-				type = hc_guards
-				stacks = 5
-			}
-			men_at_arms = {
-				type = hc_guards
-				stacks = 5
-			}
-			location = title:c_byzantion.title_province
-			name = hc_chrysotriclinium_army
-		}
-	}
-	else_if = {
-		limit = {
-			has_game_rule = hc_army_low_strength
-		}
-		spawn_army = {
-			men_at_arms = {
-				type = hc_judgment_heavy_cavalry_02
-				stacks = 3
-			}
-			men_at_arms = {
-				type = hc_guards_02
-				stacks = 5
-			}
-			men_at_arms = {
-				type = hc_guards_02
-				stacks = 5
-			}
-			location = title:c_byzantion.title_province
-			name = hc_chrysotriclinium_army
-		}
-	}
-	else_if = {
-		limit = {
-			has_game_rule = hc_army_bottom_strength
-		}
-		spawn_army = {
-			men_at_arms = {
-				type = hc_judgment_heavy_cavalry_03
-				stacks = 3
-			}
-			men_at_arms = {
-				type = hc_guards_03
-				stacks = 5
-			}
-			men_at_arms = {
-				type = hc_guards_03
-				stacks = 5
-			}
-			location = title:c_byzantion.title_province
-			name = hc_chrysotriclinium_army
-		}
-	}
+    root.dynasty = {
+        add_dynasty_prestige = 5000
+    }
+    title:c_byzantion = {
+        title_province = {
+            add_province_modifier = extra_building_slot
+            add_building = hc_chrysotriclinium
+        }
+    }
+    title:c_byzantion = {
+        add_county_modifier = {
+            modifier = hc_country_modifier_02
+            years = 200
+        }
+        change_development_level = medium_development_level_gain
+    }
+    if = {
+        limit = {
+            has_game_rule = hc_army_normal_strength
+        }
+        spawn_army = {
+            men_at_arms = {
+                type = hc_judgment_heavy_cavalry
+                stacks = 3
+            }
+            men_at_arms = {
+                type = hc_guards
+                stacks = 5
+            }
+            men_at_arms = {
+                type = hc_guards
+                stacks = 5
+            }
+            location = title:c_byzantion.title_province
+            name = hc_chrysotriclinium_army
+        }
+    }
+    else_if = {
+        limit = {
+            has_game_rule = hc_army_low_strength
+        }
+        spawn_army = {
+            men_at_arms = {
+                type = hc_judgment_heavy_cavalry_02
+                stacks = 3
+            }
+            men_at_arms = {
+                type = hc_guards_02
+                stacks = 5
+            }
+            men_at_arms = {
+                type = hc_guards_02
+                stacks = 5
+            }
+            location = title:c_byzantion.title_province
+            name = hc_chrysotriclinium_army
+        }
+    }
+    else_if = {
+        limit = {
+            has_game_rule = hc_army_bottom_strength
+        }
+        spawn_army = {
+            men_at_arms = {
+                type = hc_judgment_heavy_cavalry_03
+                stacks = 3
+            }
+            men_at_arms = {
+                type = hc_guards_03
+                stacks = 5
+            }
+            men_at_arms = {
+                type = hc_guards_03
+                stacks = 5
+            }
+            location = title:c_byzantion.title_province
+            name = hc_chrysotriclinium_army
+        }
+    }
 }
 
 hc_king_of_wonder_effect = {
-	root.dynasty = {
-		add_dynasty_prestige = 1200
-		remove_dynasty_modifier = hc_dynasty_building_modifier
-		add_dynasty_modifier = hc_dynasty_building_king_modifier
-	}
-	add_trait = hc_wonder_king
+    root.dynasty = {
+        add_dynasty_prestige = 1200
+        remove_dynasty_modifier = hc_dynasty_building_modifier
+        add_dynasty_modifier = hc_dynasty_building_king_modifier
+    }
+    add_trait = hc_wonder_king
 }

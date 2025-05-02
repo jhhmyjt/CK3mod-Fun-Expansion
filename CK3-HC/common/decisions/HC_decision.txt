@@ -4,7 +4,7 @@
 # 	desc = hc__decision_desc
 # 	decision_group_type = hc_decision
 #ai_check_interval = 0
-# 	
+#
 # 	is_shown = {
 # 		is_ai = no
 # 		debug_only = yes
@@ -32,7 +32,7 @@
 # 					count = 0
 # 				}
 # 			}
-# 			add_piety = 50   
+# 			add_piety = 50
 # 		}
 # 	}
 # 	ai_potential = {
@@ -44,170 +44,170 @@
 # }
 #开始
 hc_begin_decision = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
-	}
-	selection_tooltip = hc_begin_decision_tooltip
-	desc = hc_begin_decision_desc
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	cooldown = {
-		years = 20
-	}
-	is_shown = {
-		is_ai = no
-		NOT = {
-			root.house = {
-				has_house_modifier = hc_dynasty_god_modifier
-			}
-		}
-	}
-	is_valid_showing_failures_only = {
-		is_imprisoned = no
-		is_available_adult = yes
-		is_at_war = no
-	}
-	effect = {
-		custom_tooltip = hc_begin_decision_effect_tt_01
-		custom_tooltip = hc_begin_decision_effect_tt_03
-		if = {
-			limit = {
-				has_ep1_dlc_trigger = yes
-			}
-			custom_tooltip = hc_begin_decision_effect_tt_04
-		}
-		custom_tooltip = hc_begin_decision_effect_tt_05
-		show_as_tooltip = {
-			hc_add_god_descent_effect = yes
-		}
-		trigger_event = {
-			id = hc.001
-			days = 5
-		}
-	}
-	# ai_check_frequency = 0
-	ai_potential = {
-		always = no
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+    }
+    selection_tooltip = hc_begin_decision_tooltip
+    desc = hc_begin_decision_desc
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    cooldown = {
+        years = 20
+    }
+    is_shown = {
+        is_ai = no
+        NOT = {
+            root.house = {
+                has_house_modifier = hc_dynasty_god_modifier
+            }
+        }
+    }
+    is_valid_showing_failures_only = {
+        is_imprisoned = no
+        is_available_adult = yes
+        is_at_war = no
+    }
+    effect = {
+        custom_tooltip = hc_begin_decision_effect_tt_01
+        custom_tooltip = hc_begin_decision_effect_tt_03
+        if = {
+            limit = {
+                has_ep1_dlc_trigger = yes
+            }
+            custom_tooltip = hc_begin_decision_effect_tt_04
+        }
+        custom_tooltip = hc_begin_decision_effect_tt_05
+        show_as_tooltip = {
+            hc_add_god_descent_effect = yes
+        }
+        trigger_event = {
+            id = hc.001
+            days = 5
+        }
+    }
+    # ai_check_frequency = 0
+    ai_potential = {
+        always = no
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 #结束故事
 hc_end_decision = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
-	}
-	selection_tooltip = hc_end_decision_tooltip
-	desc = hc_end_decision_desc
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	cooldown = {
-		days = 5
-	}
-	is_shown = {
-		is_ai = no
-		root.house = {
-			has_house_modifier = hc_dynasty_god_modifier
-		}
-		exists = player_heir
-	}
-	is_valid_showing_failures_only = {
-		is_imprisoned = no
-		is_available_adult = yes
-		is_at_war = no
-	}
-	effect = {
-		custom_tooltip = hc_end_decision_effect_tt
-		hidden_effect = {
-			player_heir.real_father = {
-				save_scope_as = real_father
-			}
-		}
-		if = {
-			limit = {
-				player_heir = {
-					exists = father
-					father = {
-						this = root
-					}
-				}
-				player_heir = {
-					exists = real_father
-					real_father = {
-						Not = {
-							this = root
-						}
-					}
-				}
-			}
-			custom_tooltip = hc_end_decision_green_effect_tt
-		}
-		trigger_event = {
-			id = hc.009
-		}
-	}
-	# ai_check_frequency = 0
-	ai_potential = {
-		always = no
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+    }
+    selection_tooltip = hc_end_decision_tooltip
+    desc = hc_end_decision_desc
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    cooldown = {
+        days = 5
+    }
+    is_shown = {
+        is_ai = no
+        root.house = {
+            has_house_modifier = hc_dynasty_god_modifier
+        }
+        exists = player_heir
+    }
+    is_valid_showing_failures_only = {
+        is_imprisoned = no
+        is_available_adult = yes
+        is_at_war = no
+    }
+    effect = {
+        custom_tooltip = hc_end_decision_effect_tt
+        hidden_effect = {
+            player_heir.real_father = {
+                save_scope_as = real_father
+            }
+        }
+        if = {
+            limit = {
+                player_heir = {
+                    exists = father
+                    father = {
+                        this = root
+                    }
+                }
+                player_heir = {
+                    exists = real_father
+                    real_father = {
+                        Not = {
+                            this = root
+                        }
+                    }
+                }
+            }
+            custom_tooltip = hc_end_decision_green_effect_tt
+        }
+        trigger_event = {
+            id = hc.009
+        }
+    }
+    # ai_check_frequency = 0
+    ai_potential = {
+        always = no
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 #新的开始
 hc_new_decision = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
-	}
-	title = hc_new_decision_t
-	selection_tooltip = hc_new_decision_tooltip
-	desc = hc_new_decision_desc
-	confirm_text = hc_new_decision_confirm
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	is_shown = {
-		is_ai = no
-		root.house = {
-			has_house_modifier = hc_dynasty_god_modifier
-		}
-		NOT = {
-			hc_has_god_descent_trigger = yes
-		}
-		NOT = {
-			has_character_flag = flag_hc_has_saint_sword
-		}
-	}
-	cooldown = {
-		days = 3650
-	}
-	is_valid_showing_failures_only = {
-		is_imprisoned = no
-		# is_available_adult = yes
-		is_at_war = no
-	}
-	effect = {
-		custom_tooltip = hc_new_decision_effect_tt
-		trigger_event = {
-			id = hc.008
-			days = 2
-		}
-	}
-	# ai_check_frequency = 0
-	ai_potential = {
-		always = no
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_major_religion.dds"
+    }
+    title = hc_new_decision_t
+    selection_tooltip = hc_new_decision_tooltip
+    desc = hc_new_decision_desc
+    confirm_text = hc_new_decision_confirm
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    is_shown = {
+        is_ai = no
+        root.house = {
+            has_house_modifier = hc_dynasty_god_modifier
+        }
+        NOT = {
+            hc_has_god_descent_trigger = yes
+        }
+        NOT = {
+            has_character_flag = flag_hc_has_saint_sword
+        }
+    }
+    cooldown = {
+        days = 3650
+    }
+    is_valid_showing_failures_only = {
+        is_imprisoned = no
+        # is_available_adult = yes
+        is_at_war = no
+    }
+    effect = {
+        custom_tooltip = hc_new_decision_effect_tt
+        trigger_event = {
+            id = hc.008
+            days = 2
+        }
+    }
+    # ai_check_frequency = 0
+    ai_potential = {
+        always = no
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 #巡游事件
 # hc_cruise_decision = {
 # 	picture = "gfx/interface/illustrations/decisions/decision_destiny_goal.dds"
-# 	
+#
 #title = hc_cruise_decision_t
 # 	selection_tooltip = hc_cruise_decision_tooltip
 # 	desc = hc_cruise_decision_desc
@@ -276,2125 +276,2249 @@ hc_new_decision = {
 # }
 #恢复罗马正统
 embrace_roma_decision = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	}
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	title = embrace_roma_decision_t
-	selection_tooltip = embrace_roma_decision_tooltip
-	desc = embrace_roma_decision_desc
-	confirm_text = embrace_roma_decision_confirm
-	cost = {
-		piety = 500
-		gold = 500
-	}
-	is_shown = {
-		is_landed = yes
-		root.primary_title = title:e_roman_empire
-		NOT = {
-			is_target_in_global_variable_list = {
-				name = unavailable_unique_decisions
-				target = flag:embrace_roma_decision
-			}
-		}
-	}
-	is_valid = {
-		has_title = title:e_roman_empire
-		piety_level > 3
-		prestige_level > 3
-		root.dynasty = {
-			dynasty_prestige_level > 3
-		}
-	}
-	is_valid_showing_failures_only = {
-		is_imprisoned = no
-		is_available_adult = yes
-		is_independent_ruler = yes
-		is_at_war = no
-	}
-	effect = {
-		add_to_global_variable_list = {
-			name = unavailable_unique_decisions
-			target = flag:embrace_roma_decision
-		}
-		show_as_tooltip = {
-			# embrace_roma_effect = yes
-		}
-		trigger_event = hc.011
-	}
-	ai_potential = {
-		always = no
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+    }
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    title = embrace_roma_decision_t
+    selection_tooltip = embrace_roma_decision_tooltip
+    desc = embrace_roma_decision_desc
+    confirm_text = embrace_roma_decision_confirm
+    cost = {
+        piety = 500
+        gold = 500
+    }
+    is_shown = {
+        is_landed = yes
+        root.primary_title = title:e_roman_empire
+        NOT = {
+            is_target_in_global_variable_list = {
+                name = unavailable_unique_decisions
+                target = flag:embrace_roma_decision
+            }
+        }
+    }
+    is_valid = {
+        has_title = title:e_roman_empire
+        piety_level > 3
+        prestige_level > 3
+        root.dynasty = {
+            dynasty_prestige_level > 3
+        }
+    }
+    is_valid_showing_failures_only = {
+        is_imprisoned = no
+        is_available_adult = yes
+        is_independent_ruler = yes
+        is_at_war = no
+    }
+    effect = {
+        add_to_global_variable_list = {
+            name = unavailable_unique_decisions
+            target = flag:embrace_roma_decision
+        }
+        show_as_tooltip = {
+            # embrace_roma_effect = yes
+        }
+        trigger_event = hc.011
+    }
+    ai_potential = {
+        always = no
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 #册封女帝
 hc_coronation_decision = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
-	}
-	title = hc_coronation_decision_t
-	selection_tooltip = hc_coronation_decision_tooltip
-	desc = hc_coronation_decision_desc
-	confirm_text = hc_coronation_decision_confirm
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	is_shown = {
-		is_ai = no
-		root.primary_title = title:e_roman_empire
-		NOT = {
-			is_target_in_global_variable_list = {
-				name = unavailable_unique_decisions
-				target = flag:coronation_decision
-			}
-		}
-		ROOT.primary_spouse = {
-			is_female = yes
-		}
-	}
-	is_valid_showing_failures_only = {
-		is_imprisoned = no
-		is_available_adult = yes
-		is_independent_ruler = yes
-		is_at_war = no
-	}
-	cost = {
-		gold = 500
-		piety = 750
-		prestige = 750
-	}
-	effect = {
-		trigger_event = {
-			id = coronation.001
-			days = 2
-		}
-		root.dynasty = {
-			add_dynasty_prestige = 1000
-		}
-		add_to_global_variable_list = {
-			name = unavailable_unique_decisions
-			target = flag:coronation_decision
-		}
-	}
-	ai_potential = {
-		always = no
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+    }
+    title = hc_coronation_decision_t
+    selection_tooltip = hc_coronation_decision_tooltip
+    desc = hc_coronation_decision_desc
+    confirm_text = hc_coronation_decision_confirm
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    is_shown = {
+        is_ai = no
+        root.primary_title = title:e_roman_empire
+        NOT = {
+            is_target_in_global_variable_list = {
+                name = unavailable_unique_decisions
+                target = flag:coronation_decision
+            }
+        }
+        ROOT.primary_spouse = {
+            is_female = yes
+        }
+    }
+    is_valid_showing_failures_only = {
+        is_imprisoned = no
+        is_available_adult = yes
+        is_independent_ruler = yes
+        is_at_war = no
+    }
+    cost = {
+        gold = 500
+        piety = 750
+        prestige = 750
+    }
+    effect = {
+        trigger_event = {
+            id = coronation.001
+            days = 2
+        }
+        root.dynasty = {
+            add_dynasty_prestige = 1000
+        }
+        add_to_global_variable_list = {
+            name = unavailable_unique_decisions
+            target = flag:coronation_decision
+        }
+    }
+    ai_potential = {
+        always = no
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 #添加神圣祭坛
 hc_establish_building_altar_decision = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	}
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	title = hc_establish_building_altar_decision_t
-	selection_tooltip = hc_establish_building_altar_decision_tooltip
-	confirm_text = hc_establish_building_altar_decision_confirm
-	desc = hc_establish_building_altar_decision_desc
-	is_shown = {
-		is_landed = yes
-		hc_has_god_descent_trigger = yes
-		exists = capital_province
-		NOT = {
-			is_target_in_global_variable_list = {
-				name = unavailable_unique_decisions
-				target = flag:hc_establish_building_altar_decision
-			}
-		}
-	}
-	is_valid = {
-		custom_description = {
-			text = is_god_dynasty_trigger
-			root.house = {
-				has_house_modifier = hc_dynasty_god_modifier
-			}
-		}
-		OR = {
-			root.dynasty = {
-				dynasty_prestige_level >= 8
-			}
-			prestige_level >= 5
-			piety_level >= 5
-		}
-	}
-	is_valid_showing_failures_only = {
-		is_at_war = no
-		is_capable_adult = yes
-		is_imprisoned = no
-	}
-	cost = {
-		gold = 650
-		prestige = 900
-	}
-	effect = {
-		add_to_global_variable_list = {
-			name = unavailable_unique_decisions
-			target = flag:hc_establish_building_altar_decision
-		}
-		root.house = {
-			add_house_modifier = hc_dynasty_alert_modifier
-		}
-		custom_tooltip = hc_establish_building_altar_decision_custom_tt_01
-		capital_province = {
-			add_province_modifier = extra_building_slot
-			add_building = hc_scared_altar
-		}
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+    }
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    title = hc_establish_building_altar_decision_t
+    selection_tooltip = hc_establish_building_altar_decision_tooltip
+    confirm_text = hc_establish_building_altar_decision_confirm
+    desc = hc_establish_building_altar_decision_desc
+    is_shown = {
+        is_landed = yes
+        hc_has_god_descent_trigger = yes
+        exists = capital_province
+        NOT = {
+            is_target_in_global_variable_list = {
+                name = unavailable_unique_decisions
+                target = flag:hc_establish_building_altar_decision
+            }
+        }
+    }
+    is_valid = {
+        custom_description = {
+            text = is_god_dynasty_trigger
+            root.house = {
+                has_house_modifier = hc_dynasty_god_modifier
+            }
+        }
+        OR = {
+            root.dynasty = {
+                dynasty_prestige_level >= 8
+            }
+            prestige_level >= 5
+            piety_level >= 5
+        }
+    }
+    is_valid_showing_failures_only = {
+        is_at_war = no
+        is_capable_adult = yes
+        is_imprisoned = no
+    }
+    cost = {
+        gold = 650
+        prestige = 900
+    }
+    effect = {
+        add_to_global_variable_list = {
+            name = unavailable_unique_decisions
+            target = flag:hc_establish_building_altar_decision
+        }
+        root.house = {
+            add_house_modifier = hc_dynasty_alert_modifier
+        }
+        custom_tooltip = hc_establish_building_altar_decision_custom_tt_01
+        capital_province = {
+            add_province_modifier = extra_building_slot
+            add_building = hc_scared_altar
+        }
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 #举行祭祀仪式
 hc_sacrificial_ceremony_decision = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
-	}
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	sort_order = 50
-	cooldown = {
-		years = 1
-	}
-	title = hc_sacrificial_ceremony_decision_t
-	selection_tooltip = hc_sacrificial_ceremony_decision_tooltip
-	desc = hc_sacrificial_ceremony_decision_desc
-	confirm_text = hc_sacrificial_ceremony_decision_confirm
-	cost = {
-		gold = 50
-	}
-	is_shown = {
-		is_landed = yes
-		root.house = {
-			has_house_modifier = hc_dynasty_alert_modifier
-		}
-	}
-	is_valid = {
-		OR = {
-			root.dynasty = {
-				dynasty_prestige >= 100000
-			}
-			prestige >= 100000
-			piety >= 100000
-			gold >= 100000
-		}
-	}
-	is_valid_showing_failures_only = {
-		is_imprisoned = no
-		is_available_adult = yes
-		is_at_war = no
-	}
-	effect = {
-		custom_tooltip = hc_sacrificial_ceremony_decision_effect_01
-		custom_tooltip = hc_sacrificial_ceremony_decision_effect_02
-		custom_tooltip = hc_sacrificial_ceremony_decision_effect_03
-		custom_tooltip = hc_sacrificial_ceremony_decision_effect_04
-		trigger_event = hc_sacrifice.001
-	}
-	ai_potential = {
-		always = no
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_personal_religious.dds"
+    }
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    sort_order = 50
+    cooldown = {
+        years = 1
+    }
+    title = hc_sacrificial_ceremony_decision_t
+    selection_tooltip = hc_sacrificial_ceremony_decision_tooltip
+    desc = hc_sacrificial_ceremony_decision_desc
+    confirm_text = hc_sacrificial_ceremony_decision_confirm
+    cost = {
+        gold = 50
+    }
+    is_shown = {
+        is_landed = yes
+        root.house = {
+            has_house_modifier = hc_dynasty_alert_modifier
+        }
+    }
+    is_valid = {
+        OR = {
+            root.dynasty = {
+                dynasty_prestige >= 100000
+            }
+            prestige >= 100000
+            piety >= 100000
+            gold >= 100000
+        }
+    }
+    is_valid_showing_failures_only = {
+        is_imprisoned = no
+        is_available_adult = yes
+        is_at_war = no
+    }
+    effect = {
+        custom_tooltip = hc_sacrificial_ceremony_decision_effect_01
+        custom_tooltip = hc_sacrificial_ceremony_decision_effect_02
+        custom_tooltip = hc_sacrificial_ceremony_decision_effect_03
+        custom_tooltip = hc_sacrificial_ceremony_decision_effect_04
+        trigger_event = hc_sacrifice.001
+    }
+    ai_potential = {
+        always = no
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 #建造特殊建筑
 hc_establish_building_special_decision = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	}
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	title = hc_establish_building_special_decision_t
-	selection_tooltip = hc_establish_building_special_decision_tooltip
-	confirm_text = hc_establish_building_special_decision_confirm
-	desc = hc_establish_building_special_decision_desc
-	is_shown = {
-		is_landed = yes
-		hc_has_god_descent_trigger = yes
-		NOT = {
-			#Can only do it once.
-			is_target_in_global_variable_list = {
-				name = unavailable_unique_decisions
-				target = flag:hc_flag_establish_building_special_decision
-			}
-		}
-	}
-	is_valid = {
-		OR = {
-			prestige_level >= 2
-			piety_level >= 2
-		}
-		highest_held_title_tier >= tier_duchy
-	}
-	is_valid_showing_failures_only = {
-		is_at_war = no
-		is_capable_adult = yes
-		is_imprisoned = no
-	}
-	effect = {
-		custom_tooltip = hc_establish_building_special_decision_custom_tt_01
-		custom_tooltip = hc_establish_building_special_decision_custom_tt_02
-		root.dynasty = {
-			add_dynasty_modifier = hc_dynasty_building_modifier
-		}
-		hidden_effect = {
-			add_to_global_variable_list = {
-				name = unavailable_unique_decisions
-				target = flag:hc_flag_establish_building_special_decision
-			}
-		}
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+    }
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    title = hc_establish_building_special_decision_t
+    selection_tooltip = hc_establish_building_special_decision_tooltip
+    confirm_text = hc_establish_building_special_decision_confirm
+    desc = hc_establish_building_special_decision_desc
+    is_shown = {
+        is_landed = yes
+        hc_has_god_descent_trigger = yes
+        NOT = {
+            #Can only do it once.
+            is_target_in_global_variable_list = {
+                name = unavailable_unique_decisions
+                target = flag:hc_flag_establish_building_special_decision
+            }
+        }
+    }
+    is_valid = {
+        OR = {
+            prestige_level >= 2
+            piety_level >= 2
+        }
+        highest_held_title_tier >= tier_duchy
+    }
+    is_valid_showing_failures_only = {
+        is_at_war = no
+        is_capable_adult = yes
+        is_imprisoned = no
+    }
+    effect = {
+        custom_tooltip = hc_establish_building_special_decision_custom_tt_01
+        custom_tooltip = hc_establish_building_special_decision_custom_tt_02
+        root.dynasty = {
+            add_dynasty_modifier = hc_dynasty_building_modifier
+        }
+        hidden_effect = {
+            add_to_global_variable_list = {
+                name = unavailable_unique_decisions
+                target = flag:hc_flag_establish_building_special_decision
+            }
+        }
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 #建造奇观
 #罗马万神殿
 hc_building_special_decision_01 = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	}
-	sort_order = 70
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	selection_tooltip = hc_building_special_decision_01_tooltip
-	desc = hc_building_special_decision_01_desc
-	widget = {
-		gui = decision_view_widget_hc_building_special
-		controller = create_holy_order
-		barony_valid = {
-			trigger_if = {
-				limit = {
-					exists = this
-				}
-				hc_barony_is_valid_for_build_special_trigger = {
-					CHARACTER = scope:ruler
-				}
-			}
-			trigger_else = {
-				custom_description = {
-					text = "has_holy_order_barony_selected"
-					always = no
-				}
-			}
-		}
-	}
-	is_shown = {
-		NOT = {
-			is_target_in_global_variable_list = {
-				name = hc_special_building_done_list
-				target = flag:hc_building_flag_wonder_01
-			}
-		}
-		root.dynasty = {
-			has_dynasty_modifier = hc_dynasty_building_modifier
-		}
-	}
-	is_valid = {
-		#威望
-		or = {
-			root.dynasty = {
-				dynasty_prestige_level >= 5
-			}
-			prestige_level >= 4
-		}
-		has_trait = august
-	}
-	cost = {
-		prestige = 500
-		gold = 750
-	}
-	is_valid_showing_failures_only = {
-		is_at_war = no
-		is_capable_adult = yes
-		is_imprisoned = no
-	}
-	effect = {
-		scope:barony.title_province = {
-			add_province_modifier = extra_building_slot
-			add_building = hc_wonder_011
-		}
-		#添加建筑到已建列表
-		hidden_effect = {
-			add_to_global_variable_list = {
-				name = hc_special_building_done_list
-				target = flag:hc_building_flag_wonder_01
-			}
-		}
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+    }
+    sort_order = 70
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    selection_tooltip = hc_building_special_decision_01_tooltip
+    desc = hc_building_special_decision_01_desc
+    widget = {
+        gui = decision_view_widget_hc_building_special
+        controller = create_holy_order
+        barony_valid = {
+            trigger_if = {
+                limit = {
+                    exists = this
+                }
+                hc_barony_is_valid_for_build_special_trigger = {
+                    CHARACTER = scope:ruler
+                }
+            }
+            trigger_else = {
+                custom_description = {
+                    text = "has_holy_order_barony_selected"
+                    always = no
+                }
+            }
+        }
+    }
+    is_shown = {
+        NOT = {
+            is_target_in_global_variable_list = {
+                name = hc_special_building_done_list
+                target = flag:hc_building_flag_wonder_01
+            }
+        }
+        root.dynasty = {
+            has_dynasty_modifier = hc_dynasty_building_modifier
+        }
+    }
+    is_valid = {
+        #威望
+        or = {
+            root.dynasty = {
+                dynasty_prestige_level >= 5
+            }
+            prestige_level >= 4
+        }
+        has_trait = august
+    }
+    cost = {
+        prestige = 500
+        gold = 750
+    }
+    is_valid_showing_failures_only = {
+        is_at_war = no
+        is_capable_adult = yes
+        is_imprisoned = no
+    }
+    effect = {
+        scope:barony.title_province = {
+            add_province_modifier = extra_building_slot
+            add_building = hc_wonder_011
+        }
+        #添加建筑到已建列表
+        hidden_effect = {
+            add_to_global_variable_list = {
+                name = hc_special_building_done_list
+                target = flag:hc_building_flag_wonder_01
+            }
+        }
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 #波西米亚城堡
 hc_building_special_decision_02 = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	}
-	sort_order = 70
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	selection_tooltip = hc_building_special_decision_02_tooltip
-	desc = hc_building_special_decision_02_desc
-	widget = {
-		gui = decision_view_widget_hc_building_special
-		controller = create_holy_order
-		barony_valid = {
-			trigger_if = {
-				limit = {
-					exists = this
-				}
-				hc_barony_is_valid_for_build_special_trigger = {
-					CHARACTER = scope:ruler
-				}
-			}
-			trigger_else = {
-				custom_description = {
-					text = "has_holy_order_barony_selected"
-					always = no
-				}
-			}
-		}
-	}
-	is_shown = {
-		NOT = {
-			is_target_in_global_variable_list = {
-				name = hc_special_building_done_list
-				target = flag:hc_building_flag_wonder_02
-			}
-		}
-		root.dynasty = {
-			has_dynasty_modifier = hc_dynasty_building_modifier
-		}
-	}
-	is_valid = {
-		has_trait = diplomat
-	}
-	cost = {
-		gold = 300
-	}
-	is_valid_showing_failures_only = {
-		is_at_war = no
-		is_capable_adult = yes
-		is_imprisoned = no
-	}
-	effect = {
-		scope:barony.title_province = {
-			add_province_modifier = extra_building_slot
-			add_building = hc_wonder_021
-		}
-		#添加建筑到已建列表
-		hidden_effect = {
-			add_to_global_variable_list = {
-				name = hc_special_building_done_list
-				target = flag:hc_building_flag_wonder_02
-			}
-		}
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+    }
+    sort_order = 70
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    selection_tooltip = hc_building_special_decision_02_tooltip
+    desc = hc_building_special_decision_02_desc
+    widget = {
+        gui = decision_view_widget_hc_building_special
+        controller = create_holy_order
+        barony_valid = {
+            trigger_if = {
+                limit = {
+                    exists = this
+                }
+                hc_barony_is_valid_for_build_special_trigger = {
+                    CHARACTER = scope:ruler
+                }
+            }
+            trigger_else = {
+                custom_description = {
+                    text = "has_holy_order_barony_selected"
+                    always = no
+                }
+            }
+        }
+    }
+    is_shown = {
+        NOT = {
+            is_target_in_global_variable_list = {
+                name = hc_special_building_done_list
+                target = flag:hc_building_flag_wonder_02
+            }
+        }
+        root.dynasty = {
+            has_dynasty_modifier = hc_dynasty_building_modifier
+        }
+    }
+    is_valid = {
+        has_trait = diplomat
+    }
+    cost = {
+        gold = 300
+    }
+    is_valid_showing_failures_only = {
+        is_at_war = no
+        is_capable_adult = yes
+        is_imprisoned = no
+    }
+    effect = {
+        scope:barony.title_province = {
+            add_province_modifier = extra_building_slot
+            add_building = hc_wonder_021
+        }
+        #添加建筑到已建列表
+        hidden_effect = {
+            add_to_global_variable_list = {
+                name = hc_special_building_done_list
+                target = flag:hc_building_flag_wonder_02
+            }
+        }
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 #古罗马商业区
 hc_building_special_decision_03 = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	}
-	sort_order = 70
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	selection_tooltip = hc_building_special_decision_03_tooltip
-	desc = hc_building_special_decision_03_desc
-	widget = {
-		gui = decision_view_widget_hc_building_special
-		controller = create_holy_order
-		barony_valid = {
-			trigger_if = {
-				limit = {
-					exists = this
-				}
-				hc_barony_is_valid_for_build_special_trigger = {
-					CHARACTER = scope:ruler
-				}
-			}
-			trigger_else = {
-				custom_description = {
-					text = "has_holy_order_barony_selected"
-					always = no
-				}
-			}
-		}
-	}
-	is_shown = {
-		NOT = {
-			is_target_in_global_variable_list = {
-				name = hc_special_building_done_list
-				target = flag:hc_building_flag_wonder_03
-			}
-		}
-		root.dynasty = {
-			has_dynasty_modifier = hc_dynasty_building_modifier
-		}
-	}
-	is_valid = {
-		has_trait = avaricious
-	}
-	cost = {
-		gold = 600
-	}
-	is_valid_showing_failures_only = {
-		is_at_war = no
-		is_capable_adult = yes
-		is_imprisoned = no
-	}
-	effect = {
-		scope:barony.title_province = {
-			add_province_modifier = extra_building_slot
-			add_building = hc_wonder_030
-		}
-		#添加建筑到已建列表
-		hidden_effect = {
-			add_to_global_variable_list = {
-				name = hc_special_building_done_list
-				target = flag:hc_building_flag_wonder_03
-			}
-		}
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+    }
+    sort_order = 70
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    selection_tooltip = hc_building_special_decision_03_tooltip
+    desc = hc_building_special_decision_03_desc
+    widget = {
+        gui = decision_view_widget_hc_building_special
+        controller = create_holy_order
+        barony_valid = {
+            trigger_if = {
+                limit = {
+                    exists = this
+                }
+                hc_barony_is_valid_for_build_special_trigger = {
+                    CHARACTER = scope:ruler
+                }
+            }
+            trigger_else = {
+                custom_description = {
+                    text = "has_holy_order_barony_selected"
+                    always = no
+                }
+            }
+        }
+    }
+    is_shown = {
+        NOT = {
+            is_target_in_global_variable_list = {
+                name = hc_special_building_done_list
+                target = flag:hc_building_flag_wonder_03
+            }
+        }
+        root.dynasty = {
+            has_dynasty_modifier = hc_dynasty_building_modifier
+        }
+    }
+    is_valid = {
+        has_trait = avaricious
+    }
+    cost = {
+        gold = 600
+    }
+    is_valid_showing_failures_only = {
+        is_at_war = no
+        is_capable_adult = yes
+        is_imprisoned = no
+    }
+    effect = {
+        scope:barony.title_province = {
+            add_province_modifier = extra_building_slot
+            add_building = hc_wonder_030
+        }
+        #添加建筑到已建列表
+        hidden_effect = {
+            add_to_global_variable_list = {
+                name = hc_special_building_done_list
+                target = flag:hc_building_flag_wonder_03
+            }
+        }
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 #圣米歇尔山
 hc_building_special_decision_04 = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	}
-	sort_order = 70
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	selection_tooltip = hc_building_special_decision_04_tooltip
-	desc = hc_building_special_decision_04_desc
-	widget = {
-		gui = decision_view_widget_hc_building_special
-		controller = create_holy_order
-		barony_valid = {
-			trigger_if = {
-				limit = {
-					exists = this
-				}
-				hc_barony_is_valid_for_build_special_trigger = {
-					CHARACTER = scope:ruler
-				}
-			}
-			trigger_else = {
-				custom_description = {
-					text = "has_holy_order_barony_selected"
-					always = no
-				}
-			}
-		}
-	}
-	is_shown = {
-		NOT = {
-			is_target_in_global_variable_list = {
-				name = hc_special_building_done_list
-				target = flag:hc_building_flag_wonder_04
-			}
-		}
-		root.dynasty = {
-			has_dynasty_modifier = hc_dynasty_building_modifier
-		}
-	}
-	is_valid = {
-		or = {
-			custom_description = {
-				text = hc_building_special_decision_04_martial
-				martial >= 20
-			}
-			has_trait = overseer
-		}
-	}
-	cost = {
-		prestige = 300
-		gold = 450
-	}
-	is_valid_showing_failures_only = {
-		is_at_war = no
-		is_capable_adult = yes
-		is_imprisoned = no
-	}
-	effect = {
-		scope:barony.title_province = {
-			add_province_modifier = extra_building_slot
-			add_building = hc_wonder_040
-		}
-		#添加建筑到已建列表
-		hidden_effect = {
-			add_to_global_variable_list = {
-				name = hc_special_building_done_list
-				target = flag:hc_building_flag_wonder_04
-			}
-		}
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+    }
+    sort_order = 70
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    selection_tooltip = hc_building_special_decision_04_tooltip
+    desc = hc_building_special_decision_04_desc
+    widget = {
+        gui = decision_view_widget_hc_building_special
+        controller = create_holy_order
+        barony_valid = {
+            trigger_if = {
+                limit = {
+                    exists = this
+                }
+                hc_barony_is_valid_for_build_special_trigger = {
+                    CHARACTER = scope:ruler
+                }
+            }
+            trigger_else = {
+                custom_description = {
+                    text = "has_holy_order_barony_selected"
+                    always = no
+                }
+            }
+        }
+    }
+    is_shown = {
+        NOT = {
+            is_target_in_global_variable_list = {
+                name = hc_special_building_done_list
+                target = flag:hc_building_flag_wonder_04
+            }
+        }
+        root.dynasty = {
+            has_dynasty_modifier = hc_dynasty_building_modifier
+        }
+    }
+    is_valid = {
+        or = {
+            custom_description = {
+                text = hc_building_special_decision_04_martial
+                martial >= 20
+            }
+            has_trait = overseer
+        }
+    }
+    cost = {
+        prestige = 300
+        gold = 450
+    }
+    is_valid_showing_failures_only = {
+        is_at_war = no
+        is_capable_adult = yes
+        is_imprisoned = no
+    }
+    effect = {
+        scope:barony.title_province = {
+            add_province_modifier = extra_building_slot
+            add_building = hc_wonder_040
+        }
+        #添加建筑到已建列表
+        hidden_effect = {
+            add_to_global_variable_list = {
+                name = hc_special_building_done_list
+                target = flag:hc_building_flag_wonder_04
+            }
+        }
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 hc_building_special_decision_05 = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	}
-	sort_order = 70
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	selection_tooltip = hc_building_special_decision_05_tooltip
-	desc = hc_building_special_decision_05_desc
-	widget = {
-		gui = decision_view_widget_hc_building_special
-		controller = create_holy_order
-		barony_valid = {
-			trigger_if = {
-				limit = {
-					exists = this
-				}
-				hc_barony_is_valid_for_build_special_trigger = {
-					CHARACTER = scope:ruler
-				}
-			}
-			trigger_else = {
-				custom_description = {
-					text = "has_holy_order_barony_selected"
-					always = no
-				}
-			}
-		}
-	}
-	is_shown = {
-		NOT = {
-			is_target_in_global_variable_list = {
-				name = hc_special_building_done_list
-				target = flag:hc_building_flag_wonder_05
-			}
-		}
-		root.dynasty = {
-			has_dynasty_modifier = hc_dynasty_building_modifier
-		}
-	}
-	is_valid = {
-		OR = {
-			dread >= 80
-			has_trait = torturer
-		}
-		prestige_level >= 3
-	}
-	cost = {
-		prestige = 100
-		gold = 500
-	}
-	is_valid_showing_failures_only = {
-		is_at_war = no
-		is_capable_adult = yes
-		is_imprisoned = no
-	}
-	effect = {
-		scope:barony.title_province = {
-			add_province_modifier = extra_building_slot
-			add_building = hc_wonder_050
-		}
-		#添加建筑到已建列表
-		hidden_effect = {
-			add_to_global_variable_list = {
-				name = hc_special_building_done_list
-				target = flag:hc_building_flag_wonder_05
-			}
-		}
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+    }
+    sort_order = 70
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    selection_tooltip = hc_building_special_decision_05_tooltip
+    desc = hc_building_special_decision_05_desc
+    widget = {
+        gui = decision_view_widget_hc_building_special
+        controller = create_holy_order
+        barony_valid = {
+            trigger_if = {
+                limit = {
+                    exists = this
+                }
+                hc_barony_is_valid_for_build_special_trigger = {
+                    CHARACTER = scope:ruler
+                }
+            }
+            trigger_else = {
+                custom_description = {
+                    text = "has_holy_order_barony_selected"
+                    always = no
+                }
+            }
+        }
+    }
+    is_shown = {
+        NOT = {
+            is_target_in_global_variable_list = {
+                name = hc_special_building_done_list
+                target = flag:hc_building_flag_wonder_05
+            }
+        }
+        root.dynasty = {
+            has_dynasty_modifier = hc_dynasty_building_modifier
+        }
+    }
+    is_valid = {
+        OR = {
+            dread >= 80
+            has_trait = torturer
+        }
+        prestige_level >= 3
+    }
+    cost = {
+        prestige = 100
+        gold = 500
+    }
+    is_valid_showing_failures_only = {
+        is_at_war = no
+        is_capable_adult = yes
+        is_imprisoned = no
+    }
+    effect = {
+        scope:barony.title_province = {
+            add_province_modifier = extra_building_slot
+            add_building = hc_wonder_050
+        }
+        #添加建筑到已建列表
+        hidden_effect = {
+            add_to_global_variable_list = {
+                name = hc_special_building_done_list
+                target = flag:hc_building_flag_wonder_05
+            }
+        }
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 hc_building_special_decision_06 = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	}
-	sort_order = 70
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	selection_tooltip = hc_building_special_decision_06_tooltip
-	desc = hc_building_special_decision_06_desc
-	widget = {
-		gui = decision_view_widget_hc_building_special
-		controller = create_holy_order
-		barony_valid = {
-			trigger_if = {
-				limit = {
-					exists = this
-				}
-				hc_barony_is_valid_for_build_special_trigger = {
-					CHARACTER = scope:ruler
-				}
-			}
-			trigger_else = {
-				custom_description = {
-					text = "has_holy_order_barony_selected"
-					always = no
-				}
-			}
-		}
-	}
-	is_shown = {
-		NOT = {
-			is_target_in_global_variable_list = {
-				name = hc_special_building_done_list
-				target = flag:hc_building_flag_wonder_06
-			}
-		}
-		root.dynasty = {
-			has_dynasty_modifier = hc_dynasty_building_modifier
-		}
-	}
-	is_valid = {
-		#威望
-		prestige_level >= 3
-		or = {
-			has_trait = gallant
-			custom_description = {
-				text = hc_building_special_decision_06_knight
-				number_of_knights > 10
-			}
-		}
-	}
-	cost = {
-		prestige = 600
-		gold = 240
-	}
-	is_valid_showing_failures_only = {
-		is_at_war = no
-		is_capable_adult = yes
-		is_imprisoned = no
-	}
-	effect = {
-		scope:barony.title_province = {
-			add_province_modifier = extra_building_slot
-			add_building = hc_wonder_061
-		}
-		#添加建筑到已建列表
-		hidden_effect = {
-			add_to_global_variable_list = {
-				name = hc_special_building_done_list
-				target = flag:hc_building_flag_wonder_06
-			}
-		}
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+    }
+    sort_order = 70
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    selection_tooltip = hc_building_special_decision_06_tooltip
+    desc = hc_building_special_decision_06_desc
+    widget = {
+        gui = decision_view_widget_hc_building_special
+        controller = create_holy_order
+        barony_valid = {
+            trigger_if = {
+                limit = {
+                    exists = this
+                }
+                hc_barony_is_valid_for_build_special_trigger = {
+                    CHARACTER = scope:ruler
+                }
+            }
+            trigger_else = {
+                custom_description = {
+                    text = "has_holy_order_barony_selected"
+                    always = no
+                }
+            }
+        }
+    }
+    is_shown = {
+        NOT = {
+            is_target_in_global_variable_list = {
+                name = hc_special_building_done_list
+                target = flag:hc_building_flag_wonder_06
+            }
+        }
+        root.dynasty = {
+            has_dynasty_modifier = hc_dynasty_building_modifier
+        }
+    }
+    is_valid = {
+        #威望
+        prestige_level >= 3
+        or = {
+            has_trait = gallant
+            custom_description = {
+                text = hc_building_special_decision_06_knight
+                number_of_knights > 10
+            }
+        }
+    }
+    cost = {
+        prestige = 600
+        gold = 240
+    }
+    is_valid_showing_failures_only = {
+        is_at_war = no
+        is_capable_adult = yes
+        is_imprisoned = no
+    }
+    effect = {
+        scope:barony.title_province = {
+            add_province_modifier = extra_building_slot
+            add_building = hc_wonder_061
+        }
+        #添加建筑到已建列表
+        hidden_effect = {
+            add_to_global_variable_list = {
+                name = hc_special_building_done_list
+                target = flag:hc_building_flag_wonder_06
+            }
+        }
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 hc_building_special_decision_07 = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	}
-	sort_order = 70
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	selection_tooltip = hc_building_special_decision_07_tooltip
-	desc = hc_building_special_decision_07_desc
-	widget = {
-		gui = decision_view_widget_hc_building_special
-		controller = create_holy_order
-		barony_valid = {
-			trigger_if = {
-				limit = {
-					exists = this
-				}
-				hc_barony_is_valid_for_build_special_trigger = {
-					CHARACTER = scope:ruler
-				}
-			}
-			trigger_else = {
-				custom_description = {
-					text = "has_holy_order_barony_selected"
-					always = no
-				}
-			}
-		}
-	}
-	is_shown = {
-		NOT = {
-			is_target_in_global_variable_list = {
-				name = hc_special_building_done_list
-				target = flag:hc_building_flag_wonder_07
-			}
-		}
-		root.dynasty = {
-			has_dynasty_modifier = hc_dynasty_building_modifier
-		}
-	}
-	is_valid = {
-		prestige_level >= 3
-		has_trait = strategist
-	}
-	cost = {
-		gold = 800
-	}
-	is_valid_showing_failures_only = {
-		is_at_war = no
-		is_capable_adult = yes
-		is_imprisoned = no
-	}
-	effect = {
-		scope:barony.title_province = {
-			add_province_modifier = extra_building_slot
-			add_building = hc_wonder_070
-		}
-		#添加建筑到已建列表
-		hidden_effect = {
-			add_to_global_variable_list = {
-				name = hc_special_building_done_list
-				target = flag:hc_building_flag_wonder_07
-			}
-		}
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+    }
+    sort_order = 70
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    selection_tooltip = hc_building_special_decision_07_tooltip
+    desc = hc_building_special_decision_07_desc
+    widget = {
+        gui = decision_view_widget_hc_building_special
+        controller = create_holy_order
+        barony_valid = {
+            trigger_if = {
+                limit = {
+                    exists = this
+                }
+                hc_barony_is_valid_for_build_special_trigger = {
+                    CHARACTER = scope:ruler
+                }
+            }
+            trigger_else = {
+                custom_description = {
+                    text = "has_holy_order_barony_selected"
+                    always = no
+                }
+            }
+        }
+    }
+    is_shown = {
+        NOT = {
+            is_target_in_global_variable_list = {
+                name = hc_special_building_done_list
+                target = flag:hc_building_flag_wonder_07
+            }
+        }
+        root.dynasty = {
+            has_dynasty_modifier = hc_dynasty_building_modifier
+        }
+    }
+    is_valid = {
+        prestige_level >= 3
+        has_trait = strategist
+    }
+    cost = {
+        gold = 800
+    }
+    is_valid_showing_failures_only = {
+        is_at_war = no
+        is_capable_adult = yes
+        is_imprisoned = no
+    }
+    effect = {
+        scope:barony.title_province = {
+            add_province_modifier = extra_building_slot
+            add_building = hc_wonder_070
+        }
+        #添加建筑到已建列表
+        hidden_effect = {
+            add_to_global_variable_list = {
+                name = hc_special_building_done_list
+                target = flag:hc_building_flag_wonder_07
+            }
+        }
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 hc_building_special_decision_08 = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	}
-	sort_order = 70
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	selection_tooltip = hc_building_special_decision_08_tooltip
-	desc = hc_building_special_decision_08_desc
-	widget = {
-		gui = decision_view_widget_hc_building_special
-		controller = create_holy_order
-		barony_valid = {
-			trigger_if = {
-				limit = {
-					exists = this
-				}
-				hc_barony_is_valid_for_build_special_trigger = {
-					CHARACTER = scope:ruler
-				}
-			}
-			trigger_else = {
-				custom_description = {
-					text = "has_holy_order_barony_selected"
-					always = no
-				}
-			}
-		}
-	}
-	is_shown = {
-		NOT = {
-			is_target_in_global_variable_list = {
-				name = hc_special_building_done_list
-				target = flag:hc_building_flag_wonder_08
-			}
-		}
-		root.dynasty = {
-			has_dynasty_modifier = hc_dynasty_building_modifier
-		}
-	}
-	is_valid = {
-		piety_level >= 4
-		has_trait = theologian
-	}
-	cost = {
-		piety = 500
-		gold = 450
-	}
-	is_valid_showing_failures_only = {
-		is_at_war = no
-		is_capable_adult = yes
-		is_imprisoned = no
-	}
-	effect = {
-		scope:barony.title_province = {
-			add_province_modifier = extra_building_slot
-			add_building = hc_wonder_081
-		}
-		#添加建筑到已建列表
-		hidden_effect = {
-			add_to_global_variable_list = {
-				name = hc_special_building_done_list
-				target = flag:hc_building_flag_wonder_08
-			}
-		}
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+    }
+    sort_order = 70
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    selection_tooltip = hc_building_special_decision_08_tooltip
+    desc = hc_building_special_decision_08_desc
+    widget = {
+        gui = decision_view_widget_hc_building_special
+        controller = create_holy_order
+        barony_valid = {
+            trigger_if = {
+                limit = {
+                    exists = this
+                }
+                hc_barony_is_valid_for_build_special_trigger = {
+                    CHARACTER = scope:ruler
+                }
+            }
+            trigger_else = {
+                custom_description = {
+                    text = "has_holy_order_barony_selected"
+                    always = no
+                }
+            }
+        }
+    }
+    is_shown = {
+        NOT = {
+            is_target_in_global_variable_list = {
+                name = hc_special_building_done_list
+                target = flag:hc_building_flag_wonder_08
+            }
+        }
+        root.dynasty = {
+            has_dynasty_modifier = hc_dynasty_building_modifier
+        }
+    }
+    is_valid = {
+        piety_level >= 4
+        has_trait = theologian
+    }
+    cost = {
+        piety = 500
+        gold = 450
+    }
+    is_valid_showing_failures_only = {
+        is_at_war = no
+        is_capable_adult = yes
+        is_imprisoned = no
+    }
+    effect = {
+        scope:barony.title_province = {
+            add_province_modifier = extra_building_slot
+            add_building = hc_wonder_081
+        }
+        #添加建筑到已建列表
+        hidden_effect = {
+            add_to_global_variable_list = {
+                name = hc_special_building_done_list
+                target = flag:hc_building_flag_wonder_08
+            }
+        }
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
+
+#建造新奇观建筑：
+# hc_building_special_decision_09 = {
+# 	picture = {
+# 		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+# 	}
+# 	sort_order = 70
+# 	decision_group_type = hc_decision
+# 	ai_check_interval = 0
+# 	selection_tooltip = hc_building_special_decision_09_tooltip
+# 	desc = hc_building_special_decision_09_desc
+# 	widget = {
+# 		gui = decision_view_widget_hc_building_special
+# 		controller = create_holy_order
+# 		barony_valid = {
+# 			trigger_if = {
+# 				limit = {
+# 					exists = this
+# 				}
+# 				hc_barony_is_valid_for_build_special_trigger = {
+# 					CHARACTER = scope:ruler
+# 				}
+# 			}
+# 			trigger_else = {
+# 				custom_description = {
+# 					text = "has_holy_order_barony_selected"
+# 					always = no
+# 				}
+# 			}
+# 		}
+# 	}
+# 	is_shown = {
+# 		NOT = {
+# 			is_target_in_global_variable_list = {
+# 				name = hc_special_building_done_list
+# 				target = flag:hc_building_flag_wonder_09
+# 			}
+# 		}
+# 		root.dynasty = {
+# 			has_dynasty_modifier = hc_dynasty_building_modifier
+# 		}
+# 	}
+# 	is_valid = {
+# 		prestige_level >= 4
+# 		has_trait = theologian
+# 	}
+# 	cost = {
+# 		prestige = 500
+# 		gold = 600
+# 	}
+# 	is_valid_showing_failures_only = {
+# 		is_at_war = no
+# 		is_capable_adult = yes
+# 		is_imprisoned = no
+# 	}
+# 	effect = {
+# 		scope:barony.title_province = {
+# 			add_province_modifier = extra_building_slot
+# 			add_building = hc_wonder_090
+# 		}
+# 		#添加建筑到已建列表
+# 		hidden_effect = {
+# 			add_to_global_variable_list = {
+# 				name = hc_special_building_done_list
+# 				target = flag:hc_building_flag_wonder_09
+# 			}
+# 		}
+# 	}
+# 	ai_will_do = {
+# 		base = 0
+# 	}
+# }
 
 #完成建造所有特殊建筑
 hc_establish_building_all_finished_decision = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	}
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	desc = hc_establish_building_all_finished_decision_desc
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+    }
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    desc = hc_establish_building_all_finished_decision_desc
+    is_shown = {
+        is_landed = yes
+        hc_has_god_descent_trigger = yes
+        NOT = {
+            #Can only do it once.
+            is_target_in_global_variable_list = {
+                name = unavailable_unique_decisions
+                target = flag:flag_hc_establish_building_all_finished_decision
+            }
+        }
+        root.dynasty = {
+            has_dynasty_modifier = hc_dynasty_building_modifier
+        }
+    }
+    is_valid = {
+        #hc_special_building_finished_trigger = yes
+        # calc_true_if = {
+        # 	amount = 8
+        # }
+        custom_description = {
+            text = hc_finished_wonder_01_text
+            is_target_in_global_variable_list = {
+                name = hc_special_building_done_list
+                target = flag:hc_building_flag_wonder_01
+            }
+        }
+        custom_description = {
+            text = hc_finished_wonder_02_text
+            is_target_in_global_variable_list = {
+                name = hc_special_building_done_list
+                target = flag:hc_building_flag_wonder_02
+            }
+        }
+        custom_description = {
+            text = hc_finished_wonder_03_text
+            is_target_in_global_variable_list = {
+                name = hc_special_building_done_list
+                target = flag:hc_building_flag_wonder_03
+            }
+        }
+        custom_description = {
+            text = hc_finished_wonder_04_text
+            is_target_in_global_variable_list = {
+                name = hc_special_building_done_list
+                target = flag:hc_building_flag_wonder_04
+            }
+        }
+        custom_description = {
+            text = hc_finished_wonder_05_text
+            is_target_in_global_variable_list = {
+                name = hc_special_building_done_list
+                target = flag:hc_building_flag_wonder_05
+            }
+        }
+        custom_description = {
+            text = hc_finished_wonder_06_text
+            is_target_in_global_variable_list = {
+                name = hc_special_building_done_list
+                target = flag:hc_building_flag_wonder_06
+            }
+        }
+        custom_description = {
+            text = hc_finished_wonder_07_text
+            is_target_in_global_variable_list = {
+                name = hc_special_building_done_list
+                target = flag:hc_building_flag_wonder_07
+            }
+        }
+        custom_description = {
+            text = hc_finished_wonder_08_text
+            is_target_in_global_variable_list = {
+                name = hc_special_building_done_list
+                target = flag:hc_building_flag_wonder_08
+            }
+        }
+    }
+    is_valid_showing_failures_only = {
+        is_at_war = no
+        is_capable_adult = yes
+        is_imprisoned = no
+    }
+    effect = {
+        show_as_tooltip = {
+            hc_king_of_wonder_effect = yes
+        }
+        trigger_event = hc_special_build.004
+        hidden_effect = {
+            add_to_global_variable_list = {
+                name = unavailable_unique_decisions
+                target = flag:flag_hc_establish_building_all_finished_decision
+            }
+        }
+    }
+    ai_will_do = {
+        base = 0
+    }
+}
+
+#决议：招募三位倾国倾尘的美女来到你的宫廷
+hc_recruit_three_beautiful_women_decision = {
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_tale.dds"
+    }
+    decision_group_type = hc_decision
+    sort_order = 80
+    ai_check_interval = 0
+    title = hc_recruit_three_beautiful_women_decision_t
+    desc = hc_recruit_three_beautiful_women_decision_desc
+    selection_tooltip = hc_recruit_three_beautiful_women_decision_tooltip
+    confirm_text = hc_recruit_three_beautiful_women_decision_confirm
+	cooldown = {
+        years = 5
+    }
+    cost = {
+        gold = 300
+    }
 	is_shown = {
-		is_landed = yes
-		hc_has_god_descent_trigger = yes
-		NOT = {
-			#Can only do it once.
-			is_target_in_global_variable_list = {
-				name = unavailable_unique_decisions
-				target = flag:flag_hc_establish_building_all_finished_decision
-			}
-		}
-		root.dynasty = {
-			has_dynasty_modifier = hc_dynasty_building_modifier
-		}
-	}
-	is_valid = {
-		#hc_special_building_finished_trigger = yes
-		# calc_true_if = {
-		# 	amount = 8
-		# }
-		custom_description = {
-			text = hc_finished_wonder_01_text
-			is_target_in_global_variable_list = {
-				name = hc_special_building_done_list
-				target = flag:hc_building_flag_wonder_01
-			}
-		}
-		custom_description = {
-			text = hc_finished_wonder_02_text
-			is_target_in_global_variable_list = {
-				name = hc_special_building_done_list
-				target = flag:hc_building_flag_wonder_02
-			}
-		}
-		custom_description = {
-			text = hc_finished_wonder_03_text
-			is_target_in_global_variable_list = {
-				name = hc_special_building_done_list
-				target = flag:hc_building_flag_wonder_03
-			}
-		}
-		custom_description = {
-			text = hc_finished_wonder_04_text
-			is_target_in_global_variable_list = {
-				name = hc_special_building_done_list
-				target = flag:hc_building_flag_wonder_04
-			}
-		}
-		custom_description = {
-			text = hc_finished_wonder_05_text
-			is_target_in_global_variable_list = {
-				name = hc_special_building_done_list
-				target = flag:hc_building_flag_wonder_05
-			}
-		}
-		custom_description = {
-			text = hc_finished_wonder_06_text
-			is_target_in_global_variable_list = {
-				name = hc_special_building_done_list
-				target = flag:hc_building_flag_wonder_06
-			}
-		}
-		custom_description = {
-			text = hc_finished_wonder_07_text
-			is_target_in_global_variable_list = {
-				name = hc_special_building_done_list
-				target = flag:hc_building_flag_wonder_07
-			}
-		}
-		custom_description = {
-			text = hc_finished_wonder_08_text
-			is_target_in_global_variable_list = {
-				name = hc_special_building_done_list
-				target = flag:hc_building_flag_wonder_08
-			}
-		}
-	}
-	is_valid_showing_failures_only = {
-		is_at_war = no
-		is_capable_adult = yes
-		is_imprisoned = no
-	}
-	effect = {
-		show_as_tooltip = {
-			hc_king_of_wonder_effect = yes
-		}
-		trigger_event = hc_special_build.004
-		hidden_effect = {
-			add_to_global_variable_list = {
-				name = unavailable_unique_decisions
-				target = flag:flag_hc_establish_building_all_finished_decision
-			}
-		}
-	}
-	ai_will_do = {
-		base = 0
-	}
+        is_landed = yes
+        root.house = {
+            has_house_modifier = hc_dynasty_god_modifier
+        }
+    }
+    is_valid = {
+        prestige_level >= 3
+    }
+    is_valid_showing_failures_only = {
+        is_at_war = no
+        is_capable_adult = yes
+        is_imprisoned = no
+    }
+    effect = {
+        hidden_effect={
+            trigger_event = {
+                id = hc_decision.004
+                days = { 20 60 }
+            }
+            set_variable = {
+                name = number_of_hc_recruit_three_beautiful_women_decision_countdown
+                value = 3
+                days = 1000
+            }
+        }
+
+        custom_tooltip = hc_recruit_three_beautiful_women_decision.tt
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 #摇人
 hc_call_decision = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_invite_knights.dds"
-	}
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	title = hc_call_decision_t
-	desc = hc_call_decision_desc
-	cooldown = {
-		months = 1
-	}
-	cost = {
-		prestige = {
-			add = 300
-			divide = 2
-			if = {
-				limit = {
-					hc_has_god_descent_trigger = yes
-				}
-				multiply = 0.3
-			}
-		}
-	}
-	is_shown = {
-		is_landed = yes
-		root.house = {
-			has_house_modifier = hc_dynasty_god_modifier
-		}
-	}
-	is_valid = {
-		prestige_level >= 3
-		is_at_war = yes
-		custom_description = {
-			text = hc_call_knight_ready_trigger
-			any_vassal = {
-				AND = {
-					has_trait = hc_knight
-					is_at_war = no
-				}
-			}
-		}
-	}
-	is_valid_showing_failures_only = {
-		is_capable_adult = yes
-		is_imprisoned = no
-	}
-	effect = {
-		custom_tooltip = hc_call_decision_custom_tt_02
-		custom_tooltip = hc_call_decision_custom_tt_01
-		trigger_event = {
-			id = hc_call_war.001
-			days = 3
-		}
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_invite_knights.dds"
+    }
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    title = hc_call_decision_t
+    desc = hc_call_decision_desc
+    cooldown = {
+        months = 1
+    }
+    cost = {
+        prestige = {
+            add = 300
+            divide = 2
+            if = {
+                limit = {
+                    hc_has_god_descent_trigger = yes
+                }
+                multiply = 0.3
+            }
+        }
+    }
+    is_shown = {
+        is_landed = yes
+        root.house = {
+            has_house_modifier = hc_dynasty_god_modifier
+        }
+    }
+    is_valid = {
+        prestige_level >= 3
+        is_at_war = yes
+        custom_description = {
+            text = hc_call_knight_ready_trigger
+            any_vassal = {
+                AND = {
+                    has_trait = hc_knight
+                    is_at_war = no
+                }
+            }
+        }
+    }
+    is_valid_showing_failures_only = {
+        is_capable_adult = yes
+        is_imprisoned = no
+    }
+    effect = {
+        custom_tooltip = hc_call_decision_custom_tt_02
+        custom_tooltip = hc_call_decision_custom_tt_01
+        trigger_event = {
+            id = hc_call_war.001
+            days = 3
+        }
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 #采用先进继承法
 hc_adopt_advanced_succession_decision = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
-	}
-	title = hc_adopt_advanced_succession_decision_t
-	desc = hc_adopt_advanced_succession_decision_desc
-	selection_tooltip = hc_adopt_advanced_succession_decision_tooltip
-	confirm_text = hc_adopt_advanced_succession_decision_confirm
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	cost = {
-		prestige = 2500
-		piety = 1000
-	}
-	is_shown = {
-		is_ai = no
-		is_ruler = yes
-		is_landed = yes
-		Not = {
-			has_realm_law_flag = advanced_succession_law
-		}
-		is_independent_ruler = yes
-	}
-	is_valid = {
-		prestige_level >= high_prestige_level
-		highest_held_title_tier >= tier_kingdom
-		custom_description = {
-			text = is_god_dynasty_trigger
-			root.house = {
-				has_house_modifier = hc_dynasty_god_modifier
-			}
-		}
-	}
-	is_valid_showing_failures_only = {
-		is_capable_adult = yes
-		is_imprisoned = no
-		is_independent_ruler = yes
-		is_at_war = no
-	}
-	effect = {
-		# custom_tooltip = reform_carolingian_empire_decision_effect_tooltip
-		if = {
-			limit = {
-				root.culture = {
-					NOT = {
-						has_innovation = innovation_primogeniture
-					}
-				}
-			}
-			root.culture = {
-				add_innovation = innovation_primogeniture
-			}
-		}
-		if = {
-			limit = {
-				NOT = {
-					has_realm_law = single_heir_succession_law
-				}
-			}
-			add_realm_law_skip_effects = single_heir_succession_law
-		}
-		every_vassal = {
-			limit = {
-				is_powerful_vassal_of = root
-			}
-			add_opinion = {
-				modifier = hc_implemented_advanced_succession_law_opinion
-				years = 30
-				target = root
-			}
-		}
-	}
-	ai_potential = {
-		always = no
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+    }
+    title = hc_adopt_advanced_succession_decision_t
+    desc = hc_adopt_advanced_succession_decision_desc
+    selection_tooltip = hc_adopt_advanced_succession_decision_tooltip
+    confirm_text = hc_adopt_advanced_succession_decision_confirm
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    cost = {
+        prestige = 2500
+        piety = 1000
+    }
+    is_shown = {
+        is_ai = no
+        is_ruler = yes
+        is_landed = yes
+        Not = {
+            has_realm_law_flag = advanced_succession_law
+        }
+        is_independent_ruler = yes
+    }
+    is_valid = {
+        prestige_level >= high_prestige_level
+        highest_held_title_tier >= tier_kingdom
+        custom_description = {
+            text = is_god_dynasty_trigger
+            root.house = {
+                has_house_modifier = hc_dynasty_god_modifier
+            }
+        }
+    }
+    is_valid_showing_failures_only = {
+        is_capable_adult = yes
+        is_imprisoned = no
+        is_independent_ruler = yes
+        is_at_war = no
+    }
+    effect = {
+        # custom_tooltip = reform_carolingian_empire_decision_effect_tooltip
+        if = {
+            limit = {
+                root.culture = {
+                    NOT = {
+                        has_innovation = innovation_primogeniture
+                    }
+                }
+            }
+            root.culture = {
+                add_innovation = innovation_primogeniture
+            }
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_realm_law = single_heir_succession_law
+                }
+            }
+            add_realm_law_skip_effects = single_heir_succession_law
+        }
+        every_vassal = {
+            limit = {
+                is_powerful_vassal_of = root
+            }
+            add_opinion = {
+                modifier = hc_implemented_advanced_succession_law_opinion
+                years = 30
+                target = root
+            }
+        }
+    }
+    ai_potential = {
+        always = no
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 #加快文化发展
 hc_improve_culture_development_decision = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_misc.dds"
-	}
-	title = hc_improve_culture_development_decision_t
-	desc = hc_improve_culture_development_decision_desc
-	selection_tooltip = hc_improve_culture_development_decision_tooltip
-	confirm_text = hc_improve_culture_development_decision_confirm
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	cooldown = {
-		years = 1
-	}
-	cost = {
-		prestige = 500
-	}
-	is_shown = {
-		is_ai = no
-		is_landed = yes
-		root.culture = {
-			has_variable = tradition_cooldown
-		}
-	}
-	is_valid = {
-		prestige_level >= high_prestige_level
-		has_trait = scholar
-		custom_description = {
-			text = hc_is_culture_leader_trigger
-			exists = culture.culture_head
-			culture.culture_head = root
-		}
-		custom_description = {
-			text = is_god_dynasty_trigger
-			root.house = {
-				has_house_modifier = hc_dynasty_god_modifier
-			}
-		}
-	}
-	is_valid_showing_failures_only = {
-		is_capable_adult = yes
-		is_imprisoned = no
-		is_at_war = no
-	}
-	effect = {
-		custom_tooltip = hc_improve_culture_development_decision_effect_tooltip
-		root.culture = {
-			remove_variable = tradition_cooldown
-		}
-	}
-	ai_potential = {
-		always = no
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_misc.dds"
+    }
+    title = hc_improve_culture_development_decision_t
+    desc = hc_improve_culture_development_decision_desc
+    selection_tooltip = hc_improve_culture_development_decision_tooltip
+    confirm_text = hc_improve_culture_development_decision_confirm
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    cooldown = {
+        years = 1
+    }
+    cost = {
+        prestige = 500
+    }
+    is_shown = {
+        is_ai = no
+        is_landed = yes
+        root.culture = {
+            has_variable = tradition_cooldown
+        }
+    }
+    is_valid = {
+        prestige_level >= high_prestige_level
+        has_trait = scholar
+        custom_description = {
+            text = hc_is_culture_leader_trigger
+            exists = culture.culture_head
+            culture.culture_head = root
+        }
+        custom_description = {
+            text = is_god_dynasty_trigger
+            root.house = {
+                has_house_modifier = hc_dynasty_god_modifier
+            }
+        }
+    }
+    is_valid_showing_failures_only = {
+        is_capable_adult = yes
+        is_imprisoned = no
+        is_at_war = no
+    }
+    effect = {
+        custom_tooltip = hc_improve_culture_development_decision_effect_tooltip
+        root.culture = {
+            remove_variable = tradition_cooldown
+        }
+    }
+    ai_potential = {
+        always = no
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 #强化圣剑
 hc_strength_artifact_decision = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_smith.dds"
-	}
-	title = hc_strength_artifact_decision_t
-	desc = hc_strength_artifact_decision_desc
-	selection_tooltip = hc_strength_artifact_decision_tooltip
-	confirm_text = hc_strength_artifact_decision_confirm
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	cooldown = {
-		years = 10
-	}
-	cost = {
-		gold = 200
-	}
-	is_shown = {
-		is_ai = no
-		is_landed = yes
-		exists = capital_province
-		root.house = {
-			has_house_modifier = hc_dynasty_god_modifier
-		}
-		has_ep1_dlc_trigger = yes
-		any_artifact = {
-			has_variable = hc_saint_sword
-		}
-	}
-	is_valid = {
-		prestige_level >= high_prestige_level
-		custom_description = {
-			text = hc_strength_artifact_trigger_01
-			any_artifact = {
-				has_variable = hc_saint_sword
-				artifact_durability >= 80
-			}
-		}
-		custom_description = {
-			text = hc_strength_artifact_trigger_02
-			any_court_position_holder = {
-				type = antiquarian_court_position
-			}
-		}
-	}
-	is_valid_showing_failures_only = {
-		is_capable_adult = yes
-		is_imprisoned = no
-		is_at_war = no
-		employs_court_position = antiquarian_court_position
-	}
-	effect = {
-		custom_tooltip = hc_strength_artifact_decision_tt
-		trigger_event = {
-			id = hc_decision.002
-		}
-	}
-	ai_potential = {
-		always = no
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_smith.dds"
+    }
+    title = hc_strength_artifact_decision_t
+    desc = hc_strength_artifact_decision_desc
+    selection_tooltip = hc_strength_artifact_decision_tooltip
+    confirm_text = hc_strength_artifact_decision_confirm
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    cooldown = {
+        years = 10
+    }
+    cost = {
+        gold = 200
+    }
+    is_shown = {
+        is_ai = no
+        is_landed = yes
+        exists = capital_province
+        root.house = {
+            has_house_modifier = hc_dynasty_god_modifier
+        }
+        has_ep1_dlc_trigger = yes
+        any_artifact = {
+            has_variable = hc_saint_sword
+        }
+    }
+    is_valid = {
+        prestige_level >= high_prestige_level
+        custom_description = {
+            text = hc_strength_artifact_trigger_01
+            any_artifact = {
+                has_variable = hc_saint_sword
+                artifact_durability >= 80
+            }
+        }
+        custom_description = {
+            text = hc_strength_artifact_trigger_02
+            any_court_position_holder = {
+                type = antiquarian_court_position
+            }
+        }
+    }
+    is_valid_showing_failures_only = {
+        is_capable_adult = yes
+        is_imprisoned = no
+        is_at_war = no
+        employs_court_position = antiquarian_court_position
+    }
+    effect = {
+        custom_tooltip = hc_strength_artifact_decision_tt
+        trigger_event = {
+            id = hc_decision.002
+        }
+    }
+    ai_potential = {
+        always = no
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 # 在君士但丁堡修建黄金议事宫
 hc_build_chrysotriclinium_decision = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_knight_kneeling.dds"
-	}
-	title = hc_build_chrysotriclinium_decision_t
-	desc = hc_build_chrysotriclinium_decision_desc
-	selection_tooltip = hc_build_chrysotriclinium_decision_tooltip
-	confirm_text = hc_build_chrysotriclinium_decision_confirm
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	cost = {
-		prestige = 3200
-		gold = 1800
-	}
-	is_shown = {
-		highest_held_title_tier >= 4
-		is_independent_ruler = yes
-		is_ai = no
-		is_ruler = yes
-		is_landed = yes
-		has_title = title:c_byzantion
-		NOT = {
-			#Can only do it once.
-			is_target_in_global_variable_list = {
-				name = unavailable_unique_decisions
-				target = flag:hc_flag_build_chrysotriclinium_decision
-			}
-		}
-		NOT = {
-			has_government = tribal_government
-		}
-	}
-	is_valid = {
-		prestige_level >= 4
-		is_independent_ruler = yes
-		OR = {
-			learning >= 15
-			stewardship >= 15
-		}
-		has_title = title:c_byzantion
-		title:c_byzantion = {
-			development_level >= 30
-			title_held_years >= 10
-		}
-		custom_description = {
-			text = is_god_dynasty_trigger
-			root.house = {
-				has_house_modifier = hc_dynasty_god_modifier
-			}
-		}
-	}
-	is_valid_showing_failures_only = {
-		is_capable_adult = yes
-		is_imprisoned = no
-		is_at_war = no
-		is_independent_ruler = yes
-	}
-	effect = {
-		show_as_tooltip = {
-			hc_build_chrysotriclinium_decision_effect = yes
-		}
-		stress_impact = {
-			content = massive_stress_impact_gain
-			humble = massive_stress_impact_gain
-			ambitious = medium_stress_impact_loss
-			diligent = minor_stress_impact_loss
-		}
-		trigger_event = {
-			id = hc_decision.001
-		}
-		hidden_effect = {
-			add_to_global_variable_list = {
-				name = unavailable_unique_decisions
-				target = flag:hc_flag_build_chrysotriclinium_decision
-			}
-		}
-	}
-	ai_potential = {
-		always = no
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_knight_kneeling.dds"
+    }
+    title = hc_build_chrysotriclinium_decision_t
+    desc = hc_build_chrysotriclinium_decision_desc
+    selection_tooltip = hc_build_chrysotriclinium_decision_tooltip
+    confirm_text = hc_build_chrysotriclinium_decision_confirm
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    cost = {
+        prestige = 3200
+        gold = 1800
+    }
+    is_shown = {
+        highest_held_title_tier >= 4
+        is_independent_ruler = yes
+        is_ai = no
+        is_ruler = yes
+        is_landed = yes
+        has_title = title:c_byzantion
+        NOT = {
+            #Can only do it once.
+            is_target_in_global_variable_list = {
+                name = unavailable_unique_decisions
+                target = flag:hc_flag_build_chrysotriclinium_decision
+            }
+        }
+        NOT = {
+            has_government = tribal_government
+        }
+    }
+    is_valid = {
+        prestige_level >= 4
+        is_independent_ruler = yes
+        OR = {
+            learning >= 15
+            stewardship >= 15
+        }
+        has_title = title:c_byzantion
+        title:c_byzantion = {
+            development_level >= 30
+            title_held_years >= 10
+        }
+        custom_description = {
+            text = is_god_dynasty_trigger
+            root.house = {
+                has_house_modifier = hc_dynasty_god_modifier
+            }
+        }
+    }
+    is_valid_showing_failures_only = {
+        is_capable_adult = yes
+        is_imprisoned = no
+        is_at_war = no
+        is_independent_ruler = yes
+    }
+    effect = {
+        show_as_tooltip = {
+            hc_build_chrysotriclinium_decision_effect = yes
+        }
+        stress_impact = {
+            content = massive_stress_impact_gain
+            humble = massive_stress_impact_gain
+            ambitious = medium_stress_impact_loss
+            diligent = minor_stress_impact_loss
+        }
+        trigger_event = {
+            id = hc_decision.001
+        }
+        hidden_effect = {
+            add_to_global_variable_list = {
+                name = unavailable_unique_decisions
+                target = flag:hc_flag_build_chrysotriclinium_decision
+            }
+        }
+    }
+    ai_potential = {
+        always = no
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 #推行禁欲
 hc_pursue_celibacy_decision = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	}
-	selection_tooltip = hc_pursue_celibacy_decision_tooltip
-	desc = hc_pursue_celibacy_decision_desc
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	cooldown = {
-		years = 30
-	}
-	is_shown = {
-		is_ai = no
-		root.house = {
-			has_house_modifier = hc_dynasty_god_modifier
-		}
-		NOT = {
-			root.dynasty = {
-				or = {
-					has_dynasty_modifier = hc_dynasty_celibacy_modifier_01
-					has_dynasty_modifier = hc_dynasty_celibacy_modifier_02
-					has_dynasty_modifier = hc_dynasty_celibacy_modifier_03
-					has_dynasty_modifier = hc_dynasty_celibacy_modifier_04
-				}
-			}
-		}
-	}
-	is_valid_showing_failures_only = {
-		is_imprisoned = no
-		is_available_adult = yes
-		is_at_war = no
-	}
-	effect = {
-		custom_tooltip = hc_pursue_celibacy_decision_effect_tt
-		trigger_event = {
-			id = hc_decision.003
-			days = 3
-		}
-	}
-	# ai_check_frequency = 0
-	ai_potential = {
-		always = no
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+    }
+    selection_tooltip = hc_pursue_celibacy_decision_tooltip
+    desc = hc_pursue_celibacy_decision_desc
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    cooldown = {
+        years = 30
+    }
+    is_shown = {
+        is_ai = no
+        root.house = {
+            has_house_modifier = hc_dynasty_god_modifier
+        }
+        NOT = {
+            root.dynasty = {
+                or = {
+                    has_dynasty_modifier = hc_dynasty_celibacy_modifier_01
+                    has_dynasty_modifier = hc_dynasty_celibacy_modifier_02
+                    has_dynasty_modifier = hc_dynasty_celibacy_modifier_03
+                    has_dynasty_modifier = hc_dynasty_celibacy_modifier_04
+                }
+            }
+        }
+    }
+    is_valid_showing_failures_only = {
+        is_imprisoned = no
+        is_available_adult = yes
+        is_at_war = no
+    }
+    effect = {
+        custom_tooltip = hc_pursue_celibacy_decision_effect_tt
+        trigger_event = {
+            id = hc_decision.003
+            days = 3
+        }
+    }
+    # ai_check_frequency = 0
+    ai_potential = {
+        always = no
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 #终止禁欲
 hc_end_pursue_celibacy_decision = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	}
-	desc = hc_end_pursue_celibacy_decision_desc
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	is_shown = {
-		is_ai = no
-		root.dynasty = {
-			or = {
-				has_dynasty_modifier = hc_dynasty_celibacy_modifier_01
-				has_dynasty_modifier = hc_dynasty_celibacy_modifier_02
-				has_dynasty_modifier = hc_dynasty_celibacy_modifier_03
-				has_dynasty_modifier = hc_dynasty_celibacy_modifier_04
-			}
-		}
-	}
-	is_valid_showing_failures_only = {
-		is_imprisoned = no
-		is_available_adult = yes
-		is_at_war = no
-	}
-	effect = {
-		root.dynasty = {
-			if = {
-				limit = {
-					has_dynasty_modifier = hc_dynasty_celibacy_modifier_01
-				}
-				remove_dynasty_modifier = hc_dynasty_celibacy_modifier_01
-			}
-			else_if = {
-				limit = {
-					has_dynasty_modifier = hc_dynasty_celibacy_modifier_02
-				}
-				remove_dynasty_modifier = hc_dynasty_celibacy_modifier_02
-			}
-			else_if = {
-				limit = {
-					has_dynasty_modifier = hc_dynasty_celibacy_modifier_03
-				}
-				remove_dynasty_modifier = hc_dynasty_celibacy_modifier_03
-			}
-			else = {
-				remove_dynasty_modifier = hc_dynasty_celibacy_modifier_04
-			}
-		}
-	}
-	# ai_check_frequency = 0
-	ai_potential = {
-		always = no
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+    }
+    desc = hc_end_pursue_celibacy_decision_desc
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    is_shown = {
+        is_ai = no
+        root.dynasty = {
+            or = {
+                has_dynasty_modifier = hc_dynasty_celibacy_modifier_01
+                has_dynasty_modifier = hc_dynasty_celibacy_modifier_02
+                has_dynasty_modifier = hc_dynasty_celibacy_modifier_03
+                has_dynasty_modifier = hc_dynasty_celibacy_modifier_04
+            }
+        }
+    }
+    is_valid_showing_failures_only = {
+        is_imprisoned = no
+        is_available_adult = yes
+        is_at_war = no
+    }
+    effect = {
+        root.dynasty = {
+            if = {
+                limit = {
+                    has_dynasty_modifier = hc_dynasty_celibacy_modifier_01
+                }
+                remove_dynasty_modifier = hc_dynasty_celibacy_modifier_01
+            }
+            else_if = {
+                limit = {
+                    has_dynasty_modifier = hc_dynasty_celibacy_modifier_02
+                }
+                remove_dynasty_modifier = hc_dynasty_celibacy_modifier_02
+            }
+            else_if = {
+                limit = {
+                    has_dynasty_modifier = hc_dynasty_celibacy_modifier_03
+                }
+                remove_dynasty_modifier = hc_dynasty_celibacy_modifier_03
+            }
+            else = {
+                remove_dynasty_modifier = hc_dynasty_celibacy_modifier_04
+            }
+        }
+    }
+    # ai_check_frequency = 0
+    ai_potential = {
+        always = no
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 #建立皇家卫队决议及升级决议
 #建立皇家护卫队
 hc_create_royal_guard_decision = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
-	}
-	desc = hc_create_royal_guard_decision_desc
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	is_shown = {
-		is_ai = no
-		root.house = {
-			has_house_modifier = hc_dynasty_god_modifier
-			Not = {
-				OR = {
-					has_house_modifier = hc_royal_guard_modifier_01
-					has_house_modifier = hc_royal_guard_modifier_02
-					has_house_modifier = hc_royal_guard_modifier_03
-				}
-			}
-		}
-	}
-	is_valid = {
-		prestige_level >= 3
-		OR = {
-			martial >= 15
-			intrigue >= 15
-		}
-		custom_description = {
-			text = is_god_dynasty_trigger
-			root.house = {
-				has_house_modifier = hc_dynasty_god_modifier
-			}
-		}
-	}
-	is_valid_showing_failures_only = {
-		is_imprisoned = no
-		is_available_adult = yes
-		is_at_war = no
-	}
-	cost = {
-		prestige = 300
-	}
-	effect = {
-		root.house = {
-			add_house_modifier = hc_royal_guard_modifier_01
-		}
-		custom_tooltip = hc_create_royal_guard_decision_custom_tt_01
-	}
-	# ai_check_frequency = 0
-	ai_potential = {
-		always = no
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+    }
+    desc = hc_create_royal_guard_decision_desc
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    is_shown = {
+        is_ai = no
+        root.house = {
+            has_house_modifier = hc_dynasty_god_modifier
+            Not = {
+                OR = {
+                    has_house_modifier = hc_royal_guard_modifier_01
+                    has_house_modifier = hc_royal_guard_modifier_02
+                    has_house_modifier = hc_royal_guard_modifier_03
+                }
+            }
+        }
+    }
+    is_valid = {
+        prestige_level >= 3
+        OR = {
+            martial >= 15
+            intrigue >= 15
+        }
+        custom_description = {
+            text = is_god_dynasty_trigger
+            root.house = {
+                has_house_modifier = hc_dynasty_god_modifier
+            }
+        }
+    }
+    is_valid_showing_failures_only = {
+        is_imprisoned = no
+        is_available_adult = yes
+        is_at_war = no
+    }
+    cost = {
+        prestige = 300
+    }
+    effect = {
+        root.house = {
+            add_house_modifier = hc_royal_guard_modifier_01
+        }
+        custom_tooltip = hc_create_royal_guard_decision_custom_tt_01
+    }
+    # ai_check_frequency = 0
+    ai_potential = {
+        always = no
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 #升级为皇家亲卫队
 hc_create_royal_personal_guard_decision = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
-	}
-	desc = hc_create_royal_personal_guard_decision_desc
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	is_shown = {
-		is_ai = no
-		root.house = {
-			has_house_modifier = hc_royal_guard_modifier_01
-			Not = {
-				has_house_modifier = hc_royal_guard_modifier_02
-			}
-		}
-	}
-	is_valid = {
-		prestige_level >= 4
-		OR = {
-			martial >= 20
-			intrigue >= 20
-		}
-		custom_description = {
-			text = is_god_dynasty_trigger
-			root.house = {
-				has_house_modifier = hc_royal_guard_modifier_01
-			}
-		}
-	}
-	is_valid_showing_failures_only = {
-		is_imprisoned = no
-		is_available_adult = yes
-		is_at_war = no
-	}
-	cost = {
-		prestige = 500
-	}
-	effect = {
-		root.house = {
-			add_house_modifier = hc_royal_guard_modifier_02
-			remove_house_modifier = hc_royal_guard_modifier_01
-		}
-		custom_tooltip = hc_create_royal_personal_guard_decision_custom_tt_01
-	}
-	# ai_check_frequency = 0
-	ai_potential = {
-		always = no
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+    }
+    desc = hc_create_royal_personal_guard_decision_desc
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    is_shown = {
+        is_ai = no
+        root.house = {
+            has_house_modifier = hc_royal_guard_modifier_01
+            Not = {
+                has_house_modifier = hc_royal_guard_modifier_02
+            }
+        }
+    }
+    is_valid = {
+        prestige_level >= 4
+        OR = {
+            martial >= 20
+            intrigue >= 20
+        }
+        custom_description = {
+            text = is_god_dynasty_trigger
+            root.house = {
+                has_house_modifier = hc_royal_guard_modifier_01
+            }
+        }
+    }
+    is_valid_showing_failures_only = {
+        is_imprisoned = no
+        is_available_adult = yes
+        is_at_war = no
+    }
+    cost = {
+        prestige = 500
+    }
+    effect = {
+        root.house = {
+            add_house_modifier = hc_royal_guard_modifier_02
+            remove_house_modifier = hc_royal_guard_modifier_01
+        }
+        custom_tooltip = hc_create_royal_personal_guard_decision_custom_tt_01
+    }
+    # ai_check_frequency = 0
+    ai_potential = {
+        always = no
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 #升级为皇家禁卫
 hc_create_royal_great_guard_decision = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
-	}
-	desc = hc_create_royal_great_guard_decision_desc
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	is_shown = {
-		is_ai = no
-		root.house = {
-			has_house_modifier = hc_royal_guard_modifier_02
-			Not = {
-				has_house_modifier = hc_royal_guard_modifier_03
-			}
-		}
-	}
-	is_valid = {
-		prestige_level >= 5
-		OR = {
-			martial >= 25
-			intrigue >= 25
-		}
-		custom_description = {
-			text = is_god_dynasty_trigger
-			root.house = {
-				has_house_modifier = hc_royal_guard_modifier_02
-			}
-		}
-	}
-	is_valid_showing_failures_only = {
-		is_imprisoned = no
-		is_available_adult = yes
-		is_at_war = no
-	}
-	cost = {
-		prestige = 1000
-	}
-	effect = {
-		root.house = {
-			add_house_modifier = hc_royal_guard_modifier_03
-			remove_house_modifier = hc_royal_guard_modifier_02
-		}
-		custom_tooltip = hc_create_royal_great_guard_decision_custom_tt_01
-	}
-	# ai_check_frequency = 0
-	ai_potential = {
-		always = no
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_dynasty_house.dds"
+    }
+    desc = hc_create_royal_great_guard_decision_desc
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    is_shown = {
+        is_ai = no
+        root.house = {
+            has_house_modifier = hc_royal_guard_modifier_02
+            Not = {
+                has_house_modifier = hc_royal_guard_modifier_03
+            }
+        }
+    }
+    is_valid = {
+        prestige_level >= 5
+        OR = {
+            martial >= 25
+            intrigue >= 25
+        }
+        custom_description = {
+            text = is_god_dynasty_trigger
+            root.house = {
+                has_house_modifier = hc_royal_guard_modifier_02
+            }
+        }
+    }
+    is_valid_showing_failures_only = {
+        is_imprisoned = no
+        is_available_adult = yes
+        is_at_war = no
+    }
+    cost = {
+        prestige = 1000
+    }
+    effect = {
+        root.house = {
+            add_house_modifier = hc_royal_guard_modifier_03
+            remove_house_modifier = hc_royal_guard_modifier_02
+        }
+        custom_tooltip = hc_create_royal_great_guard_decision_custom_tt_01
+    }
+    # ai_check_frequency = 0
+    ai_potential = {
+        always = no
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 #皇家卫队解锁决议
 #招募人才
 hc_recruitment_decision = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	}
-	desc = hc_recruitment_decision_desc
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	is_shown = {
-		is_ai = no
-		is_landed = yes
-		hc_has_god_descent_trigger = yes
-		any_prisoner = {
-			is_imprisoned_by = root
-			prowess >= 12
-			is_busy_in_events_localised = yes
-			is_landed = no
-			custom_description = {
-				text = "currently_being_tortured"
-				NOT = {
-					has_character_flag = is_being_tortured
-				}
-			}
-		}
-	}
-	cooldown = {
-		months = 3
-	}
-	is_valid = {
-		OR = {
-			trigger_if = {
-				limit = {
-					root.house = {
-						has_house_modifier = hc_royal_guard_modifier_01
-					}
-				}
-				root.house = {
-					has_house_modifier = hc_royal_guard_modifier_01
-				}
-			}
-			trigger_if = {
-				limit = {
-					root.house = {
-						has_house_modifier = hc_royal_guard_modifier_02
-					}
-				}
-				root.house = {
-					has_house_modifier = hc_royal_guard_modifier_02
-				}
-			}
-			trigger_if = {
-				limit = {
-					root.house = {
-						has_house_modifier = hc_royal_guard_modifier_03
-					}
-				}
-				root.house = {
-					has_house_modifier = hc_royal_guard_modifier_03
-				}
-			}
-		}
-	}
-	is_valid_showing_failures_only = {
-		is_imprisoned = no
-		is_landed = yes
-	}
-	cost = {
-		prestige = 50
-	}
-	effect = {
-		every_prisoner = {
-			limit = {
-				is_imprisoned_by = root
-				prowess >= 12
-				is_landed = no
-				is_busy_in_events_localised = yes
-				NOT = {
-					has_character_flag = is_being_tortured
-				}
-			}
-			save_scope_as = hc_prisoner
-			add_opinion = {
-				modifier = loyal_servant
-				target = scope:root
-			}
-			root = {
-				if = {
-					limit = {
-						can_add_hook = {
-							target = scope:hc_prisoner
-							type = loyalty_hook
-						}
-					}
-					add_hook = {
-						type = loyalty_hook
-						target = scope:hc_prisoner
-					}
-				}
-			}
-			root = {
-				add_courtier = scope:hc_prisoner
-			}
-			if = {
-				limit = {
-					is_imprisoned = yes
-				}
-				release_from_prison = yes
-			}
-		}
-	}
-	ai_potential = {
-		always = no
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+    }
+    desc = hc_recruitment_decision_desc
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    is_shown = {
+        is_ai = no
+        is_landed = yes
+        hc_has_god_descent_trigger = yes
+        any_prisoner = {
+            is_imprisoned_by = root
+            prowess >= 12
+            is_busy_in_events_localised = yes
+            is_landed = no
+            custom_description = {
+                text = "currently_being_tortured"
+                NOT = {
+                    has_character_flag = is_being_tortured
+                }
+            }
+        }
+    }
+    cooldown = {
+        months = 3
+    }
+    is_valid = {
+        OR = {
+            trigger_if = {
+                limit = {
+                    root.house = {
+                        has_house_modifier = hc_royal_guard_modifier_01
+                    }
+                }
+                root.house = {
+                    has_house_modifier = hc_royal_guard_modifier_01
+                }
+            }
+            trigger_if = {
+                limit = {
+                    root.house = {
+                        has_house_modifier = hc_royal_guard_modifier_02
+                    }
+                }
+                root.house = {
+                    has_house_modifier = hc_royal_guard_modifier_02
+                }
+            }
+            trigger_if = {
+                limit = {
+                    root.house = {
+                        has_house_modifier = hc_royal_guard_modifier_03
+                    }
+                }
+                root.house = {
+                    has_house_modifier = hc_royal_guard_modifier_03
+                }
+            }
+        }
+    }
+    is_valid_showing_failures_only = {
+        is_imprisoned = no
+        is_landed = yes
+    }
+    cost = {
+        prestige = 50
+    }
+    effect = {
+        every_prisoner = {
+            limit = {
+                is_imprisoned_by = root
+                prowess >= 12
+                is_landed = no
+                is_busy_in_events_localised = yes
+                NOT = {
+                    has_character_flag = is_being_tortured
+                }
+            }
+            save_scope_as = hc_prisoner
+            add_opinion = {
+                modifier = loyal_servant
+                target = scope:root
+            }
+            root = {
+                if = {
+                    limit = {
+                        can_add_hook = {
+                            target = scope:hc_prisoner
+                            type = loyalty_hook
+                        }
+                    }
+                    add_hook = {
+                        type = loyalty_hook
+                        target = scope:hc_prisoner
+                    }
+                }
+            }
+            root = {
+                add_courtier = scope:hc_prisoner
+            }
+            if = {
+                limit = {
+                    is_imprisoned = yes
+                }
+                release_from_prison = yes
+            }
+        }
+    }
+    ai_potential = {
+        always = no
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 #追查凶手
 hc_track_murderer_decision = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	}
-	desc = hc_track_murderer_decision_desc
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	is_shown = {
-		is_ai = no
-		is_landed = yes
-		hc_has_god_descent_trigger = yes
-		OR = {
-			any_courtier_or_guest = {
-				any_scheme = {
-					scheme_type = murder
-					scheme_target_character = root
-				}
-			}
-			any_vassal_or_below = {
-				any_scheme = {
-					scheme_type = murder
-					scheme_target_character = root
-				}
-			}
-		}
-	}
-	cooldown = {
-		months = 3
-	}
-	is_valid = {
-		#有一个骑士，并且谋略大于12
-		custom_description = {
-			text = hc_have_high_intrigue_knight
-			any_knight = {
-				intrigue >= 12
-			}
-		}
-		OR = {
-			trigger_if = {
-				limit = {
-					root.house = {
-						has_house_modifier = hc_royal_guard_modifier_02
-					}
-				}
-				root.house = {
-					has_house_modifier = hc_royal_guard_modifier_02
-				}
-			}
-			trigger_if = {
-				limit = {
-					root.house = {
-						has_house_modifier = hc_royal_guard_modifier_03
-					}
-				}
-				root.house = {
-					has_house_modifier = hc_royal_guard_modifier_03
-				}
-			}
-		}
-	}
-	is_valid_showing_failures_only = {
-		is_imprisoned = no
-		is_landed = yes
-	}
-	cost = {
-		prestige = 100
-	}
-	effect = {
-		custom_tooltip = hc_track_murderer_decision_effect_tt
-		random_courtier_or_guest = {
-			limit = {
-				any_scheme = {
-					scheme_type = murder
-					scheme_target_character = root
-				}
-			}
-			save_scope_as = murderer
-		}
-		random_vassal_or_below = {
-			limit = {
-				any_scheme = {
-					scheme_type = murder
-					scheme_target_character = root
-				}
-			}
-			save_scope_as = murderer
-		}
-		random_knight = {
-			limit = {
-				intrigue >= 12
-			}
-			save_scope_as = knight
-		}
-		scope:knight = {
-			add_prestige = 100
-		}
-		hidden_effect = {
-			send_interface_message = {
-				type = event_generic_good
-				title = hc_track_murderer_decision_notification
-				# left_icon = scope:knight
-				right_icon = scope:murderer
-				scope:murderer = {
-					add_prestige = -100
-				}
-				scope:murderer = {
-					every_scheme = {
-						limit = {
-							scheme_type = murder
-							scheme_target_character = root
-						}
-						add_scheme_modifier = {
-							type = hc_anti_murder_modifier
-						}
-						if = {
-							limit = {
-								is_scheme_exposed = no
-							}
-							expose_scheme = yes
-						}
-					}
-				}
-			}
-		}
-	}
-	ai_potential = {
-		always = no
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+    }
+    desc = hc_track_murderer_decision_desc
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    is_shown = {
+        is_ai = no
+        is_landed = yes
+        hc_has_god_descent_trigger = yes
+        OR = {
+            any_courtier_or_guest = {
+                any_scheme = {
+                    scheme_type = murder
+                    scheme_target_character = root
+                }
+            }
+            any_vassal_or_below = {
+                any_scheme = {
+                    scheme_type = murder
+                    scheme_target_character = root
+                }
+            }
+        }
+    }
+    cooldown = {
+        months = 3
+    }
+    is_valid = {
+        #有一个骑士，并且谋略大于12
+        custom_description = {
+            text = hc_have_high_intrigue_knight
+            any_knight = {
+                intrigue >= 12
+            }
+        }
+        OR = {
+            trigger_if = {
+                limit = {
+                    root.house = {
+                        has_house_modifier = hc_royal_guard_modifier_02
+                    }
+                }
+                root.house = {
+                    has_house_modifier = hc_royal_guard_modifier_02
+                }
+            }
+            trigger_if = {
+                limit = {
+                    root.house = {
+                        has_house_modifier = hc_royal_guard_modifier_03
+                    }
+                }
+                root.house = {
+                    has_house_modifier = hc_royal_guard_modifier_03
+                }
+            }
+        }
+    }
+    is_valid_showing_failures_only = {
+        is_imprisoned = no
+        is_landed = yes
+    }
+    cost = {
+        prestige = 100
+    }
+    effect = {
+        custom_tooltip = hc_track_murderer_decision_effect_tt
+        random_courtier_or_guest = {
+            limit = {
+                any_scheme = {
+                    scheme_type = murder
+                    scheme_target_character = root
+                }
+            }
+            save_scope_as = murderer
+        }
+        random_vassal_or_below = {
+            limit = {
+                any_scheme = {
+                    scheme_type = murder
+                    scheme_target_character = root
+                }
+            }
+            save_scope_as = murderer
+        }
+        random_knight = {
+            limit = {
+                intrigue >= 12
+            }
+            save_scope_as = knight
+        }
+        scope:knight = {
+            add_prestige = 100
+        }
+        hidden_effect = {
+            send_interface_message = {
+                type = event_generic_good
+                title = hc_track_murderer_decision_notification
+                # left_icon = scope:knight
+                right_icon = scope:murderer
+                scope:murderer = {
+                    add_prestige = -100
+                }
+                scope:murderer = {
+                    every_scheme = {
+                        limit = {
+                            scheme_type = murder
+                            scheme_target_character = root
+                        }
+                        add_scheme_modifier = {
+                            type = hc_anti_murder_modifier
+                        }
+                        if = {
+                            limit = {
+                                is_scheme_exposed = no
+                            }
+                            expose_scheme = yes
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ai_potential = {
+        always = no
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 #审判日
 hc_adjudgment_day_decision = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	}
-	desc = hc_adjudgment_day_decision_desc
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	is_shown = {
-		is_ai = no
-		is_landed = yes
-		hc_has_god_descent_trigger = yes
-		OR = {
-			any_vassal_or_below = {
-				is_male = yes
-				OR = {
-					has_trait = lustful
-					has_trait = rakish
-					has_trait = seducer
-				}
-				Not = {
-					has_trait = eunuch_1
-				}
-			}
-			any_courtier_or_guest = {
-				is_male = yes
-				OR = {
-					has_trait = lustful
-					has_trait = rakish
-					has_trait = seducer
-				}
-				Not = {
-					has_trait = eunuch_1
-				}
-			}
-		}
-	}
-	cooldown = {
-		months = 3
-	}
-	is_valid = {
-		root.house = {
-			has_house_modifier = hc_royal_guard_modifier_03
-		}
-		#有一个骑士，并且勇武大于12
-		custom_description = {
-			text = hc_have_high_prowess_knight
-			any_knight = {
-				prowess >= 12
-			}
-		}
-	}
-	is_valid_showing_failures_only = {
-		is_imprisoned = no
-		is_landed = yes
-	}
-	cost = {
-		piety = 100
-		prestige = 100
-	}
-	effect = {
-		random_knight = {
-			save_scope_as = knight
-		}
-		scope:knight = {
-			add_prestige = 100
-		}
-		show_as_tooltip = {
-			every_vassal_or_below = {
-				limit = {
-					is_male = yes
-					or = {
-						has_trait = lustful
-						has_trait = rakish
-						has_trait = seducer
-					}
-					Not = {
-						has_trait = eunuch_1
-					}
-				}
-				if = {
-					limit = {
-						has_trait = seducer
-					}
-					death = {
-						death_reason = death_duel
-						killer = scope:knight
-					}
-				}
-				else = {
-					#阉割
-					add_trait = eunuch_1
-				}
-			}
-			every_courtier_or_guest = {
-				limit = {
-					is_male = yes
-					or = {
-						has_trait = lustful
-						has_trait = rakish
-						has_trait = seducer
-					}
-					Not = {
-						has_trait = eunuch_1
-					}
-				}
-				if = {
-					limit = {
-						has_trait = seducer
-					}
-					death = {
-						death_reason = death_duel
-						killer = scope:knight
-					}
-				}
-				else = {
-					#阉割
-					add_trait = eunuch_1
-				}
-			}
-		}
-		hidden_effect = {
-			send_interface_message = {
-				type = event_generic_good
-				title = hc_adjudgment_day_decision_notification
-				right_icon = scope:knight
-				every_vassal_or_below = {
-					limit = {
-						is_male = yes
-						or = {
-							has_trait = lustful
-							has_trait = rakish
-							has_trait = seducer
-						}
-						Not = {
-							has_trait = eunuch_1
-						}
-					}
-					if = {
-						limit = {
-							has_trait = seducer
-						}
-						death = {
-							death_reason = death_duel
-							killer = scope:knight
-						}
-					}
-					else = {
-						#阉割
-						add_trait = eunuch_1
-					}
-				}
-				every_courtier_or_guest = {
-					limit = {
-						is_male = yes
-						or = {
-							has_trait = lustful
-							has_trait = rakish
-							has_trait = seducer
-						}
-						Not = {
-							has_trait = eunuch_1
-						}
-					}
-					if = {
-						limit = {
-							has_trait = seducer
-						}
-						death = {
-							death_reason = death_duel
-							killer = scope:knight
-						}
-					}
-					else = {
-						#阉割
-						add_trait = eunuch_1
-					}
-				}
-			}
-		}
-	}
-	ai_potential = {
-		always = no
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+    }
+    desc = hc_adjudgment_day_decision_desc
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    is_shown = {
+        is_ai = no
+        is_landed = yes
+        hc_has_god_descent_trigger = yes
+        OR = {
+            any_vassal_or_below = {
+                is_male = yes
+                OR = {
+                    has_trait = lustful
+                    has_trait = rakish
+                    has_trait = seducer
+                }
+                Not = {
+                    has_trait = eunuch_1
+                }
+            }
+            any_courtier_or_guest = {
+                is_male = yes
+                OR = {
+                    has_trait = lustful
+                    has_trait = rakish
+                    has_trait = seducer
+                }
+                Not = {
+                    has_trait = eunuch_1
+                }
+            }
+        }
+    }
+    cooldown = {
+        months = 3
+    }
+    is_valid = {
+        root.house = {
+            has_house_modifier = hc_royal_guard_modifier_03
+        }
+        #有一个骑士，并且勇武大于12
+        custom_description = {
+            text = hc_have_high_prowess_knight
+            any_knight = {
+                prowess >= 12
+            }
+        }
+    }
+    is_valid_showing_failures_only = {
+        is_imprisoned = no
+        is_landed = yes
+    }
+    cost = {
+        piety = 100
+        prestige = 100
+    }
+    effect = {
+        random_knight = {
+            save_scope_as = knight
+        }
+        scope:knight = {
+            add_prestige = 100
+        }
+        show_as_tooltip = {
+            every_vassal_or_below = {
+                limit = {
+                    is_male = yes
+                    or = {
+                        has_trait = lustful
+                        has_trait = rakish
+                        has_trait = seducer
+                    }
+                    Not = {
+                        has_trait = eunuch_1
+                    }
+                }
+                if = {
+                    limit = {
+                        has_trait = seducer
+                    }
+                    death = {
+                        death_reason = death_duel
+                        killer = scope:knight
+                    }
+                }
+                else = {
+                    #阉割
+                    add_trait = eunuch_1
+                }
+            }
+            every_courtier_or_guest = {
+                limit = {
+                    is_male = yes
+                    or = {
+                        has_trait = lustful
+                        has_trait = rakish
+                        has_trait = seducer
+                    }
+                    Not = {
+                        has_trait = eunuch_1
+                    }
+                }
+                if = {
+                    limit = {
+                        has_trait = seducer
+                    }
+                    death = {
+                        death_reason = death_duel
+                        killer = scope:knight
+                    }
+                }
+                else = {
+                    #阉割
+                    add_trait = eunuch_1
+                }
+            }
+        }
+        hidden_effect = {
+            send_interface_message = {
+                type = event_generic_good
+                title = hc_adjudgment_day_decision_notification
+                right_icon = scope:knight
+                every_vassal_or_below = {
+                    limit = {
+                        is_male = yes
+                        or = {
+                            has_trait = lustful
+                            has_trait = rakish
+                            has_trait = seducer
+                        }
+                        Not = {
+                            has_trait = eunuch_1
+                        }
+                    }
+                    if = {
+                        limit = {
+                            has_trait = seducer
+                        }
+                        death = {
+                            death_reason = death_duel
+                            killer = scope:knight
+                        }
+                    }
+                    else = {
+                        #阉割
+                        add_trait = eunuch_1
+                    }
+                }
+                every_courtier_or_guest = {
+                    limit = {
+                        is_male = yes
+                        or = {
+                            has_trait = lustful
+                            has_trait = rakish
+                            has_trait = seducer
+                        }
+                        Not = {
+                            has_trait = eunuch_1
+                        }
+                    }
+                    if = {
+                        limit = {
+                            has_trait = seducer
+                        }
+                        death = {
+                            death_reason = death_duel
+                            killer = scope:knight
+                        }
+                    }
+                    else = {
+                        #阉割
+                        add_trait = eunuch_1
+                    }
+                }
+            }
+        }
+    }
+    ai_potential = {
+        always = no
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 #建筑开发
 hc_add_building_decision = {
-	picture = {
-		reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
-	}
-	sort_order = 80
-	decision_group_type = hc_decision
-	ai_check_interval = 0
-	desc = hc_add_building_decision_desc
-	widget = {
-		gui = decision_view_widget_hc_building_special
-		controller = create_holy_order
-		barony_valid = {
-			trigger_if = {
-				limit = {
-					exists = this
-				}
-				hc_barony_is_valid_for_build_special_trigger = {
-					CHARACTER = scope:ruler
-				}
-			}
-			trigger_else = {
-				custom_description = {
-					text = "has_holy_order_barony_selected"
-					always = no
-				}
-			}
-		}
-	}
-	is_shown = {
-		is_ai = no
-	}
-	is_valid = {
-		OR = {
-			stewardship >= 18
-			has_trait = architect
-		}
-		custom_description = {
-			text = is_god_dynasty_trigger
-			root.house = {
-				has_house_modifier = hc_dynasty_god_modifier
-			}
-		}
-	}
-	cost = {
-		gold = 500
-	}
-	cooldown = {
-		# years = 5
-		days = 1
-	}
-	is_valid_showing_failures_only = {
-		is_at_war = no
-		is_imprisoned = no
-	}
-	effect = {
-		scope:barony.title_province = {
-			add_province_modifier = extra_building_slot
-		}
-		scope:barony.county = {
-			add_county_modifier = {
-				modifier = hc_country_modifier_03
-				years = 5
-			}
-		}
-		hidden_effect = {
-			send_interface_message = {
-				type = event_generic_good
-				title = hc_add_building_decision_msg_t
-				right_icon = root
-				custom_tooltip = hc_add_building_decision_msg_tt
-			}
-		}
-	}
-	ai_will_do = {
-		base = 0
-	}
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_realm.dds"
+    }
+    sort_order = 80
+    decision_group_type = hc_decision
+    ai_check_interval = 0
+    desc = hc_add_building_decision_desc
+    widget = {
+        gui = decision_view_widget_hc_building_special
+        controller = create_holy_order
+        barony_valid = {
+            trigger_if = {
+                limit = {
+                    exists = this
+                }
+                hc_barony_is_valid_for_build_special_trigger = {
+                    CHARACTER = scope:ruler
+                }
+            }
+            trigger_else = {
+                custom_description = {
+                    text = "has_holy_order_barony_selected"
+                    always = no
+                }
+            }
+        }
+    }
+    is_shown = {
+        is_ai = no
+    }
+    is_valid = {
+        OR = {
+            stewardship >= 18
+            has_trait = architect
+        }
+        custom_description = {
+            text = is_god_dynasty_trigger
+            root.house = {
+                has_house_modifier = hc_dynasty_god_modifier
+            }
+        }
+    }
+    cost = {
+        gold = 500
+    }
+    cooldown = {
+        # years = 5
+        days = 1
+    }
+    is_valid_showing_failures_only = {
+        is_at_war = no
+        is_imprisoned = no
+    }
+    effect = {
+        scope:barony.title_province = {
+            add_province_modifier = extra_building_slot
+        }
+        scope:barony.county = {
+            add_county_modifier = {
+                modifier = hc_country_modifier_03
+                years = 5
+            }
+        }
+        hidden_effect = {
+            send_interface_message = {
+                type = event_generic_good
+                title = hc_add_building_decision_msg_t
+                right_icon = root
+                custom_tooltip = hc_add_building_decision_msg_tt
+            }
+        }
+    }
+    ai_will_do = {
+        base = 0
+    }
 }
 
 #设立皇帝权威
@@ -2402,7 +2526,7 @@ hc_add_building_decision = {
 # 	picture = "gfx/interface/illustrations/decisions/decision_knight_kneeling.dds"
 # 	desc = hc_emperor_authority_decision_desc
 # 	selection_tooltip = hc_emperor_authority_decision_tooltip
-# 	
+#
 # 	decision_group_type = hc_decision
 # 	is_shown = {
 # 		is_ruler = yes
@@ -2503,7 +2627,7 @@ hc_add_building_decision = {
 # }
 # hc_eclaim_roma_decision = {
 # 	picture = "gfx/interface/illustrations/decisions/decision_destiny_goal.dds"
-# 	
+#
 # 	decision_group_type = hc_decision
 # 	desc = reclaim_britannia_decision_desc
 # 	is_shown = {
