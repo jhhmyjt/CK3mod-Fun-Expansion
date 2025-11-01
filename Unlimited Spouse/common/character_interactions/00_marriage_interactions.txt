@@ -401,6 +401,35 @@ arrange_marriage_interaction = {
     }
 
     is_valid_showing_failures_only = {
+		#TD US
+		trigger_if = {
+			limit = {
+				scope:secondary_recipient ?= {
+					is_ai = yes
+				}
+				scope:secondary_actor ?= {
+					is_ai = yes
+				}
+			}
+			AND = {
+				scope:secondary_actor = {
+					any_spouse = {
+						count = 0
+					}
+					any_concubine = {
+						count = 0
+					}
+				}
+				scope:secondary_recipient = {
+					any_spouse = {
+						count = 0
+					}
+					any_concubine = {
+						count = 0
+					}
+				}
+			}
+		}
         #If we're opening this interaction through the interaction menu (i.e. not all scopes exist yet)
         #This was giving double-warnings about a marry-able character existing so it's commented out for now
         #custom_description = {
@@ -1369,6 +1398,35 @@ marry_off_interaction = {
     # secondary_actor, secondary_recipient ... characters that should marry
 
     is_shown = {
+		#TD US
+		trigger_if = {
+			limit = {
+				scope:secondary_recipient ?= {
+					is_ai = yes
+				}
+				scope:secondary_actor ?= {
+					is_ai = yes
+				}
+			}
+			AND = {
+				scope:secondary_actor = {
+					any_spouse = {
+						count = 0
+					}
+					any_concubine = {
+						count = 0
+					}
+				}
+				scope:secondary_recipient = {
+					any_spouse = {
+						count = 0
+					}
+					any_concubine = {
+						count = 0
+					}
+				}
+			}
+		}
         # Enable only for yourself if you're a landless adventurer
         trigger_if = {
             limit = {
@@ -2762,6 +2820,35 @@ ai_make_concubine_interaction = {
 
     is_shown = {
         make_concubine_is_shown_trigger = yes
+		#TD US
+		trigger_if = {
+			limit = {
+				scope:recipient ?= {
+					is_ai = yes
+				}
+				scope:actor ?= {
+					is_ai = yes
+				}
+			}
+			AND = {
+				scope:actor = {
+					any_spouse = {
+						count = 0
+					}
+					any_concubine = {
+						count = 0
+					}
+				}
+				scope:recipient = {
+					any_spouse = {
+						count = 0
+					}
+					any_concubine = {
+						count = 0
+					}
+				}
+			}
+		}
     }
 
     is_valid_showing_failures_only = {

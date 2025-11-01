@@ -1,4 +1,4 @@
-﻿###
+###
 #	SPECIAL NOTE
 #
 #	When evaluating whether or not the AI can send this interaction to the

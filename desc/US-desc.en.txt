@@ -1,5 +1,5 @@
 [h1]Overview[/h1].
-Unlimited spouses for player, with Ai limited to single spouses. This rule ignores the original mate system.
+[strike]Unlimited spouses for player, with Ai limited to single spouses. This rule ignores the original mate system.[/strike][i] It may be that because of the underlying mechanism of the game's marriage, it is impossible to limit Ai to a single spouse, if you understand the relevant mechanism, you can leave a message to inform [/i]
 
 [img]https://i.imgur.com/hT9aoW2.png[/img]
 
