@@ -1,6 +1,5 @@
 [h1]Overview[/h1].
-[strike]Unlimited spouses for player, with Ai limited to single spouses. This rule ignores the original mate system.[/strike][i] It may be that because of the underlying mechanism of the game's marriage, it is impossible to limit Ai to a single spouse, if you understand the relevant mechanism, you can leave a message to inform [/i]
-
+The maximum number of spouses/consorts is set to 99.
 [img]https://i.imgur.com/hT9aoW2.png[/img]
 
 [i]The UI Mod:[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2838140104]RUI:Character[/url][/i]

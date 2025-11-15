@@ -4,43 +4,42 @@
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_monogamy
-				}
+				limit = { has_doctrine = doctrine_monogamy }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 		}
 		parameters = {
+			#US
 			number_of_spouses = 99
 			marriage_event = yes
 		}
 	}
+
 	doctrine_polygamy = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_polygamy
-				}
+				limit = { has_doctrine = doctrine_polygamy }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 		}
 		parameters = {
+			#US
 			number_of_spouses = 99
 			spouse_piety_loss = yes
 		}
 	}
+
 	doctrine_concubines = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_concubines
-				}
+				limit = { has_doctrine = doctrine_concubines }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 		}
 		parameters = {
+			#US
 			number_of_spouses = 99
 			number_of_consorts = 99
 		}
@@ -53,17 +52,14 @@ doctrine_divorce = {
 		piety_cost = {
 			value = faith_doctrine_cost_low
 			if = {
-				limit = {
-					has_doctrine = doctrine_divorce_disallowed
-				}
+				limit = { has_doctrine = doctrine_divorce_disallowed }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_divorce_allowed
-				}
+				limit = { has_doctrine = doctrine_divorce_allowed }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
+
 		}
 		parameters = {
 			divorce_disallowed = yes
@@ -73,11 +69,10 @@ doctrine_divorce = {
 		piety_cost = {
 			value = faith_doctrine_cost_low
 			if = {
-				limit = {
-					has_doctrine = doctrine_divorce_approval
-				}
+				limit = { has_doctrine = doctrine_divorce_approval }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
+
 		}
 		parameters = {
 			divorce_approval = yes
@@ -87,15 +82,11 @@ doctrine_divorce = {
 		piety_cost = {
 			value = faith_doctrine_cost_low
 			if = {
-				limit = {
-					has_doctrine = doctrine_divorce_allowed
-				}
+				limit = { has_doctrine = doctrine_divorce_allowed }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_divorce_disallowed
-				}
+				limit = { has_doctrine = doctrine_divorce_disallowed }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 		}
@@ -111,15 +102,11 @@ doctrine_bastardry = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_bastardry_none
-				}
+				limit = { has_doctrine = doctrine_bastardry_none }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_bastardry_all
-				}
+				limit = { has_doctrine = doctrine_bastardry_all }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 		}
@@ -131,9 +118,7 @@ doctrine_bastardry = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_bastardry_legitimization
-				}
+				limit = { has_doctrine = doctrine_bastardry_legitimization }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 		}
@@ -145,15 +130,11 @@ doctrine_bastardry = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_bastardry_all
-				}
+				limit = { has_doctrine = doctrine_bastardry_all }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_bastardry_none
-				}
+				limit = { has_doctrine = doctrine_bastardry_none }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 		}
@@ -169,15 +150,11 @@ doctrine_homosexuality = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_homosexuality_crime
-				}
+				limit = { has_doctrine = doctrine_homosexuality_crime }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_homosexuality_accepted
-				}
+				limit = { has_doctrine = doctrine_homosexuality_accepted }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 		}
@@ -189,9 +166,7 @@ doctrine_homosexuality = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_homosexuality_shunned
-				}
+				limit = { has_doctrine = doctrine_homosexuality_shunned }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 		}
@@ -203,15 +178,11 @@ doctrine_homosexuality = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_homosexuality_accepted
-				}
+				limit = { has_doctrine = doctrine_homosexuality_accepted }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_homosexuality_crime
-				}
+				limit = { has_doctrine = doctrine_homosexuality_crime }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 		}
@@ -227,21 +198,15 @@ doctrine_deviancy = {
 		piety_cost = {
 			value = faith_doctrine_cost_low
 			if = {
-				limit = {
-					has_doctrine = doctrine_deviancy_crime
-				}
+				limit = { has_doctrine = doctrine_deviancy_crime }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_deviancy_accepted
-				}
+				limit = { has_doctrine = doctrine_deviancy_accepted }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_deviancy_virtuous
-				}
+				limit = { has_doctrine = doctrine_deviancy_virtuous }
 				multiply = faith_changed_doctrine_cost_mult_three_step
 			}
 		}
@@ -253,15 +218,11 @@ doctrine_deviancy = {
 		piety_cost = {
 			value = faith_doctrine_cost_low
 			if = {
-				limit = {
-					has_doctrine = doctrine_deviancy_shunned
-				}
+				limit = { has_doctrine = doctrine_deviancy_shunned }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_deviancy_virtuous
-				}
+				limit = { has_doctrine = doctrine_deviancy_virtuous }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 		}
@@ -273,15 +234,11 @@ doctrine_deviancy = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_deviancy_accepted
-				}
+				limit = { has_doctrine = doctrine_deviancy_accepted }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_deviancy_crime
-				}
+				limit = { has_doctrine = doctrine_deviancy_crime }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 		}
@@ -293,36 +250,26 @@ doctrine_deviancy = {
 		can_pick = {
 			custom_description = {
 				text = must_select_carnal_exaltation
-				doctrine:tenet_carnal_exaltation = {
-					is_in_list = selected_doctrines
-				}
+				doctrine:tenet_carnal_exaltation = { is_in_list = selected_doctrines }
 			}
 		}
 		piety_cost = {
 			value = faith_doctrine_cost_massive
 			if = {
-				limit = {
-					has_doctrine = doctrine_deviancy_virtuous
-				}
+				limit = { has_doctrine = doctrine_deviancy_virtuous }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_deviancy_shunned
-				}
+				limit = { has_doctrine = doctrine_deviancy_shunned }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_deviancy_crime
-				}
+				limit = { has_doctrine = doctrine_deviancy_crime }
 				multiply = faith_changed_doctrine_cost_mult_three_step
 			}
 		}
 		traits = {
-			virtues = {
-				deviant
-			}
+			virtues = { deviant }
 		}
 		parameters = {
 			deviancy_accepted = yes
@@ -336,15 +283,11 @@ doctrine_adultery_men = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_adultery_men_crime
-				}
+				limit = { has_doctrine = doctrine_adultery_men_crime }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_adultery_men_accepted
-				}
+				limit = { has_doctrine = doctrine_adultery_men_accepted }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 		}
@@ -356,9 +299,7 @@ doctrine_adultery_men = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_adultery_men_shunned
-				}
+				limit = { has_doctrine = doctrine_adultery_men_shunned }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 		}
@@ -370,15 +311,11 @@ doctrine_adultery_men = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_adultery_men_accepted
-				}
+				limit = { has_doctrine = doctrine_adultery_men_accepted }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_adultery_men_crime
-				}
+				limit = { has_doctrine = doctrine_adultery_men_crime }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 		}
@@ -394,15 +331,11 @@ doctrine_adultery_women = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_adultery_women_crime
-				}
+				limit = { has_doctrine = doctrine_adultery_women_crime }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_adultery_women_accepted
-				}
+				limit = { has_doctrine = doctrine_adultery_women_accepted }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 		}
@@ -414,9 +347,7 @@ doctrine_adultery_women = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_adultery_women_shunned
-				}
+				limit = { has_doctrine = doctrine_adultery_women_shunned }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 		}
@@ -428,15 +359,11 @@ doctrine_adultery_women = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_adultery_women_accepted
-				}
+				limit = { has_doctrine = doctrine_adultery_women_accepted }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_adultery_women_crime
-				}
+				limit = { has_doctrine = doctrine_adultery_women_crime }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 		}
@@ -452,27 +379,19 @@ doctrine_kinslaying = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_kinslaying_any_dynasty_member_crime
-				}
+				limit = { has_doctrine = doctrine_kinslaying_any_dynasty_member_crime }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_kinslaying_close_kin_crime
-				}
+				limit = { has_doctrine = doctrine_kinslaying_close_kin_crime }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_kinslaying_shunned
-				}
+				limit = { has_doctrine = doctrine_kinslaying_shunned }
 				multiply = faith_changed_doctrine_cost_mult_three_step
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_kinslaying_accepted
-				}
+				limit = { has_doctrine = doctrine_kinslaying_accepted }
 				multiply = faith_changed_doctrine_cost_mult_four_step
 			}
 		}
@@ -484,21 +403,15 @@ doctrine_kinslaying = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_kinslaying_extended_family_crime
-				}
+				limit = { has_doctrine = doctrine_kinslaying_extended_family_crime }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_kinslaying_shunned
-				}
+				limit = { has_doctrine = doctrine_kinslaying_shunned }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_kinslaying_accepted
-				}
+				limit = { has_doctrine = doctrine_kinslaying_accepted }
 				multiply = faith_changed_doctrine_cost_mult_three_step
 			}
 		}
@@ -510,9 +423,7 @@ doctrine_kinslaying = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_kinslaying_close_kin_crime
-				}
+				limit = { has_doctrine = doctrine_kinslaying_close_kin_crime }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
@@ -533,21 +444,15 @@ doctrine_kinslaying = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_kinslaying_shunned
-				}
+				limit = { has_doctrine = doctrine_kinslaying_shunned }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_kinslaying_extended_family_crime
-				}
+				limit = { has_doctrine = doctrine_kinslaying_extended_family_crime }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_kinslaying_any_dynasty_member_crime
-				}
+				limit = { has_doctrine = doctrine_kinslaying_any_dynasty_member_crime }
 				multiply = faith_changed_doctrine_cost_mult_three_step
 			}
 		}
@@ -559,29 +464,22 @@ doctrine_kinslaying = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_kinslaying_accepted
-				}
+				limit = { has_doctrine = doctrine_kinslaying_accepted }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_kinslaying_close_kin_crime
-				}
+				limit = { has_doctrine = doctrine_kinslaying_close_kin_crime }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_kinslaying_extended_family_crime
-				}
+				limit = { has_doctrine = doctrine_kinslaying_extended_family_crime }
 				multiply = faith_changed_doctrine_cost_mult_three_step
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_kinslaying_any_dynasty_member_crime
-				}
+				limit = { has_doctrine = doctrine_kinslaying_any_dynasty_member_crime }
 				multiply = faith_changed_doctrine_cost_mult_four_step
 			}
+
 		}
 		parameters = {
 			kinslaying_accepted = yes
@@ -595,21 +493,15 @@ doctrine_witchcraft = {
 		piety_cost = {
 			value = faith_doctrine_cost_low
 			if = {
-				limit = {
-					has_doctrine = doctrine_witchcraft_crime
-				}
+				limit = { has_doctrine = doctrine_witchcraft_crime }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_witchcraft_accepted
-				}
+				limit = { has_doctrine = doctrine_witchcraft_accepted }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_witchcraft_virtuous
-				}
+				limit = { has_doctrine = doctrine_witchcraft_virtuous }
 				multiply = faith_changed_doctrine_cost_mult_three_step
 			}
 		}
@@ -621,15 +513,11 @@ doctrine_witchcraft = {
 		piety_cost = {
 			value = faith_doctrine_cost_low
 			if = {
-				limit = {
-					has_doctrine = doctrine_witchcraft_shunned
-				}
+				limit = { has_doctrine = doctrine_witchcraft_shunned }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_witchcraft_virtuous
-				}
+				limit = { has_doctrine = doctrine_witchcraft_virtuous }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 		}
@@ -641,15 +529,11 @@ doctrine_witchcraft = {
 		piety_cost = {
 			value = faith_doctrine_cost_low
 			if = {
-				limit = {
-					has_doctrine = doctrine_witchcraft_accepted
-				}
+				limit = { has_doctrine = doctrine_witchcraft_accepted }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_witchcraft_crime
-				}
+				limit = { has_doctrine = doctrine_witchcraft_crime }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 		}
@@ -661,28 +545,20 @@ doctrine_witchcraft = {
 		piety_cost = {
 			value = faith_tenet_cost_massive
 			if = {
-				limit = {
-					has_doctrine = doctrine_witchcraft_virtuous
-				}
+				limit = { has_doctrine = doctrine_witchcraft_virtuous }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_witchcraft_shunned
-				}
+				limit = { has_doctrine = doctrine_witchcraft_shunned }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_witchcraft_crime
-				}
+				limit = { has_doctrine = doctrine_witchcraft_crime }
 				multiply = faith_changed_doctrine_cost_mult_three_step
 			}
 		}
 		traits = {
-			virtues = {
-				witch
-			}
+			virtues = { witch }
 		}
 		parameters = {
 			witchcraft_accepted = yes
@@ -690,26 +566,22 @@ doctrine_witchcraft = {
 	}
 }
 
+
 doctrine_gender = {
 	group = "main_group"
+
 	doctrine_gender_male_dominated = {
 		is_shown = {
-			NOT = {
-				has_game_rule = full_gender_equality
-			}
+			NOT = { has_game_rule = full_gender_equality }
 		}
 		piety_cost = {
 			value = faith_doctrine_cost_high
 			if = {
-				limit = {
-					has_doctrine = doctrine_gender_male_dominated
-				}
+				limit = { has_doctrine = doctrine_gender_male_dominated }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_gender_female_dominated
-				}
+				limit = { has_doctrine = doctrine_gender_female_dominated }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 		}
@@ -725,12 +597,11 @@ doctrine_gender = {
 			name = female_ruler_male_dominant
 			opinion_of_female_rulers = -10
 		}
+
 		can_pick = {
 			NAND = {
 				exists = religious_head
-				religious_head.culture = {
-					has_cultural_parameter = female_only_inheritance
-				}
+				religious_head.culture = { has_cultural_parameter = female_only_inheritance }
 			}
 		}
 	}
@@ -738,9 +609,7 @@ doctrine_gender = {
 		piety_cost = {
 			value = faith_doctrine_cost_high
 			if = {
-				limit = {
-					has_doctrine = doctrine_gender_equal
-				}
+				limit = { has_doctrine = doctrine_gender_equal }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 		}
@@ -751,22 +620,16 @@ doctrine_gender = {
 	}
 	doctrine_gender_female_dominated = {
 		is_shown = {
-			NOT = {
-				has_game_rule = full_gender_equality
-			}
+			NOT = { has_game_rule = full_gender_equality }
 		}
 		piety_cost = {
 			value = faith_doctrine_cost_high
 			if = {
-				limit = {
-					has_doctrine = doctrine_gender_female_dominated
-				}
+				limit = { has_doctrine = doctrine_gender_female_dominated }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_gender_male_dominated
-				}
+				limit = { has_doctrine = doctrine_gender_male_dominated }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 		}
@@ -782,12 +645,11 @@ doctrine_gender = {
 			name = male_ruler_female_dominant
 			opinion_of_male_rulers = -10
 		}
+
 		can_pick = {
 			NAND = {
 				exists = religious_head
-				religious_head.culture = {
-					has_cultural_parameter = male_only_inheritance
-				}
+				religious_head.culture = { has_cultural_parameter = male_only_inheritance }
 			}
 		}
 	}
@@ -795,25 +657,41 @@ doctrine_gender = {
 
 doctrine_consanguinity = {
 	group = "marriage"
+	doctrine_consanguinity_dynastic = {
+		piety_cost = {
+			value = faith_doctrine_cost_high
+			if = {
+				limit = { has_doctrine = doctrine_consanguinity_restricted }
+				multiply = faith_unchanged_doctrine_cost_mult
+			}
+			else_if = {
+				limit = { has_doctrine = doctrine_consanguinity_aunt_nephew_and_uncle_niece }
+				multiply = faith_changed_doctrine_cost_mult_two_step
+			}
+			else_if = {
+				limit = { has_doctrine = doctrine_consanguinity_unrestricted }
+				multiply = faith_changed_doctrine_cost_mult_three_step
+			}
+		}
+		parameters = {
+			consanguinity_restricted_dynastic_marriage = yes
+			consanguinity_restricted_marriage = yes
+			consanguinity_restricted_close_kin_incest = yes
+		}
+	}
 	doctrine_consanguinity_restricted = {
 		piety_cost = {
 			value = faith_doctrine_cost_high
 			if = {
-				limit = {
-					has_doctrine = doctrine_consanguinity_restricted
-				}
+				limit = { has_doctrine = doctrine_consanguinity_restricted }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_consanguinity_aunt_nephew_and_uncle_niece
-				}
+				limit = { has_doctrine = doctrine_consanguinity_aunt_nephew_and_uncle_niece }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_consanguinity_unrestricted
-				}
+				limit = { has_doctrine = doctrine_consanguinity_unrestricted }
 				multiply = faith_changed_doctrine_cost_mult_three_step
 			}
 		}
@@ -826,15 +704,11 @@ doctrine_consanguinity = {
 		piety_cost = {
 			value = faith_doctrine_cost_high
 			if = {
-				limit = {
-					has_doctrine = doctrine_consanguinity_cousins
-				}
+				limit = { has_doctrine = doctrine_consanguinity_cousins }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_consanguinity_unrestricted
-				}
+				limit = { has_doctrine = doctrine_consanguinity_unrestricted }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 		}
@@ -848,15 +722,11 @@ doctrine_consanguinity = {
 		piety_cost = {
 			value = faith_doctrine_cost_high
 			if = {
-				limit = {
-					has_doctrine = doctrine_consanguinity_aunt_nephew_and_uncle_niece
-				}
+				limit = { has_doctrine = doctrine_consanguinity_aunt_nephew_and_uncle_niece }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_consanguinity_restricted
-				}
+				limit = { has_doctrine = doctrine_consanguinity_restricted }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 		}
@@ -871,21 +741,15 @@ doctrine_consanguinity = {
 		piety_cost = {
 			value = faith_doctrine_cost_high
 			if = {
-				limit = {
-					has_doctrine = doctrine_consanguinity_unrestricted
-				}
+				limit = { has_doctrine = doctrine_consanguinity_unrestricted }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_consanguinity_cousins
-				}
+				limit = { has_doctrine = doctrine_consanguinity_cousins }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_consanguinity_restricted
-				}
+				limit = { has_doctrine = doctrine_consanguinity_restricted }
 				multiply = faith_changed_doctrine_cost_mult_three_step
 			}
 		}
@@ -901,24 +765,22 @@ doctrine_consanguinity = {
 
 doctrine_pluralism = {
 	group = "main_group"
+
 	doctrine_pluralism_fundamentalist = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_pluralism_fundamentalist
-				}
+				limit = { has_doctrine = doctrine_pluralism_fundamentalist }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_pluralism_pluralistic
-				}
+				limit = { has_doctrine = doctrine_pluralism_pluralistic }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 		}
 		parameters = {
 			hostility_towards_us_mult = 2
+			
 			pluralism_fundamentalist_proselytization_bonus = yes
 			pluralism_fundamentalist_faction_join_chance = yes
 			pluralism_fundamentalist_vulnerable_to_heresy = yes
@@ -932,9 +794,7 @@ doctrine_pluralism = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_pluralism_righteous
-				}
+				limit = { has_doctrine = doctrine_pluralism_righteous }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 		}
@@ -950,34 +810,29 @@ doctrine_pluralism = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_pluralism_pluralistic
-				}
+				limit = { has_doctrine = doctrine_pluralism_pluralistic }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_pluralism_fundamentalist
-				}
+				limit = { has_doctrine = doctrine_pluralism_fundamentalist }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 		}
+
 		can_pick = {
 			custom_description = {
 				text = incompatible_tenet_pentarchy_trigger
-				NOT = {
-					doctrine:tenet_pentarchy = {
-						is_in_list = selected_doctrines
-					}
-				}
+				NOT = { doctrine:tenet_pentarchy = { is_in_list = selected_doctrines } }
 			}
 		}
+
 		parameters = {
 			hostility_towards_us_mult = 0.5
 			pluralism_pluralistic_proselytization_penalty = yes
 			pluralism_pluralistic_faction_join_chance = yes
 			pluralism_pluralistic_resistant_to_heresy = yes
 			pluralism_pluralistic_holy_wars_preserve_vassals = yes
+			
 		}
 	}
 }
@@ -988,28 +843,22 @@ doctrine_theocracy = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_theocracy_temporal
-				}
+				limit = { has_doctrine = doctrine_theocracy_temporal }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_theocracy_lay_clergy
-				}
+				limit = { has_doctrine = doctrine_theocracy_lay_clergy }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 		}
+		
 		can_pick = {
 			custom_description = {
 				text = incompatible_doctrine_theocracy_temporal_trigger
-				NOT = {
-					doctrine:doctrine_temporal_head = {
-						is_in_list = selected_doctrines
-					}
-				}
+				NOT = { doctrine:doctrine_temporal_head = { is_in_list = selected_doctrines } }
 			}
 		}
+
 		parameters = {
 			theocracy_temple_lease = yes
 		}
@@ -1018,18 +867,15 @@ doctrine_theocracy = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_theocracy_lay_clergy
-				}
+				limit = { has_doctrine = doctrine_theocracy_lay_clergy }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_theocracy_temporal
-				}
+				limit = { has_doctrine = doctrine_theocracy_temporal }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 		}
+
 		parameters = {
 			theocracy_temple_ownership = yes
 			lay_clergy = yes
@@ -1040,14 +886,13 @@ doctrine_theocracy = {
 
 doctrine_head_of_faith = {
 	group = "main_group"
+
 	doctrine_no_head = {
 		visible = no
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_no_head
-				}
+				limit = { has_doctrine = doctrine_no_head }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 		}
@@ -1061,9 +906,7 @@ doctrine_head_of_faith = {
 		piety_cost = {
 			value = faith_doctrine_cost_high
 			if = {
-				limit = {
-					has_doctrine = doctrine_spiritual_head
-				}
+				limit = { has_doctrine = doctrine_spiritual_head }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 		}
@@ -1078,33 +921,24 @@ doctrine_head_of_faith = {
 		piety_cost = {
 			value = faith_doctrine_cost_massive
 			if = {
-				limit = {
-					has_doctrine = doctrine_temporal_head
-				}
+				limit = { has_doctrine = doctrine_temporal_head }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 		}
 		can_pick = {
 			custom_description = {
 				text = incompatible_doctrine_theocracy_temporal_trigger
-				NOT = {
-					doctrine:doctrine_theocracy_temporal = {
-						is_in_list = selected_doctrines
-					}
-				}
+				NOT = { doctrine:doctrine_theocracy_temporal = { is_in_list = selected_doctrines } }
 			}
 			custom_description = {
 				text = incompatible_doctrine_spiritual_appointment_temporal_trigger
 				NOR = {
-					doctrine:doctrine_clerical_succession_spiritual_appointment = {
-						is_in_list = selected_doctrines
-					}
-					doctrine:doctrine_clerical_succession_spiritual_fixed_appointment = {
-						is_in_list = selected_doctrines
-					}
+					doctrine:doctrine_clerical_succession_spiritual_appointment = { is_in_list = selected_doctrines }
+					doctrine:doctrine_clerical_succession_spiritual_fixed_appointment = { is_in_list = selected_doctrines }
 				}
 			}
 		}
+
 		parameters = {
 			temporal_head_of_faith = yes
 			temporal_head_of_faith_directed_holy_wars = yes
@@ -1122,9 +956,7 @@ doctrine_clerical_function = {
 		piety_cost = {
 			value = faith_doctrine_cost_low
 			if = {
-				limit = {
-					has_doctrine = doctrine_clerical_function_taxation
-				}
+				limit = { has_doctrine = doctrine_clerical_function_taxation }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 		}
@@ -1137,9 +969,7 @@ doctrine_clerical_function = {
 		piety_cost = {
 			value = faith_doctrine_cost_low
 			if = {
-				limit = {
-					has_doctrine = doctrine_clerical_function_alms_and_pacification
-				}
+				limit = { has_doctrine = doctrine_clerical_function_alms_and_pacification }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 		}
@@ -1156,9 +986,7 @@ doctrine_clerical_function = {
 		piety_cost = {
 			value = faith_doctrine_cost_low
 			if = {
-				limit = {
-					has_doctrine = doctrine_clerical_function_recruitment
-				}
+				limit = { has_doctrine = doctrine_clerical_function_recruitment }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 		}
@@ -1171,15 +999,11 @@ doctrine_clerical_gender = {
 		piety_cost = {
 			value = faith_doctrine_cost_low
 			if = {
-				limit = {
-					has_doctrine = doctrine_clerical_gender_male_only
-				}
+				limit = { has_doctrine = doctrine_clerical_gender_male_only }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_clerical_gender_female_only
-				}
+				limit = { has_doctrine = doctrine_clerical_gender_female_only }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 		}
@@ -1191,15 +1015,11 @@ doctrine_clerical_gender = {
 		piety_cost = {
 			value = faith_doctrine_cost_low
 			if = {
-				limit = {
-					has_doctrine = doctrine_clerical_gender_female_only
-				}
+				limit = { has_doctrine = doctrine_clerical_gender_female_only }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_clerical_gender_male_only
-				}
+				limit = { has_doctrine = doctrine_clerical_gender_male_only }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 		}
@@ -1211,12 +1031,11 @@ doctrine_clerical_gender = {
 		piety_cost = {
 			value = faith_doctrine_cost_low
 			if = {
-				limit = {
-					has_doctrine = doctrine_clerical_gender_either
-				}
+				limit = { has_doctrine = doctrine_clerical_gender_either }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 		}
+
 		parameters = {
 			clergy_can_be_either_gender = yes
 		}
@@ -1229,18 +1048,15 @@ doctrine_clerical_marriage = {
 		piety_cost = {
 			value = faith_doctrine_cost_low
 			if = {
-				limit = {
-					has_doctrine = doctrine_clerical_marriage_allowed
-				}
+				limit = { has_doctrine = doctrine_clerical_marriage_allowed }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_clerical_marriage_disallowed
-				}
+				limit = { has_doctrine = doctrine_clerical_marriage_disallowed }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 		}
+		
 		parameters = {
 			clergy_can_marry = yes
 		}
@@ -1249,18 +1065,15 @@ doctrine_clerical_marriage = {
 		piety_cost = {
 			value = faith_doctrine_cost_low
 			if = {
-				limit = {
-					has_doctrine = doctrine_clerical_marriage_disallowed
-				}
+				limit = { has_doctrine = doctrine_clerical_marriage_disallowed }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else_if = {
-				limit = {
-					has_doctrine = doctrine_clerical_marriage_allowed
-				}
+				limit = { has_doctrine = doctrine_clerical_marriage_allowed }
 				multiply = faith_changed_doctrine_cost_mult_two_step
 			}
 		}
+
 		parameters = {
 			clergy_can_marry = no
 		}
@@ -1269,21 +1082,17 @@ doctrine_clerical_marriage = {
 
 doctrine_clerical_succession = {
 	group = "clergy"
-	doctrine_clerical_succession_temporal_appointment = {
-		# Temporal, Free
+	doctrine_clerical_succession_temporal_appointment = { # Temporal, Free
 		piety_cost = {
 			value = faith_doctrine_cost_high
 			if = {
-				limit = {
-					has_doctrine = doctrine_clerical_succession_temporal_appointment
-				}
+				limit = { has_doctrine = doctrine_clerical_succession_temporal_appointment }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else = {
 				if = {
 					limit = {
-						OR = {
-							# Was Spiritual
+						OR = { # Was Spiritual
 							has_doctrine = doctrine_clerical_succession_spiritual_fixed_appointment
 							has_doctrine = doctrine_clerical_succession_spiritual_appointment
 						}
@@ -1292,8 +1101,7 @@ doctrine_clerical_succession = {
 				}
 				if = {
 					limit = {
-						OR = {
-							# Was Fixed
+						OR = {	# Was Fixed
 							has_doctrine = doctrine_clerical_succession_spiritual_fixed_appointment
 							has_doctrine = doctrine_clerical_succession_temporal_fixed_appointment
 						}
@@ -1306,26 +1114,23 @@ doctrine_clerical_succession = {
 			ceiling = yes
 			multiply = 25
 		}
+
 		parameters = {
 			clerical_appointment_ruler = yes
 			clerical_appointment_fixed = no
 		}
 	}
-	doctrine_clerical_succession_spiritual_appointment = {
-		# Spiritual, Free
+	doctrine_clerical_succession_spiritual_appointment = { # Spiritual, Free
 		piety_cost = {
 			value = faith_doctrine_cost_high
 			if = {
-				limit = {
-					has_doctrine = doctrine_clerical_succession_spiritual_appointment
-				}
+				limit = { has_doctrine = doctrine_clerical_succession_spiritual_appointment }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else = {
 				if = {
 					limit = {
-						OR = {
-							# Was Temporal
+						OR = { # Was Temporal
 							has_doctrine = doctrine_clerical_succession_temporal_fixed_appointment
 							has_doctrine = doctrine_clerical_succession_temporal_appointment
 						}
@@ -1334,50 +1139,43 @@ doctrine_clerical_succession = {
 				}
 				if = {
 					limit = {
-						OR = {
-							# Was Fixed
+						OR = {	# Was Fixed
 							has_doctrine = doctrine_clerical_succession_spiritual_fixed_appointment
 							has_doctrine = doctrine_clerical_succession_temporal_fixed_appointment
 						}
 					}
 					multiply = faith_changed_doctrine_cost_mult_two_step
-				}
+				}	
 			}
 			# Round up to the nearest multiple of 25
 			divide = 25
 			ceiling = yes
 			multiply = 25
 		}
+
 		can_pick = {
 			custom_description = {
 				text = incompatible_doctrine_spiritual_appointment_temporal_trigger
-				NOT = {
-					doctrine:doctrine_temporal_head = {
-						is_in_list = selected_doctrines
-					}
-				}
+				NOT = { doctrine:doctrine_temporal_head = { is_in_list = selected_doctrines } }
 			}
-		}
+		}		
+
 		parameters = {
 			clerical_appointment_head_of_faith = yes
 			clerical_appointment_fixed = no
 		}
 	}
-	doctrine_clerical_succession_temporal_fixed_appointment = {
-		# Temporal, Fixed
+	doctrine_clerical_succession_temporal_fixed_appointment = { # Temporal, Fixed
 		piety_cost = {
 			value = faith_doctrine_cost_high
 			if = {
-				limit = {
-					has_doctrine = doctrine_clerical_succession_temporal_fixed_appointment
-				}
+				limit = { has_doctrine = doctrine_clerical_succession_temporal_fixed_appointment }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else = {
 				if = {
 					limit = {
-						OR = {
-							# Was Spiritual
+						OR = { # Was Spiritual
 							has_doctrine = doctrine_clerical_succession_spiritual_fixed_appointment
 							has_doctrine = doctrine_clerical_succession_spiritual_appointment
 						}
@@ -1386,8 +1184,7 @@ doctrine_clerical_succession = {
 				}
 				if = {
 					limit = {
-						OR = {
-							# Was free
+						OR = {	# Was free
 							has_doctrine = doctrine_clerical_succession_spiritual_appointment
 							has_doctrine = doctrine_clerical_succession_temporal_appointment
 						}
@@ -1405,21 +1202,17 @@ doctrine_clerical_succession = {
 			clerical_appointment_fixed = yes
 		}
 	}
-	doctrine_clerical_succession_spiritual_fixed_appointment = {
-		# Spiritual, Fixed
+	doctrine_clerical_succession_spiritual_fixed_appointment = { # Spiritual, Fixed
 		piety_cost = {
 			value = faith_doctrine_cost_high
 			if = {
-				limit = {
-					has_doctrine = doctrine_clerical_succession_spiritual_fixed_appointment
-				}
+				limit = { has_doctrine = doctrine_clerical_succession_spiritual_fixed_appointment }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 			else = {
 				if = {
 					limit = {
-						OR = {
-							# Was Temporal
+						OR = { # Was Temporal
 							has_doctrine = doctrine_clerical_succession_temporal_fixed_appointment
 							has_doctrine = doctrine_clerical_succession_temporal_appointment
 						}
@@ -1428,8 +1221,7 @@ doctrine_clerical_succession = {
 				}
 				if = {
 					limit = {
-						OR = {
-							# Was Free
+						OR = {	# Was Free
 							has_doctrine = doctrine_clerical_succession_spiritual_appointment
 							has_doctrine = doctrine_clerical_succession_temporal_appointment
 						}
@@ -1442,16 +1234,14 @@ doctrine_clerical_succession = {
 			ceiling = yes
 			multiply = 25
 		}
+
 		can_pick = {
 			custom_description = {
 				text = incompatible_doctrine_spiritual_appointment_temporal_trigger
-				NOT = {
-					doctrine:doctrine_temporal_head = {
-						is_in_list = selected_doctrines
-					}
-				}
+				NOT = { doctrine:doctrine_temporal_head = { is_in_list = selected_doctrines } }
 			}
 		}
+
 		parameters = {
 			clerical_appointment_head_of_faith = yes
 			clerical_appointment_fixed = yes
@@ -1465,9 +1255,7 @@ doctrine_pilgrimage = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_pilgrimage_forbidden
-				}
+				limit = { has_doctrine = doctrine_pilgrimage_forbidden }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 		}
@@ -1479,19 +1267,15 @@ doctrine_pilgrimage = {
 			forbidden_from_pilgrimage = yes
 		}
 		traits = {
-			sins = {
-				hajjaj
-				pilgrim
-			}
+			sins = { hajjaj pilgrim }
 		}
 	}
+
 	doctrine_pilgrimage_encouraged = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_pilgrimage_encouraged
-				}
+				limit = { has_doctrine = doctrine_pilgrimage_encouraged }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 		}
@@ -1500,20 +1284,32 @@ doctrine_pilgrimage = {
 			basic_pilgrimage_rewards = yes
 		}
 	}
+
+	doctrine_pilgrimage_local_rites = {
+		piety_cost = {
+			value = faith_doctrine_cost_mid
+			if = {
+				limit = { has_doctrine = doctrine_pilgrimage_local_rites }
+				multiply = faith_unchanged_doctrine_cost_mult
+			}
+		}
+		parameters = {
+			local_shrine_offering = yes
+			can_go_on_pilgrimage = yes
+			basic_pilgrimage_rewards = yes
+		}
+	}
+
 	doctrine_pilgrimage_mandatory = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_pilgrimage_mandatory
-				}
+				limit = { has_doctrine = doctrine_pilgrimage_mandatory }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 		}
 		is_shown = {
-			NOT = {
-				religion_tag = islam_religion
-			}
+			NOT = { religion_tag = islam_religion }
 		}
 		character_modifier = {
 			monthly_piety_gain_mult = -0.25
@@ -1525,13 +1321,12 @@ doctrine_pilgrimage = {
 			basic_pilgrimage_rewards = yes
 		}
 	}
+
 	doctrine_pilgrimage_mandatory_hajj = {
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_pilgrimage_mandatory_hajj
-				}
+				limit = { has_doctrine = doctrine_pilgrimage_mandatory_hajj }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 		}
@@ -1552,14 +1347,11 @@ doctrine_pilgrimage = {
 
 doctrine_funeral = {
 	group = "clergy"
-	doctrine_funeral_stoic = {
-		# Abrahamic funerals, stand around and try not to cry too much before the body is humbly buried
+	doctrine_funeral_stoic = { # Abrahamic funerals, stand around and try not to cry too much before the body is humbly buried
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_funeral_stoic
-				}
+				limit = { has_doctrine = doctrine_funeral_stoic }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 		}
@@ -1568,14 +1360,11 @@ doctrine_funeral = {
 			stoic_funeral = yes
 		}
 	}
-	doctrine_funeral_bewailment = {
-		# West African funerals, strongly encouraged to show emotion before the body is humbly buried
+	doctrine_funeral_bewailment = { # West African funerals, strongly encouraged to show emotion before the body is humbly buried
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_funeral_bewailment
-				}
+				limit = { has_doctrine = doctrine_funeral_bewailment }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 		}
@@ -1584,14 +1373,11 @@ doctrine_funeral = {
 			bewailment_funeral = yes
 		}
 	}
-	doctrine_funeral_cremation = {
-		# Catch-all cremations, burn or otherwise dissolve the body
+	doctrine_funeral_cremation = { # Catch-all cremations, burn or otherwise dissolve the body
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_funeral_cremation
-				}
+				limit = { has_doctrine = doctrine_funeral_cremation }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 		}
@@ -1599,14 +1385,11 @@ doctrine_funeral = {
 			cremation_funeral = yes
 		}
 	}
-	doctrine_funeral_sky_burial = {
-		# Have the body fed to scavenging animals and birds
+	doctrine_funeral_sky_burial = { # Have the body fed to scavenging animals and birds
 		piety_cost = {
 			value = faith_doctrine_cost_mid
 			if = {
-				limit = {
-					has_doctrine = doctrine_funeral_sky_burial
-				}
+				limit = { has_doctrine = doctrine_funeral_sky_burial }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 		}
@@ -1614,33 +1397,141 @@ doctrine_funeral = {
 			sky_burials_active = yes
 			can_build_towers_of_silence_active = yes
 		}
+
 		character_modifier = {
 			negate_health_penalty_add = 0.25
 		}
 	}
-	doctrine_funeral_mummification = {
-		# Fanatically preserve the body, very expensive
+	doctrine_funeral_mummification = { # Fanatically preserve the body, very expensive
 		piety_cost = {
 			value = faith_doctrine_cost_high
 			if = {
-				limit = {
-					has_doctrine = doctrine_funeral_mummification
-				}
+				limit = { has_doctrine = doctrine_funeral_mummification }
 				multiply = faith_unchanged_doctrine_cost_mult
 			}
 		}
 		parameters = {
 			mummification_funeral = yes
 		}
+
 		can_pick = {
 			custom_description = {
 				text = incompatible_tenet_aniconism_trigger
-				NOT = {
-					doctrine:tenet_aniconism = {
-						is_in_list = selected_doctrines
-					}
+				NOT = { doctrine:tenet_aniconism = { is_in_list = selected_doctrines } }
+			}
+		}
+	}
+
+	doctrine_family_rites = { # Solemn veneration
+		piety_cost = {
+			value = faith_doctrine_cost_high
+			if = {
+				limit = { has_doctrine = doctrine_family_rites }
+				multiply = faith_unchanged_doctrine_cost_mult
+			}
+			if = {
+				limit = { has_doctrine = tenet_filial_piety }
+				multiply = faith_unchanged_doctrine_cost_mult
+			}
+		}
+		parameters = {
+			burial_funeral = yes
+			family_rites = yes
+		}
+	}
+}
+
+doctrine_coronation = {
+	group = "clergy"
+	is_available_on_create = {
+		has_ach_dlc_trigger = yes
+	}
+	doctrine_no_anointment = {
+		piety_cost = {
+			value = faith_doctrine_cost_mid
+		}
+		parameters = {
+			no_anointment = yes
+		}
+		is_shown = {
+			has_ach_dlc_trigger = yes
+		}
+	}
+	doctrine_anointment_permitted = {
+		piety_cost = {
+			value = faith_doctrine_cost_mid
+		}
+		parameters = {
+			theocratic_coronation = yes
+		}
+		can_pick = {
+			custom_description = {
+				text = doctrine_requires_theocratic_head_of_faith_trigger
+				NOR = {
+					doctrine:doctrine_no_head = { is_in_list = selected_doctrines }
+					doctrine:doctrine_temporal_head = { is_in_list = selected_doctrines }
 				}
 			}
+		}
+		is_shown = {
+			has_ach_dlc_trigger = yes
+		}
+	}
+	doctrine_imperial_anointment = {
+		piety_cost = {
+			value = faith_doctrine_cost_mid
+		}
+		parameters = {
+			imperial_anointment = yes
+		}
+		can_pick = {
+			custom_description = {
+				text = doctrine_requires_theocratic_head_of_faith_trigger
+				NOR = {
+					doctrine:doctrine_no_head = { is_in_list = selected_doctrines }
+					doctrine:doctrine_temporal_head = { is_in_list = selected_doctrines }
+				}
+			}
+		}
+		is_shown = {
+			has_ach_dlc_trigger = yes
+		}
+	}
+}
+
+doctrine_theism = {
+	group = "main_group"
+	doctrine_monotheist = {
+		piety_cost = {
+			value = faith_doctrine_cost_high
+			if = {
+				limit = { 
+					OR = {
+						has_doctrine = abrahamic_hostility_doctrine
+						has_doctrine = doctrine_monotheist 
+					}
+				}
+				multiply = faith_unchanged_doctrine_cost_mult
+			}
+		}
+		parameters = {
+			hostility_others = 3
+		}
+	}
+	doctrine_polytheist = {
+		piety_cost = {
+			value = faith_doctrine_cost_high
+			if = {
+				limit = { has_doctrine = abrahamic_hostility_doctrine }
+				multiply = faith_changed_doctrine_cost_mult_three_step
+			}
+			else_if = {
+				limit = { has_doctrine = doctrine_polytheist }
+				multiply = faith_unchanged_doctrine_cost_mult
+			}
+		}
+		parameters = {
+			hostility_others = 2
 		}
 	}
 }

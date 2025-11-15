@@ -4,3 +4,5 @@
  hc_scheme_target_nothas_immutable:0 "你拥有特质[GetTrait('hc_immutable').GetName( GetPlayer )]：$VALUE|+0=$"
   hc_had_sex_with_effect_ct_01:0 "不能违背誓言！"
  hc_had_sex_with_effect_ct_02:0 "神在看着我们！"
+ td_message_t_01:0 "至死不渝阻住了一次流产"
+ td_message_t_02:0 "幸运地躲过了一次流产"
