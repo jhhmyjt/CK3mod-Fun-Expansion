@@ -6,7 +6,7 @@ The maximum number of spouses/consorts is set to 99.
 
 [h1]Compatibility[/h1].
 Compatible with existing save
-Modified original file: 00_marriage_interactions.txt 00_ritual_traditions.txt 00_doctrines.txt 00_marriage_scripted_modifiers.txt
+Modified original file: 00_marriage_interactions.txt 00_marriage_scripted_modifiers.txt
 [h1]Last[/h1]
 If you think this mod is not bad, you can give me a like👍
 

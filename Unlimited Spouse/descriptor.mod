@@ -1,4 +1,4 @@
-version = "1.14"
+version = "1.18"
 tags = {
 	"Character Interactions"
 }

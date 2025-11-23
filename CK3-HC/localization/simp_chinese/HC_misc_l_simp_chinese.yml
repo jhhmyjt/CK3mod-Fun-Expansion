@@ -9,3 +9,5 @@
  HC_ESTABLISH_BUILDING_CAPITAL_LABEL:0 "地点"
  HC_ESTABLISH_BUILDING_CHANGE_CAPITAL:1 "更改地点"
  HC_ESTABLISH_BUILDING_SELECT_CAPITAL:1 "选择地点"
+ td_message_t_01:0 "至死不渝阻住了一次流产"
+ td_message_t_02:0 "幸运地躲过了一次流产"

@@ -9,3 +9,5 @@
  HC_ESTABLISH_BUILDING_CAPITAL_LABEL:0 "Location"
  HC_ESTABLISH_BUILDING_CHANGE_CAPITAL:1 "Change Location"
  HC_ESTABLISH_BUILDING_SELECT_CAPITAL:1 "Select Location"
+td_message_t_01:0 "Till death averted a miscarriage."
+td_message_t_02:0 "Fortuitously avoided a miscarriage."

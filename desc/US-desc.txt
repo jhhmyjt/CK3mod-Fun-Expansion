@@ -1,5 +1,5 @@
 [h1]概述[/h1]
-配偶/侍妾数量上限设置为99
+配偶/侍妾数量上限设置为99，玩家无限制，Ai限制配偶数量
 
 [img]https://i.imgur.com/hT9aoW2.png[/img]
 
@@ -7,7 +7,7 @@
 
 [h1]兼容性[/h1]
 兼容现有存档
-修改过的原文件：00_marriage_interactions.txt 00_ritual_traditions.txt 00_doctrines.txt 00_marriage_scripted_modifiers.txt
+修改过的原文件：00_marriage_interactions.txt 00_marriage_scripted_modifiers.txt
 
 [h1]最后[/h1]
 

@@ -60,10 +60,14 @@ can_set_relation_lover_trigger = {
                 limit = {
                     has_game_rule = hc_seduce_court_ai_cannot
                 }
-                not = {
-                    is_ai = yes
-                    $CHARACTER$ = {
+                OR={
+                    not={
                         is_ai = yes
+                    }
+                    not={
+                        $CHARACTER$ = {
+                            is_ai = yes
+                        }
                     }
                 }
             }
@@ -89,10 +93,14 @@ can_set_relation_lover_trigger = {
                 limit = {
                     has_game_rule = hc_seduce_court_ai_cannot
                 }
-                not = {
-                    is_ai = yes
-                    $CHARACTER$ = {
+                OR={
+                    not={
                         is_ai = yes
+                    }
+                    not={
+                        $CHARACTER$ = {
+                            is_ai = yes
+                        }
                     }
                 }
             }
@@ -132,10 +140,14 @@ can_set_relation_soulmate_trigger = {
                 limit = {
                     has_game_rule = hc_seduce_court_ai_cannot
                 }
-                not = {
-                    is_ai = yes
-                    $CHARACTER$ = {
+                OR={
+                    not={
                         is_ai = yes
+                    }
+                    not={
+                        $CHARACTER$ = {
+                            is_ai = yes
+                        }
                     }
                 }
             }
@@ -161,10 +173,14 @@ can_set_relation_soulmate_trigger = {
                 limit = {
                     has_game_rule = hc_seduce_court_ai_cannot
                 }
-                not = {
-                    is_ai = yes
-                    $CHARACTER$ = {
+                OR={
+                    not={
                         is_ai = yes
+                    }
+                    not={
+                        $CHARACTER$ = {
+                            is_ai = yes
+                        }
                     }
                 }
             }
